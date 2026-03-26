@@ -1,0 +1,11 @@
+{
+  "name": "almadigitaldesigns",
+  "version": "1.0.0",
+  "description": "Alma Digital Designs - AI-Powered Web Design Agency",
+  "scripts": {
+    "start": "npx serve -s . -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
