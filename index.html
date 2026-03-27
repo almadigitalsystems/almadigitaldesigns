@@ -239,148 +239,31 @@
       </div>
     </section>
 
-    <!-- ============ PORTFOLIO ============ -->
-    <section class="portfolio section--dark" id="portfolio">
-      <div class="container">
-        <span class="section-label section-label--ondark" data-i18n="portfolio_label">Case Studies</span>
-        <h2 class="section-title section-title--ondark" data-i18n="portfolio_title">See the Transformation</h2>
-        <div class="portfolio__grid">
-          <!-- Case 1 -->
-          <article class="portfolio__card">
-            <div class="portfolio__card-visual">
-              <div class="portfolio__half">
-                <span class="portfolio__tag portfolio__tag--before" data-i18n="portfolio_before">Before</span>
-                <div class="portfolio__mock portfolio__mock--old">
-                  <div class="portfolio__mock-bar"></div>
-                  <div class="portfolio__mock-lines"><div></div><div></div><div></div><div></div></div>
-                </div>
-              </div>
-              <div class="portfolio__arrow-wrap" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-              <div class="portfolio__half">
-                <span class="portfolio__tag portfolio__tag--after" data-i18n="portfolio_after">After</span>
-                <div class="portfolio__mock portfolio__mock--new">
-                  <div class="portfolio__mock-bar portfolio__mock-bar--accent"></div>
-                  <div class="portfolio__mock-hero-block"></div>
-                  <div class="portfolio__mock-cols"><div></div><div></div><div></div></div>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio__card-info">
-              <h3 data-i18n="portfolio_case1_name">Joe's Plumbing, Dallas TX</h3>
-              <p data-i18n="portfolio_case1_result">Modern, mobile-first design with 90+ Lighthouse score. Load time cut from 8s to 1.2s.</p>
-            </div>
-          </article>
-          <!-- Case 2 -->
-          <article class="portfolio__card">
-            <div class="portfolio__card-visual">
-              <div class="portfolio__half">
-                <span class="portfolio__tag portfolio__tag--before" data-i18n="portfolio_before">Before</span>
-                <div class="portfolio__mock portfolio__mock--old">
-                  <div class="portfolio__mock-bar"></div>
-                  <div class="portfolio__mock-lines"><div></div><div></div><div></div><div></div></div>
-                </div>
-              </div>
-              <div class="portfolio__arrow-wrap" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-              <div class="portfolio__half">
-                <span class="portfolio__tag portfolio__tag--after" data-i18n="portfolio_after">After</span>
-                <div class="portfolio__mock portfolio__mock--new">
-                  <div class="portfolio__mock-bar portfolio__mock-bar--accent"></div>
-                  <div class="portfolio__mock-hero-block"></div>
-                  <div class="portfolio__mock-cols"><div></div><div></div><div></div></div>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio__card-info">
-              <h3 data-i18n="portfolio_case2_name">Smile Dental, Phoenix AZ</h3>
-              <p data-i18n="portfolio_case2_result">Integrated online scheduling. 3x more appointment bookings within the first month.</p>
-            </div>
-          </article>
-          <!-- Case 3 -->
-          <article class="portfolio__card">
-            <div class="portfolio__card-visual">
-              <div class="portfolio__half">
-                <span class="portfolio__tag portfolio__tag--before" data-i18n="portfolio_before">Before</span>
-                <div class="portfolio__mock portfolio__mock--old">
-                  <div class="portfolio__mock-bar"></div>
-                  <div class="portfolio__mock-lines"><div></div><div></div><div></div><div></div></div>
-                </div>
-              </div>
-              <div class="portfolio__arrow-wrap" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-              <div class="portfolio__half">
-                <span class="portfolio__tag portfolio__tag--after" data-i18n="portfolio_after">After</span>
-                <div class="portfolio__mock portfolio__mock--new">
-                  <div class="portfolio__mock-bar portfolio__mock-bar--accent"></div>
-                  <div class="portfolio__mock-hero-block"></div>
-                  <div class="portfolio__mock-cols"><div></div><div></div><div></div></div>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio__card-info">
-              <h3 data-i18n="portfolio_case3_name">Elite HVAC, Nashville TN</h3>
-              <p data-i18n="portfolio_case3_result">Fully responsive design. 60% increase in mobile leads within 30 days.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SHOWCASE (Before/After) ============ -->
+    <!-- ============ SHOWCASE (Before/After with Real Images) ============ -->
     <style>
-      /* Showcase Section — embedded to guarantee rendering */
-      #showcase-section { background: #f5f5f7; color: #1a1a1a; padding: 80px 0; text-align: center; }
-      #showcase-section .sc-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-      #showcase-section .sc-label { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #00e5ff; margin-bottom: 12px; }
-      #showcase-section .sc-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.15; color: #1a1a1a; margin-bottom: 16px; letter-spacing: -0.01em; }
-      #showcase-section .sc-subtitle { font-size: 1.0625rem; color: #666; max-width: 540px; margin: 0 auto 40px; line-height: 1.6; }
-      #showcase-section .sc-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-      @media (min-width: 768px) { #showcase-section .sc-grid { grid-template-columns: repeat(2, 1fr); } }
-      #showcase-section .sc-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; text-align: left; transition: border-color 0.18s ease, box-shadow 0.18s ease; }
-      #showcase-section .sc-card:hover { border-color: rgba(0,229,255,0.25); box-shadow: 0 8px 30px rgba(0,229,255,0.08); }
-      #showcase-section .sc-compare { display: flex; align-items: stretch; height: 320px; }
-      #showcase-section .sc-side { flex: 1; position: relative; display: flex; flex-direction: column; overflow: hidden; }
-      #showcase-section .sc-badge { position: absolute; top: 10px; z-index: 2; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 9999px; }
-      #showcase-section .sc-badge-before { left: 10px; background: #ff4d4d; color: #fff; }
-      #showcase-section .sc-badge-after { right: 10px; background: #00e5ff; color: #0d1117; }
-      #showcase-section .sc-divider { display: flex; align-items: center; justify-content: center; width: 36px; flex-shrink: 0; background: #f5f5f7; color: #00e5ff; }
-      /* Before (ugly) preview */
-      #showcase-section .sc-preview-old { flex: 1; display: flex; flex-direction: column; font-family: 'Times New Roman', 'Courier New', serif; }
-      #showcase-section .sc-preview-old-1 { background: #e8e4d8; }
-      #showcase-section .sc-preview-old-2 { background: #dde8d0; }
-      #showcase-section .sc-preview-old-3 { background: #dce0e8; }
-      #showcase-section .sc-preview-old-4 { background: #f0e4d8; }
-      #showcase-section .sc-old-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #003366; border-bottom: 3px solid #cc9900; }
-      #showcase-section .sc-old-logo { font-family: 'Comic Sans MS', 'Courier New', cursive, serif; font-size: 0.8rem; font-weight: 700; color: #ffcc00; text-shadow: 1px 1px 0 #000; }
-      #showcase-section .sc-old-nav { font-size: 0.55rem; color: #99ccff; text-decoration: underline; }
-      #showcase-section .sc-old-banner { background: linear-gradient(135deg, #666633, #999966); color: #ff0000; font-family: 'Comic Sans MS', cursive, serif; font-size: 0.85rem; font-weight: 700; text-align: center; padding: 18px 8px; border: 3px solid #808080; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); letter-spacing: 0.5px; }
-      #showcase-section .sc-old-body { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
-      #showcase-section .sc-old-textline { height: 8px; background: #a0a0a0; border-radius: 2px; width: 100%; }
-      #showcase-section .sc-old-footer { background: #003366; color: #6699cc; font-size: 0.5rem; text-align: center; padding: 6px; }
-      /* After (modern) preview */
-      #showcase-section .sc-preview-new { flex: 1; display: flex; flex-direction: column; background: #0d1117; font-family: 'Inter', sans-serif; }
-      #showcase-section .sc-new-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; }
-      #showcase-section .sc-new-logo { font-size: 0.65rem; font-weight: 700; color: #fff; }
-      #showcase-section .sc-new-cta { font-size: 0.5rem; font-weight: 600; color: #0d1117; background: #00e5ff; padding: 3px 10px; border-radius: 9999px; }
-      #showcase-section .sc-new-hero { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.4; padding: 16px; }
-      #showcase-section .sc-new-hero-1 { background: linear-gradient(135deg, rgba(0,229,255,0.15), rgba(0,102,255,0.08)); }
-      #showcase-section .sc-new-hero-2 { background: linear-gradient(135deg, rgba(0,229,255,0.12), rgba(0,200,83,0.08)); }
-      #showcase-section .sc-new-hero-3 { background: linear-gradient(135deg, rgba(0,229,255,0.12), rgba(255,145,0,0.08)); }
-      #showcase-section .sc-new-hero-4 { background: linear-gradient(135deg, rgba(0,229,255,0.12), rgba(156,39,176,0.08)); }
-      #showcase-section .sc-new-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 10px 14px 14px; }
-      #showcase-section .sc-new-cards div { height: 32px; background: rgba(255,255,255,0.04); border: 1px solid rgba(0,229,255,0.12); border-radius: 6px; }
-      /* Card info */
-      #showcase-section .sc-info { padding: 20px; }
-      #showcase-section .sc-info h3 { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin: 0 0 2px; }
-      #showcase-section .sc-info-type { display: block; font-size: 0.75rem; color: #888; margin-bottom: 8px; }
-      #showcase-section .sc-info-result { font-size: 0.875rem; font-weight: 600; color: #00b8d4; margin: 0; }
-      @media (max-width: 679px) { #showcase-section .sc-compare { height: auto; min-height: 280px; } }
+      #portfolio { background: #0d1117; color: #fff; padding: 80px 0; text-align: center; }
+      #portfolio .sc-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+      #portfolio .sc-label { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #00e5ff; margin-bottom: 12px; }
+      #portfolio .sc-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.15; color: #fff; margin-bottom: 16px; letter-spacing: -0.01em; }
+      #portfolio .sc-subtitle { font-size: 1.0625rem; color: #8b949e; max-width: 540px; margin: 0 auto 40px; line-height: 1.6; }
+      #portfolio .sc-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+      @media (min-width: 768px) { #portfolio .sc-grid { grid-template-columns: repeat(2, 1fr); } }
+      #portfolio .sc-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; text-align: left; transition: border-color 0.18s ease, box-shadow 0.18s ease; }
+      #portfolio .sc-card:hover { border-color: rgba(0,229,255,0.3); box-shadow: 0 8px 30px rgba(0,229,255,0.1); }
+      #portfolio .sc-compare { display: flex; align-items: stretch; }
+      #portfolio .sc-side { flex: 1; position: relative; overflow: hidden; min-height: 0; }
+      #portfolio .sc-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      #portfolio .sc-badge { position: absolute; top: 10px; z-index: 2; font-family: 'Inter', sans-serif; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 9999px; }
+      #portfolio .sc-badge-before { left: 10px; background: #ff4d4d; color: #fff; }
+      #portfolio .sc-badge-after { right: 10px; background: #00e5ff; color: #0d1117; }
+      #portfolio .sc-divider { display: flex; align-items: center; justify-content: center; width: 36px; flex-shrink: 0; background: #0d1117; color: #00e5ff; }
+      #portfolio .sc-info { padding: 20px; }
+      #portfolio .sc-info h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 2px; }
+      #portfolio .sc-info-type { display: block; font-size: 0.75rem; color: #8b949e; margin-bottom: 8px; }
+      #portfolio .sc-info-result { font-size: 0.875rem; font-weight: 600; color: #00e5ff; margin: 0; }
+      @media (max-width: 767px) { #portfolio .sc-compare { flex-direction: row; } #portfolio .sc-side img { max-height: 240px; } }
     </style>
-    <section id="showcase-section">
+    <section id="portfolio">
       <div class="sc-container">
         <span class="sc-label" data-i18n="showcase_label">Portfolio</span>
         <h2 class="sc-title" data-i18n="showcase_title">See the Difference</h2>
@@ -391,23 +274,14 @@
             <div class="sc-compare">
               <div class="sc-side">
                 <span class="sc-badge sc-badge-before">Before</span>
-                <div class="sc-preview-old sc-preview-old-1">
-                  <div class="sc-old-header"><span class="sc-old-logo">Joe's</span><span class="sc-old-nav">Home | About | Contact</span></div>
-                  <div class="sc-old-banner">WELCOME TO OUR WEBSITE!!!</div>
-                  <div class="sc-old-body"><div class="sc-old-textline"></div><div class="sc-old-textline" style="width:80%"></div><div class="sc-old-textline" style="width:60%"></div></div>
-                  <div class="sc-old-footer">Copyright 2008</div>
-                </div>
+                <img src="images/before_joes_plumbing.png" alt="Joe's Plumbing old website" loading="lazy">
               </div>
               <div class="sc-divider">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <div class="sc-side">
                 <span class="sc-badge sc-badge-after">After</span>
-                <div class="sc-preview-new">
-                  <div class="sc-new-nav"><span class="sc-new-logo">Joe's Plumbing</span><span class="sc-new-cta">Book Now</span></div>
-                  <div class="sc-new-hero sc-new-hero-1">Fast. Reliable.<br>Plumbing Done Right.</div>
-                  <div class="sc-new-cards"><div></div><div></div><div></div></div>
-                </div>
+                <img src="images/after_joes_plumbing.png" alt="Joe's Plumbing new website" loading="lazy">
               </div>
             </div>
             <div class="sc-info">
@@ -421,23 +295,14 @@
             <div class="sc-compare">
               <div class="sc-side">
                 <span class="sc-badge sc-badge-before">Before</span>
-                <div class="sc-preview-old sc-preview-old-2">
-                  <div class="sc-old-header"><span class="sc-old-logo">SmileDental</span><span class="sc-old-nav">Services | Staff</span></div>
-                  <div class="sc-old-banner">YOUR SMILE MATTERS!</div>
-                  <div class="sc-old-body"><div class="sc-old-textline"></div><div class="sc-old-textline" style="width:70%"></div><div class="sc-old-textline" style="width:90%"></div></div>
-                  <div class="sc-old-footer">All Rights Reserved</div>
-                </div>
+                <img src="images/before_smile_dental.png" alt="Smile Dental old website" loading="lazy">
               </div>
               <div class="sc-divider">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <div class="sc-side">
                 <span class="sc-badge sc-badge-after">After</span>
-                <div class="sc-preview-new">
-                  <div class="sc-new-nav"><span class="sc-new-logo">Smile Dental</span><span class="sc-new-cta">Book Online</span></div>
-                  <div class="sc-new-hero sc-new-hero-2">Your Perfect Smile<br>Starts Here.</div>
-                  <div class="sc-new-cards"><div></div><div></div><div></div></div>
-                </div>
+                <img src="images/after_smile_dental.png" alt="Smile Dental new website" loading="lazy">
               </div>
             </div>
             <div class="sc-info">
@@ -451,23 +316,14 @@
             <div class="sc-compare">
               <div class="sc-side">
                 <span class="sc-badge sc-badge-before">Before</span>
-                <div class="sc-preview-old sc-preview-old-3">
-                  <div class="sc-old-header"><span class="sc-old-logo">EliteHVAC</span><span class="sc-old-nav">Home | Services</span></div>
-                  <div class="sc-old-banner">HEATING &amp; COOLING EXPERTS</div>
-                  <div class="sc-old-body"><div class="sc-old-textline"></div><div class="sc-old-textline" style="width:85%"></div><div class="sc-old-textline" style="width:55%"></div></div>
-                  <div class="sc-old-footer">Call us today!</div>
-                </div>
+                <img src="images/before_elite_hvac.png" alt="Elite HVAC old website" loading="lazy">
               </div>
               <div class="sc-divider">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <div class="sc-side">
                 <span class="sc-badge sc-badge-after">After</span>
-                <div class="sc-preview-new">
-                  <div class="sc-new-nav"><span class="sc-new-logo">Elite HVAC</span><span class="sc-new-cta">Get Quote</span></div>
-                  <div class="sc-new-hero sc-new-hero-3">Comfort You<br>Can Count On.</div>
-                  <div class="sc-new-cards"><div></div><div></div><div></div></div>
-                </div>
+                <img src="images/after_elite_hvac.png" alt="Elite HVAC new website" loading="lazy">
               </div>
             </div>
             <div class="sc-info">
@@ -481,23 +337,14 @@
             <div class="sc-compare">
               <div class="sc-side">
                 <span class="sc-badge sc-badge-before">Before</span>
-                <div class="sc-preview-old sc-preview-old-4">
-                  <div class="sc-old-header"><span class="sc-old-logo">Rosa's</span><span class="sc-old-nav">Home | Prices</span></div>
-                  <div class="sc-old-banner">CLEANING SERVICES!!!</div>
-                  <div class="sc-old-body"><div class="sc-old-textline"></div><div class="sc-old-textline" style="width:75%"></div><div class="sc-old-textline" style="width:65%"></div></div>
-                  <div class="sc-old-footer">Email us for info</div>
-                </div>
+                <img src="images/before_rosas_cleaning.png" alt="Rosa's Cleaning old website" loading="lazy">
               </div>
               <div class="sc-divider">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <div class="sc-side">
                 <span class="sc-badge sc-badge-after">After</span>
-                <div class="sc-preview-new">
-                  <div class="sc-new-nav"><span class="sc-new-logo">Rosa's Cleaning</span><span class="sc-new-cta">Book Now</span></div>
-                  <div class="sc-new-hero sc-new-hero-4">A Spotless Home,<br>Every Time.</div>
-                  <div class="sc-new-cards"><div></div><div></div><div></div></div>
-                </div>
+                <img src="images/after_rosas_cleaning.png" alt="Rosa's Cleaning new website" loading="lazy">
               </div>
             </div>
             <div class="sc-info">
