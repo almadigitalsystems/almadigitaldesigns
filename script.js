@@ -79,7 +79,7 @@
       portfolio_case3_result: 'Fully responsive design. 60% increase in mobile leads within 30 days.',
       showcase_label: 'Portfolio',
       showcase_title: 'See the Difference',
-      showcase_subtitle: 'Drag the slider to compare. Real results from real businesses.',
+      showcase_subtitle: 'Real results from real businesses.',
       showcase_url1: 'joesplumbing.com',
       showcase_url2: 'smiledental.com',
       showcase_url3: 'elitehvac.com',
@@ -234,7 +234,7 @@
       portfolio_case3_result: 'Diseño completamente responsive. 60% más de leads móviles en 30 días.',
       showcase_label: 'Portafolio',
       showcase_title: 'Mira la Diferencia',
-      showcase_subtitle: 'Arrastra el control para comparar. Resultados reales de negocios reales.',
+      showcase_subtitle: 'Resultados reales de negocios reales.',
       showcase_url1: 'joesplumbing.com',
       showcase_url2: 'smiledental.com',
       showcase_url3: 'elitehvac.com',
@@ -449,39 +449,7 @@
   }
 
   /* ───────── SCROLL REVEAL FALLBACK ───────── */
-  /* ───────── BEFORE/AFTER SLIDER ───────── */
-  document.querySelectorAll('[data-showcase]').forEach(slider => {
-    const beforeEl = slider.querySelector('.showcase__before');
-    const handle = slider.querySelector('.showcase__handle');
-    let isDragging = false;
-
-    function setPosition(x) {
-      const rect = slider.getBoundingClientRect();
-      let pct = ((x - rect.left) / rect.width) * 100;
-      pct = Math.max(2, Math.min(98, pct));
-      beforeEl.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-      handle.style.left = pct + '%';
-    }
-
-    function onPointerDown(e) {
-      isDragging = true;
-      slider.setPointerCapture(e.pointerId);
-      setPosition(e.clientX);
-    }
-    function onPointerMove(e) {
-      if (!isDragging) return;
-      e.preventDefault();
-      setPosition(e.clientX);
-    }
-    function onPointerUp() {
-      isDragging = false;
-    }
-
-    slider.addEventListener('pointerdown', onPointerDown);
-    slider.addEventListener('pointermove', onPointerMove);
-    slider.addEventListener('pointerup', onPointerUp);
-    slider.addEventListener('pointercancel', onPointerUp);
-  });
+  /* ───────── BEFORE/AFTER SHOWCASE (static side-by-side, no slider needed) ───────── */
 
   // Add reveal class to cards
   document.querySelectorAll(
