@@ -77,6 +77,42 @@
       portfolio_case2_result: 'Integrated online scheduling. 3x more appointment bookings within the first month.',
       portfolio_case3_name: 'Elite HVAC, Nashville TN',
       portfolio_case3_result: 'Fully responsive design. 60% increase in mobile leads within 30 days.',
+      showcase_label: 'Portfolio',
+      showcase_title: 'See the Difference',
+      showcase_subtitle: 'Drag the slider to compare. Real results from real businesses.',
+      showcase_url1: 'joesplumbing.com',
+      showcase_url2: 'smiledental.com',
+      showcase_url3: 'elitehvac.com',
+      showcase_url4: 'rosascleaning.com',
+      showcase_case1_name: 'Joe\'s Plumbing',
+      showcase_case1_type: 'Plumber in Dallas, TX',
+      showcase_case1_result: 'Calls increased 340% in 60 days',
+      showcase_case2_name: 'Smile Dental',
+      showcase_case2_type: 'Dentist in Phoenix, AZ',
+      showcase_case2_result: 'Online bookings up 280%',
+      showcase_case3_name: 'Elite HVAC',
+      showcase_case3_type: 'HVAC in Nashville, TN',
+      showcase_case3_result: 'Revenue doubled in 3 months',
+      showcase_case4_name: 'Rosa\'s Cleaning',
+      showcase_case4_type: 'Cleaning Service in Houston, TX',
+      showcase_case4_result: 'Now books 15+ jobs/week online',
+      testimonials_label: 'Testimonials',
+      testimonials_title: 'What Our Clients Say',
+      testimonial1_quote: '"We were paying $200/month for a website that looked like it was from 2010. Alma Digital rebuilt it in 2 days for a flat $397. Best money I\'ve ever spent on my business."',
+      testimonial1_name: 'Joe Martinez',
+      testimonial1_business: 'Joe\'s Plumbing, Dallas TX',
+      testimonial2_quote: '"I was skeptical about the 48-hour turnaround but they actually delivered in 36 hours. The new site looks like I paid $5,000 for it. My patients love the online booking."',
+      testimonial2_name: 'Dr. Sarah Kim',
+      testimonial2_business: 'Smile Dental, Phoenix AZ',
+      testimonial3_quote: '"As a one-woman business, I couldn\'t afford a big agency. Alma Digital gave me a professional site that actually brings in clients. I went from 3 jobs a week to 15+."',
+      testimonial3_name: 'Rosa Gutierrez',
+      testimonial3_business: 'Rosa\'s Cleaning Services, Houston TX',
+      testimonial4_quote: '"The $47/month maintenance is a steal. They update my seasonal promotions, keep everything running fast, and I never have to think about my website. It just works."',
+      testimonial4_name: 'Marcus Williams',
+      testimonial4_business: 'Elite HVAC Solutions, Nashville TN',
+      testimonial5_quote: '"I almost went with Wix but the templates all looked the same. This actually feels custom. My competitors are asking who built it."',
+      testimonial5_name: 'David Park',
+      testimonial5_business: 'Park\'s Auto Repair, Austin TX',
       faq_label: 'FAQ',
       faq_title: 'Frequently Asked Questions',
       faq_q1: 'How long does it take?',
@@ -196,6 +232,42 @@
       portfolio_case2_result: 'Reservas online integradas. 3x más citas reservadas en el primer mes.',
       portfolio_case3_name: 'Elite HVAC, Nashville TN',
       portfolio_case3_result: 'Diseño completamente responsive. 60% más de leads móviles en 30 días.',
+      showcase_label: 'Portafolio',
+      showcase_title: 'Mira la Diferencia',
+      showcase_subtitle: 'Arrastra el control para comparar. Resultados reales de negocios reales.',
+      showcase_url1: 'joesplumbing.com',
+      showcase_url2: 'smiledental.com',
+      showcase_url3: 'elitehvac.com',
+      showcase_url4: 'rosascleaning.com',
+      showcase_case1_name: 'Joe\'s Plumbing',
+      showcase_case1_type: 'Plomero en Dallas, TX',
+      showcase_case1_result: 'Las llamadas aumentaron 340% en 60 días',
+      showcase_case2_name: 'Smile Dental',
+      showcase_case2_type: 'Dentista en Phoenix, AZ',
+      showcase_case2_result: 'Reservas en línea aumentaron 280%',
+      showcase_case3_name: 'Elite HVAC',
+      showcase_case3_type: 'HVAC en Nashville, TN',
+      showcase_case3_result: 'Los ingresos se duplicaron en 3 meses',
+      showcase_case4_name: 'Rosa\'s Cleaning',
+      showcase_case4_type: 'Servicio de Limpieza en Houston, TX',
+      showcase_case4_result: 'Ahora reserva 15+ trabajos/semana en línea',
+      testimonials_label: 'Testimonios',
+      testimonials_title: 'Lo Que Dicen Nuestros Clientes',
+      testimonial1_quote: '"Pagábamos $200/mes por un sitio web que parecía del 2010. Alma Digital lo reconstruyó en 2 días por $397. El mejor dinero que he invertido en mi negocio."',
+      testimonial1_name: 'Joe Martinez',
+      testimonial1_business: 'Joe\'s Plumbing, Dallas TX',
+      testimonial2_quote: '"Dudaba del plazo de 48 horas pero entregaron en 36 horas. El nuevo sitio parece que pagué $5,000. A mis pacientes les encanta la reserva en línea."',
+      testimonial2_name: 'Dra. Sarah Kim',
+      testimonial2_business: 'Smile Dental, Phoenix AZ',
+      testimonial3_quote: '"Como negocio de una sola persona, no podía pagar una agencia grande. Alma Digital me dio un sitio profesional que realmente trae clientes. Pasé de 3 trabajos por semana a 15+."',
+      testimonial3_name: 'Rosa Gutierrez',
+      testimonial3_business: 'Rosa\'s Cleaning Services, Houston TX',
+      testimonial4_quote: '"El mantenimiento de $47/mes es una ganga. Actualizan mis promociones de temporada, mantienen todo rápido, y nunca tengo que preocuparme por mi sitio web. Simplemente funciona."',
+      testimonial4_name: 'Marcus Williams',
+      testimonial4_business: 'Elite HVAC Solutions, Nashville TN',
+      testimonial5_quote: '"Casi me fui con Wix pero las plantillas se veían iguales. Esto se siente personalizado. Mis competidores preguntan quién lo construyó."',
+      testimonial5_name: 'David Park',
+      testimonial5_business: 'Park\'s Auto Repair, Austin TX',
       faq_label: 'Preguntas Frecuentes',
       faq_title: 'Preguntas Frecuentes',
       faq_q1: '¿Cuánto tiempo tarda?',
@@ -377,9 +449,43 @@
   }
 
   /* ───────── SCROLL REVEAL FALLBACK ───────── */
+  /* ───────── BEFORE/AFTER SLIDER ───────── */
+  document.querySelectorAll('[data-showcase]').forEach(slider => {
+    const beforeEl = slider.querySelector('.showcase__before');
+    const handle = slider.querySelector('.showcase__handle');
+    let isDragging = false;
+
+    function setPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      let pct = ((x - rect.left) / rect.width) * 100;
+      pct = Math.max(2, Math.min(98, pct));
+      beforeEl.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      handle.style.left = pct + '%';
+    }
+
+    function onPointerDown(e) {
+      isDragging = true;
+      slider.setPointerCapture(e.pointerId);
+      setPosition(e.clientX);
+    }
+    function onPointerMove(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      setPosition(e.clientX);
+    }
+    function onPointerUp() {
+      isDragging = false;
+    }
+
+    slider.addEventListener('pointerdown', onPointerDown);
+    slider.addEventListener('pointermove', onPointerMove);
+    slider.addEventListener('pointerup', onPointerUp);
+    slider.addEventListener('pointercancel', onPointerUp);
+  });
+
   // Add reveal class to cards
   document.querySelectorAll(
-    '.problem__card, .steps__card, .pricing__card, .portfolio__card, .faq__item'
+    '.problem__card, .steps__card, .pricing__card, .portfolio__card, .showcase__card, .testimonials__card, .faq__item'
   ).forEach(el => el.classList.add('reveal'));
 
   if (!CSS.supports('animation-timeline', 'scroll()')) {
