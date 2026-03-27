@@ -320,6 +320,29 @@
         }
       });
       if (!ok) return;
+
+      // Build mailto link to send form data to business email
+      const name = (form.querySelector('#name').value || '').trim();
+      const email = (form.querySelector('#email').value || '').trim();
+      const business = (form.querySelector('#business').value || '').trim();
+      const businessType = (form.querySelector('#businessType').value || '').trim();
+      const website = (form.querySelector('#website').value || '').trim();
+      const message = (form.querySelector('#message').value || '').trim();
+
+      const body = [
+        'Name: ' + name,
+        'Email: ' + email,
+        'Business: ' + business,
+        'Business Type: ' + businessType,
+        website ? 'Website: ' + website : '',
+        message ? 'Message: ' + message : ''
+      ].filter(Boolean).join('\n');
+
+      const mailtoUrl = 'mailto:hello@almadigitaldesigns.com'
+        + '?subject=' + encodeURIComponent('New Website Inquiry from ' + name)
+        + '&body=' + encodeURIComponent(body);
+      window.location.href = mailtoUrl;
+
       form.hidden = true;
       successEl.hidden = false;
     });
