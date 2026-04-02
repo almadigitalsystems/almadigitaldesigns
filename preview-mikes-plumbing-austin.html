@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mike's Plumbing Austin — Website Preview | Alma Digital Designs</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1a4fad;
+      --blue-dark: #0f3580;
+      --blue-light: #3b73e8;
+      --orange: #e86b1a;
+      --orange-dark: #c45512;
+      --gray-50: #f8f9fc;
+      --gray-100: #f0f2f8;
+      --gray-200: #e2e6f0;
+      --gray-600: #4b5563;
+      --gray-800: #1f2937;
+      --white: #ffffff;
+      --radius: 12px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+      --shadow-md: 0 6px 24px rgba(0,0,0,.12);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,.16);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--gray-800); background: var(--white); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== PREVIEW BANNER ===== */
+    .preview-banner {
+      background: linear-gradient(90deg, #0f3580, #1a4fad);
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .preview-banner strong { color: #f9c74f; }
+    .preview-banner a { color: #f9c74f; text-decoration: underline; font-weight: 600; }
+
+    /* ===== NAV ===== */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo svg { width: 40px; height: 40px; }
+    .nav-logo-text { font-size: 1.35rem; font-weight: 800; color: var(--blue-dark); line-height: 1.1; }
+    .nav-logo-text span { color: var(--orange); }
+    .nav-logo-sub { font-size: 0.72rem; color: var(--gray-600); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta {
+      background: var(--orange);
+      color: white !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      font-size: 0.88rem !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--orange-dark) !important; color: white !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, #2563eb 100%);
+      color: white;
+      padding: 96px 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 5px 14px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 18px; }
+    .hero-badge svg { width: 14px; height: 14px; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.15; margin-bottom: 20px; }
+    h1 span { color: #f9c74f; }
+    .hero-sub { font-size: 1.1rem; opacity: .85; margin-bottom: 32px; max-width: 480px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--orange); color: white; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 16px rgba(232,107,26,.4); transition: all .2s; display: inline-block; }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,107,26,.45); }
+    .btn-secondary { background: rgba(255,255,255,.12); border: 1.5px solid rgba(255,255,255,.4); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all .2s; display: inline-block; }
+    .btn-secondary:hover { background: rgba(255,255,255,.22); transform: translateY(-2px); }
+    .hero-trust { margin-top: 36px; display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.82rem; opacity: .75; }
+    .hero-trust-item { display: flex; align-items: center; gap: 6px; }
+    .hero-trust-item svg { width: 16px; height: 16px; }
+    .hero-image-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .hero-img-placeholder {
+      height: 280px;
+      background: linear-gradient(160deg, #e8f0fe, #bdd0fa);
+      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px;
+    }
+    .hero-img-placeholder svg { width: 72px; height: 72px; opacity: .5; }
+    .hero-img-placeholder p { font-size: 0.85rem; color: var(--gray-600); font-weight: 500; }
+    .hero-card-info { padding: 18px 20px; display: flex; gap: 12px; align-items: center; }
+    .hero-card-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; }
+    .hero-card-name { font-weight: 700; font-size: 0.95rem; }
+    .hero-card-rating { display: flex; gap: 2px; margin-top: 2px; }
+    .star { color: #f9c74f; font-size: 0.85rem; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-image-card { display: none; } }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 80px 5%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange); margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.2; color: var(--gray-800); margin-bottom: 14px; }
+    .section-desc { font-size: 1rem; color: var(--gray-600); max-width: 580px; }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); padding: 36px 5%; }
+    .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--blue); }
+    .stat-label { font-size: 0.82rem; color: var(--gray-600); margin-top: 4px; }
+    @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ===== SERVICES ===== */
+    .services { background: var(--white); }
+    .services-header { margin-bottom: 48px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .service-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: all .25s;
+      cursor: pointer;
+    }
+    .service-card:hover { border-color: var(--blue-light); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .service-icon { width: 52px; height: 52px; border-radius: 10px; background: linear-gradient(135deg, #e8f0fe, #bdd0fa); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .service-icon svg { width: 26px; height: 26px; }
+    .service-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .service-desc { font-size: 0.88rem; color: var(--gray-600); line-height: 1.65; }
+    .service-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 16px; font-size: 0.85rem; font-weight: 600; color: var(--blue); }
+    .service-link:hover { color: var(--blue-dark); }
+    @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
+
+    /* ===== BEFORE/AFTER ===== */
+    .redesign { background: var(--gray-50); }
+    .redesign-header { text-align: center; margin-bottom: 48px; }
+    .redesign-header .section-desc { margin: 0 auto; }
+    .ba-container { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1100px; margin: 0 auto; }
+    .ba-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+    .ba-label {
+      padding: 12px 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .ba-label.before { background: #fef2f2; color: #dc2626; border-bottom: 2px solid #fca5a5; }
+    .ba-label.after { background: #f0fdf4; color: #16a34a; border-bottom: 2px solid #86efac; }
+    .ba-label svg { width: 16px; height: 16px; }
+    .ba-screen {
+      height: 400px;
+      background: white;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .ba-screen.before-screen { font-family: Arial, sans-serif; background: #f5f5f5; }
+    .old-nav { background: #003366; color: white; padding: 8px 16px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; }
+    .old-hero-block { background: #c8e6fa; padding: 24px 16px; text-align: center; }
+    .old-hero-block h3 { font-size: 16px; color: #003366; margin-bottom: 6px; }
+    .old-hero-block p { font-size: 10px; color: #555; }
+    .old-hero-btn { display: inline-block; background: #003366; color: white; padding: 6px 14px; font-size: 10px; margin-top: 8px; border-radius: 2px; }
+    .old-services-row { display: flex; gap: 8px; padding: 14px 12px; }
+    .old-svc { flex: 1; background: white; border: 1px solid #ccc; padding: 10px 8px; text-align: center; font-size: 9px; color: #333; border-radius: 2px; }
+    .old-svc strong { display: block; font-size: 10px; margin-bottom: 4px; color: #003366; }
+    .old-contact { background: #003366; color: white; padding: 10px 16px; font-size: 10px; text-align: center; }
+    .old-footer { background: #002244; color: #aaa; padding: 8px 16px; font-size: 9px; text-align: center; }
+    .old-issues { padding: 8px 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .old-issue-tag { background: #fef2f2; border: 1px solid #fca5a5; color: #dc2626; font-size: 8px; padding: 3px 8px; border-radius: 3px; }
+    .ba-screen.after-screen { background: white; }
+    .new-nav { background: linear-gradient(90deg, #0f3580, #1a4fad); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
+    .new-nav-logo { color: white; font-weight: 800; font-size: 13px; }
+    .new-nav-links { display: flex; gap: 12px; }
+    .new-nav-links span { color: rgba(255,255,255,.8); font-size: 9px; }
+    .new-cta-btn { background: #e86b1a; color: white; padding: 5px 12px; border-radius: 4px; font-size: 9px; font-weight: 700; }
+    .new-hero { background: linear-gradient(135deg, #0f3580, #1a4fad); padding: 28px 16px; color: white; }
+    .new-hero-badge { display: inline-block; background: rgba(255,255,255,.12); border-radius: 999px; padding: 2px 10px; font-size: 8px; margin-bottom: 8px; }
+    .new-hero h3 { font-size: 15px; font-weight: 900; margin-bottom: 6px; line-height: 1.2; }
+    .new-hero h3 em { color: #f9c74f; font-style: normal; }
+    .new-hero p { font-size: 9px; opacity: .8; margin-bottom: 10px; }
+    .new-hero-btns { display: flex; gap: 8px; }
+    .new-btn-p { background: #e86b1a; color: white; padding: 5px 12px; border-radius: 4px; font-size: 9px; font-weight: 700; }
+    .new-btn-s { border: 1px solid rgba(255,255,255,.4); color: white; padding: 5px 10px; border-radius: 4px; font-size: 9px; }
+    .new-stats { display: flex; gap: 0; background: white; border-bottom: 1px solid #e2e6f0; }
+    .new-stat { flex: 1; text-align: center; padding: 8px 4px; border-right: 1px solid #e2e6f0; }
+    .new-stat:last-child { border-right: none; }
+    .new-stat-num { font-size: 13px; font-weight: 900; color: #1a4fad; }
+    .new-stat-label { font-size: 7px; color: #6b7280; }
+    .new-svcs { display: flex; gap: 6px; padding: 10px; background: #f8f9fc; }
+    .new-svc { flex: 1; background: white; border: 1.5px solid #e2e6f0; border-radius: 6px; padding: 8px 6px; text-align: center; }
+    .new-svc-icon { font-size: 14px; margin-bottom: 3px; }
+    .new-svc-name { font-size: 8px; font-weight: 700; color: #1f2937; }
+    .new-svc-desc { font-size: 7px; color: #6b7280; margin-top: 2px; }
+    @media (max-width: 700px) { .ba-container { grid-template-columns: 1fr; } .ba-screen { height: 300px; } }
+
+    .ba-improvements { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .improvement-chip { background: white; border: 1.5px solid var(--gray-200); border-radius: 10px; padding: 20px; display: flex; align-items: flex-start; gap: 14px; }
+    .improvement-icon { width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .improvement-icon.green { background: #f0fdf4; }
+    .improvement-icon.blue { background: #eff6ff; }
+    .improvement-icon.orange { background: #fff7ed; }
+    .improvement-icon svg { width: 18px; height: 18px; }
+    .improvement-label { font-size: 0.88rem; font-weight: 700; margin-bottom: 3px; }
+    .improvement-desc { font-size: 0.78rem; color: var(--gray-600); }
+    @media (max-width: 700px) { .ba-improvements { grid-template-columns: 1fr; } }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials { background: var(--white); }
+    .testimonials-header { text-align: center; margin-bottom: 48px; }
+    .testimonials-header .section-desc { margin: 0 auto; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card { background: var(--gray-50); border: 1.5px solid var(--gray-200); border-radius: var(--radius); padding: 28px; }
+    .testimonial-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+    .testimonial-text { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+    .testimonial-name { font-weight: 700; font-size: 0.88rem; }
+    .testimonial-role { font-size: 0.78rem; color: var(--gray-600); }
+    @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+    /* ===== CONTACT FORM ===== */
+    .contact { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .contact-info h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 14px; }
+    .contact-info p { font-size: 1rem; opacity: .85; margin-bottom: 32px; }
+    .contact-details { display: flex; flex-direction: column; gap: 18px; }
+    .contact-item { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; }
+    .contact-item-icon { width: 42px; height: 42px; background: rgba(255,255,255,.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-item-icon svg { width: 20px; height: 20px; }
+    .contact-form-card { background: white; border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow-lg); }
+    .form-title { font-size: 1.2rem; font-weight: 800; color: var(--gray-800); margin-bottom: 4px; }
+    .form-sub { font-size: 0.83rem; color: var(--gray-600); margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--gray-800); }
+    .form-group input, .form-group select, .form-group textarea {
+      border: 1.5px solid var(--gray-200);
+      border-radius: 7px;
+      padding: 11px 14px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      font-family: inherit;
+      color: var(--gray-800);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--blue-light);
+      box-shadow: 0 0 0 3px rgba(59,115,232,.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%;
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      font-family: inherit;
+    }
+    .form-submit:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .form-privacy { font-size: 0.73rem; color: var(--gray-600); text-align: center; margin-top: 10px; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--gray-800); color: #d1d5db; padding: 48px 5% 28px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .footer-brand-name { font-size: 1.2rem; font-weight: 800; color: white; margin-bottom: 8px; }
+    .footer-brand-desc { font-size: 0.82rem; line-height: 1.65; margin-bottom: 16px; color: #9ca3af; }
+    .footer-col-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: white; margin-bottom: 14px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-links a { font-size: 0.83rem; color: #9ca3af; transition: color .15s; }
+    .footer-links a:hover { color: white; }
+    .footer-divider { border: none; border-top: 1px solid #374151; margin-bottom: 20px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #6b7280; flex-wrap: wrap; gap: 8px; }
+    @media (max-width: 768px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
+
+    /* ===== ALMA WATERMARK ===== */
+    .alma-watermark {
+      background: linear-gradient(90deg, #0f3580, #1a4fad);
+      padding: 16px 5%;
+      text-align: center;
+      color: white;
+      font-size: 0.82rem;
+    }
+    .alma-watermark a { color: #f9c74f; font-weight: 600; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- PREVIEW BANNER -->
+<div class="preview-banner">
+  <strong>Website Redesign Preview</strong> — This is a complimentary mockup created for <strong>Mike's Plumbing Austin</strong> by <a href="https://almadigitaldesigns.com">Alma Digital Designs</a>. Interested in going live? Reply to our email!
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="8" fill="#1a4fad"/>
+      <path d="M12 28c0-8 4-14 8-14s8 6 8 14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M20 14v-4M14 16l-2-3M26 16l2-3" stroke="#e86b1a" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="20" cy="28" r="2" fill="#f9c74f"/>
+    </svg>
+    <div>
+      <div class="nav-logo-text">Mike's <span>Plumbing</span></div>
+      <div class="nav-logo-sub">Austin, TX — Licensed &amp; Insured</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact" class="nav-cta">Get Free Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l1.6 4.8L15 5.6l-3.6 3.4.9 5.4L8 12l-4.3 2.4.9-5.4L1 5.6l5.4-.8z"/></svg>
+        Austin's #1 Rated Plumbers
+      </div>
+      <h1>Fast, Reliable Plumbing<br/>for <span>Austin Homes</span><br/>&amp; Businesses</h1>
+      <p class="hero-sub">From emergency repairs to full remodels — Mike's team arrives on time, every time. Serving Austin and surrounding areas since 2009.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">📞 Get a Free Quote</a>
+        <a href="#services" class="btn-secondary">View Our Services</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 16 16" fill="#86efac"><path d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12zm-1-5h2V6H7v3zm0 2h2v-1.5H7V11z"/></svg>
+          Licensed &amp; Insured
+        </div>
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 16 16" fill="#86efac"><path d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12zm-1-5h2V6H7v3zm0 2h2v-1.5H7V11z"/></svg>
+          Same-Day Service
+        </div>
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 16 16" fill="#86efac"><path d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12zm-1-5h2V6H7v3zm0 2h2v-1.5H7V11z"/></svg>
+          Upfront Pricing
+        </div>
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 16 16" fill="#86efac"><path d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12zm-1-5h2V6H7v3zm0 2h2v-1.5H7V11z"/></svg>
+          15-Year Guarantee
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-image-card">
+        <div class="hero-img-placeholder">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 54c0-14 8-24 18-24s18 10 18 24" stroke="#1a4fad" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M36 30V18M24 33l-4-6M48 33l4-6" stroke="#e86b1a" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="36" cy="54" r="4" fill="#1a4fad"/>
+            <rect x="8" y="58" width="56" height="6" rx="3" fill="#e2e6f0"/>
+          </svg>
+          <p>Hero image: plumber on the job in Austin</p>
+        </div>
+        <div class="hero-card-info">
+          <div class="hero-card-avatar">M</div>
+          <div>
+            <div class="hero-card-name">Mike Rodriguez, Master Plumber</div>
+            <div class="hero-card-rating">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              <span style="font-size:.78rem;color:#6b7280;margin-left:4px">4.9 (312 reviews)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years Serving Austin</div>
+    </div>
+    <div>
+      <div class="stat-num">4,200+</div>
+      <div class="stat-label">Jobs Completed</div>
+    </div>
+    <div>
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Average Google Rating</div>
+    </div>
+    <div>
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Emergency Service</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="services-header">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">Expert Plumbing Services<br/>for Every Need</h2>
+      <p class="section-desc">From dripping faucets to full pipe replacements, Mike's team handles it all with speed and professionalism.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#1a4fad" stroke-width="2" stroke-linecap="round"><path d="M13 3v6M10 6l3-3 3 3M6 13H3M23 13h-3M13 23v-3M6.5 6.5l2 2M17.5 6.5l-2 2M6.5 19.5l2-2M17.5 19.5l-2-2"/><circle cx="13" cy="13" r="4"/></svg>
+        </div>
+        <div class="service-title">Emergency Repairs</div>
+        <div class="service-desc">Burst pipes, major leaks, or total drain failures — we respond fast, day or night, to protect your home from water damage.</div>
+        <a class="service-link" href="#contact">Book Emergency Call →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#1a4fad" stroke-width="2" stroke-linecap="round"><rect x="3" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a5 5 0 0110 0v2"/><path d="M13 13v4"/><circle cx="13" cy="12" r="1.5" fill="#1a4fad"/></svg>
+        </div>
+        <div class="service-title">Drain Cleaning</div>
+        <div class="service-desc">Slow or clogged drains? We clear kitchen, bathroom, and sewer lines using hydro-jetting and professional snaking tools.</div>
+        <a class="service-link" href="#contact">Schedule Service →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#1a4fad" stroke-width="2" stroke-linecap="round"><path d="M5 21V10l8-7 8 7v11"/><path d="M10 21v-6h6v6"/></svg>
+        </div>
+        <div class="service-title">Bathroom Remodels</div>
+        <div class="service-desc">Full bathroom plumbing for renovations — showers, tubs, vanities, and toilets installed right the first time.</div>
+        <a class="service-link" href="#contact">Get a Quote →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#1a4fad" stroke-width="2" stroke-linecap="round"><ellipse cx="13" cy="9" rx="7" ry="5"/><path d="M6 9v8c0 2.8 3.1 5 7 5s7-2.2 7-5V9"/></svg>
+        </div>
+        <div class="service-title">Water Heater Service</div>
+        <div class="service-desc">Installation, repair, and maintenance for traditional tank and tankless water heaters. We carry all major brands.</div>
+        <a class="service-link" href="#contact">Book Appointment →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#1a4fad" stroke-width="2" stroke-linecap="round"><path d="M5 5l16 16M5 21l6-6M15 7l4 4"/><path d="M9 5a6 6 0 018.5 8.5"/></svg>
+        </div>
+        <div class="service-title">Leak Detection</div>
+        <div class="service-desc">Using advanced acoustic and thermal tools, we find hidden leaks behind walls and under slabs without tearing up your home.</div>
+        <a class="service-link" href="#contact">Find My Leak →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#1a4fad" stroke-width="2" stroke-linecap="round"><path d="M4 4h18v14H4zM8 22h10M13 18v4"/><circle cx="13" cy="11" r="3"/></svg>
+        </div>
+        <div class="service-title">Commercial Plumbing</div>
+        <div class="service-desc">Restaurants, offices, and multi-family buildings — we handle commercial jobs with minimal disruption to your operations.</div>
+        <a class="service-link" href="#contact">Request a Bid →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER REDESIGN -->
+<section class="redesign" id="redesign">
+  <div class="section-inner">
+    <div class="redesign-header">
+      <div class="section-eyebrow">Website Comparison</div>
+      <h2 class="section-title">Before &amp; After: Your Website Transformed</h2>
+      <p class="section-desc">See how a modern design converts more visitors into booked jobs — crafted specifically for Mike's Plumbing by Alma Digital Designs.</p>
+    </div>
+
+    <div class="ba-container">
+      <div class="ba-card">
+        <div class="ba-label before">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12zm-1-5h2V6H7v3zm0 2h2v-1.5H7V11z"/></svg>
+          Current Website — Issues Found
+        </div>
+        <div class="ba-screen before-screen">
+          <div class="old-nav">
+            <span style="font-weight:700">MIKE'S PLUMBING</span>
+            <span>Home | Services | Contact</span>
+          </div>
+          <div class="old-hero-block">
+            <h3>Mike's Plumbing Austin TX</h3>
+            <p>We do plumbing in Austin. Call us today for all your plumbing needs.</p>
+            <span class="old-hero-btn">Call Now</span>
+          </div>
+          <div class="old-issues">
+            <span class="old-issue-tag">⚠ No mobile optimization</span>
+            <span class="old-issue-tag">⚠ Tiny unreadable text</span>
+            <span class="old-issue-tag">⚠ No trust signals</span>
+            <span class="old-issue-tag">⚠ Poor contrast</span>
+            <span class="old-issue-tag">⚠ Slow load time</span>
+          </div>
+          <div class="old-services-row">
+            <div class="old-svc"><strong>Repairs</strong>We fix pipes and drains</div>
+            <div class="old-svc"><strong>Install</strong>New plumbing install</div>
+            <div class="old-svc"><strong>Emergency</strong>24 hour service</div>
+          </div>
+          <div class="old-contact">Call us: (512) 555-0100</div>
+          <div class="old-footer">© 2014 Mike's Plumbing. All rights reserved.</div>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-label after">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12zm3.5-8.5l-4 4a.75.75 0 01-1.06 0l-2-2a.75.75 0 111.06-1.06L7 9l3.47-3.47a.75.75 0 111.06 1.06z"/></svg>
+          Redesigned Website — Conversion-Optimized
+        </div>
+        <div class="ba-screen after-screen">
+          <div class="new-nav">
+            <div class="new-nav-logo">Mike's Plumbing 🔧</div>
+            <div class="new-nav-links">
+              <span>Services</span><span>Reviews</span><span>About</span>
+            </div>
+            <div class="new-cta-btn">Free Quote</div>
+          </div>
+          <div class="new-hero">
+            <div class="new-hero-badge">⭐ Austin's #1 Rated</div>
+            <h3>Fast, Reliable Plumbing<br/>for <em>Austin Homes</em></h3>
+            <p>Licensed since 2009 · Same-day service · Upfront pricing</p>
+            <div class="new-hero-btns">
+              <div class="new-btn-p">📞 Free Quote</div>
+              <div class="new-btn-s">Our Services</div>
+            </div>
+          </div>
+          <div class="new-stats">
+            <div class="new-stat"><div class="new-stat-num">15+</div><div class="new-stat-label">Years</div></div>
+            <div class="new-stat"><div class="new-stat-num">4.9★</div><div class="new-stat-label">Rating</div></div>
+            <div class="new-stat"><div class="new-stat-num">4,200+</div><div class="new-stat-label">Jobs Done</div></div>
+            <div class="new-stat"><div class="new-stat-num">24/7</div><div class="new-stat-label">Available</div></div>
+          </div>
+          <div class="new-svcs">
+            <div class="new-svc"><div class="new-svc-icon">🔧</div><div class="new-svc-name">Emergency</div><div class="new-svc-desc">Same day</div></div>
+            <div class="new-svc"><div class="new-svc-icon">🚿</div><div class="new-svc-name">Drains</div><div class="new-svc-desc">Cleared fast</div></div>
+            <div class="new-svc"><div class="new-svc-icon">🏠</div><div class="new-svc-name">Remodel</div><div class="new-svc-desc">Full installs</div></div>
+            <div class="new-svc"><div class="new-svc-icon">💧</div><div class="new-svc-name">Leaks</div><div class="new-svc-desc">Detected fast</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-improvements">
+      <div class="improvement-chip">
+        <div class="improvement-icon green">
+          <svg viewBox="0 0 18 18" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"><path d="M3 9l4.5 4.5L15 5"/></svg>
+        </div>
+        <div>
+          <div class="improvement-label">+73% More Quote Requests</div>
+          <div class="improvement-desc">Clear CTAs and trust signals drive more visitors to contact you instead of bouncing.</div>
+        </div>
+      </div>
+      <div class="improvement-chip">
+        <div class="improvement-icon blue">
+          <svg viewBox="0 0 18 18" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 5V4a3 3 0 016 0v1"/></svg>
+        </div>
+        <div>
+          <div class="improvement-label">Mobile-First Design</div>
+          <div class="improvement-desc">Over 65% of local searches happen on mobile — your new site is optimized for every screen size.</div>
+        </div>
+      </div>
+      <div class="improvement-chip">
+        <div class="improvement-icon orange">
+          <svg viewBox="0 0 18 18" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"><circle cx="9" cy="9" r="6"/><path d="M9 5v4l2.5 2.5"/></svg>
+        </div>
+        <div>
+          <div class="improvement-label">3× Faster Load Speed</div>
+          <div class="improvement-desc">Optimized assets and clean code mean your site loads fast — Google rewards speed with higher rankings.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+  <div class="section-inner">
+    <div class="testimonials-header">
+      <div class="section-eyebrow">What Austin Says</div>
+      <h2 class="section-title">Trusted by Hundreds of Austin Homeowners</h2>
+      <p class="section-desc">Don't take our word for it — here's what real customers have to say about Mike's team.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="testimonial-text">"Pipe burst at 11pm on a Sunday. Mike's team was here within 40 minutes. They fixed everything and were professional the whole time. Amazing service — will never call another plumber."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#0f3580">JT</div>
+          <div>
+            <div class="testimonial-name">James T.</div>
+            <div class="testimonial-role">South Austin Homeowner · Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="testimonial-text">"Hired Mike's for a full bathroom remodel — they coordinated everything perfectly. The guys were on time, cleaned up daily, and the finished plumbing looks and works beautifully."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#7c3aed">MR</div>
+          <div>
+            <div class="testimonial-name">Maria R.</div>
+            <div class="testimonial-role">North Austin · Yelp Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="testimonial-text">"I run a restaurant in downtown Austin. Had a serious drainage issue during dinner rush. One call and Mike's crew was here fast, fixed it cleanly, and we were back open. Heroes."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#e86b1a">DK</div>
+          <div>
+            <div class="testimonial-name">David K.</div>
+            <div class="testimonial-role">Restaurant Owner · Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-eyebrow" style="color:#f9c74f">Get In Touch</div>
+        <h2>Ready for a Free Quote?</h2>
+        <p>No pressure, no hidden fees — just honest answers and upfront pricing from Austin's most trusted plumbing team.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">(512) 555-0100</div>
+              <div style="font-size:.82rem;opacity:.7">Available 24/7 for Emergencies</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">mike@mikesplumbingaustin.com</div>
+              <div style="font-size:.82rem;opacity:.7">Typically replies within 2 hours</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">Serving Greater Austin, TX</div>
+              <div style="font-size:.82rem;opacity:.7">Cedar Park · Round Rock · Pflugerville · Buda</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-card">
+        <div class="form-title">Request Your Free Quote</div>
+        <div class="form-sub">Fill out the form and we'll get back to you within 2 hours.</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(512) 555-0100" />
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select>
+            <option>Select a service...</option>
+            <option>Emergency Repair</option>
+            <option>Drain Cleaning</option>
+            <option>Bathroom Remodel</option>
+            <option>Water Heater</option>
+            <option>Leak Detection</option>
+            <option>Commercial Plumbing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Describe the Issue</label>
+          <textarea placeholder="Tell us what's going on — the more detail, the better we can help..."></textarea>
+        </div>
+        <button class="form-submit" onclick="alert('This is a preview — form submissions are not live yet!')">Send My Free Quote Request →</button>
+        <div class="form-privacy">🔒 We never share your information. No spam, ever.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Mike's Plumbing Austin</div>
+        <div class="footer-brand-desc">Serving Austin homeowners and businesses since 2009. Licensed, insured, and committed to getting the job done right the first time.</div>
+        <div style="font-size:0.8rem;color:#6b7280">License #: TX-PLB-20094712</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#contact">Emergency Repairs</a></li>
+          <li><a href="#contact">Drain Cleaning</a></li>
+          <li><a href="#contact">Bathroom Remodels</a></li>
+          <li><a href="#contact">Water Heater</a></li>
+          <li><a href="#contact">Leak Detection</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Areas We Serve</div>
+        <ul class="footer-links">
+          <li><a href="#">Austin, TX</a></li>
+          <li><a href="#">Cedar Park</a></li>
+          <li><a href="#">Round Rock</a></li>
+          <li><a href="#">Pflugerville</a></li>
+          <li><a href="#">Buda &amp; Kyle</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#home">About Mike</a></li>
+          <li><a href="#reviews">Customer Reviews</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>© 2025 Mike's Plumbing Austin. All rights reserved.</span>
+      <span>⭐ 4.9 · 312 Google Reviews · Licensed &amp; Insured Since 2009</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ALMA WATERMARK -->
+<div class="alma-watermark">
+  This is a complimentary redesign preview by <a href="https://almadigitaldesigns.com">Alma Digital Designs</a> — Want this live? Reply to our email or call us today.
+</div>
+
+</body>
+</html>
