@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Electric Man — Website Preview | Alma Digital Designs</title>
+  <meta name="description" content="Modern website redesign preview for The Electric Man — West Columbia, SC electrician serving Lexington and Aiken Counties." />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #f5c518;
+      --yellow-dark: #d4a80e;
+      --yellow-light: #fde87a;
+      --navy: #0d1b2a;
+      --navy-mid: #1a3250;
+      --navy-light: #254d78;
+      --gray-50: #f8f9fc;
+      --gray-100: #f0f2f8;
+      --gray-200: #e2e6f0;
+      --gray-600: #4b5563;
+      --gray-800: #1f2937;
+      --white: #ffffff;
+      --radius: 12px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+      --shadow-md: 0 6px 24px rgba(0,0,0,.12);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,.16);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--gray-800); background: var(--white); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== PREVIEW BANNER ===== */
+    .preview-banner {
+      background: linear-gradient(90deg, #0d1b2a, #1a3250);
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .preview-banner strong { color: var(--yellow); }
+    .preview-banner a { color: var(--yellow); text-decoration: underline; font-weight: 600; }
+
+    /* ===== NAV ===== */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo svg { width: 42px; height: 42px; }
+    .nav-logo-text { font-size: 1.35rem; font-weight: 900; color: var(--navy); line-height: 1.1; }
+    .nav-logo-text span { color: var(--yellow-dark); }
+    .nav-logo-sub { font-size: 0.72rem; color: var(--gray-600); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); transition: color .2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--navy) !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 800 !important;
+      font-size: 0.88rem !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--yellow-dark) !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
+      color: white;
+      padding: 96px 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f5c518' fill-opacity='0.04'%3E%3Cpath d='M40 0 L48 28 L80 28 L56 46 L64 74 L40 56 L16 74 L24 46 L0 28 L32 28 Z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    /* Lightning bolt decorative element */
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(245,197,24,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,197,24,.12); border: 1px solid rgba(245,197,24,.3); border-radius: 999px; padding: 5px 14px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 18px; color: var(--yellow-light); }
+    .hero-badge svg { width: 14px; height: 14px; }
+    h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.12; margin-bottom: 20px; }
+    h1 span { color: var(--yellow); }
+    .hero-sub { font-size: 1.1rem; opacity: .85; margin-bottom: 32px; max-width: 480px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--yellow); color: var(--navy); padding: 14px 32px; border-radius: 8px; font-weight: 800; font-size: 1rem; box-shadow: 0 4px 16px rgba(245,197,24,.35); transition: all .2s; display: inline-block; }
+    .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,197,24,.45); }
+    .btn-secondary { background: transparent; color: white; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; border: 2px solid rgba(255,255,255,.35); transition: all .2s; display: inline-block; }
+    .btn-secondary:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.6); }
+    .hero-stats { display: flex; gap: 36px; margin-top: 40px; flex-wrap: wrap; }
+    .hero-stat { }
+    .hero-stat-num { font-size: 2rem; font-weight: 900; color: var(--yellow); line-height: 1; }
+    .hero-stat-label { font-size: 0.8rem; opacity: .7; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 2px; }
+
+    /* Hero mockup card */
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 32px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-card-title { font-size: 1rem; font-weight: 700; color: var(--yellow); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .problem-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .problem-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; opacity: .85; }
+    .problem-list .icon-bad { color: #ef4444; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+    .problem-list .icon-good { color: #22c55e; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+    .vs-divider { text-align: center; margin: 18px 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: .5; position: relative; }
+    .vs-divider::before, .vs-divider::after { content: ''; position: absolute; top: 50%; width: 35%; height: 1px; background: rgba(255,255,255,.2); }
+    .vs-divider::before { left: 0; }
+    .vs-divider::after { right: 0; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: var(--gray-600); }
+    .trust-item svg { color: var(--yellow-dark); width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* ===== AWARD BANNER ===== */
+    .award-banner {
+      background: linear-gradient(90deg, var(--yellow) 0%, var(--yellow-light) 100%);
+      padding: 18px 5%;
+      text-align: center;
+    }
+    .award-inner { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .award-badge { background: var(--navy); color: var(--yellow); padding: 6px 18px; border-radius: 999px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+    .award-text { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 80px 5%; }
+    .section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--yellow-dark); margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+    .section-title span { color: var(--yellow-dark); }
+    .section-sub { font-size: 1.05rem; color: var(--gray-600); max-width: 560px; }
+    .section-header { margin-bottom: 52px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* ===== SERVICES ===== */
+    .services-bg { background: var(--gray-50); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: all .25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--yellow), var(--yellow-dark));
+      transform: scaleX(0);
+      transition: transform .25s;
+      transform-origin: left;
+    }
+    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--yellow-dark); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--navy), var(--navy-mid)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .service-icon svg { width: 26px; height: 26px; color: var(--yellow); }
+    .service-name { font-size: 1.1rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .service-desc { font-size: 0.9rem; color: var(--gray-600); line-height: 1.55; }
+
+    /* ===== WHY US ===== */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .why-visual {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 20px;
+      padding: 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-visual::after {
+      content: '⚡';
+      position: absolute;
+      bottom: -20px;
+      right: -10px;
+      font-size: 120px;
+      opacity: 0.07;
+      line-height: 1;
+    }
+    .score-row { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+    .score-label { font-size: 0.85rem; font-weight: 600; width: 140px; flex-shrink: 0; opacity: .85; }
+    .score-bar-track { flex: 1; height: 8px; background: rgba(255,255,255,.12); border-radius: 999px; overflow: hidden; }
+    .score-bar-fill { height: 100%; border-radius: 999px; }
+    .score-bar-fill.bad { background: #ef4444; }
+    .score-bar-fill.good { background: var(--yellow); }
+    .score-num { font-size: 0.85rem; font-weight: 700; width: 36px; text-align: right; }
+    .score-num.bad { color: #ef4444; }
+    .score-num.good { color: var(--yellow); }
+    .why-visual-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 24px; color: var(--yellow); }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .why-item { display: flex; align-items: flex-start; gap: 14px; }
+    .why-item-icon { width: 40px; height: 40px; background: rgba(245,197,24,.1); border: 1px solid rgba(245,197,24,.25); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .why-item-icon svg { width: 20px; height: 20px; color: var(--yellow); }
+    .why-item-text strong { font-size: 0.95rem; font-weight: 700; color: var(--navy); display: block; margin-bottom: 2px; }
+    .why-item-text p { font-size: 0.88rem; color: var(--gray-600); }
+    @media (max-width: 800px) { .why-grid { grid-template-columns: 1fr; } }
+
+    /* ===== PORTFOLIO ===== */
+    .portfolio-bg { background: var(--gray-50); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .portfolio-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all .25s;
+    }
+    .portfolio-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .portfolio-thumb {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-thumb::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.5) 100%);
+    }
+    .portfolio-info { padding: 20px 22px; }
+    .portfolio-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--yellow-dark); margin-bottom: 6px; }
+    .portfolio-title { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .portfolio-loc { font-size: 0.85rem; color: var(--gray-600); display: flex; align-items: center; gap: 4px; }
+
+    /* ===== QUOTE FORM ===== */
+    .quote-section { background: var(--navy); color: white; }
+    .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; }
+    .quote-section .section-title { color: white; }
+    .quote-section .section-title span { color: var(--yellow); }
+    .quote-section .section-sub { color: rgba(255,255,255,.7); }
+    .quote-perks { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+    .quote-perk { display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: rgba(255,255,255,.85); }
+    .quote-perk-check { width: 24px; height: 24px; background: rgba(245,197,24,.15); border: 1px solid rgba(245,197,24,.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--yellow); font-size: 0.75rem; }
+    .quote-form-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    }
+    .form-title { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .form-sub { font-size: 0.88rem; color: var(--gray-600); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; letter-spacing: 0.02em; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--gray-800);
+      background: var(--white);
+      transition: border .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--yellow-dark); box-shadow: 0 0 0 3px rgba(245,197,24,.12); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%;
+      background: var(--yellow);
+      color: var(--navy);
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all .2s;
+      letter-spacing: 0.02em;
+    }
+    .form-submit:hover { background: var(--yellow-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(245,197,24,.35); }
+    .form-disclaimer { font-size: 0.75rem; color: var(--gray-600); text-align: center; margin-top: 10px; }
+    @media (max-width: 800px) {
+      .quote-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+    }
+    .review-stars { color: var(--yellow); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .review-text { font-size: 0.92rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 18px; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--navy-mid)); display: flex; align-items: center; justify-content: center; color: var(--yellow); font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+    .review-name { font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+    .review-location { font-size: 0.78rem; color: var(--gray-600); }
+    .review-source { position: absolute; top: 18px; right: 18px; font-size: 0.72rem; font-weight: 600; color: var(--gray-600); background: var(--gray-100); padding: 3px 8px; border-radius: 999px; }
+
+    /* ===== LOCAL SEO SECTION ===== */
+    .local-bg { background: var(--gray-50); }
+    .local-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .local-map {
+      background: linear-gradient(135deg, #e8f0fe 0%, #d4e3fc 100%);
+      border-radius: 16px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gray-200);
+      font-size: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .local-map::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(13,27,42,.04) 40px, rgba(13,27,42,.04) 41px),
+                  repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(13,27,42,.04) 40px, rgba(13,27,42,.04) 41px);
+    }
+    .local-map-pin { position: relative; z-index: 1; text-align: center; }
+    .local-map-pin-dot { width: 24px; height: 24px; background: var(--yellow); border: 3px solid var(--navy); border-radius: 50%; margin: 0 auto 6px; box-shadow: 0 0 0 8px rgba(245,197,24,.2); }
+    .local-map-label { background: var(--navy); color: white; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+    .area-tags { display: flex; flex-wrap: gap; gap: 10px; margin-top: 20px; }
+    .area-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--gray-200); padding: 8px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; color: var(--navy); box-shadow: var(--shadow-sm); }
+    .area-tag svg { width: 14px; height: 14px; color: var(--yellow-dark); }
+    @media (max-width: 800px) { .local-grid { grid-template-columns: 1fr; } }
+
+    /* ===== CTA STRIP ===== */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-light) 100%);
+      padding: 60px 5%;
+      text-align: center;
+    }
+    .cta-strip h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 10px; }
+    .cta-strip p { font-size: 1.05rem; color: rgba(13,27,42,.7); margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-strip-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-dark { background: var(--navy); color: var(--yellow); padding: 14px 32px; border-radius: 8px; font-weight: 800; font-size: 1rem; transition: all .2s; display: inline-block; }
+    .btn-dark:hover { background: var(--navy-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(13,27,42,.25); }
+    .btn-outline-dark { background: transparent; color: var(--navy); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; border: 2px solid rgba(13,27,42,.3); transition: all .2s; display: inline-block; }
+    .btn-outline-dark:hover { background: rgba(13,27,42,.08); border-color: var(--navy); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.6);
+      padding: 48px 5% 32px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-logo-text { font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 10px; }
+    .footer-logo-text span { color: var(--yellow); }
+    .footer-desc { font-size: 0.88rem; line-height: 1.6; max-width: 320px; }
+    .footer-head { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--yellow); margin-bottom: 14px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-links li a { font-size: 0.88rem; color: rgba(255,255,255,.6); transition: color .2s; }
+    .footer-links li a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.78rem; }
+    .footer-alma { color: var(--yellow); font-weight: 600; }
+    @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    /* ===== PREVIEW WATERMARK ===== */
+    .preview-note {
+      background: linear-gradient(135deg, #fef9e7, #fefce8);
+      border: 1px solid var(--yellow-dark);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin: 40px 5%;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .preview-note-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .preview-note-text strong { font-size: 1rem; font-weight: 800; color: var(--navy); display: block; margin-bottom: 4px; }
+    .preview-note-text p { font-size: 0.88rem; color: var(--gray-600); }
+    .preview-note-text a { color: var(--navy-light); font-weight: 600; text-decoration: underline; }
+
+    /* Mobile responsive */
+    @media (max-width: 600px) {
+      section { padding: 60px 5%; }
+      .hero { padding: 64px 5% 56px; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preview Banner -->
+  <div class="preview-banner">
+    <strong>⚡ FREE WEBSITE PREVIEW</strong> — This is a custom redesign mockup for <strong>The Electric Man</strong>, prepared by <strong>Alma Digital Designs</strong>. <a href="mailto:hello@almadigitaldesigns.com">Get the full site →</a>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-logo">
+      <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="21" cy="21" r="21" fill="#0d1b2a"/>
+        <path d="M24 8L14 22h8l-4 12L28 20h-8l4-12z" fill="#f5c518"/>
+      </svg>
+      <div>
+        <div class="nav-logo-text">The Electric <span>Man</span></div>
+        <div class="nav-logo-sub">Licensed Electrician · West Columbia, SC</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Service Areas</a>
+      <a href="#quote" class="nav-cta">Get Free Quote</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9 11H2L8 16L6 23L12 18L18 23L16 16L22 11H15L12 2Z"/></svg>
+          Quality Business Awards 2026 Winner
+        </div>
+        <h1>West Columbia's <span>Trusted Electrician</span> — Done Right, Every Time</h1>
+        <p class="hero-sub">Licensed, insured, and locally rooted in West Columbia. Serving Lexington and Aiken Counties with residential, commercial, and emergency electrical services.</p>
+        <div class="hero-actions">
+          <a href="#quote" class="btn-primary">⚡ Get a Free Quote</a>
+          <a href="tel:+18035550100" class="btn-secondary">📞 Call (803) 555-0100</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Jobs Completed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">Years Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">4.9★</div>
+            <div class="hero-stat-label">Google Rating</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M2 12h20"/></svg>
+          Old Site vs. This Redesign
+        </div>
+        <ul class="problem-list">
+          <li><span class="icon-bad">✗</span> 2014-era Divi design — looks dated on mobile</li>
+          <li><span class="icon-bad">✗</span> No online quote request form</li>
+          <li><span class="icon-bad">✗</span> No portfolio or project gallery</li>
+          <li><span class="icon-bad">✗</span> Slow load times hurt Google rankings</li>
+          <li><span class="icon-bad">✗</span> No trust signals or award badges</li>
+        </ul>
+        <div class="vs-divider">replaced with</div>
+        <ul class="problem-list">
+          <li><span class="icon-good">✓</span> Modern, lightning-fast mobile-first design</li>
+          <li><span class="icon-good">✓</span> Instant online quote &amp; booking form</li>
+          <li><span class="icon-good">✓</span> Project gallery with real work examples</li>
+          <li><span class="icon-good">✓</span> Under 2s load time, 95+ PageSpeed score</li>
+          <li><span class="icon-good">✓</span> 2026 Quality Business Award front &amp; center</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      Licensed &amp; Insured
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      Same-Day Service Available
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9 11H2L8 16L6 23L12 18L18 23L16 16L22 11H15L12 2Z"/></svg>
+      Quality Business Awards 2026
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg>
+      Lexington &amp; Aiken Counties
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      4.9 Stars · 200+ Reviews
+    </div>
+  </div>
+
+  <!-- Award Banner -->
+  <div class="award-banner">
+    <div class="award-inner">
+      <span class="award-badge">⭐ 2026 Winner</span>
+      <span class="award-text">The Electric Man was recognized with the <strong>Quality Business Awards 2026</strong> — honoring excellence and customer satisfaction in the electrical trade.</span>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="services-bg" id="services">
+    <div class="section-header center">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Complete Electrical Services for <span>Home &amp; Business</span></h2>
+      <p class="section-sub">From panel upgrades to EV charger installs — licensed, reliable, and right the first time.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="service-name">Panel Upgrades</div>
+        <p class="service-desc">Outdated breaker box? We upgrade electrical panels to handle modern loads safely and bring your home up to code.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="service-name">Whole-Home Rewiring</div>
+        <p class="service-desc">Older home with aluminum or cloth wiring? We re-wire safely and efficiently with minimal disruption to your family.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <div class="service-name">EV Charger Installation</div>
+        <p class="service-desc">Level 2 home charging station installation for all major EV brands. Fast, safe, and properly permitted.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-name">Generator Hook-ups</div>
+        <p class="service-desc">Whole-home and standby generator installation and transfer switch wiring — stay powered during SC storms.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <div class="service-name">Commercial Electrical</div>
+        <p class="service-desc">Office buildouts, retail lighting, 3-phase power, and code compliance for businesses across the Midlands.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <div class="service-name">Lighting &amp; Outlets</div>
+        <p class="service-desc">Recessed lighting, dimmer switches, smart home wiring, GFCI outlets, and custom lighting design for every room.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section id="why">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">West Columbia's <span>Most Trusted</span> Electrician</h2>
+        <p class="section-sub">Rhett and his team have been serving the Midlands for over 15 years. No shortcuts, no surprises.</p>
+        <ul class="why-list" style="margin-top: 32px;">
+          <li class="why-item">
+            <div class="why-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="why-item-text">
+              <strong>Upfront, Flat-Rate Pricing</strong>
+              <p>You get a detailed quote before any work begins. The price you see is the price you pay — no after-the-fact surprises.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="why-item-text">
+              <strong>On-Time or It's Free</strong>
+              <p>We respect your time. If we're late without notice, your service call fee is waived — that's our promise.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="why-item-text">
+              <strong>Fully Licensed &amp; Insured in SC</strong>
+              <p>All work is permitted, inspected, and backed by our 1-year workmanship warranty. Sleep soundly.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <div class="why-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+            </div>
+            <div class="why-item-text">
+              <strong>Locally Owned by Rhett</strong>
+              <p>When you call, you reach us — not a national dispatch center. Rhett built this business on referrals and that trust matters.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-visual">
+        <div class="why-visual-title">⚡ Performance vs. Current Site</div>
+        <div class="score-row">
+          <div class="score-label">Mobile Speed</div>
+          <div class="score-bar-track"><div class="score-bar-fill bad" style="width: 34%"></div></div>
+          <div class="score-num bad">34</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">→ After Redesign</div>
+          <div class="score-bar-track"><div class="score-bar-fill good" style="width: 96%"></div></div>
+          <div class="score-num good">96</div>
+        </div>
+        <div class="score-row" style="margin-top: 8px;">
+          <div class="score-label">SEO Score</div>
+          <div class="score-bar-track"><div class="score-bar-fill bad" style="width: 42%"></div></div>
+          <div class="score-num bad">42</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">→ After Redesign</div>
+          <div class="score-bar-track"><div class="score-bar-fill good" style="width: 93%"></div></div>
+          <div class="score-num good">93</div>
+        </div>
+        <div class="score-row" style="margin-top: 8px;">
+          <div class="score-label">Conversion Rate</div>
+          <div class="score-bar-track"><div class="score-bar-fill bad" style="width: 18%"></div></div>
+          <div class="score-num bad" style="font-size: 0.75rem;">~1%</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">→ Projected</div>
+          <div class="score-bar-track"><div class="score-bar-fill good" style="width: 55%"></div></div>
+          <div class="score-num good" style="font-size: 0.75rem;">3-5%</div>
+        </div>
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); font-size: 0.82rem; opacity: .7; line-height: 1.55;">
+          Estimated from current site audit. Final scores depend on hosting and optimizations applied during full build.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio-bg" id="portfolio">
+    <div class="section-header center">
+      <div class="section-label">Our Work</div>
+      <h2 class="section-title">Recent Projects Across <span>Lexington &amp; Aiken Counties</span></h2>
+      <p class="section-sub">Real jobs, real results. Every project completed on time and code-compliant.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #1a3250, #0d1b2a);">
+          <div style="position:relative;z-index:1;font-size:3rem;">⚡</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Panel Upgrade</div>
+          <div class="portfolio-title">200A Service Upgrade — Single Family Home</div>
+          <div class="portfolio-loc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            West Columbia, SC
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #254d78, #1a3250);">
+          <div style="position:relative;z-index:1;font-size:3rem;">🔌</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">EV Charging</div>
+          <div class="portfolio-title">Level 2 Tesla Charger Install — New Construction</div>
+          <div class="portfolio-loc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Lexington, SC
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #0d1b2a, #254d78);">
+          <div style="position:relative;z-index:1;font-size:3rem;">💡</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Lighting Design</div>
+          <div class="portfolio-title">Full Recessed Lighting &amp; Smart Dimmer System</div>
+          <div class="portfolio-loc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Cayce, SC
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #1a3250, #254d78);">
+          <div style="position:relative;z-index:1;font-size:3rem;">🏭</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Commercial</div>
+          <div class="portfolio-title">3-Phase Power Buildout — Retail Strip Mall</div>
+          <div class="portfolio-loc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Aiken, SC
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #0d1b2a, #1a3250);">
+          <div style="position:relative;z-index:1;font-size:3rem;">🔦</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Generator</div>
+          <div class="portfolio-title">Whole-Home Generac Standby Install</div>
+          <div class="portfolio-loc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            North Augusta, SC
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background: linear-gradient(135deg, #254d78, #0d1b2a);">
+          <div style="position:relative;z-index:1;font-size:3rem;">🏠</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Rewiring</div>
+          <div class="portfolio-title">Complete Rewire — 1970s Ranch Home</div>
+          <div class="portfolio-loc">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Batesburg-Leesville, SC
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="section-header center">
+      <div class="section-label">Customer Reviews</div>
+      <h2 class="section-title">What Homeowners Are <span>Saying</span></h2>
+      <p class="section-sub">200+ verified reviews across Google and Facebook. Rhett's team earns trust one job at a time.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-source">Google</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Rhett came out the same day I called and had our panel upgraded by end of business. Pricing was clear upfront and there were zero hidden fees. Absolutely the best electrician in West Columbia."</p>
+        <div class="review-author">
+          <div class="review-avatar">JT</div>
+          <div>
+            <div class="review-name">James T.</div>
+            <div class="review-location">West Columbia, SC</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-source">Google</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Had them install a Level 2 EV charger in my garage. They pulled the permit, handled everything, and even patched the drywall. Super professional. Highly recommend to anyone in the Lexington area."</p>
+        <div class="review-author">
+          <div class="review-avatar">SM</div>
+          <div>
+            <div class="review-name">Sarah M.</div>
+            <div class="review-location">Lexington, SC</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-source">Facebook</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Used The Electric Man for our office buildout in Aiken. On time, on budget, and inspections passed first try. They wired everything right and we haven't had a single issue. Worth every penny."</p>
+        <div class="review-author">
+          <div class="review-avatar">KR</div>
+          <div>
+            <div class="review-name">Kevin R.</div>
+            <div class="review-location">Aiken, SC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section class="quote-section" id="quote">
+    <div class="quote-grid">
+      <div>
+        <div class="section-label" style="color: var(--yellow);">Free Estimate</div>
+        <h2 class="section-title">Request Your <span>Free Quote</span> in 60 Seconds</h2>
+        <p class="section-sub">No obligation. We'll review your project and get back to you within 2 business hours.</p>
+        <ul class="quote-perks">
+          <li class="quote-perk">
+            <div class="quote-perk-check">✓</div>
+            Detailed written estimate — no vague ballparks
+          </li>
+          <li class="quote-perk">
+            <div class="quote-perk-check">✓</div>
+            No pressure, no upsells, no hidden fees
+          </li>
+          <li class="quote-perk">
+            <div class="quote-perk-check">✓</div>
+            Same-day or next-day service often available
+          </li>
+          <li class="quote-perk">
+            <div class="quote-perk-check">✓</div>
+            All work permitted and inspected in SC
+          </li>
+          <li class="quote-perk">
+            <div class="quote-perk-check">✓</div>
+            Serving West Columbia, Lexington &amp; Aiken Counties
+          </li>
+        </ul>
+      </div>
+      <div class="quote-form-card">
+        <div class="form-title">⚡ Get a Free Estimate</div>
+        <div class="form-sub">Fill out the form and Rhett's team will contact you within 2 hours.</div>
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(803) 555-0123" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select>
+              <option value="">— Select a service —</option>
+              <option>Panel Upgrade / Replacement</option>
+              <option>Whole-Home Rewiring</option>
+              <option>EV Charger Installation</option>
+              <option>Generator Hook-up</option>
+              <option>Lighting / Outlet Installation</option>
+              <option>Commercial Electrical</option>
+              <option>Emergency Repair</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>City / Address</label>
+            <input type="text" placeholder="West Columbia, SC" />
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Project</label>
+            <textarea placeholder="Brief description of the work needed..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Free Quote Request ⚡</button>
+          <p class="form-disclaimer">We respect your privacy. No spam, ever.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local SEO -->
+  <section class="local-bg" id="areas">
+    <div class="local-grid">
+      <div>
+        <div class="section-label">Service Areas</div>
+        <h2 class="section-title">Proudly Serving <span>West Columbia &amp; the Midlands</span></h2>
+        <p class="section-sub">The Electric Man is locally owned and rooted in the Midlands. If you're in Lexington or Aiken Counties, we've got you covered.</p>
+        <div class="area-tags" style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px;">
+          <span class="area-tag">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            West Columbia
+          </span>
+          <span class="area-tag">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            Lexington
+          </span>
+          <span class="area-tag">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            Aiken
+          </span>
+          <span class="area-tag">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            Cayce
+          </span>
+          <span class="area-tag">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            North Augusta
+          </span>
+          <span class="area-tag">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            Batesburg-Leesville
+          </span>
+          <span class="area-tag">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            Irmo
+          </span>
+          <span class="area-tag">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            Columbia Metro
+          </span>
+        </div>
+      </div>
+      <div class="local-map">
+        <div class="local-map-pin">
+          <div class="local-map-pin-dot"></div>
+          <div class="local-map-label">West Columbia, SC</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <div class="cta-strip">
+    <h2>Ready to Power Up Your Home or Business?</h2>
+    <p>Get a free, no-obligation quote from West Columbia's most trusted electrician.</p>
+    <div class="cta-strip-actions">
+      <a href="#quote" class="btn-dark">⚡ Request Free Quote</a>
+      <a href="tel:+18035550100" class="btn-outline-dark">📞 Call (803) 555-0100</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-text">The Electric <span>Man</span></div>
+        <p class="footer-desc">Licensed electrician serving West Columbia, Lexington, and Aiken Counties, SC. Residential, commercial, and emergency electrical services. Quality Business Awards 2026 recipient.</p>
+      </div>
+      <div>
+        <div class="footer-head">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Panel Upgrades</a></li>
+          <li><a href="#services">Whole-Home Rewiring</a></li>
+          <li><a href="#services">EV Charger Installation</a></li>
+          <li><a href="#services">Generator Hook-ups</a></li>
+          <li><a href="#services">Commercial Electrical</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-head">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:+18035550100">(803) 555-0100</a></li>
+          <li><a href="mailto:info@theelectricman.biz">info@theelectricman.biz</a></li>
+          <li><a href="#areas">West Columbia, SC</a></li>
+          <li><a href="#areas">Lexington County</a></li>
+          <li><a href="#areas">Aiken County</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Electric Man · West Columbia, SC · Licensed &amp; Insured</span>
+      <span>Preview designed by <span class="footer-alma">Alma Digital Designs</span></span>
+    </div>
+  </footer>
+
+  <!-- Preview Note -->
+  <div class="preview-note">
+    <div class="preview-note-icon">⚡</div>
+    <div class="preview-note-text">
+      <strong>This is a free preview — built just for The Electric Man</strong>
+      <p>Alma Digital Designs created this custom mockup to show what a modern, conversion-optimized website could look like for your business. This preview was built specifically for <strong>theelectricman.biz</strong> and addresses real weaknesses found in your current site. Interested in going live? <a href="mailto:hello@almadigitaldesigns.com">Reply to our email</a> or call us — no commitment required.</p>
+    </div>
+  </div>
+
+</body>
+</html>
