@@ -550,12 +550,74 @@
       </div>
       <div class="footer__bottom">
         <p class="footer__engineering" data-i18n="footer_engineering">Engineered by Alma Digital AI Agents</p>
-        <p class="footer__copy">&copy; 2026 Alma Digital AI LLC. <a href="#ftc-disclosure" class="footer__ftc-link" data-i18n="footer_ftc">All rights reserved.</a></p>
+        <p class="footer__copy">&copy; 2026 Alma Digital AI LLC. <a href="/terms" class="footer__ftc-link">Terms of Service</a> &nbsp;&middot;&nbsp; <a href="/privacy-policy" class="footer__ftc-link">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/cookie-policy" class="footer__ftc-link">Cookie Policy</a></p>
+        <p class="footer__disclosure"><a href="#" class="footer__ftc-link cookie-settings-link">Cookie Settings</a></p>
         <p class="footer__disclosure" data-i18n="footer_disclosure">FTC Disclosure: Some links on this site may be affiliate links. We may earn a commission at no extra cost to you. All opinions are our own and all recommendations are based on thorough research.</p>
       </div>
     </div>
   </footer>
 
   <script src="./script.js" defer></script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent" hidden>
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        <p>We use cookies to improve your experience. Essential cookies are always active. Analytics and marketing cookies require your consent under GDPR and UK PECR. <a href="/cookie-policy">Learn more</a>.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button id="cookie-reject" class="btn btn--outline btn--sm" type="button">Reject Non-Essential</button>
+        <button id="cookie-manage" class="btn btn--outline btn--sm" type="button">Manage Preferences</button>
+        <button id="cookie-accept-all" class="btn btn--accent btn--sm" type="button">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div id="cookie-modal" class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" hidden>
+    <div class="cookie-modal__dialog">
+      <div class="cookie-modal__header">
+        <h2 class="cookie-modal__title" id="cookie-modal-title">Cookie Preferences</h2>
+        <button id="cookie-modal-close" class="cookie-modal__close" type="button" aria-label="Close cookie preferences">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <p class="cookie-modal__intro">Choose which cookies you allow. Change anytime via Cookie Settings in the footer.</p>
+      <div class="cookie-category">
+        <div class="cookie-category__header">
+          <p class="cookie-category__name">Essential Cookies</p>
+          <span class="cookie-category__badge">Always Active</span>
+        </div>
+        <p class="cookie-category__desc">Required for the website to function. Cannot be disabled.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-category__header">
+          <p class="cookie-category__name">Analytics Cookies</p>
+          <label class="cookie-toggle" aria-label="Enable analytics cookies">
+            <input type="checkbox" id="toggle-analytics">
+            <span class="cookie-toggle__track" aria-hidden="true"></span>
+          </label>
+        </div>
+        <p class="cookie-category__desc">Google Analytics &mdash; helps us understand site usage. No personally identifiable information stored.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-category__header">
+          <p class="cookie-category__name">Marketing Cookies</p>
+          <label class="cookie-toggle" aria-label="Enable marketing cookies">
+            <input type="checkbox" id="toggle-marketing">
+            <span class="cookie-toggle__track" aria-hidden="true"></span>
+          </label>
+        </div>
+        <p class="cookie-category__desc">Meta Pixel &mdash; delivers relevant ads and measures effectiveness.</p>
+      </div>
+      <div class="cookie-modal__actions">
+        <button id="cookie-save-prefs" class="btn btn--outline" type="button">Save Preferences</button>
+        <button id="cookie-modal-accept-all" class="btn btn--accent" type="button">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./cookie-consent.js" defer></script>
+
 </body>
 </html>
