@@ -1252,6 +1252,19 @@ input, select, textarea { font: inherit; }
 .contact__success h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); margin-bottom: var(--sp-3); }
 .contact__success p { color: var(--text-ondark-muted); font-size: 0.9375rem; max-width: 400px; margin-inline: auto; }
 
+.contact__data-notice {
+  margin-top: var(--sp-4);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-ondark-muted);
+  text-align: center;
+}
+.contact__data-notice a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.contact__data-notice a:hover { text-decoration-color: var(--white); }
+
 .contact__email { margin-top: var(--sp-6); font-size: 0.8125rem; color: var(--gray-500); }
 .contact__email a {
   color: var(--accent);
