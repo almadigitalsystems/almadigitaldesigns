@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ── CHARSET & VIEWPORT ── -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── PRIMARY META ── -->
+  <title>Cookie Policy | Alma Digital Designs</title>
+  <meta name="description" content="Alma Digital AI LLC cookie policy — how we use cookies and tracking technologies on almadigitaldesigns.com." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d0d0d" />
+
+  <!-- ── CANONICAL ── -->
+  <link rel="canonical" href="https://almadigitaldesigns.com/cookie-policy" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://almadigitaldesigns.com/cookie-policy" />
+  <meta property="og:site_name" content="Alma Digital Designs" />
+  <meta property="og:title" content="Cookie Policy | Alma Digital Designs" />
+  <meta property="og:description" content="Alma Digital AI LLC cookie policy — how we use cookies and tracking technologies on almadigitaldesigns.com." />
+
+  <!-- ── FONTS ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+
+  <!-- ── STYLES ── -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../animations.css" />
+
+  <style>
+    .policy-hero {
+      background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: calc(var(--nav-h) + var(--sp-16)) var(--sp-5) var(--sp-12);
+      text-align: center;
+    }
+    .policy-hero__eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--sp-4);
+    }
+    .policy-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--text-ondark);
+      margin-bottom: var(--sp-4);
+    }
+    .policy-hero__meta {
+      font-size: 0.875rem;
+      color: var(--text-ondark-muted);
+    }
+    .policy-body {
+      background: var(--light-bg);
+      padding: var(--sp-16) var(--sp-5);
+    }
+    .policy-container {
+      max-width: var(--content-narrow);
+      margin: 0 auto;
+    }
+    .policy-content {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-12) var(--sp-10);
+      box-shadow: var(--shadow-md);
+      color: var(--text-primary);
+      line-height: 1.75;
+    }
+    @media (max-width: 640px) {
+      .policy-content { padding: var(--sp-8) var(--sp-5); }
+    }
+    .policy-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: var(--sp-10) 0 var(--sp-4);
+      padding-bottom: var(--sp-2);
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    .policy-content p {
+      margin-bottom: var(--sp-4);
+      color: var(--text-secondary);
+    }
+    .policy-content ul {
+      padding-left: var(--sp-8);
+      margin-bottom: var(--sp-4);
+      color: var(--text-secondary);
+    }
+    .policy-content li { margin-bottom: var(--sp-2); }
+    .policy-content strong { color: var(--text-primary); font-weight: 600; }
+    .policy-content a { color: #0066cc; text-decoration: underline; }
+    .policy-content a:hover { color: var(--accent-hover); }
+    .policy-content hr {
+      border: none;
+      border-top: 1px solid var(--gray-100);
+      margin: var(--sp-8) 0;
+    }
+    .policy-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--sp-4) 0 var(--sp-6);
+      font-size: 0.875rem;
+      overflow-x: auto;
+      display: block;
+    }
+    .policy-content th {
+      background: var(--light-bg);
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: var(--sp-3) var(--sp-4);
+      text-align: left;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .policy-content td {
+      padding: var(--sp-3) var(--sp-4);
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    .policy-content tr:last-child td { border-bottom: none; }
+    .policy-footer {
+      background: var(--black-light);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: var(--sp-8) var(--sp-5);
+      text-align: center;
+    }
+    .policy-footer__inner {
+      max-width: var(--content-default);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--sp-4);
+    }
+    .policy-footer__copy { font-size: 0.75rem; color: var(--gray-700); }
+    .policy-footer__links { display: flex; gap: var(--sp-5); list-style: none; }
+    .policy-footer__links a {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color var(--t-fast);
+    }
+    .policy-footer__links a:hover,
+    .policy-footer__links a[aria-current="page"] { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════════════ -->
+  <header role="banner">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="Alma Digital Designs — home">
+          <svg class="nav__logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00e5ff"/>
+                <stop offset="100%" stop-color="#0066ff"/>
+              </linearGradient>
+            </defs>
+            <path d="M18 3L4 33h6.5l2.5-6h10l2.5 6H32L18 3zm0 10l4.5 12h-9L18 13z" fill="url(#logo-grad)"/>
+          </svg>
+          <span class="nav__logo-text">Alma <span>Digital</span> Designs</span>
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="/#how-it-works" class="nav__link">How It Works</a></li>
+          <li><a href="/#pricing" class="nav__link">Pricing</a></li>
+          <li><a href="/#portfolio" class="nav__link">Portfolio</a></li>
+          <li><a href="/#faq" class="nav__link">FAQ</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <a href="/#lead-capture" class="btn btn--primary btn--sm">Get Free Preview</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════ -->
+  <section class="policy-hero">
+    <p class="policy-hero__eyebrow">Legal</p>
+    <h1 class="policy-hero__title">Cookie Policy</h1>
+    <p class="policy-hero__meta">Effective Date: April 3, 2026 &nbsp;·&nbsp; Last Updated: April 4, 2026</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       POLICY BODY
+  ══════════════════════════════════════════════════════ -->
+  <main class="policy-body" id="main-content">
+    <div class="policy-container">
+      <div class="policy-content">
+
+        <h2>1. What Are Cookies</h2>
+        <p>Cookies are small text files placed on your device when you visit a website. They help the site remember your preferences and understand how you use the site.</p>
+
+        <hr>
+
+        <h2>2. How We Use Cookies</h2>
+        <p>We use the following categories of cookies on almadigitaldesigns.com:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Purpose</th>
+              <th>Examples</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Strictly Necessary</strong></td>
+              <td>Core site functionality — these cannot be disabled</td>
+              <td>Session state, security tokens</td>
+              <td>Session</td>
+            </tr>
+            <tr>
+              <td><strong>Analytics</strong></td>
+              <td>Understand how visitors use the site (Google Analytics 4, Measurement ID: G-CF23T8HPJG)</td>
+              <td>Page views, time on site, traffic source</td>
+              <td>Up to 2 years</td>
+            </tr>
+            <tr>
+              <td><strong>Marketing / Outreach</strong></td>
+              <td>Track email engagement via Instantly.ai</td>
+              <td>Email open/click tracking</td>
+              <td>Per provider settings</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Non-essential cookies (Analytics, Marketing) are only loaded after you give consent via our cookie banner.</strong></p>
+
+        <hr>
+
+        <h2>3. Managing Your Cookie Preferences</h2>
+        <p>You can manage your cookie preferences at any time:</p>
+        <ul>
+          <li><strong>Cookie banner:</strong> When you first visit, you can accept or decline non-essential cookies.</li>
+          <li><strong>Cookie Settings:</strong> Use the Cookie Settings link in our site footer to update your preferences at any time.</li>
+          <li><strong>Browser settings:</strong> You can also control cookies through your browser. Note that disabling all cookies may affect site functionality.</li>
+        </ul>
+
+        <hr>
+
+        <h2>4. Third-Party Cookies</h2>
+        <p>We use a limited number of trusted third-party services that may set their own cookies:</p>
+        <ul>
+          <li><strong>Google Analytics 4</strong> — analytics. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+          <li><strong>Instantly.ai</strong> — email outreach tracking. See <a href="https://instantly.ai/dpa" target="_blank" rel="noopener">Instantly.ai DPA</a>.</li>
+        </ul>
+
+        <hr>
+
+        <h2>5. Contact Us</h2>
+        <p>For questions about our use of cookies:</p>
+        <p>
+          Alma Digital AI LLC<br>
+          Email: <a href="mailto:privacy@almadigitaldesigns.com">privacy@almadigitaldesigns.com</a><br>
+          6401 SW 118th Ave, Miami, Florida 33183
+        </p>
+        <p>For full details on how we handle your personal data, see our <a href="/privacy-policy">Privacy Policy</a>.</p>
+
+      </div><!-- /.policy-content -->
+    </div><!-- /.policy-container -->
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer class="policy-footer" role="contentinfo">
+    <div class="policy-footer__inner">
+      <p class="policy-footer__copy">&copy; 2026 Alma Digital AI LLC. All rights reserved.</p>
+      <ul class="policy-footer__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/cookie-policy" aria-current="page">Cookie Policy</a></li>
+        <li><a href="mailto:privacy@almadigitaldesigns.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ── -->
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>

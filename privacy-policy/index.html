@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ── CHARSET & VIEWPORT ── -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── PRIMARY META ── -->
+  <title>Privacy Policy | Alma Digital Designs</title>
+  <meta name="description" content="Alma Digital AI LLC privacy policy — how we collect, use, and protect your personal information." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d0d0d" />
+
+  <!-- ── CANONICAL ── -->
+  <link rel="canonical" href="https://almadigitaldesigns.com/privacy-policy" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://almadigitaldesigns.com/privacy-policy" />
+  <meta property="og:site_name" content="Alma Digital Designs" />
+  <meta property="og:title" content="Privacy Policy | Alma Digital Designs" />
+  <meta property="og:description" content="Alma Digital AI LLC privacy policy — how we collect, use, and protect your personal information." />
+
+  <!-- ── FONTS ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+
+  <!-- ── STYLES ── -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../animations.css" />
+
+  <style>
+    /* ── Privacy Policy page-specific styles ── */
+    .policy-hero {
+      background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: calc(var(--nav-h) + var(--sp-16)) var(--sp-5) var(--sp-12);
+      text-align: center;
+    }
+
+    .policy-hero__eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--sp-4);
+    }
+
+    .policy-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--text-ondark);
+      margin-bottom: var(--sp-4);
+    }
+
+    .policy-hero__meta {
+      font-size: 0.875rem;
+      color: var(--text-ondark-muted);
+    }
+
+    .policy-body {
+      background: var(--light-bg);
+      padding: var(--sp-16) var(--sp-5);
+    }
+
+    .policy-container {
+      max-width: var(--content-narrow);
+      margin: 0 auto;
+    }
+
+    .policy-content {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-12) var(--sp-10);
+      box-shadow: var(--shadow-md);
+      color: var(--text-primary);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 640px) {
+      .policy-content {
+        padding: var(--sp-8) var(--sp-5);
+      }
+    }
+
+    .policy-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: var(--sp-10) 0 var(--sp-4);
+      padding-bottom: var(--sp-2);
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .policy-content h3 {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: var(--sp-6) 0 var(--sp-2);
+    }
+
+    .policy-content p {
+      margin-bottom: var(--sp-4);
+      color: var(--text-secondary);
+    }
+
+    .policy-content ul,
+    .policy-content ol {
+      padding-left: var(--sp-8);
+      margin-bottom: var(--sp-4);
+      color: var(--text-secondary);
+    }
+
+    .policy-content li {
+      margin-bottom: var(--sp-2);
+    }
+
+    .policy-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .policy-content a {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    .policy-content a:hover {
+      color: var(--accent-hover);
+    }
+
+    .policy-content hr {
+      border: none;
+      border-top: 1px solid var(--gray-100);
+      margin: var(--sp-8) 0;
+    }
+
+    /* Tables */
+    .policy-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--sp-4) 0 var(--sp-6);
+      font-size: 0.875rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .policy-content th {
+      background: var(--light-bg);
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: var(--sp-3) var(--sp-4);
+      text-align: left;
+      border-bottom: 2px solid var(--gray-100);
+    }
+
+    .policy-content td {
+      padding: var(--sp-3) var(--sp-4);
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    .policy-content tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Revision history at bottom */
+    .policy-notice {
+      background: rgba(0, 229, 255, 0.06);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: var(--sp-4) var(--sp-5);
+      margin: var(--sp-6) 0;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .policy-notice strong {
+      color: var(--text-primary);
+    }
+
+    /* Footer for policy page */
+    .policy-footer {
+      background: var(--black-light);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: var(--sp-8) var(--sp-5);
+      text-align: center;
+    }
+
+    .policy-footer__inner {
+      max-width: var(--content-default);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--sp-4);
+    }
+
+    .policy-footer__copy {
+      font-size: 0.75rem;
+      color: var(--gray-700);
+    }
+
+    .policy-footer__links {
+      display: flex;
+      gap: var(--sp-5);
+      list-style: none;
+    }
+
+    .policy-footer__links a {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color var(--t-fast);
+    }
+
+    .policy-footer__links a:hover,
+    .policy-footer__links a[aria-current="page"] {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════════════ -->
+  <header role="banner">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="Alma Digital Designs — home">
+          <svg class="nav__logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00e5ff"/>
+                <stop offset="100%" stop-color="#0066ff"/>
+              </linearGradient>
+            </defs>
+            <path d="M18 3L4 33h6.5l2.5-6h10l2.5 6H32L18 3zm0 10l4.5 12h-9L18 13z" fill="url(#logo-grad)"/>
+          </svg>
+          <span class="nav__logo-text">Alma <span>Digital</span> Designs</span>
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="/#how-it-works" class="nav__link">How It Works</a></li>
+          <li><a href="/#pricing" class="nav__link">Pricing</a></li>
+          <li><a href="/#portfolio" class="nav__link">Portfolio</a></li>
+          <li><a href="/#faq" class="nav__link">FAQ</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <a href="/#lead-capture" class="btn btn--primary btn--sm">Get Free Preview</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════ -->
+  <section class="policy-hero">
+    <p class="policy-hero__eyebrow">Legal</p>
+    <h1 class="policy-hero__title">Privacy Policy</h1>
+    <p class="policy-hero__meta">Effective Date: April 3, 2026 &nbsp;·&nbsp; Last Updated: April 4, 2026</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       POLICY BODY
+  ══════════════════════════════════════════════════════ -->
+  <main class="policy-body" id="main-content">
+    <div class="policy-container">
+      <div class="policy-content">
+
+        <h2>1. Who We Are</h2>
+        <p><strong>Data Controller:</strong> Alma Digital AI LLC, 6401 SW 118th Ave, Miami, Florida 33183<br>
+        Contact: <a href="mailto:privacy@almadigitaldesigns.com">privacy@almadigitaldesigns.com</a> | Website: <a href="https://almadigitaldesigns.com">almadigitaldesigns.com</a></p>
+
+        <p>This Privacy Policy explains how Alma Digital AI LLC collects, uses, and protects your personal information when you visit almadigitaldesigns.com or contact us.</p>
+
+        <hr>
+
+        <h2>2. Information We Collect</h2>
+        <p>When you use our website or contact us, we may collect:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Identity &amp; Contact</strong></td>
+              <td>Full name, email address</td>
+            </tr>
+            <tr>
+              <td><strong>Business Information</strong></td>
+              <td>Company name, job title, business website URL</td>
+            </tr>
+            <tr>
+              <td><strong>Message Content</strong></td>
+              <td>The contents of your inquiry or message</td>
+            </tr>
+            <tr>
+              <td><strong>Technical Data</strong></td>
+              <td>IP address, browser type, pages visited, time on site (via cookies — see Section 8)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>We collect this information when you:</p>
+        <ul>
+          <li>Submit a contact or inquiry form on our site</li>
+          <li>Reply to outreach emails from us</li>
+          <li>Engage with us through any other channel listed on our site</li>
+        </ul>
+
+        <hr>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use your personal data to:</p>
+        <ul>
+          <li><strong>Respond to your inquiries</strong> and provide the services you request</li>
+          <li><strong>Prepare and deliver website redesign proposals</strong> tailored to your business</li>
+          <li><strong>Manage client relationships</strong> and fulfill service contracts</li>
+          <li><strong>Send follow-up communications</strong> related to your inquiry or project</li>
+          <li><strong>Improve our website</strong> and understand how visitors interact with it</li>
+          <li><strong>Comply with legal obligations</strong></li>
+        </ul>
+
+        <p><strong>Legal Basis (GDPR — EU/EEA visitors):</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Purpose</th>
+              <th>Legal Basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Responding to inquiries</td>
+              <td>Legitimate interests (Art. 6(1)(f))</td>
+            </tr>
+            <tr>
+              <td>Contract performance</td>
+              <td>Contractual necessity (Art. 6(1)(b))</td>
+            </tr>
+            <tr>
+              <td>Marketing follow-up</td>
+              <td>Legitimate interests or consent where required</td>
+            </tr>
+            <tr>
+              <td>Legal compliance</td>
+              <td>Legal obligation (Art. 6(1)(c))</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr>
+
+        <h2>4. Third-Party Service Providers</h2>
+        <p>We share your data only with trusted service providers who help us operate our business. All processors are contractually required to protect your data.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Purpose</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Instantly.ai</strong> (<a href="https://instantly.ai/dpa" target="_blank" rel="noopener">DPA</a>)</td>
+              <td>Email outreach and CRM</td>
+              <td>USA</td>
+            </tr>
+            <tr>
+              <td><strong>Google Workspace (Gmail)</strong></td>
+              <td>Business email (desk@almawebcreative.com, privacy@almadigitaldesigns.com)</td>
+              <td>USA</td>
+            </tr>
+            <tr>
+              <td>Website hosting provider</td>
+              <td>Hosting almadigitaldesigns.com</td>
+              <td>USA</td>
+            </tr>
+            <tr>
+              <td><strong>Google Analytics 4</strong> (Measurement ID: G-CF23T8HPJG)</td>
+              <td>Website traffic analytics</td>
+              <td>USA</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>We do <strong>not</strong> sell your personal information to third parties. We do <strong>not</strong> share your data with advertisers.</p>
+
+        <hr>
+
+        <h2>5. International Data Transfers</h2>
+        <p>We are based in the USA. For EEA/UK residents, data may be transferred to the US via Standard Contractual Clauses (SCCs). Instantly.ai has a DPA at <a href="https://instantly.ai/dpa" target="_blank" rel="noopener">instantly.ai/dpa</a>.</p>
+
+        <hr>
+
+        <h2>6. Data Retention</h2>
+        <ul>
+          <li><strong>Inquiry data (non-client):</strong> Up to 24 months after last contact</li>
+          <li><strong>Client data:</strong> Duration of relationship plus 7 years</li>
+          <li><strong>Website analytics:</strong> Per provider standard retention settings</li>
+        </ul>
+
+        <hr>
+
+        <h2>7. Your Rights</h2>
+        <p>Depending on where you are located, you may have the following rights:</p>
+
+        <h3>GDPR Rights (EU/EEA/UK Residents — Art. 15–21)</h3>
+        <ul>
+          <li><strong>Right of access</strong> — obtain a copy of the data we hold about you</li>
+          <li><strong>Right to rectification</strong> — correct inaccurate or incomplete data</li>
+          <li><strong>Right to erasure</strong> ("right to be forgotten")</li>
+          <li><strong>Right to restrict processing</strong></li>
+          <li><strong>Right to data portability</strong></li>
+          <li><strong>Right to object</strong> to processing based on legitimate interests</li>
+          <li><strong>Right to withdraw consent</strong> at any time (where consent is the basis)</li>
+        </ul>
+
+        <h3>CCPA Rights (California Residents — Cal. Civ. Code §§ 1798.100–1798.125)</h3>
+        <ul>
+          <li><strong>Right to know</strong> what personal information we collect, use, or disclose</li>
+          <li><strong>Right to delete</strong> personal information we hold about you</li>
+          <li><strong>Right to opt out of sale</strong> of personal information (see Section 10 — we do not sell data)</li>
+          <li><strong>Right to non-discrimination</strong> for exercising your privacy rights</li>
+        </ul>
+
+        <p>To exercise any of these rights, contact us at: <a href="mailto:privacy@almadigitaldesigns.com"><strong>privacy@almadigitaldesigns.com</strong></a></p>
+        <p>We will respond within <strong>30 days</strong> (GDPR) or <strong>45 days</strong> (CCPA) of receiving a verifiable request.</p>
+
+        <hr>
+
+        <h2>8. Cookies and Tracking Technologies</h2>
+        <p>Non-essential cookies are only loaded after consent via our cookie banner.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Purpose</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Strictly Necessary</strong></td>
+              <td>Site functionality</td>
+              <td>Session</td>
+            </tr>
+            <tr>
+              <td><strong>Analytics</strong></td>
+              <td>Google Analytics 4 (Measurement ID: G-CF23T8HPJG) — site usage tracking</td>
+              <td>Up to 2 years (configurable in GA4)</td>
+            </tr>
+            <tr>
+              <td><strong>Marketing/Outreach</strong></td>
+              <td>Tracking email engagement via Instantly.ai</td>
+              <td>Per provider settings</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Manage preferences via Cookie Settings in our site footer. See <a href="/cookie-policy">/cookie-policy</a> for full details.</p>
+
+        <hr>
+
+        <h2>9. Data Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. These include:</p>
+        <ul>
+          <li>Encrypted data transmission (HTTPS)</li>
+          <li>Access controls limiting data to authorized personnel</li>
+          <li>Regular review of our data handling practices</li>
+        </ul>
+        <p>No method of transmission over the internet is 100% secure. We encourage you to contact us promptly if you have any security concerns.</p>
+
+        <hr>
+
+        <h2>10. Do Not Sell or Share My Personal Information (CCPA)</h2>
+        <p>We do <strong>not</strong> sell your personal information as defined under the California Consumer Privacy Act (CCPA), nor do we share it with third parties for cross-context behavioral advertising.</p>
+        <p>California residents may still submit a Do-Not-Sell/Share request to: <a href="mailto:privacy@almadigitaldesigns.com"><strong>privacy@almadigitaldesigns.com</strong></a></p>
+
+        <hr>
+
+        <h2>11. Children's Privacy</h2>
+        <p>Our services are not directed to children under 13 years of age. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+
+        <hr>
+
+        <h2>12. Contact Us</h2>
+        <p>For privacy-related requests, questions, or complaints:</p>
+        <p>
+          Alma Digital AI LLC<br>
+          Email: <a href="mailto:privacy@almadigitaldesigns.com">privacy@almadigitaldesigns.com</a><br>
+          6401 SW 118th Ave, Miami, Florida 33183
+        </p>
+        <p>If you are in the EU/EEA and believe we have not addressed your concern, you have the right to lodge a complaint with your local supervisory authority.</p>
+
+        <hr>
+
+        <h2>13. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date above. Significant changes will be communicated via a notice on our website.</p>
+
+        <hr>
+
+        <h2>Revision History</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Date</th>
+              <th>Summary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.0</td>
+              <td>April 3, 2026</td>
+              <td>Initial draft — created by compliance review</td>
+            </tr>
+            <tr>
+              <td>1.1</td>
+              <td>April 4, 2026</td>
+              <td>Updated mailing address; updated analytics processor to Google Analytics 4 (G-CF23T8HPJG)</td>
+            </tr>
+            <tr>
+              <td>1.2</td>
+              <td>April 4, 2026</td>
+              <td>Updated email processor to Google Workspace (Gmail); added Instantly.ai DPA link; all flagged items resolved</td>
+            </tr>
+            <tr>
+              <td>1.3</td>
+              <td>April 4, 2026</td>
+              <td>Final review pass; stale flag removed; revision history cleaned; cookie policy cross-link added; READY TO PUBLISH</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div><!-- /.policy-content -->
+    </div><!-- /.policy-container -->
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer class="policy-footer" role="contentinfo">
+    <div class="policy-footer__inner">
+      <p class="policy-footer__copy">&copy; 2026 Alma Digital AI LLC. All rights reserved.</p>
+      <ul class="policy-footer__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy-policy" aria-current="page">Privacy Policy</a></li>
+        <li><a href="/cookie-policy">Cookie Policy</a></li>
+        <li><a href="mailto:privacy@almadigitaldesigns.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ── -->
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>

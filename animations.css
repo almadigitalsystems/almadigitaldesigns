@@ -1,0 +1,770 @@
+/* =============================================================================
+   Alma Digital Designs — animations.css
+   Animation Agent: Flux (AA) | ALM-496
+   Brand tokens: ALM-480 Brand Style Guide v1.0
+   Rules: GPU-only (transform/opacity), no layout-triggering props,
+          prefers-reduced-motion respected everywhere, will-change used sparingly
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   1. MOTION TOKENS (mirrors brand style guide Section 7)
+   --------------------------------------------------------------------------- */
+:root {
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.4, 0, 1, 1);
+  --ease-inout:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* subtle overshoot */
+
+  --t-instant: 80ms;
+  --t-fast:    180ms;
+  --t-normal:  300ms;
+  --t-slow:    500ms;
+  --t-reveal:  640ms;
+}
+
+/* ---------------------------------------------------------------------------
+   2. REDUCED MOTION — collapse all durations globally
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   3. KEYFRAME LIBRARY
+   --------------------------------------------------------------------------- */
+
+/* -- Fade in from below (default scroll reveal) -- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -- Fade in from left -- */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -- Fade in from right -- */
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -- Fade in only (no movement) -- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* -- Scale in (cards, modals) -- */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* -- Hero word reveal (clip + translate) -- */
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+/* -- Accent gradient drift (hero background decoration) -- */
+@keyframes gradientDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(24px, -16px) scale(1.04); }
+  66%  { transform: translate(-16px, 12px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* -- CTA pulse ring -- */
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* -- Underline grow (nav links, text links) -- */
+@keyframes underlineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* -- Spin (loading indicators) -- */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* -- Trust bar ticker slide -- */
+@keyframes tickerSlide {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* -- Step indicator progress fill -- */
+@keyframes progressFill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* -- Accordion reveal -- */
+@keyframes accordionOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   4. SCROLL REVEAL — base classes
+   JS adds .is-visible via IntersectionObserver (animations.js)
+   --------------------------------------------------------------------------- */
+
+/* Base hidden state — applied by JS before first paint */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--t-reveal) var(--ease-out),
+    transform var(--t-reveal) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Direction variants */
+.reveal--left {
+  transform: translateX(-32px);
+}
+.reveal--left.is-visible {
+  transform: translateX(0);
+}
+
+.reveal--right {
+  transform: translateX(32px);
+}
+.reveal--right.is-visible {
+  transform: translateX(0);
+}
+
+.reveal--scale {
+  transform: scale(0.92);
+}
+.reveal--scale.is-visible {
+  transform: scale(1);
+}
+
+.reveal--fade {
+  transform: none;
+}
+.reveal--fade.is-visible {
+  transform: none;
+}
+
+/* Stagger delay utilities (apply to children inside a .reveal-group) */
+.reveal-group > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-group > *:nth-child(2) { transition-delay: 80ms; }
+.reveal-group > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-group > *:nth-child(4) { transition-delay: 240ms; }
+.reveal-group > *:nth-child(5) { transition-delay: 320ms; }
+.reveal-group > *:nth-child(6) { transition-delay: 400ms; }
+
+/* ---------------------------------------------------------------------------
+   5. HERO SECTION ANIMATIONS
+   NOTE: animations.css loads async (non-blocking preload). Any rule that sets
+   opacity:0 / animation on elements visible at first paint risks FOUC — those
+   belong in render-blocking styles.css (Apollo's domain).
+   Hero entrance (eyebrow, title, subtitle, cta, trust, scroll-line) is
+   fully handled by styles.css. No overrides here.
+   --------------------------------------------------------------------------- */
+
+/* CTA pulse ring — safe async: .btn--pulse class must be added intentionally */
+.btn--pulse {
+  position: relative;
+}
+.btn--pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  animation: pulseRing 2s var(--ease-out) 1400ms infinite;
+}
+
+/* ---------------------------------------------------------------------------
+   6. NAVIGATION HOVER EFFECTS
+   NOTE: .nav entrance animation removed — async CSS load would cause nav
+   to flash visible → invisible → animate. styles.css owns initial nav state.
+   --------------------------------------------------------------------------- */
+
+/* Underline reveal on nav links */
+.nav__link {
+  position: relative;
+}
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--t-fast) var(--ease-out);
+}
+.nav__link:hover::after,
+.nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* ---------------------------------------------------------------------------
+   7. TRUST BAR — stat stagger handled by .reveal classes (Apollo styles.css)
+   --------------------------------------------------------------------------- */
+
+/* Trust bar stat numbers — subtle scale on reveal (triggered by .visible via Apollo's IO) */
+.trust-bar__stat.visible .trust-bar__number {
+  animation: scaleIn var(--t-fast) var(--ease-spring) forwards;
+}
+
+/* ---------------------------------------------------------------------------
+   8. BUTTON HOVER EFFECTS (brand guide Section 8.1)
+   --------------------------------------------------------------------------- */
+
+.btn {
+  transition:
+    transform var(--t-fast) var(--ease-out),
+    box-shadow var(--t-fast) var(--ease-out),
+    background var(--t-fast) var(--ease-out),
+    color var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out);
+}
+
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+/* Primary CTA glow on hover */
+.btn--primary:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+}
+
+/* Ghost/outline variant */
+.btn--outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------------------
+   9. CARD HOVER EFFECTS (brand guide Section 8.2)
+   --------------------------------------------------------------------------- */
+
+.card {
+  transition:
+    transform var(--t-normal) var(--ease-out),
+    box-shadow var(--t-normal) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Featured / highlighted card (pricing recommended tier) */
+.card--featured {
+  transition:
+    transform var(--t-normal) var(--ease-spring),
+    box-shadow var(--t-normal) var(--ease-out);
+}
+.card--featured:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 0 28px rgba(0, 229, 255, 0.2),
+              0 16px 48px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------------------------------------------------------------------------
+   10. STATS / NUMBER COUNTERS (Problem section)
+   Actual counting driven by JS; CSS just handles the reveal
+   --------------------------------------------------------------------------- */
+
+.stat-block {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition:
+    opacity var(--t-normal) var(--ease-out),
+    transform var(--t-normal) var(--ease-out);
+}
+.stat-block.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.stat-block:nth-child(2) { transition-delay: 100ms; }
+.stat-block:nth-child(3) { transition-delay: 200ms; }
+.stat-block:nth-child(4) { transition-delay: 300ms; }
+
+/* Accent color flash on counter finish — JS adds .count-done */
+.stat-block__number {
+  transition: color var(--t-fast) var(--ease-out);
+}
+.stat-block.count-done .stat-block__number {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------------------
+   11. HOW IT WORKS — step reveals (staggered left/right)
+   --------------------------------------------------------------------------- */
+
+.how-step {
+  opacity: 0;
+  transition:
+    opacity var(--t-reveal) var(--ease-out),
+    transform var(--t-reveal) var(--ease-out);
+}
+
+.how-step:nth-child(odd) {
+  transform: translateX(-24px);
+}
+.how-step:nth-child(even) {
+  transform: translateX(24px);
+}
+
+.how-step.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.how-step:nth-child(2) { transition-delay: 120ms; }
+.how-step:nth-child(3) { transition-delay: 240ms; }
+
+/* Step connector line draw */
+.how-step__connector {
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform var(--t-slow) var(--ease-out);
+}
+.how-step.is-visible .how-step__connector {
+  transform: scaleY(1);
+}
+
+/* ---------------------------------------------------------------------------
+   12. LIVE PREVIEW DEMO — shimmer / loading effect
+   --------------------------------------------------------------------------- */
+
+.demo-preview {
+  opacity: 0;
+  transform: scale(0.96) translateY(16px);
+  transition:
+    opacity var(--t-slow) var(--ease-out),
+    transform var(--t-slow) var(--ease-out);
+}
+.demo-preview.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Skeleton shimmer while demo loads */
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+.demo-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 25%,
+    rgba(255,255,255,0.10) 50%,
+    rgba(255,255,255,0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s var(--ease-inout) infinite;
+}
+
+/* ---------------------------------------------------------------------------
+   13. PRICING CARDS
+   --------------------------------------------------------------------------- */
+
+.pricing-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--t-reveal) var(--ease-out),
+    transform var(--t-reveal) var(--ease-out),
+    box-shadow var(--t-normal) var(--ease-out);
+}
+.pricing-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.pricing-card:nth-child(2) { transition-delay: 100ms; }
+.pricing-card:nth-child(3) { transition-delay: 200ms; }
+
+/* Tier badge pop */
+.pricing-card__badge {
+  opacity: 0;
+  transform: scale(0.7) translateY(-4px);
+  transition:
+    opacity var(--t-fast) var(--ease-spring),
+    transform var(--t-fast) var(--ease-spring);
+  transition-delay: 400ms;
+}
+.pricing-card.is-visible .pricing-card__badge {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Feature list items stagger */
+.pricing-card__feature {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition:
+    opacity var(--t-normal) var(--ease-out),
+    transform var(--t-normal) var(--ease-out);
+}
+.pricing-card.is-visible .pricing-card__feature {
+  opacity: 1;
+  transform: translateX(0);
+}
+.pricing-card.is-visible .pricing-card__feature:nth-child(1) { transition-delay: 200ms; }
+.pricing-card.is-visible .pricing-card__feature:nth-child(2) { transition-delay: 260ms; }
+.pricing-card.is-visible .pricing-card__feature:nth-child(3) { transition-delay: 320ms; }
+.pricing-card.is-visible .pricing-card__feature:nth-child(4) { transition-delay: 380ms; }
+.pricing-card.is-visible .pricing-card__feature:nth-child(5) { transition-delay: 440ms; }
+
+/* ---------------------------------------------------------------------------
+   14. PORTFOLIO — before/after slider
+   --------------------------------------------------------------------------- */
+
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+  cursor: col-resize;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+/* After panel — clip-path controlled via --split CSS var (set by range input in main.js) */
+.ba-after {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 0 0 var(--split, 50%));
+}
+
+/* Divider line */
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split, 50%);
+  width: 2px;
+  background: var(--accent, #00e5ff);
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 2;
+  transition: none;
+}
+
+/* Handle knob */
+.ba-divider__knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  background: var(--accent, #00e5ff);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+  transition: box-shadow var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d0d0d;
+}
+.ba-slider:hover .ba-divider__knob {
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.65);
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+/* Initial reveal — slider zooms in on scroll */
+.ba-slider {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity var(--t-slow) var(--ease-out),
+    transform var(--t-slow) var(--ease-out);
+}
+.ba-slider.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------------------------------------------------------------------------
+   15. TESTIMONIALS
+   --------------------------------------------------------------------------- */
+
+.testimonial-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--t-reveal) var(--ease-out),
+    transform var(--t-reveal) var(--ease-out),
+    box-shadow var(--t-normal) var(--ease-out);
+}
+.testimonial-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.testimonial-card:nth-child(2) { transition-delay: 100ms; }
+.testimonial-card:nth-child(3) { transition-delay: 200ms; }
+
+.testimonial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+}
+
+/* Star rating fill animation — targets Apollo's .testimonial-card__stars svg structure */
+.testimonial-card__stars svg {
+  opacity: 0;
+  transform: scale(0.5);
+  transition:
+    opacity var(--t-fast) var(--ease-spring),
+    transform var(--t-fast) var(--ease-spring);
+}
+.testimonial-card.is-visible .testimonial-card__stars svg:nth-child(1) { transition-delay: 200ms; opacity: 1; transform: scale(1); }
+.testimonial-card.is-visible .testimonial-card__stars svg:nth-child(2) { transition-delay: 260ms; opacity: 1; transform: scale(1); }
+.testimonial-card.is-visible .testimonial-card__stars svg:nth-child(3) { transition-delay: 320ms; opacity: 1; transform: scale(1); }
+.testimonial-card.is-visible .testimonial-card__stars svg:nth-child(4) { transition-delay: 380ms; opacity: 1; transform: scale(1); }
+.testimonial-card.is-visible .testimonial-card__stars svg:nth-child(5) { transition-delay: 440ms; opacity: 1; transform: scale(1); }
+
+/* ---------------------------------------------------------------------------
+   16. FAQ ACCORDION
+   Apollo (WD) uses .faq__item / .faq__question / .faq__answer / .faq__icon
+   Apollo's main.js handles open/close via hidden attribute.
+   Apollo's styles.css handles chevron rotation via [aria-expanded="true"].
+   This layer adds: scroll-reveal stagger, question hover, inner slide.
+   --------------------------------------------------------------------------- */
+
+/* Scroll reveal — items fade up in stagger */
+.faq__item {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity var(--t-normal) var(--ease-out),
+    transform var(--t-normal) var(--ease-out);
+}
+.faq__item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.faq__item.is-visible:nth-child(2) { transition-delay:  60ms; }
+.faq__item.is-visible:nth-child(3) { transition-delay: 120ms; }
+.faq__item.is-visible:nth-child(4) { transition-delay: 180ms; }
+.faq__item.is-visible:nth-child(5) { transition-delay: 240ms; }
+.faq__item.is-visible:nth-child(6) { transition-delay: 300ms; }
+
+/* Answer inner — subtle slide when opened */
+.faq__answer-inner {
+  transform: translateY(-4px);
+  transition: transform var(--t-normal) var(--ease-out);
+}
+.faq__question[aria-expanded="true"] ~ .faq__answer .faq__answer-inner {
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------------------------
+   17. MULTI-STEP LEAD CAPTURE FORM
+   Apollo (WD) uses .lead-form__step (shown/hidden via hidden attr in main.js),
+   .lead-form__step-indicator, .lead-form__input, .lead-form__success.
+   This layer adds: input focus glow, step indicator transitions,
+   success state entrance, spinner, and form section scroll-reveal.
+   --------------------------------------------------------------------------- */
+
+/* Step indicators — smooth color transition (Apollo adds classes via JS) */
+.lead-form__step-indicator {
+  transition:
+    background var(--t-normal) var(--ease-out),
+    border-color var(--t-normal) var(--ease-out),
+    color var(--t-fast) var(--ease-out);
+}
+.step-indicator__num {
+  transition:
+    background var(--t-normal) var(--ease-out),
+    transform var(--t-fast) var(--ease-spring);
+}
+.step-indicator--done .step-indicator__num {
+  transform: scale(0.92);
+}
+
+/* Form connector line — subtle fill as progress advances */
+.lead-form__step-connector {
+  transition: background var(--t-slow) var(--ease-out);
+}
+
+/* Input focus glow — enhancement over Apollo's border/shadow */
+.lead-form__input:focus {
+  outline: none;
+}
+
+/* Step transition — fade in on show (supplement to Apollo's hidden toggle) */
+.lead-form__step:not([hidden]) {
+  animation: fadeUp var(--t-normal) var(--ease-out) both;
+}
+
+/* Success state — entrance animation */
+.lead-form__success:not([hidden]) {
+  animation: scaleIn var(--t-normal) var(--ease-spring) both;
+}
+
+/* Success checkmark path draw */
+@keyframes checkDraw {
+  from { stroke-dashoffset: 80; }
+  to   { stroke-dashoffset: 0; }
+}
+.lead-form__success svg path {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  animation: checkDraw 600ms var(--ease-out) 200ms forwards;
+}
+
+/* Submit button spinner */
+.spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+/* Form wrapper scroll reveal */
+.lead-form__wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--t-reveal) var(--ease-out),
+    transform var(--t-reveal) var(--ease-out);
+}
+.lead-form__wrapper.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------------------------
+   18. FOOTER ENTRANCE
+   --------------------------------------------------------------------------- */
+
+.footer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--t-reveal) var(--ease-out),
+    transform var(--t-reveal) var(--ease-out);
+}
+.footer.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer columns stagger */
+.footer__col {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--t-normal) var(--ease-out),
+    transform var(--t-normal) var(--ease-out);
+}
+.footer.is-visible .footer__col {
+  opacity: 1;
+  transform: translateY(0);
+}
+.footer.is-visible .footer__col:nth-child(1) { transition-delay:  80ms; }
+.footer.is-visible .footer__col:nth-child(2) { transition-delay: 160ms; }
+.footer.is-visible .footer__col:nth-child(3) { transition-delay: 240ms; }
+.footer.is-visible .footer__col:nth-child(4) { transition-delay: 320ms; }
+
+/* ---------------------------------------------------------------------------
+   19. SECTION TRANSITIONS — subtle separator line draw
+   --------------------------------------------------------------------------- */
+
+.section-divider {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform var(--t-slow) var(--ease-out);
+}
+.section-divider.is-visible {
+  transform: scaleX(1);
+}
+
+/* Section heading eyebrow always fades in fast */
+.section-eyebrow {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--t-normal) var(--ease-out),
+    transform var(--t-normal) var(--ease-out);
+}
+.section-eyebrow.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------------------------
+   20. UTILITY CLASSES
+   --------------------------------------------------------------------------- */
+
+/* Prevent layout shift during JS init */
+.anim-init-hidden {
+  visibility: hidden;
+}
+.anim-ready .anim-init-hidden {
+  visibility: visible;
+}
+
+/* GPU hint — only on elements that will definitely animate */
+.will-animate {
+  will-change: transform, opacity;
+}
+/* Remove hint after animation completes (JS removes class) */
+.anim-done {
+  will-change: auto;
+}
