@@ -790,9 +790,9 @@ ul, ol { list-style: none; }
 }
 
 /* ── 13. LANGUAGE HIDDEN CONTENT ─────────────────────────── */
-[data-lang="es"] { display: none; }
-html[lang="es"] [data-lang="en"] { display: none; }
-html[lang="es"] [data-lang="es"] { display: revert; }
+[data-lang="es"]:not(.nav__lang) { display: none; }
+html[lang="es"] [data-lang="en"]:not(.nav__lang) { display: none; }
+html[lang="es"] [data-lang="es"]:not(.nav__lang) { display: revert; }
 
 /* ── 14. RESPONSIVE HELPERS ──────────────────────────────── */
 @media (max-width: 680px) {
