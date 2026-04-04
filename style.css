@@ -1331,6 +1331,13 @@ input, select, textarea { font: inherit; }
   margin-inline: auto;
   line-height: 1.6;
 }
+.footer__affiliate-note {
+  font-size: 0.6875rem;
+  color: var(--gray-700);
+  grid-column: 1 / -1;
+  margin-top: var(--sp-3);
+  line-height: 1.6;
+}
 
 /* ================================================
    SCROLL REVEAL (CSS-native with JS fallback)
