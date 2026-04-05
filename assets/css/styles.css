@@ -2929,6 +2929,23 @@ html[lang="es"] [data-lang="es"]:not(.nav__lang) { display: revert; }
   background: var(--accent-hover);
 }
 
+.cookie-banner__reject {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-2) var(--sp-5);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.cookie-banner__reject:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
 .cookie-banner__learn {
   font-size: 0.875rem;
   color: var(--text-ondark-muted);
