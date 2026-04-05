@@ -377,18 +377,28 @@
 (function () {
   var banner = document.getElementById('cookie-banner');
   var acceptBtn = document.getElementById('cookie-accept');
+  var rejectBtn = document.getElementById('cookie-reject');
   if (!banner || !acceptBtn) return;
 
   try {
-    if (localStorage.getItem('alma-cookie-consent') === 'accepted') return;
+    var stored = localStorage.getItem('alma-cookie-consent');
+    if (stored === 'accepted' || stored === 'essential') return;
   } catch (e) {}
 
   setTimeout(function () {
     banner.classList.add('is-visible');
   }, 800);
 
-  acceptBtn.addEventListener('click', function () {
+  function dismiss(choice) {
     banner.classList.remove('is-visible');
-    try { localStorage.setItem('alma-cookie-consent', 'accepted'); } catch (e) {}
-  });
+    try { localStorage.setItem('alma-cookie-consent', choice); } catch (e) {}
+    if (choice === 'essential' && typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied' });
+    }
+  }
+
+  acceptBtn.addEventListener('click', function () { dismiss('accepted'); });
+  if (rejectBtn) {
+    rejectBtn.addEventListener('click', function () { dismiss('essential'); });
+  }
 })();
