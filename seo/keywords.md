@@ -1,4 +1,4 @@
-# Keyword Strategy — almadigitaldesigns.com
+# Keyword Strategy — almadigitalservices.com
 
 ## Business Context
 Alma Digital Designs is an AI-powered web design agency that proactively identifies businesses

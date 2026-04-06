@@ -1,4 +1,4 @@
-# Image Alt Tag Specification — almadigitaldesigns.com
+# Image Alt Tag Specification — almadigitalservices.com
 ## For: Apollo (WD)
 
 ### Why Alt Tags Matter for SEO

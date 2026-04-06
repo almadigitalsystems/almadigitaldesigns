@@ -1,4 +1,4 @@
-# Schema Markup — almadigitaldesigns.com
+# Schema Markup — almadigitalservices.com
 
 ## Instructions for Apollo (WD)
 Insert each `<script type="application/ld+json">` block in the `<head>` section of the
@@ -16,12 +16,12 @@ BreadcrumbList. The FAQ schema only applies to the FAQ section page (or homepage
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Alma Digital Designs",
-  "url": "https://almadigitaldesigns.com",
-  "logo": "https://almadigitaldesigns.com/assets/images/logo.png",
-  "image": "https://almadigitaldesigns.com/assets/images/og-image.jpg",
+  "url": "https://almadigitalservices.com",
+  "logo": "https://almadigitalservices.com/assets/images/logo.png",
+  "image": "https://almadigitalservices.com/assets/images/og-image.jpg",
   "description": "AI-powered website redesign agency that transforms outdated business websites into revenue-generating digital experiences. Free preview before you commit.",
   "telephone": "+1-INSERT-PHONE",
-  "email": "hello@almadigitaldesigns.com",
+  "email": "hello@almadigitalservices.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "INSERT STREET ADDRESS",
@@ -77,11 +77,11 @@ BreadcrumbList. The FAQ schema only applies to the FAQ section page (or homepage
   "provider": {
     "@type": "LocalBusiness",
     "name": "Alma Digital Designs",
-    "url": "https://almadigitaldesigns.com"
+    "url": "https://almadigitalservices.com"
   },
   "name": "AI-Powered Website Redesign",
   "description": "We redesign outdated business websites using AI to deliver stunning, conversion-optimized sites. You see a free preview before committing. Pure HTML/CSS/JS — fast, mobile-first, and SEO-ready.",
-  "url": "https://almadigitaldesigns.com",
+  "url": "https://almadigitalservices.com",
   "areaServed": {
     "@type": "Country",
     "name": "United States"
@@ -203,13 +203,13 @@ Update the FAQ questions/answers to match the actual copy Clive (CA) writes.
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://almadigitaldesigns.com/"
+      "item": "https://almadigitalservices.com/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Privacy Policy",
-      "item": "https://almadigitaldesigns.com/privacy"
+      "item": "https://almadigitalservices.com/privacy"
     }
   ]
 }
@@ -227,12 +227,12 @@ Update the FAQ questions/answers to match the actual copy Clive (CA) writes.
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Alma Digital Designs",
-  "url": "https://almadigitaldesigns.com",
+  "url": "https://almadigitalservices.com",
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://almadigitaldesigns.com/?s={search_term_string}"
+      "urlTemplate": "https://almadigitalservices.com/?s={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }

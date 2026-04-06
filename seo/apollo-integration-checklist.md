@@ -32,7 +32,7 @@ for exact code to copy-paste. Do not write your own meta tags — use the specs 
 - [ ] `<meta name="robots" content="index, follow" />`
 - [ ] `<meta name="author" content="Alma Digital Designs" />`
 - [ ] `<meta name="theme-color" content="#0a0a0f" />` (update to exact brand color from style guide)
-- [ ] `<link rel="canonical" href="https://almadigitaldesigns.com/" />`
+- [ ] `<link rel="canonical" href="https://almadigitalservices.com/" />`
 - [ ] hreflang alternates (EN/ES) — from `meta-tags.md`
 - [ ] All OG tags — from `og-tags.md`
 - [ ] All Twitter Card tags — from `og-tags.md`
@@ -55,7 +55,7 @@ for exact code to copy-paste. Do not write your own meta tags — use the specs 
 - [ ] `<title>` — from `meta-tags.md` privacy section
 - [ ] `<meta name="description">` — from `meta-tags.md`
 - [ ] `<meta name="robots" content="noindex, follow" />`
-- [ ] `<link rel="canonical" href="https://almadigitaldesigns.com/privacy" />`
+- [ ] `<link rel="canonical" href="https://almadigitalservices.com/privacy" />`
 - [ ] OG + Twitter tags — from `og-tags.md` privacy section
 - [ ] BreadcrumbList schema — from `schema-markup.md`
 
@@ -65,7 +65,7 @@ for exact code to copy-paste. Do not write your own meta tags — use the specs 
 - [ ] `<title>` — from `meta-tags.md` terms section
 - [ ] `<meta name="description">` — from `meta-tags.md`
 - [ ] `<meta name="robots" content="noindex, follow" />`
-- [ ] `<link rel="canonical" href="https://almadigitaldesigns.com/terms" />`
+- [ ] `<link rel="canonical" href="https://almadigitalservices.com/terms" />`
 - [ ] OG + Twitter tags — from `og-tags.md` terms section
 - [ ] BreadcrumbList schema — from `schema-markup.md`
 
@@ -101,8 +101,8 @@ the OG template from `og-tags.md`. These pages must NEVER be indexed.
 ## Post-Launch Validation (Day 6 / Before Day 7)
 - [ ] Run https://search.google.com/test/rich-results on homepage
 - [ ] Check all OG tags with https://opengraph.xyz
-- [ ] Verify robots.txt at https://almadigitaldesigns.com/robots.txt
-- [ ] Verify sitemap.xml at https://almadigitaldesigns.com/sitemap.xml
+- [ ] Verify robots.txt at https://almadigitalservices.com/robots.txt
+- [ ] Verify sitemap.xml at https://almadigitalservices.com/sitemap.xml
 - [ ] Submit sitemap to Google Search Console
 - [ ] Confirm noindex on /privacy, /terms, and all /preview/* pages
 

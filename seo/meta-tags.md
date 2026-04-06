@@ -1,4 +1,4 @@
-# Meta Tags Specification — almadigitaldesigns.com
+# Meta Tags Specification — almadigitalservices.com
 
 ## Instructions for Apollo (WD)
 Insert these inside `<head>` for each page. Character counts are noted.
@@ -18,7 +18,7 @@ Insert these inside `<head>` for each page. Character counts are noted.
 
 <meta name="keywords" content="web design agency, website redesign, AI website design, professional web design, small business web design">
 
-<link rel="canonical" href="https://almadigitaldesigns.com/" />
+<link rel="canonical" href="https://almadigitalservices.com/" />
 ```
 
 ---
@@ -32,7 +32,7 @@ Insert these inside `<head>` for each page. Character counts are noted.
 <meta name="description" content="Read the Alma Digital Designs privacy policy. Learn how we collect, use, and protect your personal data in compliance with GDPR and CCPA.">
 <!-- 137 chars -->
 
-<link rel="canonical" href="https://almadigitaldesigns.com/privacy" />
+<link rel="canonical" href="https://almadigitalservices.com/privacy" />
 <meta name="robots" content="noindex, follow" />
 ```
 
@@ -44,10 +44,10 @@ Insert these inside `<head>` for each page. Character counts are noted.
 <title>Terms of Service | Alma Digital Designs</title>
 <!-- 49 chars -->
 
-<meta name="description" content="Review the terms and conditions governing use of Alma Digital Designs services and the almadigitaldesigns.com website.">
+<meta name="description" content="Review the terms and conditions governing use of Alma Digital Designs services and the almadigitalservices.com website.">
 <!-- 118 chars -->
 
-<link rel="canonical" href="https://almadigitaldesigns.com/terms" />
+<link rel="canonical" href="https://almadigitalservices.com/terms" />
 <meta name="robots" content="noindex, follow" />
 ```
 
@@ -65,7 +65,7 @@ these apply to the homepage only. If separate pages are created per section, use
 <meta name="description" content="Transparent web design pricing from Alma Digital Designs. Choose the plan that fits your budget. Free website preview included with every quote.">
 <!-- 144 chars -->
 
-<link rel="canonical" href="https://almadigitaldesigns.com/#pricing" />
+<link rel="canonical" href="https://almadigitalservices.com/#pricing" />
 ```
 
 ### /portfolio (if standalone page)
@@ -76,7 +76,7 @@ these apply to the homepage only. If separate pages are created per section, use
 <meta name="description" content="See real before-and-after website redesign examples from Alma Digital Designs. Browse results by industry. Our work speaks for itself.">
 <!-- 134 chars -->
 
-<link rel="canonical" href="https://almadigitaldesigns.com/#portfolio" />
+<link rel="canonical" href="https://almadigitalservices.com/#portfolio" />
 ```
 
 ---
@@ -112,9 +112,9 @@ these apply to the homepage only. If separate pages are created per section, use
 
 ```html
 <!-- On English version -->
-<link rel="alternate" hreflang="en" href="https://almadigitaldesigns.com/" />
-<link rel="alternate" hreflang="es" href="https://almadigitaldesigns.com/?lang=es" />
-<link rel="alternate" hreflang="x-default" href="https://almadigitaldesigns.com/" />
+<link rel="alternate" hreflang="en" href="https://almadigitalservices.com/" />
+<link rel="alternate" hreflang="es" href="https://almadigitalservices.com/?lang=es" />
+<link rel="alternate" hreflang="x-default" href="https://almadigitalservices.com/" />
 ```
 
 ---
@@ -129,7 +129,7 @@ Replace [BUSINESS_NAME], [CITY], [STATE], [SLUG].
 
 <meta name="description" content="See your new [BUSINESS_NAME] website before you commit. Alma Digital Designs built you a free AI-powered preview. Claim it today — no obligation.">
 
-<link rel="canonical" href="https://almadigitaldesigns.com/preview/[SLUG]" />
+<link rel="canonical" href="https://almadigitalservices.com/preview/[SLUG]" />
 
 <!-- Block indexing on prospect pages — these are private previews -->
 <meta name="robots" content="noindex, nofollow" />

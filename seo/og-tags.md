@@ -1,4 +1,4 @@
-# Open Graph + Twitter Card Tags — almadigitaldesigns.com
+# Open Graph + Twitter Card Tags — almadigitalservices.com
 
 ## Instructions for Apollo (WD)
 Insert these inside `<head>` on every page. The OG image should be 1200x630px.
@@ -18,11 +18,11 @@ Recommended OG image content:
 ```html
 <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Slack) -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://almadigitaldesigns.com/" />
+<meta property="og:url" content="https://almadigitalservices.com/" />
 <meta property="og:site_name" content="Alma Digital Designs" />
 <meta property="og:title" content="Alma Digital Designs | AI-Powered Website Redesign Agency" />
 <meta property="og:description" content="We redesign outdated websites into revenue-generating machines. See a free AI-powered preview of your new site before you commit." />
-<meta property="og:image" content="https://almadigitaldesigns.com/assets/images/og-image.jpg" />
+<meta property="og:image" content="https://almadigitalservices.com/assets/images/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Alma Digital Designs - AI-Powered Website Redesigns" />
@@ -35,7 +35,7 @@ Recommended OG image content:
 <meta name="twitter:creator" content="@almadigital" />
 <meta name="twitter:title" content="Alma Digital Designs | AI-Powered Website Redesign Agency" />
 <meta name="twitter:description" content="We redesign outdated websites into revenue-generating machines. See a free AI-powered preview of your new site before you commit." />
-<meta name="twitter:image" content="https://almadigitaldesigns.com/assets/images/og-image.jpg" />
+<meta name="twitter:image" content="https://almadigitalservices.com/assets/images/og-image.jpg" />
 <meta name="twitter:image:alt" content="Alma Digital Designs - AI-Powered Website Redesigns" />
 ```
 
@@ -45,11 +45,11 @@ Recommended OG image content:
 
 ```html
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://almadigitaldesigns.com/privacy" />
+<meta property="og:url" content="https://almadigitalservices.com/privacy" />
 <meta property="og:site_name" content="Alma Digital Designs" />
 <meta property="og:title" content="Privacy Policy | Alma Digital Designs" />
 <meta property="og:description" content="Read the Alma Digital Designs privacy policy. We are committed to protecting your personal data." />
-<meta property="og:image" content="https://almadigitaldesigns.com/assets/images/og-image.jpg" />
+<meta property="og:image" content="https://almadigitalservices.com/assets/images/og-image.jpg" />
 <meta property="og:locale" content="en_US" />
 
 <meta name="twitter:card" content="summary" />
@@ -64,11 +64,11 @@ Recommended OG image content:
 
 ```html
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://almadigitaldesigns.com/terms" />
+<meta property="og:url" content="https://almadigitalservices.com/terms" />
 <meta property="og:site_name" content="Alma Digital Designs" />
 <meta property="og:title" content="Terms of Service | Alma Digital Designs" />
 <meta property="og:description" content="Review the terms and conditions for using Alma Digital Designs services." />
-<meta property="og:image" content="https://almadigitaldesigns.com/assets/images/og-image.jpg" />
+<meta property="og:image" content="https://almadigitalservices.com/assets/images/og-image.jpg" />
 <meta property="og:locale" content="en_US" />
 
 <meta name="twitter:card" content="summary" />
@@ -84,7 +84,7 @@ Replace [BUSINESS_NAME], [CITY], [SLUG], [PREVIEW_IMAGE_URL].
 
 ```html
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://almadigitaldesigns.com/preview/[SLUG]" />
+<meta property="og:url" content="https://almadigitalservices.com/preview/[SLUG]" />
 <meta property="og:site_name" content="Alma Digital Designs" />
 <meta property="og:title" content="Your Free Website Preview is Ready, [BUSINESS_NAME]" />
 <meta property="og:description" content="Alma Digital Designs built a free AI-powered preview of your redesigned [BUSINESS_NAME] website. Click to see it — no obligation, no credit card." />
