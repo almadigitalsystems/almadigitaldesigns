@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://almadigitaldesigns.com/sitemap.xml
+Sitemap: https://almadigitalservices.com/sitemap.xml
