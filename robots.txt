@@ -32,5 +32,23 @@ Disallow: /*?*session=
 # Crawl delay (optional — conservative setting for shared hosting)
 Crawl-delay: 1
 
+# ==================== AEO: Explicit AI Crawler Permissions ====================
+# Explicitly allowing AI crawlers for Answer Engine Optimization (AEO).
+# These agents are allowed the full site (consistent with User-agent: * above).
+# Declared individually to signal intent and ensure no future wildcard rule
+# accidentally blocks them.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Sitemap location
 Sitemap: https://almadigitaldesigns.com/sitemap.xml

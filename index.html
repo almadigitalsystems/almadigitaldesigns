@@ -199,18 +199,94 @@
           "@type": "Answer",
           "text": "Yes. Our Growth and Premium packages include ongoing maintenance and optimization. We become your long-term digital growth partner, continuously improving your site's performance and conversion rate."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my business website needs a redesign?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your website likely needs a redesign if it scores below 50 on Google PageSpeed, was built more than 3 years ago, is not mobile-friendly, has a bounce rate above 70%, or you are embarrassed to share the URL with potential customers. A free audit from Alma Digital Designs can confirm the issues in minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a website refresh and a full website redesign?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A website refresh updates visuals — colors, fonts, images — without changing the structure or code. A full redesign rebuilds the site from the ground up, improving UX, performance, mobile optimization, and SEO. Most businesses with sites older than 3 years need a full redesign, not just a cosmetic refresh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can AI design a professional website for my business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AI-powered website design tools can analyze your current site, generate a redesigned version, and deliver a preview within 48 hours. Alma Digital Designs combines AI generation with human quality review to ensure the result meets professional standards and is optimized for both search engines and conversions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does an AI-powered website redesign cost compared to a traditional agency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI-powered redesigns typically cost 50-70% less than traditional agencies. Alma Digital Designs offers complete website redesigns starting at $397 — compared to $5,000-$25,000 at traditional Miami agencies — with faster delivery and no upfront commitment required before seeing the result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer website redesign services in Miami, Florida?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Alma Digital Designs is based in Miami, FL (6401 SW 118th Ave, Miami, FL 33183) and serves small businesses throughout Miami-Dade County including Coral Gables, Brickell, Doral, Hialeah, and Miami Beach. We also work with businesses across the United States via remote delivery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of businesses do you redesign websites for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We specialize in redesigning websites for service businesses with 1-50 employees whose online presence is costing them customers. Common industries include restaurants, law firms, medical practices, real estate agencies, contractors, and retail shops — particularly in the South Florida market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my current website go down during the redesign process?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Your current website stays live throughout the entire redesign process. We build your new site separately and only switch over once you have reviewed and approved the final design. There is zero downtime and no disruption to your business during the transition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I do not like the free website preview?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing — there is no cost or obligation if you do not like the preview. We offer the free redesign preview as a risk-free demonstration of what your site could become. If you want changes, we revise. If you decide not to proceed, there is no charge and no pressure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Alma Digital Designs offer Spanish-language website redesign services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer full bilingual (English and Spanish) website redesign services — particularly valuable for Miami businesses serving the South Florida Hispanic market. Our team delivers bilingual sites with proper hreflang tagging and localized content optimized for both English and Spanish-speaking audiences."
+        }
       }
     ]
   }
   </script>
 
-  <!-- 4. WebSite (Sitelinks) -->
+  <!-- 4. WebSite (Sitelinks + Speakable) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Alma Digital Designs",
     "url": "https://almadigitaldesigns.com",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero-summary"]
+    },
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
@@ -219,6 +295,24 @@
       },
       "query-input": "required name=search_term_string"
     }
+  }
+  </script>
+
+  <!-- 5. HowTo — AI-Powered Website Redesign Process -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How Our AI-Powered Website Redesign Process Works",
+    "description": "Alma Digital Designs delivers a complete website redesign in 48 hours using AI. Here is how the process works step by step.",
+    "totalTime": "PT48H",
+    "step": [
+      {"@type": "HowToStep", "position": 1, "name": "Submit Your URL", "text": "Provide your current website URL. That is all we need to get started."},
+      {"@type": "HowToStep", "position": 2, "name": "AI Analysis", "text": "Our AI analyzes your site for UX issues, mobile problems, speed deficiencies, and conversion gaps."},
+      {"@type": "HowToStep", "position": 3, "name": "Free Preview Delivery", "text": "Within 48 hours you receive a full preview of your redesigned website with no commitment required."},
+      {"@type": "HowToStep", "position": 4, "name": "Review and Approve", "text": "Review the preview, request any adjustments, and approve the design when you are satisfied."},
+      {"@type": "HowToStep", "position": 5, "name": "Launch", "text": "We deploy your new website with SEO optimization, mobile performance, and security built in from day one."}
+    ]
   }
   </script>
 
@@ -317,6 +411,9 @@
   </header>
 
   <main id="main" role="main">
+
+    <!-- AEO: Speakable hero summary targeted by schema.org SpeakableSpecification -->
+    <p class="hero-summary" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Alma Digital Designs is a Miami-based AI-powered website redesign agency. We help small businesses replace outdated websites with fast, mobile-optimized, conversion-ready sites — with a free preview delivered in 48 hours before any commitment.</p>
 
     <!-- ══════════════════════════════════════════════════════
          HERO SECTION — Day 2
