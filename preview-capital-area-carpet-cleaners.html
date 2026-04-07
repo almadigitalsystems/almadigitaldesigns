@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capital Area Carpet Cleaners — Website Preview | Alma Digital Designs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:        #00b4d8;
+      --teal-dark:   #0096c7;
+      --teal-deeper: #0077b6;
+      --charcoal:    #1a1a2e;
+      --charcoal-2:  #16213e;
+      --green:       #06a77d;
+      --green-dark:  #058265;
+      --gray-50:     #f8f9fa;
+      --gray-100:    #eef1f5;
+      --gray-200:    #dde3ec;
+      --gray-600:    #4a5568;
+      --gray-800:    #1a202c;
+      --white:       #ffffff;
+      --radius:      12px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,.07);
+      --shadow-md:   0 6px 24px rgba(0,0,0,.12);
+      --shadow-lg:   0 16px 48px rgba(0,0,0,.18);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--gray-800); background: var(--white); line-height: 1.65; }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; text-decoration: none; }
+
+    /* ===== PREVIEW BANNER ===== */
+    .preview-banner {
+      background: linear-gradient(90deg, var(--charcoal), var(--charcoal-2));
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      box-shadow: 0 2px 12px rgba(0,0,0,.3);
+    }
+    .preview-banner strong { color: var(--teal); }
+    .preview-banner a { color: var(--teal); text-decoration: underline; font-weight: 600; }
+
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      background: var(--charcoal);
+      color: rgba(255,255,255,.7);
+      padding: 0.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+    .top-bar-phone { color: var(--teal); font-weight: 700; font-size: 0.9rem; }
+
+    /* ===== NAV ===== */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--gray-200);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      position: sticky;
+      top: 39px;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--charcoal); line-height: 1.1; }
+    .nav-logo span { color: var(--teal-dark); display: block; font-size: 0.65rem; font-family: 'Inter', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-600); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.88rem; font-weight: 600; }
+    .nav-links a { color: var(--gray-600); transition: color .2s; }
+    .nav-links a:hover { color: var(--teal-dark); }
+    .nav-cta {
+      background: var(--teal-dark);
+      color: #fff !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--teal-deeper) !important; transform: translateY(-1px); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(145deg, var(--charcoal) 0%, var(--charcoal-2) 55%, #0d1b3e 100%);
+      color: #fff;
+      padding: 5rem 5%;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      min-height: 520px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      left: -100px;
+      bottom: -100px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,180,216,.07) 0%, transparent 65%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,150,199,.06) 0%, transparent 70%);
+    }
+    .hero-content { max-width: 580px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,180,216,.15);
+      border: 1px solid rgba(0,180,216,.35);
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 4px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.12; margin-bottom: 1.2rem; }
+    .hero h1 span { color: var(--teal); }
+    .hero p { font-size: 1.05rem; opacity: 0.88; margin-bottom: 2rem; line-height: 1.75; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--teal-dark);
+      color: #fff;
+      padding: 1rem 2.2rem;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: transform .2s, background .2s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(0,150,199,.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--teal-deeper); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,.45);
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: background .2s, border-color .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+    /* Hero Service Cards */
+    .hero-cards {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 300px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      backdrop-filter: blur(4px);
+    }
+    .hero-card .card-icon { font-size: 2rem; flex-shrink: 0; }
+    .hero-card h4 { font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
+    .hero-card p { font-size: 0.78rem; opacity: 0.7; }
+    .hero-card .card-tag {
+      margin-left: auto;
+      background: var(--teal-dark);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--gray-50);
+      border-bottom: 2px solid var(--gray-200);
+      padding: 1.2rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 5rem 5%; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      margin-bottom: 0.7rem;
+    }
+    h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; margin-bottom: 1.2rem; }
+    .section-intro { font-size: 1rem; color: var(--gray-600); max-width: 620px; line-height: 1.75; margin-bottom: 3rem; }
+
+    /* ===== WHY SECTION ===== */
+    .why-section { background: var(--white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .why-visual {
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      border-radius: var(--radius);
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      gap: 1rem;
+      border: 2px dashed var(--gray-200);
+    }
+    .why-visual p { font-size: 0.82rem; color: var(--gray-600); font-family: 'Inter', sans-serif; }
+    .why-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .stat-box {
+      background: var(--gray-50);
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 4px solid var(--teal-dark);
+    }
+    .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--teal-dark); line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: var(--gray-600); margin-top: 0.3rem; }
+
+    /* ===== SERVICES ===== */
+    .services-section { background: var(--gray-50); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+    .service-card {
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 2px solid var(--gray-200);
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+      background: var(--white);
+    }
+    .service-card:hover { border-color: var(--teal); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .service-card .s-icon { font-size: 2.4rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.86rem; color: var(--gray-600); line-height: 1.65; }
+    .service-card .badge {
+      display: inline-block;
+      background: rgba(0,150,199,.1);
+      color: var(--teal-deeper);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-top: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== PROCESS ===== */
+    .process-section { background: var(--white); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: var(--gray-200);
+      z-index: 0;
+    }
+    .step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--teal-dark);
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      box-shadow: 0 4px 12px rgba(0,150,199,.35);
+    }
+    .step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--charcoal); }
+    .step p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.55; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-section { background: var(--gray-50); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--teal-dark);
+    }
+    .testimonial-stars { color: #f9a825; font-size: 1rem; margin-bottom: 1rem; }
+    .testimonial-text { font-size: 0.92rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 1.2rem; font-style: italic; }
+    .testimonial-author { font-size: 0.8rem; font-weight: 700; color: var(--teal-deeper); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ===== CTA STRIP ===== */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--teal-deeper), var(--teal-dark));
+      color: #fff;
+      padding: 4rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-strip h2 { font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 2rem; margin-bottom: 0.5rem; }
+    .cta-strip p { opacity: 0.88; font-size: 0.95rem; max-width: 450px; }
+    .btn-white {
+      background: #fff;
+      color: var(--teal-deeper);
+      padding: 1rem 2.5rem;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      white-space: nowrap;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    /* ===== CONTACT ===== */
+    .contact-section { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .contact-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .contact-item h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal-dark); font-weight: 700; margin-bottom: 0.2rem; }
+    .contact-item p { font-size: 0.95rem; color: var(--gray-800); }
+    .contact-form { background: var(--gray-50); border-radius: var(--radius); padding: 2.5rem; border: 2px solid var(--gray-200); }
+    .contact-form h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--charcoal); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.06em; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.8rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 6px;
+      font-size: 0.92rem;
+      font-family: inherit;
+      background: var(--white);
+      transition: border-color .2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--teal); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      background: var(--teal-dark);
+      color: #fff;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      width: 100%;
+      transition: background .2s, transform .15s;
+    }
+    .form-submit:hover { background: var(--teal-deeper); transform: translateY(-1px); }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--charcoal); color: rgba(255,255,255,.6); padding: 3rem 5% 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; }
+    .footer-brand { font-family: 'Playfair Display', Georgia, serif; color: #fff; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .footer-brand span { color: var(--teal); }
+    .footer-tagline { font-size: 0.82rem; opacity: 0.6; line-height: 1.6; }
+    .footer-col h4 { color: #fff; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.9rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; font-size: 0.85rem; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.5rem; text-align: center; font-size: 0.78rem; }
+    .footer-bottom strong { color: var(--teal); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1000px) {
+      .hero { flex-direction: column; }
+      .hero-cards { width: 100%; }
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2,1fr); }
+      .process-steps { grid-template-columns: repeat(2,1fr); }
+      .process-steps::before { display: none; }
+      .why-grid, .contact-grid, .area-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .services-grid, .testimonials-grid, .process-steps { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-bar { gap: 1.2rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .cta-strip { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">
+    ✨ <strong>Free Redesign Preview</strong> — This is how your website could look. Built by
+    <strong>Alma Digital Designs</strong>. <a href="mailto:hello@almadigitaldesigns.com">Schedule a free consultation →</a>
+  </div>
+
+  <div class="top-bar">
+    <span>📍 Mechanicsburg, PA — Serving Central Pennsylvania</span>
+    <span class="top-bar-phone">📞 Call Today: (717) 555-0190</span>
+  </div>
+
+  <nav>
+    <div class="nav-logo">
+      Capital Area Carpet Cleaners
+      <span>Mechanicsburg, PA • Est. 1982</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Residential</a></li>
+      <li><a href="#">Commercial</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#" class="nav-cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🧹 Trusted Since 1982 — 44 Years Strong</div>
+      <h1>Central PA's Most <span>Trusted</span> Carpet Cleaners</h1>
+      <p>
+        Capital Area Carpet Cleaners has kept Mechanicsburg and Central Pennsylvania homes
+        and businesses fresh and clean for over four decades. Professional results,
+        honest pricing, and a team you can trust inside your home.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">🧹 Book a Cleaning Today</a>
+        <a href="#" class="btn-outline">See Our Services</a>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <div class="card-icon">🏠</div>
+        <div>
+          <h4>Residential Carpet Cleaning</h4>
+          <p>Deep clean for every room in your home</p>
+        </div>
+        <span class="card-tag">Most Popular</span>
+      </div>
+      <div class="hero-card">
+        <div class="card-icon">🛋️</div>
+        <div>
+          <h4>Upholstery &amp; Furniture</h4>
+          <p>Sofas, chairs, and cushions refreshed</p>
+        </div>
+        <span class="card-tag">New!</span>
+      </div>
+      <div class="hero-card">
+        <div class="card-icon">🏢</div>
+        <div>
+          <h4>Commercial Cleaning</h4>
+          <p>Offices, rentals, and commercial spaces</p>
+        </div>
+        <span class="card-tag" style="background:rgba(255,255,255,.2);">Available</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-item">⭐ 4.8-Star Google Rating</div>
+    <div class="trust-item">🏅 Serving PA Since 1982</div>
+    <div class="trust-item">🛡️ Fully Licensed &amp; Insured</div>
+    <div class="trust-item">💧 Hot Water Extraction Method</div>
+    <div class="trust-item">🐾 Pet &amp; Child Safe Products</div>
+  </div>
+
+  <!-- WHY SECTION -->
+  <section class="why-section">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">Why Choose Us</div>
+        <h2>44 Years of Clean You Can Count On</h2>
+        <p class="section-intro" style="margin-bottom:1.5rem;">
+          Since 1982, Capital Area Carpet Cleaners has been the name Central Pennsylvania
+          families and businesses trust. We use hot water extraction — the gold standard —
+          to remove deep-set dirt, allergens, and stains while being safe for kids and pets.
+        </p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.8rem;">
+          <li style="display:flex; gap:0.7rem; font-size:0.92rem;">✅ <span><strong>Certified technicians</strong> — trained and background-checked</span></li>
+          <li style="display:flex; gap:0.7rem; font-size:0.92rem;">✅ <span><strong>No hidden fees</strong> — upfront quotes before we start</span></li>
+          <li style="display:flex; gap:0.7rem; font-size:0.92rem;">✅ <span><strong>100% satisfaction guarantee</strong> — we'll re-clean for free if needed</span></li>
+          <li style="display:flex; gap:0.7rem; font-size:0.92rem;">✅ <span><strong>Family-owned</strong> — not a franchise, not a call center</span></li>
+        </ul>
+        <div class="why-stats">
+          <div class="stat-box">
+            <div class="stat-number">44+</div>
+            <div class="stat-label">Years in Business</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">10k+</div>
+            <div class="stat-label">Homes Cleaned</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">4.8★</div>
+            <div class="stat-label">Google Rating</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Satisfaction Promise</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <div>🧹</div>
+        <p>Professional team photo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="section-label">Our Services</div>
+    <h2>Every Surface, Expertly Cleaned</h2>
+    <p class="section-intro">
+      From wall-to-wall carpet to delicate upholstery — we have the equipment and expertise
+      to tackle every job right the first time.
+    </p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="s-icon">🏠</div>
+        <h3>Residential Carpet Cleaning</h3>
+        <p>Hot water extraction deep-cleans your carpets down to the fiber base — removing allergens, pet dander, and years of embedded dirt. Dry within hours, not days.</p>
+        <span class="badge">Most Requested</span>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🛋️</div>
+        <h3>Upholstery Cleaning</h3>
+        <p>Restore sofas, chairs, ottomans, and dining chairs to like-new condition. We identify fabric type first to use exactly the right process — never causing damage.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">💦</div>
+        <h3>Stain &amp; Spot Treatment</h3>
+        <p>Stubborn stains from pets, red wine, coffee, or mystery marks? Our pre-treatment process dissolves tough stains before the deep clean begins.</p>
+        <span class="badge">Free w/ cleaning</span>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🏢</div>
+        <h3>Commercial Carpet Cleaning</h3>
+        <p>Offices, rental properties, and commercial spaces. Available evenings and weekends to minimize business disruption. Volume pricing available.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🚿</div>
+        <h3>Tile &amp; Grout Cleaning</h3>
+        <p>Power-clean tile floors and restore grout lines to their original color. Includes optional sealer application for lasting protection.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🌊</div>
+        <h3>Water Damage Restoration</h3>
+        <p>Fast response to water damage events. We extract standing water, dry the area, and treat for mold risk — protecting your home and your health.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process-section">
+    <div class="section-label">How It Works</div>
+    <h2>Booked, Cleaned &amp; Fresh — In 4 Steps</h2>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Get a Free Quote</h4>
+        <p>Call or fill out our form. We'll give you an honest, upfront price — no surprises on cleaning day.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Schedule a Time</h4>
+        <p>Pick a day that works for you. We offer flexible morning and afternoon windows, including weekends.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>We Do the Work</h4>
+        <p>Our certified team arrives on time, pre-treats stains, and deep-cleans every surface to perfection.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Enjoy the Results</h4>
+        <p>Carpets dry in 2–4 hours. If you're not 100% satisfied, we'll come back and re-clean it — free.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-label">What Customers Say</div>
+    <h2>Real Reviews from Real PA Families</h2>
+    <p class="section-intro">Don't just take our word for it — here's what our customers have to say.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Chuck and his team are absolutely the best. My carpets looked brand new after they were done — even got out a stain I was sure was permanent. Honest pricing, friendly crew, and they were on time. Will definitely use them again!"</p>
+        <div class="testimonial-author">— Karen M., Mechanicsburg, PA</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We've been using Capital Area for over 10 years across three homes. Consistently excellent results every single time. Our golden retriever makes a mess of the carpets, but after Capital Area comes through, it's like we just moved in."</p>
+        <div class="testimonial-author">— Dave &amp; Linda T., Harrisburg, PA</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Called on a Monday, they were here Tuesday morning. Professional, careful with our furniture, and the tile cleaning was incredible — our floor literally looks the same as when we had it installed. Highly recommend."</p>
+        <div class="testimonial-author">— Sarah O., Camp Hill, PA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <div>
+      <h2>Ready for Cleaner, Fresher Floors?</h2>
+      <p>Get a free, no-obligation quote today. We'll tell you exactly what it costs — before we schedule anything.</p>
+    </div>
+    <a href="#" class="btn-white">📞 Get a Free Quote</a>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <div class="section-label">Contact Us</div>
+    <h2>Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p style="font-size:1rem; color:var(--gray-600); line-height:1.75; margin-bottom:1rem;">
+          Ready to schedule or just have a question? Give us a call or fill out the form.
+          We respond to all inquiries within a few hours during business hours.
+        </p>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <p>(717) 555-0190</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>info@capitalareacarpetcleaners.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Service Area</h4>
+            <p>Mechanicsburg, Harrisburg, Camp Hill, Carlisle, and surrounding Central PA</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon–Fri: 8am–6pm · Saturday: 9am–4pm</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Request a Free Quote</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Chuck" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(717) 555-0000" />
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select>
+            <option>Residential Carpet Cleaning</option>
+            <option>Upholstery Cleaning</option>
+            <option>Tile &amp; Grout Cleaning</option>
+            <option>Commercial Carpet Cleaning</option>
+            <option>Water Damage Restoration</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Additional Details</label>
+          <textarea placeholder="e.g. 3 bedrooms + living room, have 2 dogs..."></textarea>
+        </div>
+        <button class="form-submit">Get My Free Quote →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Capital Area <span>Carpet Cleaners</span></div>
+        <p class="footer-tagline">Serving Central Pennsylvania with professional carpet and upholstery cleaning since 1982. Family-owned, fully insured, and 100% satisfaction guaranteed.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>Carpet Cleaning</li>
+          <li>Upholstery Cleaning</li>
+          <li>Tile &amp; Grout</li>
+          <li>Commercial Cleaning</li>
+          <li>Water Restoration</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li>Mechanicsburg, PA</li>
+          <li>Harrisburg, PA</li>
+          <li>Camp Hill, PA</li>
+          <li>Carlisle, PA</li>
+          <li>Enola, PA</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>(717) 555-0190</li>
+          <li>info@capitalareacarpet<br>cleaners.com</li>
+          <li>Mon–Fri: 8am–6pm</li>
+          <li>Sat: 9am–4pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Capital Area Carpet Cleaners. All rights reserved. · Mechanicsburg, PA ·
+      Preview built by <strong>Alma Digital Designs</strong>
+    </div>
+  </footer>
+
+</body>
+</html>
