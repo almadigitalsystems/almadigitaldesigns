@@ -1,7 +1,7 @@
 # Keyword Strategy — almadigitaldesigns.com
 
 ## Business Context
-Alma Digital Designs is an AI-powered web design agency that proactively identifies businesses
+Alma Digital Services is an AI-powered web design agency that proactively identifies businesses
 with outdated websites and delivers stunning, conversion-optimized redesigns. Differentiators:
 free preview before commitment, AI-powered process, before/after results showcase.
 
