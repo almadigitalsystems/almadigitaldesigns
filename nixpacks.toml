@@ -1,12 +1,5 @@
-[phases.setup]
-nixPkgs = ["nginx"]
-
-[phases.build]
-cmds = [
-  "mkdir -p /etc/nginx/conf.d",
-  "envsubst '$PORT' < nginx.conf > /etc/nginx/conf.d/default.conf",
-  "nginx -t"
-]
+[phases.install]
+cmds = ["npm ci --production"]
 
 [start]
-cmd = "envsubst '$PORT' < nginx.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+cmd = "node server.js"
