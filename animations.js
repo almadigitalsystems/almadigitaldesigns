@@ -1,5 +1,5 @@
 /**
- * Alma Digital Designs — animations.js
+ * Alma Digital Services — animations.js
  * Animation Agent: Flux (AA) | ALM-496
  * Brand tokens: ALM-480 Brand Style Guide v1.0
  *
