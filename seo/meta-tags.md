@@ -10,7 +10,7 @@ Insert these inside `<head>` for each page. Character counts are noted.
 ## Homepage — index.html
 
 ```html
-<title>Alma Digital Designs | AI-Powered Website Redesign Agency</title>
+<title>Alma Digital Services | AI-Powered Website Redesign Agency</title>
 <!-- 55 chars -->
 
 <meta name="description" content="We redesign outdated websites into revenue-generating machines. See a free AI-powered preview of your new site before you commit. Get started today.">
@@ -26,10 +26,10 @@ Insert these inside `<head>` for each page. Character counts are noted.
 ## Privacy Policy Page — privacy.html
 
 ```html
-<title>Privacy Policy | Alma Digital Designs</title>
+<title>Privacy Policy | Alma Digital Services</title>
 <!-- 46 chars -->
 
-<meta name="description" content="Read the Alma Digital Designs privacy policy. Learn how we collect, use, and protect your personal data in compliance with GDPR and CCPA.">
+<meta name="description" content="Read the Alma Digital Services privacy policy. Learn how we collect, use, and protect your personal data in compliance with GDPR and CCPA.">
 <!-- 137 chars -->
 
 <link rel="canonical" href="https://almadigitaldesigns.com/privacy" />
@@ -41,10 +41,10 @@ Insert these inside `<head>` for each page. Character counts are noted.
 ## Terms of Service Page — terms.html
 
 ```html
-<title>Terms of Service | Alma Digital Designs</title>
+<title>Terms of Service | Alma Digital Services</title>
 <!-- 49 chars -->
 
-<meta name="description" content="Review the terms and conditions governing use of Alma Digital Designs services and the almadigitaldesigns.com website.">
+<meta name="description" content="Review the terms and conditions governing use of Alma Digital Services services and the almadigitaldesigns.com website.">
 <!-- 118 chars -->
 
 <link rel="canonical" href="https://almadigitaldesigns.com/terms" />
@@ -59,10 +59,10 @@ these apply to the homepage only. If separate pages are created per section, use
 
 ### /pricing (if standalone page)
 ```html
-<title>Web Design Pricing | Alma Digital Designs</title>
+<title>Web Design Pricing | Alma Digital Services</title>
 <!-- 49 chars -->
 
-<meta name="description" content="Transparent web design pricing from Alma Digital Designs. Choose the plan that fits your budget. Free website preview included with every quote.">
+<meta name="description" content="Transparent web design pricing from Alma Digital Services. Choose the plan that fits your budget. Free website preview included with every quote.">
 <!-- 144 chars -->
 
 <link rel="canonical" href="https://almadigitaldesigns.com/#pricing" />
@@ -70,10 +70,10 @@ these apply to the homepage only. If separate pages are created per section, use
 
 ### /portfolio (if standalone page)
 ```html
-<title>Website Redesign Portfolio | Alma Digital Designs</title>
+<title>Website Redesign Portfolio | Alma Digital Services</title>
 <!-- 56 chars -->
 
-<meta name="description" content="See real before-and-after website redesign examples from Alma Digital Designs. Browse results by industry. Our work speaks for itself.">
+<meta name="description" content="See real before-and-after website redesign examples from Alma Digital Services. Browse results by industry. Our work speaks for itself.">
 <!-- 134 chars -->
 
 <link rel="canonical" href="https://almadigitaldesigns.com/#portfolio" />
@@ -89,7 +89,7 @@ these apply to the homepage only. If separate pages are created per section, use
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Author and Branding -->
-<meta name="author" content="Alma Digital Designs" />
+<meta name="author" content="Alma Digital Services" />
 
 <!-- Theme color for browser chrome (use brand primary color) -->
 <meta name="theme-color" content="#0a0a0f" />
@@ -124,10 +124,10 @@ For each prospect preview page Apollo (WD) builds, use this template.
 Replace [BUSINESS_NAME], [CITY], [STATE], [SLUG].
 
 ```html
-<title>[BUSINESS_NAME] Website Redesign Preview | Alma Digital Designs</title>
+<title>[BUSINESS_NAME] Website Redesign Preview | Alma Digital Services</title>
 <!-- Keep under 60 chars: "Acme Co Redesign Preview | Alma Digital" = 40 chars -->
 
-<meta name="description" content="See your new [BUSINESS_NAME] website before you commit. Alma Digital Designs built you a free AI-powered preview. Claim it today — no obligation.">
+<meta name="description" content="See your new [BUSINESS_NAME] website before you commit. Alma Digital Services built you a free AI-powered preview. Claim it today — no obligation.">
 
 <link rel="canonical" href="https://almadigitaldesigns.com/preview/[SLUG]" />
 
