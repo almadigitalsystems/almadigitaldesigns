@@ -15,7 +15,7 @@ BreadcrumbList. The FAQ schema only applies to the FAQ section page (or homepage
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Alma Digital Designs",
+  "name": "Alma Digital Services",
   "url": "https://almadigitaldesigns.com",
   "logo": "https://almadigitaldesigns.com/assets/images/logo.png",
   "image": "https://almadigitaldesigns.com/assets/images/og-image.jpg",
@@ -76,7 +76,7 @@ BreadcrumbList. The FAQ schema only applies to the FAQ section page (or homepage
   "serviceType": "Website Redesign",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Alma Digital Designs",
+    "name": "Alma Digital Services",
     "url": "https://almadigitaldesigns.com"
   },
   "name": "AI-Powered Website Redesign",
@@ -226,7 +226,7 @@ Update the FAQ questions/answers to match the actual copy Clive (CA) writes.
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Alma Digital Designs",
+  "name": "Alma Digital Services",
   "url": "https://almadigitaldesigns.com",
   "potentialAction": {
     "@type": "SearchAction",
