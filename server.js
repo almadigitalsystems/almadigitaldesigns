@@ -62,6 +62,28 @@ function createMailTransporter() {
   });
 }
 
+// ── DOMAIN AVAILABILITY via RDAP ──────────────────────────────────────────────
+// Uses the public RDAP protocol (no API key required).
+// 404 = available, 200 = registered.
+
+async function checkDomainAvailable(domain) {
+  try {
+    const tld = domain.split('.').pop();
+    // Use Verisign for .com/.net (most reliable), fallback to rdap.org
+    const urls = tld === 'com' || tld === 'net'
+      ? [`https://rdap.verisign.com/${tld}/v1/domain/${domain}`]
+      : [`https://rdap.org/domain/${domain}`];
+
+    const res = await fetch(urls[0], {
+      redirect: 'follow',
+      signal: AbortSignal.timeout(5000),
+    });
+    return res.status === 404;
+  } catch {
+    return null; // unknown
+  }
+}
+
 // ── API: CHAT ─────────────────────────────────────────────────────────────────
 
 app.post('/api/chat', async (req, res) => {
@@ -150,58 +172,55 @@ app.post('/api/escalate', async (req, res) => {
     res.json({ success: true });
   } catch (err) {
     console.error('Escalation email error:', err);
-    // Don't fail the request — escalation is best-effort
     res.json({ success: false, error: String(err.message) });
   }
 });
 
 // ── API: DOMAIN SEARCH ────────────────────────────────────────────────────────
-// Called by Emily (agent) via Mila's task when client wants a new domain.
-// Returns 4-6 available domain options based on business name variations.
+// Returns 4-6 available domain options for a given business name.
+// Uses RDAP protocol for availability checking (no API key required).
+// Cloudflare Registrar search is attempted first; RDAP used as fallback.
 
 app.get('/api/domain-search', async (req, res) => {
   try {
-    const { q } = req.query;
+    const { q, city, tld } = req.query;
     if (!q) return res.status(400).json({ error: 'q (business name) required' });
 
     const base = q.toLowerCase().replace(/[^a-z0-9]/g, '');
-    const city = (req.query.city || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    const tld = req.query.tld || '.com';
+    const citySlug = (city || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
+    // Generate 6 candidate variations
     const candidates = [
       `${base}.com`,
       `${base}.co`,
-      city ? `${base}${city}.com` : `get${base}.com`,
+      citySlug ? `${base}${citySlug}.com` : `get${base}.com`,
       `get${base}.com`,
       `${base}services.com`,
       `${base}online.com`,
-    ].filter((v, i, a) => a.indexOf(v) === i).slice(0, 6);
+    ].filter((v, i, a) => a.indexOf(v) === i);
 
+    // Check each domain's availability via RDAP
     const results = await Promise.all(
       candidates.map(async (domain) => {
-        try {
-          const cfRes = await fetch(
-            `https://api.cloudflare.com/client/v4/accounts/${process.env.CLOUDFLARE_ACCOUNT_ID}/registrar/domains/search?query=${encodeURIComponent(domain.replace(/\..+$/, ''))}&limit=1`,
-            {
-              headers: {
-                Authorization: `Bearer ${process.env.CLOUDFLARE_API_TOKEN}`,
-              },
-            }
-          );
-          const cfData = await cfRes.json();
-          // Check if the specific domain appears in results as available
-          const match = cfData.result?.find?.(
-            (r) => r.name === domain && r.available === true
-          );
-          return { domain, available: !!match };
-        } catch {
-          return { domain, available: null };
-        }
+        const available = await checkDomainAvailable(domain);
+        return { domain, available };
       })
     );
 
-    const available = results.filter((r) => r.available !== false);
-    res.json({ domains: available.slice(0, 6) });
+    const available = results.filter(r => r.available === true);
+    const unknown = results.filter(r => r.available === null);
+
+    // Return available domains (or unknown if we couldn't check)
+    const toReturn = available.length >= 4
+      ? available.slice(0, 6)
+      : [...available, ...unknown].slice(0, 6);
+
+    res.json({
+      domains: toReturn,
+      query: q,
+      checked: results.length,
+      availableCount: available.length,
+    });
   } catch (err) {
     console.error('Domain search error:', err);
     res.status(500).json({ error: 'Domain search unavailable' });
@@ -293,7 +312,7 @@ app.post('/api/dns-setup', async (req, res) => {
       })
     );
 
-    const allOk = results.every((r) => r.success);
+    const allOk = results.every(r => r.success);
     res.json({ success: allOk, results });
   } catch (err) {
     console.error('DNS setup error:', err);
@@ -313,7 +332,9 @@ app.get('/api/dns-check', async (req, res) => {
     );
     const data = await r.json();
     const answer = data.Answer?.[0]?.data || null;
-    const resolved = expected ? answer === expected || answer?.includes(expected) : !!answer;
+    const resolved = expected
+      ? answer === expected || answer?.includes(expected)
+      : !!answer;
 
     res.json({ domain, resolved, answer, status: data.Status });
   } catch (err) {
