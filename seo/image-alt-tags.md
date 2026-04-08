@@ -14,7 +14,7 @@
 2. **Include keywords naturally** — do not keyword-stuff
 3. **Keep it under 125 characters**
 4. **Decorative images**: use `alt=""` (empty) — do not describe decorative dividers, backgrounds, or icons that add no content meaning
-5. **Logos**: use `alt="Alma Digital Designs logo"` (not just `alt="logo"`)
+5. **Logos**: use `alt="Alma Digital Services logo"` (not just `alt="logo"`)
 6. **Before/after sliders**: describe both states (see examples below)
 
 ---
@@ -23,7 +23,7 @@
 
 #### Logo
 ```html
-<img src="assets/images/logo.png" alt="Alma Digital Designs logo" width="180" height="48">
+<img src="assets/images/logo.png" alt="Alma Digital Services logo" width="180" height="48">
 ```
 
 #### Hero Section
@@ -70,7 +70,7 @@
 
 <!-- After image -->
 <img src="assets/portfolio/client-A-after.jpg"
-     alt="[Industry] business website after Alma Digital Designs redesign — modern, mobile-first design"
+     alt="[Industry] business website after Alma Digital Services redesign — modern, mobile-first design"
      loading="lazy">
 ```
 
@@ -78,8 +78,8 @@ Template pattern: `"[INDUSTRY] [BUSINESS TYPE] website [before/after] redesign"`
 
 Examples:
 - `alt="Restaurant website before redesign — outdated layout with poor mobile experience"`
-- `alt="Restaurant website after Alma Digital Designs redesign — modern dark design with online ordering"`
-- `alt="HVAC company website transformation — before and after Alma Digital Designs redesign"`
+- `alt="Restaurant website after Alma Digital Services redesign — modern dark design with online ordering"`
+- `alt="HVAC company website transformation — before and after Alma Digital Services redesign"`
 
 #### Testimonials
 
@@ -109,8 +109,8 @@ Examples:
 
 | Image/Asset              | Alt Text                                     |
 |--------------------------|----------------------------------------------|
-| Footer logo              | `alt="Alma Digital Designs"`                  |
-| Social media icons       | `alt="Alma Digital Designs on [Platform]"`   |
+| Footer logo              | `alt="Alma Digital Services"`                  |
+| Social media icons       | `alt="Alma Digital Services on [Platform]"`   |
 | Payment method icons     | `alt="[Card/Payment method name]"`           |
 
 ---
@@ -135,6 +135,6 @@ This is critical for Core Web Vitals (Largest Contentful Paint).
 - [ ] Every `<img>` tag has an `alt` attribute (even if empty for decorative images)
 - [ ] No alt text over 125 characters
 - [ ] Before/after portfolio images have descriptive, keyword-rich alt text
-- [ ] Logo alt text is exactly `"Alma Digital Designs logo"`
+- [ ] Logo alt text is exactly `"Alma Digital Services logo"`
 - [ ] All non-hero images have `loading="lazy"`
 - [ ] No duplicate alt text across multiple images on the same page
