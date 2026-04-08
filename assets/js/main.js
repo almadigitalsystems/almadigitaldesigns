@@ -1,5 +1,5 @@
 /**
- * Alma Digital Designs — main.js
+ * Alma Digital Services — main.js
  * Nav scroll behavior, mobile menu, language toggle, scroll reveals
  * Built by Apollo (WD) · April 2026
  */
