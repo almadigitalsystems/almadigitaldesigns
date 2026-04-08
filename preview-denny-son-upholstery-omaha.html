@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denny &amp; Son Upholstery — Website Preview | Alma Digital Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown:       #2d1b0e;
+      --brown-dark:  #1a0f08;
+      --brown-light: #5c3420;
+      --amber:       #c8923f;
+      --amber-dark:  #a67530;
+      --cream:       #faf7f2;
+      --gray-50:     #f8f9fa;
+      --gray-100:    #eef1f5;
+      --gray-200:    #dde3ec;
+      --gray-600:    #4a5568;
+      --gray-800:    #1a202c;
+      --white:       #ffffff;
+      --radius:      12px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,.07);
+      --shadow-md:   0 6px 24px rgba(0,0,0,.12);
+      --shadow-lg:   0 16px 48px rgba(0,0,0,.18);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--gray-800); background: var(--white); line-height: 1.65; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .preview-banner { background: linear-gradient(90deg,#1a0f08,#2d1b0e); color:#fff; text-align:center; padding:10px 20px; font-size:0.82rem; letter-spacing:.03em; position:sticky; top:0; z-index:9999; box-shadow:0 2px 12px rgba(0,0,0,.3); }
+    .preview-banner strong { color:#f6c97a; }
+    .preview-banner a { color:#f6c97a; text-decoration:underline; font-weight:600; }
+
+    .urgency-bar { background:var(--amber); color:#fff; text-align:center; padding:.55rem 5%; font-size:.82rem; font-weight:600; }
+    .urgency-bar a { color:#fff; font-weight:800; text-decoration:underline; }
+
+    .top-bar { background:var(--brown-dark); color:rgba(255,255,255,.7); padding:.5rem 5%; display:flex; justify-content:space-between; align-items:center; font-size:.82rem; }
+    .top-bar-phone { color:#f6c97a; font-weight:700; font-size:.9rem; }
+
+    nav { background:var(--white); border-bottom:2px solid var(--gray-200); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:70px; position:sticky; top:39px; z-index:100; box-shadow:var(--shadow-sm); }
+    .nav-logo { display:flex; align-items:center; gap:.7rem; }
+    .nav-logo .logo-icon { font-size:2rem; }
+    .nav-logo-text { font-family:'Playfair Display',Georgia,serif; font-size:1.25rem; font-weight:700; color:var(--brown); line-height:1.15; }
+    .nav-logo-sub { font-size:.62rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; color:var(--gray-600); }
+    .nav-links { display:flex; gap:2rem; list-style:none; font-size:.88rem; font-weight:600; }
+    .nav-links a { color:var(--gray-600); transition:color .2s; }
+    .nav-links a:hover { color:var(--brown); }
+    .nav-cta { background:var(--amber); color:#fff!important; padding:.55rem 1.4rem; border-radius:6px; font-size:.85rem; font-weight:700; transition:background .2s,transform .15s; }
+    .nav-cta:hover { background:var(--amber-dark)!important; transform:translateY(-1px); }
+
+    .hero { background:linear-gradient(145deg,var(--brown-dark) 0%,var(--brown) 55%,var(--brown-light) 100%); color:#fff; padding:5rem 5%; display:flex; align-items:center; gap:4rem; min-height:530px; position:relative; overflow:hidden; }
+    .hero::after { content:''; position:absolute; left:-80px; bottom:-80px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(200,146,63,.08) 0%,transparent 65%); }
+    .hero-content { max-width:580px; position:relative; z-index:1; }
+    .hero-badge { display:inline-flex; align-items:center; gap:.5rem; background:rgba(246,201,122,.15); border:1px solid rgba(246,201,122,.35); color:#f6c97a; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:.35rem 1rem; border-radius:4px; margin-bottom:1.2rem; }
+    .hero h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:800; line-height:1.12; margin-bottom:1.2rem; }
+    .hero h1 span { color:#f6c97a; }
+    .hero p { font-size:1.05rem; opacity:.88; margin-bottom:2rem; line-height:1.75; }
+    .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn-amber { background:var(--amber); color:#fff; padding:1rem 2.2rem; border-radius:6px; font-weight:800; font-size:1rem; transition:transform .2s,background .2s,box-shadow .2s; box-shadow:0 4px 16px rgba(200,146,63,.4); }
+    .btn-amber:hover { transform:translateY(-2px); background:var(--amber-dark); }
+    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.45); padding:1rem 2rem; border-radius:6px; font-weight:700; transition:background .2s,border-color .2s; }
+    .btn-outline:hover { background:rgba(255,255,255,.1); border-color:#fff; }
+
+    .hero-services { flex-shrink:0; display:grid; grid-template-columns:1fr 1fr; gap:.85rem; min-width:300px; position:relative; z-index:1; }
+    .service-pill { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:10px; padding:1.1rem 1.2rem; text-align:center; backdrop-filter:blur(4px); transition:background .2s; }
+    .service-pill:hover { background:rgba(255,255,255,.14); }
+    .service-pill .pill-icon { font-size:2rem; margin-bottom:.4rem; }
+    .service-pill h4 { font-size:.82rem; font-weight:700; color:#fff; }
+
+    .trust-bar { background:var(--cream); border-bottom:2px solid #e8e0d5; padding:1.2rem 5%; display:flex; align-items:center; justify-content:center; gap:3rem; flex-wrap:wrap; font-size:.85rem; color:var(--gray-600); font-weight:600; }
+    .trust-item { display:flex; align-items:center; gap:.5rem; }
+
+    section { padding:5rem 5%; }
+    .section-label { font-size:.75rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); margin-bottom:.7rem; }
+    h2 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,3vw,2.6rem); line-height:1.2; margin-bottom:1.2rem; }
+    .section-intro { font-size:1rem; color:var(--gray-600); max-width:620px; line-height:1.75; margin-bottom:3rem; }
+
+    .quote-section { background:linear-gradient(135deg,var(--brown-dark),var(--brown)); color:#fff; padding:4rem 5%; }
+    .quote-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .quote-section h2 { color:#fff; }
+    .quote-section .section-label { color:#f6c97a; }
+    .quote-section p { opacity:.88; font-size:1rem; line-height:1.75; margin-bottom:2rem; max-width:500px; }
+    .quote-form { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:var(--radius); padding:2rem; backdrop-filter:blur(6px); }
+    .quote-form h3 { color:#fff; font-size:1.1rem; font-weight:700; margin-bottom:1.5rem; }
+    .s-form-group { margin-bottom:1rem; }
+    .s-form-group label { display:block; font-size:.78rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:rgba(255,255,255,.65); margin-bottom:.4rem; }
+    .s-form-group input, .s-form-group select { width:100%; padding:.8rem 1rem; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25); border-radius:6px; color:#fff; font-size:.9rem; font-family:inherit; transition:border-color .2s; }
+    .s-form-group input::placeholder { color:rgba(255,255,255,.4); }
+    .s-form-group select option { background:var(--brown); }
+    .s-form-group input:focus, .s-form-group select:focus { outline:none; border-color:#f6c97a; }
+    .s-form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .s-submit { background:var(--amber); color:#fff; padding:.9rem; border:none; border-radius:6px; font-size:.95rem; font-weight:700; font-family:inherit; cursor:pointer; width:100%; transition:background .2s,transform .15s; margin-top:.5rem; }
+    .s-submit:hover { background:var(--amber-dark); transform:translateY(-1px); }
+
+    .services-section { background:var(--white); }
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; }
+    .service-card { border-radius:var(--radius); padding:2rem; border:2px solid var(--gray-200); transition:border-color .2s,box-shadow .2s,transform .2s; background:var(--cream); }
+    .service-card:hover { border-color:var(--amber); box-shadow:var(--shadow-md); transform:translateY(-3px); }
+    .service-card .s-icon { font-size:2.4rem; margin-bottom:1rem; }
+    .service-card h3 { font-size:1.05rem; font-weight:700; color:var(--brown); margin-bottom:.5rem; }
+    .service-card p { font-size:.86rem; color:var(--gray-600); line-height:1.65; }
+    .service-card .badge { display:inline-block; background:rgba(200,146,63,.15); color:var(--amber-dark); font-size:.7rem; font-weight:700; padding:.2rem .6rem; border-radius:4px; margin-top:.8rem; text-transform:uppercase; letter-spacing:.06em; }
+
+    .why-section { background:var(--cream); }
+    .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .why-visual { background:linear-gradient(135deg,#e8ddd0,#d4c4b0); border-radius:var(--radius); height:380px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:5rem; gap:1rem; border:2px dashed #c4b090; }
+    .why-visual p { font-size:.82rem; color:var(--gray-600); }
+    .differentiators { display:flex; flex-direction:column; gap:1.2rem; margin-top:1.5rem; }
+    .diff-item { display:flex; gap:1rem; align-items:flex-start; padding:1.2rem; background:var(--white); border-radius:8px; border:1px solid var(--gray-200); border-left:4px solid var(--amber); }
+    .diff-icon { font-size:1.5rem; flex-shrink:0; }
+    .diff-item h4 { font-size:.92rem; font-weight:700; color:var(--brown); margin-bottom:.2rem; }
+    .diff-item p { font-size:.84rem; color:var(--gray-600); line-height:1.55; }
+
+    .testimonials-section { background:var(--white); }
+    .testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .testimonial-card { background:var(--cream); border-radius:var(--radius); padding:2rem; box-shadow:var(--shadow-sm); border-top:4px solid var(--amber); }
+    .testimonial-stars { color:#f9a825; font-size:1rem; margin-bottom:1rem; }
+    .testimonial-text { font-size:.92rem; color:var(--gray-600); line-height:1.7; margin-bottom:1.2rem; font-style:italic; }
+    .testimonial-author { font-size:.8rem; font-weight:700; color:var(--brown); text-transform:uppercase; letter-spacing:.06em; }
+
+    .materials-section { background:var(--cream); }
+    .materials-grid { display:flex; flex-wrap:wrap; gap:1rem; }
+    .material-pill { background:var(--white); border:2px solid #d4c4b0; border-radius:6px; padding:.6rem 1.4rem; font-size:.85rem; font-weight:700; color:var(--brown); transition:border-color .2s,box-shadow .2s; }
+    .material-pill:hover { border-color:var(--amber); box-shadow:var(--shadow-sm); }
+
+    .cta-strip { background:var(--amber); color:#fff; padding:3.5rem 5%; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .cta-strip h2 { font-family:'Playfair Display',Georgia,serif; color:#fff; font-size:2rem; margin-bottom:.5rem; }
+    .cta-strip p { opacity:.9; font-size:.95rem; max-width:450px; }
+    .btn-white { background:#fff; color:var(--amber-dark); padding:1rem 2.5rem; border-radius:6px; font-weight:800; font-size:1.05rem; white-space:nowrap; transition:transform .2s,box-shadow .2s; box-shadow:0 4px 16px rgba(0,0,0,.2); }
+    .btn-white:hover { transform:translateY(-2px); }
+
+    .contact-section { background:var(--white); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+    .contact-info { display:flex; flex-direction:column; gap:1.5rem; }
+    .contact-item { display:flex; gap:1rem; align-items:flex-start; }
+    .contact-icon { font-size:1.5rem; flex-shrink:0; margin-top:.1rem; }
+    .contact-item h4 { font-size:.82rem; text-transform:uppercase; letter-spacing:.1em; color:var(--brown); font-weight:700; margin-bottom:.2rem; }
+    .contact-item p { font-size:.95rem; color:var(--gray-800); }
+    .map-placeholder { background:linear-gradient(135deg,var(--cream),#e8ddd0); border-radius:var(--radius); height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:3rem; gap:.5rem; border:2px dashed #c4b090; margin-top:1.5rem; }
+    .map-placeholder p { font-size:.82rem; color:var(--gray-600); }
+
+    footer { background:var(--brown-dark); color:rgba(255,255,255,.6); padding:3rem 5% 2rem; }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:2.5rem; margin-bottom:2rem; }
+    .footer-brand { font-family:'Playfair Display',Georgia,serif; color:#fff; font-size:1.3rem; font-weight:700; margin-bottom:.6rem; }
+    .footer-brand span { color:#f6c97a; }
+    .footer-tagline { font-size:.82rem; opacity:.6; line-height:1.6; }
+    .footer-col h4 { color:#fff; font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.9rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:.5rem; font-size:.85rem; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding-top:1.5rem; text-align:center; font-size:.78rem; }
+    .footer-bottom strong { color:#f6c97a; }
+
+    @media (max-width:1000px) {
+      .hero { flex-direction:column; }
+      .hero-services { width:100%; }
+      .services-grid { grid-template-columns:repeat(2,1fr); }
+      .testimonials-grid { grid-template-columns:repeat(2,1fr); }
+      .why-grid,.contact-grid,.quote-inner { grid-template-columns:1fr; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:600px) {
+      .nav-links { display:none; }
+      .services-grid,.testimonials-grid { grid-template-columns:1fr; }
+      .hero-services { grid-template-columns:repeat(2,1fr); }
+      .trust-bar { gap:1.2rem; }
+      .footer-grid { grid-template-columns:1fr; }
+      .cta-strip { flex-direction:column; text-align:center; }
+      .s-form-row { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">
+    ✨ <strong>Free Redesign Preview</strong> — This is how your website could look. Built by
+    <strong>Alma Digital Services</strong>. <a href="mailto:hello@almadigitaldesigns.com">Get a free consultation →</a>
+  </div>
+
+  <div class="urgency-bar">
+    🪡 Expert Furniture Upholstery — Free Estimates Available — <a href="#">Request a Quote →</a>
+  </div>
+
+  <div class="top-bar">
+    <span>📍 Omaha, NE — Serving the Greater Omaha Metro</span>
+    <span class="top-bar-phone">📞 (402) 555-0190</span>
+  </div>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="logo-icon">🪑</div>
+      <div>
+        <div class="nav-logo-text">Denny &amp; Son Upholstery</div>
+        <div class="nav-logo-sub">Omaha, NE · Family Owned</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#" class="nav-cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🪑 Expert Upholstery — Omaha, NE</div>
+      <h1>Give Your Furniture <span>a Second Life</span></h1>
+      <p>
+        Denny &amp; Son Upholstery transforms worn and outdated furniture into beautiful,
+        lasting pieces. Expert craftsmanship, hundreds of fabric options, and free
+        estimates — every time.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn-amber">📋 Get a Free Quote</a>
+        <a href="#" class="btn-outline">📞 Call (402) 555-0190</a>
+      </div>
+    </div>
+    <div class="hero-services">
+      <div class="service-pill"><div class="pill-icon">🛋️</div><h4>Sofa &amp; Couch</h4></div>
+      <div class="service-pill"><div class="pill-icon">🪑</div><h4>Dining Chairs</h4></div>
+      <div class="service-pill"><div class="pill-icon">🛏️</div><h4>Headboards</h4></div>
+      <div class="service-pill"><div class="pill-icon">🚗</div><h4>Auto Interiors</h4></div>
+      <div class="service-pill"><div class="pill-icon">🏢</div><h4>Commercial</h4></div>
+      <div class="service-pill"><div class="pill-icon">🔧</div><h4>Repairs</h4></div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-item">⭐ Family-Owned &amp; Operated</div>
+    <div class="trust-item">🏅 Decades of Craftsmanship</div>
+    <div class="trust-item">🛡️ Quality Materials Guaranteed</div>
+    <div class="trust-item">✂️ Custom Fabric Selection</div>
+    <div class="trust-item">📋 Free Estimates</div>
+  </div>
+
+  <section class="quote-section">
+    <div class="quote-inner">
+      <div>
+        <div class="section-label">Get Started — It's Free</div>
+        <h2>Request Your Free Upholstery Quote</h2>
+        <p>No guessing, no surprises. Tell us about your furniture and we'll provide a detailed estimate — usually within 24 hours. Pickup and delivery available for large pieces.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.8rem;">
+          <li style="display:flex;gap:.7rem;font-size:.92rem;opacity:.9;">✅ <span>Free in-shop or in-home estimates</span></li>
+          <li style="display:flex;gap:.7rem;font-size:.92rem;opacity:.9;">✅ <span>Hundreds of fabric options available</span></li>
+          <li style="display:flex;gap:.7rem;font-size:.92rem;opacity:.9;">✅ <span>Pickup &amp; delivery for large items</span></li>
+          <li style="display:flex;gap:.7rem;font-size:.92rem;opacity:.9;">✅ <span>Turnaround times to fit your schedule</span></li>
+        </ul>
+      </div>
+      <div class="quote-form">
+        <h3>📋 Request a Free Quote</h3>
+        <div class="s-form-row">
+          <div class="s-form-group"><label>First Name</label><input type="text" placeholder="Your name" /></div>
+          <div class="s-form-group"><label>Phone</label><input type="tel" placeholder="(402) 555-0000" /></div>
+        </div>
+        <div class="s-form-group">
+          <label>Furniture Type</label>
+          <select>
+            <option>Sofa / Sectional</option>
+            <option>Dining Chairs</option>
+            <option>Armchair / Recliner</option>
+            <option>Headboard / Bed Frame</option>
+            <option>Ottoman / Bench</option>
+            <option>Auto / Boat Interior</option>
+            <option>Commercial / Office</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="s-form-group"><label>Describe Your Project</label><input type="text" placeholder="e.g. 3-seat sofa, torn fabric, want leather look..." /></div>
+        <button class="s-submit">Get My Free Quote →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="section-label">What We Do</div>
+    <h2>Full-Service Upholstery &amp; Repair</h2>
+    <p class="section-intro">From a single dining chair to a complete living room set — Denny &amp; Son handles every upholstery project with care and craftsmanship.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="s-icon">🛋️</div>
+        <h3>Sofa &amp; Sectional Upholstery</h3>
+        <p>Breathe new life into your favorite sofa. We re-cover, re-stuff, and rebuild frames — turning worn furniture into a showpiece that looks brand new.</p>
+        <span class="badge">Most Popular</span>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🪑</div>
+        <h3>Dining Chair Recovery</h3>
+        <p>Update your dining room with fresh fabric. We recover seats, backs, and full chair sets — matching your style and standing up to everyday use.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🛏️</div>
+        <h3>Headboards &amp; Bed Frames</h3>
+        <p>Custom upholstered headboards for any bedroom style. Choose your fabric, your shape, your look — we build and install to perfection.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🚗</div>
+        <h3>Auto &amp; Marine Interiors</h3>
+        <p>Seats, door panels, convertible tops, and boat upholstery. We restore vehicle interiors to like-new condition using marine-grade and automotive fabrics.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🏢</div>
+        <h3>Commercial &amp; Restaurant</h3>
+        <p>Booth seating, office chairs, and hotel furniture. We work with restaurants, hotels, and offices across Omaha on large-scale projects.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon">🔧</div>
+        <h3>Repairs &amp; Restoration</h3>
+        <p>Torn seams, broken springs, sagging cushions — we repair what others throw away. Antique restoration is a specialty. No job is too small.</p>
+        <span class="badge">Antique Specialists</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="why-grid">
+      <div class="why-visual">
+        <div>🪡</div>
+        <p>Craftsman photo placeholder</p>
+      </div>
+      <div>
+        <div class="section-label">Why Denny &amp; Son</div>
+        <h2>Craftsmanship You Can See &amp; Feel</h2>
+        <p style="font-size:1rem;color:var(--gray-600);line-height:1.75;margin-bottom:1.5rem;">
+          Every piece that leaves the shop is something the customer is proud to put back in their home.
+          Every stitch, every seam, every frame is done right — or it doesn't leave.
+        </p>
+        <div class="differentiators">
+          <div class="diff-item"><div class="diff-icon">🎨</div><div><h4>Hundreds of Fabric Choices</h4><p>We stock and source fabrics in every style — from durable performance cloth to premium leather and velvet.</p></div></div>
+          <div class="diff-item"><div class="diff-icon">🔧</div><div><h4>Frame Repair Included</h4><p>We fix broken frames, springs, and padding before we re-cover — not just cover the problem.</p></div></div>
+          <div class="diff-item"><div class="diff-icon">🏠</div><div><h4>Pickup &amp; Delivery Available</h4><p>Can't transport a sectional? We offer pickup and delivery across the Omaha metro area.</p></div></div>
+          <div class="diff-item"><div class="diff-icon">💰</div><div><h4>Save vs. Buying New</h4><p>Quality upholstery often costs a fraction of replacement furniture — and you keep the piece you love.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="materials-section">
+    <div class="section-label">Fabrics &amp; Materials</div>
+    <h2>We Work With Every Material</h2>
+    <p class="section-intro">From budget-friendly performance fabrics to premium leather — we source and work with everything.</p>
+    <div class="materials-grid">
+      <span class="material-pill">Genuine Leather</span>
+      <span class="material-pill">Faux Leather / Vinyl</span>
+      <span class="material-pill">Performance Fabric</span>
+      <span class="material-pill">Velvet</span>
+      <span class="material-pill">Microfiber</span>
+      <span class="material-pill">Linen &amp; Cotton</span>
+      <span class="material-pill">Outdoor / Marine Grade</span>
+      <span class="material-pill">Brocade &amp; Tapestry</span>
+      <span class="material-pill">Suede</span>
+      <span class="material-pill">Tweed &amp; Woven</span>
+      <span class="material-pill">Automotive Fabric</span>
+      <span class="material-pill">Custom &amp; Designer</span>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="section-label">Customer Reviews</div>
+    <h2>What Omaha Customers Say</h2>
+    <p class="section-intro">Families and businesses across Omaha have trusted Denny &amp; Son to restore their most beloved furniture.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I brought in my grandmother's armchair that I thought was beyond saving. Denny's team reupholstered it beautifully — new fabric, repaired the frame, restuffed the cushion. It looks better than the day it was bought."</p>
+        <div class="testimonial-author">— Carol D., Omaha, NE</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Used Denny &amp; Son for our restaurant booth seating — 14 booths. The quality is incredible and they finished on schedule. Our customers have already commented on how great the dining room looks."</p>
+        <div class="testimonial-author">— Marcus T., Restaurant Owner, Omaha, NE</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Our sectional had seen better days but it's a great frame. Denny quoted us $800 vs. $3,200 for a new one. The result is stunning — new performance fabric, repaired springs. Best money we've spent."</p>
+        <div class="testimonial-author">— Kevin &amp; Lisa R., Omaha, NE</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <div>
+      <h2>Ready to Restore Your Furniture?</h2>
+      <p>Free estimates, quality materials, expert craftsmanship. Let's talk about your project today.</p>
+    </div>
+    <a href="#" class="btn-white">📋 Get a Free Quote</a>
+  </div>
+
+  <section class="contact-section">
+    <div class="section-label">Contact Us</div>
+    <h2>Visit the Shop or Request a Quote</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p style="font-size:1rem;color:var(--gray-600);line-height:1.75;margin-bottom:1rem;">
+          Stop by the shop to see fabric samples in person, or call and describe your project — we're happy to walk you through your options and provide a free estimate.
+        </p>
+        <div class="contact-item"><div class="contact-icon">📞</div><div><h4>Phone</h4><p>(402) 555-0190</p></div></div>
+        <div class="contact-item"><div class="contact-icon">📧</div><div><h4>Email</h4><p>rela1969@yahoo.com</p></div></div>
+        <div class="contact-item"><div class="contact-icon">📍</div><div><h4>Location</h4><p>Omaha, NE — Serving the Greater Omaha Metro Area</p></div></div>
+        <div class="contact-item"><div class="contact-icon">🕐</div><div><h4>Hours</h4><p>Mon–Fri: 8am–5pm · Saturday: 9am–3pm</p></div></div>
+        <div class="map-placeholder"><div>📍</div><p>Omaha, NE Service Area</p></div>
+      </div>
+      <div>
+        <div style="background:var(--cream);border-radius:var(--radius);padding:2rem;border:2px solid #d4c4b0;">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:.4rem;color:var(--brown);">🪑 Describe Your Furniture Project</h3>
+          <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:1.2rem;line-height:1.6;">Tell us what you have and what you're looking for — we'll get back to you with a quote, usually within 24 hours.</p>
+          <div style="display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;">
+            <label style="font-size:.78rem;font-weight:600;color:var(--gray-600);text-transform:uppercase;letter-spacing:.06em;">Your Name</label>
+            <input type="text" placeholder="First and last name" style="padding:.8rem 1rem;border:2px solid #d4c4b0;border-radius:6px;font-size:.9rem;font-family:inherit;" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;">
+            <label style="font-size:.78rem;font-weight:600;color:var(--gray-600);text-transform:uppercase;letter-spacing:.06em;">Phone Number</label>
+            <input type="tel" placeholder="(402) 555-0000" style="padding:.8rem 1rem;border:2px solid #d4c4b0;border-radius:6px;font-size:.9rem;font-family:inherit;" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;">
+            <label style="font-size:.78rem;font-weight:600;color:var(--gray-600);text-transform:uppercase;letter-spacing:.06em;">Tell Us About the Piece</label>
+            <textarea placeholder="e.g. 3-cushion sofa, torn fabric, want leather look..." style="padding:.8rem 1rem;border:2px solid #d4c4b0;border-radius:6px;font-size:.9rem;font-family:inherit;min-height:90px;resize:vertical;width:100%;"></textarea>
+          </div>
+          <button style="background:var(--amber);color:#fff;padding:.9rem;border:none;border-radius:6px;font-size:.9rem;font-weight:700;font-family:inherit;cursor:pointer;width:100%;">Send My Project Details →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Denny &amp; Son <span>Upholstery</span></div>
+        <p class="footer-tagline">Omaha's trusted upholstery craftsmen. Expert furniture recovery, repair, and restoration for residential and commercial clients across the Greater Omaha Metro.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>Sofa &amp; Sectional</li>
+          <li>Dining Chairs</li>
+          <li>Headboards</li>
+          <li>Auto &amp; Marine</li>
+          <li>Commercial</li>
+          <li>Repairs &amp; Restoration</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Area</h4>
+        <ul>
+          <li>Omaha, NE</li>
+          <li>Bellevue, NE</li>
+          <li>Papillion, NE</li>
+          <li>La Vista, NE</li>
+          <li>Council Bluffs, IA</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>(402) 555-0190</li>
+          <li>rela1969@yahoo.com</li>
+          <li>Mon–Fri: 8am–5pm</li>
+          <li>Sat: 9am–3pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Denny &amp; Son Upholstery Inc. All rights reserved. &middot; Omaha, NE &middot;
+      Preview built by <strong>Alma Digital Services</strong>
+    </div>
+  </footer>
+
+</body>
+</html>
