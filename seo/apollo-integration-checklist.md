@@ -30,7 +30,7 @@ for exact code to copy-paste. Do not write your own meta tags — use the specs 
 - [ ] `<meta name="description">` — from `meta-tags.md`
 - [ ] `<meta name="keywords">` — from `meta-tags.md`
 - [ ] `<meta name="robots" content="index, follow" />`
-- [ ] `<meta name="author" content="Alma Digital Designs" />`
+- [ ] `<meta name="author" content="Alma Digital Services" />`
 - [ ] `<meta name="theme-color" content="#0a0a0f" />` (update to exact brand color from style guide)
 - [ ] `<link rel="canonical" href="https://almadigitaldesigns.com/" />`
 - [ ] hreflang alternates (EN/ES) — from `meta-tags.md`
