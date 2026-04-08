@@ -1,5 +1,5 @@
 /* ============================================================
-   Alma Digital Designs — styles.css
+   Alma Digital Services — styles.css
    Brand tokens + global reset + component library
    Built by Apollo (WD) · April 2026
    ============================================================ */
@@ -1690,6 +1690,42 @@ html[lang="es"] [data-lang="es"]:not(.nav__lang) { display: revert; }
   stroke: var(--accent);
   fill: none;
   stroke-width: 2;
+}
+
+.pricing__zero-risk {
+  margin-top: var(--sp-10);
+  background: linear-gradient(135deg, rgba(0,180,216,0.12) 0%, rgba(0,180,216,0.04) 100%);
+  border: 1px solid rgba(0,180,216,0.3);
+  border-radius: 12px;
+  padding: var(--sp-6) var(--sp-8);
+}
+
+.pricing__zero-risk-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.pricing__zero-risk-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.pricing__zero-risk-title {
+  display: block;
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-2);
+}
+
+.pricing__zero-risk-body {
+  color: var(--text-ondark-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ══════════════════════════════════════════════════════
