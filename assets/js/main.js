@@ -226,6 +226,12 @@
       const val = el.dataset[mode];
       if (val) el.textContent = val;
     });
+
+    // Update billing notes (Save 10% vs monthly / 12-month commitment)
+    document.querySelectorAll('.pricing-card__note').forEach(el => {
+      const val = el.dataset[mode];
+      if (val) el.textContent = val;
+    });
   };
 
 })();
