@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painting Perfections | Website Preview by Alma Digital Services</title>
+  <meta name="robots" content="noindex,nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --dark:#1e3a5f;--accent:#f5a623;--light:#fff8f0;
+      --text:#1a1a1a;--muted:#555;--white:#fff;
+    }
+    body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text);line-height:1.6}
+    /* PREVIEW BANNER */
+    .preview-banner{background:linear-gradient(90deg,#1e3a5f,#f5a623);color:#fff;text-align:center;padding:12px 24px;font-size:0.78rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase}
+    .preview-banner a{color:#fff;text-decoration:underline}
+    /* NAV */
+    nav{background:#1e3a5f;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+    .nav-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#f5a623;text-decoration:none}
+    .nav-cta{background:#f5a623;color:#fff;font-size:0.8rem;font-weight:700;padding:10px 22px;border-radius:5px;text-decoration:none;letter-spacing:0.04em;transition:opacity .2s}
+    .nav-cta:hover{opacity:.85}
+    /* HERO */
+    .hero{background:#1e3a5f;color:#fff;padding:100px 32px 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,#f5a62322 0%,transparent 60%),radial-gradient(ellipse at 80% 70%,#f5a62315 0%,transparent 50%)}
+    .hero-inner{position:relative;z-index:1;max-width:820px;margin:0 auto}
+    .hero-eyebrow{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#f5a623;border:1px solid #f5a62355;padding:6px 18px;border-radius:100px;margin-bottom:28px}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5.5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:20px}
+    .hero h1 .accent{color:#f5a623}
+    .hero-sub{font-size:clamp(1rem,2.5vw,1.15rem);color:#ffffffcc;max-width:560px;margin:0 auto 36px;font-weight:300;line-height:1.75}
+    .cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn-primary{display:inline-block;background:#f5a623;color:#fff;font-size:0.88rem;font-weight:700;padding:15px 36px;border-radius:5px;text-decoration:none;letter-spacing:0.05em;transition:opacity .2s,transform .15s}
+    .btn-primary:hover{opacity:.9;transform:translateY(-2px)}
+    .btn-ghost{display:inline-block;color:#f5a623;font-size:0.88rem;font-weight:600;padding:15px 30px;border-radius:5px;border:1px solid #f5a62355;text-decoration:none;transition:border-color .2s,background .2s}
+    .btn-ghost:hover{border-color:#f5a623;background:#f5a62315}
+    /* PAIN POINTS */
+    .pain{background:#fff;padding:56px 32px;text-align:center}
+    .pain-inner{max-width:900px;margin:0 auto}
+    .pain-label{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#f5a623;margin-bottom:10px}
+    .pain-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.5vw,2.3rem);font-weight:700;color:#1e3a5f;margin-bottom:36px}
+    .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;text-align:left}
+    .pain-card{background:#fff8f0;border-left:4px solid #f5a623;border-radius:8px;padding:28px 28px 28px 24px}
+    .pain-card-icon{font-size:1.5rem;margin-bottom:12px}
+    .pain-card-title{font-weight:700;color:#1e3a5f;margin-bottom:8px;font-size:1rem}
+    .pain-card-body{font-size:0.9rem;color:var(--muted);line-height:1.65}
+    /* SERVICES */
+    #services{background:#fff8f0;padding:80px 32px}
+    .section-inner{max-width:1100px;margin:0 auto}
+    .section-label{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#f5a623;margin-bottom:10px}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;color:#1e3a5f;margin-bottom:12px}
+    .section-desc{color:var(--muted);font-size:1rem;max-width:540px;margin-bottom:48px;line-height:1.75}
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px}
+    .svc-card{background:#fff;border:1px solid #f5a62322;border-radius:10px;padding:28px 20px;text-align:center;transition:border-color .2s,transform .2s,box-shadow .2s}
+    .svc-card:hover{border-color:#f5a623;transform:translateY(-3px);box-shadow:0 8px 28px #f5a62318}
+    .svc-icon{font-size:1.8rem;margin-bottom:12px}
+    .svc-name{font-weight:700;font-size:0.92rem;color:#1e3a5f}
+    /* CTA STRIP */
+    .cta-strip{background:#1e3a5f;padding:72px 32px;text-align:center;color:#fff}
+    .cta-strip h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.5rem);font-weight:700;margin-bottom:14px}
+    .cta-strip p{color:#ffffffcc;font-size:1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+    /* CONTACT */
+    #contact{background:#fff;padding:80px 32px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto;align-items:start}
+    @media(max-width:720px){.contact-grid{grid-template-columns:1fr}}
+    .contact-form{background:#fff8f0;border-radius:12px;padding:36px}
+    .contact-form h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#1e3a5f;margin-bottom:6px}
+    .contact-form p{font-size:0.88rem;color:var(--muted);margin-bottom:24px}
+    .form-group{margin-bottom:18px}
+    .form-group label{display:block;font-size:0.8rem;font-weight:600;color:#1e3a5f;margin-bottom:6px;letter-spacing:0.03em}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:11px 14px;border:1px solid #ddd;border-radius:6px;font-size:0.92rem;font-family:'Inter',sans-serif;transition:border-color .2s;background:#fff}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#f5a623;box-shadow:0 0 0 3px #f5a62318}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .form-submit{width:100%;background:#f5a623;color:#fff;font-size:0.9rem;font-weight:700;padding:14px;border:none;border-radius:6px;cursor:pointer;letter-spacing:0.04em;transition:opacity .2s}
+    .form-submit:hover{opacity:.88}
+    .contact-info h3{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:#1e3a5f;margin-bottom:16px}
+    .contact-info p{color:var(--muted);margin-bottom:24px;line-height:1.7}
+    .info-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+    .info-icon{width:40px;height:40px;background:#f5a62318;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .info-text strong{display:block;font-size:0.85rem;font-weight:700;color:#1e3a5f;margin-bottom:2px}
+    .info-text span{font-size:0.88rem;color:var(--muted)}
+    /* FOOTER */
+    footer{background:#1e3a5f;color:#ffffffaa;text-align:center;padding:28px 24px;font-size:0.8rem}
+    footer a{color:#f5a623;text-decoration:none}
+    /* RESPONSIVE */
+    @media(max-width:640px){
+      nav{padding:14px 20px}
+      .hero{padding:80px 20px 60px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">
+    &#128065; This is a FREE website preview for Painting Perfections &mdash; Created by <a href="https://almadigitalservices.com" target="_blank">Alma Digital Services</a> &mdash; <a href="https://almadigitalservices.com/#contact" target="_blank">Claim Your Free Redesign</a>
+  </div>
+
+  <nav>
+    <a href="#" class="nav-brand">Painting Perfections</a>
+    <a href="#contact" class="nav-cta">Get a Free Quote</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Painting Contractor &mdash; Fort Wayne, IN</div>
+      <h1>Fort Wayne's<br/><span class="accent">Trusted Painting</span><br/>Professionals</h1>
+      <p class="hero-sub">Professional painting services with 27 years of excellence in Fort Wayne and surrounding areas.</p>
+      <div class="cta-group">
+        <a href="#contact" class="btn-primary">Get a Free Quote</a>
+        <a href="#services" class="btn-ghost">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <div class="pain">
+    <div class="pain-inner">
+      <div class="pain-label">Why a New Website Matters</div>
+      <h2 class="pain-title">What&rsquo;s Holding Painting Perfections Back Online</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-card-icon">&#128683;</div>
+          <div class="pain-card-title">Problem 1</div>
+          <p class="pain-card-body">Free Wix subdomain &mdash; this alone is costing you leads every day.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-icon">&#128683;</div>
+          <div class="pain-card-title">Problem 2</div>
+          <p class="pain-card-body">Personal Gmail for business contact &mdash; prospects choose competitors who make it easier.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc">Professional painting contractor services delivered with expertise and care for Fort Wayne, IN and the surrounding area.</p>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-icon">🎨</div>
+          <div class="svc-name">Interior Painting</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🎨</div>
+          <div class="svc-name">Exterior Painting</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🎨</div>
+          <div class="svc-name">Commercial Painting</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🎨</div>
+          <div class="svc-name">Cabinet Refinishing</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🎨</div>
+          <div class="svc-name">Deck Staining</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🎨</div>
+          <div class="svc-name">Color Consultation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <h2>See Your New Website Before You Pay</h2>
+    <p>We build a custom preview of your redesigned website &mdash; completely free. You only pay when you love it.</p>
+    <a href="#contact" class="btn-primary">Claim Your Free Preview</a>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Get in Touch</div>
+        <h3>Ready for a Website That Works?</h3>
+        <p>We&rsquo;ll build a custom preview of your new site &mdash; free of charge &mdash; so you can see exactly how it looks before committing to anything.</p>
+        <div class="info-item">
+          <div class="info-icon">&#128081;</div>
+          <div class="info-text"><strong>Free Preview</strong><span>See your new site before you pay a single dollar</span></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#9200;</div>
+          <div class="info-text"><strong>48-Hour Delivery</strong><span>Your preview is ready within 2 business days</span></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#128176;</div>
+          <div class="info-text"><strong>Starting at $50</strong><span>Professional website, affordable pricing</span></div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Claim Your Free Preview</h3>
+        <p>Fill in your details and we&rsquo;ll get started right away.</p>
+        <form action="https://formspree.io/f/xkndqwrg" method="POST">
+          <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Your name" required/></div>
+          <div class="form-group"><label>Business Name</label><input type="text" name="business" value="Painting Perfections" required/></div>
+          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required/></div>
+          <div class="form-group"><label>Phone (optional)</label><input type="tel" name="phone" placeholder="Your phone number"/></div>
+          <div class="form-group"><label>Message (optional)</label><textarea name="message" placeholder="Tell us about your business and what you&apos;re looking for..."></textarea></div>
+          <input type="hidden" name="source" value="preview-painting-perfections-fort-wayne-us"/>
+          <button type="submit" class="form-submit">Get My Free Preview &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>This is a website preview created by <a href="https://almadigitalservices.com" target="_blank">Alma Digital Services</a> for Painting Perfections. &copy; 2026 Alma Digital Services.</p>
+  </footer>
+
+</body>
+</html>
