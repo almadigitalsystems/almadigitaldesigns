@@ -465,11 +465,14 @@ app.post('/api/stripe-webhook', async (req, res) => {
       `- **Payment ID:** \`${paymentId}\``,
       `- **Event ID:** \`${event.id}\``,
       '',
+      '> **IMPORTANT:** The payment email may differ from the prospect\'s contact email. Always cross-reference with Instantly leads (campaign_id `b80b7623`) and the Google Sheet at https://docs.google.com/spreadsheets/d/14hDlASmDxl434OtkRiN6pJVu6-Bdca83lFlsTqHn-zQ to find the correct contact email before sending any onboarding communications.',
+      '',
       'Start full onboarding pipeline immediately:',
-      '1. Reach out to client and confirm their domain situation',
-      '2. Trigger domain registration or DNS setup as needed',
-      '3. Kick off website build process',
-      '4. All steps per the onboarding checklist',
+      '1. Verify the correct contact email via Instantly leads and Google Sheet before any outreach',
+      '2. Reach out to client and confirm their domain situation',
+      '3. Trigger domain registration or DNS setup as needed',
+      '4. Kick off website build process',
+      '5. All steps per the onboarding checklist',
     ].join('\n');
 
     const paperclipUrl = process.env.PAPERCLIP_API_URL || 'http://127.0.0.1:3100';
