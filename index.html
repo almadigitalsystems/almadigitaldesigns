@@ -1,774 +1,1549 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8"/>
+
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
 <title>Alma Digital Services — AI-Powered Websites From $50</title>
+
 <meta name="description" content="Professional custom website from $50. Free domain included. See it before you pay. AI-built. 48-hour delivery. 95+ PageSpeed guaranteed."/>
+
 <meta property="og:title" content="Alma Digital Services — AI-Powered Websites From $50"/>
+
 <meta property="og:description" content="See your new website before you pay a single dollar. From $50. Free domain. 48-hour delivery."/>
+
 <meta property="og:type" content="website"/>
+
 <meta property="og:url" content="https://almadigitalservices.com/"/>
+
 <meta name="twitter:card" content="summary_large_image"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alma Digital Services","url":"https://almadigitalservices.com","email":"desk@almawebcreative.com","address":{"@type":"PostalAddress","streetAddress":"6401 SW 118th Ave","addressLocality":"Miami","addressRegion":"FL","postalCode":"33183","addressCountry":"US"},"priceRange":"$50 - $150"}</script>
+
 <style>
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 :root{
+
   --bg:#0a0a0f;--bg-card:#0f0f1a;--cyan:#00d4ff;--purple:#7b2fff;
+
   --text:#fff;--text-muted:#8892a4;--border:rgba(0,212,255,0.15);
+
   --glow-cyan:0 0 30px rgba(0,212,255,0.4);--glow-purple:0 0 30px rgba(123,47,255,0.4);
+
 }
+
 html{scroll-behavior:smooth;font-size:16px}
+
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
 ::selection{background:rgba(0,212,255,0.3)}
 
+
+
 /* ── SCROLLBAR ── */
+
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
 
+
+
 /* ── UTILITY ── */
+
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
 .grad-text{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
 .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.25s;border:none}
+
 .btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;box-shadow:var(--glow-cyan)}
+
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,255,0.6)}
+
 .btn-ghost{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan)}
+
 .btn-ghost:hover{background:rgba(0,212,255,0.1);transform:translateY(-2px)}
+
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+
 .reveal.visible{opacity:1;transform:none}
+
+.reveal,.fade-in,.slide-up,[data-reveal],[data-animate],.animate{opacity:1!important;transform:none!important;visibility:visible!important}
+
 .section-label{font-size:0.8rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+
 .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.15;margin-bottom:1.25rem}
+
 .section-sub{font-size:1.1rem;color:var(--text-muted);max-width:600px;margin:0 auto 3rem}
 
+
+
 /* ── NAV ── */
+
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;transition:background 0.3s,backdrop-filter 0.3s}
+
 .nav.scrolled{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+
 .nav__inner{display:flex;align-items:center;justify-content:space-between}
+
 .nav__logo{font-size:1.3rem;font-weight:900;text-decoration:none}
+
 .nav__links{display:flex;gap:2rem;list-style:none}
+
 .nav__links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+
 .nav__links a:hover{color:var(--cyan)}
+
 .nav__cta{font-size:0.9rem;padding:0.6rem 1.5rem}
+
 @media(max-width:768px){.nav__links{display:none}}
 
+
+
 /* ── HERO ── */
+
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+
 #heroCanvas{position:absolute;inset:0;z-index:0}
+
 .hero__grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:1}
+
 .hero__glow-1{position:absolute;top:-20%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,255,0.12) 0%,transparent 70%);z-index:1;animation:floatGlow 8s ease-in-out infinite}
+
 .hero__glow-2{position:absolute;bottom:-20%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(123,47,255,0.12) 0%,transparent 70%);z-index:1;animation:floatGlow 10s ease-in-out infinite reverse}
+
 @keyframes floatGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+
 .hero__content{position:relative;z-index:2;max-width:750px}
+
 .hero__badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);border-radius:100px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:600;color:var(--cyan);margin-bottom:1.5rem}
+
 .hero__badge::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse-dot 1.5s infinite}
+
 @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+
 .hero h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:900;line-height:1.08;margin-bottom:1.5rem;letter-spacing:-0.02em}
+
 .hero__sub{font-size:1.25rem;color:var(--text-muted);margin-bottom:2.5rem;max-width:540px}
+
 .hero__ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+
 .hero__stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+
 .hero__stat{display:flex;flex-direction:column}
+
 .hero__stat-num{font-size:1.8rem;font-weight:900;color:var(--cyan)}
+
 .hero__stat-label{font-size:0.8rem;color:var(--text-muted);font-weight:500}
+
 .hero__device{position:absolute;right:-5%;top:50%;transform:translateY(-50%);width:480px;z-index:2;animation:floatDevice 6s ease-in-out infinite}
+
 @keyframes floatDevice{0%,100%{transform:translateY(-50%) translateY(0)}50%{transform:translateY(-50%) translateY(-20px)}}
+
 .device-frame{background:var(--bg-card);border:2px solid rgba(0,212,255,0.3);border-radius:16px;padding:1rem;box-shadow:var(--glow-cyan),0 40px 80px rgba(0,0,0,0.8)}
+
 .device-bar{display:flex;gap:6px;margin-bottom:0.75rem;align-items:center}
+
 .device-dot{width:10px;height:10px;border-radius:50%}
+
 .device-addr{flex:1;height:24px;background:rgba(255,255,255,0.05);border-radius:4px;display:flex;align-items:center;padding:0 0.5rem;font-size:0.65rem;color:var(--text-muted)}
+
 .device-screen{background:#0a0a15;border-radius:8px;overflow:hidden;height:300px;position:relative}
+
 .device-hero-bar{height:40%;background:linear-gradient(135deg,#0a0a20,#1a0a30);display:flex;align-items:center;padding:1rem;gap:1rem}
+
 .device-logo-placeholder{width:40px;height:40px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:8px;flex-shrink:0}
+
 .device-headline-lines{flex:1}
+
 .device-line{height:8px;background:rgba(255,255,255,0.15);border-radius:4px;margin-bottom:6px}
+
 .device-line:last-child{width:60%}
+
 .device-services{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0.75rem;height:60%}
+
 .device-card{background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:6px}
+
 @media(max-width:1024px){.hero__device{display:none}}
 
+
+
 /* ── TICKER ── */
+
 .ticker{padding:1.5rem 0;background:rgba(0,212,255,0.03);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;white-space:nowrap}
+
 .ticker__track{display:inline-flex;animation:ticker-scroll 30s linear infinite}
+
 .ticker__track:hover{animation-play-state:paused}
+
 .ticker__item{display:inline-flex;align-items:center;gap:1rem;font-size:0.9rem;font-weight:600;color:var(--text-muted);padding:0 1.5rem}
+
 .ticker__dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;box-shadow:0 0 8px var(--cyan);flex-shrink:0}
+
 @keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
+
+
 /* ── STEPS ── */
+
 .steps{padding:7rem 0;text-align:center}
+
 .steps__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem;position:relative}
+
 .steps__grid::before{content:'';position:absolute;top:60px;left:calc(16.67% + 40px);right:calc(16.67% + 40px);height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));z-index:0;animation:line-glow 3s ease-in-out infinite}
+
 @keyframes line-glow{0%,100%{opacity:0.4}50%{opacity:1;box-shadow:0 0 10px var(--cyan)}}
+
 @media(max-width:768px){.steps__grid::before{display:none}}
+
 .step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem;position:relative;z-index:1;transition:border-color 0.3s,box-shadow 0.3s}
+
 .step-card:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan)}
+
 .step-num{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;color:#000;margin:0 auto 1.5rem;box-shadow:var(--glow-cyan)}
+
 .step-card h3{font-size:1.25rem;font-weight:800;margin-bottom:0.75rem}
+
 .step-card p{color:var(--text-muted);font-size:0.95rem}
 
+
+
 /* ── PRICING ── */
+
 .pricing{padding:7rem 0;text-align:center}
+
 .pricing__toggle{display:inline-flex;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:100px;padding:4px;margin-bottom:3rem}
+
 .ptoggle-btn{padding:0.6rem 1.5rem;border-radius:100px;border:none;background:transparent;color:var(--text-muted);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s}
+
 .ptoggle-btn.active{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;box-shadow:var(--glow-cyan)}
+
 .pricing__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;margin-bottom:3rem}
+
 .plan{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;text-align:left;position:relative;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+
 .plan:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan);transform:translateY(-4px)}
+
 .plan--featured{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow-cyan)}
+
 .plan__badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;font-size:0.75rem;font-weight:800;padding:0.35rem 1.25rem;border-radius:100px;white-space:nowrap}
+
 .plan__name{font-size:1rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
+
 .plan__price{font-size:3.5rem;font-weight:900;line-height:1;margin-bottom:0.25rem}
+
 .plan__period{font-size:0.9rem;color:var(--text-muted);margin-bottom:0.5rem;min-height:1.4em}
+
 .plan__domain{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);border-radius:6px;padding:0.3rem 0.75rem;font-size:0.8rem;font-weight:600;color:var(--cyan);margin-bottom:1.5rem}
+
 .plan__features{list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2rem}
+
 .plan__features li{display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:var(--text-muted)}
+
 .plan__features li::before{content:'';width:18px;height:18px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:11px;background-repeat:no-repeat;background-position:center}
+
 .plan__revisions{font-size:0.8rem;font-weight:700;color:var(--cyan);margin-bottom:1.5rem}
+
 .plan__btn{width:100%;text-align:center;justify-content:center}
+
 .pricing__policy{font-size:0.82rem;color:var(--text-muted);margin-top:1.5rem}
 
+
+
 /* COMPARISON TABLE */
+
 .compare{margin-top:4rem}
+
 .compare h3{font-size:1.5rem;font-weight:800;margin-bottom:1.5rem;text-align:center}
+
 .compare-table{width:100%;border-collapse:collapse;font-size:0.9rem}
+
 .compare-table th{padding:1rem;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid var(--border)}
+
 .compare-table th.highlight{color:var(--cyan);background:rgba(0,212,255,0.05)}
+
 .compare-table td{padding:0.85rem 1rem;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--text-muted);text-align:center}
+
 .compare-table td:first-child{text-align:left;color:var(--text)}
+
 .compare-table td.highlight{color:var(--cyan);font-weight:700;background:rgba(0,212,255,0.04)}
+
 .compare-table tr:hover td{background:rgba(255,255,255,0.02)}
+
 .chk{color:var(--cyan)}
+
 .cross{color:#444}
 
+
+
 /* ── PREVIEWS ── */
+
 .previews{padding:7rem 0;overflow:hidden}
+
 .previews h2{text-align:center}
+
 .previews__sub{text-align:center}
+
 .preview-scroll{display:flex;gap:1.5rem;overflow-x:auto;padding:2rem 1.5rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+
 .preview-scroll::-webkit-scrollbar{display:none}
+
 .preview-card{flex-shrink:0;width:320px;scroll-snap-align:start;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-decoration:none;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s;display:block}
+
 .preview-card:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan);transform:translateY(-4px)}
+
 .preview-card__thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative;overflow:hidden}
+
 .preview-card__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,0.1),rgba(123,47,255,0.1));opacity:0;transition:opacity 0.3s}
+
 .preview-card:hover .preview-card__overlay{opacity:1}
+
 .preview-card__info{padding:1rem 1.25rem}
+
 .preview-card__biz{font-size:0.9rem;font-weight:700;margin-bottom:0.25rem}
+
 .preview-card__city{font-size:0.8rem;color:var(--text-muted)}
 
+
+
 /* ── WHY ── */
+
 .why{padding:7rem 0;text-align:center}
+
 .why__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+
 .why-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:left;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s;animation:float-card 6s ease-in-out infinite}
+
 .why-card:nth-child(2){animation-delay:-1s}
+
 .why-card:nth-child(3){animation-delay:-2s}
+
 .why-card:nth-child(4){animation-delay:-3s}
+
 .why-card:nth-child(5){animation-delay:-4s}
+
 .why-card:nth-child(6){animation-delay:-5s}
+
 @keyframes float-card{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
 .why-card:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan);animation:none;transform:translateY(-4px)}
+
 .why-card__icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(123,47,255,0.15));border:1px solid rgba(0,212,255,0.3);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
+
 .why-card h3{font-size:1rem;font-weight:800;margin-bottom:0.5rem}
+
 .why-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.6}
 
+
+
 /* ── FAQ ── */
+
 .faq{padding:7rem 0}
+
 .faq .section-title,.faq .section-label{text-align:center}
+
 .faq__list{max-width:760px;margin:3rem auto 0;display:flex;flex-direction:column;gap:0.75rem}
+
 .faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color 0.3s}
+
 .faq-item.open{border-color:rgba(0,212,255,0.4)}
+
 .faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.5rem;cursor:pointer;font-weight:600;font-size:0.95rem;gap:1rem}
+
 .faq-icon{width:24px;height:24px;border-radius:50%;background:rgba(0,212,255,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--cyan);font-size:1rem;transition:transform 0.3s;font-weight:300}
+
 .faq-item.open .faq-icon{transform:rotate(45deg);background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000}
+
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s}
+
 .faq-item.open .faq-a{max-height:400px}
+
 .faq-a p{padding:0 1.5rem 1.25rem;color:var(--text-muted);font-size:0.9rem;line-height:1.7}
 
+
+
 /* ── CTA ── */
+
 .cta-section{padding:7rem 0;text-align:center;position:relative;overflow:hidden}
+
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,212,255,0.08) 0%,transparent 70%)}
+
 .cta-section::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(123,47,255,0.06) 0%,transparent 70%);animation:pulse-bg 4s ease-in-out infinite}
+
 @keyframes pulse-bg{0%,100%{opacity:0.5}50%{opacity:1}}
+
 .cta-section .container{position:relative;z-index:1}
+
 .cta-section h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;margin-bottom:1rem}
+
 .cta-section p{color:var(--text-muted);font-size:1.1rem;margin-bottom:2.5rem}
+
 .cta-pulse{animation:cta-pulse-anim 2s ease-in-out infinite}
+
 @keyframes cta-pulse-anim{0%,100%{box-shadow:0 0 20px rgba(0,212,255,0.4)}50%{box-shadow:0 0 60px rgba(0,212,255,0.8),0 0 100px rgba(123,47,255,0.4)}}
+
 .cta-form{display:flex;gap:0.75rem;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+
 .cta-input{flex:1;min-width:220px;padding:0.9rem 1.25rem;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;font-family:inherit;outline:none;transition:border-color 0.3s}
+
 .cta-input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,212,255,0.1)}
+
 .cta-input::placeholder{color:var(--text-muted)}
 
+
+
 /* ── FOOTER ── */
+
 .footer{background:#060609;border-top:1px solid var(--border);padding:4rem 0 2rem}
+
 .footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+
 @media(max-width:768px){.footer__grid{grid-template-columns:1fr}}
+
 .footer__brand p{color:var(--text-muted);font-size:0.88rem;margin-top:0.75rem;max-width:280px;line-height:1.7}
+
 .footer__social{display:flex;gap:0.75rem;margin-top:1.25rem}
+
 .footer__social a{width:36px;height:36px;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text-muted);font-size:0.85rem;transition:all 0.3s}
+
 .footer__social a:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 10px rgba(0,212,255,0.3)}
+
 .footer__col h4{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:1rem}
+
 .footer__col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+
 .footer__col ul a{color:var(--text-muted);text-decoration:none;font-size:0.88rem;transition:color 0.2s}
+
 .footer__col ul a:hover{color:var(--cyan)}
+
 .footer__bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.82rem;color:var(--text-muted)}
+
 .footer__bottom a{color:var(--text-muted);text-decoration:none}
+
 .footer__bottom a:hover{color:var(--cyan)}
 
+
+
 /* ── COUNTER ── */
+
 .counter{display:inline-block}
 
+
+
 /* ── RESPONSIVE ── */
+
 @media(max-width:768px){
+
   .hero__ctas{flex-direction:column;align-items:flex-start}
+
   .hero__stats{gap:1.5rem}
+
   .steps__grid{grid-template-columns:1fr}
+
   .pricing__grid{grid-template-columns:1fr}
+
   .why__grid{grid-template-columns:1fr 1fr}
+
   .footer__grid{grid-template-columns:1fr}
+
 }
+
 @media(max-width:480px){.why__grid{grid-template-columns:1fr}}
+
 </style>
+
 </head>
+
 <body>
 
+
+
 <!-- ── NAV ── -->
+
 <nav class="nav" id="nav">
+
   <div class="container nav__inner">
+
     <a href="/" class="nav__logo grad-text">Alma Digital</a>
+
     <ul class="nav__links">
+
       <li><a href="#how-it-works">How It Works</a></li>
+
       <li><a href="#pricing">Pricing</a></li>
+
       <li><a href="#previews">Portfolio</a></li>
+
       <li><a href="#faq">FAQ</a></li>
+
     </ul>
+
     <a href="#contact" class="btn btn-primary nav__cta">Get Free Preview →</a>
+
   </div>
+
 </nav>
 
+
+
 <!-- ── HERO ── -->
+
 <section class="hero" id="home">
+
   <canvas id="heroCanvas"></canvas>
+
   <div class="hero__grid-overlay"></div>
+
   <div class="hero__glow-1"></div>
+
   <div class="hero__glow-2"></div>
+
   <div class="container" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;padding-top:6rem">
-    <div class="hero__content">
+
+    <div class="hero__content" style="opacity:1">
+
       <div class="hero__badge">✦ AI-Powered Web Design Agency</div>
+
       <h1>AI-Powered Websites<br/><span class="grad-text">That Actually Convert</span></h1>
+
       <p class="hero__sub">See your new website before you pay a single dollar. From $50. Free domain included.</p>
+
       <div class="hero__ctas">
+
         <a href="#contact" class="btn btn-primary">Get Free Preview →</a>
+
         <a href="#previews" class="btn btn-ghost">See Examples</a>
+
       </div>
+
       <div class="hero__stats">
+
         <div class="hero__stat"><span class="hero__stat-num"><span class="counter" data-target="300">0</span>+</span><span class="hero__stat-label">Businesses Contacted Weekly</span></div>
+
         <div class="hero__stat"><span class="hero__stat-num">48<span style="font-size:1.2rem">hr</span></span><span class="hero__stat-label">Delivery</span></div>
+
         <div class="hero__stat"><span class="hero__stat-num">95<span style="font-size:1.2rem">+</span></span><span class="hero__stat-label">PageSpeed</span></div>
+
         <div class="hero__stat"><span class="hero__stat-num">$50</span><span class="hero__stat-label">Starting Price</span></div>
+
       </div>
+
     </div>
+
     <div class="hero__device">
+
       <div class="device-frame">
+
         <div class="device-bar">
+
           <div class="device-dot" style="background:#ff5f57"></div>
+
           <div class="device-dot" style="background:#febc2e"></div>
+
           <div class="device-dot" style="background:#28c840"></div>
+
           <div class="device-addr">almadigitalservices.com/preview-your-business</div>
+
         </div>
+
         <div class="device-screen">
+
           <div class="device-hero-bar">
+
             <div class="device-logo-placeholder"></div>
+
             <div class="device-headline-lines">
+
               <div class="device-line"></div>
+
               <div class="device-line"></div>
+
               <div class="device-line" style="width:40%"></div>
+
             </div>
+
           </div>
+
           <div class="device-services">
+
             <div class="device-card"></div>
+
             <div class="device-card"></div>
+
             <div class="device-card"></div>
+
             <div class="device-card"></div>
+
             <div class="device-card"></div>
+
             <div class="device-card"></div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ── TICKER ── -->
+
 <div class="ticker" aria-hidden="true">
+
   <div class="ticker__track" id="tickerTrack">
+
     <span class="ticker__item"><span class="ticker__dot"></span>Plumbers</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Electricians</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>HVAC</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Roofers</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Dentists</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Landscapers</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Auto Repair</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Chiropractors</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Painters</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Cleaners</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Contractors</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Flooring</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Pest Control</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Locksmiths</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Plumbers</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Electricians</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>HVAC</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Roofers</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Dentists</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Landscapers</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Auto Repair</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Chiropractors</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Painters</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Cleaners</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Contractors</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Flooring</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Pest Control</span>
+
     <span class="ticker__item"><span class="ticker__dot"></span>Locksmiths</span>
+
   </div>
+
 </div>
 
+
+
 <!-- ── HOW IT WORKS ── -->
+
 <section class="steps" id="how-it-works">
+
   <div class="container">
+
     <p class="section-label reveal">How It Works</p>
+
     <h2 class="section-title reveal">Three Steps to Your<br/><span class="grad-text">New Website</span></h2>
+
     <p class="section-sub reveal">No commitment. No payment upfront. Just your stunning new website, ready to review.</p>
+
     <div class="steps__grid">
+
       <div class="step-card reveal">
+
         <div class="step-num">1</div>
+
         <h3>We Find You Online</h3>
+
         <p>We search for businesses with outdated websites and build you a free custom preview — no commitment needed.</p>
+
       </div>
+
       <div class="step-card reveal" style="transition-delay:0.15s">
+
         <div class="step-num">2</div>
+
         <h3>We Build Your Preview in 48 Hours</h3>
+
         <p>Our AI builds a stunning custom website preview for your business. You see it before paying a single dollar.</p>
+
       </div>
+
       <div class="step-card reveal" style="transition-delay:0.3s">
+
         <div class="step-num">3</div>
+
         <h3>You Only Pay When You Love It</h3>
+
         <p>Approve your preview, choose your plan, and go live. Free domain included if you need one.</p>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ── PRICING ── -->
+
 <section class="pricing" id="pricing">
+
   <div class="container">
+
     <p class="section-label reveal">Pricing</p>
+
     <h2 class="section-title reveal">Simple, <span class="grad-text">Transparent</span> Pricing</h2>
+
     <p class="section-sub reveal">No surprises. No upsells. Pick your plan after you see your preview.</p>
+
     <div class="pricing__toggle reveal">
+
       <button class="ptoggle-btn active" id="pt-full" onclick="setPlan('full')">Pay in Full</button>
+
       <button class="ptoggle-btn" id="pt-monthly" onclick="setPlan('monthly')">Pay Monthly + Hosting</button>
+
     </div>
+
     <div class="pricing__grid">
+
       <!-- STARTER -->
+
       <div class="plan reveal">
+
         <div class="plan__name">Starter</div>
+
         <div class="plan__price"><span class="plan-price" data-full="$50" data-monthly="$50">$50</span></div>
+
         <div class="plan__period plan-period" data-full="one-time payment" data-monthly="deposit + $17/mo hosting">one-time payment</div>
+
         <div class="plan__domain">🌐 Free domain included</div>
+
         <ul class="plan__features">
+
           <li>5-page professional website</li>
+
           <li>Mobile-first design</li>
+
           <li>95+ PageSpeed score</li>
+
           <li>Contact form included</li>
+
           <li>SSL certificate</li>
+
         </ul>
+
         <div class="plan__revisions">5 revision rounds included</div>
+
         <a href="#contact" class="btn btn-ghost plan__btn">Get Free Preview →</a>
+
       </div>
+
       <!-- GROWTH -->
+
       <div class="plan plan--featured reveal" style="transition-delay:0.1s">
+
         <div class="plan__badge">⭐ Most Popular</div>
+
         <div class="plan__name">Growth</div>
+
         <div class="plan__price"><span class="plan-price" data-full="$100" data-monthly="$100">$100</span></div>
+
         <div class="plan__period plan-period" data-full="one-time payment" data-monthly="deposit + $23/mo hosting">one-time payment</div>
+
         <div class="plan__domain">🌐 Free domain included</div>
+
         <ul class="plan__features">
+
           <li>Up to 10 pages</li>
+
           <li>Everything in Starter</li>
+
           <li>Blog or gallery section</li>
+
           <li>Google Analytics setup</li>
+
           <li>Social media integration</li>
+
           <li>Priority delivery</li>
+
         </ul>
+
         <div class="plan__revisions">20 revision rounds included</div>
+
         <a href="#contact" class="btn btn-primary plan__btn">Get Free Preview →</a>
+
       </div>
+
       <!-- PREMIUM -->
+
       <div class="plan reveal" style="transition-delay:0.2s">
+
         <div class="plan__name">Premium</div>
+
         <div class="plan__price"><span class="plan-price" data-full="$150" data-monthly="$150">$150</span></div>
+
         <div class="plan__period plan-period" data-full="one-time payment" data-monthly="deposit + $33/mo hosting">one-time payment</div>
+
         <div class="plan__domain">🌐 Free domain + premium hosting</div>
+
         <ul class="plan__features">
+
           <li>20+ pages (no limit)</li>
+
           <li>Everything in Growth</li>
+
           <li>Custom animations</li>
+
           <li>CRO strategy session</li>
+
           <li>12 months growth support</li>
+
           <li>White-glove delivery</li>
+
         </ul>
+
         <div class="plan__revisions">Unlimited revisions</div>
+
         <a href="#contact" class="btn btn-ghost plan__btn">Get Free Preview →</a>
+
       </div>
+
     </div>
+
     <p class="pricing__policy reveal">Cancel before 6 months: $25 domain transfer fee &nbsp;·&nbsp; Cancel after 6 months: free transfer &nbsp;·&nbsp; Free domain on all plans</p>
 
+
+
     <!-- COMPARISON -->
+
     <div class="compare reveal">
+
       <h3>How We Stack Up</h3>
+
       <div style="overflow-x:auto">
+
         <table class="compare-table">
+
           <thead>
+
             <tr>
+
               <th style="text-align:left">Feature</th>
+
               <th class="highlight">Alma Digital</th>
+
               <th>Wix</th>
+
               <th>Squarespace</th>
+
               <th>GoDaddy</th>
+
               <th>Freelancer</th>
+
               <th>Local Agency</th>
+
             </tr>
+
           </thead>
+
           <tbody>
+
             <tr><td>Starting price</td><td class="highlight chk">From $50</td><td>$16/mo</td><td>$23/mo</td><td>$10/mo</td><td>$500–2,000</td><td>$2,000–10,000</td></tr>
+
             <tr><td>Free preview before paying</td><td class="highlight chk">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+
             <tr><td>Custom design (not templates)</td><td class="highlight chk">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td>Varies</td><td>Varies</td></tr>
+
             <tr><td>Free domain included</td><td class="highlight chk">✓</td><td class="cross">✗</td><td>Year 1 only</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+
             <tr><td>Delivery time</td><td class="highlight chk">48 hours</td><td>DIY</td><td>DIY</td><td>DIY</td><td>2–8 weeks</td><td>4–12 weeks</td></tr>
+
             <tr><td>95+ PageSpeed guaranteed</td><td class="highlight chk">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+
             <tr><td>AI-powered design</td><td class="highlight chk">✓</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+
             <tr><td>Cancel anytime</td><td class="highlight chk">✓</td><td>✓</td><td>✓</td><td>✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+
           </tbody>
+
         </table>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ── PREVIEWS ── -->
+
 <section class="previews" id="previews">
+
   <div class="container">
+
     <p class="section-label reveal">Portfolio</p>
+
     <h2 class="section-title reveal">Real Previews We've <span class="grad-text">Already Built</span></h2>
+
     <p class="section-sub reveal">Every one of these was delivered within 48 hours. Click any to see it live.</p>
+
   </div>
+
   <div class="preview-scroll">
+
     <a href="/preview-serra-industries-miami.html" target="_blank" class="preview-card">
+
       <div class="preview-card__thumb" style="background:linear-gradient(135deg,#0a0020,#200040)">🎤<div class="preview-card__overlay"></div></div>
+
       <div class="preview-card__info"><div class="preview-card__biz">Serra Industries</div><div class="preview-card__city">Miami, FL</div></div>
+
     </a>
+
     <a href="/preview-jac-electric-humble-us.html" target="_blank" class="preview-card">
+
       <div class="preview-card__thumb" style="background:linear-gradient(135deg,#001020,#002040)">⚡<div class="preview-card__overlay"></div></div>
+
       <div class="preview-card__info"><div class="preview-card__biz">JAC Electric LLC</div><div class="preview-card__city">Humble, TX</div></div>
+
     </a>
+
     <a href="/preview-spreadmaster-painting-centerville-us.html" target="_blank" class="preview-card">
+
       <div class="preview-card__thumb" style="background:linear-gradient(135deg,#001a10,#003020)">🖌️<div class="preview-card__overlay"></div></div>
+
       <div class="preview-card__info"><div class="preview-card__biz">Spreadmaster Painting</div><div class="preview-card__city">Dayton, OH</div></div>
+
     </a>
+
     <a href="/preview-bland-roofing-macon-us.html" target="_blank" class="preview-card">
+
       <div class="preview-card__thumb" style="background:linear-gradient(135deg,#1a0a00,#301500)">🏠<div class="preview-card__overlay"></div></div>
+
       <div class="preview-card__info"><div class="preview-card__biz">Bland Roofing Co.</div><div class="preview-card__city">Macon, GA</div></div>
+
     </a>
+
     <a href="/preview-mcgahan-plumbing-cairns-au.html" target="_blank" class="preview-card">
+
       <div class="preview-card__thumb" style="background:linear-gradient(135deg,#00101a,#001a30)">🔧<div class="preview-card__overlay"></div></div>
+
       <div class="preview-card__info"><div class="preview-card__biz">McGahan Plumbing</div><div class="preview-card__city">Cairns, QLD, Australia</div></div>
+
     </a>
+
     <a href="/preview-simbuild-heating-wolverhampton-uk.html" target="_blank" class="preview-card">
+
       <div class="preview-card__thumb" style="background:linear-gradient(135deg,#100a1a,#1a0a30)">🔥<div class="preview-card__overlay"></div></div>
+
       <div class="preview-card__info"><div class="preview-card__biz">Simbuild Heating</div><div class="preview-card__city">Wolverhampton, UK</div></div>
+
     </a>
+
     <a href="/preview-sparkle-shine-cleaning-columbia-us.html" target="_blank" class="preview-card">
+
       <div class="preview-card__thumb" style="background:linear-gradient(135deg,#001a1a,#003030)">✨<div class="preview-card__overlay"></div></div>
+
       <div class="preview-card__info"><div class="preview-card__biz">Sparkle &amp; Shine Cleaning</div><div class="preview-card__city">Columbia, SC</div></div>
+
     </a>
+
     <a href="/preview-eckel-plumbing.html" target="_blank" class="preview-card">
+
       <div class="preview-card__thumb" style="background:linear-gradient(135deg,#000a1a,#001030)">💧<div class="preview-card__overlay"></div></div>
+
       <div class="preview-card__info"><div class="preview-card__biz">Eckel Plumbing</div><div class="preview-card__city">Local Business</div></div>
+
     </a>
+
   </div>
+
 </section>
+
+
 
 <!-- ── WHY ALMA ── -->
+
 <section class="why" id="why">
+
   <div class="container">
+
     <p class="section-label reveal">Why Choose Us</p>
+
     <h2 class="section-title reveal">Built to Convert,<br/><span class="grad-text">Not Just to Impress</span></h2>
+
     <div class="why__grid">
+
       <div class="why-card reveal">
+
         <div class="why-card__icon">👁️</div>
+
         <h3>Free Preview First</h3>
+
         <p>See your complete custom website before paying a single dollar. No commitment required.</p>
+
       </div>
+
       <div class="why-card reveal" style="transition-delay:0.1s">
+
         <div class="why-card__icon">⚡</div>
+
         <h3>48-Hour Delivery</h3>
+
         <p>Your website preview is ready within 48 hours. Fastest turnaround in the industry.</p>
+
       </div>
+
       <div class="why-card reveal" style="transition-delay:0.2s">
+
         <div class="why-card__icon">🤖</div>
+
         <h3>AI-Powered Builds</h3>
+
         <p>Our AI builds custom professional websites — not templates. Every site is unique.</p>
+
       </div>
+
       <div class="why-card reveal" style="transition-delay:0.3s">
+
         <div class="why-card__icon">🌐</div>
+
         <h3>Free Domain Included</h3>
+
         <p>We register your domain for free if you need one. No hidden costs ever.</p>
+
       </div>
+
       <div class="why-card reveal" style="transition-delay:0.4s">
+
         <div class="why-card__icon">🚀</div>
+
         <h3>95+ PageSpeed Guaranteed</h3>
+
         <p>Every website we build scores 95+ on Google PageSpeed. Fast, optimized, ranked.</p>
+
       </div>
+
       <div class="why-card reveal" style="transition-delay:0.5s">
+
         <div class="why-card__icon">🔓</div>
+
         <h3>Cancel Anytime</h3>
+
         <p>No long-term contracts. Cancel hosting anytime. Transfer fee waived after 6 months.</p>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ── FAQ ── -->
+
 <section class="faq" id="faq">
+
   <div class="container">
+
     <p class="section-label">FAQ</p>
+
     <h2 class="section-title">Everything You <span class="grad-text">Need to Know</span></h2>
+
     <div class="faq__list">
+
       <div class="faq-item reveal">
+
         <div class="faq-q" onclick="toggleFaq(this)">
+
           <span>Do I pay before seeing my website?</span>
+
           <span class="faq-icon">+</span>
+
         </div>
+
         <div class="faq-a"><p>Never. We build your complete custom preview first. You only pay when you love it.</p></div>
+
       </div>
+
       <div class="faq-item reveal">
+
         <div class="faq-q" onclick="toggleFaq(this)">
+
           <span>How long does delivery take?</span>
+
           <span class="faq-icon">+</span>
+
         </div>
+
         <div class="faq-a"><p>Your preview is ready within 48 hours of starting. We make changes until you are happy.</p></div>
+
       </div>
+
       <div class="faq-item reveal">
+
         <div class="faq-q" onclick="toggleFaq(this)">
+
           <span>What if I already have a domain?</span>
+
           <span class="faq-icon">+</span>
+
         </div>
+
         <div class="faq-a"><p>No problem — we connect your existing domain to your new website for free.</p></div>
+
       </div>
+
       <div class="faq-item reveal">
+
         <div class="faq-q" onclick="toggleFaq(this)">
+
           <span>Can I cancel my hosting plan?</span>
+
           <span class="faq-icon">+</span>
+
         </div>
+
         <div class="faq-a"><p>Yes anytime. If you cancel before 6 months there is a $25 file transfer fee. After 6 months the transfer is completely free.</p></div>
+
       </div>
+
       <div class="faq-item reveal">
+
         <div class="faq-q" onclick="toggleFaq(this)">
+
           <span>Do you build on templates?</span>
+
           <span class="faq-icon">+</span>
+
         </div>
+
         <div class="faq-a"><p>Never. Every website is custom built by our AI specifically for your business.</p></div>
+
       </div>
+
       <div class="faq-item reveal">
+
         <div class="faq-q" onclick="toggleFaq(this)">
+
           <span>What is included in maintenance?</span>
+
           <span class="faq-icon">+</span>
+
         </div>
+
         <div class="faq-a"><p>Monthly updates, security monitoring, SSL certificate, uptime guarantee, and priority support.</p></div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ── CTA / CONTACT ── -->
+
 <section class="cta-section" id="contact">
+
   <div class="container">
+
     <p class="section-label">Get Started</p>
+
     <h2>Ready to See What We'd<br/><span class="grad-text">Build For You?</span></h2>
+
     <p>Free preview. No commitment. 48 hours.</p>
+
     <form action="https://formspree.io/f/xojppajv" method="POST" class="cta-form reveal" id="ctaForm">
+
       <input class="cta-input" type="text" name="name" placeholder="Your name" required/>
+
       <input class="cta-input" type="email" name="email" placeholder="Your email" required/>
+
       <input class="cta-input" type="text" name="business" placeholder="Business name" required/>
+
       <input class="cta-input" type="url" name="website" placeholder="Website URL"/>
+
       <textarea class="cta-input" name="message" placeholder="Message" rows="3" style="resize:vertical;min-height:80px;font-family:inherit"></textarea>
+
       <button type="submit" class="btn btn-primary cta-pulse" style="min-width:200px;justify-content:center">Get My Free Preview →</button>
+
       <input type="hidden" name="source" value="homepage-cta"/>
+
     </form>
+
     <p style="font-size:0.82rem;color:var(--text-muted);margin-top:1.25rem">No spam. Just your free preview link within 48 hours.</p>
+
   </div>
+
 </section>
 
+
+
 <!-- ── FOOTER ── -->
+
 <footer class="footer">
+
   <div class="container">
+
     <div class="footer__grid">
+
       <div class="footer__brand">
+
         <div class="nav__logo grad-text" style="font-size:1.4rem;font-weight:900;display:inline-block;margin-bottom:0.5rem">Alma Digital</div>
+
         <p>Professional websites from $50. Free domain included.</p>
+
         <div class="footer__social">
+
           <a href="https://www.instagram.com/almadigitalaillc" target="_blank" rel="noopener" title="Instagram">
+
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+
           </a>
+
           <a href="https://twitter.com/thealmadigital" target="_blank" rel="noopener" title="X/Twitter">
+
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+
           </a>
+
           <a href="https://www.linkedin.com/company/almadigitaldesigns" target="_blank" rel="noopener" title="LinkedIn">
+
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+
           </a>
+
         </div>
+
       </div>
+
       <div class="footer__col">
+
         <h4>Navigation</h4>
+
         <ul>
+
           <li><a href="#how-it-works">How It Works</a></li>
+
           <li><a href="#pricing">Pricing</a></li>
+
           <li><a href="#previews">Portfolio</a></li>
+
           <li><a href="#faq">FAQ</a></li>
+
           <li><a href="#contact">Get Free Preview</a></li>
+
         </ul>
+
       </div>
+
       <div class="footer__col">
+
         <h4>Legal &amp; Contact</h4>
+
         <ul>
+
           <li><a href="/privacy-policy">Privacy Policy</a></li>
+
           <li><a href="/terms.html">Terms of Service</a></li>
+
           <li><a href="/cookie-policy">Cookie Policy</a></li>
+
           <li><a href="mailto:desk@almawebcreative.com">desk@almawebcreative.com</a></li>
+
           <li><span style="color:var(--text-muted)">6401 SW 118th Ave<br/>Miami, FL 33183</span></li>
+
         </ul>
+
       </div>
+
     </div>
+
     <div class="footer__bottom">
+
       <span>© 2026 Alma Digital AI LLC. All rights reserved.</span>
+
       <span><a href="/privacy-policy">Privacy</a> · <a href="/terms.html">Terms</a></span>
+
     </div>
+
   </div>
+
 </footer>
 
+
+
 <!-- ── CHAT WIDGET ── -->
+
 <!-- Chat Widget — built by Emily (CTO) via ALM-732 -->
+
 <script src="/chat-widget.js" defer></script>
 
+
+
 <script>
+
 // ── NAV SCROLL ──
+
 window.addEventListener('scroll',()=>{
+
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)
+
 },{ passive:true })
 
+
+
 // ── HERO PARTICLE CANVAS ──
+
 (function(){
+
   const canvas=document.getElementById('heroCanvas')
+
   const ctx=canvas.getContext('2d')
+
   let W,H,particles=[]
+
   function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
+
   resize()
+
   window.addEventListener('resize',resize)
+
   for(let i=0;i<80;i++){
+
     particles.push({
+
       x:Math.random()*1920,y:Math.random()*1080,
+
       vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,
+
       r:Math.random()*2+0.5,
+
       color:Math.random()>0.6?'rgba(0,212,255,':'rgba(123,47,255,'
+
     })
+
   }
+
   function draw(){
+
     ctx.clearRect(0,0,W,H)
+
     particles.forEach(p=>{
+
       p.x+=p.vx;p.y+=p.vy
+
       if(p.x<0)p.x=W;if(p.x>W)p.x=0
+
       if(p.y<0)p.y=H;if(p.y>H)p.y=0
+
       ctx.beginPath()
+
       ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
+
       ctx.fillStyle=p.color+'0.7)'
+
       ctx.fill()
+
     })
+
     // Draw connections
+
     particles.forEach((a,i)=>{
+
       particles.slice(i+1).forEach(b=>{
+
         const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy)
+
         if(d<120){
+
           ctx.beginPath()
+
           ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y)
+
           ctx.strokeStyle=`rgba(0,212,255,${0.15*(1-d/120)})`
+
           ctx.lineWidth=0.5
+
           ctx.stroke()
+
         }
+
       })
+
     })
+
     requestAnimationFrame(draw)
+
   }
+
   draw()
+
 })()
 
+
+
 // ── SCROLL REVEAL ──
+
 const observer=new IntersectionObserver(entries=>{
+
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})
-},{threshold:0.1,rootMargin:'0px 0px -50px 0px'})
+
+},{threshold:0,rootMargin:'0px 0px 0px 0px'})
+
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))
 
+
+
 // ── COUNTER ANIMATION ──
+
 function animateCounter(el,target){
+
   const start=performance.now()
+
   const duration=1500
+
   function step(now){
+
     const p=Math.min((now-start)/duration,1)
+
     const val=Math.floor(p*target)
+
     el.textContent=val
+
     if(p<1)requestAnimationFrame(step)
+
     else el.textContent=target
+
   }
+
   requestAnimationFrame(step)
+
 }
+
 const counterObs=new IntersectionObserver(entries=>{
+
   entries.forEach(e=>{
+
     if(e.isIntersecting){
+
       const target=parseInt(e.target.dataset.target)
+
       animateCounter(e.target,target)
+
       counterObs.unobserve(e.target)
+
     }
+
   })
+
 },{threshold:0.5})
+
 document.querySelectorAll('.counter').forEach(el=>counterObs.observe(el))
 
+
+
 // ── PRICING TOGGLE ──
+
 function setPlan(mode){
+
   document.getElementById('pt-full').classList.toggle('active',mode==='full')
+
   document.getElementById('pt-monthly').classList.toggle('active',mode==='monthly')
+
   document.querySelectorAll('.plan-price').forEach(el=>{
+
     el.textContent=el.dataset[mode]
+
   })
+
   document.querySelectorAll('.plan-period').forEach(el=>{
+
     el.textContent=el.dataset[mode]
+
   })
+
 }
+
+
 
 // ── FAQ ACCORDION ──
+
 function toggleFaq(el){
+
   const item=el.closest('.faq-item')
+
   const isOpen=item.classList.contains('open')
+
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'))
+
   if(!isOpen)item.classList.add('open')
+
 }
 
+
+
 // ── SMOOTH ANCHOR SCROLL ──
+
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
+
   a.addEventListener('click',e=>{
+
     const target=document.querySelector(a.getAttribute('href'))
+
     if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}
+
   })
+
 })
+
 </script>
+
 </body>
+
 </html>
