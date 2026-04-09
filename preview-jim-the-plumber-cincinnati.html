@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jim The Plumber LLC &#8212; Website Preview | Alma Digital Designs</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:       #1a3f7a;
+      --blue-dark:  #112b56;
+      --blue-light: #2d62c0;
+      --orange:     #e8701a;
+      --orange-dark:#c05510;
+      --gray-50:    #f7f9fc;
+      --gray-100:   #eef1f8;
+      --gray-200:   #dde3f0;
+      --gray-600:   #4b5a72;
+      --gray-800:   #1a2540;
+      --white:      #ffffff;
+      --radius:     12px;
+      --shadow-sm:  0 2px 8px rgba(0,0,0,.08);
+      --shadow-md:  0 6px 24px rgba(0,0,0,.13);
+      --shadow-lg:  0 16px 48px rgba(0,0,0,.18);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--gray-800); background: var(--white); line-height: 1.65; }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; text-decoration: none; }
+
+    /* ===== PREVIEW BANNER ===== */
+    .preview-banner {
+      background: linear-gradient(90deg, #112b56, #1a3f7a);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .preview-banner strong { color: #f9c74f; }
+    .preview-banner a      { color: #f9c74f; text-decoration: underline; font-weight: 600; }
+
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,.75);
+      padding: 0.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+    .top-bar-left { display: flex; gap: 2rem; }
+    .top-bar-phone { color: #f9c74f; font-weight: 700; font-size: 0.9rem; }
+
+    /* ===== NAV ===== */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--gray-100);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      position: sticky;
+      top: 39px;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.9rem; font-weight: 600; }
+    .nav-links a { color: var(--gray-600); transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta {
+      background: var(--orange);
+      color: #fff !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--orange-dark) !important; transform: translateY(-1px); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #1a3f7a 0%, #0d2447 100%);
+      color: #fff;
+      padding: 5rem 5% 5rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      min-height: 520px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { max-width: 580px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232,112,26,.25);
+      border: 1px solid rgba(232,112,26,.5);
+      color: #f9c74f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.12; margin-bottom: 1.2rem; }
+    .hero h1 span { color: #f9c74f; }
+    .hero p { font-size: 1.05rem; opacity: 0.88; margin-bottom: 2rem; line-height: 1.7; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      box-shadow: 0 4px 18px rgba(232,112,26,.45);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,112,26,.55); background: var(--orange-dark); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,.5);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background .2s, border-color .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+    .hero-panel {
+      flex-shrink: 0;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 16px;
+      padding: 2rem;
+      min-width: 300px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-panel h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; color: #f9c74f; }
+    .hero-panel-form input, .hero-panel-form select, .hero-panel-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      outline: none;
+    }
+    .hero-panel-form input::placeholder,
+    .hero-panel-form select::placeholder { color: rgba(255,255,255,.55); }
+    .hero-panel-form select option { color: #111; background: #fff; }
+    .hero-panel-form .btn-submit {
+      width: 100%;
+      background: var(--orange);
+      color: #fff;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .hero-panel-form .btn-submit:hover { background: var(--orange-dark); }
+    .hero-panel-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; font-size: 0.88rem; opacity: 0.85; }
+    .hero-panel-row .dot { width: 8px; height: 8px; border-radius: 50%; background: #4cff91; flex-shrink: 0; }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--gray-50);
+      border-bottom: 2px solid var(--gray-200);
+      padding: 1.2rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; }
+    .trust-item .icon { font-size: 1.2rem; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 5rem 5%; }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.8rem;
+    }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; color: var(--gray-800); margin-bottom: 1.2rem; }
+    .section-intro { font-size: 1.05rem; color: var(--gray-600); max-width: 640px; margin-bottom: 3rem; }
+
+    /* ===== SERVICES GRID ===== */
+    .services-section { background: var(--white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      background: var(--white);
+      transition: box-shadow .2s, border-color .2s, transform .2s;
+    }
+    .service-card:hover { box-shadow: var(--shadow-md); border-color: var(--blue-light); transform: translateY(-4px); }
+    .service-icon { font-size: 2.4rem; margin-bottom: 1.2rem; }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--blue); }
+    .service-card p  { font-size: 0.9rem; color: var(--gray-600); line-height: 1.6; }
+
+    /* ===== PAIN POINT SECTION ===== */
+    .why-section { background: var(--gray-50); border-top: 2px solid var(--gray-200); border-bottom: 2px solid var(--gray-200); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      border: 1.5px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+    .why-card.problem { border-left: 4px solid #e74c3c; }
+    .why-card.solution { border-left: 4px solid #27ae60; }
+    .why-card-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .why-card.problem .why-card-label { color: #e74c3c; }
+    .why-card.solution .why-card-label { color: #27ae60; }
+    .why-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--gray-800); }
+    .why-card p  { font-size: 0.92rem; color: var(--gray-600); line-height: 1.7; }
+    .why-card ul { margin-top: 1rem; padding-left: 1.2rem; }
+    .why-card ul li { font-size: 0.9rem; color: var(--gray-600); margin-bottom: 0.5rem; line-height: 1.6; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-section { background: var(--white); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial-card {
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1.5px solid var(--gray-200);
+      position: relative;
+    }
+    .stars { color: #f9a825; font-size: 1.1rem; margin-bottom: 0.75rem; letter-spacing: 0.05em; }
+    .testimonial-card p { font-size: 0.92rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 1.2rem; font-style: italic; }
+    .testimonial-author { font-weight: 700; font-size: 0.88rem; color: var(--gray-800); }
+    .testimonial-location { font-size: 0.8rem; color: var(--gray-600); }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #1a3f7a 0%, #0d2447 100%);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 5%;
+    }
+    .cta-section h2 { color: #fff; margin-bottom: 1.2rem; }
+    .cta-section p { color: rgba(255,255,255,.8); max-width: 540px; margin: 0 auto 2.5rem; font-size: 1.05rem; }
+    .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-white {
+      background: #fff;
+      color: var(--blue-dark);
+      padding: 1rem 2.4rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 18px rgba(0,0,0,.18);
+    }
+    .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+    .btn-cta-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,.5);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background .2s, border-color .2s;
+    }
+    .btn-cta-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section { background: var(--gray-50); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); }
+    .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+    .contact-item-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .contact-item-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-600); margin-bottom: 0.2rem; }
+    .contact-item-value { font-size: 1rem; font-weight: 700; color: var(--gray-800); }
+    .contact-form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1.5px solid var(--gray-200);
+    }
+    .contact-form-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--gray-600); margin-bottom: 0.35rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--gray-800);
+      outline: none;
+      transition: border-color .2s;
+      background: var(--white);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue-light); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%;
+      background: var(--orange);
+      color: #fff;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .form-submit:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,.7);
+      padding: 3rem 5% 2rem;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    .footer-brand .nav-logo { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; }
+    .footer-brand .nav-logo span { color: #f9c74f; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+    .footer-col h4 { color: #f9c74f; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { font-size: 0.88rem; margin-bottom: 0.55rem; }
+    .footer-col ul li a { opacity: 0.75; transition: opacity .2s; }
+    .footer-col ul li a:hover { opacity: 1; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.5rem; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom a { color: #f9c74f; }
+
+    /* ===== ALMA WATERMARK ===== */
+    .alma-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--blue-dark);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-lg);
+      z-index: 9998;
+      border: 1px solid rgba(255,255,255,.15);
+    }
+    .alma-badge span { color: #f9c74f; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; gap: 2rem; padding: 3rem 5%; }
+      .hero-panel { min-width: unset; width: 100%; }
+      .why-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .top-bar-left { flex-direction: column; gap: 0.3rem; }
+      nav .nav-links { display: none; }
+    }
+    @media (max-width: 480px) {
+      .trust-bar { gap: 1.5rem; }
+      .cta-group { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PREVIEW BANNER -->
+  <div class="preview-banner">
+    <strong>DESIGN PREVIEW</strong> &mdash; This is a free mockup of what Jim The Plumber LLC's new website could look like.
+    Ready to go live? <a href="mailto:desk@almawebcreative.com">Claim your free redesign &rarr;</a>
+  </div>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span>&#128205; Serving Greater Cincinnati, OH</span>
+      <span>&#9200; Available Mon&ndash;Sat, 7 AM&ndash;7 PM</span>
+    </div>
+    <span class="top-bar-phone">&#128222; (513) 555-0190</span>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Jim The <span>Plumber</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">&#128690; Cincinnati's Trusted Plumber</div>
+      <h1>Fast, Reliable Plumbing You Can <span>Count On</span></h1>
+      <p>From burst pipes to full bathroom remodels, Jim The Plumber LLC has been keeping Cincinnati homes and businesses flowing for over 20 years. Licensed, insured, and available 7 days a week.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get a Free Quote</a>
+        <a href="tel:5135550190" class="btn-outline">&#128222; Call Now</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <h3>&#128203; Request a Quote Online</h3>
+      <div class="hero-panel-form">
+        <input type="text" placeholder="Your Name" />
+        <input type="tel" placeholder="Phone Number" />
+        <select>
+          <option value="" disabled selected>Select Service</option>
+          <option>Drain Cleaning</option>
+          <option>Leak Repair</option>
+          <option>Water Heater</option>
+          <option>Pipe Repair / Replace</option>
+          <option>Bathroom Remodel</option>
+          <option>Emergency Plumbing</option>
+          <option>Other</option>
+        </select>
+        <textarea placeholder="Brief description of your issue..."></textarea>
+        <button class="btn-submit">Submit Request &rarr;</button>
+      </div>
+      <div class="hero-panel-row" style="margin-top:1rem;">
+        <div class="dot"></div>
+        <span>Response within 2 hours, guaranteed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item"><span class="icon">&#11088;</span> 4.9-Star Google Rating</div>
+    <div class="trust-item"><span class="icon">&#128737;</span> Licensed &amp; Insured</div>
+    <div class="trust-item"><span class="icon">&#127959;</span> 20+ Years in Cincinnati</div>
+    <div class="trust-item"><span class="icon">&#128222;</span> Same-Day Service Available</div>
+    <div class="trust-item"><span class="icon">&#9989;</span> Free Estimates</div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-label">What We Do</div>
+    <h2>Complete Plumbing Services for Cincinnati Homes &amp; Businesses</h2>
+    <p class="section-intro">Whether it's an emergency or a planned renovation, Jim The Plumber LLC has the skills and experience to handle it right the first time.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#128167;</div>
+        <h3>Drain Cleaning &amp; Unclogging</h3>
+        <p>Slow drains or full blockages cleared fast using professional-grade equipment. Kitchen, bathroom, and main sewer lines.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128293;</div>
+        <h3>Emergency Plumbing</h3>
+        <p>Burst pipes, flooding, or sudden failures&mdash;we respond quickly to minimize damage to your home or business.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9874;</div>
+        <h3>Pipe Repair &amp; Replacement</h3>
+        <p>From patching minor leaks to full repiping, we use quality materials that last and stand behind our work.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128737;</div>
+        <h3>Water Heater Services</h3>
+        <p>Installation, repair, and replacement of tank and tankless water heaters. We carry top-rated brands at fair prices.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127959;</div>
+        <h3>Bathroom &amp; Kitchen Plumbing</h3>
+        <p>Fixture installation, remodels, faucets, toilets, garbage disposals&mdash;everything to make your project move smoothly.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128204;</div>
+        <h3>Commercial Plumbing</h3>
+        <p>Serving Cincinnati-area businesses with scheduled maintenance, code-compliant installs, and reliable repair service.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY REDESIGN (PAIN POINTS) -->
+  <section class="why-section" id="about">
+    <div class="section-label">Why This Matters</div>
+    <h2>Two Things Costing Jim Customers Right Now</h2>
+    <p class="section-intro">We looked at Jim The Plumber's current online presence and identified two critical gaps that are sending customers to competitors every day.</p>
+    <div class="why-grid">
+      <div class="why-card problem">
+        <div class="why-card-label">&#10060; Problem #1</div>
+        <h3>Your Site Doesn't Work on Mobile</h3>
+        <p>Your current website was built in the early 2000s on Yahoo's legacy technology&mdash;and it shows. On a smartphone, it's broken, unreadable, and frustrating.</p>
+        <ul>
+          <li>Over 70% of local plumbing searches happen on mobile</li>
+          <li>Google penalizes non-mobile sites in search rankings</li>
+          <li>A bad mobile experience = customer bounces to a competitor in seconds</li>
+          <li>You're losing the majority of your potential customers before they even read your name</li>
+        </ul>
+      </div>
+      <div class="why-card solution">
+        <div class="why-card-label">&#10004; Solution</div>
+        <h3>A Mobile-First Site That Converts</h3>
+        <p>Your new site would look and work perfectly on every device&mdash;phone, tablet, and desktop. Clean, fast, and built to rank on Google.</p>
+        <ul>
+          <li>Fully responsive design, optimized for mobile</li>
+          <li>Loads in under 2 seconds on any connection</li>
+          <li>Google-friendly structure to improve local search visibility</li>
+          <li>Professional look that builds immediate trust with new visitors</li>
+        </ul>
+      </div>
+      <div class="why-card problem">
+        <div class="why-card-label">&#10060; Problem #2</div>
+        <h3>No Way to Book Online (and a Yahoo Email)</h3>
+        <p>Customers who can't reach you by phone during business hours have nowhere to go. And a Yahoo.com email address quietly signals "old &amp; untrustworthy" to modern customers.</p>
+        <ul>
+          <li>No quote form or booking option means lost off-hours leads</li>
+          <li>Customers expect to fill out a form and hear back quickly</li>
+          <li>A Yahoo email address undermines your credibility before the conversation starts</li>
+          <li>Competitors with online booking are capturing your customers 24/7</li>
+        </ul>
+      </div>
+      <div class="why-card solution">
+        <div class="why-card-label">&#10004; Solution</div>
+        <h3>Online Quotes + Professional Email</h3>
+        <p>Your new site includes a built-in quote request form so customers can reach you anytime&mdash;day or night. Plus a professional business email that builds trust instantly.</p>
+        <ul>
+          <li>24/7 quote request form that sends leads straight to your phone</li>
+          <li>Professional email like jim@jimtheplumber.com</li>
+          <li>Automated confirmation so customers know their request was received</li>
+          <li>Never miss a lead again, even outside business hours</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-label">Customer Reviews</div>
+    <h2>What Cincinnati Customers Are Saying</h2>
+    <p class="section-intro">Real reviews from real homeowners and business owners across Greater Cincinnati.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+        <p>"Jim came out the same day our kitchen sink backed up. He was professional, fast, and the price was fair. Won't call anyone else."</p>
+        <div class="testimonial-author">Sarah M.</div>
+        <div class="testimonial-location">Hyde Park, Cincinnati OH</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+        <p>"Had a pipe burst in the basement on a Sunday morning. Jim picked up, showed up within the hour, and had it fixed before noon. Absolute lifesaver."</p>
+        <div class="testimonial-author">Marcus T.</div>
+        <div class="testimonial-location">Anderson Township, OH</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+        <p>"We've used Jim for our rental properties for years. Reliable, honest, and he actually shows up when he says he will. Highly recommend."</p>
+        <div class="testimonial-author">Linda R.</div>
+        <div class="testimonial-location">Blue Ash, OH</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Stop Losing Customers to a Broken Website?</h2>
+    <p>We'll build you a modern, mobile-ready website that gets found on Google and turns visitors into paying customers&mdash;completely free to claim.</p>
+    <div class="cta-group">
+      <a href="mailto:desk@almawebcreative.com?subject=Free Redesign - Jim The Plumber LLC" class="btn-cta-white">Claim Your Free Redesign</a>
+      <a href="#contact" class="btn-cta-outline">See How It Works</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-label">Get In Touch</div>
+    <h2>Request a Free Quote</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Jim The Plumber LLC</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#128205;</div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">Cincinnati, OH &mdash; Serving Greater Cincinnati &amp; Surrounding Areas</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#128222;</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">(513) 555-0190</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#9200;</div>
+          <div>
+            <div class="contact-item-label">Hours</div>
+            <div class="contact-item-value">Mon&ndash;Sat: 7 AM &ndash; 7 PM<br>Emergency calls available</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#128337;</div>
+          <div>
+            <div class="contact-item-label">Response Time</div>
+            <div class="contact-item-value">Within 2 hours during business hours</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-card">
+        <h3>&#128203; Request a Free Quote</h3>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="John Smith" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(513) 000-0000" />
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select>
+            <option value="" disabled selected>Select a service...</option>
+            <option>Drain Cleaning</option>
+            <option>Leak Repair</option>
+            <option>Water Heater</option>
+            <option>Pipe Repair / Replace</option>
+            <option>Bathroom Plumbing</option>
+            <option>Emergency Plumbing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Describe Your Issue</label>
+          <textarea placeholder="Tell Jim a little about what's going on..."></textarea>
+        </div>
+        <button class="form-submit">Send My Request &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Jim The <span>Plumber</span></div>
+        <p>Serving Greater Cincinnati with honest, reliable plumbing services for over 20 years. Licensed, insured, and proud to be a local business.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Drain Cleaning</a></li>
+          <li><a href="#">Emergency Plumbing</a></li>
+          <li><a href="#">Pipe Repair</a></li>
+          <li><a href="#">Water Heaters</a></li>
+          <li><a href="#">Bathroom Plumbing</a></li>
+          <li><a href="#">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Cincinnati, OH</li>
+          <li>(513) 555-0190</li>
+          <li>Mon&ndash;Sat: 7 AM&ndash;7 PM</li>
+          <li><a href="mailto:desk@almawebcreative.com">Get a Free Redesign</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Jim The Plumber LLC &mdash; All rights reserved.</span>
+      <span>Website redesign by <a href="https://almadigitalservices.com">Alma Digital Designs</a></span>
+    </div>
+  </footer>
+
+  <!-- ALMA BADGE -->
+  <div class="alma-badge">Designed by <span>Alma Digital</span></div>
+
+</body>
+</html>
