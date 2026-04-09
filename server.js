@@ -1,11 +1,19 @@
 'use strict';
 
+const crypto = require('crypto');
 const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
 
 const app = express();
-app.use(express.json({ limit: '1mb' }));
+
+// Save raw body for Stripe webhook signature verification
+app.use(express.json({
+  limit: '1mb',
+  verify: (req, _res, buf) => {
+    req.rawBody = buf;
+  },
+}));
 app.use(express.static(path.join(__dirname)));
 
 // ── ALEX SYSTEM PROMPT ────────────────────────────────────────────────────────
@@ -340,6 +348,164 @@ app.get('/api/dns-check', async (req, res) => {
   } catch (err) {
     console.error('DNS check error:', err);
     res.status(500).json({ error: 'DNS check failed' });
+  }
+});
+
+// ── API: STRIPE WEBHOOK ───────────────────────────────────────────────────────
+// Receives payment confirmations from Stripe and creates Paperclip tasks for Mila.
+// Supports: checkout.session.completed, payment_intent.succeeded,
+//           customer.subscription.created
+
+app.post('/api/stripe-webhook', async (req, res) => {
+  const sig = req.headers['stripe-signature'];
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  // Verify Stripe signature to reject forged requests
+  if (webhookSecret && sig) {
+    try {
+      const rawBody = req.rawBody ? req.rawBody.toString('utf8') : JSON.stringify(req.body);
+      const elements = sig.split(',');
+      const tsEntry = elements.find(el => el.startsWith('t='));
+      const sigEntries = elements.filter(el => el.startsWith('v1='));
+
+      if (!tsEntry || sigEntries.length === 0) {
+        console.error('Stripe webhook: malformed signature header');
+        return res.status(400).json({ error: 'Invalid signature header' });
+      }
+
+      const timestamp = tsEntry.split('=')[1];
+      const payload = `${timestamp}.${rawBody}`;
+      const expected = crypto.createHmac('sha256', webhookSecret).update(payload).digest('hex');
+      const valid = sigEntries.some(entry => entry.split('=').slice(1).join('=') === expected);
+
+      if (!valid) {
+        console.error('Stripe webhook: signature mismatch');
+        return res.status(400).json({ error: 'Signature verification failed' });
+      }
+
+      // Reject stale webhooks (older than 5 minutes)
+      const age = Math.floor(Date.now() / 1000) - parseInt(timestamp, 10);
+      if (age > 300) {
+        console.error('Stripe webhook: stale event, age:', age);
+        return res.status(400).json({ error: 'Webhook too old' });
+      }
+    } catch (err) {
+      console.error('Stripe webhook signature error:', err);
+      return res.status(400).json({ error: 'Signature check error' });
+    }
+  } else if (webhookSecret) {
+    // Secret is configured but signature header is missing — reject
+    console.error('Stripe webhook: missing stripe-signature header');
+    return res.status(400).json({ error: 'Missing stripe-signature header' });
+  }
+
+  const event = req.body;
+  const eventType = event?.type;
+
+  console.log(`Stripe webhook received: ${eventType} (id: ${event?.id})`);
+
+  const supportedEvents = [
+    'checkout.session.completed',
+    'payment_intent.succeeded',
+    'customer.subscription.created',
+  ];
+
+  if (!supportedEvents.includes(eventType)) {
+    // Acknowledge events we don't handle
+    return res.json({ received: true });
+  }
+
+  try {
+    // Extract payment details depending on event type
+    let email = null;
+    let amountCents = null;
+    let currency = 'usd';
+    let products = 'Unknown plan';
+    let paymentId = event?.id;
+
+    if (eventType === 'checkout.session.completed') {
+      const session = event.data?.object || {};
+      email = session.customer_details?.email || session.customer_email || null;
+      amountCents = session.amount_total;
+      currency = session.currency || 'usd';
+      paymentId = session.payment_intent || session.id;
+      // Extract line items metadata if available
+      const metadata = session.metadata || {};
+      products = metadata.plan || metadata.product || metadata.products || 'Website plan';
+    } else if (eventType === 'payment_intent.succeeded') {
+      const pi = event.data?.object || {};
+      email = pi.receipt_email || null;
+      amountCents = pi.amount;
+      currency = pi.currency || 'usd';
+      paymentId = pi.id;
+      const metadata = pi.metadata || {};
+      products = metadata.plan || metadata.product || metadata.products || 'Website plan';
+    } else if (eventType === 'customer.subscription.created') {
+      const sub = event.data?.object || {};
+      amountCents = sub.items?.data?.[0]?.price?.unit_amount;
+      currency = sub.currency || 'usd';
+      paymentId = sub.id;
+      const metadata = sub.metadata || {};
+      products = metadata.plan || metadata.product || sub.items?.data?.[0]?.price?.nickname || 'Monthly plan';
+      // email comes from customer object — not embedded in subscription
+      email = metadata.email || null;
+    }
+
+    const amountDisplay = amountCents != null
+      ? `$${(amountCents / 100).toFixed(2)} ${currency.toUpperCase()}`
+      : 'Amount unknown';
+
+    const taskTitle = `New client payment confirmed — start onboarding for ${email || 'unknown client'}`;
+    const taskDescription = [
+      `**Payment confirmed** via Stripe webhook (\`${eventType}\`).`,
+      '',
+      `- **Email:** ${email || 'Not captured — check Stripe dashboard'}`,
+      `- **Amount:** ${amountDisplay}`,
+      `- **Products/Plan:** ${products}`,
+      `- **Payment ID:** \`${paymentId}\``,
+      `- **Event ID:** \`${event.id}\``,
+      '',
+      'Start full onboarding pipeline immediately:',
+      '1. Reach out to client and confirm their domain situation',
+      '2. Trigger domain registration or DNS setup as needed',
+      '3. Kick off website build process',
+      '4. All steps per the onboarding checklist',
+    ].join('\n');
+
+    const paperclipUrl = process.env.PAPERCLIP_API_URL || 'http://127.0.0.1:3100';
+    const companyId = process.env.PAPERCLIP_COMPANY_ID || 'aa9191d4-249a-4574-88f2-1284571ad537';
+    const milaAgentId = '4c048967-aae9-4f50-8d77-6c83322d10f1';
+    const goalId = 'f45eaf59-e75b-4a0a-b6db-b1c7633abb14';
+
+    const taskRes = await fetch(`${paperclipUrl}/api/companies/${companyId}/issues`, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer local-board',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: taskTitle,
+        description: taskDescription,
+        priority: 'critical',
+        assigneeAgentId: milaAgentId,
+        goalId,
+      }),
+    });
+
+    if (!taskRes.ok) {
+      const errText = await taskRes.text();
+      console.error('Failed to create Mila task:', taskRes.status, errText);
+      // Still return 200 to Stripe so it doesn't retry — log the failure
+    } else {
+      const taskData = await taskRes.json();
+      console.log(`Mila onboarding task created: ${taskData.identifier} for ${email}`);
+    }
+
+    res.json({ received: true });
+  } catch (err) {
+    console.error('Stripe webhook processing error:', err);
+    // Return 200 to avoid Stripe retries for non-transient errors
+    res.json({ received: true, warning: 'Event received but processing encountered an error' });
   }
 });
 
