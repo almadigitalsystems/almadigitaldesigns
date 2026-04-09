@@ -48,13 +48,17 @@
     }
     .led-wall {
       position: absolute; inset: 0; z-index: 0;
+      background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center top;
+    }
+    .led-wall::after {
+      content: '';
+      position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 15% 25%, rgba(255,45,120,0.25) 0%, transparent 45%),
-        radial-gradient(ellipse at 85% 75%, rgba(0,229,255,0.2) 0%, transparent 45%),
-        radial-gradient(ellipse at 55% 45%, rgba(185,102,231,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 75% 15%, rgba(255,45,120,0.15) 0%, transparent 35%),
-        radial-gradient(ellipse at 25% 75%, rgba(0,229,255,0.15) 0%, transparent 35%),
-        linear-gradient(160deg, #050010 0%, #0a001f 50%, #050010 100%);
+        radial-gradient(ellipse at 15% 25%, rgba(255,45,120,0.35) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 75%, rgba(0,229,255,0.25) 0%, transparent 50%),
+        rgba(5,0,16,0.70);
     }
     .led-grid {
       position: absolute; inset: 0; z-index: 1;
@@ -264,6 +268,32 @@
     .partner-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
     .partner-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
     .partner-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.2); border-radius: 100px; padding: 5px 14px; font-size: 0.72rem; font-weight: 600; color: var(--cyan); margin-top: 16px; }
+
+    /* LIGHTBOX */
+    .lightbox-overlay {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-overlay img {
+      max-width: 92vw; max-height: 90vh; border-radius: 8px;
+      box-shadow: 0 0 60px rgba(255,45,120,0.4), 0 0 120px rgba(0,229,255,0.2);
+      object-fit: contain; cursor: default;
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 28px; font-size: 2.2rem; color: #fff;
+      cursor: pointer; line-height: 1; opacity: 0.8; transition: opacity 0.2s;
+      background: none; border: none; padding: 0;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-caption {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      font-size: 0.85rem; color: rgba(255,255,255,0.6); white-space: nowrap;
+    }
+    /* Zoomable images */
+    .zoomable { cursor: zoom-in; transition: opacity 0.2s; }
+    .zoomable:hover { opacity: 0.85; }
   </style>
 </head>
 <body>
@@ -482,6 +512,8 @@
           <img
             src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000037202.png"
             alt="Luke Skywalker Serra -- Jedi dog"
+            class="zoomable"
+            onclick="openLightbox(this)"
             loading="lazy"
           />
         </div>
@@ -499,6 +531,8 @@
             src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000037200.png"
             alt="Luke in a top hat -- charming as always"
             loading="lazy"
+            class="zoomable"
+            onclick="openLightbox(this)"
           />
         </div>
         <div class="luke-thumb">
@@ -506,6 +540,8 @@
             src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000037561.jpg"
             alt="Luke supervising operations at the events warehouse"
             loading="lazy"
+            class="zoomable"
+            onclick="openLightbox(this)"
           />
         </div>
         <div class="luke-thumb">
@@ -513,6 +549,8 @@
             src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000037747.jpg"
             alt="Anthony and Luke -- the founding team"
             loading="lazy"
+            class="zoomable"
+            onclick="openLightbox(this)"
           />
         </div>
         <div class="luke-thumb">
@@ -520,6 +558,8 @@
             src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000037533.jpg"
             alt="Luke as a puppy"
             loading="lazy"
+            class="zoomable"
+            onclick="openLightbox(this)"
           />
         </div>
         <div class="luke-thumb">
@@ -527,6 +567,8 @@
             src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000037535.jpg"
             alt="Luke Serra"
             loading="lazy"
+            class="zoomable"
+            onclick="openLightbox(this)"
           />
         </div>
         <div class="luke-thumb">
@@ -534,6 +576,8 @@
             src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000037532.jpg"
             alt="Luke Serra"
             loading="lazy"
+            class="zoomable"
+            onclick="openLightbox(this)"
           />
         </div>
       </div>
@@ -557,6 +601,8 @@
               src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000035719.jpg"
               alt="Monster Energy -- White Monster"
               loading="lazy"
+              class="zoomable"
+              onclick="openLightbox(this)"
             />
             <div class="partner-img-overlay"></div>
           </div>
@@ -575,6 +621,8 @@
               src="https://raw.githubusercontent.com/almadigitalsystems/almadigitaldesigns/master/assets/clients/serra-industries/1000037696.png"
               alt="WWE -- The Unstoppable Force"
               loading="lazy"
+              class="zoomable"
+              onclick="openLightbox(this)"
             />
             <div class="partner-img-overlay"></div>
           </div>
@@ -714,5 +762,33 @@
     })();
   </script>
 
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      var overlay = document.getElementById('lightboxOverlay');
+      var lbImg = document.getElementById('lightboxImg');
+      var caption = document.getElementById('lightboxCaption');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || '';
+      caption.textContent = img.alt || '';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target === document.getElementById('lightboxImg')) return;
+      document.getElementById('lightboxOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
