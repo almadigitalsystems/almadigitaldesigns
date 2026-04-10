@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pipeworks Manchester Ltd | Plumbing & Heating | Manchester</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#1c2b3a;background:#f0f4f8}
+nav{background:#1c2b3a;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.6rem;color:#fff;letter-spacing:2px}
+.logo span{color:#2ecc71}
+nav a{color:rgba(255,255,255,.7);text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.banner{background:#2ecc71;padding:.7rem 2rem;text-align:center;font-size:.9rem;font-weight:700;color:#1c2b3a}
+.hero{background:#1c2b3a;padding:7rem 2.5rem 5rem;position:relative;overflow:hidden}
+.hero::before{content:'💧';position:absolute;font-size:30rem;opacity:.04;right:-3rem;top:-5rem}
+.hero-inner{max-width:700px}
+.hero-tag{background:rgba(46,204,113,.15);border:1px solid rgba(46,204,113,.4);color:#2ecc71;font-size:.75rem;font-weight:700;padding:.4rem 1.2rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px}
+.hero h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2.5rem,6vw,5rem);color:#fff;line-height:1.1;margin-bottom:1.5rem;letter-spacing:1px}
+.hero h1 span{color:#2ecc71}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.72);line-height:1.75;margin-bottom:2.5rem;max-width:580px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-g{background:#2ecc71;color:#1c2b3a;padding:1rem 2.5rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none}
+.btn-w{background:transparent;border:2px solid rgba(255,255,255,.3);color:#fff;padding:1rem 2.5rem;border-radius:4px;font-weight:600;text-decoration:none}
+.stats-bar{background:#fff;display:grid;grid-template-columns:repeat(4,1fr);border-bottom:3px solid #2ecc71}
+.stat{padding:2.5rem 2rem;text-align:center;border-right:1px solid #f0f4f8}
+.stat:last-child{border-right:none}
+.stat .num{font-family:'Oswald',sans-serif;font-weight:700;font-size:2.5rem;color:#1c2b3a;letter-spacing:1px}
+.stat .num span{color:#2ecc71}
+.stat .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:#999;margin-top:.4rem}
+.services{padding:5rem 2.5rem;background:#f0f4f8;text-align:center}
+.services h2{font-family:'Oswald',sans-serif;font-weight:700;font-size:2.8rem;margin-bottom:.5rem;color:#1c2b3a;letter-spacing:1px}
+.s-sub{color:#888;margin-bottom:3rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.s-card{background:#fff;border-radius:8px;padding:2rem;text-align:left;transition:.2s;box-shadow:0 2px 10px rgba(0,0,0,.04);border-top:3px solid #2ecc71}
+.s-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-3px)}
+.s-icon{font-size:2.2rem;margin-bottom:1rem}
+.s-card h3{font-weight:700;color:#1c2b3a;margin-bottom:.5rem}
+.s-card p{font-size:.85rem;color:#666;line-height:1.6}
+.experience{background:#1c2b3a;padding:5rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1200px;margin:0 auto;align-items:center;color:#fff}
+.experience h2{font-family:'Oswald',sans-serif;font-weight:700;font-size:2.5rem;letter-spacing:1px;margin-bottom:1.5rem}
+.experience h2 span{color:#2ecc71}
+.experience p{color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:1rem;font-size:.95rem}
+.exp-points{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.ep{background:rgba(46,204,113,.1);border-left:3px solid #2ecc71;padding:1rem 1.5rem;border-radius:0 6px 6px 0}
+.ep h3{font-weight:700;font-size:.95rem;margin-bottom:.25rem}
+.ep p{color:rgba(255,255,255,.6);font-size:.85rem;line-height:1.5}
+.exp-visual{background:rgba(255,255,255,.04);border:1px solid rgba(46,204,113,.2);border-radius:12px;height:360px;display:flex;align-items:center;justify-content:center;font-size:10rem}
+.reviews{background:#f0f4f8;padding:5rem 2.5rem;text-align:center}
+.reviews h2{font-family:'Oswald',sans-serif;font-weight:700;font-size:2.5rem;margin-bottom:.5rem;letter-spacing:1px;color:#1c2b3a}
+.r-sub{color:#888;margin-bottom:3rem}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.r-card{background:#fff;border-radius:8px;padding:2rem;text-align:left;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stars{color:#2ecc71;margin-bottom:.75rem}
+.r-card p{color:#555;font-style:italic;font-size:.9rem;line-height:1.7;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:#1c2b3a;font-weight:700}
+.cta{background:#2ecc71;padding:5rem 2.5rem;text-align:center}
+.cta h2{font-family:'Oswald',sans-serif;font-weight:700;font-size:3rem;color:#1c2b3a;letter-spacing:1px;margin-bottom:1rem}
+.cta p{color:rgba(28,43,58,.8);max-width:580px;margin:0 auto 2.5rem;font-size:1.05rem}
+.cta .btn-cta{background:#1c2b3a;color:#2ecc71;padding:1rem 3rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.contact{background:#fff;padding:5rem 2.5rem}
+.contact h2{font-family:'Oswald',sans-serif;font-weight:700;font-size:2.5rem;text-align:center;margin-bottom:3rem;letter-spacing:1px;color:#1c2b3a}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.cinfo p{margin-bottom:1rem;color:#555;font-size:.95rem;line-height:1.7}
+.cinfo strong{color:#1c2b3a}
+form input,form textarea{width:100%;background:#f0f4f8;border:1px solid #dde5ef;border-radius:4px;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:120px;resize:vertical}
+form button{background:#1c2b3a;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:4px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#1c2b3a;color:rgba(255,255,255,.35);padding:2rem;text-align:center;font-size:.85rem}
+footer strong{color:#2ecc71}
+@media(max-width:768px){.experience,.c-grid{grid-template-columns:1fr}.stats-bar{grid-template-columns:1fr 1fr}.exp-visual{height:180px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">PIPEWORKS <span>MCR</span></div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<div class="banner">📞 Manchester's 20+ Year Plumbing Specialists — Now Booking</div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">🔧 Manchester Plumbing & Heating — 20+ Years</div>
+    <h1>Manchester's <span>Experienced</span> Plumbers</h1>
+    <p>Over two decades of professional plumbing and heating across Manchester. Pipeworks Manchester Ltd delivers expert service, honest pricing, and the reliability that only comes from 20+ years in the trade.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-g">Get a Quote</a>
+      <a href="#services" class="btn-w">Our Services</a>
+    </div>
+  </div>
+</section>
+<div class="stats-bar">
+  <div class="stat"><div class="num">20<span>+</span></div><div class="lbl">Years Experience</div></div>
+  <div class="stat"><div class="num">4<span>.5★</span></div><div class="lbl">Google Rating</div></div>
+  <div class="stat"><div class="num">GAS</div><div class="lbl">Safe Registered</div></div>
+  <div class="stat"><div class="num">MCR</div><div class="lbl">Manchester Based</div></div>
+</div>
+<section class="services" id="services">
+  <h2>Plumbing & Heating Services</h2>
+  <p class="s-sub">Expert plumbing and heating across Manchester — backed by 20 years of experience</p>
+  <div class="s-grid">
+    <div class="s-card"><div class="s-icon">🔥</div><h3>Boiler Services</h3><p>Boiler installation, repair, and annual service by Gas Safe registered engineers.</p></div>
+    <div class="s-card"><div class="s-icon">💧</div><h3>Emergency Plumbing</h3><p>Burst pipes, major leaks, blocked drains — fast Manchester emergency response.</p></div>
+    <div class="s-card"><div class="s-icon">🌡️</div><h3>Central Heating</h3><p>System installations, radiator upgrades, power flushing — complete heating solutions.</p></div>
+    <div class="s-card"><div class="s-icon">🚿</div><h3>Bathroom Fitting</h3><p>Full bathroom installations from design to completion — 20 years of quality workmanship.</p></div>
+    <div class="s-card"><div class="s-icon">🏗️</div><h3>Commercial Plumbing</h3><p>Commercial plumbing contracts and project work across Greater Manchester.</p></div>
+    <div class="s-card"><div class="s-icon">📋</div><h3>Gas Safety Checks</h3><p>Landlord CP12 certificates and gas safety inspections — competitive pricing.</p></div>
+  </div>
+</section>
+<div class="experience" style="padding:5rem 2.5rem">
+  <div>
+    <h2>20 Years of <span>Manchester Expertise</span></h2>
+    <p>Pipeworks Manchester was built on a foundation of quality workmanship and genuine customer care. After two decades serving Manchester homeowners and businesses, our reputation speaks louder than any advert.</p>
+    <div class="exp-points">
+      <div class="ep"><h3>Commercial Grade Expertise</h3><p>20+ years means we've seen every plumbing and heating challenge — and fixed them all.</p></div>
+      <div class="ep"><h3>Professional Standards</h3><p>Gas Safe registered engineers, fully insured, and committed to industry-leading standards.</p></div>
+      <div class="ep"><h3>Local Knowledge</h3><p>Deep roots in Manchester — we understand local properties, water systems, and building types.</p></div>
+    </div>
+  </div>
+  <div class="exp-visual">🔧</div>
+</div>
+<section class="reviews">
+  <h2>Manchester Reviews</h2>
+  <p class="r-sub">4.5 stars — 20 years of Manchester customer satisfaction</p>
+  <div class="r-grid">
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Used Pipeworks for a full bathroom renovation and boiler replacement. Professional throughout, great quality work, and exactly as quoted. Excellent."</p><div class="reviewer">— Graham W., Manchester</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"These guys know their stuff — 20 years shows. Fixed a heating problem that stumped two other companies. Polite, efficient, and very reasonably priced."</p><div class="reviewer">— Fiona B., Salford</div></div>
+    <div class="r-card"><div class="stars">★★★★☆</div><p>"Reliable and professional. They've done several jobs for us over the years and the quality is always consistent. Recommend them to anyone in Manchester."</p><div class="reviewer">— Neil P., Trafford</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Website Redesign</h2>
+  <p>We're building free website previews for Manchester trade businesses. See what 20 years of expertise could look like with a modern, professional website behind it.</p>
+  <a href="#contact" class="btn-cta">Get My Free Preview</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Book Pipeworks Manchester</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Manchester, UK</p>
+      <p><strong>📧 Email</strong><br>pipeworks365@gmail.com</p>
+      <p><strong>🔧 Service Area</strong><br>Manchester, Salford, Trafford &amp; Greater Manchester</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 7:30am–5:30pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Pipeworks Manchester Ltd">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Describe your plumbing or heating project..."></textarea>
+      <button type="submit">Request a Quote</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 Pipeworks Manchester Ltd — Manchester, UK | 20+ Years Experience | Gas Safe Registered | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
