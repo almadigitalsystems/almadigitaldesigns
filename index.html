@@ -3118,7 +3118,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__revisions">5 revision rounds included</div>
+        <div class="plan__revisions plan-revisions" data-full="3 revision rounds post-launch · $5/round after" data-monthly="3 launch rounds · 1 free/mo · $5/round after">3 revision rounds post-launch · $5/round after</div>
 
 
 
@@ -3262,7 +3262,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__revisions">20 revision rounds included</div>
+        <div class="plan__revisions plan-revisions" data-full="10 revision rounds post-launch · $5/round after" data-monthly="10 launch rounds · 3 free/mo · $5/round after">10 revision rounds post-launch · $5/round after</div>
 
 
 
@@ -3398,7 +3398,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__revisions">Unlimited revisions</div>
+        <div class="plan__revisions plan-revisions" data-full="15 revision rounds post-launch · $5/round after" data-monthly="15 launch rounds · 5 free/mo · $5/round after">15 revision rounds post-launch · $5/round after</div>
 
 
 
@@ -3431,6 +3431,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
     <p class="pricing__policy reveal">Cancel before 6 months: $25 domain transfer fee &nbsp;·&nbsp; Cancel after 6 months: free transfer &nbsp;·&nbsp; Free domain on all plans</p>
+    <p class="pricing__policy reveal" style="margin-top:0.75rem"><strong style="color:var(--cyan)">What counts as one revision round?</strong> One round = one batch of changes submitted together in a single message. Multiple changes in one message = one round. Separate requests on different days = separate rounds.</p>
+    <p class="pricing__policy reveal" style="margin-top:0.5rem"><strong style="color:var(--cyan)">Before payment:</strong> We adjust your preview unlimited times for free until you love it — these never count as revision rounds.</p>
 
 
 
@@ -6046,6 +6048,9 @@ function setPlan(mode){
 
 
 
+  document.querySelectorAll('.plan-revisions').forEach(el=>{
+    el.textContent=el.dataset[mode]
+  })
   document.querySelectorAll('.plan-period').forEach(el=>{
 
 
