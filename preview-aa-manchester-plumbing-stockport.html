@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AA Manchester Plumbing & Heating Services | Stockport</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#faf8f5;color:#2d2d2d}
+nav{background:#fff;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.logo{font-family:'Lora',serif;font-size:1.4rem;font-weight:700;color:#2d2d2d}
+.logo span{color:#d4521a}
+nav a{color:#555;text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.hero{background:linear-gradient(160deg,#2c4a2e 0%,#3a5e3a 50%,#4a6e4a 100%);padding:7rem 2rem 5rem;text-align:center;color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'🏡';position:absolute;font-size:20rem;opacity:.05;bottom:-3rem;right:-2rem}
+.hero-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.75rem;font-weight:700;padding:.4rem 1.2rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px}
+.hero h1{font-family:'Lora',serif;font-size:clamp(2rem,5.5vw,4.5rem);font-weight:700;margin-bottom:1.5rem;line-height:1.2}
+.hero h1 em{color:#f0c060;font-style:normal}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto 3rem;line-height:1.75}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{background:#d4521a;color:#fff;padding:1rem 2.5rem;border-radius:6px;font-weight:700;text-decoration:none}
+.btn-light{background:#fff;color:#2c4a2e;padding:1rem 2.5rem;border-radius:6px;font-weight:700;text-decoration:none}
+.family-strip{background:#fff;padding:3rem 2rem;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;border-bottom:1px solid #eee}
+.fs-item{text-align:center}
+.fs-icon{font-size:2rem;margin-bottom:.5rem}
+.fs-title{font-weight:700;font-size:.9rem;color:#2c4a2e}
+.fs-desc{font-size:.8rem;color:#888;margin-top:.2rem}
+.about{background:#faf8f5;padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:center}
+.about h2{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;margin-bottom:1.5rem;line-height:1.2}
+.about h2 em{color:#d4521a;font-style:normal}
+.about p{color:#666;line-height:1.85;margin-bottom:1rem;font-size:.95rem}
+.trust-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.tl-item{display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#444}
+.tl-icon{font-size:1.2rem}
+.about-img{background:linear-gradient(135deg,#2c4a2e,#4a6e4a);border-radius:16px;height:360px;display:flex;align-items:center;justify-content:center;font-size:8rem}
+.services{background:#fff;padding:5rem 2rem;text-align:center}
+.services h2{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;margin-bottom:.5rem}
+.s-sub{color:#888;margin-bottom:3rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.s-card{background:#faf8f5;border:1px solid #e8e4de;border-radius:10px;padding:2rem;text-align:left;border-left:4px solid #2c4a2e;transition:.2s}
+.s-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px)}
+.s-icon{font-size:2rem;margin-bottom:1rem}
+.s-card h3{font-weight:700;margin-bottom:.5rem;color:#2c4a2e}
+.s-card p{font-size:.85rem;color:#777;line-height:1.6}
+.reviews{background:#2c4a2e;padding:5rem 2rem;text-align:center;color:#fff}
+.reviews h2{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;margin-bottom:.5rem}
+.r-sub{color:rgba(255,255,255,.6);margin-bottom:3rem}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.r-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:1.75rem;text-align:left}
+.stars{color:#f0c060;margin-bottom:.75rem}
+.r-card p{color:rgba(255,255,255,.8);font-style:italic;font-size:.9rem;line-height:1.7;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:rgba(255,255,255,.45);font-weight:600}
+.cta{background:linear-gradient(135deg,#d4521a,#b84010);padding:5rem 2rem;text-align:center;color:#fff}
+.cta h2{font-family:'Lora',serif;font-size:3rem;font-weight:700;margin-bottom:1rem}
+.cta p{color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2rem;font-size:1.05rem;line-height:1.6}
+.cta .btn-cta{background:#fff;color:#d4521a;padding:1rem 2.5rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.contact{background:#faf8f5;padding:5rem 2rem}
+.contact h2{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:3rem}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.cinfo p{margin-bottom:1rem;color:#666;font-size:.95rem;line-height:1.7}
+.cinfo strong{color:#2c4a2e}
+form input,form textarea{width:100%;background:#fff;border:1px solid #ddd;border-radius:6px;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:120px;resize:vertical}
+form button{background:#2c4a2e;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:6px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#2c4a2e;color:rgba(255,255,255,.4);padding:2rem;text-align:center;font-size:.85rem}
+footer strong{color:#f0c060}
+@media(max-width:768px){.about,.c-grid{grid-template-columns:1fr}.about-img{height:180px}.family-strip{gap:2rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">AA <span>Plumbing & Heating</span></div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="hero-badge">🏡 Family Business — Not a Call Centre</div>
+    <h1>Manchester's <em>Family Plumbers</em><br>You Can Actually Trust</h1>
+    <p>Paul and the AA Manchester team bring a family business approach to every job. No call centres, no subcontractors — you speak to us directly, and we do the work ourselves.</p>
+    <div class="btns">
+      <a href="#contact" class="btn">Call Paul's Team</a>
+      <a href="#services" class="btn-light">Our Services</a>
+    </div>
+  </div>
+</section>
+<div class="family-strip">
+  <div class="fs-item"><div class="fs-icon">📞</div><div class="fs-title">Direct Contact</div><div class="fs-desc">You speak to us — always</div></div>
+  <div class="fs-item"><div class="fs-icon">⭐</div><div class="fs-title">4.8 Stars</div><div class="fs-desc">Google Reviews</div></div>
+  <div class="fs-item"><div class="fs-icon">🛡️</div><div class="fs-title">Gas Safe</div><div class="fs-desc">Registered Engineers</div></div>
+  <div class="fs-item"><div class="fs-icon">💷</div><div class="fs-title">Fair Prices</div><div class="fs-desc">No hidden charges</div></div>
+</div>
+<div class="about">
+  <div>
+    <h2>The <em>Family Business</em> Difference</h2>
+    <p>When you call AA Manchester Plumbing & Heating, you're talking to Paul — not a receptionist, not a call centre, not someone three layers removed from the actual work. We believe that's how a trade business should operate.</p>
+    <p>Based in Stockport with deep roots across Greater Manchester, we've built our 4.8-star reputation one honest job at a time. Our customers stay because we treat their homes like our own.</p>
+    <div class="trust-list">
+      <div class="tl-item"><span class="tl-icon">✅</span>Gas Safe Registered engineers</div>
+      <div class="tl-item"><span class="tl-icon">✅</span>Family business — no subcontracting</div>
+      <div class="tl-item"><span class="tl-icon">✅</span>Transparent pricing — no surprises</div>
+      <div class="tl-item"><span class="tl-icon">✅</span>4.8 stars across Google reviews</div>
+      <div class="tl-item"><span class="tl-icon">✅</span>Stockport & Manchester area specialist</div>
+    </div>
+  </div>
+  <div class="about-img">🏡</div>
+</div>
+<section class="services" id="services">
+  <h2>Plumbing & Heating Services</h2>
+  <p class="s-sub">Honest, quality work across Stockport and Greater Manchester</p>
+  <div class="s-grid">
+    <div class="s-card"><div class="s-icon">🔥</div><h3>Boiler Repair & Service</h3><p>Gas Safe boiler repairs, annual services, and emergency breakdowns across Greater Manchester.</p></div>
+    <div class="s-card"><div class="s-icon">💧</div><h3>Plumbing Repairs</h3><p>Leaks, burst pipes, blocked drains — handled quickly and honestly.</p></div>
+    <div class="s-card"><div class="s-icon">🌡️</div><h3>Central Heating</h3><p>New radiators, system upgrades, power flushes — complete heating solutions.</p></div>
+    <div class="s-card"><div class="s-icon">🚿</div><h3>Bathroom Fitting</h3><p>Complete bathroom renovations handled from start to finish — Paul does the work himself.</p></div>
+    <div class="s-card"><div class="s-icon">📋</div><h3>Landlord Certificates</h3><p>CP12 gas safety certificates for landlords — quick turnaround, fully compliant.</p></div>
+    <div class="s-card"><div class="s-icon">🚨</div><h3>Emergency Call-Outs</h3><p>Plumbing emergencies across Stockport and Manchester — we answer our phones.</p></div>
+  </div>
+</section>
+<section class="reviews">
+  <h2>Manchester's Verdict</h2>
+  <p class="r-sub">4.8 stars — the family business reputation speaks for itself</p>
+  <div class="r-grid">
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Paul came out the same day, fixed the leak in an hour, and charged exactly what he quoted. Refreshing to deal with a proper family business — no games."</p><div class="reviewer">— Helen G., Stockport</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Unlike the big companies, Paul actually turns up, does the job, and you can call him directly. My boiler was back running within the day. Brilliant service."</p><div class="reviewer">— David K., Didsbury</div></div>
+    <div class="r-card"><div class="stars">★★★★☆</div><p>"Have used AA Plumbing three times now. Always honest about what's needed, always a fair price, always good quality work. Won't use anyone else."</p><div class="reviewer">— Tracey B., Cheadle</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Redesign</h2>
+  <p>We're showing Manchester tradespeople what a professional, fast website looks like — completely free. See how a better site helps your family business win more local jobs.</p>
+  <a href="#contact" class="btn-cta">Get My Free Preview</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Get in Touch with Paul</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Stockport / Manchester, UK</p>
+      <p><strong>📧 Email</strong><br>paul.mphs@talktalk.net</p>
+      <p><strong>🏡 Service Area</strong><br>Stockport, Didsbury, Cheadle &amp; South Manchester</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Sat 8am–6pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="AA Manchester Plumbing & Heating Services">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="What do you need help with?"></textarea>
+      <button type="submit">Get in Touch</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 AA Manchester Plumbing &amp; Heating Services — Stockport, UK | Gas Safe Registered | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
