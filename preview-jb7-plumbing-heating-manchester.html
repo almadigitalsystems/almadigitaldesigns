@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JB7 Plumbing and Heating Ltd | Manchester, UK</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0e1b2a;color:#fff}
+nav{background:#0e1b2a;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,180,220,.2)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;letter-spacing:3px}
+.logo span{color:#00b4dc}
+nav a{color:rgba(255,255,255,.7);text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.hero{min-height:88vh;background:linear-gradient(155deg,#0e1b2a 0%,#112233 50%,#0a2240 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'🔧';position:absolute;font-size:28rem;opacity:.04;bottom:-5rem;right:-3rem;transform:rotate(-20deg)}
+.hero-badge{background:#00b4dc;color:#0e1b2a;font-size:.75rem;font-weight:700;padding:.4rem 1rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8rem);line-height:1;margin-bottom:1.5rem;letter-spacing:2px}
+.hero h1 span{color:#00b4dc}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,.75);max-width:600px;margin:0 auto 3rem;line-height:1.7}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{background:#00b4dc;color:#0e1b2a;padding:1rem 2.5rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none}
+.btn-o{background:transparent;border:2px solid rgba(255,255,255,.3);color:#fff;padding:1rem 2.5rem;border-radius:4px;font-weight:600;text-decoration:none}
+.trust-bar{background:#112233;display:flex;justify-content:center;gap:3rem;padding:2rem;flex-wrap:wrap;border-bottom:1px solid rgba(0,180,220,.1)}
+.tb-item{text-align:center}
+.tb-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#00b4dc;letter-spacing:1px}
+.tb-lbl{font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px}
+.services{padding:5rem 2rem;text-align:center}
+.services h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;margin-bottom:.5rem;letter-spacing:2px}
+.s-sub{color:rgba(255,255,255,.5);margin-bottom:3rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.s-card{background:#112233;border:1px solid rgba(0,180,220,.15);border-radius:8px;padding:2rem;text-align:left;transition:.2s}
+.s-card:hover{border-color:#00b4dc;transform:translateY(-3px)}
+.s-icon{font-size:2.2rem;margin-bottom:1rem}
+.s-card h3{font-weight:700;margin-bottom:.5rem}
+.s-card p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6}
+.reviews{background:#112233;padding:5rem 2rem;text-align:center;border-top:1px solid rgba(0,180,220,.1)}
+.reviews h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;margin-bottom:.5rem;letter-spacing:2px}
+.r-sub{color:rgba(255,255,255,.5);margin-bottom:3rem}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.r-card{background:#0e1b2a;border:1px solid rgba(0,180,220,.15);border-radius:8px;padding:1.75rem;text-align:left}
+.stars{color:#00b4dc;margin-bottom:.75rem}
+.r-card p{color:rgba(255,255,255,.7);font-style:italic;font-size:.9rem;line-height:1.7;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:rgba(255,255,255,.4);font-weight:600}
+.cta{background:linear-gradient(135deg,#00b4dc,#007fa0);padding:5rem 2rem;text-align:center}
+.cta h2{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:#fff;letter-spacing:2px;margin-bottom:1rem}
+.cta p{color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2rem;font-size:1.05rem}
+.cta .btn-cta{background:#0e1b2a;color:#00b4dc;padding:1rem 3rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.contact{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.contact h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;margin-bottom:3rem;letter-spacing:2px}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.cinfo p{margin-bottom:1rem;color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.7}
+.cinfo strong{color:#00b4dc}
+form input,form textarea{width:100%;background:#112233;border:1px solid rgba(0,180,220,.2);border-radius:4px;padding:.85rem;color:#fff;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:120px;resize:vertical}
+form button{background:#00b4dc;color:#0e1b2a;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:4px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#112233;border-top:1px solid rgba(0,180,220,.1);padding:2rem;text-align:center;color:rgba(255,255,255,.3);font-size:.85rem}
+footer strong{color:#00b4dc}
+@media(max-width:768px){.c-grid{grid-template-columns:1fr}.trust-bar{gap:1.5rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><span>JB7</span> Plumbing & Heating</div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="hero-badge">💧 Manchester's Trusted Plumbers — 4.8 Stars</div>
+    <h1>Manchester <span>Plumbing</span> Done Properly</h1>
+    <p>From emergency drain repairs to full heating installations — JB7 Plumbing and Heating delivers fast, professional service across Manchester and Whalley Range. No fuss, no hidden charges.</p>
+    <div class="btns">
+      <a href="#contact" class="btn">Book a Plumber</a>
+      <a href="#services" class="btn-o">View Services</a>
+    </div>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="tb-item"><div class="tb-num">4.8★</div><div class="tb-lbl">Google Rating</div></div>
+  <div class="tb-item"><div class="tb-num">GAS</div><div class="tb-lbl">Safe Registered</div></div>
+  <div class="tb-item"><div class="tb-num">MCR</div><div class="tb-lbl">Manchester Based</div></div>
+  <div class="tb-item"><div class="tb-num">24/7</div><div class="tb-lbl">Emergency Response</div></div>
+</div>
+<section class="services" id="services">
+  <h2>Plumbing & Heating Services</h2>
+  <p class="s-sub">Complete plumbing and heating solutions across Manchester</p>
+  <div class="s-grid">
+    <div class="s-card"><div class="s-icon">💧</div><h3>Emergency Plumbing</h3><p>Burst pipes, blocked drains, leaks — we respond fast across Manchester when it matters most.</p></div>
+    <div class="s-card"><div class="s-icon">🔥</div><h3>Boiler Service & Repair</h3><p>Gas Safe registered engineers for boiler breakdowns, annual services, and replacements.</p></div>
+    <div class="s-card"><div class="s-icon">🚿</div><h3>Bathroom Installation</h3><p>Complete bathroom fit-outs — from planning to the finishing touches. Quality guaranteed.</p></div>
+    <div class="s-card"><div class="s-icon">🌡️</div><h3>Central Heating</h3><p>New central heating systems, radiator installs, and power flushing for Manchester homes.</p></div>
+    <div class="s-card"><div class="s-icon">🔧</div><h3>General Plumbing</h3><p>Taps, toilets, showers, cylinders — all general plumbing work done professionally and fairly.</p></div>
+    <div class="s-card"><div class="s-icon">📋</h3><h3>Landlord Certificates</h3><p>Gas safety certificates and landlord compliance checks — fast turnaround guaranteed.</p></div>
+  </div>
+</section>
+<section class="reviews">
+  <h2>What Manchester Says</h2>
+  <p class="r-sub">4.8 stars on Google — trusted by Manchester homeowners</p>
+  <div class="r-grid">
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Called JB7 at 8pm for a burst pipe. They arrived within an hour and sorted it quickly. Brilliant service, fair price. Highly recommended."</p><div class="reviewer">— Claire H., Whalley Range</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Used JB7 for our full bathroom renovation. Excellent workmanship and they kept us informed at every stage. The result was fantastic."</p><div class="reviewer">— Andrew M., Manchester</div></div>
+    <div class="r-card"><div class="stars">★★★★☆</div><p>"Very professional — turned up on time, got the boiler fixed quickly, and the price was as quoted. Will definitely use again."</p><div class="reviewer">— Sarah T., Didsbury</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Website Redesign</h2>
+  <p>We're offering Manchester tradespeople a free preview of what a modern, fast website could look like for their business. No cost, no obligation.</p>
+  <a href="#contact" class="btn-cta">Get My Free Preview</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Get in Touch</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Whalley Range, Manchester, UK</p>
+      <p><strong>📧 Email</strong><br>queries@jbplumbing.co.uk</p>
+      <p><strong>💧 Service Area</strong><br>Manchester, Salford &amp; Greater Manchester</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 8am–6pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="JB7 Plumbing and Heating Ltd">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Describe your plumbing or heating issue..."></textarea>
+      <button type="submit">Book a Plumber</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 JB7 Plumbing and Heating Ltd — Whalley Range, Manchester, UK | Gas Safe Registered | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
