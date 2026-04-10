@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clintonville Automotive Repair (C.A.R.S.) | Columbus, OH</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f8f8f8;color:#1a1a1a}
+nav{background:#1a1a1a;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Oswald',sans-serif;font-size:1.6rem;color:#ff6b00;letter-spacing:2px}
+.logo span{color:#fff}
+nav a{color:#ccc;text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:85vh}
+.hero-left{background:#1a1a1a;padding:5rem 3rem;display:flex;flex-direction:column;justify-content:center}
+.hero-right{background:linear-gradient(135deg,#2c2c2c,#ff6b00);display:flex;align-items:center;justify-content:center;font-size:12rem;position:relative;overflow:hidden}
+.hero-right::after{content:'🔧';position:absolute;font-size:15rem;opacity:.15;bottom:-2rem;right:-2rem;transform:rotate(-20deg)}
+.badge{background:#ff6b00;color:#fff;font-size:.75rem;font-weight:700;padding:.35rem .9rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase;width:fit-content}
+.hero-left h1{font-family:'Oswald',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;line-height:1.1;margin-bottom:1.5rem}
+.hero-left h1 span{color:#ff6b00}
+.hero-left p{color:#aaa;font-size:1.05rem;line-height:1.7;margin-bottom:2.5rem;max-width:440px}
+.btn{background:#ff6b00;color:#fff;padding:1rem 2.5rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;margin-right:1rem;margin-bottom:1rem}
+.btn-ghost{background:transparent;border:2px solid #ff6b00;color:#ff6b00}
+.about{background:#fff;padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:center}
+.about h2{font-family:'Oswald',sans-serif;font-size:2.8rem;margin-bottom:1.5rem;color:#1a1a1a}
+.about h2 span{color:#ff6b00}
+.about p{color:#555;line-height:1.8;margin-bottom:1rem;font-size:.95rem}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.astat{background:#f8f8f8;padding:1.2rem;border-left:4px solid #ff6b00}
+.astat .num{font-family:'Oswald',sans-serif;font-size:2rem;color:#ff6b00}
+.astat .lbl{font-size:.8rem;color:#888;text-transform:uppercase;letter-spacing:1px}
+.services{background:#1a1a1a;padding:5rem 2rem}
+.services h2{font-family:'Oswald',sans-serif;font-size:2.8rem;color:#fff;text-align:center;margin-bottom:.5rem}
+.services p.sub{text-align:center;color:#888;margin-bottom:3rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.svc-card{background:#2c2c2c;padding:2rem;border-radius:6px;border-bottom:3px solid #ff6b00;transition:.2s}
+.svc-card:hover{background:#333;transform:translateY(-3px)}
+.svc-icon{font-size:2.2rem;margin-bottom:1rem}
+.svc-card h3{color:#fff;font-weight:700;margin-bottom:.5rem}
+.svc-card p{color:#999;font-size:.85rem;line-height:1.6}
+.testimonials{background:#fff;padding:5rem 2rem;text-align:center}
+.testimonials h2{font-family:'Oswald',sans-serif;font-size:2.8rem;margin-bottom:3rem}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1000px;margin:0 auto 3rem}
+.t-card{background:#f8f8f8;padding:2rem;border-radius:8px;text-align:left;border-top:4px solid #ff6b00}
+.stars{color:#ff6b00;font-size:1.1rem;margin-bottom:.75rem}
+.t-card p{color:#555;font-style:italic;font-size:.95rem;line-height:1.7;margin-bottom:1rem}
+.reviewer{font-weight:700;font-size:.85rem;color:#333}
+.cta-banner{background:#ff6b00;padding:4rem 2rem;text-align:center}
+.cta-banner h2{font-family:'Oswald',sans-serif;font-size:3rem;color:#fff;margin-bottom:1rem}
+.cta-banner p{color:rgba(255,255,255,.85);max-width:550px;margin:0 auto 2rem;font-size:1.05rem}
+.cta-banner .btn{background:#1a1a1a;color:#fff}
+.contact{background:#f8f8f8;padding:5rem 2rem}
+.contact h2{font-family:'Oswald',sans-serif;font-size:2.5rem;text-align:center;margin-bottom:3rem}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.cinfo p{margin-bottom:1rem;color:#555;line-height:1.7}
+.cinfo strong{color:#ff6b00}
+form input,form textarea,form select{width:100%;background:#fff;border:1px solid #ddd;border-radius:4px;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:110px;resize:vertical}
+form button{background:#ff6b00;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:4px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#1a1a1a;padding:2rem;text-align:center;color:#555;font-size:.85rem}
+@media(max-width:768px){.hero{grid-template-columns:1fr}.hero-right{display:none}.about{grid-template-columns:1fr}.contact-wrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><span>C.A.R.S.</span> Clintonville Auto</div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <div class="badge">🔧 Columbus Auto Repair Since 1962</div>
+    <h1>Columbus' <span>64-Year</span> Auto Repair Institution</h1>
+    <p>Three generations of Columbus families have trusted C.A.R.S. Clintonville Automotive. Honest work, fair prices, and certified technicians who get it right the first time.</p>
+    <div><a href="#contact" class="btn">Book a Service</a><a href="#services" class="btn btn-ghost">View Services</a></div>
+  </div>
+  <div class="hero-right">🚗</div>
+</div>
+<div class="about" style="padding:5rem 2rem">
+  <div>
+    <h2>64 Years of <span>Honest</span> Auto Service</h2>
+    <p>Since 1962, Clintonville Automotive Repair Service has served Columbus families with honest, professional auto repair. We're not a chain — we're your neighbors. Our certified technicians treat every vehicle like it's their own.</p>
+    <p>Paul and the C.A.R.S. team have built Columbus' most trusted independent auto shop. When your car needs attention, you deserve a shop that tells you the truth.</p>
+    <div class="about-stats">
+      <div class="astat"><div class="num">64</div><div class="lbl">Years in Business</div></div>
+      <div class="astat"><div class="num">4.6★</div><div class="lbl">Google Rating</div></div>
+      <div class="astat"><div class="num">ASE</div><div class="lbl">Certified Techs</div></div>
+      <div class="astat"><div class="num">1000+</div><div class="lbl">Happy Customers</div></div>
+    </div>
+  </div>
+  <div style="background:#f0f0f0;border-radius:12px;height:300px;display:flex;align-items:center;justify-content:center;font-size:6rem">🔧</div>
+</div>
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <p class="sub">Complete auto repair for all makes &amp; models</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-icon">🔧</div><h3>Engine Diagnostics</h3><p>Check engine light? We diagnose and fix the root cause — not just clear the code.</p></div>
+    <div class="svc-card"><div class="svc-icon">🛞</div><h3>Brakes &amp; Tires</h3><p>Brake inspections, pad replacement, rotor resurfacing, and tire services.</p></div>
+    <div class="svc-card"><div class="svc-icon">🌡️</div><h3>Oil &amp; Fluid Service</h3><p>Oil changes, transmission fluid, coolant flush, and complete fluid checks.</p></div>
+    <div class="svc-card"><div class="svc-icon">❄️</div><h3>AC &amp; Heating</h3><p>AC recharge, heater core, thermostat replacement — stay comfortable year round.</p></div>
+    <div class="svc-card"><div class="svc-icon">⚙️</div><h3>Transmission</h3><p>Transmission service, repair, and rebuild. We keep Columbus moving.</p></div>
+    <div class="svc-card"><div class="svc-icon">🔍</div><h3>Pre-Purchase Inspection</h3><p>Buying a used car? Let us inspect it first — we could save you thousands.</p></div>
+  </div>
+</section>
+<section class="testimonials">
+  <h2>What Columbus Says</h2>
+  <div class="t-grid">
+    <div class="t-card"><div class="stars">★★★★★</div><p>"Been bringing my cars here for 20 years. Paul and team are always honest, never try to upsell, and get it done right. Best shop in Clintonville."</p><div class="reviewer">— Tom H., Clintonville</div></div>
+    <div class="t-card"><div class="stars">★★★★★</div><p>"C.A.R.S. diagnosed a problem three other shops missed. Saved me from a $2,000 mistake. This is the only shop I'll use now."</p><div class="reviewer">— Amanda L., Columbus</div></div>
+    <div class="t-card"><div class="stars">★★★★☆</div><p>"Fair prices, fast turnaround, and they explain everything clearly. Rare to find a shop this trustworthy."</p><div class="reviewer">— Derek M., Upper Arlington</div></div>
+  </div>
+</section>
+<div class="cta-banner">
+  <h2>Claim Your Free Redesign</h2>
+  <p>We're showing Columbus businesses what a fast, modern website looks like — free. No commitment, just a preview of your future online presence.</p>
+  <a href="#contact" class="btn">Get My Free Redesign</a>
+</div>
+<section class="contact" id="contact">
+  <h2>Book Your Service</h2>
+  <div class="contact-wrap">
+    <div class="cinfo">
+      <p><strong>📍 Address</strong><br>Columbus, OH, USA</p>
+      <p><strong>📧 Email</strong><br>paulm@clintonvilleauto.com</p>
+      <p><strong>🚗 Serving</strong><br>All Columbus &amp; Central Ohio</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 8am–5:30pm | Sat 8am–12pm</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Clintonville Automotive Repair Service">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="vehicle" placeholder="Year, Make &amp; Model">
+      <textarea name="message" placeholder="Describe the issue or service needed..."></textarea>
+      <button type="submit">Request Appointment</button>
+    </form>
+  </div>
+</section>
+<footer><p>© 2026 Clintonville Automotive Repair Service (C.A.R.S.) — Columbus, OH | Est. 1962 | Preview by <strong>Alma Digital Designs</strong></p></footer>
+</body></html>
