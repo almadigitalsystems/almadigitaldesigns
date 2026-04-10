@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Serra Industries — 22 Years of Event Production Excellence | Miami, FL</title>
+  <meta name="description" content="Learn about Serra Industries — Miami's premier AV and event production company with over 22 years of experience producing world-class live events." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #050010; --dark-surface: #0d0025; --dark-mid: #150035;
+      --pink: #ff2d78; --cyan: #00e5ff; --purple: #b966e7;
+      --white: #ffffff; --text-body: #ddd0f0; --text-muted: #9070b8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--dark); color: var(--text-body); line-height: 1.6; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(5,0,16,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,45,120,0.15); padding: 0 32px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--pink); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+    .nav-cta { background: linear-gradient(135deg, var(--pink), var(--purple)); color: var(--white); font-size: 0.8rem; font-weight: 700; padding: 10px 24px; border-radius: 4px; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-mobile-toggle { display: none; background: none; border: none; color: var(--pink); font-size: 1.5rem; cursor: pointer; }
+    section { padding: 100px 24px; }
+    .container { max-width: 1120px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .btn-primary { display: inline-block; background: linear-gradient(135deg, var(--pink), var(--purple)); color: var(--white); font-size: 0.9rem; font-weight: 700; padding: 16px 40px; border-radius: 6px; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: 0 4px 24px rgba(255,45,120,0.4); }
+    .btn-ghost { display: inline-block; color: var(--cyan); font-size: 0.9rem; font-weight: 600; padding: 16px 32px; border-radius: 6px; border: 1px solid rgba(0,229,255,0.4); text-decoration: none; }
+    footer { background: var(--dark); border-top: 1px solid rgba(255,45,120,0.1); padding: 40px 24px 24px; text-align: center; }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--pink); margin-bottom: 16px; }
+    .footer-links-row { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links-row a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links-row a:hover { color: var(--cyan); }
+    .footer-copy { font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid rgba(255,45,120,0.08); padding-top: 20px; margin-top: 20px; }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: block; } .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: rgba(5,0,16,0.98); padding: 24px 32px; gap: 20px; border-bottom: 1px solid rgba(255,45,120,0.15); } }
+
+    /* PAGE HEADER */
+    .page-header { padding: 140px 24px 80px; text-align: center; background: radial-gradient(ellipse at 50% 100%, rgba(255,45,120,0.15) 0%, transparent 60%), linear-gradient(180deg, #0a0020 0%, var(--dark) 100%); }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; color: var(--white); margin-bottom: 16px; }
+    .page-header p { font-size: 1.1rem; color: var(--text-muted); max-width: 540px; margin: 0 auto; }
+
+    /* STORY SECTION */
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .story-text p { font-size: 1rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 20px; }
+    .story-visual { position: relative; }
+    .big-number { font-family: 'Playfair Display', serif; font-size: clamp(6rem, 16vw, 12rem); font-weight: 900; line-height: 1; background: linear-gradient(135deg, var(--pink), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .big-number-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+    .milestone-list { list-style: none; display: flex; flex-direction: column; gap: 0; margin-top: 16px; }
+    .milestone-item { display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid rgba(255,45,120,0.08); }
+    .milestone-year { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--pink); min-width: 52px; }
+    .milestone-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; padding-top: 2px; }
+
+    /* VALUES */
+    #values { background: var(--dark-surface); }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 56px; }
+    .value-card { background: var(--dark-mid); border: 1px solid rgba(255,45,120,0.1); border-radius: 14px; padding: 36px 28px; text-align: center; }
+    .value-icon { font-size: 2.2rem; margin-bottom: 18px; display: block; }
+    .value-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .value-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* TEAM */
+    #team { background: var(--dark); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 56px; }
+    .team-card { background: var(--dark-surface); border: 1px solid rgba(255,45,120,0.1); border-radius: 14px; padding: 36px 28px; }
+    .team-avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--purple)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--white); margin-bottom: 20px; }
+    .team-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .team-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; }
+    .team-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* CTA */
+    .cta-simple { background: var(--dark-surface); text-align: center; }
+    .cta-simple h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: var(--white); margin-bottom: 16px; }
+    .cta-simple p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 36px; }
+
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; gap: 40px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Serra Industries</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/about" class="active">About</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a href="/contact" class="nav-cta">Get a Quote</a>
+  <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">Our Story</div>
+  <h1>22 Years of Making<br>Events Extraordinary</h1>
+  <p>From a small Miami AV company to South Florida's most trusted full-service event production firm — this is our story.</p>
+</div>
+
+<!-- STORY -->
+<section>
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text">
+        <div class="section-label">Founded in Miami</div>
+        <h2 class="section-title">Built on Passion,<br>Driven by Precision</h2>
+        <p>Serra Industries was founded with a simple belief: every event deserves world-class production. What started as a small audio rental operation in Miami has grown into one of South Florida's most respected full-service event production companies.</p>
+        <p>Over the past 22 years, we've produced events for Fortune 500 companies, international touring artists, government agencies, nonprofits, and private clients who demand nothing less than perfection. Our reputation was built one event at a time — by showing up early, staying late, and never cutting corners.</p>
+        <p>Today, Serra Industries operates a fully stocked inventory of professional-grade audio, lighting, video, and staging equipment — backed by a team of experienced technicians, engineers, and creative directors who live and breathe live production.</p>
+        <div style="margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="/services" class="btn-primary">Our Services</a>
+          <a href="/contact" class="btn-ghost">Contact Us</a>
+        </div>
+      </div>
+      <div class="story-visual">
+        <div class="big-number">22</div>
+        <div class="big-number-label">Years in the Industry</div>
+        <ul class="milestone-list">
+          <li class="milestone-item">
+            <span class="milestone-year">2002</span>
+            <span class="milestone-desc">Founded in Miami, FL — started with audio rentals and small corporate events.</span>
+          </li>
+          <li class="milestone-item">
+            <span class="milestone-year">2006</span>
+            <span class="milestone-desc">Expanded into full AV production. First major outdoor concert production.</span>
+          </li>
+          <li class="milestone-item">
+            <span class="milestone-year">2010</span>
+            <span class="milestone-desc">Added LED wall and video systems. Became a full-service production house.</span>
+          </li>
+          <li class="milestone-item">
+            <span class="milestone-year">2015</span>
+            <span class="milestone-desc">Produced 100+ events. Expanded to serve clients across Florida and nationally.</span>
+          </li>
+          <li class="milestone-item">
+            <span class="milestone-year">2020</span>
+            <span class="milestone-desc">Pivoted to hybrid and livestream events during the pandemic. Added broadcast capabilities.</span>
+          </li>
+          <li class="milestone-item">
+            <span class="milestone-year">2024</span>
+            <span class="milestone-desc">500+ events produced. Continuing to grow as Miami's premier production partner.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:0;">
+      <div class="section-label" style="display:flex; justify-content:center;">What We Stand For</div>
+      <h2 class="section-title" style="max-width:480px; margin:0 auto 20px;">Our Core Values</h2>
+      <p style="color:var(--text-muted); font-size:1.05rem; max-width:480px; margin:0 auto;">These aren't just words — they're the principles that guide every event we produce.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <span class="value-icon">&#127919;</span>
+        <div class="value-name">Precision</div>
+        <p class="value-desc">Every cable run, every cue, every spec — measured, tested, and executed with zero margin for error. Live events don't have a second take.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">&#128170;</span>
+        <div class="value-name">Reliability</div>
+        <p class="value-desc">We show up. On time, prepared, and ready to execute. Our clients trust us because we've earned that trust, event after event, for over two decades.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">&#128161;</span>
+        <div class="value-name">Creativity</div>
+        <p class="value-desc">Technical excellence is the baseline. We go further by bringing creative vision and innovative solutions that make each event truly unique.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">&#129309;</span>
+        <div class="value-name">Partnership</div>
+        <p class="value-desc">We don't just run gear — we partner with you. Your vision becomes our mission. We're invested in your event's success from the first call to the last curtain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="section-label">The People Behind the Production</div>
+    <h2 class="section-title">Meet Our Leadership</h2>
+    <p style="color:var(--text-muted); font-size:1.05rem; max-width:480px;">Our team of seasoned professionals brings decades of combined experience in live event production.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">AS</div>
+        <div class="team-name">Anthony Serra</div>
+        <div class="team-title">Founder &amp; CEO</div>
+        <p class="team-bio">Anthony founded Serra Industries in 2002 with a passion for live events and audio engineering. With over 22 years in the industry, he oversees all major productions and client relationships.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, var(--cyan), var(--purple));">RL</div>
+        <div class="team-name">Ricardo Lopez</div>
+        <div class="team-title">Head of Audio Engineering</div>
+        <p class="team-bio">Ricardo leads our audio department with 15+ years of FOH and systems engineering experience. He's mixed sound for venues from 100-seat ballrooms to 20,000-seat arenas.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, var(--purple), var(--pink));">MV</div>
+        <div class="team-name">Maria Vega</div>
+        <div class="team-title">Lighting Design Director</div>
+        <p class="team-bio">Maria's creative eye and deep technical knowledge have produced some of Miami's most visually stunning events. She specializes in architectural lighting and show design.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, #00b4d8, #48cae4);">DM</div>
+        <div class="team-name">Derek Morales</div>
+        <div class="team-title">Video &amp; LED Systems Lead</div>
+        <p class="team-bio">Derek manages all video and LED wall installations, live switching, and broadcast integrations. He's our go-to expert for hybrid events and livestream productions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-simple">
+  <div class="container">
+    <h2>Let's Create Something<br>Extraordinary Together</h2>
+    <p>Tell us about your event and we'll craft a production plan that brings your vision to life.</p>
+    <a href="/contact" class="btn-primary">Start a Conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand">Serra Industries</div>
+    <div class="footer-links-row">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2024 Serra Industries &mdash; Miami, FL &mdash; All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
