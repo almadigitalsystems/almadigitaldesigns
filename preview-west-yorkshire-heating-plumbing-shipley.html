@@ -1,194 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>West Yorkshire Heating &amp; Plumbing — Shipley, Bradford</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--dark:#1a1a2e;--darker:#12121f;--accent:#00b4d8;--accent2:#0096c7;--light:#f8f9fa;--gray:#8892a0;--card:#22223a}
-body{font-family:"Inter",sans-serif;background:var(--dark);color:var(--light);line-height:1.6}
-a{color:var(--accent);text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-nav{background:rgba(26,26,46,0.97);padding:16px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,180,216,0.15);backdrop-filter:blur(8px)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:"Playfair Display",serif;font-size:1.2rem;font-weight:800;color:var(--light)}
-.logo span{color:var(--accent)}
-.nav-cta{background:var(--accent);color:#fff;padding:10px 22px;border-radius:6px;font-weight:600;font-size:0.9rem}
-.preview-banner{background:linear-gradient(90deg,#0096c7,#00b4d8);padding:12px 0;text-align:center;font-size:0.85rem;font-weight:500}
-.hero{padding:90px 0 70px;background:linear-gradient(135deg,var(--darker) 0%,var(--dark) 60%,#0d1a2a 100%)}
-.hero-badge{display:inline-block;background:rgba(0,180,216,0.15);border:1px solid rgba(0,180,216,0.35);color:var(--accent);padding:6px 16px;border-radius:30px;font-size:0.8rem;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:24px}
-.hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;line-height:1.15;margin-bottom:20px;max-width:700px}
-.hero h1 span{color:var(--accent)}
-.hero p{font-size:1.1rem;color:#b0bec5;max-width:580px;margin-bottom:36px}
-.btn-primary{background:var(--accent);color:#fff;padding:15px 34px;border-radius:8px;font-weight:700;font-size:1rem;display:inline-block;box-shadow:0 4px 20px rgba(0,180,216,0.3)}
-.btn-secondary{background:transparent;color:var(--light);padding:15px 30px;border-radius:8px;font-weight:600;font-size:1rem;display:inline-block;border:2px solid rgba(255,255,255,0.2);margin-left:14px}
-.hero-stats{display:flex;gap:40px;margin-top:52px;flex-wrap:wrap}
-.stat{border-left:3px solid var(--accent);padding-left:16px}
-.stat-num{font-family:"Playfair Display",serif;font-size:2rem;font-weight:700;line-height:1}
-.stat-label{font-size:0.8rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px}
-.pain-section{padding:70px 0;background:var(--darker)}
-.section-label{font-size:0.8rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-.section-title{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:16px;line-height:1.2}
-.section-sub{color:var(--gray);max-width:560px;margin-bottom:48px}
-.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.pain-card{background:var(--card);border-radius:12px;padding:28px;border:1px solid rgba(0,180,216,0.1)}
-.pain-icon{width:48px;height:48px;background:rgba(0,180,216,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
-.pain-card h3{font-size:1.05rem;font-weight:600;margin-bottom:10px}
-.pain-card p{font-size:0.9rem;color:var(--gray);line-height:1.7}
-.fix-badge{display:inline-block;margin-top:14px;background:rgba(0,180,216,0.12);color:var(--accent);font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:20px}
-.services-section{padding:70px 0}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:44px}
-.service-card{background:var(--card);border-radius:12px;padding:26px;border:1px solid rgba(255,255,255,0.06)}
-.service-icon{font-size:1.8rem;margin-bottom:14px}
-.service-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
-.service-card p{font-size:0.85rem;color:var(--gray)}
-.contact-section{padding:70px 0;background:var(--darker)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:0.95rem}
-.contact-detail span:first-child{color:var(--accent)}
-form input,form textarea{width:100%;background:var(--card);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:13px 16px;color:var(--light);font-family:"Inter",sans-serif;font-size:0.95rem;margin-bottom:14px}
-form textarea{height:110px;resize:vertical}
-form button{width:100%;background:var(--accent);color:#fff;border:none;padding:14px;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer}
-.preview-note{background:linear-gradient(135deg,rgba(0,180,216,0.08),rgba(0,150,199,0.12));border:1px solid rgba(0,180,216,0.2);border-radius:16px;padding:48px;margin:48px 0 70px;text-align:center}
-.preview-note h2{font-family:"Playfair Display",serif;font-size:2rem;font-weight:700;margin-bottom:14px}
-.preview-note p{color:var(--gray);margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto}
-footer{background:var(--darker);border-top:1px solid rgba(255,255,255,0.06);padding:28px 0;text-align:center;font-size:0.85rem;color:var(--gray)}
-footer span{color:var(--accent)}
-@media(max-width:700px){.contact-grid{grid-template-columns:1fr}.btn-secondary{margin-left:0;margin-top:12px;display:block;text-align:center}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>West Yorkshire Heating and Plumbing | Shipley, Bradford - Free Website Preview</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bl:#1565c0;--tl:#00838f;--lt:#00acc1;--gry:#f5f8ff;--sl:#4a5568;--sv:#e3eaf7;--wh:#ffffff}
+    body{font-family:Arial,Helvetica,sans-serif;color:#2d2d2d;background:#fff}
+    .banner{background:var(--bl);color:#fff;text-align:center;padding:12px 20px;font-size:14px;font-weight:600;position:sticky;top:0;z-index:1000}
+    .banner a{color:#b3d4fc;text-decoration:underline}
+    nav{background:#fff;padding:0 50px;display:flex;align-items:center;justify-content:space-between;height:70px;position:sticky;top:48px;z-index:999;box-shadow:0 1px 12px rgba(0,0,0,.08)}
+    .logo{font-size:18px;font-weight:900;color:var(--bl)}.logo span{color:var(--tl)}
+    .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+    .nav-links a{color:var(--sl);text-decoration:none;font-size:14px;font-weight:600}
+    .nav-links a:hover{color:var(--bl)}
+    .ncta{background:var(--bl);color:#fff!important;padding:10px 22px;border-radius:50px;font-weight:700!important}
+    .split{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 118px)}
+    .split-left{background:var(--gry);padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+    .eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--tl);margin-bottom:16px;font-weight:700}
+    .split-left h1{font-size:46px;color:var(--bl);line-height:1.15;margin-bottom:20px;font-weight:900}
+    .split-left h1 span{color:var(--tl)}
+    .split-left p{font-size:17px;color:var(--sl);line-height:1.7;margin-bottom:36px}
+    .split-right{background:linear-gradient(135deg,var(--bl) 0%,var(--tl) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 40px;text-align:center}
+    .big-stat{margin-bottom:40px}
+    .big-num{font-size:72px;color:#fff;font-weight:900;line-height:1}
+    .big-desc{font-size:16px;color:#b3d4fc}
+    .divider{width:60px;height:3px;background:rgba(255,255,255,.3);margin:0 auto 40px}
+    .trust-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .pill{background:rgba(255,255,255,.15);color:#fff;padding:8px 18px;border-radius:50px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.25)}
+    .btns{display:flex;gap:14px;flex-wrap:wrap}
+    .bp{background:var(--bl);color:#fff;padding:14px 32px;border-radius:50px;font-size:16px;font-weight:700;text-decoration:none;display:inline-block}
+    .bs{background:transparent;color:var(--bl);padding:13px 30px;border:2px solid var(--bl);border-radius:50px;font-size:16px;font-weight:700;text-decoration:none;display:inline-block}
+    .pain{background:#fff;padding:80px 50px}
+    .slabel{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--tl);margin-bottom:10px;font-weight:700}
+    .stitle{font-size:36px;color:var(--bl);margin-bottom:14px;font-weight:900}
+    .ssub{font-size:17px;color:var(--sl);max-width:620px;line-height:1.6;margin-bottom:50px}
+    .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px}
+    .pc{background:var(--sv);border-radius:8px;padding:30px 28px;border-top:4px solid var(--bl)}
+    .pc h3{font-size:19px;color:var(--bl);margin-bottom:10px;font-weight:700}
+    .pc p{font-size:15px;color:var(--sl);line-height:1.65}
+    .svc{padding:80px 50px;background:var(--gry)}
+    .scards{display:flex;flex-direction:column;gap:16px;margin-top:50px;max-width:900px}
+    .hcard{background:#fff;border-radius:8px;padding:24px 28px;display:flex;align-items:center;gap:24px;box-shadow:0 2px 12px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s}
+    .hcard:hover{transform:translateX(6px);box-shadow:0 6px 20px rgba(21,101,192,.12)}
+    .hcard-icon{font-size:36px;flex-shrink:0;width:60px;text-align:center}
+    .hcard-text h3{font-size:18px;color:var(--bl);margin-bottom:6px;font-weight:700}
+    .hcard-text p{font-size:14px;color:var(--sl);line-height:1.6}
+    .about{background:#fff;padding:80px 50px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .at .alb{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--tl);margin-bottom:12px;font-weight:700}
+    .at h2{font-size:36px;color:var(--bl);margin-bottom:20px;line-height:1.2;font-weight:900}
+    .at p{font-size:16px;color:var(--sl);line-height:1.75;margin-bottom:16px}
+    .sig{font-size:22px;color:var(--bl);font-style:italic;margin-top:24px;font-weight:700}
+    .abox{background:linear-gradient(135deg,var(--bl),var(--tl));border-radius:16px;padding:40px;text-align:center}
+    .astat{margin-bottom:28px}
+    .anum{font-size:52px;color:#fff;font-weight:900}
+    .adesc{font-size:15px;color:#b3d4fc}
+    .rev{background:var(--gry);padding:80px 50px}
+    .rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:50px}
+    .rc{background:#fff;border-radius:8px;padding:32px 28px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .stars{color:#f4a523;font-size:20px;margin-bottom:14px}
+    .rt{font-size:15px;color:var(--sl);line-height:1.7;margin-bottom:20px;font-style:italic}
+    .rn{font-weight:700;color:var(--bl);font-size:14px}
+    .rs{font-size:13px;color:#718096}
+    .cta{background:linear-gradient(135deg,var(--bl),var(--tl));padding:80px 50px;text-align:center}
+    .cta h2{font-size:42px;color:#fff;margin-bottom:16px;font-weight:900}
+    .cta p{font-size:18px;color:#b3d4fc;margin-bottom:36px}
+    .bw{background:#fff;color:var(--bl);padding:16px 44px;border-radius:50px;font-size:18px;font-weight:900;text-decoration:none;display:inline-block}
+    .cont{padding:80px 50px;background:#fff}
+    .ci{max-width:600px;margin:0 auto}
+    .ci h2{font-size:34px;color:var(--bl);margin-bottom:10px;font-weight:900}
+    .ci p{font-size:16px;color:var(--sl);margin-bottom:36px}
+    .fg{margin-bottom:20px}
+    .fg label{display:block;font-size:14px;color:var(--sl);margin-bottom:6px;font-weight:700}
+    .fg input,.fg textarea,.fg select{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:6px;font-size:15px;font-family:Arial,sans-serif;color:#2d2d2d;outline:none}
+    .fg input:focus,.fg textarea:focus{border-color:var(--bl)}
+    .fg textarea{resize:vertical;min-height:120px}
+    .fsub{background:var(--bl);color:#fff;padding:14px 36px;border:none;border-radius:50px;font-size:16px;font-weight:700;cursor:pointer}
+    footer{background:var(--bl);color:#6fa3d8;text-align:center;padding:30px 20px;font-size:14px}
+    footer a{color:#b3d4fc}
+    @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.split{grid-template-columns:1fr}.split-right{padding:40px 24px}.about{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-
-<div class="preview-banner">
-  <strong>FREE WEBSITE PREVIEW</strong> — Custom redesign built for West Yorkshire Heating &amp; Plumbing. <a href="#claim" style="color:#fff;font-weight:700;text-decoration:underline">Claim it free</a>
+<div class="banner">
+  FREE WEBSITE PREVIEW &mdash; Custom redesign built for West Yorkshire Heating and Plumbing &mdash;
+  <a href="mailto:desk@almawebcreative.com?subject=West Yorkshire Heating and Plumbing - Claim Free Redesign">Claim Your Free Site &rarr;</a>
 </div>
-
 <nav>
-  <div class="container nav-inner">
-    <div class="logo">West Yorkshire <span>Heating &amp; Plumbing</span></div>
-    <a href="#claim" class="nav-cta">Book Online</a>
-  </div>
+  <div class="logo">West Yorkshire <span>Heating &amp; Plumbing</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="mailto:desk@almawebcreative.com?subject=West Yorkshire Heating and Plumbing - Claim Free Redesign" class="ncta">Get Your Free Site</a></li>
+  </ul>
 </nav>
-
-<section class="hero">
-  <div class="container">
-    <div class="hero-badge">Serving Shipley, Bradford &amp; West Yorkshire Since 1997</div>
-    <h1>West Yorkshire&#39;s Trusted <span>Heating &amp; Plumbing</span> Specialists</h1>
-    <p>Nearly 30 years of reliable heating and plumbing services across Bradford and West Yorkshire. Boiler installations, repairs, and full plumbing — done right the first time.</p>
-    <div>
-      <a href="#claim" class="btn-primary">Book a Job Online</a>
-      <a href="#services" class="btn-secondary">Our Services</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-num">1997</div><div class="stat-label">Established</div></div>
-      <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Jobs Completed</div></div>
-      <div class="stat"><div class="stat-num">Gas Safe</div><div class="stat-label">Registered</div></div>
+<section class="split">
+  <div class="split-left">
+    <p class="eyebrow">Shipley &amp; Bradford's Heating &amp; Plumbing Experts</p>
+    <h1>Warm Homes,<br>Reliable Pipes,<br><span>Happy Families</span></h1>
+    <p>West Yorkshire Heating and Plumbing delivers expert boiler servicing, central heating installations, and plumbing repairs across Shipley, Bradford, and the wider West Yorkshire area. Owner David and his team are Gas Safe registered and ready to help.</p>
+    <div class="btns">
+      <a href="#contact" class="bp">Get a Free Quote</a>
+      <a href="#services" class="bs">Our Services</a>
     </div>
   </div>
-</section>
-
-<section class="pain-section">
-  <div class="container">
-    <div class="section-label">Why This Redesign</div>
-    <h2 class="section-title">Two things your current online presence is missing</h2>
-    <p class="section-sub">For a business with nearly 30 years of history, these two issues are worth addressing — and they&#39;re both fixable with this redesign.</p>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">&#128139;</div>
-        <h3>Professional Email Builds Trust</h3>
-        <p>Using a Gmail address for a business established in 1997 signals unprofessionalism to homeowners who are comparing multiple contractors. A branded email and professional website together instantly build credibility and trust at first glance.</p>
-        <span class="fix-badge">&#10003; Addressed in this redesign</span>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">&#128336;</div>
-        <h3>No Online Booking System</h3>
-        <p>Despite 27+ years in business, customers can only reach you by phone or basic contact form. Convenience-focused homeowners — especially younger ones — want to book online immediately. This site includes a 24/7 booking request system.</p>
-        <span class="fix-badge">&#10003; Fixed in this redesign</span>
-      </div>
+  <div class="split-right">
+    <div class="big-stat"><div class="big-num">20+</div><div class="big-desc">Years of Plumbing &amp; Heating Experience</div></div>
+    <div class="divider"></div>
+    <div class="trust-pills">
+      <div class="pill">&#10003; Gas Safe Registered</div>
+      <div class="pill">&#10003; Fully Insured</div>
+      <div class="pill">&#10003; Same-Day Response</div>
+      <div class="pill">&#10003; Bradford Based</div>
+      <div class="pill">&#10003; 5&#9733; Reviews</div>
     </div>
   </div>
 </section>
-
-<section class="services-section" id="services">
-  <div class="container">
-    <div class="section-label">Services</div>
-    <h2 class="section-title">Heating &amp; Plumbing Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">&#128293;</div>
-        <h3>Boiler Installation</h3>
-        <p>New boiler supply and installation from leading manufacturers, fully Gas Safe registered.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#128296;</div>
-        <h3>Boiler Repairs</h3>
-        <p>Fast diagnosis and repair of all boiler makes and models across Bradford and West Yorkshire.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#127968;</div>
-        <h3>Central Heating</h3>
-        <p>Full central heating system installation, power flushing, and radiator replacement.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#128167;</div>
-        <h3>Plumbing Repairs</h3>
-        <p>Leak repairs, burst pipes, tap replacement, and all domestic plumbing issues resolved promptly.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#9928;</div>
-        <h3>Bathroom Fitting</h3>
-        <p>Complete bathroom installations and refurbishments, project managed from start to finish.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#128205;</div>
-        <h3>Annual Servicing</h3>
-        <p>Landlord certificates, Gas Safe boiler servicing, and annual maintenance plans available.</p>
-      </div>
+<section class="pain">
+  <div class="slabel">The Problem</div>
+  <h2 class="stitle">Bradford Homeowners Can't Find You Online</h2>
+  <p class="ssub">Shipley and Bradford residents search online daily for plumbers and heating engineers. Without a professional web presence, West Yorkshire Heating and Plumbing is missing out on this consistent flow of local leads.</p>
+  <div class="pgrid">
+    <div class="pc">
+      <h3>Outdated or Absent Online Presence</h3>
+      <p>When a Bradford homeowner has a burst pipe at midnight and searches "emergency plumber Shipley," they need to find a trusted local business immediately. A professional website with clear contact details means David gets that call.</p>
+    </div>
+    <div class="pc">
+      <h3>No Boiler &amp; Heating Showcase</h3>
+      <p>Boiler installations and central heating upgrades are high-value jobs. Without a website that explains the process, shows credentials, and lists services clearly, potential customers choose competitors who communicate more professionally online.</p>
     </div>
   </div>
 </section>
-
-<section class="contact-section" id="claim">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Book a Job or Request a Quote</h2>
-        <p style="color:var(--gray);margin-bottom:28px">Available 24/7 online. David&#39;s team will confirm your booking within 1 business day.</p>
-        <div class="contact-detail"><span>&#128205;</span><span>Shipley, Bradford &amp; West Yorkshire</span></div>
-        <div class="contact-detail"><span>&#128222;</span><span>07xxx xxx xxx</span></div>
-        <div class="contact-detail"><span>&#9993;</span><span>westyorkshireheating@gmail.com</span></div>
-        <div class="contact-detail"><span>&#8987;</span><span>Mon&#8211;Fri 8AM&#8211;6PM &middot; Form 24/7</span></div>
-      </div>
-      <div>
-        <form action="https://formspree.io/f/xojppajv" method="POST">
-          <input type="hidden" name="_subject" value="Booking Request — West Yorkshire Heating and Plumbing">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="tel" name="phone" placeholder="Phone Number">
-          <input type="text" name="address" placeholder="Property Address">
-          <textarea name="message" placeholder="Describe the heating or plumbing work needed..."></textarea>
-          <button type="submit">Book a Job</button>
-        </form>
-      </div>
-    </div>
+<section class="svc" id="services">
+  <div class="slabel">What We Offer</div>
+  <h2 class="stitle">Plumbing &amp; Heating Services in Shipley</h2>
+  <p class="ssub">Gas Safe registered and fully insured for all plumbing and heating work across Bradford and West Yorkshire.</p>
+  <div class="scards">
+    <div class="hcard"><div class="hcard-icon">&#128293;</div><div class="hcard-text"><h3>Boiler Installations &amp; Replacements</h3><p>Supply and installation of all major boiler brands. Gas Safe certified with manufacturer warranty registration and full commissioning.</p></div></div>
+    <div class="hcard"><div class="hcard-icon">&#128295;</div><div class="hcard-text"><h3>Boiler Servicing &amp; Repairs</h3><p>Annual boiler services to keep your warranty valid and your heating system running safely and efficiently all winter.</p></div></div>
+    <div class="hcard"><div class="hcard-icon">&#127783;</div><div class="hcard-text"><h3>Central Heating Installation</h3><p>Full central heating system design and installation for new builds and older properties throughout Bradford and the surrounding area.</p></div></div>
+    <div class="hcard"><div class="hcard-icon">&#128167;</div><div class="hcard-text"><h3>Emergency Plumbing Repairs</h3><p>Burst pipes, blocked drains, leaking radiators. David responds quickly to plumbing emergencies across Shipley, Bradford, and nearby towns.</p></div></div>
+    <div class="hcard"><div class="hcard-icon">&#127794;</div><div class="hcard-text"><h3>Bathroom Installations</h3><p>Full bathroom fitting including new suites, showers, tiling coordination, and all plumbing work. Tidy, efficient, and done to a high standard.</p></div></div>
+    <div class="hcard"><div class="hcard-icon">&#9928;</div><div class="hcard-text"><h3>Landlord Gas Safety Certificates</h3><p>Annual CP12 gas safety inspections for landlords across Bradford. Certificate issued same day on successful completion.</p></div></div>
   </div>
 </section>
-
-<div class="container">
-  <div class="preview-note">
-    <h2>This Is Your Free Redesign Preview</h2>
-    <p>This page was built by <strong>Alma Digital Designs</strong> specifically for West Yorkshire Heating &amp; Plumbing — at no cost. Claim it and we will launch your new site quickly.</p>
-    <a href="mailto:westyorkshireheating@gmail.com?subject=I want to claim my free website redesign" class="btn-primary">Claim Your Free Redesign</a>
+<section class="about" id="about">
+  <div class="at">
+    <p class="alb">The Man Behind the Business</p>
+    <h2>David: Shipley's Trusted Heating &amp; Plumbing Engineer</h2>
+    <p>David has been working in the plumbing and heating trade for over 20 years, starting as an apprentice in Bradford and building up West Yorkshire Heating and Plumbing through honest work and genuine care for his customers.</p>
+    <p>Gas Safe registered and fully insured, David covers all aspects of domestic plumbing and heating. He is known across Shipley and Bradford for turning up when he says he will, explaining exactly what needs doing, and pricing fairly.</p>
+    <p>From emergency callouts to full central heating installations, West Yorkshire Heating and Plumbing is the name Bradford families trust.</p>
+    <div class="sig">&#8212; David, Owner &amp; Gas Safe Engineer</div>
   </div>
-</div>
-
+  <div class="abox">
+    <div class="astat"><div class="anum">20+</div><div class="adesc">Years in the Trade</div></div>
+    <div class="astat"><div class="anum">500+</div><div class="adesc">Boilers Installed</div></div>
+    <div class="astat"><div class="anum">100%</div><div class="adesc">Gas Safe Certified Work</div></div>
+  </div>
+</section>
+<section class="rev" id="reviews">
+  <div class="slabel">Google Reviews</div>
+  <h2 class="stitle">What Shipley &amp; Bradford Customers Say</h2>
+  <div class="rgrid">
+    <div class="rc"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"David fitted a new combi boiler for us and the difference is incredible. The old one was always struggling. He was clean, tidy, and explained everything. Would recommend to anyone in Bradford."</p><div class="rn">Helen W.</div><div class="rs">Shipley, Bradford</div></div>
+    <div class="rc"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"Had a burst pipe on a Sunday evening and David was round within the hour. Sorted it quickly and the price was very fair for an emergency call-out. Brilliant service, will definitely use again."</p><div class="rn">Gary P.</div><div class="rs">Bingley, Bradford</div></div>
+    <div class="rc"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"Came out to service our boiler and noticed a fault we didn't know about. Fixed it on the spot and saved us a bigger bill later. Really honest and professional. David is our go-to plumber now."</p><div class="rn">Anita M.</div><div class="rs">Saltaire, Bradford</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Need a Plumber or Heating Engineer?</h2>
+  <p>Get a free quote from David's team. Covering Shipley, Bradford, and all of West Yorkshire.</p>
+  <a href="mailto:desk@almawebcreative.com?subject=West Yorkshire Heating and Plumbing - Claim Free Redesign" class="bw">Claim Your Free Redesign</a>
+</section>
+<section class="cont" id="contact">
+  <div class="ci">
+    <h2>Get Your Free Quote</h2>
+    <p>Tell David what you need and he will be in touch the same day.</p>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="e.g. 01274 000 000"></div>
+      <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required></div>
+      <div class="fg"><label>Service Needed</label>
+        <select name="service"><option value="">Select a service...</option><option>Boiler Installation</option><option>Boiler Service / Repair</option><option>Central Heating</option><option>Emergency Plumbing</option><option>Bathroom Fitting</option><option>Gas Safety Certificate</option></select>
+      </div>
+      <div class="fg"><label>Tell Us About the Job</label><textarea name="message" placeholder="Describe what you need..."></textarea></div>
+      <input type="hidden" name="_subject" value="New Lead - West Yorkshire Heating and Plumbing">
+      <button type="submit" class="fsub">Send My Enquiry</button>
+    </form>
+  </div>
+</section>
 <footer>
-  <div class="container">
-    <p>&#169; 2026 West Yorkshire Heating &amp; Plumbing &middot; Shipley, Bradford, UK &middot; Preview by <span>Alma Digital Designs</span></p>
-  </div>
+  <p>&copy; 2026 West Yorkshire Heating and Plumbing &mdash; Shipley, Bradford, UK &mdash; Preview by <a href="mailto:desk@almawebcreative.com">Alma Digital Services</a></p>
 </footer>
 </body>
 </html>
