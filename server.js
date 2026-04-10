@@ -14,6 +14,34 @@ app.use(express.json({
     req.rawBody = buf;
   },
 }));
+
+// ── SERRAINDUSTRIES.COM VIRTUAL HOST ROUTING ─────────────────────────────────
+// Serve Serra Industries website when Host is serraindustries.com
+app.use((req, res, next) => {
+  const host = (req.hostname || '').toLowerCase();
+  if (host === 'serraindustries.com' || host === 'www.serraindustries.com') {
+    const urlPath = req.path;
+    // Map clean URLs to HTML files
+    const pageMap = {
+      '/': '/serraindustries/index.html',
+      '/about': '/serraindustries/about.html',
+      '/services': '/serraindustries/services.html',
+      '/portfolio': '/serraindustries/portfolio.html',
+      '/contact': '/serraindustries/contact.html',
+    };
+    const mapped = pageMap[urlPath] || pageMap[urlPath.replace(/\/$/, '')] || null;
+    if (mapped) {
+      return res.sendFile(require('path').join(__dirname, mapped));
+    }
+    // Serve other static assets from serraindustries dir
+    const stripped = urlPath.startsWith('/serraindustries') ? urlPath : '/serraindustries' + urlPath;
+    return require('express').static(require('path').join(__dirname))(
+      Object.assign(req, { url: stripped }), res, next
+    );
+  }
+  next();
+});
+
 app.use(express.static(path.join(__dirname)));
 
 // ── ALEX SYSTEM PROMPT ────────────────────────────────────────────────────────
