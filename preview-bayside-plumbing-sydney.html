@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bayside Plumbing | Sydney, NSW | Award-Winning Plumbers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#111}
+nav{padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #0080c6;background:#fff;position:sticky;top:0;z-index:100}
+.logo{font-size:1.4rem;font-weight:800;letter-spacing:-1px;color:#0080c6}
+.logo span{color:#111}
+nav a{color:#444;text-decoration:none;margin-left:2rem;font-size:.9rem;font-weight:600}
+.hero{padding:8rem 2.5rem 5rem;background:linear-gradient(160deg,#003d7a 0%,#0060b0 60%,#0080c6 100%);text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'💧';position:absolute;font-size:28rem;opacity:.05;right:-3rem;bottom:-5rem}
+.award-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:.75rem;font-weight:700;padding:.4rem 1.2rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px}
+.hero h1{font-size:clamp(3rem,7vw,6rem);font-weight:800;letter-spacing:-2px;color:#fff;line-height:.95;margin-bottom:2rem}
+.hero h1 em{color:#7dd4fc;font-style:normal;display:block}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,.85);max-width:580px;margin:0 auto 3rem;line-height:1.75}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:#003d7a;padding:1rem 2.5rem;border-radius:4px;font-weight:700;text-decoration:none}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:1rem 2.5rem;border-radius:4px;font-weight:600;text-decoration:none}
+.awards-bar{background:#003d7a;padding:2.5rem 2rem;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap}
+.ab-item{text-align:center;color:#fff}
+.ab-icon{font-size:2rem;margin-bottom:.5rem}
+.ab-title{font-weight:700;font-size:.9rem;color:#7dd4fc}
+.ab-desc{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.2rem}
+.founders{background:#fff;padding:5rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:center}
+.founders h2{font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:1.5rem;line-height:1.1}
+.founders h2 em{color:#0080c6;font-style:normal}
+.founders p{color:#555;line-height:1.85;margin-bottom:1rem;font-size:.95rem}
+.f-creds{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.cred{background:#f0f8ff;border-radius:6px;padding:1rem;border-left:3px solid #0080c6}
+.cred .c-title{font-weight:700;font-size:.85rem;color:#0080c6}
+.cred .c-desc{font-size:.8rem;color:#777;margin-top:.2rem}
+.founders-img{background:linear-gradient(135deg,#003d7a,#0080c6);border-radius:12px;height:350px;display:flex;align-items:center;justify-content:center;font-size:8rem}
+.services{background:#f5faff;padding:5rem 2.5rem;text-align:center}
+.services h2{font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:.5rem;color:#003d7a}
+.s-sub{color:#888;margin-bottom:3rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.s-card{background:#fff;border-radius:8px;padding:2rem;text-align:left;box-shadow:0 2px 10px rgba(0,80,180,.06);transition:.2s;border-bottom:3px solid #0080c6}
+.s-card:hover{box-shadow:0 8px 24px rgba(0,80,180,.1);transform:translateY(-2px)}
+.s-icon{font-size:2rem;margin-bottom:1rem}
+.s-card h3{font-weight:700;color:#003d7a;margin-bottom:.5rem}
+.s-card p{font-size:.85rem;color:#666;line-height:1.6}
+.reviews{background:#003d7a;padding:5rem 2.5rem;text-align:center;color:#fff}
+.reviews h2{font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:.5rem}
+.r-sub{color:rgba(125,212,252,.7);margin-bottom:3rem}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.r-card{background:rgba(255,255,255,.07);border:1px solid rgba(125,212,252,.2);border-radius:8px;padding:2rem;text-align:left}
+.stars{color:#7dd4fc;margin-bottom:.75rem}
+.r-card p{color:rgba(255,255,255,.8);font-style:italic;font-size:.9rem;line-height:1.7;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:rgba(255,255,255,.4);font-weight:600}
+.cta{background:linear-gradient(135deg,#0080c6,#0060b0);padding:5rem 2.5rem;text-align:center}
+.cta h2{font-size:3rem;font-weight:800;letter-spacing:-1px;color:#fff;margin-bottom:1rem}
+.cta p{color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2.5rem;font-size:1.05rem}
+.cta .btn-cta{background:#fff;color:#003d7a;padding:1rem 3rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.contact{background:#f5faff;padding:5rem 2.5rem}
+.contact h2{font-size:2.5rem;font-weight:800;letter-spacing:-1px;text-align:center;margin-bottom:3rem;color:#003d7a}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.cinfo p{margin-bottom:1rem;color:#555;font-size:.95rem;line-height:1.7}
+.cinfo strong{color:#003d7a;font-weight:700}
+form input,form textarea{width:100%;background:#fff;border:1px solid #c8dff0;border-radius:4px;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:120px;resize:vertical}
+form button{background:#003d7a;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:4px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#003d7a;color:rgba(255,255,255,.35);padding:2rem;text-align:center;font-size:.85rem}
+footer strong{color:#7dd4fc}
+@media(max-width:768px){.founders,.c-grid{grid-template-columns:1fr}.founders-img{height:180px}.awards-bar{gap:2rem}.f-creds{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Bayside <span>Plumbing</span></div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="award-badge">🏆 Award-Winning Sydney Plumbers — 4.9 Stars</div>
+    <h1>Sydney's<em>Award-Winning Plumbers</em></h1>
+    <p>Founded by award-winning plumbers Alan and Andrew, Bayside Plumbing brings exceptional expertise and craftsmanship to every Sydney job. 4.9 stars and counting.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-white">Book Service</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+</section>
+<div class="awards-bar">
+  <div class="ab-item"><div class="ab-icon">🏆</div><div class="ab-title">Award-Winning</div><div class="ab-desc">Founders Alan & Andrew</div></div>
+  <div class="ab-item"><div class="ab-icon">⭐</div><div class="ab-title">4.9 Stars</div><div class="ab-desc">Google Reviews</div></div>
+  <div class="ab-item"><div class="ab-icon">🛡️</div><div class="ab-title">Fully Licensed</div><div class="ab-desc">NSW Plumbing Licence</div></div>
+  <div class="ab-item"><div class="ab-icon">📍</div><div class="ab-title">Sydney, NSW</div><div class="ab-desc">Bayside & surrounds</div></div>
+</div>
+<div class="founders">
+  <div>
+    <h2>Founded by <em>Award-Winning</em> Plumbers</h2>
+    <p>Alan and Andrew didn't just build a plumbing company — they built a reputation for Sydney's finest plumbing work. Their combined industry awards reflect a level of craftsmanship that most tradespeople never achieve.</p>
+    <p>Every Bayside job carries that same award-winning standard. When you call Bayside Plumbing, you're getting Sydney's best.</p>
+    <div class="f-creds">
+      <div class="cred"><div class="c-title">🏆 Industry Awards</div><div class="c-desc">Founders recognised for plumbing excellence</div></div>
+      <div class="cred"><div class="c-title">⭐ 4.9 Stars</div><div class="c-desc">Near-perfect Google rating</div></div>
+      <div class="cred"><div class="c-title">✅ NSW Licensed</div><div class="c-desc">Fully licensed & insured</div></div>
+      <div class="cred"><div class="c-title">🔧 Premium Quality</div><div class="c-desc">Award-standard on every job</div></div>
+    </div>
+  </div>
+  <div class="founders-img">🔧</div>
+</div>
+<section class="services" id="services">
+  <h2>Plumbing Services</h2>
+  <p class="s-sub">Award-winning plumbing across Sydney's Bayside and beyond</p>
+  <div class="s-grid">
+    <div class="s-card"><div class="s-icon">💧</div><h3>General Plumbing</h3><p>Leaks, drains, fixtures, and all general plumbing — done to award-winning standard.</p></div>
+    <div class="s-card"><div class="s-icon">🏠</div><h3>Bathroom Renovations</h3><p>Complete bathroom installations that reflect the quality and craftsmanship Alan and Andrew are known for.</p></div>
+    <div class="s-card"><div class="s-icon">🌡️</div><h3>Hot Water Systems</h3><p>Tank and tankless hot water installation and repair — all Sydney brands serviced.</p></div>
+    <div class="s-card"><div class="s-icon">🚰</div><h3>Gas Fitting</h3><p>Licensed gas fitting, appliance connections, and compliance certificates for Sydney homes.</p></div>
+    <div class="s-card"><div class="s-icon">🏗️</div><h3>New Construction</h3><p>Plumbing for new builds and major renovations across Sydney Bayside.</p></div>
+    <div class="s-card"><div class="s-icon">🚨</div><h3>Emergency Plumbing</h3><p>Sydney plumbing emergencies attended quickly — no job too urgent for Bayside.</p></div>
+  </div>
+</section>
+<section class="reviews">
+  <h2>What Sydney Says</h2>
+  <p class="r-sub">4.9 stars — Sydney trusts Bayside Plumbing</p>
+  <div class="r-grid">
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Alan and the Bayside team did our full bathroom renovation. The workmanship was outstanding — you can tell these are award-winning tradespeople. Couldn't be happier."</p><div class="reviewer">— Susan C., Bayside Sydney</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Best plumbers in Sydney, hands down. Professional, punctual, and their work is just exceptional quality. 4.9 stars is completely accurate."</p><div class="reviewer">— Marcus D., Sutherland Shire</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Used Bayside for a complex drainage issue and a hot water replacement. Both done perfectly, on time, and with great communication throughout. Highly recommend."</p><div class="reviewer">— Joanne T., Eastern Suburbs</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Redesign</h2>
+  <p>We're building a free website preview for Sydney trade businesses. Let your award-winning expertise shine with a website that matches your real-world reputation.</p>
+  <a href="#contact" class="btn-cta">Get My Free Preview →</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Book Bayside Plumbing</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Sydney, NSW, Australia</p>
+      <p><strong>📧 Email</strong><br>info@baysideplumbing.com.au</p>
+      <p><strong>💧 Service Area</strong><br>Sydney Bayside, Eastern Suburbs, Sutherland Shire</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 7am–5pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Bayside Plumbing">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Describe your plumbing needs..."></textarea>
+      <button type="submit">Book Service</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 Bayside Plumbing — Sydney, NSW, Australia | Award-Winning Founders Alan &amp; Andrew | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
