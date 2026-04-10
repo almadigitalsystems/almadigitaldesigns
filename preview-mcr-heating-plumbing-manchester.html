@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MCR Heating and Plumbing Ltd | Manchester, UK | 5 Stars</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a}
+nav{background:#fff;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 0 #e8e8e8}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700}
+.logo em{color:#1a3a5c;font-style:normal}
+.logo span{color:#c8a020}
+nav a{color:#444;text-decoration:none;margin-left:2rem;font-size:.9rem;font-weight:600}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:85vh}
+.hero-left{background:#1a3a5c;padding:5rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
+.hero-right{background:linear-gradient(135deg,#1a3a5c,#c8a020);display:flex;align-items:center;justify-content:center;font-size:10rem;color:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.hero-right::before{content:'5★';position:absolute;font-size:8rem;font-weight:800;color:rgba(200,160,32,.3);top:2rem;right:2rem;font-family:'Playfair Display',serif}
+.perfect-badge{background:#c8a020;color:#fff;font-size:.75rem;font-weight:700;padding:.4rem 1.2rem;border-radius:20px;display:inline-block;margin-bottom:2rem;letter-spacing:1px;text-transform:uppercase;width:fit-content}
+.hero-left h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);color:#fff;line-height:1.15;margin-bottom:2rem}
+.hero-left h1 em{color:#c8a020;font-style:normal}
+.hero-left p{color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:3rem;font-size:1rem;max-width:440px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{background:#c8a020;color:#fff;padding:1rem 2.5rem;border-radius:6px;font-weight:700;text-decoration:none;font-size:.95rem}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:1rem 2.5rem;border-radius:6px;font-weight:600;text-decoration:none;font-size:.95rem}
+.trust-row{background:#f8f6f0;display:flex;justify-content:center;gap:0;border-bottom:1px solid #e8e4d8}
+.tr-item{flex:1;max-width:220px;padding:2rem 1.5rem;text-align:center;border-right:1px solid #e8e4d8}
+.tr-item:last-child{border-right:none}
+.tr-icon{font-size:1.8rem;margin-bottom:.5rem}
+.tr-title{font-weight:700;font-size:.9rem;color:#1a3a5c}
+.tr-desc{font-size:.75rem;color:#999;margin-top:.2rem}
+.services{padding:5rem 2.5rem;text-align:center;background:#fff}
+.services h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;margin-bottom:.5rem;color:#1a3a5c}
+.s-sub{color:#888;margin-bottom:3rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.s-card{background:#f8f6f0;border-radius:10px;padding:2rem;text-align:left;transition:.2s;border-top:3px solid #c8a020}
+.s-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08);transform:translateY(-2px)}
+.s-icon{font-size:2rem;margin-bottom:1rem}
+.s-card h3{font-weight:700;color:#1a3a5c;margin-bottom:.5rem}
+.s-card p{font-size:.85rem;color:#666;line-height:1.6}
+.perfect-score{background:#1a3a5c;padding:5rem 2.5rem;text-align:center;color:#fff}
+.perfect-score h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;margin-bottom:.5rem}
+.ps-sub{color:rgba(255,255,255,.6);margin-bottom:3rem}
+.rating-display{font-size:5rem;margin-bottom:1rem}
+.rating-text{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:#c8a020;margin-bottom:.5rem}
+.rating-count{color:rgba(255,255,255,.5);font-size:.9rem;margin-bottom:3rem}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.r-card{background:rgba(255,255,255,.06);border:1px solid rgba(200,160,32,.3);border-radius:10px;padding:2rem;text-align:left}
+.stars{color:#c8a020;margin-bottom:.75rem}
+.r-card p{color:rgba(255,255,255,.8);font-style:italic;font-size:.9rem;line-height:1.7;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:rgba(255,255,255,.4);font-weight:600}
+.cta{background:linear-gradient(135deg,#c8a020,#a07810);padding:5rem 2.5rem;text-align:center}
+.cta h2{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:#fff;margin-bottom:1rem}
+.cta p{color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2rem;font-size:1.05rem}
+.cta .btn-cta{background:#1a3a5c;color:#fff;padding:1rem 2.5rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.contact{background:#f8f6f0;padding:5rem 2.5rem}
+.contact h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:3rem;color:#1a3a5c}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.cinfo p{margin-bottom:1rem;color:#666;font-size:.95rem;line-height:1.7}
+.cinfo strong{color:#1a3a5c}
+form input,form textarea{width:100%;background:#fff;border:1px solid #ddd;border-radius:6px;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:120px;resize:vertical}
+form button{background:#1a3a5c;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:6px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#1a3a5c;color:rgba(255,255,255,.4);padding:2rem;text-align:center;font-size:.85rem}
+footer strong{color:#c8a020}
+@media(max-width:768px){.hero{grid-template-columns:1fr}.hero-right{display:none}.c-grid{grid-template-columns:1fr}.trust-row{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><em>MCR</em> Heating <span>&</span> Plumbing</div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <div class="perfect-badge">⭐ Perfect 5.0 Google Rating — Didsbury, Manchester</div>
+    <h1>Manchester's <em>5-Star</em> Heating & Plumbing Specialists</h1>
+    <p>MCR Heating and Plumbing has achieved what very few businesses ever do — a perfect 5-star Google rating. That's not luck. That's what happens when you consistently deliver outstanding work across Didsbury and Greater Manchester.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn">Book Service</a>
+      <a href="#services" class="btn-outline">Services</a>
+    </div>
+  </div>
+  <div class="hero-right">🏆</div>
+</div>
+<div class="trust-row">
+  <div class="tr-item"><div class="tr-icon">⭐</div><div class="tr-title">Perfect 5.0</div><div class="tr-desc">Google Stars</div></div>
+  <div class="tr-item"><div class="tr-icon">🛡️</div><div class="tr-title">Gas Safe</div><div class="tr-desc">Registered Engineers</div></div>
+  <div class="tr-item"><div class="tr-icon">📍</div><div class="tr-title">Didsbury</div><div class="tr-desc">Manchester Based</div></div>
+  <div class="tr-item"><div class="tr-icon">🔧</div><div class="tr-title">All Work</div><div class="tr-desc">Guaranteed</div></div>
+</div>
+<section class="services" id="services">
+  <h2>Heating & Plumbing Services</h2>
+  <p class="s-sub">Five-star service across Didsbury and Greater Manchester</p>
+  <div class="s-grid">
+    <div class="s-card"><div class="s-icon">🔥</div><h3>Boiler Installation</h3><p>New boiler installations from leading brands — energy-efficient, professionally fitted.</p></div>
+    <div class="s-card"><div class="s-icon">🔧</div><h3>Boiler Repair</h3><p>Fast diagnosis and repair of all boiler makes and models by Gas Safe engineers.</p></div>
+    <div class="s-card"><div class="s-icon">🌡️</div><h3>Central Heating</h3><p>Radiator installations, system upgrades, and power flushing for Manchester homes.</p></div>
+    <div class="s-card"><div class="s-icon">💧</div><h3>Plumbing Repairs</h3><p>Leaks, blocked drains, burst pipes — sorted quickly and at a fair price.</p></div>
+    <div class="s-card"><div class="s-icon">🚿</div><h3>Bathroom Fitting</h3><p>Complete bathroom renovations with the same five-star standard throughout.</p></div>
+    <div class="s-card"><div class="s-icon">📋</div><h3>Landlord Safety Certs</h3><p>CP12 gas safety certificates for Didsbury and Manchester landlords.</p></div>
+  </div>
+</section>
+<section class="perfect-score">
+  <h2>A Perfect 5-Star Reputation</h2>
+  <p class="ps-sub">The hardest rating to earn — and MCR has earned it</p>
+  <div class="rating-display">⭐⭐⭐⭐⭐</div>
+  <div class="rating-text">5.0 / 5.0 Stars</div>
+  <div class="rating-count">Google Reviews — Didsbury, Manchester</div>
+  <div class="r-grid">
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Absolutely flawless from start to finish. MCR installed our new boiler and serviced our heating system. Perfect workmanship, immaculate finish, and genuinely lovely people."</p><div class="reviewer">— Catherine P., Didsbury</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"5-star review completely deserved. Fixed a complex plumbing issue that another company said would cost £1,200 — MCR sorted it for a fraction of that. Honest and brilliant."</p><div class="reviewer">— Robert M., Chorlton</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"The most professional tradespeople I have ever hired. Perfect work, on time, spotlessly clean, and they explained everything. MCR is the only company I'll ever call."</p><div class="reviewer">— Emma L., West Didsbury</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Website Redesign</h2>
+  <p>Your 5-star reputation deserves a 5-star website. We're offering Manchester businesses a free preview of what a premium, modern website looks like for their business.</p>
+  <a href="#contact" class="btn-cta">Get My Free Preview</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Book MCR Heating & Plumbing</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Didsbury, Manchester, UK</p>
+      <p><strong>📧 Email</strong><br>info@mcrheatingandplumbing.co.uk</p>
+      <p><strong>🔥 Service Area</strong><br>Didsbury, Chorlton, South Manchester &amp; Beyond</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 8am–6pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="MCR Heating and Plumbing Ltd">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Describe your heating or plumbing needs..."></textarea>
+      <button type="submit">Book Service</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 MCR Heating and Plumbing Ltd — Didsbury, Manchester, UK | ⭐ Perfect 5.0 Stars | Gas Safe Registered | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
