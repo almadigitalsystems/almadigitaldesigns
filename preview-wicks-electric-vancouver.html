@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wicks Electric Inc | Vancouver, BC</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#080c14;color:#fff}
+nav{background:#080c14;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,180,255,.2)}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.5rem;color:#fff}
+.logo span{color:#00b4ff}
+nav a{color:rgba(255,255,255,.7);text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.hero{min-height:90vh;display:flex;align-items:center;padding:4rem 2.5rem;position:relative;overflow:hidden;background:#080c14}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(0,100,220,.25) 0%,transparent 70%)}
+.hero::after{content:'⚡';position:absolute;font-size:30rem;opacity:.04;right:-2rem;top:-5rem}
+.hero-inner{position:relative;max-width:700px}
+.hero-tag{background:rgba(0,180,255,.15);border:1px solid rgba(0,180,255,.4);color:#00b4ff;font-size:.75rem;font-weight:700;padding:.4rem 1.2rem;border-radius:20px;display:inline-block;margin-bottom:2rem;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(3rem,7vw,6rem);line-height:1;margin-bottom:2rem;letter-spacing:-2px}
+.hero h1 .accent{color:#00b4ff;display:block}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:3rem;max-width:540px}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:#00b4ff;color:#080c14;padding:1rem 2.5rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none}
+.btn-secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;padding:1rem 2.5rem;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);background:#0d1422;border-top:1px solid rgba(0,180,255,.15);border-bottom:1px solid rgba(0,180,255,.15)}
+.metric{padding:2.5rem 2rem;text-align:center;border-right:1px solid rgba(0,180,255,.1)}
+.metric:last-child{border-right:none}
+.metric .num{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.8rem;color:#00b4ff;letter-spacing:-1px}
+.metric .lbl{font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1.5px;margin-top:.5rem}
+.services{padding:6rem 2.5rem;text-align:center}
+.services h2{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.8rem;letter-spacing:-1px;margin-bottom:.5rem}
+.s-sub{color:rgba(255,255,255,.5);margin-bottom:3rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(0,180,255,.15);max-width:1100px;margin:0 auto;border:1px solid rgba(0,180,255,.15);border-radius:12px;overflow:hidden}
+.s-card{background:#0d1422;padding:2.5rem 2rem;text-align:left;transition:.2s}
+.s-card:hover{background:#131d30}
+.s-icon{font-size:2.2rem;margin-bottom:1rem}
+.s-card h3{font-weight:700;margin-bottom:.5rem;font-size:1.05rem}
+.s-card p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6}
+.about{padding:6rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;max-width:1200px;margin:0 auto;align-items:center}
+.about-gfx{background:linear-gradient(135deg,#0d1422,#001a3a);border:1px solid rgba(0,180,255,.2);border-radius:16px;height:380px;display:flex;align-items:center;justify-content:center;font-size:10rem;position:relative;overflow:hidden}
+.about-gfx::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50%,rgba(0,100,220,.3),transparent 70%)}
+.about h2{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.5rem;letter-spacing:-1px;margin-bottom:1.5rem}
+.about h2 span{color:#00b4ff}
+.about p{color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:1rem;font-size:.95rem}
+.certs{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.cert{background:rgba(0,180,255,.1);border:1px solid rgba(0,180,255,.3);border-radius:4px;padding:.4rem .9rem;font-size:.8rem;font-weight:600;color:#00b4ff}
+.testimonials{background:#0d1422;padding:6rem 2.5rem;text-align:center;border-top:1px solid rgba(0,180,255,.1)}
+.testimonials h2{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.5rem;letter-spacing:-1px;margin-bottom:.5rem}
+.t-sub{color:rgba(255,255,255,.5);margin-bottom:3rem}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.t-card{background:#080c14;border:1px solid rgba(0,180,255,.15);border-radius:10px;padding:2rem;text-align:left}
+.stars{color:#00b4ff;margin-bottom:.75rem}
+.t-card p{color:rgba(255,255,255,.7);font-style:italic;font-size:.9rem;line-height:1.7;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:rgba(255,255,255,.4);font-weight:600}
+.cta{background:linear-gradient(135deg,#00b4ff 0%,#0088cc 100%);padding:6rem 2.5rem;text-align:center}
+.cta h2{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:3rem;color:#080c14;letter-spacing:-1px;margin-bottom:1rem}
+.cta p{color:rgba(8,12,20,.8);max-width:580px;margin:0 auto 2.5rem;font-size:1.05rem}
+.cta .btn-cta{background:#080c14;color:#00b4ff;padding:1rem 3rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.contact{padding:6rem 2.5rem;max-width:1100px;margin:0 auto}
+.contact h2{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.5rem;letter-spacing:-1px;margin-bottom:3rem}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.cinfo p{margin-bottom:1rem;color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.7}
+.cinfo strong{color:#00b4ff}
+form input,form textarea{width:100%;background:#0d1422;border:1px solid rgba(0,180,255,.2);border-radius:6px;padding:.85rem;color:#fff;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:120px;resize:vertical}
+form button{background:#00b4ff;color:#080c14;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:6px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#0d1422;border-top:1px solid rgba(0,180,255,.1);padding:2rem;text-align:center;color:rgba(255,255,255,.3);font-size:.85rem}
+footer strong{color:#00b4ff}
+@media(max-width:768px){.about,.c-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.about-gfx{height:180px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Wicks<span> Electric</span></div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">⚡ Vancouver Electrical Contractor Since 2007</div>
+    <h1>Vancouver's<span class="accent">Premium Electricians</span></h1>
+    <p>19 years of exceptional electrical work across Vancouver. Wicks Electric brings tech-industry precision to your electrical project — residential, commercial, and industrial.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get a Quote</a>
+      <a href="#services" class="btn-secondary">Our Services</a>
+    </div>
+  </div>
+</section>
+<div class="metrics">
+  <div class="metric"><div class="num">4.9★</div><div class="lbl">Google Rating</div></div>
+  <div class="metric"><div class="num">19</div><div class="lbl">Years in Vancouver</div></div>
+  <div class="metric"><div class="num">500+</div><div class="lbl">Projects Done</div></div>
+  <div class="metric"><div class="num">BC</div><div class="lbl">Licensed & Insured</div></div>
+</div>
+<section class="services" id="services">
+  <h2>Electrical Services</h2>
+  <p class="s-sub">Full-service electrical for Vancouver homes and businesses</p>
+  <div class="s-grid">
+    <div class="s-card"><div class="s-icon">🏠</div><h3>Residential Electrical</h3><p>New wiring, panel upgrades, EV charger installs, and smart home systems.</p></div>
+    <div class="s-card"><div class="s-icon">🏢</div><h3>Commercial Projects</h3><p>Office fit-outs, tenant improvements, and commercial maintenance contracts.</p></div>
+    <div class="s-card"><div class="s-icon">🚗</div><h3>EV Charger Installation</h3><p>Level 2 EV charger installations for Vancouver homes — fast and BC Hydro compliant.</p></div>
+    <div class="s-card"><div class="s-icon">🔌</div><h3>Panel Upgrades</h3><p>200A and 400A service upgrades for older Vancouver homes.</p></div>
+    <div class="s-card"><div class="s-icon">💡</div><h3>Lighting Design</h3><p>LED lighting, outdoor systems, pot lights, and smart lighting controls.</p></div>
+    <div class="s-card"><div class="s-icon">🔍</div><h3>Safety Inspections</h3><p>Electrical inspections for real estate transactions, renovations, and code compliance.</p></div>
+  </div>
+</section>
+<div class="about">
+  <div class="about-gfx">⚡</div>
+  <div>
+    <h2>19 Years of <span>Vancouver Excellence</span></h2>
+    <p>Adam founded Wicks Electric in 2007 with a clear vision: bring professional, reliable electrical contracting to Vancouver homeowners and businesses who deserve better.</p>
+    <p>Nearly two decades later, Wicks Electric has earned a near-perfect 4.9-star rating across hundreds of Google reviews — the kind of reputation only built through consistent quality work, honest pricing, and genuine care for every client.</p>
+    <p>Vancouver's tech-forward homeowners expect precision. That's exactly what Wicks Electric delivers, every project, every time.</p>
+    <div class="certs">
+      <span class="cert">✅ BC Licensed Electrician</span>
+      <span class="cert">🛡️ Fully Insured</span>
+      <span class="cert">🚗 EV Charger Specialist</span>
+      <span class="cert">⭐ 4.9 Stars</span>
+    </div>
+  </div>
+</div>
+<section class="testimonials">
+  <h2>What Vancouver Says</h2>
+  <p class="t-sub">Near-perfect 4.9 stars — Vancouver's most trusted electricians</p>
+  <div class="t-grid">
+    <div class="t-card"><div class="stars">★★★★★</div><p>"Wicks Electric installed our EV charger and upgraded our panel in one day. Professional crew, clean work, and Adam personally followed up to make sure everything was right."</p><div class="reviewer">— Michelle K., West Vancouver</div></div>
+    <div class="t-card"><div class="stars">★★★★★</div><p>"19 years and they still treat every customer like it's their first job. Exceptional work on our commercial renovation. The only electricians we'll use in Vancouver."</p><div class="reviewer">— Jason L., Downtown Vancouver</div></div>
+    <div class="t-card"><div class="stars">★★★★★</div><p>"Perfect 5-star service. Punctual, professional, and the craftsmanship was flawless. Worth every penny — this is what Vancouver electrical work should look like."</p><div class="reviewer">— Sandra M., North Vancouver</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Redesign</h2>
+  <p>We're building a free website preview for Vancouver service businesses. See what a fast, modern, high-converting site looks like — no commitment required.</p>
+  <a href="#contact" class="btn-cta">Get My Free Preview →</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Get in Touch</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Vancouver, BC, Canada</p>
+      <p><strong>📧 Email</strong><br>info@wickselectric.ca</p>
+      <p><strong>⚡ Service Area</strong><br>Vancouver, North Van, West Van, Burnaby</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 7:30am–5:30pm | Sat by appointment</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Wicks Electric Inc">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Tell us about your electrical project..."></textarea>
+      <button type="submit">Get My Quote</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 Wicks Electric Inc — Vancouver, BC, Canada | Est. 2007 | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
