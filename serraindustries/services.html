@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Serra Industries | AV Production, Lighting, Video &amp; Event Production Miami</title>
+  <meta name="description" content="Serra Industries offers professional audio, lighting design, LED video walls, staging, rigging, corporate events, and full-service event production in Miami, FL." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #050010; --dark-surface: #0d0025; --dark-mid: #150035;
+      --pink: #ff2d78; --cyan: #00e5ff; --purple: #b966e7;
+      --white: #ffffff; --text-body: #ddd0f0; --text-muted: #9070b8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--dark); color: var(--text-body); line-height: 1.6; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(5,0,16,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,45,120,0.15); padding: 0 32px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--pink); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+    .nav-cta { background: linear-gradient(135deg, var(--pink), var(--purple)); color: var(--white); font-size: 0.8rem; font-weight: 700; padding: 10px 24px; border-radius: 4px; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-mobile-toggle { display: none; background: none; border: none; color: var(--pink); font-size: 1.5rem; cursor: pointer; }
+    section { padding: 100px 24px; }
+    .container { max-width: 1120px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .btn-primary { display: inline-block; background: linear-gradient(135deg, var(--pink), var(--purple)); color: var(--white); font-size: 0.9rem; font-weight: 700; padding: 16px 40px; border-radius: 6px; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: 0 4px 24px rgba(255,45,120,0.4); }
+    footer { background: var(--dark); border-top: 1px solid rgba(255,45,120,0.1); padding: 40px 24px 24px; text-align: center; }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--pink); margin-bottom: 16px; }
+    .footer-links-row { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links-row a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links-row a:hover { color: var(--cyan); }
+    .footer-copy { font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid rgba(255,45,120,0.08); padding-top: 20px; margin-top: 20px; }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: block; } .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: rgba(5,0,16,0.98); padding: 24px 32px; gap: 20px; border-bottom: 1px solid rgba(255,45,120,0.15); } }
+
+    .page-header { padding: 140px 24px 80px; text-align: center; background: radial-gradient(ellipse at 50% 100%, rgba(185,102,231,0.15) 0%, transparent 60%), linear-gradient(180deg, #0a0020 0%, var(--dark) 100%); }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; color: var(--white); margin-bottom: 16px; }
+    .page-header p { font-size: 1.1rem; color: var(--text-muted); max-width: 540px; margin: 0 auto; }
+
+    /* SERVICE BLOCKS */
+    .service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-bottom: 80px; }
+    .service-block:last-child { margin-bottom: 0; }
+    .service-block.reverse { }
+    .service-content {}
+    .service-number { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900; color: rgba(255,45,120,0.15); line-height: 1; margin-bottom: -10px; }
+    .service-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .service-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
+    .service-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .service-features li { font-size: 0.9rem; color: var(--text-body); display: flex; gap: 12px; align-items: flex-start; }
+    .service-features li::before { content: '→'; color: var(--cyan); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .service-visual { background: var(--dark-surface); border: 1px solid rgba(255,45,120,0.12); border-radius: 16px; padding: 48px; display: flex; flex-direction: column; gap: 20px; }
+    .spec-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,45,120,0.08); }
+    .spec-item:last-child { border-bottom: none; }
+    .spec-label { font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.05em; }
+    .spec-value { font-size: 0.85rem; font-weight: 600; color: var(--cyan); }
+    .service-visual-icon { font-size: 3rem; margin-bottom: 8px; text-align: center; }
+
+    /* PROCESS */
+    #process { background: var(--dark-surface); }
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; margin-top: 56px; position: relative; }
+    .process-steps::before { content: ''; position: absolute; top: 32px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,45,120,0.3), rgba(0,229,255,0.3), transparent); }
+    .process-step { text-align: center; padding: 0 20px 40px; position: relative; }
+    .step-num { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--purple)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); margin: 0 auto 24px; position: relative; z-index: 1; }
+    .step-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .step-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* QUOTE CTA */
+    .quote-cta { background: linear-gradient(135deg, rgba(255,45,120,0.08), rgba(0,229,255,0.06)); border: 1px solid rgba(255,45,120,0.2); border-radius: 20px; padding: 64px 48px; text-align: center; margin-top: 64px; }
+    .quote-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900; color: var(--white); margin-bottom: 16px; }
+    .quote-cta p { font-size: 1rem; color: var(--text-muted); margin-bottom: 36px; max-width: 440px; margin-left: auto; margin-right: auto; }
+
+    @media (max-width: 768px) { .service-block { grid-template-columns: 1fr; gap: 40px; } .process-steps::before { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Serra Industries</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/about">About</a></li>
+    <li><a href="/services" class="active">Services</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a href="/contact" class="nav-cta">Get a Quote</a>
+  <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">What We Offer</div>
+  <h1>Professional Event Production<br>From Start to Finish</h1>
+  <p>Every service we offer is executed by our in-house team of specialists. No subcontractors — just our experts, your vision.</p>
+</div>
+
+<section>
+  <div class="container">
+
+    <!-- Audio -->
+    <div class="service-block">
+      <div class="service-content">
+        <div class="service-number">01</div>
+        <h2 class="service-title">Professional Audio Production</h2>
+        <p class="service-desc">Clear, powerful, and perfectly tuned sound for any venue. Our audio team brings professional-grade systems and the expertise to make them sing — whether you need intimate acoustic performance or stadium-scale reinforcement.</p>
+        <ul class="service-features">
+          <li>Line array and point-source speaker systems</li>
+          <li>Front-of-house and monitor mixing</li>
+          <li>RF frequency coordination for wireless systems</li>
+          <li>Delay fill systems and room acoustic optimization</li>
+          <li>Broadcast and recording feeds</li>
+          <li>Artist technical riders accommodated</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="service-visual-icon">&#127911;</div>
+        <div class="spec-item"><span class="spec-label">Venue Capacity</span><span class="spec-value">100 – 20,000+</span></div>
+        <div class="spec-item"><span class="spec-label">System Brands</span><span class="spec-value">d&amp;b, L-Acoustics, Yamaha</span></div>
+        <div class="spec-item"><span class="spec-label">Console Brands</span><span class="spec-value">DiGiCo, Avid, SSL</span></div>
+        <div class="spec-item"><span class="spec-label">Wireless Systems</span><span class="spec-value">Shure Axient, DPA, Sennheiser</span></div>
+        <div class="spec-item"><span class="spec-label">Crew Included</span><span class="spec-value">FOH Engineer + System Tech</span></div>
+      </div>
+    </div>
+
+    <!-- Lighting -->
+    <div class="service-block reverse">
+      <div class="service-content">
+        <div class="service-number">02</div>
+        <h2 class="service-title">Lighting Design &amp; Production</h2>
+        <p class="service-desc">Light transforms a space. Our lighting designers create immersive, visually stunning environments that tell your story — from subtle architectural washes to dynamic concert-grade show design with full programming and operation.</p>
+        <ul class="service-features">
+          <li>Intelligent moving head fixtures (wash &amp; beam)</li>
+          <li>LED par and strip lighting</li>
+          <li>Haze and atmospheric effects</li>
+          <li>Architectural and environmental lighting</li>
+          <li>Full show design and pre-programming</li>
+          <li>Custom gobos and color matching</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="service-visual-icon">&#128161;</div>
+        <div class="spec-item"><span class="spec-label">Console Platform</span><span class="spec-value">MA2/MA3, GrandMA, ETC</span></div>
+        <div class="spec-item"><span class="spec-label">Moving Heads</span><span class="spec-value">Robe, Martin, Clay Paky</span></div>
+        <div class="spec-item"><span class="spec-label">LED Fixtures</span><span class="spec-value">Chauvet, Elation, GLP</span></div>
+        <div class="spec-item"><span class="spec-label">Special Effects</span><span class="spec-value">Haze, CO2, Confetti</span></div>
+        <div class="spec-item"><span class="spec-label">Design Software</span><span class="spec-value">Wysiwyg, Depence, CAPTURE</span></div>
+      </div>
+    </div>
+
+    <!-- Video -->
+    <div class="service-block">
+      <div class="service-content">
+        <div class="service-number">03</div>
+        <h2 class="service-title">LED Walls &amp; Video Production</h2>
+        <p class="service-desc">High-impact visuals that command attention. We design, supply, and operate LED wall systems, projection mapping, multi-camera setups, and full hybrid streaming solutions for events of all sizes.</p>
+        <ul class="service-features">
+          <li>Indoor &amp; outdoor LED wall panels (P2.6 – P6)</li>
+          <li>Multi-screen video switching and routing</li>
+          <li>Live event camera packages (4 – 12 cameras)</li>
+          <li>IMAG (image magnification) for large venues</li>
+          <li>Hybrid event and livestream production</li>
+          <li>Content playback and graphics operation</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="service-visual-icon">&#127916;</div>
+        <div class="spec-item"><span class="spec-label">LED Pitch Options</span><span class="spec-value">P2.6 / P3.9 / P4.8 / P6</span></div>
+        <div class="spec-item"><span class="spec-label">Max Panel Size</span><span class="spec-value">Custom to venue</span></div>
+        <div class="spec-item"><span class="spec-label">Camera Systems</span><span class="spec-value">Sony, Panasonic PTZ</span></div>
+        <div class="spec-item"><span class="spec-label">Switcher</span><span class="spec-value">Barco E2, Ross Vision</span></div>
+        <div class="spec-item"><span class="spec-label">Streaming</span><span class="spec-value">Zoom, YouTube, Custom RTMP</span></div>
+      </div>
+    </div>
+
+    <!-- Staging -->
+    <div class="service-block reverse">
+      <div class="service-content">
+        <div class="service-number">04</div>
+        <h2 class="service-title">Staging &amp; Rigging</h2>
+        <p class="service-desc">Safe, professional staging and structural rigging for any event footprint. Our certified riggers design and install all staging, trussing, and overhead rigging systems in compliance with local codes and safety standards.</p>
+        <ul class="service-features">
+          <li>Modular deck staging in custom configurations</li>
+          <li>Ground-support and free-standing truss systems</li>
+          <li>Certified overhead rigging (ETCP Rigging)</li>
+          <li>Crowd barrier and safety perimeter systems</li>
+          <li>Riser and drum riser packages</li>
+          <li>Outdoor event infrastructure and tent stages</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="service-visual-icon">&#127970;</div>
+        <div class="spec-item"><span class="spec-label">Stage Sizes</span><span class="spec-value">10x10 ft to 60x40 ft+</span></div>
+        <div class="spec-item"><span class="spec-label">Stage Heights</span><span class="spec-value">24" – 60" adjustable</span></div>
+        <div class="spec-item"><span class="spec-label">Truss Systems</span><span class="spec-value">Global Truss, Prolyte</span></div>
+        <div class="spec-item"><span class="spec-label">Certification</span><span class="spec-value">ETCP Certified Riggers</span></div>
+        <div class="spec-item"><span class="spec-label">Compliance</span><span class="spec-value">Florida &amp; Local AHJ</span></div>
+      </div>
+    </div>
+
+    <!-- Corporate -->
+    <div class="service-block">
+      <div class="service-content">
+        <div class="service-number">05</div>
+        <h2 class="service-title">Corporate &amp; Private Events</h2>
+        <p class="service-desc">Conferences, galas, product launches, award ceremonies, trade shows, and private celebrations — we manage the full production scope so you can focus on your guests and your message. One call. Full service.</p>
+        <ul class="service-features">
+          <li>Single point of contact — full coordination</li>
+          <li>Site surveys and venue liaison</li>
+          <li>Complete audio, lighting, and video package</li>
+          <li>Teleprompting and presentation support</li>
+          <li>Breakout room AV setup</li>
+          <li>Load-in, show day, and teardown crew</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="service-visual-icon">&#128188;</div>
+        <div class="spec-item"><span class="spec-label">Event Types</span><span class="spec-value">Corporate, Social, Concert</span></div>
+        <div class="spec-item"><span class="spec-label">Planning Lead Time</span><span class="spec-value">2 weeks – 12 months</span></div>
+        <div class="spec-item"><span class="spec-label">Service Area</span><span class="spec-value">Florida + Nationwide</span></div>
+        <div class="spec-item"><span class="spec-label">Crew Size</span><span class="spec-value">2 – 50+ technicians</span></div>
+        <div class="spec-item"><span class="spec-label">Budget Range</span><span class="spec-value">Custom — Contact Us</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:0;">
+      <div class="section-label" style="display:flex; justify-content:center;">How It Works</div>
+      <h2 class="section-title" style="max-width:480px; margin:0 auto 20px;">Our Production Process</h2>
+      <p style="color:var(--text-muted); font-size:1.05rem; max-width:440px; margin:0 auto;">From your first call to the final strike, here's how we bring your event to life.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Discovery Call</div>
+        <p class="step-desc">We start with a conversation — your vision, venue, timeline, and budget. No pressure. Just clarity.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">Site Survey</div>
+        <p class="step-desc">We visit your venue (or review plans remotely) to design the right production solution.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Custom Proposal</div>
+        <p class="step-desc">You receive a detailed quote with equipment, crew, and timeline — itemized and transparent.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-title">Pre-Production</div>
+        <p class="step-desc">We handle logistics, programming, crew scheduling, and vendor coordination behind the scenes.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <div class="step-title">Show Day</div>
+        <p class="step-desc">Our crew arrives early, sets up thoroughly, and runs a full system check. Ready before your guests arrive.</p>
+      </div>
+    </div>
+    <div class="quote-cta">
+      <h2>Ready to Get Started?</h2>
+      <p>Tell us about your event. Our team will put together a customized proposal within 24 hours.</p>
+      <a href="/contact" class="btn-primary">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand">Serra Industries</div>
+    <div class="footer-links-row">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2024 Serra Industries &mdash; Miami, FL &mdash; All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
