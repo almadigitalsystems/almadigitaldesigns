@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Efficient Electric Corp | Columbus, OH</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#fff}
+nav{background:#0a0a0f;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:2px solid #f5c518}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#f5c518;letter-spacing:2px}
+nav a{color:#fff;text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 1rem;background:linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#0d1b47 100%);position:relative;overflow:hidden}
+.hero::before{content:'⚡';position:absolute;font-size:30rem;opacity:.03;top:-5rem;right:-5rem}
+.hero-badge{background:#f5c518;color:#0a0a0f;font-size:.75rem;font-weight:700;padding:.4rem 1rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:1;margin-bottom:1.5rem;color:#fff}
+.hero h1 span{color:#f5c518}
+.hero p{font-size:1.2rem;color:#ccc;max-width:600px;margin:0 auto 2.5rem}
+.btn{background:#f5c518;color:#0a0a0f;padding:1rem 2.5rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;transition:.2s}
+.btn:hover{background:#e5b500;transform:translateY(-2px)}
+.btn-outline{background:transparent;border:2px solid #f5c518;color:#f5c518;margin-left:1rem}
+.pain{background:#111122;padding:4rem 2rem;text-align:center}
+.pain h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;margin-bottom:2rem;color:#f5c518}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+.pain-card{background:#1a1a2e;border:1px solid #333;border-left:4px solid #f5c518;padding:1.5rem;border-radius:4px;text-align:left}
+.pain-card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem;color:#f5c518}
+.pain-card p{font-size:.9rem;color:#aaa;line-height:1.6}
+.services{padding:5rem 2rem;text-align:center}
+.services h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;margin-bottom:.5rem}
+.services p.sub{color:#aaa;margin-bottom:3rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.svc-card{background:#111122;border:1px solid #222;padding:2rem;border-radius:8px;transition:.2s}
+.svc-card:hover{border-color:#f5c518;transform:translateY(-4px)}
+.svc-icon{font-size:2.5rem;margin-bottom:1rem}
+.svc-card h3{font-weight:700;margin-bottom:.5rem;font-size:1.1rem}
+.svc-card p{font-size:.85rem;color:#999}
+.proof{background:#0d1b47;padding:5rem 2rem;text-align:center}
+.proof h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;margin-bottom:3rem}
+.stats{display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;margin-bottom:3rem}
+.stat{text-align:center}
+.stat .num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#f5c518}
+.stat .label{font-size:.9rem;color:#aaa;text-transform:uppercase;letter-spacing:1px}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+.review{background:#111122;padding:1.5rem;border-radius:8px;text-align:left}
+.stars{color:#f5c518;margin-bottom:.5rem;font-size:1.1rem}
+.review p{font-size:.9rem;color:#ccc;font-style:italic;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:#888;font-weight:600}
+.cta-section{padding:5rem 2rem;text-align:center;background:linear-gradient(135deg,#f5c518,#e5b500)}
+.cta-section h2{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:#0a0a0f;margin-bottom:1rem}
+.cta-section p{color:#333;max-width:600px;margin:0 auto 2rem;font-size:1.1rem}
+.cta-section .btn{background:#0a0a0f;color:#f5c518}
+.contact{background:#111122;padding:5rem 2rem}
+.contact h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;text-align:center;margin-bottom:3rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.contact-info p{margin-bottom:1rem;color:#ccc;font-size:.95rem}
+.contact-info strong{color:#f5c518}
+form input,form textarea{width:100%;background:#1a1a2e;border:1px solid #333;border-radius:4px;padding:.85rem;color:#fff;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:120px;resize:vertical}
+form button{background:#f5c518;color:#0a0a0f;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:4px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#0a0a0f;border-top:1px solid #222;padding:2rem;text-align:center;color:#555;font-size:.85rem}
+@media(max-width:700px){.contact-grid{grid-template-columns:1fr}.stats{gap:2rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Efficient Electric</div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="hero-badge">⚡ Columbus Electrical Contractor Since 1978</div>
+    <h1>Columbus' Most <span>Trusted</span> Electricians</h1>
+    <p>46 years of electrical expertise. Residential, commercial, and industrial — done right, on time, every time.</p>
+    <a href="#contact" class="btn">Get a Free Quote</a>
+    <a href="#services" class="btn btn-outline">Our Services</a>
+  </div>
+</section>
+<section class="pain">
+  <h2>Why Columbus Chooses Efficient Electric</h2>
+  <div class="pain-grid">
+    <div class="pain-card"><h3>⚡ Fast Response</h3><p>Your project can't wait. We show up on time, every time — no runaround, no delays.</p></div>
+    <div class="pain-card"><h3>🏆 46 Years of Trust</h3><p>Since 1978, we've been Columbus' go-to electricians. Our reputation was built one job at a time.</p></div>
+  </div>
+</section>
+<section class="services" id="services">
+  <h2>What We Do</h2>
+  <p class="sub">Full-service electrical solutions for Columbus homes and businesses</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-icon">🏠</div><h3>Residential Wiring</h3><p>Panel upgrades, new construction wiring, rewiring — done safely and to code.</p></div>
+    <div class="svc-card"><div class="svc-icon">🏢</div><h3>Commercial Electric</h3><p>Office fit-outs, retail buildouts, and commercial maintenance contracts.</p></div>
+    <div class="svc-card"><div class="svc-icon">🔌</div><h3>Panel Upgrades</h3><p>Outdated panels upgraded to modern standards. 200A service available.</p></div>
+    <div class="svc-card"><div class="svc-icon">💡</div><h3>Lighting Design</h3><p>LED retrofits, outdoor lighting, security lighting, and smart controls.</p></div>
+    <div class="svc-card"><div class="svc-icon">🚨</div><h3>Safety Inspections</h3><p>Code compliance inspections, GFCI installs, surge protection.</p></div>
+    <div class="svc-card"><div class="svc-icon">🔧</div><h3>Emergency Service</h3><p>Electrical emergencies don't wait for business hours — and neither do we.</p></div>
+  </div>
+</section>
+<section class="proof">
+  <h2>The Numbers Speak</h2>
+  <div class="stats">
+    <div class="stat"><div class="num">46</div><div class="label">Years in Business</div></div>
+    <div class="stat"><div class="num">4.3★</div><div class="label">Google Rating</div></div>
+    <div class="stat"><div class="num">1000+</div><div class="label">Jobs Completed</div></div>
+  </div>
+  <div class="reviews">
+    <div class="review"><div class="stars">★★★★★</div><p>"Called Efficient Electric for a panel upgrade — they were on time, professional, and the price was fair. Would call again without hesitation."</p><div class="reviewer">— Mike R., Columbus OH</div></div>
+    <div class="review"><div class="stars">★★★★☆</div><p>"These guys have handled all our commercial electrical work for years. Reliable, skilled, and honest. The best in Columbus."</p><div class="reviewer">— Sarah K., Business Owner</div></div>
+  </div>
+</section>
+<section class="cta-section">
+  <h2>Claim Your Free Redesign</h2>
+  <p>We're offering Columbus businesses a complimentary website redesign preview — no cost, no obligation. See what a modern site could do for your leads.</p>
+  <a href="#contact" class="btn">Get My Free Redesign</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Get in Touch</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p><strong>📍 Location</strong><br>Columbus, OH, USA</p>
+      <p><strong>📧 Email</strong><br>sales@efficient-electric.com</p>
+      <p><strong>⚡ Service Area</strong><br>Columbus Metro &amp; Central Ohio</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 7am–6pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Efficient Electric Corp">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Describe your electrical project..."></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+<footer><p>© 2026 Efficient Electric Corp — Columbus, OH | Est. 1978 | Preview by <strong>Alma Digital Designs</strong></p></footer>
+</body></html>
