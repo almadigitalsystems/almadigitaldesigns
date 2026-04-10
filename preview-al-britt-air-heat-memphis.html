@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Al Britt Air & Heat | Memphis, TN | Trane Dealer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#2c2c2c;background:#f5f0eb}
+nav{background:#2c3e50;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff}
+.logo span{color:#c8a96e}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:500}
+.hero{background:linear-gradient(160deg,#2c3e50 0%,#3a5068 50%,#4a6278 100%);padding:7rem 2rem 5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{position:relative;max-width:800px;margin:0 auto}
+.trane-badge{background:#c8a96e;color:#2c3e50;font-size:.75rem;font-weight:700;padding:.4rem 1.2rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);color:#fff;line-height:1.1;margin-bottom:1.5rem}
+.hero h1 em{color:#c8a96e;font-style:normal}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto 3rem;line-height:1.7}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#c8a96e;color:#2c3e50;padding:1rem 2.5rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,.5);color:#fff;padding:1rem 2.5rem;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none}
+.heritage{background:#fff;padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:center}
+.heritage h2{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:1.5rem;line-height:1.2}
+.heritage h2 em{color:#c8a96e;font-style:normal}
+.heritage p{color:#666;line-height:1.9;margin-bottom:1rem;font-size:.95rem}
+.h-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.hstat{background:#f5f0eb;padding:1.2rem;border-left:4px solid #c8a96e;border-radius:0 6px 6px 0}
+.hstat .num{font-family:'Playfair Display',serif;font-size:2rem;color:#2c3e50;font-weight:700}
+.hstat .lbl{font-size:.75rem;color:#999;text-transform:uppercase;letter-spacing:1px;margin-top:.2rem}
+.heritage-img{background:linear-gradient(135deg,#2c3e50,#c8a96e);border-radius:12px;height:350px;display:flex;align-items:center;justify-content:center;font-size:8rem}
+.services{background:#f5f0eb;padding:5rem 2rem;text-align:center}
+.services h2{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:.5rem;color:#2c3e50}
+.s-sub{color:#999;margin-bottom:3rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.s-card{background:#fff;padding:2.5rem 2rem;border-radius:10px;text-align:left;box-shadow:0 2px 12px rgba(44,62,80,.06);transition:.2s;border-top:4px solid #c8a96e}
+.s-card:hover{box-shadow:0 8px 30px rgba(44,62,80,.12);transform:translateY(-3px)}
+.s-icon{font-size:2.5rem;margin-bottom:1.2rem}
+.s-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:#2c3e50;margin-bottom:.75rem}
+.s-card p{color:#777;font-size:.875rem;line-height:1.7}
+.reviews{background:#2c3e50;padding:5rem 2rem;text-align:center}
+.reviews h2{font-family:'Playfair Display',serif;font-size:2.5rem;color:#fff;margin-bottom:.5rem}
+.r-sub{color:rgba(200,169,110,.7);margin-bottom:3rem}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.r-card{background:rgba(255,255,255,.06);border:1px solid rgba(200,169,110,.3);padding:2rem;border-radius:10px;text-align:left}
+.stars{color:#c8a96e;margin-bottom:.75rem}
+.r-card p{color:rgba(255,255,255,.8);font-style:italic;line-height:1.7;margin-bottom:.75rem;font-size:.9rem}
+.reviewer{color:#c8a96e;font-size:.8rem;font-weight:600}
+.cta{background:linear-gradient(135deg,#c8a96e,#b8923e);padding:5rem 2rem;text-align:center}
+.cta h2{font-family:'Playfair Display',serif;font-size:3rem;color:#fff;margin-bottom:1rem}
+.cta p{color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2rem;font-size:1.05rem;line-height:1.6}
+.cta .btn-primary{background:#2c3e50;color:#fff}
+.contact{background:#fff;padding:5rem 2rem}
+.contact h2{font-family:'Playfair Display',serif;font-size:2.5rem;text-align:center;margin-bottom:3rem;color:#2c3e50}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.cinfo p{margin-bottom:1rem;color:#666;line-height:1.7;font-size:.95rem}
+.cinfo strong{color:#2c3e50}
+form input,form textarea{width:100%;background:#f5f0eb;border:1px solid #ddd;border-radius:6px;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit;color:#2c3e50}
+form textarea{height:120px;resize:vertical}
+form button{background:#2c3e50;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:6px;cursor:pointer;font-size:1rem;width:100%;transition:.2s}
+form button:hover{background:#c8a96e;color:#2c3e50}
+footer{background:#2c3e50;color:rgba(255,255,255,.4);padding:2rem;text-align:center;font-size:.85rem}
+footer strong{color:#c8a96e}
+@media(max-width:768px){.heritage,.c-grid{grid-template-columns:1fr}.heritage-img{height:200px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Al Britt <span>Air & Heat</span></div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<section class="hero">
+  <div class="hero-content">
+    <div class="trane-badge">🏅 Authorized Trane Dealer — Memphis Since 1954</div>
+    <h1>70 Years of Memphis <em>Comfort & Trust</em></h1>
+    <p>Al Britt Air & Heat — a Memphis family tradition since 1954. Authorized Trane dealer serving the families of Memphis with premium HVAC service and honest, straightforward pricing.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Schedule Service</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+  </div>
+</section>
+<div class="heritage" style="padding:5rem 2rem">
+  <div>
+    <h2>A Memphis Family <em>Legacy</em></h2>
+    <p>When Albert's father started Al Britt Air & Heat in 1954, Memphis looked very different. Over seven decades, we've grown with this city — cooling homes through legendary Memphis summers and warming families through every winter.</p>
+    <p>As an authorized Trane dealer, we install and service the most trusted name in HVAC. Our technicians are factory-trained, certified, and committed to doing the job right every time.</p>
+    <div class="h-stats">
+      <div class="hstat"><div class="num">70+</div><div class="lbl">Years in Memphis</div></div>
+      <div class="hstat"><div class="num">4.7★</div><div class="lbl">Google Rating</div></div>
+      <div class="hstat"><div class="num">Trane</div><div class="lbl">Authorized Dealer</div></div>
+      <div class="hstat"><div class="num">Family</div><div class="lbl">Owned & Operated</div></div>
+    </div>
+  </div>
+  <div class="heritage-img">🏡</div>
+</div>
+<section class="services" id="services">
+  <h2>Premium HVAC Services</h2>
+  <p class="s-sub">Trane-certified heating and cooling for Memphis homes and businesses</p>
+  <div class="s-grid">
+    <div class="s-card"><div class="s-icon">❄️</div><h3>AC Installation</h3><p>Trane system installations engineered for Memphis climate — maximum efficiency, lasting comfort.</p></div>
+    <div class="s-card"><div class="s-icon">🔥</div><h3>Heating Systems</h3><p>Furnaces, heat pumps, and dual-fuel systems installed and serviced by certified technicians.</p></div>
+    <div class="s-card"><div class="s-icon">🔄</div><h3>Maintenance Plans</h3><p>Annual maintenance contracts to keep your system at peak efficiency year-round.</p></div>
+    <div class="s-card"><div class="s-icon">🚨</div><h3>Emergency Repairs</h3><p>Memphis AC failure in peak summer? We're available for emergency calls when you need us most.</p></div>
+    <div class="s-card"><div class="s-icon">🌬️</div><h3>Indoor Air Quality</h3><p>Whole-home air purifiers, dehumidifiers, and UV systems for healthier Memphis air.</p></div>
+    <div class="s-card"><div class="s-icon">🔍</div><h3>System Diagnostics</h3><p>Precise diagnostics to identify exactly what's wrong — no guesswork, no unnecessary repairs.</p></div>
+  </div>
+</section>
+<section class="reviews">
+  <h2>Trusted by Memphis Families</h2>
+  <p class="r-sub">4.7 stars — a 70-year reputation built one home at a time</p>
+  <div class="r-grid">
+    <div class="r-card"><div class="stars">★★★★★</div><p>"My family has used Al Britt for three generations. Honest, professional, and their Trane systems last forever. Nobody better in Memphis."</p><div class="reviewer">— Patricia H., East Memphis</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Albert came out personally when our AC died in August. Fixed it same day for a fair price. This family business is what Memphis is all about."</p><div class="reviewer">— Robert K., Memphis TN</div></div>
+    <div class="r-card"><div class="stars">★★★★☆</div><p>"Been a customer for 15 years. They never oversell, always explain what needs to be done, and the Trane units they install are top-notch."</p><div class="reviewer">— Linda C., Germantown TN</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Website Redesign</h2>
+  <p>We're giving Memphis businesses a complimentary preview of what a modern, high-performance website could do for your customer calls. No cost, no obligation.</p>
+  <a href="#contact" class="btn-primary">Get My Free Preview</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Contact Al Britt Air & Heat</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Memphis, TN, USA</p>
+      <p><strong>📧 Email</strong><br>albert@albrittairandheat.com</p>
+      <p><strong>🏅 Authorized Dealer</strong><br>Trane Heating &amp; Cooling Systems</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 8am–5pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Al Britt Air & Heat">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Tell us about your heating or cooling needs..."></textarea>
+      <button type="submit">Request Service</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 Al Britt Air &amp; Heat — Memphis, TN | Family Business Since 1954 | Authorized <strong>Trane</strong> Dealer | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
