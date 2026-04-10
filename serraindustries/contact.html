@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Serra Industries — Get a Quote | Miami AV &amp; Event Production</title>
+  <meta name="description" content="Contact Serra Industries for a custom event production quote. Miami-based AV, lighting, video, staging, and full-service event production for corporate and private events." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #050010; --dark-surface: #0d0025; --dark-mid: #150035;
+      --pink: #ff2d78; --cyan: #00e5ff; --purple: #b966e7;
+      --white: #ffffff; --text-body: #ddd0f0; --text-muted: #9070b8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--dark); color: var(--text-body); line-height: 1.6; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(5,0,16,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,45,120,0.15); padding: 0 32px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--pink); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+    .nav-cta { background: linear-gradient(135deg, var(--pink), var(--purple)); color: var(--white); font-size: 0.8rem; font-weight: 700; padding: 10px 24px; border-radius: 4px; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-mobile-toggle { display: none; background: none; border: none; color: var(--pink); font-size: 1.5rem; cursor: pointer; }
+    section { padding: 100px 24px; }
+    .container { max-width: 1120px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    footer { background: var(--dark); border-top: 1px solid rgba(255,45,120,0.1); padding: 40px 24px 24px; text-align: center; }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--pink); margin-bottom: 16px; }
+    .footer-links-row { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links-row a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links-row a:hover { color: var(--cyan); }
+    .footer-copy { font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid rgba(255,45,120,0.08); padding-top: 20px; margin-top: 20px; }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: block; } .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: rgba(5,0,16,0.98); padding: 24px 32px; gap: 20px; border-bottom: 1px solid rgba(255,45,120,0.15); } }
+
+    .page-header { padding: 140px 24px 80px; text-align: center; background: radial-gradient(ellipse at 50% 100%, rgba(255,45,120,0.12) 0%, transparent 60%), linear-gradient(180deg, #0a0020 0%, var(--dark) 100%); }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; color: var(--white); margin-bottom: 16px; }
+    .page-header p { font-size: 1.1rem; color: var(--text-muted); max-width: 540px; margin: 0 auto; }
+
+    /* CONTACT LAYOUT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; }
+
+    /* CONTACT INFO */
+    .contact-info {}
+    .info-card { background: var(--dark-surface); border: 1px solid rgba(255,45,120,0.1); border-radius: 14px; padding: 36px; margin-bottom: 24px; }
+    .info-card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); margin-bottom: 10px; }
+    .info-card-value { font-size: 1rem; color: var(--white); font-weight: 600; line-height: 1.6; }
+    .info-card-value a { color: var(--cyan); text-decoration: none; }
+    .info-card-value a:hover { text-decoration: underline; }
+    .info-card-sub { font-size: 0.85rem; color: var(--text-muted); margin-top: 6px; line-height: 1.6; }
+    .response-time { display: flex; align-items: center; gap: 10px; background: rgba(0,229,255,0.05); border: 1px solid rgba(0,229,255,0.15); border-radius: 8px; padding: 14px 16px; margin-top: 20px; }
+    .response-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); animation: blink 1.5s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.2; } }
+    .response-text { font-size: 0.82rem; color: var(--text-muted); }
+    .response-text strong { color: var(--cyan); }
+
+    /* FORM */
+    .contact-form-wrap { background: var(--dark-surface); border: 1px solid rgba(255,45,120,0.1); border-radius: 14px; padding: 48px; }
+    .form-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .form-subtitle { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 32px; }
+    .form-group { margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+    input, select, textarea { width: 100%; background: var(--dark-mid); border: 1px solid rgba(255,45,120,0.15); border-radius: 8px; color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.95rem; padding: 14px 16px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    input::placeholder, textarea::placeholder { color: var(--text-muted); }
+    input:focus, select:focus, textarea:focus { border-color: rgba(255,45,120,0.5); box-shadow: 0 0 0 3px rgba(255,45,120,0.08); }
+    select { appearance: none; cursor: pointer; }
+    select option { background: var(--dark-mid); }
+    textarea { resize: vertical; min-height: 130px; }
+    .form-submit { width: 100%; background: linear-gradient(135deg, var(--pink), var(--purple)); color: var(--white); border: none; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; padding: 18px 32px; border-radius: 8px; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(255,45,120,0.4); margin-top: 8px; }
+    .form-submit:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 8px 40px rgba(255,45,120,0.6); }
+    .form-note { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 16px; }
+    .success-msg { display: none; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.25); border-radius: 8px; padding: 20px; text-align: center; color: var(--cyan); font-size: 0.95rem; margin-top: 20px; }
+
+    /* FAQ */
+    #faq { background: var(--dark-surface); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .faq-item { background: var(--dark-mid); border: 1px solid rgba(255,45,120,0.08); border-radius: 12px; padding: 28px; }
+    .faq-q { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .faq-a { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } .faq-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .contact-form-wrap { padding: 32px 24px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Serra Industries</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/about">About</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/contact" class="active">Contact</a></li>
+  </ul>
+  <a href="/contact" class="nav-cta">Get a Quote</a>
+  <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">Get In Touch</div>
+  <h1>Let's Plan Your<br>Next Event</h1>
+  <p>Tell us about your vision and we'll put together a custom production plan. No pressure — just a conversation.</p>
+</div>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-card-label">Email</div>
+          <div class="info-card-value"><a href="mailto:serraindustries@gmail.com">serraindustries@gmail.com</a></div>
+          <div class="info-card-sub">We respond to all inquiries within 24 hours, often same day.</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Location</div>
+          <div class="info-card-value">Miami, Florida</div>
+          <div class="info-card-sub">Based in Miami. We serve all of Florida and travel nationwide for events.</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Service Area</div>
+          <div class="info-card-value">Florida &amp; Nationwide</div>
+          <div class="info-card-sub">Primary market: Miami-Dade, Broward, Palm Beach. We travel for large-scale productions nationally.</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Turnaround</div>
+          <div class="info-card-value">Proposals in 24–48 Hours</div>
+          <div class="info-card-sub">Share your event details and we'll send a detailed, itemized quote. No obligation.</div>
+        </div>
+        <div class="response-time">
+          <div class="response-dot"></div>
+          <div class="response-text"><strong>We're Available</strong> — Mon–Fri 8am–8pm EST. Weekends by appointment for urgent events.</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap">
+        <div class="form-title">Request a Quote</div>
+        <div class="form-subtitle">Tell us about your event and we'll get back to you within 24 hours.</div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Anthony" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Serra" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(305) 555-0100" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="eventType">Event Type *</label>
+              <select id="eventType" name="eventType" required>
+                <option value="">Select event type</option>
+                <option value="corporate">Corporate Event / Conference</option>
+                <option value="concert">Concert / Live Music</option>
+                <option value="gala">Gala / Fundraiser</option>
+                <option value="wedding">Wedding / Private Celebration</option>
+                <option value="festival">Festival / Outdoor Event</option>
+                <option value="launch">Product Launch / Activation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="guestCount">Expected Attendance</label>
+              <select id="guestCount" name="guestCount">
+                <option value="">Select range</option>
+                <option value="under100">Under 100</option>
+                <option value="100-300">100 – 300</option>
+                <option value="300-500">300 – 500</option>
+                <option value="500-1000">500 – 1,000</option>
+                <option value="1000-5000">1,000 – 5,000</option>
+                <option value="5000plus">5,000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="eventDate">Event Date</label>
+              <input type="date" id="eventDate" name="eventDate" />
+            </div>
+            <div class="form-group">
+              <label for="venue">Venue / Location</label>
+              <input type="text" id="venue" name="venue" placeholder="Venue name or city" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="services">Services Needed</label>
+            <select id="services" name="services">
+              <option value="">Select primary service</option>
+              <option value="full">Full Production (Audio + Lighting + Video)</option>
+              <option value="audio">Audio Only</option>
+              <option value="lighting">Lighting Only</option>
+              <option value="video">LED / Video Only</option>
+              <option value="staging">Staging &amp; Rigging</option>
+              <option value="custom">Custom Package</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Event *</label>
+            <textarea id="message" name="message" placeholder="Share any details about your event — vision, challenges, specific requirements, or questions. The more you share, the more accurate our proposal will be." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Request</button>
+          <p class="form-note">By submitting, you agree to be contacted about your event inquiry. We never spam.</p>
+        </form>
+        <div class="success-msg" id="successMsg">
+          &#10003; &nbsp; <strong>Message received!</strong> We'll get back to you within 24 hours — usually much sooner. We're looking forward to hearing more about your event.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">Things People Ask Us</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">How far in advance should I book?</div>
+        <p class="faq-a">For major events (concerts, galas, corporate conferences), 2–4 months in advance is ideal. For smaller events, 2–4 weeks is often sufficient. We can accommodate rush bookings when our schedule allows — always worth asking.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you travel outside of Miami?</div>
+        <p class="faq-a">Absolutely. We regularly produce events throughout South Florida (Miami-Dade, Broward, Palm Beach) and travel nationally for larger productions. Travel costs are included in your proposal.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you work with our existing AV vendor?</div>
+        <p class="faq-a">Yes. We're experienced at integrating with house AV systems and coordinating with venue-provided equipment. We'll assess compatibility during our site survey and ensure seamless execution.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's included in a full production package?</div>
+        <p class="faq-a">Our full production packages include equipment, transportation, crew (load-in, show, strike), engineering, and project management. You get a single invoice and a single point of contact — no surprises.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you do outdoor events?</div>
+        <p class="faq-a">Yes. Outdoor productions are one of our specialties. We have weather-rated equipment, outdoor-rated speaker systems, and experience with generators, wind-load calculations for staging, and permitting requirements.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you support hybrid or livestreamed events?</div>
+        <p class="faq-a">Absolutely. We have full broadcast and streaming capabilities — multi-camera production, live switching, encoding, and delivery to any streaming platform (Zoom, YouTube, custom RTMP, etc.).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand">Serra Industries</div>
+    <div class="footer-links-row">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2024 Serra Industries &mdash; Miami, FL &mdash; All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('successMsg');
+  // Collect form data and send via mailto as fallback
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const eventType = document.getElementById('eventType').value;
+  const guestCount = document.getElementById('guestCount').value;
+  const eventDate = document.getElementById('eventDate').value;
+  const venue = document.getElementById('venue').value;
+  const services = document.getElementById('services').value;
+  const message = document.getElementById('message').value;
+
+  const body = encodeURIComponent(
+    `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nEvent Type: ${eventType}\nGuests: ${guestCount}\nDate: ${eventDate}\nVenue: ${venue}\nServices: ${services}\n\nMessage:\n${message}`
+  );
+
+  window.location.href = `mailto:serraindustries@gmail.com?subject=Event%20Production%20Inquiry%20from%20${encodeURIComponent(firstName)}%20${encodeURIComponent(lastName)}&body=${body}`;
+
+  form.style.display = 'none';
+  msg.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
