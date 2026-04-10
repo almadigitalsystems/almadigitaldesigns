@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hensley Heating & Air Conditioning | Memphis, TN</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a}
+nav{background:#003366;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.5rem;color:#fff}
+.logo span{color:#00b4d8}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.hero{min-height:90vh;background:linear-gradient(135deg,#003366 0%,#004488 40%,#0066aa 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 1rem;position:relative;overflow:hidden}
+.hero::before{content:'❄️';position:absolute;font-size:25rem;opacity:.05;top:-3rem;left:-3rem}
+.hero::after{content:'🔥';position:absolute;font-size:25rem;opacity:.05;bottom:-3rem;right:-3rem}
+.hero-badge{background:#00b4d8;color:#fff;font-size:.75rem;font-weight:700;padding:.4rem 1rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(2.5rem,7vw,6rem);color:#fff;line-height:1.05;margin-bottom:1.5rem}
+.hero h1 span{color:#00b4d8}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto 2.5rem;line-height:1.7}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{background:#00b4d8;color:#fff;padding:1rem 2.5rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.btn-light{background:#fff;color:#003366}
+.urgency{background:#00b4d8;padding:1.5rem 2rem;text-align:center;color:#fff;font-weight:700;font-size:1.05rem}
+.urgency span{background:rgba(0,0,0,.2);padding:.2rem .7rem;border-radius:4px;margin:0 .5rem}
+.about{padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:center}
+.about-img{background:linear-gradient(135deg,#003366,#00b4d8);border-radius:12px;height:350px;display:flex;align-items:center;justify-content:center;font-size:8rem}
+.about h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.5rem;margin-bottom:1rem;line-height:1.2}
+.about h2 span{color:#00b4d8}
+.about p{color:#555;line-height:1.8;margin-bottom:1rem;font-size:.95rem}
+.trust-badges{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+.badge-item{background:#f0f9ff;border:1px solid #00b4d8;border-radius:6px;padding:.5rem 1rem;font-size:.8rem;font-weight:700;color:#003366}
+.services{background:#f8fbff;padding:5rem 2rem;text-align:center}
+.services h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.5rem;margin-bottom:.5rem}
+.services p.sub{color:#888;margin-bottom:3rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.svc-card{background:#fff;border:1px solid #e0eff8;padding:2rem;border-radius:10px;box-shadow:0 2px 12px rgba(0,102,170,.06);transition:.2s;text-align:left}
+.svc-card:hover{box-shadow:0 6px 24px rgba(0,102,170,.12);transform:translateY(-3px)}
+.svc-icon{font-size:2.5rem;margin-bottom:1rem}
+.svc-card h3{font-weight:700;margin-bottom:.5rem;color:#003366}
+.svc-card p{font-size:.85rem;color:#666;line-height:1.6}
+.reviews-section{background:#003366;padding:5rem 2rem;text-align:center;color:#fff}
+.reviews-section h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.5rem;margin-bottom:.5rem}
+.r-sub{color:#aac8e0;margin-bottom:3rem}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.r-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:1.75rem;border-radius:10px;text-align:left}
+.stars{color:#00b4d8;margin-bottom:.75rem;font-size:1.1rem}
+.r-card p{color:rgba(255,255,255,.85);font-style:italic;font-size:.9rem;line-height:1.7;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:#aac8e0;font-weight:600}
+.cta{background:linear-gradient(135deg,#00b4d8,#0088aa);padding:5rem 2rem;text-align:center}
+.cta h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:#fff;margin-bottom:1rem}
+.cta p{color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2rem;font-size:1.05rem}
+.cta .btn{background:#fff;color:#003366}
+.contact{background:#f8fbff;padding:5rem 2rem}
+.contact h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.5rem;text-align:center;margin-bottom:3rem}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.cinfo p{margin-bottom:1rem;color:#555;line-height:1.7}
+.cinfo strong{color:#003366}
+form input,form textarea{width:100%;background:#fff;border:1px solid #dde8f0;border-radius:6px;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit;color:#1a1a1a}
+form textarea{height:120px;resize:vertical}
+form button{background:#003366;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:6px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#003366;color:rgba(255,255,255,.5);padding:2rem;text-align:center;font-size:.85rem}
+@media(max-width:768px){.about{grid-template-columns:1fr}.c-grid{grid-template-columns:1fr}.about-img{height:200px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Hensley <span>Heating & Air</span></div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<section class="hero">
+  <div>
+    <div class="hero-badge">❄️🔥 Memphis HVAC Experts Since 1977</div>
+    <h1>Memphis' Most <span>Trusted</span> Heating & Air</h1>
+    <p>47 years of keeping Memphis families comfortable. When the Memphis summer heat hits, you need an HVAC team that answers fast and fixes it right.</p>
+    <div class="btns">
+      <a href="#contact" class="btn">Schedule Service</a>
+      <a href="#services" class="btn btn-light">Our Services</a>
+    </div>
+  </div>
+</section>
+<div class="urgency">🌡️ Memphis summer is coming — <span>AC tune-ups booking fast</span> — call now to get your slot</div>
+<div class="about">
+  <div class="about-img">❄️</div>
+  <div>
+    <h2>47 Years Keeping Memphis <span>Comfortable</span></h2>
+    <p>Randy and the Hensley team have served Memphis families since 1977. We've seen every HVAC situation imaginable — and we've fixed every one of them.</p>
+    <p>With a 4.8-star Google rating and nearly five decades of service, we've earned the trust of thousands of Memphis homes and businesses. When your AC fails in August, we're the team Memphis calls.</p>
+    <div class="trust-badges">
+      <span class="badge-item">✅ Licensed & Insured</span>
+      <span class="badge-item">⭐ 4.8 Stars Google</span>
+      <span class="badge-item">🏅 47 Years Experience</span>
+      <span class="badge-item">🔧 All Brands Serviced</span>
+    </div>
+  </div>
+</div>
+<section class="services" id="services">
+  <h2>HVAC Services</h2>
+  <p class="sub">Complete heating and cooling solutions for Memphis homes and businesses</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-icon">❄️</div><h3>AC Repair</h3><p>Fast diagnosis and repair of all AC brands and models. Same-day service available in Memphis.</p></div>
+    <div class="svc-card"><div class="svc-icon">🔥</div><h3>Heating Repair</h3><p>Furnace and heat pump repair — don't spend a Memphis winter without heat.</p></div>
+    <div class="svc-card"><div class="svc-icon">🔄</div><h3>AC Tune-Up</h3><p>Annual maintenance to keep your system efficient and prevent expensive breakdowns.</p></div>
+    <div class="svc-card"><div class="svc-icon">🏠</div><h3>New Installations</h3><p>Energy-efficient HVAC system installations for new construction and replacements.</p></div>
+    <div class="svc-card"><div class="svc-icon">🌬️</div><h3>Air Quality</h3><p>Duct cleaning, air purifiers, UV systems — breathe better in your Memphis home.</p></div>
+    <div class="svc-card"><div class="svc-icon">🚨</div><h3>Emergency Service</h3><p>Memphis summers don't wait for business hours. Emergency HVAC response available.</p></div>
+  </div>
+</section>
+<section class="reviews-section">
+  <h2>What Memphis Says About Hensley</h2>
+  <p class="r-sub">4.8 stars across hundreds of Google reviews</p>
+  <div class="r-grid">
+    <div class="r-card"><div class="stars">★★★★★</div><p>"AC died on a 100-degree Memphis day. Hensley came out within hours and had it running. Incredible service — they are the real deal."</p><div class="reviewer">— James B., Memphis TN</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Randy and team have serviced our HVAC for 10 years. Honest, reliable, and fairly priced. In Memphis heat, these guys are worth their weight in gold."</p><div class="reviewer">— Karen M., Memphis TN</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Best HVAC company in Memphis, period. Diagnosed our system in 20 minutes and fixed what two other companies said needed full replacement."</p><div class="reviewer">— David R., Memphis TN</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Redesign</h2>
+  <p>We're showing Memphis service businesses how a fast, modern website wins more customers. Free preview — no commitment required.</p>
+  <a href="#contact" class="btn">Get My Free Preview</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Schedule Your Service</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Memphis, TN, USA</p>
+      <p><strong>📧 Email</strong><br>info@hensleyheat.com</p>
+      <p><strong>🌡️ Service Area</strong><br>Memphis Metro &amp; Greater Shelby County</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 7:30am–5:30pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Hensley Heating & Air Conditioning Co.">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Describe your heating or cooling issue..."></textarea>
+      <button type="submit">Request Service</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 Hensley Heating &amp; Air Conditioning Co. — Memphis, TN | Est. 1977 | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
