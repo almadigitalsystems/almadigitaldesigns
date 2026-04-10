@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quality Electric Inc | Columbus, OH</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#111}
+nav{padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #111;position:sticky;top:0;background:#fff;z-index:100}
+.logo{font-size:1.3rem;font-weight:800;letter-spacing:-1px}
+.logo span{color:#f5c518}
+nav a{color:#111;text-decoration:none;margin-left:2rem;font-size:.9rem;font-weight:600}
+.hero{padding:8rem 2.5rem 6rem;max-width:1100px;margin:0 auto}
+.hero-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#888;margin-bottom:1.5rem}
+.hero h1{font-size:clamp(3.5rem,8vw,7rem);font-weight:800;line-height:.95;letter-spacing:-3px;margin-bottom:2.5rem}
+.hero h1 em{color:#f5c518;font-style:normal;display:block}
+.hero-bottom{display:flex;align-items:center;gap:3rem;flex-wrap:wrap}
+.hero p{font-size:1.1rem;color:#555;line-height:1.7;max-width:500px}
+.hero .btn{background:#111;color:#fff;padding:1rem 2.5rem;font-weight:700;font-size:1rem;text-decoration:none;border-radius:2px;white-space:nowrap}
+.divider{height:1px;background:#111;max-width:1100px;margin:0 auto}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:1100px;margin:0 auto}
+.metric{padding:3rem 2.5rem;border-right:1px solid #111}
+.metric:last-child{border-right:none}
+.metric .num{font-size:3.5rem;font-weight:800;letter-spacing:-2px;color:#111}
+.metric .num span{color:#f5c518}
+.metric .lbl{font-size:.8rem;text-transform:uppercase;letter-spacing:2px;color:#888;margin-top:.5rem}
+.services{padding:6rem 2.5rem;max-width:1100px;margin:0 auto}
+.services h2{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-2px;margin-bottom:.5rem}
+.services p.sub{color:#888;margin-bottom:3rem;font-size:.95rem}
+.s-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;border-top:1px solid #111;border-left:1px solid #111}
+.s-item{padding:2.5rem;border-bottom:1px solid #111;border-right:1px solid #111;transition:.2s}
+.s-item:hover{background:#f5c518}
+.s-num{font-size:3rem;font-weight:800;color:#eee;line-height:1;margin-bottom:1rem}
+.s-item h3{font-weight:700;font-size:1.1rem;margin-bottom:.5rem}
+.s-item p{font-size:.85rem;color:#666;line-height:1.6}
+.s-item:hover .s-num{color:rgba(0,0,0,.1)}
+.s-item:hover p{color:#333}
+.about{background:#111;color:#fff;padding:6rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;max-width:1100px;margin:0 auto}
+.about h2{font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:1.5rem}
+.about h2 span{color:#f5c518}
+.about p{color:#aaa;line-height:1.8;margin-bottom:1rem;font-size:.95rem}
+.about-right{display:flex;flex-direction:column;justify-content:center;gap:1.5rem}
+.a-point{border-left:3px solid #f5c518;padding-left:1.5rem}
+.a-point h3{font-weight:700;margin-bottom:.25rem;font-size:1rem}
+.a-point p{font-size:.875rem;color:#888;line-height:1.6}
+.testimonials{padding:6rem 2.5rem;max-width:1100px;margin:0 auto;border-top:1px solid #111}
+.testimonials h2{font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:3rem}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.t-card{border:1px solid #111;padding:2rem}
+.stars{color:#f5c518;font-size:1rem;margin-bottom:.75rem}
+.t-card p{color:#555;font-size:.9rem;line-height:1.7;margin-bottom:.75rem;font-style:italic}
+.reviewer{font-size:.8rem;font-weight:700;color:#111}
+.cta{background:#f5c518;padding:6rem 2.5rem;text-align:center}
+.cta h2{font-size:clamp(2.5rem,6vw,5rem);font-weight:800;letter-spacing:-2px;color:#111;margin-bottom:1rem}
+.cta p{color:#333;max-width:580px;margin:0 auto 2.5rem;font-size:1.05rem}
+.cta .btn{background:#111;color:#fff;padding:1rem 3rem;font-weight:700;border-radius:2px;text-decoration:none;display:inline-block;font-size:1rem}
+.contact{padding:6rem 2.5rem;max-width:1100px;margin:0 auto}
+.contact h2{font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:3rem}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.cinfo p{margin-bottom:1.2rem;color:#555;font-size:.95rem;line-height:1.7}
+.cinfo strong{color:#111;font-weight:700}
+form input,form textarea{width:100%;background:#f8f8f8;border:1px solid #111;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit;border-radius:0}
+form textarea{height:120px;resize:vertical}
+form button{background:#111;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;font-size:1rem;cursor:pointer;width:100%}
+footer{border-top:1px solid #111;padding:2rem 2.5rem;text-align:center;color:#888;font-size:.85rem}
+@media(max-width:768px){.about,.c-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.metric{border-right:none;border-bottom:1px solid #111}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Quality<span>⚡</span>Electric</div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<div class="hero">
+  <div class="hero-label">Columbus, OH — Family-Owned Electrical Contractor</div>
+  <h1>Electrical<em>Done Right.</em></h1>
+  <div class="hero-bottom">
+    <p>Quality Electric brings family values and professional expertise to every job in Columbus. We wire homes and businesses with care, precision, and a commitment to your safety.</p>
+    <a href="#contact" class="btn">Get a Free Quote →</a>
+  </div>
+</div>
+<div class="divider"></div>
+<div class="metrics">
+  <div class="metric"><div class="num">4<span>.6★</span></div><div class="lbl">Google Rating</div></div>
+  <div class="metric"><div class="num">100<span>%</span></div><div class="lbl">Family Owned</div></div>
+  <div class="metric"><div class="num"><span>$</span>0</div><div class="lbl">Quote Cost</div></div>
+  <div class="metric"><div class="num">⚡</div><div class="lbl">Licensed & Insured</div></div>
+</div>
+<div class="divider"></div>
+<section class="services" id="services">
+  <h2>What We Offer</h2>
+  <p class="sub">Full-service electrical for Columbus homes and businesses</p>
+  <div class="s-list">
+    <div class="s-item"><div class="s-num">01</div><h3>Residential Wiring</h3><p>New construction, additions, rewiring — safe and to code for your Columbus home.</p></div>
+    <div class="s-item"><div class="s-num">02</div><h3>Panel Upgrades</h3><p>200A service upgrades, breaker replacements, and outdated fuse box conversions.</p></div>
+    <div class="s-item"><div class="s-num">03</div><h3>Commercial Electric</h3><p>Office fit-outs, tenant improvements, and ongoing commercial maintenance.</p></div>
+    <div class="s-item"><div class="s-num">04</div><h3>Lighting & Controls</h3><p>LED retrofits, dimmer installs, outdoor lighting, and smart home controls.</p></div>
+    <div class="s-item"><div class="s-num">05</div><h3>Safety Inspections</h3><p>GFCI installs, surge protection, and electrical code compliance inspections.</p></div>
+    <div class="s-item"><div class="s-num">06</div><h3>Generator Install</h3><p>Standby and portable generator hookups for Columbus homes and businesses.</p></div>
+  </div>
+</section>
+<div class="about">
+  <div>
+    <h2>Family-Owned. <span>Columbus-Proud.</span></h2>
+    <p>Quality Electric was built on the belief that every Columbus homeowner deserves honest, skilled electrical work at a fair price. We're not a franchise — we're your neighbors.</p>
+    <p>Mark and the Quality Electric team treat every job like it's in their own home. That's the family-owned difference you'll notice from the first call to the final inspection.</p>
+  </div>
+  <div class="about-right">
+    <div class="a-point"><h3>Honest Pricing</h3><p>No surprise charges. Clear quotes before any work begins.</p></div>
+    <div class="a-point"><h3>Licensed Electricians</h3><p>All work performed by licensed, insured electricians — never subcontracted.</p></div>
+    <div class="a-point"><h3>Columbus-Based</h3><p>We live here, work here, and care about Columbus. Fast local response times.</p></div>
+    <div class="a-point"><h3>4.6 Star Reputation</h3><p>Hundreds of happy Columbus customers who've trusted us with their homes.</p></div>
+  </div>
+</div>
+<section class="testimonials">
+  <h2>Columbus Reviews</h2>
+  <div class="t-grid">
+    <div class="t-card"><div class="stars">★★★★★</div><p>"Mark came out the same day for an emergency panel issue. Fixed it quickly, explained everything clearly, and charged a very fair price. Quality lives up to its name."</p><div class="reviewer">— Jennifer P., Columbus OH</div></div>
+    <div class="t-card"><div class="stars">★★★★★</div><p>"Family-owned and it shows. They care about doing the job right, not just getting out the door. Best electricians I've hired in Columbus."</p><div class="reviewer">— Steve W., Columbus OH</div></div>
+    <div class="t-card"><div class="stars">★★★★☆</div><p>"Professional, on-time, and reasonably priced. Did our entire basement wiring and left the place cleaner than they found it."</p><div class="reviewer">— Rachel T., Westerville OH</div></div>
+  </div>
+</section>
+<div class="cta">
+  <h2>Claim Your Free Redesign</h2>
+  <p>We're building a modern website preview for Columbus service businesses — completely free. See what a faster, better-converting site looks like for your business.</p>
+  <a href="#contact" class="btn">Get My Free Redesign →</a>
+</div>
+<section class="contact" id="contact">
+  <h2>Get in Touch</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Columbus, OH, USA</p>
+      <p><strong>📧 Email</strong><br>mark@qualityohio.com</p>
+      <p><strong>⚡ Service Area</strong><br>Columbus Metro &amp; Surrounding Areas</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Sat 7:30am–5:30pm</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Quality Electric Inc">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Describe your electrical project..."></textarea>
+      <button type="submit">Send Message →</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 Quality Electric Inc — Columbus, OH | Family-Owned &amp; Operated | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
