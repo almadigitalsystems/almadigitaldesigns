@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Everest Drain & Plumbing | Toronto, ON</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a2744}
+nav{background:#1a2744;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.5rem;color:#fff}
+.logo span{color:#00cfdd}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.hero{background:linear-gradient(160deg,#1a2744 0%,#1e3a6e 60%,#1a5276 100%);min-height:85vh;display:flex;align-items:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'🔧';position:absolute;font-size:25rem;opacity:.04;right:-3rem;bottom:-5rem}
+.hero-inner{max-width:700px}
+.hero-tag{background:#00cfdd;color:#1a2744;font-size:.75rem;font-weight:700;padding:.4rem 1.2rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5.5rem);color:#fff;line-height:1.05;margin-bottom:1.5rem}
+.hero h1 span{color:#00cfdd}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:2.5rem;max-width:580px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{background:#00cfdd;color:#1a2744;padding:1rem 2.5rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff}
+.emergency-bar{background:#00cfdd;color:#1a2744;padding:1rem 2rem;text-align:center;font-weight:700;font-size:.95rem}
+.emergency-bar a{color:#1a2744;font-weight:800;text-decoration:none}
+.trust{background:#f7fbff;padding:3rem 2rem}
+.trust-inner{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.trust-item{text-align:center;padding:1.5rem 2rem}
+.t-icon{font-size:2.5rem;margin-bottom:.75rem}
+.t-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:2rem;color:#1a2744}
+.t-lbl{font-size:.8rem;color:#888;text-transform:uppercase;letter-spacing:1px}
+.services{padding:5rem 2rem;text-align:center}
+.services h2{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.8rem;margin-bottom:.5rem;color:#1a2744}
+.s-sub{color:#888;margin-bottom:3rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.s-card{background:#f7fbff;border:1px solid #dde8f5;border-radius:10px;padding:2rem;text-align:left;transition:.2s;border-top:4px solid #00cfdd}
+.s-card:hover{box-shadow:0 8px 24px rgba(0,100,150,.1);transform:translateY(-3px);background:#fff}
+.s-icon{font-size:2.5rem;margin-bottom:1rem}
+.s-card h3{font-weight:700;color:#1a2744;margin-bottom:.5rem}
+.s-card p{font-size:.85rem;color:#667;line-height:1.6}
+.story{background:#1a2744;padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:center}
+.story h2{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.5rem;color:#fff;margin-bottom:1.5rem}
+.story h2 span{color:#00cfdd}
+.story p{color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:1rem;font-size:.95rem}
+.story-icon{background:rgba(0,207,221,.15);border-radius:12px;height:300px;display:flex;align-items:center;justify-content:center;font-size:8rem;color:#00cfdd;border:1px solid rgba(0,207,221,.3)}
+.reviews{background:#f7fbff;padding:5rem 2rem;text-align:center}
+.reviews h2{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.5rem;margin-bottom:.5rem;color:#1a2744}
+.r-sub{color:#888;margin-bottom:3rem}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.r-card{background:#fff;border:1px solid #dde8f5;border-radius:10px;padding:2rem;text-align:left;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stars{color:#00cfdd;margin-bottom:.75rem;font-size:1.1rem}
+.r-card p{color:#555;font-style:italic;font-size:.9rem;line-height:1.7;margin-bottom:.75rem}
+.reviewer{font-size:.8rem;color:#1a2744;font-weight:700}
+.cta{background:linear-gradient(135deg,#00cfdd,#00a8b5);padding:5rem 2rem;text-align:center}
+.cta h2{font-family:'Poppins',sans-serif;font-weight:900;font-size:3rem;color:#fff;margin-bottom:1rem}
+.cta p{color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2rem;font-size:1.05rem}
+.cta .btn{background:#1a2744;color:#fff}
+.contact{background:#fff;padding:5rem 2rem}
+.contact h2{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.5rem;text-align:center;margin-bottom:3rem;color:#1a2744}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+.cinfo p{margin-bottom:1rem;color:#555;line-height:1.7;font-size:.95rem}
+.cinfo strong{color:#1a2744}
+form input,form textarea{width:100%;background:#f7fbff;border:1px solid #dde8f5;border-radius:6px;padding:.85rem;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+form textarea{height:120px;resize:vertical}
+form button{background:#1a2744;color:#fff;border:none;padding:1rem 2.5rem;font-weight:700;border-radius:6px;cursor:pointer;font-size:1rem;width:100%}
+footer{background:#1a2744;color:rgba(255,255,255,.4);padding:2rem;text-align:center;font-size:.85rem}
+footer strong{color:#00cfdd}
+@media(max-width:768px){.story,.c-grid{grid-template-columns:1fr}.story-icon{height:150px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Everest <span>Drain & Plumbing</span></div>
+  <div><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">💧 Toronto's Trusted Plumbers Since 2013</div>
+    <h1>Toronto's <span>4.8-Star</span> Plumbing Experts</h1>
+    <p>Blocked drains, burst pipes, or full plumbing renovations — Everest Drain & Plumbing delivers fast, professional service across Toronto. 13 years building trust, one job at a time.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn">Book Now</a>
+      <a href="#services" class="btn btn-ghost">Our Services</a>
+    </div>
+  </div>
+</section>
+<div class="emergency-bar">🚨 Plumbing emergency? We're available for urgent Toronto calls — <a href="#contact">get help now</a></div>
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="t-icon">⭐</div><div class="t-num">4.8</div><div class="t-lbl">Google Stars</div></div>
+    <div class="trust-item"><div class="t-icon">📅</div><div class="t-num">13</div><div class="t-lbl">Years in Toronto</div></div>
+    <div class="trust-item"><div class="t-icon">✅</div><div class="t-num">100%</div><div class="t-lbl">Licensed & Insured</div></div>
+    <div class="trust-item"><div class="t-icon">⚡</div><div class="t-num">Fast</div><div class="t-lbl">Emergency Response</div></div>
+  </div>
+</div>
+<section class="services" id="services">
+  <h2>Plumbing Services</h2>
+  <p class="s-sub">Complete drain and plumbing solutions across Toronto</p>
+  <div class="s-grid">
+    <div class="s-card"><div class="s-icon">🚿</div><h3>Drain Cleaning</h3><p>Blocked drains cleared fast — kitchen, bathroom, laundry, and main line.</p></div>
+    <div class="s-card"><div class="s-icon">💧</div><h3>Leak Repair</h3><p>Burst pipes, slow leaks, and water damage prevention throughout Toronto.</p></div>
+    <div class="s-card"><div class="s-icon">🔧</div><h3>Fixture Installation</h3><p>Faucets, sinks, toilets, showers — installed right the first time.</p></div>
+    <div class="s-card"><div class="s-icon">🏠</div><h3>Bathroom Plumbing</h3><p>Full bathroom rough-in, renovations, and fixture replacements.</p></div>
+    <div class="s-card"><div class="s-icon">🌡️</div><h3>Water Heater</h3><p>Hot water tank installation, repair, and tankless system upgrades.</p></div>
+    <div class="s-card"><div class="s-icon">🚨</div><h3>Emergency Plumbing</h3><p>Toronto plumbing emergencies handled fast — no problem too urgent.</p></div>
+  </div>
+</section>
+<div class="story" style="padding:5rem 2rem">
+  <div>
+    <h2>13 Years Building <span>Toronto's Trust</span></h2>
+    <p>Khem founded Everest Drain & Plumbing in 2013 with a simple promise: show up on time, do the job right, and charge a fair price. Over 13 years, that promise has earned Everest a 4.8-star reputation across thousands of Toronto homes.</p>
+    <p>Whether it's a midnight emergency or a planned bathroom renovation, the Everest team brings the same professionalism and craftsmanship that's made us one of Toronto's most-reviewed plumbing companies.</p>
+  </div>
+  <div class="story-icon">💧</div>
+</div>
+<section class="reviews">
+  <h2>What Toronto Says</h2>
+  <p class="r-sub">4.8 stars — Toronto's most trusted drain and plumbing team</p>
+  <div class="r-grid">
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Everest came out at 11pm for a burst pipe emergency. Professional, fast, and fairly priced. Saved my basement. They are the best plumbers in Toronto."</p><div class="reviewer">— Michael T., Toronto ON</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Used Everest three times now for different issues. Always on time, always professional, always honest about what needs to be done. Couldn't ask for better."</p><div class="reviewer">— Priya S., North York</div></div>
+    <div class="r-card"><div class="stars">★★★★★</div><p>"Best plumbers in Toronto, full stop. They unblocked a drain that two other companies couldn't fix. 4.8 stars is completely deserved."</p><div class="reviewer">— Ryan C., Scarborough</div></div>
+  </div>
+</section>
+<section class="cta">
+  <h2>Claim Your Free Website Redesign</h2>
+  <p>We're showing Toronto service businesses what a fast, modern website looks like — for free. No commitment. Just a preview of what your site could be.</p>
+  <a href="#contact" class="btn">Get My Free Preview</a>
+</section>
+<section class="contact" id="contact">
+  <h2>Book Everest Plumbing</h2>
+  <div class="c-grid">
+    <div class="cinfo">
+      <p><strong>📍 Location</strong><br>Toronto, ON, Canada</p>
+      <p><strong>📧 Email</strong><br>info@everestplumbing.ca</p>
+      <p><strong>💧 Service Area</strong><br>Toronto, North York, Scarborough, Etobicoke</p>
+      <p><strong>🕐 Hours</strong><br>Mon–Fri 8am–6pm | Emergency Available</p>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Everest Drain & Plumbing">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Describe your plumbing issue..."></textarea>
+      <button type="submit">Book Service</button>
+    </form>
+  </div>
+</section>
+<footer>© 2026 Everest Drain &amp; Plumbing — Toronto, ON, Canada | Est. 2013 | Preview by <strong>Alma Digital Designs</strong></footer>
+</body></html>
