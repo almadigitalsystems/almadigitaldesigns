@@ -1,182 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapman Plumbing Cairns | Cairns, QLD - Free Website Preview</title>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--oc:#006064;--tl:#00838f;--lt:#00acc1;--ww:#f0f9ff;--sl:#4a5568;--wh:#ffffff}
-    body{font-family:Georgia,'Times New Roman',serif;color:#2d2d2d;background:#fff}
-    .banner{background:var(--oc);color:#fff;text-align:center;padding:12px 20px;font-family:Arial,sans-serif;font-size:14px;font-weight:600;position:sticky;top:0;z-index:1000}
-    .banner a{color:#b2dfdb;text-decoration:underline}
-    nav{background:#fff;padding:0 50px;display:flex;align-items:center;justify-content:space-between;height:70px;position:sticky;top:48px;z-index:999;box-shadow:0 1px 12px rgba(0,0,0,.08)}
-    .logo{font-size:20px;font-weight:bold;color:var(--oc)}.logo span{color:var(--tl)}
-    .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
-    .nav-links a{color:var(--sl);text-decoration:none;font-family:Arial,sans-serif;font-size:14px}
-    .nav-links a:hover{color:var(--oc)}
-    .ncta{background:var(--oc);color:#fff!important;padding:10px 22px;border-radius:50px;font-family:Arial,sans-serif;font-weight:bold!important}
-    .hero{background:var(--ww);padding:80px 50px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-    .eyebrow{font-family:Arial,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--tl);margin-bottom:16px;font-weight:700}
-    .hero h1{font-size:50px;color:var(--oc);line-height:1.15;margin-bottom:20px}
-    .hero h1 em{color:var(--tl);font-style:normal}
-    .hero p{font-size:18px;color:var(--sl);line-height:1.75;margin-bottom:36px;font-family:Arial,sans-serif}
-    .btns{display:flex;gap:14px;flex-wrap:wrap}
-    .bp{background:var(--oc);color:#fff;padding:14px 32px;border-radius:50px;font-size:16px;font-family:Arial,sans-serif;text-decoration:none;display:inline-block}
-    .bs{background:transparent;color:var(--oc);padding:13px 30px;border:2px solid var(--oc);border-radius:50px;font-size:16px;font-family:Arial,sans-serif;text-decoration:none;display:inline-block}
-    .hero-visual{background:linear-gradient(135deg,var(--oc),var(--tl));border-radius:16px;padding:44px;text-align:center}
-    .hv-item{margin-bottom:32px}
-    .hv-num{font-size:56px;color:#fff;font-weight:bold}
-    .hv-desc{font-size:15px;color:#b2dfdb;font-family:Arial,sans-serif}
-    .pain{background:#fff;padding:80px 50px}
-    .slabel{font-family:Arial,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--tl);margin-bottom:10px;font-weight:700}
-    .stitle{font-size:36px;color:var(--oc);margin-bottom:14px}
-    .ssub{font-size:17px;color:var(--sl);font-family:Arial,sans-serif;max-width:620px;line-height:1.6;margin-bottom:50px}
-    .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px}
-    .pc{background:var(--ww);border-radius:8px;padding:30px 28px;border-left:5px solid var(--tl)}
-    .pc h3{font-size:19px;color:var(--oc);margin-bottom:10px}
-    .pc p{font-size:15px;color:var(--sl);font-family:Arial,sans-serif;line-height:1.65}
-    .story{background:var(--ww);padding:80px 50px}
-    .story-inner{max-width:760px;margin:0 auto}
-    .story-inner .slabel{margin-bottom:14px}
-    .story-inner h2{font-size:38px;color:var(--oc);margin-bottom:30px;line-height:1.2}
-    .story-inner p{font-size:18px;color:var(--sl);font-family:Arial,sans-serif;line-height:1.85;margin-bottom:20px}
-    .story-inner .sig{font-size:24px;color:var(--oc);font-style:italic;margin-top:32px}
-    .svc{padding:80px 50px;background:#fff}
-    .svc-list{display:flex;flex-direction:column;gap:0;margin-top:50px;max-width:780px}
-    .sv-item{display:flex;align-items:flex-start;gap:24px;padding:28px 0;border-bottom:1px solid #e2e8f0}
-    .sv-item:last-child{border-bottom:none}
-    .sv-icon{font-size:40px;flex-shrink:0;width:60px;text-align:center;margin-top:4px}
-    .sv-text h3{font-size:20px;color:var(--oc);margin-bottom:8px}
-    .sv-text p{font-size:15px;color:var(--sl);font-family:Arial,sans-serif;line-height:1.65}
-    .rev{background:var(--ww);padding:80px 50px}
-    .rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:50px}
-    .rc{background:#fff;border-radius:8px;padding:32px 28px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-    .stars{color:#f4a523;font-size:20px;margin-bottom:14px}
-    .rt{font-size:15px;color:var(--sl);font-family:Arial,sans-serif;line-height:1.7;margin-bottom:20px;font-style:italic}
-    .rn{font-weight:bold;color:var(--oc);font-size:14px;font-family:Arial,sans-serif}
-    .rs{font-size:13px;color:#718096;font-family:Arial,sans-serif}
-    .cta{background:linear-gradient(135deg,var(--oc),var(--tl));padding:80px 50px;text-align:center}
-    .cta h2{font-size:42px;color:#fff;margin-bottom:16px}
-    .cta p{font-size:18px;color:#b2dfdb;font-family:Arial,sans-serif;margin-bottom:36px}
-    .bw{background:#fff;color:var(--oc);padding:16px 44px;border-radius:50px;font-size:18px;font-weight:bold;text-decoration:none;font-family:Arial,sans-serif;display:inline-block}
-    .cont{padding:80px 50px;background:#fff}
-    .ci{max-width:600px;margin:0 auto}
-    .ci h2{font-size:34px;color:var(--oc);margin-bottom:10px}
-    .ci p{font-size:16px;color:var(--sl);font-family:Arial,sans-serif;margin-bottom:36px}
-    .fg{margin-bottom:20px}
-    .fg label{display:block;font-size:14px;font-family:Arial,sans-serif;color:var(--sl);margin-bottom:6px;font-weight:bold}
-    .fg input,.fg textarea,.fg select{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:6px;font-size:15px;font-family:Arial,sans-serif;color:#2d2d2d;outline:none}
-    .fg input:focus,.fg textarea:focus{border-color:var(--tl)}
-    .fg textarea{resize:vertical;min-height:120px}
-    .fsub{background:var(--oc);color:#fff;padding:14px 36px;border:none;border-radius:50px;font-size:16px;cursor:pointer;font-family:Arial,sans-serif}
-    footer{background:var(--oc);color:#80cbc4;text-align:center;padding:30px 20px;font-family:Arial,sans-serif;font-size:14px}
-    footer a{color:#b2dfdb}
-    @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.hero{grid-template-columns:1fr;padding:60px 24px}.hero h1{font-size:34px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapman Plumbing Cairns | Licensed Plumber | Hot Water, Drains &amp; Emergencies</title>
+<meta name="description" content="Chapman Plumbing Cairns offers hot water repairs, blocked drain clearing, emergency plumbing, and bathroom renovations across Cairns. Licensed local plumbers, same-day call-outs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#00897b;--dark-teal:#00695c;--sky:#0288d1;--warm:#f57f17;--cream:#fffde7;--dark:#1a2332;--light:#e0f7fa;--white:#fff}
+body{font-family:'Inter',sans-serif;background:var(--white);color:#1a2332}
+nav{background:var(--dark);padding:0 2rem;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{color:#fff;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700}
+.logo .highlight{color:#4db6ac}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+nav ul a:hover{color:#fff}
+.nav-cta{background:var(--teal);color:#fff!important;padding:.4rem 1.2rem;border-radius:4px;font-weight:700}
+/* STORY HERO — large photo-style with personal feel */
+.hero{background:linear-gradient(160deg,var(--dark) 0%,#0d3d36 40%,#0a4a5a 100%);padding:80px 2rem 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(ellipse at right,rgba(0,137,123,.2) 0%,transparent 70%)}
+.hero::after{content:'&#127797;';position:absolute;bottom:-20px;right:5%;font-size:8rem;opacity:.05;line-height:1}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.local-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,137,123,.2);border:1px solid rgba(0,137,123,.4);color:#4db6ac;padding:.35rem .9rem;border-radius:20px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1.8rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.4rem);color:#fff;line-height:1.15;margin-bottom:1.2rem}
+.hero h1 em{color:#4db6ac;font-style:normal}
+.hero p.lead{font-size:1.1rem;color:rgba(255,255,255,.8);max-width:620px;line-height:1.75;margin-bottom:1rem}
+.tropical-note{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,127,23,.12);border:1px solid rgba(245,127,23,.25);color:#ffcc02;padding:.4rem .9rem;border-radius:6px;font-size:.85rem;font-weight:600;margin-bottom:2rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-teal{background:var(--teal);color:#fff;padding:.9rem 2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-teal:hover{background:var(--dark-teal);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);padding:.9rem 1.8rem;border-radius:6px;text-decoration:none;font-size:.95rem;font-weight:600;transition:all .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.6);color:#fff}
+.hero-facts{display:flex;gap:2rem;flex-wrap:wrap}
+.hero-fact{display:flex;align-items:center;gap:.6rem;color:rgba(255,255,255,.7);font-size:.875rem}
+.hero-fact .icon{color:#4db6ac;font-weight:700;font-size:1rem}
+/* PROOF STRIP */
+.proof-strip{background:var(--teal);padding:1rem 2rem}
+.proof-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.proof-item{color:#fff;font-weight:600;font-size:.875rem;display:flex;align-items:center;gap:.4rem}
+/* SERVICES — vertical list style with icons */
+.services{background:var(--light);padding:90px 2rem}
+.services-inner{max-width:1000px;margin:0 auto}
+.section-header{margin-bottom:3.5rem;text-align:center}
+.section-tag{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal);margin-bottom:.75rem}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--dark)}
+.svc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.svc-item{background:#fff;border-radius:12px;padding:2rem;display:flex;gap:1.2rem;align-items:flex-start;box-shadow:0 2px 12px rgba(0,137,123,.07);border-left:4px solid var(--teal);transition:transform .2s,box-shadow .2s}
+.svc-item:hover{transform:translateX(4px);box-shadow:0 6px 20px rgba(0,137,123,.12)}
+.svc-icon{font-size:2rem;flex-shrink:0;line-height:1}
+.svc-text h3{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.4rem}
+.svc-text p{font-size:.875rem;color:#666;line-height:1.6}
+/* ABOUT STORY */
+.about{background:#fff;padding:90px 2rem}
+.about-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.story-box{background:linear-gradient(135deg,var(--dark),#0d3d36);border-radius:16px;padding:2.5rem;color:#fff;position:relative;overflow:hidden}
+.story-box::before{content:'&#127797;';position:absolute;bottom:-10px;right:10px;font-size:5rem;opacity:.08;line-height:1}
+.story-box .cairns-tag{display:inline-block;background:rgba(77,182,172,.15);border:1px solid rgba(77,182,172,.3);color:#4db6ac;padding:.25rem .7rem;border-radius:12px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1.2rem}
+.story-box h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:.75rem}
+.story-box p{color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem}
+.story-box .wet-season{background:rgba(245,127,23,.1);border:1px solid rgba(245,127,23,.25);border-radius:8px;padding:1rem}
+.story-box .wet-season p{color:rgba(255,255,255,.8);font-size:.85rem;margin:0;line-height:1.5}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--dark);margin-bottom:1.2rem}
+.about-text p{font-size:1rem;color:#555;line-height:1.8;margin-bottom:1.2rem}
+.about-text .why-local{background:var(--light);border-radius:8px;padding:1.2rem;margin-bottom:1.5rem}
+.about-text .why-local h4{font-size:.85rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.5rem}
+.about-text .why-local p{font-size:.875rem;color:#555;margin:0;line-height:1.5}
+/* PAIN */
+.pain{background:var(--dark);padding:80px 2rem}
+.pain-inner{max-width:900px;margin:0 auto;text-align:center}
+.pain h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;margin-bottom:3rem}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.pain-card{background:rgba(255,255,255,.05);border:1px solid rgba(77,182,172,.2);border-radius:10px;padding:1.5rem;text-align:left;border-top:3px solid var(--teal)}
+.pain-card h3{font-size:.95rem;font-weight:700;color:#4db6ac;margin-bottom:.5rem}
+.pain-card p{font-size:.875rem;color:rgba(255,255,255,.65);line-height:1.6}
+/* REVIEWS */
+.testimonials{background:var(--light);padding:80px 2rem}
+.test-inner{max-width:1100px;margin:0 auto;text-align:center}
+.test-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--dark);margin-bottom:3rem}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.test-card{background:#fff;border-radius:10px;padding:1.5rem;text-align:left;box-shadow:0 2px 12px rgba(0,137,123,.08)}
+.stars{color:#f1c40f;font-size:1rem;margin-bottom:.75rem}
+.test-card blockquote{color:#555;font-size:.9rem;line-height:1.7;font-style:italic;margin-bottom:1rem}
+.test-author{color:#888;font-size:.85rem;font-weight:600}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--teal),var(--sky));padding:90px 2rem;text-align:center}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.75rem}
+.cta-section p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:2rem}
+.btn-white-solid{background:#fff;color:var(--teal);padding:1rem 2.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-block;transition:all .2s}
+.btn-white-solid:hover{background:var(--cream);transform:translateY(-2px)}
+/* CONTACT */
+.contact{background:#fff;padding:70px 2rem}
+.contact-inner{max-width:800px;margin:0 auto;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--dark);margin-bottom:.5rem}
+.contact .sub{color:#888;margin-bottom:2rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:2.5rem}
+.contact-item{background:var(--light);padding:1.5rem;border-radius:10px;border-bottom:3px solid var(--teal)}
+.contact-item .icon{font-size:1.8rem;margin-bottom:.5rem}
+.contact-item h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;color:var(--teal);font-weight:700;margin-bottom:.25rem}
+.contact-item p{color:#555;font-size:.9rem;line-height:1.5}
+.form-wrap{background:var(--light);border-radius:12px;padding:2rem;max-width:500px;margin:0 auto;border:1px solid rgba(0,137,123,.1)}
+.form-wrap h3{font-family:'Playfair Display',serif;color:var(--dark);margin-bottom:1.2rem;font-size:1.3rem;text-align:center}
+.form-group{margin-bottom:1rem}
+.form-group input,.form-group textarea{width:100%;padding:.75rem 1rem;background:#fff;border:1.5px solid #ddd;border-radius:5px;font-family:'Inter',sans-serif;font-size:.95rem;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--teal)}
+.form-group textarea{height:100px;resize:vertical}
+.form-submit{background:var(--teal);color:#fff;border:none;padding:.85rem 2rem;border-radius:5px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;transition:background .2s}
+.form-submit:hover{background:var(--dark-teal)}
+footer{background:var(--dark);color:#666;text-align:center;padding:1.5rem;font-size:.85rem}
+footer a{color:#4db6ac;text-decoration:none}
+@media(max-width:768px){.about-inner{grid-template-columns:1fr}.nav-cta{display:none}nav ul{gap:1rem}}
+</style>
 </head>
 <body>
-<div class="banner">
-  FREE WEBSITE PREVIEW &mdash; Custom redesign built for Chapman Plumbing Cairns &mdash;
-  <a href="mailto:desk@almawebcreative.com?subject=Chapman Plumbing Cairns - Claim Free Redesign">Claim Your Free Site &rarr;</a>
-</div>
+
 <nav>
-  <div class="logo">Chapman <span>Plumbing Cairns</span></div>
-  <ul class="nav-links">
+  <div class="logo">Chapman <span class="highlight">Plumbing Cairns</span></div>
+  <ul>
     <li><a href="#services">Services</a></li>
-    <li><a href="#story">Mark's Story</a></li>
-    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="mailto:desk@almawebcreative.com?subject=Chapman Plumbing Cairns - Claim Free Redesign" class="ncta">Get Your Free Site</a></li>
+    <li><a href="#contact" class="nav-cta">Same-Day Service</a></li>
   </ul>
 </nav>
+
 <section class="hero">
-  <div class="hero-left">
-    <p class="eyebrow">Cairns' Trusted Local Plumber</p>
-    <h1>Honest Plumbing<br>Done Right,<br><em>First Time</em></h1>
-    <p>Chapman Plumbing Cairns has been keeping Cairns homes and businesses running smoothly for years. Owner Mark Chapman brings old-fashioned reliability and up-to-date techniques to every job across Far North Queensland.</p>
-    <div class="btns">
-      <a href="#contact" class="bp">Get a Free Quote</a>
-      <a href="#story" class="bs">Mark's Story</a>
+  <div class="hero-inner">
+    <div class="local-badge">&#127797; Locally Owned &middot; Cairns &amp; Surrounds</div>
+    <h1>Chapman Plumbing Cairns &mdash; Cairns&rsquo; Trusted Local Plumber.<br><em>Licensed, Reliable, Local.</em></h1>
+    <p class="lead">Hot water systems, blocked drains, and emergency repairs across Cairns and surrounds. On call when the Far North&rsquo;s weather decides to test your pipes.</p>
+    <div class="tropical-note">&#127783; Wet season specialists &mdash; we know what Far North pipes go through</div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-teal">&#128222; Call Chapman Plumbing &mdash; Same-Day Service Available</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
     </div>
-  </div>
-  <div class="hero-visual">
-    <div class="hv-item"><div class="hv-num">10+</div><div class="hv-desc">Years Serving Cairns</div></div>
-    <div class="hv-item"><div class="hv-num">600+</div><div class="hv-desc">Jobs Completed in FNQ</div></div>
-    <div class="hv-item"><div class="hv-num">5&#9733;</div><div class="hv-desc">Google Rating</div></div>
-  </div>
-</section>
-<section class="pain">
-  <div class="slabel">The Reality</div>
-  <h2 class="stitle">Cairns Homeowners Search for a Plumber Online</h2>
-  <p class="ssub">Every week, Cairns homeowners search "plumber Cairns" or "emergency plumber near me." Without a professional website, Chapman Plumbing Cairns is missing this consistent stream of local customers.</p>
-  <div class="pgrid">
-    <div class="pc">
-      <h3>No Professional Web Presence in Cairns</h3>
-      <p>Word of mouth is powerful, but Cairns is growing fast. New residents and tourists in rental properties need a plumber and search Google first. A clean, trusted website ensures Mark's name comes up when they do.</p>
-    </div>
-    <div class="pc">
-      <h3>Tropical Climate Plumbing Problems Go Unaddressed</h3>
-      <p>Cairns's tropical climate creates unique plumbing challenges, from corrosion to monsoon-related drain issues. A website that speaks directly to these local concerns builds instant trust with Cairns homeowners.</p>
+    <div class="hero-facts">
+      <div class="hero-fact"><span class="icon">&#10003;</span> Licensed &amp; Insured</div>
+      <div class="hero-fact"><span class="icon">&#10003;</span> Same-Day Call-Outs</div>
+      <div class="hero-fact"><span class="icon">&#10003;</span> Cairns-based Team</div>
+      <div class="hero-fact"><span class="icon">&#10003;</span> Fair, Honest Quotes</div>
     </div>
   </div>
 </section>
-<section class="story" id="story">
-  <div class="story-inner">
-    <div class="slabel">Mark's Story</div>
-    <h2>A Cairns Plumber Who Actually Cares</h2>
-    <p>Mark Chapman grew up in Far North Queensland and has been working as a licensed plumber in Cairns for over a decade. He started Chapman Plumbing Cairns because he was tired of seeing Cairns homeowners get ripped off by fly-in-fly-out contractors who didn't understand the local climate, the local pipes, or the local people.</p>
-    <p>Mark knows that plumbing in Cairns is different. The tropical heat, the monsoonal rain, and the salt air all take a toll on plumbing systems in ways that plumbers from down south don't always understand. Mark does. He has spent years learning the quirks of Cairns plumbing and applying that knowledge on every job.</p>
-    <p>Whether it's a dripping tap in Edge Hill, a blocked drain in Smithfield, or a full bathroom renovation in Trinity Beach, Mark shows up, does the job properly, and leaves the place cleaner than he found it. That's the Chapman Plumbing Cairns promise.</p>
-    <div class="sig">&#8212; Mark Chapman, Owner &amp; Licensed Plumber</div>
+
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-item">&#10003; Licensed Cairns Plumbers</div>
+    <div class="proof-item">&#10003; Same-Day Service</div>
+    <div class="proof-item">&#10003; Wet Season Emergency Experts</div>
+    <div class="proof-item">&#10003; &#9733;&#9733;&#9733;&#9733;&#9733; Local Reviews</div>
+    <div class="proof-item">&#10003; Upfront Fixed Quotes</div>
   </div>
-</section>
-<section class="svc" id="services">
-  <div class="slabel">What We Do</div>
-  <h2 class="stitle">Plumbing Services Across Cairns</h2>
-  <p class="ssub">Licensed and insured for all domestic and commercial plumbing across Cairns and Far North Queensland.</p>
-  <div class="svc-list">
-    <div class="sv-item"><div class="sv-icon">&#128295;</div><div class="sv-text"><h3>General Plumbing Repairs</h3><p>Dripping taps, leaking pipes, running toilets, and faulty fixtures. Mark fixes it right the first time, using quality parts that last in the Cairns climate.</p></div></div>
-    <div class="sv-item"><div class="sv-icon">&#128167;</div><div class="sv-text"><h3>Blocked Drain Clearing</h3><p>High-pressure jetting and CCTV drain inspection to clear and diagnose blockages fast. Essential during Cairns's wet season when drains get overwhelmed.</p></div></div>
-    <div class="sv-item"><div class="sv-icon">&#127794;</div><div class="sv-text"><h3>Bathroom &amp; Kitchen Renovations</h3><p>Full plumbing fit-out for bathroom and kitchen renovations. From rough-in to final connections, Mark coordinates with your trades to keep everything on schedule.</p></div></div>
-    <div class="sv-item"><div class="sv-icon">&#128293;</div><div class="sv-text"><h3>Hot Water System Installation</h3><p>Supply and installation of electric, gas, heat pump, and solar hot water systems. Brands suited to the FNQ climate and energy conditions.</p></div></div>
-    <div class="sv-item"><div class="sv-icon">&#127968;</div><div class="sv-text"><h3>New Construction Plumbing</h3><p>Rough-in and fit-off plumbing for new builds across Cairns. Mark works with builders and developers to deliver on time and to code.</p></div></div>
-    <div class="sv-item"><div class="sv-icon">&#128680;</div><div class="sv-text"><h3>Emergency Plumbing Callouts</h3><p>Burst pipes, overflowing drains, no hot water. Mark responds quickly to plumbing emergencies across Cairns and the northern beaches.</p></div></div>
-  </div>
-</section>
-<section class="rev" id="reviews">
-  <div class="slabel">Google Reviews</div>
-  <h2 class="stitle">What Cairns Customers Are Saying</h2>
-  <div class="rgrid">
-    <div class="rc"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"Mark sorted our blocked drain after we'd had two other plumbers try and fail. He used the camera to find the real problem and had it cleared within an hour. Great price and genuinely a good bloke. Highly recommend Chapman Plumbing."</p><div class="rn">Steve A.</div><div class="rs">Smithfield, Cairns</div></div>
-    <div class="rc"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"Called Mark on a Saturday with a burst pipe and he was at our place in 45 minutes. Fixed it cleanly and was really honest about the price. This is the kind of plumber you want living in Cairns. Will use every time."</p><div class="rn">Lisa T.</div><div class="rs">Edge Hill, Cairns</div></div>
-    <div class="rc"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rt">"Mark did the full plumbing fit-out for our bathroom renovation. He was co-ordinated, on time, and the quality of work was excellent. Everything passed inspection first go. Very happy with Chapman Plumbing Cairns."</p><div class="rn">Rachel &amp; Tom K.</div><div class="rs">Trinity Beach, Cairns</div></div>
-  </div>
-</section>
-<section class="cta">
-  <h2>Need a Plumber in Cairns?</h2>
-  <p>Get a free, no-obligation quote from Mark. Quick response, honest pricing, quality work.</p>
-  <a href="mailto:desk@almawebcreative.com?subject=Chapman Plumbing Cairns - Claim Free Redesign" class="bw">Claim Your Free Redesign</a>
-</section>
-<section class="cont" id="contact">
-  <div class="ci">
-    <h2>Get in Touch with Mark</h2>
-    <p>Fill in the form and Mark will call you back the same day.</p>
-    <form action="https://formspree.io/f/xojppajv" method="POST">
-      <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
-      <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="e.g. 07 4000 0000"></div>
-      <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required></div>
-      <div class="fg"><label>Service Needed</label>
-        <select name="service"><option value="">Select a service...</option><option>General Plumbing Repair</option><option>Blocked Drain</option><option>Bathroom / Kitchen Renovation</option><option>Hot Water System</option><option>New Construction</option><option>Emergency Callout</option></select>
+</div>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="section-tag">What We Do</div>
+      <h2>Plumbing Services for Cairns &amp; the Far North</h2>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item">
+        <div class="svc-icon">&#9928;</div>
+        <div class="svc-text">
+          <h3>Hot Water System Installation &amp; Repairs</h3>
+          <p>Solar, electric, or gas hot water systems &mdash; Chapman installs, services, and repairs them all quickly and correctly.</p>
+        </div>
       </div>
-      <div class="fg"><label>Tell Mark About the Job</label><textarea name="message" placeholder="Describe what you need..."></textarea></div>
-      <input type="hidden" name="_subject" value="New Lead - Chapman Plumbing Cairns">
-      <button type="submit" class="fsub">Send My Request</button>
-    </form>
+      <div class="svc-item">
+        <div class="svc-icon">&#128704;</div>
+        <div class="svc-text">
+          <h3>Blocked Drain Clearing</h3>
+          <p>Blocked drains are miserable &mdash; and in Cairns&rsquo; wet season, they can get serious fast. We clear them thoroughly, not just temporarily.</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-icon">&#128680;</div>
+        <div class="svc-text">
+          <h3>Emergency Plumbing Call-Outs</h3>
+          <p>Burst pipes, serious leaks, storm damage &mdash; Chapman responds fast because Far North emergencies don&rsquo;t wait.</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-icon">&#127968;</div>
+        <div class="svc-text">
+          <h3>Bathroom Renovations &amp; Fitting</h3>
+          <p>Full bathroom renovations and new installations, built to handle tropical Queensland&rsquo;s demanding climate.</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-icon">&#128269;</div>
+        <div class="svc-text">
+          <h3>Leak Detection &amp; Pipe Repairs</h3>
+          <p>Accurate leak detection and pipe repairs done right &mdash; no temporary patch jobs, proper fixes built to last.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="story-box">
+      <div class="cairns-tag">&#127797; Cairns Region</div>
+      <h3>Plumbing Built for the Far North</h3>
+      <p>Chapman Plumbing Cairns is a locally owned and operated plumbing business serving the Cairns region and surrounds. From urgent repairs after wet season damage to planned bathroom renovations, the Chapman team delivers quality work with a no-nonsense approach.</p>
+      <div class="wet-season">
+        <p>&#127783; <strong>Wet season specialists:</strong> Fair North Queensland&rsquo;s weather puts pipes, drains, and hot water systems under real pressure. We know what to look for &mdash; and how to fix it properly.</p>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-tag">About Chapman Plumbing</div>
+      <h2>Local to Cairns. Trusted Across the Region.</h2>
+      <div class="why-local">
+        <h4>Why Choose a Local Plumber?</h4>
+        <p>Cairns plumbing has unique demands &mdash; tropical weather, high humidity, wet season flooding. Chapman knows the region and builds solutions that hold up under Far North Queensland conditions.</p>
+      </div>
+      <p>Fair quotes, reliable scheduling, and plumbing built to handle the demands of tropical Far North Queensland &mdash; that&rsquo;s the Chapman approach.</p>
+      <a href="#contact" class="btn-teal">Call Chapman Plumbing Today</a>
+    </div>
+  </div>
+</section>
+
+<section class="pain">
+  <div class="pain-inner">
+    <div class="section-tag" style="color:#4db6ac">Why Cairns Customers Choose Chapman</div>
+    <h2>Fed Up With Plumbers Who Don&rsquo;t Know Cairns?</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <h3>Generic fixes that don&rsquo;t last in tropical conditions</h3>
+        <p>Chapman knows the Far North&rsquo;s demands &mdash; humidity, wet season flooding, solar hot water in the tropics. Our solutions are built for Cairns, not copied from down south.</p>
+      </div>
+      <div class="pain-card">
+        <h3>Waiting weeks for someone to show up</h3>
+        <p>Same-day service across Cairns &mdash; no waiting weeks for a tradesperson who doesn&rsquo;t know the area. Chapman is local, available, and fast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="test-inner">
+    <div class="section-tag">Reviews</div>
+    <h2>What Cairns Customers Say</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Had a blocked drain in the middle of wet season &mdash; absolute nightmare. Chapman came out same day, sorted it properly. They clearly know Cairns drains.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Kylie B., Cairns Homeowner</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;New hot water system installed quickly and cleanly. Quote was fair, work was tidy, and they explained everything. Will use again for the bathroom reno next year.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Jason R., Cairns</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Emergency call-out after storm damage. They came quickly, assessed honestly, and fixed it right. No upselling, no drama. Top tradies.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Michelle T., Edge Hill, Cairns</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Need a Cairns Plumber You Can Count On?</h2>
+  <p>Licensed, local, same-day service across Cairns and surrounds.</p>
+  <a href="#contact" class="btn-white-solid">Call Chapman Plumbing &mdash; Same-Day Service Available in Cairns</a>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-tag">Contact Us</div>
+    <h2>Get in Touch With Chapman Plumbing</h2>
+    <p class="sub">Serving Cairns, Edge Hill, Smithfield, Yorkeys Knob &amp; surrounds</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="icon">&#128222;</div>
+        <h3>Call Us</h3>
+        <p>Same-day response in Cairns</p>
+      </div>
+      <div class="contact-item">
+        <div class="icon">&#9993;</div>
+        <h3>Email</h3>
+        <p>Fast response, same day</p>
+      </div>
+      <div class="contact-item">
+        <div class="icon">&#128205;</div>
+        <h3>Service Area</h3>
+        <p>Cairns, surrounds &amp; Far North Queensland region</p>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <h3>Request a Same-Day Callback</h3>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+        <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number"></div>
+        <div class="form-group"><textarea name="message" placeholder="Describe your plumbing job or emergency..."></textarea></div>
+        <input type="hidden" name="_subject" value="New Enquiry - Chapman Plumbing Cairns">
+        <button type="submit" class="form-submit">Request Same-Day Callback</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>&copy; 2026 Chapman Plumbing Cairns &mdash; Cairns, QLD, Australia &mdash; Preview by <a href="mailto:desk@almawebcreative.com">Alma Digital Services</a></p>
+  <p>&copy; 2024 Chapman Plumbing Cairns. Licensed &amp; Insured. Serving Cairns &amp; Far North Queensland. | <a href="#contact">Contact Us</a></p>
+  <p style="margin-top:.5rem;font-size:.75rem">Preview designed by <a href="https://almadigitalservices.com">Alma Digital Designs</a> &mdash; <a href="https://almadigitalservices.com">Claim Your Free Redesign</a></p>
 </footer>
+
 </body>
 </html>
