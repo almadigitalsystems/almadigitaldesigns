@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eileen Roofing | Local Roof Repairs &amp; Replacements</title>
+<meta name="description" content="Eileen Roofing offers expert roof repairs, full replacements, and storm damage inspections. Family-run, honest pricing, written guarantee. Call today for your free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--dark:#1c1208;--rust:#c0392b;--cream:#f5f0e8;--light:#faf8f4}
+body{font-family:'Inter',sans-serif;background:var(--light);color:#2c2c2c}
+nav{background:var(--dark);padding:0 2rem;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{color:#fff;font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700}
+.logo span{color:#c0392b}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul a{color:#ccc;text-decoration:none;font-size:.9rem;transition:color .2s}
+nav ul a:hover{color:#fff}
+.nav-cta{background:var(--rust);color:#fff!important;padding:.4rem 1.2rem;border-radius:4px;font-weight:600}
+.hero{background:linear-gradient(135deg,#1c1208 0%,#3d2010 50%,#5a2d1a 100%);padding:100px 2rem 80px;position:relative}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(192,57,43,.2);border:1px solid rgba(192,57,43,.4);color:#e8a89c;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:600;letter-spacing:.5px;margin-bottom:1.5rem;text-transform:uppercase}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.6rem);color:#fff;line-height:1.15;margin-bottom:1.5rem}
+.hero h1 em{color:#c0392b;font-style:normal}
+.hero p{font-size:1.1rem;color:#c9b8a8;max-width:600px;line-height:1.7;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--rust);color:#fff;padding:.85rem 2rem;border-radius:5px;text-decoration:none;font-weight:700;font-size:1rem;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary:hover{background:#a93226;transform:translateY(-2px)}
+.btn-secondary{border:2px solid rgba(255,255,255,.3);color:#fff;padding:.85rem 2rem;border-radius:5px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .2s}
+.btn-secondary:hover{border-color:#fff}
+.hero-trust{margin-top:3rem;display:flex;gap:2rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.5rem;color:#a89888;font-size:.875rem}
+.trust-item::before{content:'checkmark';display:none}
+.trust-check{color:#c0392b;font-weight:700;margin-right:.4rem}
+.proof-strip{background:var(--rust);padding:1rem 2rem}
+.proof-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.proof-item{color:#fff;font-weight:700;font-size:.95rem;text-align:center}
+.proof-item span{display:block;font-size:.75rem;font-weight:400;opacity:.85}
+.pain{background:#fff;padding:70px 2rem}
+.pain-inner{max-width:900px;margin:0 auto;text-align:center}
+.section-tag{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--rust);margin-bottom:.8rem}
+.pain h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--dark);margin-bottom:1rem}
+.pain-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
+.pain-card{background:var(--cream);border-radius:8px;padding:1.5rem;text-align:left;border-left:4px solid var(--rust)}
+.pain-card h3{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.pain-card p{font-size:.9rem;color:#666;line-height:1.6}
+.services{background:var(--cream);padding:80px 2rem}
+.services-inner{max-width:1100px;margin:0 auto}
+.services-header{text-align:center;margin-bottom:3rem}
+.services-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--dark)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.service-card{background:#fff;border-radius:10px;padding:2rem 1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--rust)}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.service-icon{font-size:2rem;margin-bottom:1rem}
+.service-card h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.service-card p{font-size:.875rem;color:#666;line-height:1.6}
+.about{background:#fff;padding:80px 2rem}
+.about-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--dark);margin-bottom:1.2rem}
+.about-text p{font-size:1rem;color:#555;line-height:1.8;margin-bottom:1.2rem}
+.about-image{background:linear-gradient(135deg,#1c1208,#3d2010);border-radius:12px;padding:2.5rem;color:#fff;text-align:center}
+.big-number{font-size:4rem;font-weight:900;color:var(--rust);line-height:1;margin-bottom:.25rem;font-family:'Playfair Display',serif}
+.big-label{font-size:.9rem;color:#ccc;margin-bottom:2rem}
+.guarantee{background:rgba(192,57,43,.15);border:1px solid rgba(192,57,43,.3);border-radius:8px;padding:1rem;margin-top:1rem}
+.guarantee p{font-size:.9rem;color:#e8a89c;margin:0}
+.testimonials{background:#1c1208;padding:80px 2rem}
+.test-inner{max-width:1100px;margin:0 auto;text-align:center}
+.test-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;margin-bottom:.5rem}
+.test-inner .sub{color:#a89888;margin-bottom:3rem}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.test-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.5rem;text-align:left}
+.stars{color:#f1c40f;font-size:1rem;margin-bottom:.75rem}
+.test-card blockquote{color:#ccc;font-size:.9rem;line-height:1.7;font-style:italic;margin-bottom:1rem}
+.test-author{color:#a89888;font-size:.85rem;font-weight:600}
+.cta-section{background:var(--rust);padding:80px 2rem;text-align:center}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;margin-bottom:.75rem}
+.cta-section p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:2rem}
+.btn-white{background:#fff;color:var(--rust);padding:.9rem 2.5rem;border-radius:5px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-block;transition:all .2s}
+.btn-white:hover{background:var(--cream);transform:translateY(-2px)}
+.contact{background:var(--cream);padding:70px 2rem}
+.contact-inner{max-width:800px;margin:0 auto;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--dark);margin-bottom:.5rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2rem}
+.contact-item{background:#fff;padding:1.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.contact-item .icon{font-size:1.8rem;margin-bottom:.5rem}
+.contact-item h3{font-size:.875rem;text-transform:uppercase;letter-spacing:.5px;color:var(--rust);font-weight:700;margin-bottom:.25rem}
+.contact-item p{color:#555;font-size:.95rem}
+.form-wrap{background:#fff;border-radius:10px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-top:2.5rem;max-width:500px;margin-left:auto;margin-right:auto}
+.form-wrap h3{font-family:'Playfair Display',serif;color:var(--dark);margin-bottom:1.2rem;font-size:1.3rem;text-align:center}
+.form-group{margin-bottom:1rem}
+.form-group input,.form-group textarea{width:100%;padding:.75rem 1rem;border:1.5px solid #ddd;border-radius:5px;font-family:'Inter',sans-serif;font-size:.95rem;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--rust)}
+.form-group textarea{height:100px;resize:vertical}
+.form-submit{background:var(--rust);color:#fff;border:none;padding:.85rem 2rem;border-radius:5px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;transition:background .2s}
+.form-submit:hover{background:#a93226}
+footer{background:#1c1208;color:#888;text-align:center;padding:1.5rem;font-size:.85rem}
+footer a{color:#c0392b;text-decoration:none}
+@media(max-width:768px){.about-inner{grid-template-columns:1fr}.nav-cta{display:none}nav ul{gap:1rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Eileen <span>Roofing</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">&#11088; Family-Run &middot; Over a Decade of Experience</div>
+    <h1>Eileen Roofing &mdash; Expert Roof Repairs &amp; Replacements.<br><em>No Leaks, No Stress.</em></h1>
+    <p>From emergency repairs to full roof replacements, we protect your home with honest pricing and work that lasts.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get Your Free Roof Quote &mdash; We Respond Same Day</a>
+      <a href="#services" class="btn-secondary">Our Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-check">&#10003;</span> Written Guarantee</div>
+      <div class="trust-item"><span class="trust-check">&#10003;</span> Same-Day Response</div>
+      <div class="trust-item"><span class="trust-check">&#10003;</span> Fully Insured</div>
+      <div class="trust-item"><span class="trust-check">&#10003;</span> No Hidden Costs</div>
+    </div>
+  </div>
+</section>
+
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-item">500+<span>Roofs Repaired</span></div>
+    <div class="proof-item">10+ Years<span>Local Experience</span></div>
+    <div class="proof-item">100%<span>Written Guarantee</span></div>
+    <div class="proof-item">&#9733;&#9733;&#9733;&#9733;&#9733;<span>5-Star Reviews</span></div>
+  </div>
+</div>
+
+<section class="pain">
+  <div class="pain-inner">
+    <div class="section-tag">Sound Familiar?</div>
+    <h2>Tired of Roofing Contractors Who Don&rsquo;t Show Up?</h2>
+    <div class="pain-cards">
+      <div class="pain-card">
+        <h3>Getting three quotes but nobody calls back</h3>
+        <p>We respond the same day &mdash; always. No chasing, no waiting, no vague timelines. Just clear communication from the first call to the final tile.</p>
+      </div>
+      <div class="pain-card">
+        <h3>Worried about hidden costs or being oversold</h3>
+        <p>We give you an honest written quote with no surprises. We only recommend what you actually need &mdash; and we put it in writing before any work begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <div class="section-tag">What We Do</div>
+      <h2>Complete Roofing Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#128295;</div>
+        <h3>Roof Repairs &amp; Leak Fixes</h3>
+        <p>From missing tiles to stubborn leaks, we diagnose and fix roof problems fast &mdash; before the next downpour.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127968;</div>
+        <h3>Full Roof Replacements</h3>
+        <p>When repair isn&rsquo;t enough, we replace your entire roof with quality materials and a full written guarantee.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9928;</div>
+        <h3>Storm Damage Inspection &amp; Insurance Reports</h3>
+        <p>Thorough inspections and detailed insurance reports to support your claim after storm damage.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127959;</div>
+        <h3>Guttering, Fascias &amp; Soffits</h3>
+        <p>Complete roofline solutions &mdash; gutters, fascias, and soffits installed and replaced to a high standard.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128680;</div>
+        <h3>Emergency Call-Outs</h3>
+        <p>Roof emergency? Rapid response call-outs to make your home safe quickly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <div class="section-tag">About Us</div>
+      <h2>Built on Honest Work &amp; Word of Mouth</h2>
+      <p>Eileen Roofing is a family-run roofing company built on honest work and word-of-mouth referrals. We&rsquo;ve been protecting local homes for over a decade &mdash; no shortcuts, no upsells you don&rsquo;t need, and every job backed by a written guarantee.</p>
+      <p>When it rains, you&rsquo;ll be glad you called us.</p>
+      <a href="#contact" class="btn-primary">Get Your Free Quote Today</a>
+    </div>
+    <div class="about-image">
+      <div class="big-number">10+</div>
+      <div class="big-label">Years Protecting Local Homes</div>
+      <div class="guarantee">
+        <p>&#128203; <strong>Written Guarantee</strong><br>Every job is backed by our written guarantee. If there&rsquo;s a problem, we come back &mdash; no questions asked.</p>
+      </div>
+      <div style="margin-top:1.5rem;padding:1rem;background:rgba(255,255,255,.05);border-radius:8px">
+        <p style="color:#ccc;font-size:.875rem;margin:0">&#9733;&#9733;&#9733;&#9733;&#9733; &ldquo;Family-run, no nonsense roofing. Turned up when they said they would, did the job for the price they quoted. Couldn&rsquo;t ask for more.&rdquo;</p>
+        <p style="color:#a89888;font-size:.8rem;margin-top:.5rem">&mdash; Local homeowner</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="test-inner">
+    <h2>What Customers Say</h2>
+    <p class="sub">Real reviews from local homeowners</p>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Called on a Monday, had someone here by Tuesday afternoon. Repaired the leak quickly and charged exactly what they quoted. Brilliant service.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Sarah M., Local Homeowner</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;After storm damage they came out within a day, sorted the emergency, and then helped with my insurance paperwork. Absolute lifesavers.&rdquo;</blockquote>
+        <div class="test-author">&mdash; David K., Homeowner</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Full roof replacement done in two days. Clean, professional, and they left the site spotless. Written guarantee gave me real peace of mind.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Jennifer T., Local Customer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready for a Roof You Can Trust?</h2>
+  <p>Same-day response, honest pricing, written guarantee on every job.</p>
+  <a href="#contact" class="btn-white">Get Your Free Roof Quote &mdash; We Respond Same Day</a>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-tag">Get In Touch</div>
+    <h2>Request Your Free Quote</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="icon">&#128222;</div>
+        <h3>Call Us</h3>
+        <p>Same-day response guaranteed</p>
+      </div>
+      <div class="contact-item">
+        <div class="icon">&#9993;</div>
+        <h3>Email</h3>
+        <p>We respond quickly</p>
+      </div>
+      <div class="contact-item">
+        <div class="icon">&#128197;</div>
+        <h3>Hours</h3>
+        <p>Mon&ndash;Sat, 7am&ndash;7pm<br>Emergency call-outs available</p>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <h3>Request a Free Quote</h3>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+        <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number"></div>
+        <div class="form-group"><textarea name="message" placeholder="Describe your roofing issue or project..."></textarea></div>
+        <input type="hidden" name="_subject" value="New Quote Request - Eileen Roofing">
+        <button type="submit" class="form-submit">Get Your Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Eileen Roofing. Family-run roofing specialists. All rights reserved. | <a href="#contact">Contact Us</a></p>
+  <p style="margin-top:.5rem;font-size:.75rem">Preview designed by <a href="https://almadigitalservices.com">Alma Digital Designs</a> &mdash; <a href="https://almadigitalservices.com">Claim Your Free Redesign</a></p>
+</footer>
+
+</body>
+</html>
