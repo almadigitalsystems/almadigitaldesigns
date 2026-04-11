@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul Scurfield Plumbing | Local Plumber | Emergency Call-Outs</title>
+<meta name="description" content="Paul Scurfield Plumbing offers emergency call-outs, bathroom fitting, leak repairs, and general plumbing maintenance. Fast local response, honest pricing, guaranteed work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--slate:#2c3e50;--blue:#2980b9;--light-blue:#ebf5fb;--teal:#16a085;--white:#fff;--gray:#f4f6f7}
+body{font-family:'Inter',sans-serif;background:var(--white);color:#2c3e50}
+nav{background:var(--slate);padding:0 2rem;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{color:#fff;font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700}
+.logo .highlight{color:#5dade2}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+nav ul a:hover{color:#fff}
+.nav-cta{background:var(--teal);color:#fff!important;padding:.4rem 1.2rem;border-radius:4px;font-weight:700}
+/* SPLIT HERO */
+.hero{display:grid;grid-template-columns:55% 45%;min-height:90vh}
+.hero-left{background:linear-gradient(135deg,var(--slate) 0%,#1a252f 100%);padding:5rem 3rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.hero-right{background:linear-gradient(160deg,var(--blue),var(--teal));display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem 2rem;text-align:center;position:relative;overflow:hidden}
+.hero-right::before{content:'';position:absolute;top:-30%;right:-20%;width:300px;height:300px;background:rgba(255,255,255,.07);border-radius:50%}
+.hero-right::after{content:'';position:absolute;bottom:-20%;left:-10%;width:250px;height:250px;background:rgba(255,255,255,.05);border-radius:50%}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(93,173,226,.15);border:1px solid rgba(93,173,226,.3);color:#5dade2;padding:.3rem .8rem;border-radius:20px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1.5rem;width:fit-content}
+.hero-left h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1.2rem}
+.hero-left h1 em{color:#5dade2;font-style:normal}
+.hero-left p{color:rgba(255,255,255,.75);font-size:1.05rem;line-height:1.7;margin-bottom:2.2rem}
+.btn-teal{background:var(--teal);color:#fff;padding:.9rem 2rem;border-radius:5px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;margin-bottom:.75rem}
+.btn-teal:hover{background:#138d75;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);padding:.75rem 1.5rem;border-radius:5px;text-decoration:none;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.hero-right-content{position:relative;z-index:1;width:100%}
+.hero-right h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;margin-bottom:.5rem}
+.hero-right .sub{font-size:.9rem;color:rgba(255,255,255,.8);margin-bottom:2rem}
+.contact-panel{background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:2rem;text-align:left}
+.contact-panel .c-item{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.contact-panel .c-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.contact-panel .c-icon{font-size:1.4rem;flex-shrink:0}
+.contact-panel .c-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.6);font-weight:700;margin-bottom:.15rem}
+.contact-panel .c-value{color:#fff;font-size:.95rem;font-weight:600}
+.paul-note{margin-top:1.5rem;background:rgba(255,255,255,.08);border-radius:8px;padding:1rem;font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.5}
+/* PROOF */
+.proof-strip{background:var(--teal);padding:1rem 2rem}
+.proof-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;align-items:center;gap:2.5rem;flex-wrap:wrap}
+.proof-item{color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+/* PAIN */
+.pain{background:var(--gray);padding:80px 2rem}
+.pain-inner{max-width:900px;margin:0 auto;text-align:center}
+.section-tag{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:.75rem}
+.pain h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--slate);margin-bottom:1rem}
+.pain-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
+.pain-card{background:#fff;border-radius:8px;padding:1.5rem;text-align:left;border-left:4px solid var(--blue);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.pain-card h3{font-size:1rem;font-weight:700;color:var(--slate);margin-bottom:.5rem}
+.pain-card p{font-size:.875rem;color:#666;line-height:1.6}
+/* SERVICES */
+.services{background:var(--white);padding:90px 2rem}
+.services-inner{max-width:1100px;margin:0 auto}
+.section-top{text-align:center;margin-bottom:3.5rem}
+.section-top h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--slate)}
+.svc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.svc-item{background:var(--light-blue);border-radius:10px;padding:2rem;position:relative;overflow:hidden;transition:transform .2s}
+.svc-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--teal))}
+.svc-item:hover{transform:translateY(-3px)}
+.svc-item .icon{font-size:2rem;margin-bottom:1rem}
+.svc-item h3{font-size:1.05rem;font-weight:700;color:var(--slate);margin-bottom:.5rem}
+.svc-item p{font-size:.875rem;color:#555;line-height:1.6}
+/* ABOUT */
+.about{background:var(--gray);padding:90px 2rem}
+.about-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-panel{background:var(--white);border-radius:12px;padding:2.5rem;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.about-panel .quote{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--slate);font-style:italic;line-height:1.7;margin-bottom:1.5rem;border-left:3px solid var(--blue);padding-left:1.2rem}
+.about-panel .word-of-mouth{background:var(--light-blue);border-radius:8px;padding:1.2rem;margin-top:1.5rem}
+.about-panel .word-of-mouth h4{font-size:.85rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.4rem}
+.about-panel .word-of-mouth p{font-size:.875rem;color:#555;line-height:1.5}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--slate);margin-bottom:1.2rem}
+.about-text p{font-size:1rem;color:#555;line-height:1.8;margin-bottom:1.2rem}
+/* REVIEWS */
+.testimonials{background:var(--white);padding:80px 2rem}
+.test-inner{max-width:1100px;margin:0 auto;text-align:center}
+.test-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--slate);margin-bottom:3rem}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.test-card{background:var(--light-blue);border-radius:10px;padding:1.5rem;text-align:left;border-top:3px solid var(--blue)}
+.stars{color:#f1c40f;font-size:1rem;margin-bottom:.75rem}
+.test-card blockquote{color:#444;font-size:.9rem;line-height:1.7;font-style:italic;margin-bottom:1rem}
+.test-author{color:#777;font-size:.85rem;font-weight:600}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--slate),#1a252f);padding:90px 2rem;text-align:center}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.75rem}
+.cta-section p{color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:2rem}
+.btn-teal-lg{background:var(--teal);color:#fff;padding:1rem 2.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1.05rem;display:inline-block;transition:all .2s}
+.btn-teal-lg:hover{background:#138d75;transform:translateY(-2px)}
+/* CONTACT */
+.contact{background:var(--gray);padding:70px 2rem}
+.contact-inner{max-width:700px;margin:0 auto;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--slate);margin-bottom:.5rem}
+.contact .sub{color:#888;margin-bottom:2.5rem}
+.form-wrap{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.form-wrap h3{font-family:'Playfair Display',serif;color:var(--slate);margin-bottom:1.2rem;font-size:1.3rem;text-align:center}
+.form-group{margin-bottom:1rem}
+.form-group input,.form-group textarea{width:100%;padding:.75rem 1rem;border:1.5px solid #ddd;border-radius:5px;font-family:'Inter',sans-serif;font-size:.95rem;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--teal)}
+.form-group textarea{height:100px;resize:vertical}
+.form-submit{background:var(--teal);color:#fff;border:none;padding:.85rem 2rem;border-radius:5px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;transition:background .2s}
+.form-submit:hover{background:#138d75}
+footer{background:var(--slate);color:#888;text-align:center;padding:1.5rem;font-size:.85rem}
+footer a{color:#5dade2;text-decoration:none}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-right{min-height:auto;padding:2.5rem 2rem}.about-inner{grid-template-columns:1fr}.nav-cta{display:none}nav ul{gap:1rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Paul Scurfield <span class="highlight">Plumbing</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Call Paul</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">&#128274; 10+ Years &middot; Word-of-Mouth Reputation</div>
+    <h1>Paul Scurfield Plumbing &mdash; Your Trusted Local Plumber.<br><em>Done Right, First Time.</em></h1>
+    <p>Emergency call-outs, bathroom installations, and everything in between &mdash; Paul takes on every job with genuine care and attention.</p>
+    <a href="#contact" class="btn-teal">&#128222; Call Paul Now &mdash; Available 7 Days a Week</a>
+    <a href="#services" class="btn-ghost">See All Services</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-content">
+      <h2>Get in Touch</h2>
+      <p class="sub">Available for emergency call-outs 7 days a week</p>
+      <div class="contact-panel">
+        <div class="c-item">
+          <div class="c-icon">&#128222;</div>
+          <div>
+            <div class="c-label">Call Paul</div>
+            <div class="c-value">Available 7 days, including emergencies</div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">&#9993;</div>
+          <div>
+            <div class="c-label">Email</div>
+            <div class="c-value">Fast response guaranteed</div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">&#128197;</div>
+          <div>
+            <div class="c-label">Hours</div>
+            <div class="c-value">Mon&ndash;Sun, 7am&ndash;8pm<br>Emergency call-outs anytime</div>
+          </div>
+        </div>
+      </div>
+      <div class="paul-note">&#9997; <strong>Paul&rsquo;s Guarantee:</strong> Personal service every time. You&rsquo;ll always deal directly with Paul &mdash; not a call centre, not a random subcontractor.</div>
+    </div>
+  </div>
+</section>
+
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-item">&#10003; 10+ Years Experience</div>
+    <div class="proof-item">&#10003; 100% Word-of-Mouth</div>
+    <div class="proof-item">&#10003; Emergency Call-Outs</div>
+    <div class="proof-item">&#10003; Honest Fixed Pricing</div>
+    <div class="proof-item">&#10003; &#9733;&#9733;&#9733;&#9733;&#9733; Reviews</div>
+  </div>
+</div>
+
+<section class="pain">
+  <div class="pain-inner">
+    <div class="section-tag">Sound Familiar?</div>
+    <h2>Tired of Plumbers Who Don&rsquo;t Show Up &mdash; Or Don&rsquo;t Show Up Alone?</h2>
+    <div class="pain-cards">
+      <div class="pain-card">
+        <h3>Can&rsquo;t get a plumber to even return your call</h3>
+        <p>Paul built his business entirely on word of mouth &mdash; that only happens when you actually pick up the phone. Call today and speak to Paul directly.</p>
+      </div>
+      <div class="pain-card">
+        <h3>Quoted one price, charged another</h3>
+        <p>Paul gives you an honest price upfront. No surprises, no add-ons after the job starts. Just fair, transparent pricing from someone who&rsquo;s built his reputation on it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-top">
+      <div class="section-tag">What Paul Does</div>
+      <h2>Plumbing Services You Can Count On</h2>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item">
+        <div class="icon">&#128680;</div>
+        <h3>24/7 Emergency Plumbing Call-Outs</h3>
+        <p>Burst pipe at midnight? Flooding at the weekend? Paul is available for emergency call-outs 7 days a week.</p>
+      </div>
+      <div class="svc-item">
+        <div class="icon">&#128704;</div>
+        <h3>Bathroom &amp; Shower Fitting</h3>
+        <p>Full bathroom installs and shower fitting &mdash; Paul manages the whole project to a high, clean finish.</p>
+      </div>
+      <div class="svc-item">
+        <div class="icon">&#128293;</div>
+        <h3>Boiler &amp; Hot Water Cylinder Work</h3>
+        <p>Boiler faults, cylinder replacements, and hot water system repairs handled with care and expertise.</p>
+      </div>
+      <div class="svc-item">
+        <div class="icon">&#128269;</div>
+        <h3>Leak Detection &amp; Repair</h3>
+        <p>Fast, accurate leak detection &mdash; Paul finds the problem and fixes it properly, first time.</p>
+      </div>
+      <div class="svc-item">
+        <div class="icon">&#128295;</div>
+        <h3>General Plumbing Maintenance</h3>
+        <p>Taps, cisterns, radiators, pipework &mdash; all the everyday plumbing jobs done right and at a fair price.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-panel">
+      <blockquote class="quote">&ldquo;I built this business on doing good work and treating people fairly. No cold calls, no flashy ads &mdash; just satisfied customers who keep coming back and sending their neighbours.&rdquo;</blockquote>
+      <p style="color:#777;font-size:.875rem">&mdash; Paul Scurfield, Owner</p>
+      <div class="word-of-mouth">
+        <h4>Built on Word of Mouth</h4>
+        <p>Paul has never paid for advertising. Every customer comes from a recommendation. That only happens when the work is consistently excellent and the pricing is consistently honest.</p>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-tag">About Paul</div>
+      <h2>Over a Decade of Plumbing Built on Trust</h2>
+      <p>Paul Scurfield has spent over a decade building a plumbing business entirely on word of mouth. No cold calls, no flashy ads, just satisfied customers who keep coming back and sending their neighbours.</p>
+      <p>Based locally, Paul offers fast response times and the kind of personal, reliable service you simply won&rsquo;t get from a large contractor.</p>
+      <a href="#contact" class="btn-teal">Call Paul Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="test-inner">
+    <div class="section-tag">Customer Reviews</div>
+    <h2>What Customers Say About Paul</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Called Paul at 7am with a burst pipe. He was here by 8:15am and had it sorted before I went to work. Couldn&rsquo;t believe it.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Helen W., Local Homeowner</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Paul fitted our new bathroom from scratch. Immaculate job, finished on time, and the price matched the quote exactly. Five stars without hesitation.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Dan &amp; Kate M., Local Customers</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Recommended by my neighbour. Now I understand why &mdash; Paul is reliable, honest, and does the job properly. The opposite of what I expected.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Christine L., Homeowner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Need a Plumber You Can Actually Trust?</h2>
+  <p>Emergency call-outs, fair pricing, personal service &mdash; available 7 days a week.</p>
+  <a href="#contact" class="btn-teal-lg">Call Paul Now &mdash; Available for Emergency Call-Outs 7 Days a Week</a>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-tag">Get In Touch</div>
+    <h2>Contact Paul</h2>
+    <p class="sub">Available 7 days a week, including emergency call-outs</p>
+    <div class="form-wrap">
+      <h3>Send Paul a Message</h3>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+        <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number (Paul will call you back)"></div>
+        <div class="form-group"><textarea name="message" placeholder="Describe your plumbing issue..."></textarea></div>
+        <input type="hidden" name="_subject" value="New Plumbing Enquiry - Paul Scurfield">
+        <button type="submit" class="form-submit">Send Message to Paul</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Paul Scurfield Plumbing. Local, trusted plumber. All rights reserved. | <a href="#contact">Contact Paul</a></p>
+  <p style="margin-top:.5rem;font-size:.75rem">Preview designed by <a href="https://almadigitalservices.com">Alma Digital Designs</a> &mdash; <a href="https://almadigitalservices.com">Claim Your Free Redesign</a></p>
+</footer>
+
+</body>
+</html>
