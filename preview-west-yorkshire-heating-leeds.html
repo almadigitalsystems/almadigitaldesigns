@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>West Yorkshire Heating | Boiler Installation &amp; Repairs | Leeds &amp; Bradford</title>
+<meta name="description" content="West Yorkshire Heating offers boiler installation, annual servicing, and emergency repairs across Leeds and Bradford. Gas Safe registered. No hidden call-out fees. Call now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#0077b6;--teal:#00b4d8;--dark:#03045e;--navy:#023e8a;--light:#f0f8ff;--white:#fff}
+body{font-family:'Inter',sans-serif;background:var(--white);color:#1a1a2e}
+nav{background:var(--dark);padding:0 2rem;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{color:#fff;font-weight:800;font-size:1.3rem}
+.logo span{color:var(--teal)}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+nav ul a:hover{color:#fff}
+.nav-cta{background:var(--teal);color:#fff!important;padding:.4rem 1.2rem;border-radius:4px;font-weight:700}
+.hero{background:linear-gradient(160deg,var(--dark) 0%,var(--navy) 60%,#0077b6 100%);min-height:88vh;display:flex;align-items:center;padding:4rem 2rem;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='rgba(0,180,216,0.07)' stroke-width='1'/%3E%3C/svg%3E") repeat;opacity:.5}
+.hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,180,216,.15);border:1px solid rgba(0,180,216,.4);color:var(--teal);padding:.4rem 1rem;border-radius:20px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4rem);color:#fff;line-height:1.1;margin-bottom:1.5rem}
+.hero h1 em{color:var(--teal);font-style:normal}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 2.5rem;line-height:1.7}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.btn-teal{background:var(--teal);color:#fff;padding:.9rem 2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-teal:hover{background:#0096b7;transform:translateY(-2px)}
+.btn-white{border:2px solid rgba(255,255,255,.4);color:#fff;padding:.9rem 2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .2s}
+.btn-white:hover{background:rgba(255,255,255,.1)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.5rem}
+.hero-stat .num{font-size:1.8rem;font-weight:800;color:var(--teal);line-height:1}
+.hero-stat .lbl{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:.2rem}
+.proof-bar{background:var(--teal);padding:1rem 2rem}
+.proof-bar-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.pb-item{color:#fff;font-size:.875rem;font-weight:600;display:flex;align-items:center;gap:.5rem}
+.pb-item::before{content:'&#10003;';font-weight:800}
+.services{background:var(--light);padding:90px 2rem}
+.services-inner{max-width:1100px;margin:0 auto}
+.section-top{text-align:center;margin-bottom:3.5rem}
+.section-tag{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:.75rem}
+.section-top h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--dark)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.5rem}
+.svc-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,119,182,.08);border-top:4px solid var(--teal);transition:transform .2s,box-shadow .2s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,119,182,.15)}
+.svc-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem}
+.svc-card h3{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.svc-card p{font-size:.875rem;color:#666;line-height:1.6}
+.about{background:#fff;padding:90px 2rem}
+.about-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--dark);margin-bottom:1.2rem}
+.about-text p{font-size:1rem;color:#555;line-height:1.8;margin-bottom:1.2rem}
+.about-panel{background:linear-gradient(135deg,var(--dark),var(--navy));border-radius:16px;padding:2.5rem;color:#fff}
+.about-panel .gas-safe{background:rgba(0,180,216,.15);border:1px solid rgba(0,180,216,.3);border-radius:8px;padding:1rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem}
+.about-panel .gas-safe .badge-text{font-weight:700;color:var(--teal);font-size:.95rem}
+.about-panel .gas-safe p{font-size:.85rem;color:rgba(255,255,255,.7);margin:0}
+.guarantee-list{list-style:none}
+.guarantee-list li{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.75rem;font-size:.9rem;color:rgba(255,255,255,.8)}
+.guarantee-list li::before{content:'&#10003;';color:var(--teal);font-weight:800;flex-shrink:0;margin-top:.1rem}
+.pain{background:var(--dark);padding:80px 2rem}
+.pain-inner{max-width:900px;margin:0 auto;text-align:center}
+.pain h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;margin-bottom:3rem}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.pain-card{background:rgba(255,255,255,.04);border:1px solid rgba(0,180,216,.2);border-radius:10px;padding:1.5rem;text-align:left;border-left:3px solid var(--teal)}
+.pain-card h3{font-size:.95rem;font-weight:700;color:var(--teal);margin-bottom:.5rem}
+.pain-card p{font-size:.875rem;color:rgba(255,255,255,.65);line-height:1.6}
+.testimonials{background:var(--light);padding:80px 2rem}
+.test-inner{max-width:1100px;margin:0 auto;text-align:center}
+.test-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--dark);margin-bottom:3rem}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.test-card{background:#fff;border-radius:10px;padding:1.5rem;text-align:left;box-shadow:0 2px 12px rgba(0,119,182,.08)}
+.stars{color:#f1c40f;font-size:1rem;margin-bottom:.75rem}
+.test-card blockquote{color:#555;font-size:.9rem;line-height:1.7;font-style:italic;margin-bottom:1rem}
+.test-author{color:#888;font-size:.85rem;font-weight:600}
+.cta-section{background:linear-gradient(135deg,var(--blue),var(--teal));padding:90px 2rem;text-align:center}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.75rem}
+.cta-section p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:2rem}
+.btn-dark{background:var(--dark);color:#fff;padding:.9rem 2.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-block;transition:all .2s}
+.btn-dark:hover{background:#020338;transform:translateY(-2px)}
+.contact{background:#fff;padding:70px 2rem}
+.contact-inner{max-width:800px;margin:0 auto;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--dark);margin-bottom:.5rem}
+.contact .sub{color:#888;margin-bottom:2rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:2.5rem}
+.contact-item{background:var(--light);padding:1.5rem;border-radius:10px;border-top:3px solid var(--teal)}
+.contact-item .icon{font-size:1.8rem;margin-bottom:.5rem}
+.contact-item h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;color:var(--blue);font-weight:700;margin-bottom:.25rem}
+.contact-item p{color:#555;font-size:.95rem}
+.form-wrap{background:var(--light);border-radius:12px;padding:2rem;max-width:500px;margin:0 auto;border:1px solid rgba(0,119,182,.1)}
+.form-wrap h3{font-family:'Playfair Display',serif;color:var(--dark);margin-bottom:1.2rem;font-size:1.3rem;text-align:center}
+.form-group{margin-bottom:1rem}
+.form-group input,.form-group textarea{width:100%;padding:.75rem 1rem;background:#fff;border:1.5px solid #ddd;border-radius:5px;font-family:'Inter',sans-serif;font-size:.95rem;color:#333;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--teal)}
+.form-group textarea{height:100px;resize:vertical}
+.form-submit{background:var(--teal);color:#fff;border:none;padding:.85rem 2rem;border-radius:5px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;transition:background .2s}
+.form-submit:hover{background:#0096b7}
+footer{background:var(--dark);color:#666;text-align:center;padding:1.5rem;font-size:.85rem}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.hero-stats{grid-template-columns:repeat(2,1fr)}.about-inner{grid-template-columns:1fr}.nav-cta{display:none}nav ul{gap:1rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">West Yorkshire <span>Heating</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Service</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">&#128293; Gas Safe Registered &middot; Leeds &amp; Bradford</div>
+    <h1>West Yorkshire Heating &mdash; Boiler Experts Serving <em>Leeds, Bradford &amp; Beyond</em></h1>
+    <p>Gas Safe registered engineers keeping West Yorkshire homes warm year-round. Fast installs, honest servicing, 24/7 emergency call-outs.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-teal">Book a Service or Call for Emergency Heating Help</a>
+      <a href="#services" class="btn-white">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">24/7</div>
+        <div class="lbl">Emergency call-outs</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">&#9989;</div>
+        <div class="lbl">Gas Safe Registered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">&#163;0</div>
+        <div class="lbl">Hidden call-out fees</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="lbl">Customer reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="pb-item">Gas Safe Registered</div>
+    <div class="pb-item">No Hidden Call-Out Fees</div>
+    <div class="pb-item">24/7 Emergency Response</div>
+    <div class="pb-item">Serving Leeds &amp; Bradford</div>
+    <div class="pb-item">Fully Insured Engineers</div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-top">
+      <div class="section-tag">What We Do</div>
+      <h2>Complete Heating Services for West Yorkshire</h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">&#128293;</div>
+        <h3>Boiler Installation &amp; Replacement</h3>
+        <p>New, efficient boilers installed quickly and correctly &mdash; keeping your home warm and your energy bills down.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#128295;</div>
+        <h3>Annual Boiler Servicing</h3>
+        <p>Regular servicing to keep your boiler running safely and efficiently all year round &mdash; and to maintain your warranty.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#128680;</div>
+        <h3>24/7 Emergency Breakdown Call-Outs</h3>
+        <p>Boiler broken down? We respond fast, day or night, with no hidden call-out fees &mdash; ever.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#127968;</div>
+        <h3>Full Central Heating Installation</h3>
+        <p>Complete central heating systems installed to the highest standard, from radiators and pipework to full system design.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">&#128203;</div>
+        <h3>Landlord Gas Safety Certificates</h3>
+        <p>Annual gas safety inspections and CP12 certificates for landlords &mdash; fast, compliant, and fully documented.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <div class="section-tag">About Us</div>
+      <h2>West Yorkshire&rsquo;s Trusted Heating Engineers</h2>
+      <p>West Yorkshire Heating has been keeping homes and businesses warm across Leeds, Bradford, and the surrounding areas for years. Our Gas Safe registered engineers are known for fast response times and completely transparent pricing.</p>
+      <p>No hidden call-out fees. No pushy upsells. Just reliable heating work from engineers who care.</p>
+      <a href="#contact" class="btn-teal">Book a Service Today</a>
+    </div>
+    <div class="about-panel">
+      <div class="gas-safe">
+        <div>
+          <div class="badge-text">&#9989; Gas Safe Registered</div>
+          <p>All our engineers are registered with the Gas Safe Register &mdash; the legal requirement for all gas work in the UK.</p>
+        </div>
+      </div>
+      <ul class="guarantee-list">
+        <li>Fully transparent pricing &mdash; no surprise add-ons</li>
+        <li>No hidden call-out fees, day or night</li>
+        <li>Fast response across Leeds and Bradford</li>
+        <li>Annual service reminders and warranty support</li>
+        <li>Landlord gas safety certificates issued promptly</li>
+        <li>Friendly engineers who explain everything clearly</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pain">
+  <div class="pain-inner">
+    <div class="section-tag" style="color:var(--teal)">Why Customers Choose Us</div>
+    <h2>Sick of Hidden Fees and Slow Response Times?</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <h3>Call-out fees that don&rsquo;t appear until the bill</h3>
+        <p>With West Yorkshire Heating, the price we quote is the price you pay. No call-out charge sting, no after-the-fact extras.</p>
+      </div>
+      <div class="pain-card">
+        <h3>Waiting days for an engineer in freezing cold</h3>
+        <p>Our 24/7 emergency service means you&rsquo;re never left shivering. We respond fast because a broken boiler isn&rsquo;t a 9-to-5 problem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="test-inner">
+    <div class="section-tag">Reviews</div>
+    <h2>What Customers Across West Yorkshire Say</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Called at 9pm when our boiler went out. Had an engineer here by 10:30pm. Fixed within an hour, no call-out fee sting. Brilliant.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Rachel G., Leeds</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Annual boiler service done promptly, price was exactly as quoted, and they left everything spotless. Will absolutely use again.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Mark T., Bradford</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Got my CP12 done for three properties &mdash; fast, professional, certificates issued same day. Makes my life as a landlord so much easier.&rdquo;</blockquote>
+        <div class="test-author">&mdash; Patricia L., Landlord, Leeds</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Keep West Yorkshire Warm</h2>
+  <p>Gas Safe engineers. No hidden fees. 24/7 emergency call-outs across Leeds and Bradford.</p>
+  <a href="#contact" class="btn-dark">Book a Service or Call Now for Emergency Heating Help</a>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-tag">Get In Touch</div>
+    <h2>Contact West Yorkshire Heating</h2>
+    <p class="sub">Serving Leeds, Bradford &amp; surrounding areas</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="icon">&#128222;</div>
+        <h3>Emergency Line</h3>
+        <p>24/7 &mdash; we always pick up</p>
+      </div>
+      <div class="contact-item">
+        <div class="icon">&#9993;</div>
+        <h3>Email</h3>
+        <p>Fast response, same day</p>
+      </div>
+      <div class="contact-item">
+        <div class="icon">&#128205;</div>
+        <h3>Coverage</h3>
+        <p>Leeds, Bradford &amp; surrounding West Yorkshire areas</p>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <h3>Book a Service</h3>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+        <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number"></div>
+        <div class="form-group"><textarea name="message" placeholder="Tell us about your boiler or heating issue..."></textarea></div>
+        <input type="hidden" name="_subject" value="New Booking - West Yorkshire Heating">
+        <button type="submit" class="form-submit">Book a Service Now</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 West Yorkshire Heating. Gas Safe Registered. Serving Leeds &amp; Bradford. All rights reserved. | <a href="#contact">Contact Us</a></p>
+  <p style="margin-top:.5rem;font-size:.75rem">Preview designed by <a href="https://almadigitalservices.com">Alma Digital Designs</a> &mdash; <a href="https://almadigitalservices.com">Claim Your Free Redesign</a></p>
+</footer>
+
+</body>
+</html>
