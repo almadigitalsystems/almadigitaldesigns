@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Thank You — Alma Digital Services</title>
+<meta name="description" content="Payment confirmed. We will start building your website within 24 hours."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--bg-card:#0f0f1a;--cyan:#00d4ff;--purple:#7b2fff;
+  --text:#fff;--text-muted:#8892a4;--border:rgba(0,212,255,0.15);
+  --glow-cyan:0 0 30px rgba(0,212,255,0.4);
+}
+html{font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column}
+.grad-text{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* NAV */
+.nav{padding:1.25rem 1.5rem;background:rgba(10,10,15,0.95);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-size:1.3rem;font-weight:900;text-decoration:none}
+/* MAIN */
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:3.5rem 3rem;text-align:center;max-width:560px;width:100%;box-shadow:var(--glow-cyan)}
+.card__icon{font-size:4rem;margin-bottom:1.5rem;display:block}
+.card__title{font-size:2rem;font-weight:900;margin-bottom:1rem}
+.card__message{font-size:1.05rem;color:var(--text-muted);line-height:1.7;margin-bottom:2rem}
+.card__highlight{background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:2rem;text-align:left}
+.card__highlight p{font-size:0.9rem;color:var(--text-muted);line-height:1.6}
+.card__highlight strong{color:var(--cyan)}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.25s;border:none;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;box-shadow:var(--glow-cyan)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,255,0.6)}
+.btn-ghost{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan);margin-left:1rem}
+.btn-ghost:hover{background:rgba(0,212,255,0.1)}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+/* FOOTER */
+.footer{padding:1.5rem;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.82rem}
+.footer a{color:var(--cyan);text-decoration:none}
+/* CONFETTI ANIMATION */
+@keyframes fall{0%{transform:translateY(-20px) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+.confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden}
+.confetti__piece{position:absolute;width:10px;height:10px;border-radius:2px;animation:fall linear forwards}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav__logo grad-text">Alma Digital</a>
+  <a href="mailto:desk@almawebcreative.com" style="font-size:0.85rem;color:var(--text-muted);text-decoration:none">desk@almawebcreative.com</a>
+</nav>
+
+<div class="confetti" id="confetti"></div>
+
+<main class="main">
+  <div class="card">
+    <span class="card__icon">&#127881;</span>
+    <h1 class="card__title">Payment <span class="grad-text">Confirmed!</span></h1>
+    <p class="card__message">
+      We will start building your site within 24 hours &mdash; check your email!
+    </p>
+    <div class="card__highlight">
+      <p><strong>What happens next:</strong></p>
+      <p>1. We reach out within a few hours to confirm your domain and any details.</p>
+      <p>2. Your website goes live within 48 hours of payment.</p>
+      <p>3. We send unlimited free revisions until you love it.</p>
+    </div>
+    <div class="btns">
+      <a href="/" class="btn btn-primary">Back to Home &rarr;</a>
+      <a href="mailto:desk@almawebcreative.com" class="btn btn-ghost">Email Us</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 Alma Digital Services &middot; <a href="mailto:desk@almawebcreative.com">desk@almawebcreative.com</a></p>
+</footer>
+
+<script>
+(function() {
+  var colors = ['#00d4ff','#7b2fff','#fff','#00ffaa','#ff6bff'];
+  var container = document.getElementById('confetti');
+  var pieces = 60;
+  for (var i = 0; i < pieces; i++) {
+    var el = document.createElement('div');
+    el.className = 'confetti__piece';
+    el.style.left = Math.random() * 100 + '%';
+    el.style.top = '-20px';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.width = (Math.random() * 8 + 6) + 'px';
+    el.style.height = (Math.random() * 8 + 6) + 'px';
+    el.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    el.style.animationDelay = (Math.random() * 2) + 's';
+    container.appendChild(el);
+  }
+  setTimeout(function() {
+    if (container) container.remove();
+  }, 7000);
+})();
+</script>
+
+</body>
+</html>
