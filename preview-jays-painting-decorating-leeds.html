@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jay's Painting &amp; Decorating | Leeds Painter &amp; Decorator</title>
+<meta name="description" content="Professional painter and decorator in Leeds. Interior, exterior, wallpaper and feature walls. Free quotes. Jay's Painting and Decorating delivers quality every time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1b4332;--green-mid:#2d6a4f;--green-light:#40916c;--cream:#faf7f2;--warm-white:#fffef9;--warm-gray:#8c8070;--warm-gray-light:#c4b8aa;--charcoal:#2c2c2c;--white:#ffffff;--gold:#b8960c}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",sans-serif;color:var(--charcoal);background:var(--warm-white);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.preview-banner{background:var(--green);color:var(--white);text-align:center;padding:.6rem 1rem;font-size:.85rem;font-weight:600;position:sticky;top:0;z-index:200}
+.preview-banner a{color:var(--warm-gray-light);text-decoration:underline}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;background:var(--warm-white);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.nav-logo{font-family:"Playfair Display",serif;color:var(--green);font-size:1.25rem;font-weight:700}
+.nav-logo span{color:var(--warm-gray);font-weight:400;font-style:italic}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:var(--warm-gray);font-size:.88rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:var(--white);padding:.5rem 1.25rem;border-radius:4px;font-size:.85rem;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+@media(max-width:768px){.nav-links{display:none}}
+.hero{min-height:100vh;background:var(--green);display:flex;align-items:center;padding:140px 5% 80px;position:relative;overflow:hidden}
+.hero-content{position:relative;z-index:1;max-width:680px}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(250,247,242,.12);border:1px solid rgba(250,247,242,.25);color:var(--cream);padding:.45rem 1.1rem;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem}
+h1{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:var(--cream);line-height:1.18;margin-bottom:1.25rem}
+h1 em{color:rgba(250,247,242,.65);font-weight:400;font-style:italic}
+.hero p{font-size:clamp(1rem,2vw,1.15rem);color:rgba(250,247,242,.75);max-width:560px;margin-bottom:2.5rem;line-height:1.8}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:1rem}
+.btn-primary{background:var(--cream);color:var(--green);padding:1rem 2.25rem;border-radius:4px;font-weight:700;font-size:1rem;transition:all .2s;box-shadow:0 4px 20px rgba(0,0,0,.2);display:inline-block}
+.btn-primary:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.btn-outline{background:transparent;color:var(--cream);padding:1rem 2.25rem;border-radius:4px;font-weight:600;font-size:1rem;border:2px solid rgba(250,247,242,.3);transition:all .2s;display:inline-block}
+.btn-outline:hover{border-color:var(--cream)}
+.hero-promise{display:flex;gap:2rem;margin-top:3rem;flex-wrap:wrap}
+.promise-item{display:flex;align-items:center;gap:.6rem;color:rgba(250,247,242,.7);font-size:.88rem;font-weight:500}
+.quality-bar{background:var(--cream);padding:1rem 5%;display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:center;border-bottom:1px solid rgba(0,0,0,.07)}
+.quality-item{color:var(--green);font-size:.88rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
+.quality-item::before{content:"&#10022;";color:var(--gold);font-size:.7rem}
+section{padding:80px 5%}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);margin-bottom:.6rem}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--green);margin-bottom:1rem}
+.section-subtitle{font-size:1rem;color:var(--warm-gray);max-width:600px;line-height:1.7}
+.section-header{margin-bottom:3rem}
+.services{background:var(--cream)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.service-card{background:var(--warm-white);padding:2rem;border-radius:8px;border:1px solid rgba(0,0,0,.07);box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s;position:relative}
+.service-card::before{content:"";position:absolute;top:0;left:1.5rem;right:1.5rem;height:3px;background:var(--green);border-radius:0 0 3px 3px}
+.service-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.08)}
+.service-icon{font-size:2rem;margin-bottom:.75rem}
+.service-card h3{font-family:"Playfair Display",serif;font-size:1.15rem;font-weight:700;color:var(--green);margin-bottom:.5rem}
+.service-card p{font-size:.9rem;color:var(--warm-gray);line-height:1.6}
+.about{background:var(--warm-white)}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+.about-text p{font-size:1rem;color:#555;line-height:1.85;margin-bottom:1.25rem}
+.about-features{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.about-feature{display:flex;align-items:center;gap:.75rem;font-size:.95rem;font-weight:500;color:var(--charcoal);padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.about-feature:last-child{border-bottom:none}
+.about-feature::before{content:"&#10022;";color:var(--green);font-size:.8rem;flex-shrink:0}
+.about-visual{background:linear-gradient(145deg,var(--green) 0%,var(--green-mid) 100%);border-radius:12px;padding:3rem;text-align:center;position:relative;overflow:hidden}
+.about-visual-icon{font-size:3rem;margin-bottom:1rem;position:relative;z-index:1}
+.about-visual-quote{font-family:"Playfair Display",serif;font-size:1.3rem;font-weight:700;color:var(--cream);font-style:italic;line-height:1.5;position:relative;z-index:1}
+.about-visual-author{color:rgba(250,247,242,.6);font-size:.85rem;margin-top:1rem;position:relative;z-index:1}
+.about-cta{display:inline-block;margin-top:2rem;background:var(--cream);color:var(--green);padding:.85rem 2rem;border-radius:4px;font-weight:700;font-size:.95rem;transition:all .2s;position:relative;z-index:1}
+.about-cta:hover{background:var(--white);transform:translateY(-1px)}
+.testimonials{background:var(--cream)}
+.testimonials .section-title{color:var(--green)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.testimonial-card{background:var(--warm-white);border:1px solid rgba(0,0,0,.07);padding:2rem;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.stars{color:var(--gold);font-size:1rem;margin-bottom:1rem;letter-spacing:2px}
+blockquote{font-family:"Playfair Display",serif;font-size:1rem;color:#555;line-height:1.75;font-style:italic;margin-bottom:1.5rem}
+.testimonial-author{display:flex;align-items:center;gap:.75rem}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--cream);font-size:.9rem;flex-shrink:0}
+.author-name{font-weight:700;color:var(--green);font-size:.95rem}
+.author-detail{font-size:.8rem;color:var(--warm-gray)}
+.cta-banner{background:var(--green);padding:70px 5%;text-align:center;position:relative;overflow:hidden}
+.cta-banner h2{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--cream);margin-bottom:1rem;position:relative;z-index:1}
+.cta-banner p{font-size:1.1rem;color:rgba(250,247,242,.7);margin-bottom:2rem;position:relative;z-index:1}
+.btn-cream{background:var(--cream);color:var(--green);padding:1rem 2.5rem;border-radius:4px;font-weight:700;font-size:1.05rem;transition:all .2s;display:inline-block;position:relative;z-index:1}
+.btn-cream:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.contact{background:var(--warm-white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:start}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-info h3{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--green);margin-bottom:1rem}
+.contact-info p{font-size:.95rem;color:var(--warm-gray);line-height:1.7;margin-bottom:1.5rem}
+.contact-detail{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem}
+.contact-detail-icon{width:36px;height:36px;background:var(--green);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--cream);font-size:1rem;flex-shrink:0}
+.contact-detail-text strong{display:block;font-weight:600;color:var(--green);font-size:.95rem}
+.contact-detail-text span{font-size:.875rem;color:var(--warm-gray)}
+.contact-form{background:var(--cream);padding:2.5rem;border-radius:8px;border:1px solid rgba(0,0,0,.07)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:1.25rem}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--green);margin-bottom:.4rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:.75rem 1rem;border:1.5px solid rgba(0,0,0,.12);border-radius:4px;font-family:"Inter",sans-serif;font-size:.95rem;color:var(--charcoal);background:var(--warm-white);outline:none}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;background:var(--green);color:var(--white);border:none;padding:1rem;border-radius:4px;font-family:"Inter",sans-serif;font-size:1rem;font-weight:700;cursor:pointer}
+.form-submit:hover{background:var(--green-mid)}
+footer{background:var(--green);color:rgba(250,247,242,.6);padding:40px 5%;text-align:center}
+.footer-logo{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:var(--cream);margin-bottom:.5rem}
+.footer-logo span{font-weight:400;font-style:italic}
+footer p{font-size:.85rem;line-height:1.8}
+footer a{color:rgba(250,247,242,.9)}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.1);margin:1.5rem 0}
+</style>
+</head>
+<body>
+<div class="preview-banner">Free website preview by <strong>Alma Digital Designs</strong> &mdash; <a href="mailto:hello@almadigitaldesigns.com">Claim Your Free Redesign</a></div>
+<nav>
+  <div class="nav-logo">Jay's<span> Painting &amp; Decorating</span></div>
+  <div class="nav-links"><a href="#services">Services</a><a href="#about">About Jay</a><a href="#testimonials">Reviews</a><a href="#contact">Get a Quote</a></div>
+  <a href="#contact" class="nav-cta">Free Quote</a>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">&#127912; Leeds, West Yorkshire</div>
+    <h1>Leeds Trusted Painter<br>&amp; Decorator &mdash;<br><em>Jay's Professional Finish</em></h1>
+    <p>From feature walls to full-home decorating, Jay brings precision and care to every Leeds property. No mess. No shortcuts. Just results.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Request a Free Quote from Jay</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+    <div class="hero-promise">
+      <div class="promise-item"><span>&#10003;</span> No mess left behind</div>
+      <div class="promise-item"><span>&#10003;</span> Free, no-obligation quotes</div>
+      <div class="promise-item"><span>&#10003;</span> Leeds-based and trusted</div>
+    </div>
+  </div>
+</section>
+<div class="quality-bar">
+  <div class="quality-item">Free Quotes</div>
+  <div class="quality-item">Residential &amp; Commercial</div>
+  <div class="quality-item">Leeds &amp; Surrounding Areas</div>
+  <div class="quality-item">Meticulous Finish Every Time</div>
+</div>
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">What Jay Does</div>
+    <h2 class="section-title">Professional Painting &amp; Decorating</h2>
+    <p class="section-subtitle">Whether you are refreshing a single room or decorating an entire property, Jay delivers the kind of finish that makes a real difference to how your home looks and feels.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">&#127998;</div><h3>Interior Painting &amp; Decorating</h3><p>Walls, ceilings, woodwork, and skirting boards finished to the highest standard. Clean lines, even coverage, and zero mess left behind.</p></div>
+    <div class="service-card"><div class="service-icon">&#127968;</div><h3>Exterior Painting</h3><p>Weatherproof exterior painting that protects and beautifies your property. Fascias, soffits, render, and masonry done properly.</p></div>
+    <div class="service-card"><div class="service-icon">&#127807;</div><h3>Wallpaper Hanging &amp; Removal</h3><p>Expert wallpaper hanging with perfect pattern matching, and safe, clean removal of old paper to leave walls ready for the next finish.</p></div>
+    <div class="service-card"><div class="service-icon">&#10024;</div><h3>Feature Walls</h3><p>Statement feature walls that transform a room. Bold colours, textured finishes, or beautiful wallpaper &mdash; Jay makes your vision a reality.</p></div>
+    <div class="service-card"><div class="service-icon">&#127970;</div><h3>Commercial Decorating</h3><p>Offices, shops, restaurants, and commercial properties decorated professionally, efficiently, and with minimum disruption to your business.</p></div>
+    <div class="service-card"><div class="service-icon">&#128296;</div><h3>Coving &amp; Plastering Prep</h3><p>Coving installation and surface preparation to ensure the perfect base for any paint or wallpaper finish.</p></div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-label">About Jay</div>
+      <h2 class="section-title">The Man Behind the Brush</h2>
+      <p>Jay's Painting &amp; Decorating has built a loyal following across Leeds through word-of-mouth and consistently outstanding results. Jay brings attention to detail and a professional finish to every project &mdash; residential and commercial.</p>
+      <p>Every job Jay takes on gets the same commitment: proper preparation, quality materials, and a finish that speaks for itself. That is why his customers keep coming back and why they recommend him to everyone they know.</p>
+      <div class="about-features">
+        <div class="about-feature">Fully insured and experienced decorator</div>
+        <div class="about-feature">Leeds and surrounding areas covered</div>
+        <div class="about-feature">Free, detailed quotes &mdash; no surprises</div>
+        <div class="about-feature">Residential and commercial projects</div>
+        <div class="about-feature">Meticulous preparation and clean finish</div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="about-visual-icon">&#127912;</div>
+      <div class="about-visual-quote">Every property deserves a finish to be proud of.</div>
+      <div class="about-visual-author">&mdash; Jay, Owner &amp; Lead Decorator</div>
+      <a href="#contact" class="about-cta">Request a Free Quote from Jay</a>
+    </div>
+  </div>
+</section>
+<section class="testimonials" id="testimonials">
+  <div class="section-header">
+    <div class="section-label">Customer Reviews</div>
+    <h2 class="section-title">What Leeds Homeowners Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Jay decorated our entire house before we moved in. The attention to detail was incredible &mdash; every corner perfect, every line crisp. He left the place spotless. We would recommend him without hesitation to anyone in Leeds.</blockquote><div class="testimonial-author"><div class="author-avatar">SH</div><div><div class="author-name">Sarah H.</div><div class="author-detail">Headingley, Leeds &mdash; Full Home Redecoration</div></div></div></div>
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>We asked Jay to do a feature wall in our living room &mdash; a complex geometric wallpaper that we had been nervous about. He hung it perfectly with every pattern matched exactly. It looks absolutely stunning. Brilliant work.</blockquote><div class="testimonial-author"><div class="author-avatar">MK</div><div><div class="author-name">Mike K.</div><div class="author-detail">Chapel Allerton, Leeds &mdash; Feature Wall</div></div></div></div>
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Jay redecorated our office on a tight schedule and it was completely stress-free. Turned up exactly when he said, worked cleanly and quietly, and the result was a huge transformation. Highly professional from start to finish.</blockquote><div class="testimonial-author"><div class="author-avatar">RT</div><div><div class="author-name">Rachel T.</div><div class="author-detail">Leeds City Centre &mdash; Commercial Office</div></div></div></div>
+  </div>
+</section>
+<div class="cta-banner">
+  <h2>Ready for a Professional Finish in Your Home?</h2>
+  <p>Free quotes, honest pricing, and the quality finish your Leeds property deserves.</p>
+  <a href="#contact" class="btn-cream">Claim Your Free Redesign</a>
+</div>
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h3>Request Your Free Quote</h3>
+      <p>Tell Jay about your project and he will get back to you with a free, no-obligation quote. No hard sell &mdash; just honest advice and fair pricing.</p>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128205;</div><div class="contact-detail-text"><strong>Based In</strong><span>Leeds, West Yorkshire</span></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128222;</div><div class="contact-detail-text"><strong>Call us today</strong><span>Ask for Jay &mdash; friendly, no-pressure chat</span></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128205;</div><div class="contact-detail-text"><strong>Coverage Area</strong><span>Leeds &amp; surrounding West Yorkshire areas</span></div></div>
+    </div>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Sarah" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Hughes" required></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+        <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="07XXX XXXXXX"></div>
+        <div class="form-group"><label>Service Required</label><select name="service"><option value="">Select...</option><option>Interior Painting and Decorating</option><option>Exterior Painting</option><option>Wallpaper Hanging and Removal</option><option>Feature Wall</option><option>Commercial Decorating</option><option>Coving and Plastering Prep</option><option>Full Home or Multiple Rooms</option><option>Other</option></select></div>
+        <div class="form-group"><label>Postcode</label><input type="text" name="postcode" placeholder="LS1 1AA"></div>
+        <div class="form-group"><label>Tell Jay About Your Project</label><textarea name="message" placeholder="How many rooms, type of work, any specific finishes or wallpapers in mind..."></textarea></div>
+        <input type="hidden" name="_subject" value="Free Quote Request - Jay's Painting and Decorating">
+        <button type="submit" class="form-submit">Request a Free Quote from Jay</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">Jay's<span> Painting &amp; Decorating</span></div>
+  <p>Leeds, West Yorkshire | <strong>Call us today</strong> | <a href="mailto:jay@jayspaintingdecorating.co.uk">jay@jayspaintingdecorating.co.uk</a></p>
+  <hr class="footer-divider">
+  <p>&copy; 2025 Jay's Painting &amp; Decorating. All rights reserved. | Leeds trusted painter and decorator.</p>
+  <p style="margin-top:.5rem;font-size:.78rem;color:rgba(250,247,242,.35)">Website preview by <strong style="color:rgba(250,247,242,.65)">Alma Digital Designs</strong></p>
+</footer>
+</body>
+</html>
