@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All In The Wrists Barbershop | Indianapolis Barber | Book Online</title>
+  <meta name="description" content="Precision fades, lineups & beard trims at All In The Wrists Barbershop in Indianapolis, IN. Book online now — 11 W 22nd St, Near Northside. Call (317) 459-7030." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #0d0d0d; --dark2: #1a1a1a; --amber: #c9923a;
+      --amber-light: #e8b060; --light: #f5f0e8; --gray: #888; --white: #fff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(13,13,13,0.96); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,146,58,0.2);
+      padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 70px;
+    }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 2px; color: var(--amber); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-cta { background: var(--amber); color: var(--dark) !important; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 700 !important; }
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; padding: 70px 5% 0;
+      background: linear-gradient(135deg, rgba(13,13,13,0.92) 0%, rgba(26,26,26,0.85) 100%),
+        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600&q=80&auto=format') center/cover no-repeat;
+    }
+    .hero-content { max-width: 750px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(201,146,58,0.12); border: 1px solid rgba(201,146,58,0.35);
+      color: var(--amber-light); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1rem;
+      border-radius: 50px; margin-bottom: 1.5rem;
+    }
+    .hero-badge::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--amber); border-radius: 50%; }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.95; letter-spacing: 2px; margin-bottom: 1.5rem; }
+    .hero h1 span { color: var(--amber); }
+    .hero-sub { font-size: 1.15rem; color: rgba(255,255,255,0.75); max-width: 560px; margin-bottom: 2.5rem; line-height: 1.7; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .btn-primary {
+      display: inline-block; background: var(--amber); color: var(--dark);
+      font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;
+      padding: 1rem 2rem; border-radius: 4px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--amber-light); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block; border: 1.5px solid rgba(255,255,255,0.35); color: var(--white);
+      font-weight: 600; font-size: 0.9rem; padding: 1rem 2rem; border-radius: 4px;
+      text-decoration: none; transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
+    .hero-stats { margin-top: 3rem; display: flex; gap: 2.5rem; }
+    .stat-item { text-align: left; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.25rem; color: var(--amber); line-height: 1; }
+    .stat-label { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.25rem; }
+    .marquee-strip { background: var(--amber); padding: 0.75rem 0; overflow: hidden; white-space: nowrap; }
+    .marquee-inner { display: inline-flex; animation: marquee 18s linear infinite; }
+    .marquee-inner span { color: var(--dark); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; padding: 0 2.5rem; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .section-services { background: var(--dark2); padding: 5rem 5%; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: 2px; line-height: 1; }
+    .section-sub { margin-top: 0.75rem; font-size: 1rem; color: rgba(255,255,255,0.6); max-width: 500px; margin-left: auto; margin-right: auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .service-card {
+      background: var(--dark); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px; padding: 2rem 1.75rem; transition: border-color 0.25s, transform 0.2s;
+    }
+    .service-card:hover { border-color: var(--amber); transform: translateY(-4px); }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .section-about { background: var(--dark); padding: 5rem 5%; }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-image-wrap { position: relative; }
+    .about-image-wrap::before { content: ''; position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px; border: 2px solid var(--amber); border-radius: 8px; z-index: 0; }
+    .about-image-wrap img { width: 100%; height: 420px; object-fit: cover; border-radius: 8px; position: relative; z-index: 1; }
+    .about-content .section-tag { text-align: left; }
+    .about-content h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: 2px; line-height: 1.05; margin-bottom: 1.25rem; }
+    .about-content p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1.5rem; }
+    .section-testimonials { background: var(--dark2); padding: 5rem 5%; }
+    .testimonials-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial-card { background: var(--dark); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 2rem; }
+    .stars { color: var(--amber); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testimonial-card blockquote { font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testimonial-author { font-size: 0.8rem; font-weight: 700; color: var(--amber); letter-spacing: 1px; text-transform: uppercase; }
+    .section-cta { background: var(--amber); padding: 5rem 5%; text-align: center; }
+    .section-cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--dark); letter-spacing: 2px; line-height: 1; margin-bottom: 1rem; }
+    .section-cta p { color: rgba(13,13,13,0.75); font-size: 1.05rem; max-width: 480px; margin: 0 auto 2rem; }
+    .btn-dark { display: inline-block; background: var(--dark); color: var(--white); font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
+    .btn-dark:hover { background: var(--dark2); }
+    .section-contact { background: var(--dark); padding: 5rem 5%; }
+    .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .contact-info h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; letter-spacing: 2px; margin-bottom: 2rem; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .contact-detail-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-detail-text strong { display: block; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--amber); margin-bottom: 0.2rem; }
+    .contact-detail-text span { font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group input, .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white); padding: 0.85rem 1rem; border-radius: 4px;
+      font-family: 'Inter', sans-serif; font-size: 0.9rem; transition: border-color 0.2s;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--amber); }
+    .form-group textarea { height: 130px; resize: vertical; }
+    footer { background: #050505; padding: 2.5rem 5%; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: 2px; color: var(--amber); }
+    footer p { font-size: 0.8rem; color: var(--gray); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.8rem; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--amber); }
+    .alma-banner { background: linear-gradient(135deg, #0f1525 0%, #1a2540 100%); border-top: 2px solid #00b4d8; text-align: center; padding: 1.25rem; font-size: 0.82rem; color: rgba(255,255,255,0.75); }
+    .alma-banner strong { color: #00b4d8; }
+    .alma-banner a { color: #00b4d8; text-decoration: underline; }
+    @media (max-width: 768px) { .nav-links { display: none; } .about-inner, .contact-inner { grid-template-columns: 1fr; } .about-image-wrap { display: none; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="nav-logo">AITW</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Indianapolis, IN &middot; Near Northside</div>
+      <h1>Indianapolis<br /><span>Precision</span><br />Cuts</h1>
+      <p class="hero-sub">Sharp fades, clean lineups, and classic cuts in Near Northside Indianapolis. All In The Wrists Barbershop is now online &mdash; skip the phone tag and book your chair in seconds.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book Your Cut Today &mdash; It Only Takes a Minute</a>
+        <a href="#services" class="btn-outline">View Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">5&#9733;</div><div class="stat-label">Google Rating</div></div>
+        <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Happy Clients</div></div>
+        <div class="stat-item"><div class="stat-num">Indy</div><div class="stat-label">Local &amp; Proud</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span>Precision Fades</span><span>&diams;</span><span>Clean Lineups</span><span>&diams;</span>
+      <span>Beard Trims</span><span>&diams;</span><span>Hot Towel Shaves</span><span>&diams;</span>
+      <span>Kids Cuts</span><span>&diams;</span><span>Indianapolis Barbershop</span><span>&diams;</span>
+      <span>Precision Fades</span><span>&diams;</span><span>Clean Lineups</span><span>&diams;</span>
+      <span>Beard Trims</span><span>&diams;</span><span>Hot Towel Shaves</span><span>&diams;</span>
+      <span>Kids Cuts</span><span>&diams;</span><span>Indianapolis Barbershop</span><span>&diams;</span>
+    </div>
+  </div>
+
+  <section class="section-services" id="services">
+    <div class="section-header">
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-sub">Every service delivered with craft and attention to detail &mdash; no rushing, no shortcuts.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#9986;&#65039;</div>
+        <h3>Haircuts &amp; Fades</h3>
+        <p>From classic taper fades to skin fades and everything in between. Clean, sharp, consistent every time.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#129714;</div>
+        <h3>Beard Trims &amp; Shape-Ups</h3>
+        <p>Get your beard dialed in with a precise trim, edge work, and shape-up that frames your face right.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128136;</div>
+        <h3>Lineups &amp; Edge Work</h3>
+        <p>The finishing touch that makes the difference. Crisp lines that stay clean and last all week.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128102;</div>
+        <h3>Kids' Cuts</h3>
+        <p>Patient, friendly service for little ones. We make sure kids leave looking sharp and smiling.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128293;</div>
+        <h3>Hot Towel Shaves</h3>
+        <p>The classic barbershop experience. A full straight razor shave with hot towels &mdash; old school craft, modern execution.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-about" id="about">
+    <div class="about-inner">
+      <div class="about-image-wrap">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80&auto=format" alt="All In The Wrists Barbershop" loading="lazy" />
+      </div>
+      <div class="about-content">
+        <div class="section-tag">Our Story</div>
+        <h2>The Name Says It All</h2>
+        <p>All In The Wrists Barbershop sits at the corner of Near Northside Indianapolis, where Marvin and his crew have built a reputation on one thing: precision. The name says it all &mdash; every fade, lineup, and shape-up is the product of real craft, not shortcuts.</p>
+        <p>Whether you're a regular or stepping in for the first time, you'll leave looking clean and come back for the consistency. No gimmicks &mdash; just honest barbershop work done right at 11 W 22nd St.</p>
+        <a href="#contact" class="btn-primary">Book Your Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-testimonials">
+    <div class="section-header">
+      <div class="section-tag">Client Reviews</div>
+      <h2 class="section-title">What People Are Saying</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Best barbershop in Indianapolis &mdash; bar none. Marvin is a craftsman. The fade is always on point and the lineup is razor sharp. I won't go anywhere else."</blockquote>
+        <div class="testimonial-author">&mdash; DeShawn M., Indianapolis</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Finally a barber who takes his time and gets it right every single time. The hot towel shave experience was incredible. This is the real deal."</blockquote>
+        <div class="testimonial-author">&mdash; Marcus T., Near Northside</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Took my son here for his first real haircut. The crew was so patient and friendly. He walked out looking like a little gentleman. We're regulars now."</blockquote>
+        <div class="testimonial-author">&mdash; Keisha R., Indianapolis</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cta">
+    <h2>Ready to Look Sharp?</h2>
+    <p>Book your chair at All In The Wrists. It only takes a minute &mdash; no phone tag, no waiting around.</p>
+    <a href="#contact" class="btn-dark">Book Your Cut Today</a>
+  </section>
+
+  <section class="section-contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="section-tag">Find Us</div>
+        <h2>Come Get Clean</h2>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">&#128205;</span>
+          <div class="contact-detail-text"><strong>Address</strong><span>11 W 22nd St, Indianapolis, IN 46202</span></div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">&#128222;</span>
+          <div class="contact-detail-text"><strong>Phone</strong><span><a href="tel:+13174597030" style="color:inherit;text-decoration:none;">(317) 459-7030</a></span></div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">&#128231;</span>
+          <div class="contact-detail-text"><strong>Email</strong><span><a href="mailto:aitw317@icloud.com" style="color:inherit;text-decoration:none;">aitw317@icloud.com</a></span></div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">&#128248;</span>
+          <div class="contact-detail-text"><strong>Instagram</strong><span>@aitw_barbershop</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-tag">Book Online</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;margin-bottom:1.5rem;">Send Us a Message</h2>
+        <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+          <div class="form-group"><input type="text" name="name" placeholder="Your Name" required /></div>
+          <div class="form-group"><input type="email" name="email" placeholder="Your Email" required /></div>
+          <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number" /></div>
+          <div class="form-group"><textarea name="message" placeholder="What service are you looking for? Preferred day/time?" required></textarea></div>
+          <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;">Book Your Cut Today &mdash; It Only Takes a Minute</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">All In The Wrists</div>
+    <p>&copy; 2026 All In The Wrists Barbershop &middot; 11 W 22nd St, Indianapolis, IN 46202</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Book Now</a>
+    </div>
+  </footer>
+
+  <div class="alma-banner">
+    &#10024; This is a <strong>free website preview</strong> created by <strong>Alma Digital Designs</strong> &mdash;
+    <a href="mailto:hello@almadigitaldesigns.com">Claim your redesign</a> and get this live for your business today.
+  </div>
+</body>
+</html>
