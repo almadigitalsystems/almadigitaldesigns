@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tecno Automotriz CDMX | Mecanico a Domicilio Ciudad de Mexico</title>
+  <meta name="description" content="Mecanico domicilio CDMX. Diagnostico aceite frenos." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-deep: #0d2137;
+      --blue-mid: #1a3a5c;
+      --blue-bright: #1e6fa8;
+      --blue-light: #3b8fc5;
+      --steel: #8ba7bc;
+      --accent: #00b4d8;
+      --white: #ffffff;
+      --off-white: #f0f6fb;
+      --gray: #6b7280;
+      --dark: #111827;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); }
+
+    /* BANNER */
+    .preview-banner {
+      background: linear-gradient(90deg, var(--accent), var(--blue-bright));
+      color: var(--white);
+      text-align: center;
+      padding: 13px 20px;
+      font-size: 0.87rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--blue-deep);
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-mark {
+      background: var(--accent);
+      color: var(--blue-deep);
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 1rem;
+    }
+    .nav-logo-text { color: var(--white); font-size: 1.1rem; font-weight: 700; }
+    .nav-logo-text span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--steel); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-phone-btn {
+      background: var(--accent);
+      color: var(--blue-deep);
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-phone-btn:hover { opacity: 0.9; }
+
+    /* HERO — Story Style with diagonal */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 50%, #0a3550 100%);
+      padding: 90px 50px 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 80px;
+      background: var(--white);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,180,216,0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .badge-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .hero-text h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 22px;
+      font-weight: 800;
+    }
+    .hero-text h1 em { color: var(--accent); font-style: normal; }
+    .hero-text p { color: var(--steel); font-size: 1.05rem; line-height: 1.75; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-accent {
+      background: var(--accent);
+      color: var(--blue-deep);
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.2s, opacity 0.2s;
+      display: inline-block;
+    }
+    .btn-accent:hover { transform: translateY(-2px); opacity: 0.92; }
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.8);
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline-white:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .hero-card-title { color: var(--accent); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; }
+    .coverage-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .coverage-list li { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+    .cov-icon { color: var(--accent); font-size: 1.1rem; width: 20px; text-align: center; }
+    .hero-guarantee {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .guarantee-badge {
+      background: var(--accent);
+      color: var(--blue-deep);
+      border-radius: 50%;
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .guarantee-text strong { color: var(--white); font-size: 0.88rem; display: block; }
+    .guarantee-text span { color: var(--steel); font-size: 0.78rem; }
+    @media(max-width:900px) { .hero-grid { grid-template-columns: 1fr; } .hero { padding: 70px 24px 100px; } }
+
+    /* HOW IT WORKS */
+    .how {
+      background: var(--white);
+      padding: 90px 50px;
+    }
+    .how-inner { max-width: 1000px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 10px; font-weight: 700; }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--dark); margin-bottom: 12px; font-weight: 800; }
+    .section-sub { color: var(--gray); font-size: 1rem; margin-bottom: 50px; max-width: 500px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+    .step { text-align: center; }
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--off-white);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--blue-bright);
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .step p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+    .step-arrow { display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.4rem; padding-top: 14px; }
+    @media(max-width:600px) { .step-arrow { display: none; } .how { padding: 70px 20px; } }
+
+    /* SERVICES */
+    .services { background: var(--off-white); padding: 90px 50px; }
+    .services-inner { max-width: 1100px; margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .svc {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 30px 24px;
+      border-top: 3px solid var(--accent);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .svc:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); }
+    .svc-icon { font-size: 2rem; margin-bottom: 14px; }
+    .svc h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .svc p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+    @media(max-width:600px) { .services { padding: 70px 20px; } }
+
+    /* ABOUT */
+    .about { background: var(--blue-deep); padding: 90px 50px; }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text .section-eyebrow { color: var(--accent); }
+    .about-text .section-title { color: var(--white); }
+    .about-text p { color: var(--steel); font-size: 0.98rem; line-height: 1.8; margin-bottom: 20px; }
+    .about-features { display: flex; flex-direction: column; gap: 14px; margin: 24px 0 32px; }
+    .af { display: flex; gap: 12px; align-items: flex-start; }
+    .af-check { color: var(--accent); font-size: 1rem; margin-top: 2px; }
+    .af-text { color: rgba(255,255,255,0.75); font-size: 0.92rem; }
+    .btn-accent-about {
+      background: var(--accent);
+      color: var(--blue-deep);
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+    .btn-accent-about:hover { opacity: 0.9; }
+    .about-visual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .av-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .av-box .num { font-size: 2.4rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .av-box .lbl { font-size: 0.78rem; color: var(--steel); margin-top: 6px; }
+    @media(max-width:900px) { .about-inner { grid-template-columns: 1fr; } .about { padding: 70px 24px; } }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--white); padding: 90px 50px; }
+    .test-inner { max-width: 1000px; margin: 0 auto; }
+    .test-header { margin-bottom: 50px; }
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; }
+    .tcard {
+      background: var(--off-white);
+      border-radius: 12px;
+      padding: 30px 24px;
+      border-left: 4px solid var(--accent);
+    }
+    .tcard-stars { color: var(--blue-bright); font-size: 0.9rem; margin-bottom: 14px; }
+    .tcard p { font-size: 0.93rem; color: #444; line-height: 1.7; margin-bottom: 18px; }
+    .tcard-name { font-weight: 700; font-size: 0.88rem; color: var(--dark); }
+    .tcard-loc { font-size: 0.78rem; color: var(--gray); }
+    @media(max-width:600px) { .testimonials { padding: 70px 20px; } }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--blue-bright), var(--accent));
+      padding: 80px 50px;
+      text-align: center;
+    }
+    .cta-section h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--white); font-weight: 800; margin-bottom: 14px; }
+    .cta-section p { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 32px; }
+    .btn-white-cta {
+      background: var(--white);
+      color: var(--blue-bright);
+      padding: 16px 38px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .btn-white-cta:hover { transform: translateY(-2px); }
+    .cta-note { margin-top: 20px; color: rgba(255,255,255,0.65); font-size: 0.82rem; }
+    @media(max-width:600px) { .cta-section { padding: 70px 20px; } }
+
+    /* CONTACT */
+    .contact { background: var(--blue-deep); padding: 90px 50px; }
+    .contact-inner { max-width: 580px; margin: 0 auto; }
+    .contact-inner .section-eyebrow { color: var(--accent); text-align: center; }
+    .contact-inner .section-title { color: var(--white); text-align: center; margin-bottom: 8px; }
+    .contact-inner .csub { color: var(--steel); text-align: center; margin-bottom: 40px; font-size: 0.95rem; }
+    .fg { margin-bottom: 16px; }
+    .fg label { display: block; color: var(--steel); font-size: 0.82rem; margin-bottom: 6px; font-weight: 600; letter-spacing: 0.04em; }
+    .fg input, .fg textarea, .fg select {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--white);
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      border-radius: 8px;
+      transition: border-color 0.2s;
+    }
+    .fg input:focus, .fg textarea:focus { outline: none; border-color: var(--accent); }
+    .fg textarea { height: 110px; resize: vertical; }
+    .fgrow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fsub {
+      width: 100%;
+      background: var(--accent);
+      color: var(--blue-deep);
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      margin-top: 8px;
+      transition: opacity 0.2s;
+    }
+    .fsub:hover { opacity: 0.9; }
+    .contact-info { margin-top: 32px; text-align: center; }
+    .contact-info p { color: var(--steel); font-size: 0.88rem; margin-bottom: 6px; }
+    .contact-info a { color: var(--accent); font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+    @media(max-width:600px) { .contact { padding: 70px 20px; } .fgrow { grid-template-columns: 1fr; } }
+
+    /* FOOTER */
+    footer {
+      background: #060f18;
+      padding: 36px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .foot-logo { color: var(--white); font-weight: 800; font-size: 1.05rem; }
+    .foot-logo span { color: var(--accent); }
+    footer p { color: #2a3a4a; font-size: 0.8rem; }
+    .foot-credit { color: #1e3048; font-size: 0.78rem; font-style: italic; }
+    @media(max-width:600px) { footer { padding: 24px 20px; flex-direction: column; text-align: center; } nav { padding: 16px 20px; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">
+    Vista previa GRATUITA creada por Alma Digital Designs &mdash; Reclama tu sitio hoy
+  </div>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-mark">TA</div>
+      <div class="nav-logo-text">Tecno <span>Automotriz</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Como Funciona</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="tel:+525519008140" class="nav-phone-btn">+52 55 1900 8140</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge"><div class="badge-dot"></div> Servicio Activo en CDMX</div>
+        <h1>Tu Mecanico Va<br/>Donde <em>Tu Estas</em></h1>
+        <p>Tecno Automotriz lleva el taller a tu puerta en CDMX. Rapido, con garantia y sin que mueva tu vehiculo. Tecnicos certificados listos para ayudarte.</p>
+        <div class="hero-btns">
+          <a href="#contacto" class="btn-accent">Agenda tu servicio a domicilio</a>
+          <a href="tel:+525519008140" class="btn-outline-white">Llamar Ahora</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">Cobertura &amp; Ventajas</div>
+        <ul class="coverage-list">
+          <li><span class="cov-icon">&#128205;</span> Servicio a domicilio en toda CDMX</li>
+          <li><span class="cov-icon">&#9200;</span> Atencion express en menos de 2 horas</li>
+          <li><span class="cov-icon">&#128295;</span> Tecnicos certificados y verificados</li>
+          <li><span class="cov-icon">&#128203;</span> Diagnostico movil con equipos modernos</li>
+          <li><span class="cov-icon">&#9989;</span> Garantia en todas las reparaciones</li>
+        </ul>
+        <div class="hero-guarantee">
+          <div class="guarantee-badge">&#127881;</div>
+          <div class="guarantee-text">
+            <strong>Satisfaccion Garantizada</strong>
+            <span>Si no quedas satisfecho, lo corregimos sin costo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="como-funciona">
+    <div class="how-inner">
+      <div class="section-eyebrow">Proceso Simple</div>
+      <div class="section-title">Como Funciona</div>
+      <div class="section-sub">En tres pasos sencillos tu carro queda listo donde esta.</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Agenda en Linea</h3>
+          <p>Llena el formulario o llamanos. Te confirmamos la cita en minutos.</p>
+        </div>
+        <div class="step-arrow">&#8594;</div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>El Tecnico Llega</h3>
+          <p>Nuestro tecnico certifcado llega a tu domicilio con todo el equipo necesario.</p>
+        </div>
+        <div class="step-arrow">&#8594;</div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Tu Carro Queda Listo</h3>
+          <p>Reparamos en sitio. Recibes factura y garantia por escrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicios">
+    <div class="services-inner">
+      <div class="section-eyebrow">Nuestros Servicios</div>
+      <div class="section-title">Lo Llevamos a Tu Puerta</div>
+      <div class="section-sub">Todos los servicios de un taller profesional, en la comodidad de tu hogar u oficina.</div>
+      <div class="services-grid">
+        <div class="svc">
+          <div class="svc-icon">&#127968;</div>
+          <h3>Mecanica a Domicilio</h3>
+          <p>Reparaciones generales en tu cochera, estacionamiento u oficina. Sin necesidad de remolque.</p>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">&#128187;</div>
+          <h3>Diagnostico Movil</h3>
+          <p>Escaner OBD2 y equipos de diagnostico avanzado para detectar fallas en sitio.</p>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">&#128737;</div>
+          <h3>Cambio de Aceite</h3>
+          <p>Cambio de aceite y filtros con producto de calidad, directamente donde estas.</p>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">&#9889;</div>
+          <h3>Frenos en Sitio</h3>
+          <p>Revision, ajuste y cambio de balatas, discos y liquido de frenos a domicilio.</p>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">&#128680;</div>
+          <h3>Servicio Urgente</h3>
+          <p>Asistencia de emergencia cuando tu vehiculo te deja varado. Rapido y eficiente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="nosotros">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-eyebrow">Sobre Nosotros</div>
+        <div class="section-title">El Taller que Viene a Ti</div>
+        <p>Tecno Automotriz nacio para eliminar la molestia de llevar tu carro al taller. Con tecnicos certificados y diagnostico movil, llevamos el servicio a tu hogar con la misma calidad de un taller profesional.</p>
+        <div class="about-features">
+          <div class="af"><span class="af-check">&#10003;</span><span class="af-text">Sin mover tu vehiculo</span></div>
+          <div class="af"><span class="af-check">&#10003;</span><span class="af-text">Tecnicos certificados y verificados</span></div>
+          <div class="af"><span class="af-check">&#10003;</span><span class="af-text">Equipos de diagnostico modernos</span></div>
+          <div class="af"><span class="af-check">&#10003;</span><span class="af-text">Garantia por escrito en cada servicio</span></div>
+          <div class="af"><span class="af-check">&#10003;</span><span class="af-text">Precios transparentes y justos</span></div>
+        </div>
+        <a href="#contacto" class="btn-accent-about">Agenda tu Servicio</a>
+      </div>
+      <div class="about-visual-grid">
+        <div class="av-box"><div class="num">+500</div><div class="lbl">Servicios Realizados</div></div>
+        <div class="av-box"><div class="num">&lt;2h</div><div class="lbl">Tiempo de Respuesta</div></div>
+        <div class="av-box"><div class="num">100%</div><div class="lbl">Garantia en cada servicio</div></div>
+        <div class="av-box"><div class="num">CDMX</div><div class="lbl">Cobertura completa</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="test-inner">
+      <div class="test-header">
+        <div class="section-eyebrow">Resenas</div>
+        <div class="section-title">Lo Que Dicen Nuestros Clientes</div>
+      </div>
+      <div class="test-grid">
+        <div class="tcard">
+          <div class="tcard-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"Increible servicio. El tecnico llego en menos de una hora y resolvio el problema en mi estacionamiento. No tuve que mover el carro para nada."</p>
+          <div class="tcard-name">Fernando L.</div>
+          <div class="tcard-loc">Cliente &bull; Benito Juarez, CDMX</div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"Me cambiaron el aceite y revisaron los frenos en mi casa. Rapido, limpio y con garantia. Ahora solo los llamo a ellos."</p>
+          <div class="tcard-name">Gabriela M.</div>
+          <div class="tcard-loc">Cliente &bull; Iztapalapa, CDMX</div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <p>"Mi carro no encendia y en dos horas ya estaba solucionado. Vinieron a mi oficina, diagnosticaron y repararon. Servicio de 10."</p>
+          <div class="tcard-name">Eduardo C.</div>
+          <div class="tcard-loc">Cliente &bull; Miguel Hidalgo, CDMX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Agenda Tu Servicio a Domicilio</h2>
+    <p>No esperes mas. Tu mecanico de confianza llega a donde estas.</p>
+    <a href="#contacto" class="btn-white-cta">Agenda Ahora &mdash; Es Facil</a>
+    <div class="cta-note">Sin compromiso. Presupuesto sin costo.</div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <div class="section-eyebrow">Contacto</div>
+      <div class="section-title">Agenda Tu Cita</div>
+      <div class="csub">Llena el formulario y te confirmamos tu cita a la brevedad.</div>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Tecno Automotriz CDMX - Mexico City Mexico" />
+        <div class="fgrow">
+          <div class="fg">
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="fg">
+            <label>Telefono</label>
+            <input type="tel" name="telefono" placeholder="+52 55 0000 0000" />
+          </div>
+        </div>
+        <div class="fg">
+          <label>Correo Electronico</label>
+          <input type="email" name="email" placeholder="tucorreo@gmail.com" required />
+        </div>
+        <div class="fg">
+          <label>Tipo de Vehiculo</label>
+          <input type="text" name="vehiculo" placeholder="Ej: Nissan Sentra 2020" />
+        </div>
+        <div class="fg">
+          <label>Servicio Requerido</label>
+          <input type="text" name="servicio" placeholder="Ej: Cambio de aceite, diagnostico..." />
+        </div>
+        <div class="fg">
+          <label>Direccion de Servicio</label>
+          <input type="text" name="direccion" placeholder="Colonia, delegacion" />
+        </div>
+        <div class="fg">
+          <label>Mensaje</label>
+          <textarea name="mensaje" placeholder="Mas detalles sobre el problema..."></textarea>
+        </div>
+        <button type="submit" class="fsub">Agendar Mi Servicio</button>
+      </form>
+      <div class="contact-info">
+        <p>O llamanos directamente:</p>
+        <a href="tel:+525519008140">+52 55 1900 8140</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-logo">Tecno <span>Automotriz</span> CDMX</div>
+    <p>Ciudad de Mexico &bull; +52 55 1900 8140</p>
+    <div class="foot-credit">Vista previa disenada por Alma Digital Designs</div>
+  </footer>
+
+</body>
+</html>
