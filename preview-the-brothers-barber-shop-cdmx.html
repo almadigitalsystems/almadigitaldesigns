@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Brothers Barber Shop | Barberia Coyoacan CDMX</title>
+  <meta name="description" content="Barberia Coyoacan CDMX. Cortes fades diseno barba." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0d0d0d;
+      --white: #ffffff;
+      --off-white: #f9f9f7;
+      --gold: #b8943e;
+      --gold-pale: #e8d9b0;
+      --gray-1: #1a1a1a;
+      --gray-2: #2e2e2e;
+      --gray-3: #888;
+      --gray-4: #ccc;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
+
+    /* BANNER */
+    .preview-banner {
+      background: var(--black);
+      color: var(--gold-pale);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--gold);
+    }
+    .preview-banner strong { color: var(--gold); }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #e8e8e8;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--black); letter-spacing: 0.01em; }
+    .nav-logo .gold { color: var(--gold); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--gray-3); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--black); }
+    .nav-btn {
+      background: var(--black);
+      color: var(--white);
+      padding: 10px 24px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .nav-btn:hover { background: var(--gold); color: var(--black); }
+
+    /* HERO — Minimalist split layout */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+    }
+    .hero-left {
+      background: var(--black);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+    .hero-left h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+    .hero-left p { color: #888; font-size: 1rem; line-height: 1.75; max-width: 420px; margin-bottom: 36px; }
+    .hero-action-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-white {
+      background: var(--white);
+      color: var(--black);
+      padding: 14px 30px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .btn-white:hover { background: var(--gold-pale); }
+    .btn-ghost {
+      border: 1px solid #333;
+      color: #aaa;
+      padding: 13px 28px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-ghost:hover { border-color: #888; color: var(--white); }
+    .hero-right {
+      background: var(--off-white);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-right-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-3); margin-bottom: 32px; }
+    .hero-feature-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .hero-feature-list li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .feat-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+    .feat-title { font-weight: 700; font-size: 0.95rem; color: var(--black); margin-bottom: 4px; }
+    .feat-desc { font-size: 0.83rem; color: var(--gray-3); line-height: 1.5; }
+    .hero-location {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid #ddd;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--gray-3);
+      font-size: 0.82rem;
+    }
+    .loc-pin { color: var(--gold); }
+    @media(max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left, .hero-right { padding: 60px 30px; }
+    }
+
+    /* SERVICES STRIP */
+    .services-strip { background: var(--gold); padding: 60px 60px; }
+    .strip-inner { max-width: 1100px; margin: 0 auto; }
+    .strip-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); opacity: 0.6; margin-bottom: 12px; }
+    .strip-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--black); margin-bottom: 40px; }
+    .services-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+    }
+    .svc-box {
+      background: rgba(0,0,0,0.08);
+      padding: 24px;
+      border-radius: 2px;
+    }
+    .svc-box h3 { font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+    .svc-box p { font-size: 0.8rem; color: rgba(0,0,0,0.55); line-height: 1.5; }
+    @media(max-width:600px) { .services-strip { padding: 50px 20px; } }
+
+    /* ABOUT */
+    .about { background: var(--white); padding: 100px 60px; }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .about-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .about-inner h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--black); margin-bottom: 20px; }
+    .about-inner p { color: #666; font-size: 0.98rem; line-height: 1.85; margin-bottom: 16px; }
+    .about-quote {
+      border-left: 3px solid var(--gold);
+      padding: 16px 24px;
+      background: var(--off-white);
+      margin: 24px 0;
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .about-cta { display: inline-block; background: var(--black); color: var(--white); padding: 14px 32px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; margin-top: 12px; }
+    .about-cta:hover { background: var(--gold); color: var(--black); }
+    .about-stats { display: flex; flex-direction: column; gap: 36px; }
+    .stat-row { display: flex; gap: 24px; }
+    .stat-box {
+      flex: 1;
+      background: var(--off-white);
+      padding: 28px;
+    }
+    .stat-box .n { font-family: 'DM Serif Display', serif; font-size: 2.8rem; color: var(--black); line-height: 1; }
+    .stat-box .l { font-size: 0.8rem; color: var(--gray-3); margin-top: 6px; }
+    .about-testimonial {
+      background: var(--black);
+      padding: 32px;
+      color: var(--white);
+    }
+    .at-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 14px; }
+    .at-text { font-size: 0.92rem; color: #aaa; line-height: 1.7; font-style: italic; margin-bottom: 16px; }
+    .at-name { font-size: 0.82rem; color: #666; }
+    .at-name strong { color: var(--white); }
+    @media(max-width:900px) { .about-inner { grid-template-columns: 1fr; } .about { padding: 70px 24px; } }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--off-white); padding: 100px 60px; }
+    .test-header { text-align: center; margin-bottom: 60px; }
+    .test-header h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--black); }
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; max-width: 1000px; margin: 0 auto; }
+    .tc {
+      background: var(--white);
+      padding: 36px 28px;
+    }
+    .tc-stars { color: var(--gold); margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 2px; }
+    .tc p { font-size: 0.92rem; color: #555; line-height: 1.75; margin-bottom: 20px; }
+    .tc-name { font-weight: 700; font-size: 0.88rem; }
+    .tc-sub { font-size: 0.78rem; color: var(--gray-3); }
+    @media(max-width:600px) { .testimonials { padding: 70px 20px; } }
+
+    /* CTA */
+    .cta-section {
+      background: var(--black);
+      padding: 90px 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      max-width: 100%;
+    }
+    .cta-text h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); margin-bottom: 12px; }
+    .cta-text p { color: #666; font-size: 1rem; }
+    .btn-gold-cta {
+      background: var(--gold);
+      color: var(--black);
+      padding: 18px 36px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-gold-cta:hover { background: var(--gold-pale); }
+    @media(max-width:768px) { .cta-section { grid-template-columns: 1fr; text-align: center; padding: 70px 24px; } }
+
+    /* CONTACT */
+    .contact { background: var(--white); padding: 100px 60px; border-top: 1px solid #eee; }
+    .contact-inner { max-width: 560px; margin: 0 auto; }
+    .contact-inner .clabel { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .contact-inner h2 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--black); margin-bottom: 8px; }
+    .contact-inner .csub { color: var(--gray-3); font-size: 0.95rem; margin-bottom: 40px; }
+    .fg { margin-bottom: 18px; }
+    .fg label { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #aaa; margin-bottom: 6px; }
+    .fg input, .fg textarea {
+      width: 100%;
+      border: 1px solid #e0e0e0;
+      background: var(--white);
+      color: var(--black);
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      border-radius: 0;
+      transition: border-color 0.2s;
+    }
+    .fg input:focus, .fg textarea:focus { outline: none; border-color: var(--gold); }
+    .fg textarea { height: 110px; resize: vertical; }
+    .fgrow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fsub {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      padding: 15px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .fsub:hover { background: var(--gold); color: var(--black); }
+    @media(max-width:600px) { .contact { padding: 70px 20px; } .fgrow { grid-template-columns: 1fr; } }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      border-top: 1px solid #1a1a1a;
+      padding: 36px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .foot-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--white); }
+    footer p { color: #333; font-size: 0.8rem; }
+    .foot-credit { font-style: italic; color: #2a2a2a; font-size: 0.78rem; }
+    @media(max-width:600px) { footer { padding: 24px 20px; flex-direction: column; text-align: center; } nav { padding: 16px 20px; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">
+    Vista previa GRATUITA creada por <strong>Alma Digital Designs</strong> &mdash; Reclama tu sitio hoy
+  </div>
+
+  <nav>
+    <div class="nav-logo">The <span class="gold">Brothers</span></div>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="nav-btn">Agenda Cita</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Coyoacan &bull; CDMX</div>
+      <h1>Barberia de Barrio con Nivel de Campeon</h1>
+      <p>The Brothers en Coyoacan: estilo, precision y buen trato. Cortes de primer nivel a precios accesibles. Clientes que regresan semana tras semana.</p>
+      <div class="hero-action-row">
+        <a href="#contacto" class="btn-white">Conoce tu nuevo sitio gratis</a>
+        <a href="#servicios" class="btn-ghost">Ver Servicios</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-label">Por que elegir The Brothers</div>
+      <ul class="hero-feature-list">
+        <li>
+          <div class="feat-dot"></div>
+          <div>
+            <div class="feat-title">Precision en cada corte</div>
+            <div class="feat-desc">Manos expertas que dominan fades, degradados y diseños</div>
+          </div>
+        </li>
+        <li>
+          <div class="feat-dot"></div>
+          <div>
+            <div class="feat-title">Trato de barrio, calidad de campeon</div>
+            <div class="feat-desc">Ambiente relajado donde te sientes en casa</div>
+          </div>
+        </li>
+        <li>
+          <div class="feat-dot"></div>
+          <div>
+            <div class="feat-title">Precios accesibles</div>
+            <div class="feat-desc">Primera calidad sin que tu cartera lo sienta</div>
+          </div>
+        </li>
+        <li>
+          <div class="feat-dot"></div>
+          <div>
+            <div class="feat-title">Clientes leales</div>
+            <div class="feat-desc">La mayoria regresa cada semana. Eso lo dice todo.</div>
+          </div>
+        </li>
+      </ul>
+      <div class="hero-location">
+        <span class="loc-pin">&#9679;</span>
+        Coyoacan, Ciudad de Mexico
+      </div>
+    </div>
+  </section>
+
+  <section class="services-strip" id="servicios">
+    <div class="strip-inner">
+      <div class="strip-label">Nuestros Servicios</div>
+      <div class="strip-title">Todo lo que Necesitas, en un Solo Lugar</div>
+      <div class="services-row">
+        <div class="svc-box">
+          <h3>Corte de Cabello</h3>
+          <p>Clasico o moderno, segun tu estilo y personalidad.</p>
+        </div>
+        <div class="svc-box">
+          <h3>Diseno de Barba</h3>
+          <p>Definicion perfecta que enmarca y proyecta tu imagen.</p>
+        </div>
+        <div class="svc-box">
+          <h3>Fade y Degradado</h3>
+          <p>Degradados limpios de cualquier nivel: bajo, medio o alto.</p>
+        </div>
+        <div class="svc-box">
+          <h3>Afeitado Clasico</h3>
+          <p>Navaja, espuma y cuidado profesional como en los viejos tiempos.</p>
+        </div>
+        <div class="svc-box">
+          <h3>Corte Infantil</h3>
+          <p>Paciencia y atencion especial para los mas pequenos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="nosotros">
+    <div class="about-inner">
+      <div>
+        <div class="about-label">Sobre The Brothers</div>
+        <h2>Barrio Coyoacan.<br/>Calidad sin Igual.</h2>
+        <p>The Brothers Barber Shop nacio en Coyoacan con una sola mision: ofrecer cortes de primer nivel a precios accesibles, con el trato calido de una barberia de barrio.</p>
+        <div class="about-quote">
+          "Cada cliente que entra merece salir con la mejor version de si mismo — eso es lo que hacemos aqui."
+        </div>
+        <p>No son solo cortes. Es el momento del dia donde te cuidan, te escuchan y te tratan como en casa. Por eso nuestros clientes regresan semana tras semana.</p>
+        <a href="#contacto" class="about-cta">Conoce Tu Sitio Sin Pagar Nada</a>
+      </div>
+      <div class="about-stats">
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="n">100%</div>
+            <div class="l">Clientes Satisfechos</div>
+          </div>
+          <div class="stat-box">
+            <div class="n">+3</div>
+            <div class="l">Anos en Coyoacan</div>
+          </div>
+        </div>
+        <div class="about-testimonial">
+          <div class="at-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+          <div class="at-text">"Llevo meses viniendo aqui y no hay quien me lo cambie. Precio justo, buen corte, buen trato."</div>
+          <div class="at-name"><strong>Jonathan R.</strong> &bull; Cliente frecuente</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="test-header">
+      <div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Lo Que Dicen</div>
+      <h2>Clientes que Regresan Semana a Semana</h2>
+    </div>
+    <div class="test-grid">
+      <div class="tc">
+        <div class="tc-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"El mejor fade de Coyoacan, sin duda. Primero vine por recomendacion y ya no salgo de aqui. El servicio es de otro nivel."</p>
+        <div class="tc-name">Omar N.</div>
+        <div class="tc-sub">Cliente frecuente &bull; Coyoacan</div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"Traje a mi hijo y quedamos encantados. Lo atendieron con mucha paciencia y el corte le quedo increible. Ya somos clientes fijos."</p>
+        <div class="tc-name">Patricia V.</div>
+        <div class="tc-sub">Mama de cliente &bull; Del Valle</div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"Me hicieron el diseno de barba exactamente como yo queria. Escuchan, preguntan y ejecutan perfecto. No busques mas."</p>
+        <div class="tc-name">Raul G.</div>
+        <div class="tc-sub">Cliente &bull; Pedregal</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-text">
+      <h2>Conoce Tu Nuevo Sitio Sin Pagar Nada</h2>
+      <p>Ve como se ve tu barberia en linea. Sin compromisos, sin tarjeta, sin riesgos.</p>
+    </div>
+    <a href="#contacto" class="btn-gold-cta">Ver Mi Sitio Ahora</a>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <div class="clabel">Contacto</div>
+      <h2>Hablemos</h2>
+      <div class="csub">Mandanos un mensaje y te respondemos pronto.</div>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="The Brothers Barber Shop - Coyoacan CDMX Mexico" />
+        <div class="fgrow">
+          <div class="fg">
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="fg">
+            <label>Telefono</label>
+            <input type="tel" name="telefono" placeholder="+52 55 0000 0000" />
+          </div>
+        </div>
+        <div class="fg">
+          <label>Correo</label>
+          <input type="email" name="email" placeholder="tucorreo@gmail.com" required />
+        </div>
+        <div class="fg">
+          <label>Servicio</label>
+          <input type="text" name="servicio" placeholder="Ej: Fade, Diseno de barba..." />
+        </div>
+        <div class="fg">
+          <label>Mensaje</label>
+          <textarea name="mensaje" placeholder="Cuentanos algo..."></textarea>
+        </div>
+        <button type="submit" class="fsub">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-logo">The Brothers Barber Shop</div>
+    <p>Coyoacan, CDMX &bull; bs.thebroters@gmail.com</p>
+    <div class="foot-credit">Vista previa disenada por Alma Digital Designs</div>
+  </footer>
+
+</body>
+</html>
