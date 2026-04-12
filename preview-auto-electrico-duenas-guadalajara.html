@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto Electrico Duenas | Taller Electrico Automotriz Guadalajara</title>
+  <meta name="description" content="Especialistas electrica automotriz Guadalajara. Diagnostico encendido sensores." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --electric: #0EA5E9;
+      --electric-dark: #0369A1;
+      --electric-glow: #38BDF8;
+      --charcoal: #111827;
+      --charcoal-mid: #1F2937;
+      --charcoal-light: #374151;
+      --white: #FFFFFF;
+      --gray: #F8FAFC;
+      --text-muted: #9CA3AF;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--white); background: var(--charcoal); }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--electric);
+      color: var(--charcoal);
+      text-align: center;
+      padding: 11px 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-banner a { color: var(--charcoal); text-decoration: underline; font-weight: 800; }
+
+    /* NAV */
+    nav {
+      background: rgba(17,24,39,0.97);
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+      border-bottom: 1px solid var(--charcoal-light);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo-wrap { display: flex; align-items: center; gap: 12px; }
+    .nav-logo-icon {
+      width: 36px; height: 36px;
+      background: var(--electric);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); letter-spacing: 0.06em; text-transform: uppercase; }
+    .nav-logo span { color: var(--electric); }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--electric); }
+    .nav-phone {
+      background: var(--electric);
+      color: var(--charcoal);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 20px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+    .nav-phone:hover { background: var(--electric-glow); }
+
+    /* HERO — BOLD FULL SCREEN */
+    .hero {
+      background: var(--charcoal);
+      padding: 100px 5% 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(14,165,233,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14,165,233,0.06) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+    .hero-glow {
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(14,165,233,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 740px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.35);
+      color: var(--electric-glow);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      margin-bottom: 28px;
+    }
+    .hero-badge::before { content: '⚡'; }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .hero h1 span { color: var(--electric); display: block; }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-electric {
+      background: var(--electric);
+      color: var(--charcoal);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 36px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-electric:hover { background: var(--electric-glow); transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 15px 36px;
+      border: 1px solid var(--charcoal-light);
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: border-color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--electric); color: var(--electric); }
+    .hero-stat-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--charcoal-light);
+      flex-wrap: wrap;
+    }
+    .hero-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--electric);
+      line-height: 1;
+    }
+    .hero-stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    /* SERVICES */
+    .services-section {
+      padding: 88px 5%;
+      background: var(--charcoal-mid);
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--electric);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .section-label::before { content: ''; display: block; width: 20px; height: 2px; background: var(--electric); }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 48px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1px;
+      background: var(--charcoal-light);
+    }
+    .service-card {
+      background: var(--charcoal-mid);
+      padding: 36px 28px;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .service-card:hover { background: var(--charcoal); }
+    .service-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(14,165,233,0.12);
+      line-height: 1;
+      margin-bottom: 12px;
+      transition: color 0.2s;
+    }
+    .service-card:hover .service-num { color: rgba(14,165,233,0.25); }
+    .service-icon-wrap {
+      width: 44px; height: 44px;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid rgba(14,165,233,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      transition: background 0.2s;
+    }
+    .service-card:hover .service-icon-wrap { background: rgba(14,165,233,0.2); }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .service-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--electric);
+      transition: height 0.3s;
+    }
+    .service-card:hover::after { height: 100%; }
+
+    /* ABOUT */
+    .about-section {
+      padding: 88px 5%;
+      background: var(--charcoal);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-visual-wrap { position: relative; }
+    .about-visual {
+      background: var(--charcoal-mid);
+      border: 1px solid var(--charcoal-light);
+      padding: 48px;
+      text-align: center;
+    }
+    .about-big-icon { font-size: 6rem; display: block; margin-bottom: 24px; }
+    .about-visual h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--electric);
+      margin-bottom: 8px;
+    }
+    .about-visual p { color: var(--text-muted); font-size: 0.88rem; }
+    .about-tag {
+      position: absolute;
+      bottom: -16px; right: -16px;
+      background: var(--electric);
+      color: var(--charcoal);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 12px 20px;
+    }
+    .about-content .section-label { display: flex; }
+    .about-content .section-title { margin-bottom: 20px; }
+    .about-content p { color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-size: 0.95rem; font-weight: 300; }
+    .feature-list { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+    .feature-dot {
+      width: 8px; height: 8px;
+      background: var(--electric);
+      flex-shrink: 0;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+      padding: 88px 5%;
+      background: var(--charcoal-mid);
+    }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .testi-card {
+      background: var(--charcoal);
+      border: 1px solid var(--charcoal-light);
+      padding: 32px 28px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .testi-card:hover { border-color: var(--electric-dark); }
+    .testi-card::before {
+      content: '⚡';
+      position: absolute;
+      top: -12px; left: 24px;
+      background: var(--electric);
+      color: var(--charcoal);
+      font-size: 0.7rem;
+      padding: 4px 10px;
+    }
+    .testi-stars { color: var(--electric); font-size: 0.85rem; margin-bottom: 14px; }
+    .testi-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; font-weight: 300; }
+    .testi-name { font-weight: 700; color: var(--white); font-size: 0.88rem; }
+    .testi-loc { font-size: 0.78rem; color: var(--electric); margin-top: 4px; }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 5%;
+      background: var(--electric);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-section h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      color: var(--charcoal);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .cta-section p { color: rgba(17,24,39,0.7); font-size: 1.05rem; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-dark {
+      background: var(--charcoal);
+      color: var(--electric);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 40px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .btn-dark:hover { background: var(--charcoal-mid); }
+
+    /* CONTACT */
+    .contact-section {
+      padding: 88px 5%;
+      background: var(--charcoal);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .contact-info h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 20px; }
+    .contact-info p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 28px; font-weight: 300; }
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--charcoal-light);
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid rgba(14,165,233,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .contact-text a { color: var(--white); font-weight: 600; font-size: 0.92rem; text-decoration: none; }
+    .contact-text a:hover { color: var(--electric); }
+    .contact-text span { font-size: 0.78rem; color: var(--text-muted); display: block; margin-top: 2px; }
+    form {
+      background: var(--charcoal-mid);
+      border: 1px solid var(--charcoal-light);
+      padding: 40px 36px;
+    }
+    form h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 24px;
+      letter-spacing: 0.06em;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--charcoal-light);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      background: var(--charcoal);
+      color: var(--white);
+      margin-bottom: 14px;
+      transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--electric); }
+    select option { background: var(--charcoal); }
+    input::placeholder, textarea::placeholder { color: var(--text-muted); }
+    textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    button[type="submit"] {
+      width: 100%;
+      background: var(--electric);
+      color: var(--charcoal);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+      margin-top: 4px;
+    }
+    button[type="submit"]:hover { background: var(--electric-glow); }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal-mid);
+      border-top: 1px solid var(--charcoal-light);
+      padding: 28px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--electric); letter-spacing: 0.08em; text-transform: uppercase; }
+    footer p { color: var(--text-muted); font-size: 0.78rem; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--electric); }
+
+    @media (max-width: 768px) {
+      .about-section, .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      form { padding: 28px 20px; }
+      .about-tag { right: 0; bottom: -12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PREVIEW BANNER -->
+  <div class="preview-banner">
+    Vista previa GRATUITA creada por Alma Digital Designs — <a href="#contacto">Reclama tu sitio hoy</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo-wrap">
+      <div class="nav-logo-icon">⚡</div>
+      <div class="nav-logo">Auto Electrico <span>Duenas</span></div>
+    </div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a href="tel:+523316767357" class="nav-phone">+52 33 1676 7357</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Guadalajara, Mexico · Especialistas</div>
+      <h1>Especialistas<br />en Electrica<br /><span>Automotriz</span></h1>
+      <p>Duenas resuelve problemas electricos con precision y especializacion real. Diagnosticamos lo que otros talleres no pueden resolver.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn-electric">Lleva tu carro con los expertos</a>
+        <a href="tel:+523316767357" class="btn-ghost">Llamar ahora</a>
+      </div>
+      <div class="hero-stat-row">
+        <div>
+          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-label">Anos de experiencia</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">1000+</div>
+          <div class="hero-stat-label">Vehiculos atendidos</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Especializados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="servicios">
+    <div class="section-label">Lo que hacemos</div>
+    <div class="section-title">Nuestros Servicios</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon-wrap">🔍</div>
+        <h3>Diagnostico Electrico</h3>
+        <p>Diagnostico computarizado de todos los sistemas electricos del vehiculo con equipo de ultima tecnologia.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon-wrap">🔑</div>
+        <h3>Sistema de Encendido</h3>
+        <p>Revision y reparacion del sistema de encendido electronico, bujias, bobinas y modulos.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon-wrap">⚡</div>
+        <h3>Alternadores y Arranque</h3>
+        <p>Diagnostico, reparacion y reemplazo de alternadores, motores de arranque y baterias.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-icon-wrap">📊</div>
+        <h3>Tableros y Sensores</h3>
+        <p>Reparacion de tableros de instrumentos, sensores de temperatura, oxigeno y presion.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-icon-wrap">🔧</div>
+        <h3>Mantenimiento Electrico</h3>
+        <p>Mantenimiento preventivo del sistema electrico para evitar fallas mayores.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="nosotros">
+    <div class="about-visual-wrap">
+      <div class="about-visual">
+        <span class="about-big-icon">🔧</span>
+        <h3>Raul Duenas</h3>
+        <p>La referencia en electricidad automotriz en Guadalajara</p>
+      </div>
+      <div class="about-tag">Taller Certificado</div>
+    </div>
+    <div class="about-content">
+      <div class="section-label">Sobre el taller</div>
+      <div class="section-title">La Experiencia Que Necesita Tu Vehiculo</div>
+      <p>Raul Duenas es la referencia en electricidad automotriz en Guadalajara. Con mas de 15 anos de experiencia, diagnostica lo que otros talleres no pueden resolver.</p>
+      <p>Contamos con equipo de diagnostico especializado y el conocimiento tecnico para resolver los problemas electricos mas complejos en cualquier marca y modelo.</p>
+      <ul class="feature-list">
+        <li><div class="feature-dot"></div>Diagnostico computarizado de todas las marcas</li>
+        <li><div class="feature-dot"></div>Equipo especializado de ultima generacion</li>
+        <li><div class="feature-dot"></div>Presupuesto sin costo antes de iniciar</li>
+        <li><div class="feature-dot"></div>Garantia en todas las reparaciones</li>
+        <li><div class="feature-dot"></div>Mas de 15 anos en Guadalajara</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonios">
+    <div class="section-label">Clientes satisfechos</div>
+    <div class="section-title">Lo Que Dicen Nuestros Clientes</div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Lleve mi camioneta que nadie podia diagnosticar. Raul encontro el problema en menos de una hora. Trabajo impecable y precio justo."</p>
+        <div class="testi-name">Roberto M.</div>
+        <div class="testi-loc">Guadalajara, Jalisco</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"El alternador de mi auto estaba fallando y en otros talleres me habian dicho que era el motor. Duenas lo diagnostico bien y lo reparo rapido."</p>
+        <div class="testi-name">Luis H.</div>
+        <div class="testi-loc">Zapopan, Jalisco</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Los mejores en electronica automotriz de Guadalajara. Ya llevo 3 carros distintos con ellos y siempre quedan perfectos. Los recomiendo al 100%."</p>
+        <div class="testi-name">Marco A.</div>
+        <div class="testi-loc">Tlaquepaque, Jalisco</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Lleva tu Carro<br />con los Expertos</h2>
+      <p>Sin diagnostico correcto no hay reparacion correcta. Confiale tu vehiculo a los especialistas.</p>
+      <a href="#contacto" class="btn-dark">Agendar diagnostico</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contacto">
+    <div class="section-label">Contacto</div>
+    <div class="section-title">Envianos un Mensaje</div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Encuentra el Taller</h3>
+        <p>Ubicados en Guadalajara. Atencion de lunes a sabado. Presupuesto sin costo antes de cualquier trabajo.</p>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text">
+            <a href="tel:+523316767357">+52 33 1676 7357</a>
+            <span>Llamadas y WhatsApp</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-text">
+            <a href="mailto:raulduenas1973@hotmail.com">raulduenas1973@hotmail.com</a>
+            <span>Correo electronico</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text">
+            <a href="#">Guadalajara, Jalisco</a>
+            <span>Mexico</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="hidden" name="business" value="Auto Electrico Duenas - Guadalajara Mexico" />
+          <h4>Agenda tu visita</h4>
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="tel" name="telefono" placeholder="Tu telefono" required />
+          </div>
+          <input type="email" name="email" placeholder="Tu correo electronico" required />
+          <select name="servicio">
+            <option value="">Selecciona un servicio</option>
+            <option>Diagnostico Electrico</option>
+            <option>Sistema de Encendido</option>
+            <option>Alternadores y Arranque</option>
+            <option>Tableros y Sensores</option>
+            <option>Mantenimiento Electrico</option>
+          </select>
+          <input type="text" name="vehiculo" placeholder="Marca y modelo de tu vehiculo" />
+          <textarea name="mensaje" placeholder="Describe el problema que tiene tu vehiculo..."></textarea>
+          <button type="submit">Enviar Consulta</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Auto Electrico Duenas</div>
+    <p>Guadalajara, Jalisco, Mexico &mdash; <a href="tel:+523316767357">+52 33 1676 7357</a></p>
+    <p>Vista previa disenada por <a href="#">Alma Digital Designs</a></p>
+  </footer>
+
+</body>
+</html>
