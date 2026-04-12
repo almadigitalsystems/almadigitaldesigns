@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Brush Brothers | Memphis Painters Available 24/7</title>
+  <meta name="description" content="Memphis painting services available 24/7. Interior, exterior, commercial. The Brush Brothers deliver quality results any time of day. Get your free quote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0A0A0A;
+      --dark: #111111;
+      --yellow: #F5C500;
+      --orange: #F07300;
+      --white: #FFFFFF;
+      --off-white: #F8F8F8;
+      --gray: #1A1A1A;
+      --mid-gray: #2A2A2A;
+      --text-muted: #888888;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--black);
+      padding: 1.1rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(245,197,0,0.2);
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem; font-weight: 700; color: var(--white);
+    }
+    .nav-logo span { color: var(--yellow); }
+    .nav-links { display: none; gap: 2rem; }
+    @media(min-width:768px){ .nav-links { display: flex; } }
+    .nav-links a {
+      color: rgba(255,255,255,0.7); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-badge {
+      display: flex; align-items: center; gap: 0.4rem;
+      background: rgba(245,197,0,0.1); border: 1px solid rgba(245,197,0,0.3);
+      border-radius: 100px; padding: 0.45rem 1rem;
+      font-size: 0.78rem; font-weight: 700; color: var(--yellow);
+    }
+    .nav-badge::before { content: '●'; animation: pulse 1.5s infinite; font-size: 0.5rem; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* AGENCY HERO */
+    .hero {
+      min-height: 100vh; background: var(--black);
+      padding: 8rem 1.5rem 5rem;
+      display: flex; flex-direction: column; align-items: flex-start;
+      justify-content: center; position: relative; overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(8rem, 20vw, 18rem);
+      font-weight: 700; color: rgba(245,197,0,0.04);
+      white-space: nowrap; pointer-events: none;
+      user-select: none; letter-spacing: -0.05em;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 800px; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--gray); border-radius: 100px;
+      padding: 0.5rem 1.2rem; margin-bottom: 2rem;
+    }
+    .hero-pill-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--yellow); animation: pulse 1.5s infinite;
+    }
+    .hero-pill span { font-size: 0.82rem; font-weight: 600; color: var(--white); }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 700; line-height: 1.05;
+      color: var(--white); margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .highlight {
+      color: var(--yellow);
+      text-decoration: underline; text-decoration-color: rgba(245,197,0,0.4);
+      text-underline-offset: 8px;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.7; color: rgba(255,255,255,0.65);
+      max-width: 560px; margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .btn-primary {
+      background: var(--yellow); color: var(--black);
+      padding: 1rem 2.2rem; border-radius: 6px; border: none;
+      font-weight: 700; font-size: 1rem; cursor: pointer;
+      text-decoration: none; display: inline-block;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #FFD700; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: 1rem 2rem; border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.2);
+      font-weight: 600; font-size: 1rem; cursor: pointer;
+      text-decoration: none; display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+    .hero-ticker {
+      display: flex; gap: 3rem; margin-top: 4rem;
+      padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+    }
+    .ticker-item .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem; font-weight: 700; color: var(--yellow); line-height: 1;
+    }
+    .ticker-item .lbl { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+    /* MARQUEE */
+    .marquee-bar {
+      background: var(--yellow); overflow: hidden;
+      padding: 0.75rem 0; white-space: nowrap;
+    }
+    .marquee-inner {
+      display: inline-flex; gap: 3rem;
+      animation: marquee 20s linear infinite;
+    }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .marquee-item {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem; font-weight: 700; color: var(--black);
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .marquee-sep { color: var(--black); opacity: 0.4; }
+
+    /* SERVICES */
+    #services { background: var(--dark); padding: 5rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--yellow);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700; line-height: 1.1; margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .section-subtitle {
+      font-size: 1rem; color: var(--text-muted);
+      max-width: 520px; line-height: 1.7; margin-bottom: 3rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--gray);
+      border-radius: 12px; padding: 2rem;
+      border: 1px solid transparent;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--yellow), var(--orange));
+    }
+    .service-card:hover {
+      border-color: rgba(245,197,0,0.3);
+      transform: translateY(-4px);
+    }
+    .service-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem; font-weight: 700; color: var(--yellow);
+      opacity: 0.5; margin-bottom: 1rem; letter-spacing: 0.1em;
+    }
+    .service-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .service-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ABOUT */
+    #about { background: var(--black); padding: 5rem 1.5rem; }
+    .about-layout {
+      display: grid; grid-template-columns: 1fr;
+      gap: 3rem; align-items: start;
+    }
+    @media(min-width:768px){ .about-layout { grid-template-columns: 1fr 1fr; } }
+    .about-left .big-claim {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700; line-height: 1.3;
+      color: var(--white); margin-bottom: 1.5rem;
+    }
+    .about-left .big-claim span { color: var(--yellow); }
+    .about-left p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.2rem; font-size: 0.97rem; }
+    .about-right { display: flex; flex-direction: column; gap: 1rem; }
+    .feature-block {
+      background: var(--gray); border-radius: 10px; padding: 1.5rem;
+      border-left: 3px solid var(--yellow);
+    }
+    .feature-block h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem;
+    }
+    .feature-block p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--yellow) 0%, var(--orange) 100%);
+      padding: 5rem 1.5rem; text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700; color: var(--black); margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-section p { color: rgba(0,0,0,0.7); font-size: 1.05rem; margin-bottom: 2rem; }
+    .btn-dark {
+      background: var(--black); color: var(--yellow);
+      padding: 1rem 2.5rem; border-radius: 6px; border: none;
+      font-weight: 700; font-size: 1.05rem; cursor: pointer;
+      text-decoration: none; display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-dark:hover { background: var(--dark); }
+
+    /* CONTACT */
+    #contact { background: var(--dark); padding: 5rem 1.5rem; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 3rem; margin-top: 3rem;
+    }
+    @media(min-width:768px){ .contact-grid { grid-template-columns: 1fr 1fr; } }
+    .contact-info h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem;
+    }
+    .availability-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(245,197,0,0.1); border: 1px solid rgba(245,197,0,0.25);
+      border-radius: 100px; padding: 0.5rem 1rem; margin-bottom: 1.5rem;
+      font-size: 0.82rem; font-weight: 700; color: var(--yellow);
+    }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem;
+    }
+    .contact-detail-icon {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: rgba(245,197,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-detail-text h4 { font-size: 0.82rem; color: var(--text-muted); }
+    .contact-detail-text p { font-size: 0.95rem; font-weight: 600; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--text-muted); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--gray); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 0.75rem 1rem;
+      color: var(--white); font-family: 'Inter', sans-serif;
+      font-size: 0.95rem; transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--yellow); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      background: var(--yellow); color: var(--black);
+      border: none; padding: 1rem; border-radius: 6px;
+      font-weight: 700; font-size: 1rem; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: #FFD700; }
+
+    /* FOOTER */
+    footer {
+      background: var(--black); color: var(--white);
+      padding: 2.5rem 1.5rem; text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .footer-logo span { color: var(--yellow); }
+    .footer-info { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+    .footer-info a { color: var(--yellow); text-decoration: none; }
+    .footer-copyright {
+      margin-top: 1.5rem; padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.78rem; color: #333;
+    }
+    @media(max-width:480px){ .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">The <span>Brush</span> Brothers</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-badge">Available 24/7</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text">PAINT</div>
+    <div class="hero-inner">
+      <div class="hero-pill">
+        <div class="hero-pill-dot"></div>
+        <span>Memphis, TN — Open 24 Hours</span>
+      </div>
+      <h1>Memphis Painters<br /><span class="highlight">Available 24/7</span><br />— The Brush Brothers</h1>
+      <p>No job too big, no hour too late. The Brush Brothers bring fresh color and clean finishes to Memphis homes and businesses around the clock.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get a Free Quote — Available 24/7</a>
+        <a href="#services" class="btn-outline">View Services</a>
+      </div>
+      <div class="hero-ticker">
+        <div class="ticker-item">
+          <div class="num">24/7</div>
+          <div class="lbl">Always Available</div>
+        </div>
+        <div class="ticker-item">
+          <div class="num">100%</div>
+          <div class="lbl">Satisfaction Focused</div>
+        </div>
+        <div class="ticker-item">
+          <div class="num">MEM</div>
+          <div class="lbl">Based in Memphis</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-inner">
+      <span class="marquee-item">Interior Painting</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Exterior Painting</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Cabinet Refinishing</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Accent Walls & Murals</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Commercial Painting</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Pressure Washing</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Interior Painting</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Exterior Painting</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Cabinet Refinishing</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Accent Walls & Murals</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Commercial Painting</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Pressure Washing</span><span class="marquee-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Any Job. Any Time.</h2>
+      <p class="section-subtitle">From quick touch-ups to full commercial transformations — if it needs paint, the Brush Brothers can handle it, day or night.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <div class="service-icon">🖼️</div>
+          <h3>Interior Painting</h3>
+          <p>Bedrooms, living rooms, ceilings — crisp lines, premium paint, and zero mess left behind.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <div class="service-icon">🏠</div>
+          <h3>Exterior Painting</h3>
+          <p>Curb appeal that stops traffic. Durable finishes designed to hold up in Memphis weather.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <div class="service-icon">🪵</div>
+          <h3>Cabinet Refinishing</h3>
+          <p>Transform your kitchen without a renovation. We refinish cabinets to look brand new.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">04</div>
+          <div class="service-icon">🎨</div>
+          <h3>Accent Walls &amp; Murals</h3>
+          <p>From bold feature walls to custom murals — results worth posting on social media.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">05</div>
+          <div class="service-icon">🏢</div>
+          <h3>Commercial Painting</h3>
+          <p>Offices, retail, warehouses. We work nights and weekends to minimize business disruption.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-number">06</div>
+          <div class="service-icon">💧</div>
+          <h3>Pressure Washing</h3>
+          <p>Clean driveways, siding, decks, and fences before we paint — or as a standalone service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-left">
+          <div class="section-label">Who We Are</div>
+          <div class="big-claim">Memphis's <span>around-the-clock</span> painting crew.</div>
+          <p>The Brush Brothers are Memphis's around-the-clock painting crew. From quick touch-ups to full-room transformations, their team shows up ready and delivers results worth sharing on social media.</p>
+          <p>We're the painters people tag on Instagram and send to their neighbors. Quality work at any hour — that's the Brush Brothers promise.</p>
+          <a href="#contact" class="btn-primary" style="margin-top:1.5rem;">Get a Free Quote — Available 24/7</a>
+        </div>
+        <div class="about-right">
+          <div class="feature-block">
+            <h4>🕛 Available 24/7</h4>
+            <p>No other painting crew in Memphis offers true 24/7 availability. We're ready when you need us — including weekends and holidays.</p>
+          </div>
+          <div class="feature-block">
+            <h4>📱 Social-Ready Results</h4>
+            <p>Our work gets featured. Follow us on Instagram and TikTok to see before-and-afters that speak for themselves.</p>
+          </div>
+          <div class="feature-block">
+            <h4>🤝 Word-of-Mouth Built</h4>
+            <p>Most of our business comes from referrals — homeowners who've seen the work and can't stop recommending us.</p>
+          </div>
+          <div class="feature-block">
+            <h4>⚡ Fast Turnaround</h4>
+            <p>We don't drag projects out. Fast, clean, and done right — so you can get back to your life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="container">
+      <h2>Ready for a Fresh Look?</h2>
+      <p>The Brush Brothers are available right now. Get your free quote today.</p>
+      <a href="#contact" class="btn-dark">Claim Your Free Redesign</a>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label">Get Your Quote</div>
+      <h2 class="section-title">We're Available Right Now</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="availability-badge">
+            <span class="hero-pill-dot"></span> Open 24 Hours / 7 Days a Week
+          </div>
+          <h3>The Brush Brothers</h3>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <h4>Location</h4>
+              <p>Memphis, Tennessee</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-text">
+              <h4>Phone (24/7)</h4>
+              <p>(901) 555-0400</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📧</div>
+            <div class="contact-detail-text">
+              <h4>Email</h4>
+              <p>hello@thebrushbrothers.com</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📱</div>
+            <div class="contact-detail-text">
+              <h4>Social</h4>
+              <p>@thebrushbrothers on Instagram &amp; TikTok</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="hidden" name="_subject" value="New Lead: The Brush Brothers Memphis Preview" />
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="(901) 555-0400" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select name="service">
+              <option value="">Select a service...</option>
+              <option>Interior Painting</option>
+              <option>Exterior Painting</option>
+              <option>Cabinet Refinishing</option>
+              <option>Accent Walls &amp; Murals</option>
+              <option>Commercial Painting</option>
+              <option>Pressure Washing</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Project Details</label>
+            <textarea name="message" placeholder="Tell us about your project — what rooms, what style, when do you need it?"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Get a Free Quote — Available 24/7 →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">The <span>Brush</span> Brothers</div>
+    <div class="footer-info">
+      Memphis, Tennessee &nbsp;|&nbsp; <a href="tel:9015550400">(901) 555-0400</a> &nbsp;|&nbsp;
+      <a href="mailto:hello@thebrushbrothers.com">hello@thebrushbrothers.com</a>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 The Brush Brothers. Memphis, TN. Available 24/7. All rights reserved.<br />
+      <small>Preview page designed by Alma Digital Designs</small>
+    </div>
+  </footer>
+
+</body>
+</html>
