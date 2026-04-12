@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q Hair Melbourne | Hair Salon Melbourne CBD</title>
+  <meta name="description" content="Melbourne's Q Hair salon. Expert cuts, colour, balayage, keratin &amp; more in Melbourne CBD. Book your appointment with Q Hair Melbourne today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blush: #f4a7b9;
+      --blush-deep: #e8869e;
+      --plum: #4a1942;
+      --plum-mid: #6b2d62;
+      --cream: #fdf6f0;
+      --cream-dark: #f5e8dc;
+      --white: #ffffff;
+      --text: #2d1a28;
+      --muted: #8a6b82;
+      --light-plum: #f7edf5;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253,246,240,0.97); backdrop-filter: blur(10px);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px; border-bottom: 1px solid rgba(74,25,66,0.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700; font-size: 1.5rem; color: var(--plum);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-logo span { color: var(--blush-deep); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--plum); }
+    .nav-cta {
+      background: var(--plum); color: var(--white);
+      padding: 0.65rem 1.4rem; border-radius: 50px;
+      font-weight: 600; font-size: 0.82rem; text-decoration: none;
+      letter-spacing: 0.5px; transition: all 0.2s; white-space: nowrap;
+      text-transform: uppercase;
+    }
+    .nav-cta:hover { background: var(--plum-mid); transform: translateY(-1px); }
+    @media(max-width:768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--plum) 0%, var(--plum-mid) 40%, #8b3d80 100%);
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; right: 0; top: 0; bottom: 0; width: 50%;
+      background: linear-gradient(90deg, transparent, rgba(244,167,185,0.08));
+    }
+    .hero::after {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(244,167,185,0.12) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 620px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      color: var(--blush); font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after { content: '&#8212;'; opacity: 0.5; }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 600; color: var(--white);
+      line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.5px;
+    }
+    .hero h1 em { font-style: italic; color: var(--blush); }
+    .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 2.5rem; max-width: 500px; font-weight: 300; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn-primary {
+      background: var(--blush); color: var(--plum);
+      padding: 1rem 2rem; border-radius: 50px;
+      font-weight: 600; font-size: 0.9rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.2s; letter-spacing: 0.5px;
+      box-shadow: 0 4px 20px rgba(244,167,185,0.3);
+    }
+    .btn-primary:hover { background: var(--blush-deep); color: var(--white); transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent; color: var(--white);
+      padding: 1rem 2rem; border-radius: 50px;
+      font-weight: 500; font-size: 0.9rem; text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.3); transition: all 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .btn-ghost:hover { border-color: var(--blush); color: var(--blush); }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.6); font-size: 0.85rem; font-weight: 300; }
+
+    /* SECTIONS */
+    section { padding: 90px 5%; }
+    .section-eyebrow {
+      text-align: center; font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--blush-deep); margin-bottom: 1rem;
+    }
+    .section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600;
+      color: var(--plum); margin-bottom: 1rem; line-height: 1.15;
+    }
+    .section-sub { text-align: center; color: var(--muted); font-size: 0.97rem; max-width: 520px; margin: 0 auto 3.5rem; line-height: 1.8; font-weight: 300; }
+
+    /* SERVICES */
+    .services-bg { background: var(--light-plum); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .service-card {
+      background: var(--white); border-radius: 16px; padding: 2.2rem;
+      border-bottom: 3px solid var(--blush);
+      box-shadow: 0 2px 20px rgba(74,25,66,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(74,25,66,0.1); }
+    .service-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--plum); margin-bottom: 0.5rem; }
+    .service-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; font-weight: 300; }
+
+    /* ABOUT */
+    .about-bg { background: var(--cream-dark); }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    @media(max-width:768px) { .about-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .about-visual { position: relative; }
+    .about-card-main {
+      background: linear-gradient(135deg, var(--plum) 0%, var(--plum-mid) 100%);
+      border-radius: 20px; padding: 3rem 2.5rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .about-card-main::before { content: '&#10024;'; position: absolute; top: 20px; right: 20px; font-size: 2rem; opacity: 0.3; }
+    .salon-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--blush); margin-bottom: 0.5rem; font-style: italic; }
+    .salon-loc { color: rgba(255,255,255,0.6); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2.5rem; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .about-stat { background: rgba(255,255,255,0.07); border: 1px solid rgba(244,167,185,0.2); border-radius: 12px; padding: 1.2rem; }
+    .about-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--blush); line-height: 1; }
+    .about-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,3.5vw,2.8rem); font-weight: 600; color: var(--plum); margin-bottom: 1.2rem; line-height: 1.15; }
+    .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; font-size: 0.95rem; font-weight: 300; }
+    .about-list { list-style: none; margin: 1.5rem 0; }
+    .about-list li { display: flex; align-items: center; gap: 0.8rem; color: var(--text); margin-bottom: 0.8rem; font-size: 0.92rem; font-weight: 400; }
+    .about-list li::before { content: '&#10022;'; color: var(--blush-deep); font-size: 0.7rem; flex-shrink: 0; }
+
+    /* TESTIMONIALS */
+    .testimonials-bg { background: var(--plum); }
+    .testimonials-bg .section-title { color: var(--white); }
+    .testimonials-bg .section-sub { color: rgba(255,255,255,0.5); }
+    .testimonials-bg .section-eyebrow { color: var(--blush); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .testimonial-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(244,167,185,0.15); border-radius: 16px; padding: 2rem; }
+    .stars { color: var(--blush); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 3px; }
+    .testimonial-card p { color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.93rem; font-style: italic; font-weight: 300; }
+    .reviewer { display: flex; align-items: center; gap: 0.8rem; }
+    .reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--blush-deep); display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 600; font-size: 0.95rem; flex-shrink: 0; }
+    .reviewer-name { color: var(--white); font-weight: 500; font-size: 0.88rem; }
+    .reviewer-loc { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+
+    /* CONTACT */
+    .contact-bg { background: var(--cream); }
+    .contact-inner { max-width: 720px; margin: 0 auto; }
+    .contact-form { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 40px rgba(74,25,66,0.08); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media(max-width:600px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--plum); letter-spacing: 0.5px; text-transform: uppercase; }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 0.85rem 1rem; border: 1.5px solid #e8d8e4; border-radius: 10px;
+      font-size: 0.93rem; font-family: 'Inter', sans-serif; color: var(--text);
+      background: var(--cream); transition: border-color 0.2s; outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blush-deep); background: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit { width: 100%; padding: 1rem; background: var(--plum); color: var(--white); border: none; border-radius: 50px; font-size: 0.95rem; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px; }
+    .form-submit:hover { background: var(--plum-mid); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer { background: #1e0a1c; padding: 3rem 5% 2rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    @media(max-width:768px) { .footer-top { grid-template-columns: 1fr; gap: 2rem; } }
+    .footer-brand p { color: rgba(255,255,255,0.4); font-size: 0.88rem; line-height: 1.7; margin-top: 0.8rem; font-weight: 300; }
+    .footer-col h4 { color: var(--blush); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-bottom: 0.5rem; text-decoration: none; transition: color 0.2s; font-weight: 300; }
+    .footer-col a:hover { color: var(--blush); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { color: rgba(255,255,255,0.25); font-size: 0.78rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; }
+    .preview-ribbon {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--plum); border-top: 2px solid var(--blush);
+      padding: 0.7rem 5%; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 -4px 20px rgba(74,25,66,0.3);
+    }
+    .preview-ribbon p { color: rgba(255,255,255,0.82); font-size: 0.82rem; }
+    .preview-ribbon a { background: var(--blush); color: var(--plum); padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 0.82rem; text-decoration: none; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Q Hair <span>Melbourne</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Book</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Melbourne CBD Hair Salon</div>
+    <h1>Where Every Cut <em>Tells Your Story</em></h1>
+    <p>Expert haircuts, colour, and styling in the heart of Melbourne. Book online and discover why clients keep coming back to Q Hair.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">&#10024; Book Your Melbourne Style Session</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">&#127795; Melbourne CBD</div>
+      <div class="trust-item">&#10024; Expert Stylists</div>
+      <div class="trust-item">&#128155; All Hair Types</div>
+      <div class="trust-item">&#127941; Bridal Specialists</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <p class="section-eyebrow">What We Offer</p>
+  <h2 class="section-title">Our Melbourne Salon Services</h2>
+  <p class="section-sub">Every service delivered by expert stylists who stay ahead of the latest trends while mastering timeless techniques.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">&#9986;</div>
+      <h3>Precision Haircuts</h3>
+      <p>Tailored to your face shape, lifestyle and hair type. Our Melbourne stylists create cuts that work for you &mdash; every single day.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#127775;</div>
+      <h3>Colour &amp; Balayage</h3>
+      <p>From bold transformations to subtle, sun-kissed balayage &mdash; expert colour work that enhances your natural beauty.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128149;</div>
+      <h3>Blowdry &amp; Styling</h3>
+      <p>Salon-perfect blowdry and styling for any occasion. Leave Q Hair Melbourne looking and feeling incredible.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#10024;</div>
+      <h3>Keratin Treatments</h3>
+      <p>Smooth, frizz-free hair for weeks. Professional keratin treatments that transform texture and add incredible shine.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#127808;</div>
+      <h3>Hair Treatments &amp; Masks</h3>
+      <p>Nourishing in-salon treatments to restore, strengthen and revitalise damaged or over-processed hair.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128142;</div>
+      <h3>Bridal &amp; Special Occasions</h3>
+      <p>Your wedding day, your rules. Bridal hair and special occasion styling that makes every moment unforgettable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-bg" id="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-card-main">
+        <div class="salon-name">Q Hair Melbourne</div>
+        <div class="salon-loc">Melbourne CBD, Victoria</div>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">CBD</div>
+            <div class="about-stat-label">Melbourne Location</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">All</div>
+            <div class="about-stat-label">Hair Types Welcome</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">Trend</div>
+            <div class="about-stat-label">Forward Stylists</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">Easy</div>
+            <div class="about-stat-label">Online Booking</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <h2>Melbourne&rsquo;s Modern Salon</h2>
+      <p>Q Hair Melbourne is a modern Melbourne salon dedicated to making you look and feel your absolute best. Our stylists stay ahead of the latest trends while mastering timeless techniques for every hair type.</p>
+      <p>Based in Melbourne CBD, Q Hair is where Melbourne&rsquo;s style-conscious clients come for cuts, colour, and treatments that are genuinely tailored to them.</p>
+      <ul class="about-list">
+        <li>Expert stylists trained in the latest Melbourne trends</li>
+        <li>Specialists in colour, balayage and keratin treatments</li>
+        <li>Welcoming for all hair types and textures</li>
+        <li>Convenient Melbourne CBD location</li>
+        <li>Easy online booking &mdash; no phone tag required</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="margin-top:1rem; display:inline-flex;">Claim Your Free Redesign</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-bg" id="testimonials">
+  <p class="section-eyebrow">Client Love</p>
+  <h2 class="section-title">What Our Clients Say</h2>
+  <p class="section-sub">Real reviews from real Melbourne clients who discovered Q Hair and never looked back.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"I&rsquo;ve been to salons all over Melbourne CBD and Q Hair is genuinely the best. My balayage looks incredible &mdash; exactly what I showed them, which never happens. I&rsquo;m coming back every time."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">E</div>
+        <div>
+          <div class="reviewer-name">Emma W.</div>
+          <div class="reviewer-loc">Southbank, Melbourne</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Keratin treatment completely transformed my hair. The frizz is gone, the shine is unreal, and it&rsquo;s been six weeks and it still looks amazing. The Q Hair team really know what they&rsquo;re doing. Highly recommend."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">J</div>
+        <div>
+          <div class="reviewer-name">Jasmine T.</div>
+          <div class="reviewer-loc">Docklands, Melbourne</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Had my bridal hair done at Q Hair Melbourne &mdash; it was absolutely perfect. They took the time to understand exactly what I wanted, did a trial run, and the day itself was flawless. Cannot recommend highly enough."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">N</div>
+        <div>
+          <div class="reviewer-name">Natalie K.</div>
+          <div class="reviewer-loc">Richmond, Melbourne</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <p class="section-eyebrow">Book Online</p>
+  <h2 class="section-title">Book Your Melbourne Style Session</h2>
+  <p class="section-sub">Tell us what you&rsquo;re after and we&rsquo;ll confirm your appointment at Q Hair Melbourne.</p>
+  <div class="contact-inner">
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Emma Williams" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 0400 000 000" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>Precision Haircut</option>
+              <option>Colour &amp; Balayage</option>
+              <option>Blowdry &amp; Styling</option>
+              <option>Keratin Treatment</option>
+              <option>Hair Treatment &amp; Mask</option>
+              <option>Bridal &amp; Special Occasion</option>
+              <option>Multiple Services</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell Us More</label>
+          <textarea id="message" name="message" placeholder="Describe what you have in mind &mdash; colour ideas, length changes, special occasion details..."></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New Booking - Q Hair Melbourne">
+        <button type="submit" class="form-submit">Book Your Melbourne Style Session</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="font-size:1.6rem; font-family:'Cormorant Garamond',serif; color:var(--blush);">Q Hair Melbourne</a>
+        <p>A modern Melbourne CBD hair salon. Expert cuts, colour, balayage, keratin and bridal styling. Book your appointment online today.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Precision Haircuts</a>
+        <a href="#services">Colour &amp; Balayage</a>
+        <a href="#services">Blowdry &amp; Styling</a>
+        <a href="#services">Keratin Treatments</a>
+        <a href="#services">Hair Treatments</a>
+        <a href="#services">Bridal Hair</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <a href="#contact">&#128197; Book Online</a>
+        <a href="#">&#128205; Melbourne CBD, Victoria</a>
+        <a href="#">&#127462;&#127482; Australia</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Q Hair Melbourne. All rights reserved.</p>
+      <p>Preview built by <a href="https://almadigitaldesigns.com">Alma Digital Designs</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- PREVIEW RIBBON -->
+<div class="preview-ribbon">
+  <p>&#127775; This is a FREE preview built by Alma Digital Designs for Q Hair Melbourne</p>
+  <a href="https://almadigitaldesigns.com">Claim Your Free Redesign</a>
+</div>
+
+</body>
+</html>
