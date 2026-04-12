@@ -1,0 +1,27 @@
+name: Production Deploy Gate
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  pre-deploy-check:
+    name: Verify Staging Health Before Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check staging health before production deploy
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://staging.almadigitalservices.com/health)
+          if [ "$STATUS" != "200" ]; then
+            echo "BLOCKED: Staging health check failed (HTTP $STATUS)"
+            echo "Staging must be healthy before production deploy."
+            exit 1
+          fi
+          echo "Staging is healthy — production deploy can proceed."
+
+      - name: Log production deploy event
+        run: |
+          echo "Production deploy approved at $(date -u)"
+          echo "Commit: ${{ github.sha }}"
+          echo "Actor: ${{ github.actor }}"
