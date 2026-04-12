@@ -1,3 +1,5 @@
+SHA: a8abc745db37125312f1dad1c23256ab91d07035
+LINES: 555
 'use strict';
 
 const crypto = require('crypto');
@@ -537,6 +539,77 @@ app.post('/api/stripe-webhook', async (req, res) => {
     console.error('Stripe webhook processing error:', err);
     // Return 200 to avoid Stripe retries for non-transient errors
     res.json({ received: true, warning: 'Event received but processing encountered an error' });
+  }
+});
+
+// ── PAGES: PORTFOLIO & REFERRAL ───────────────────────────────────────────────
+
+app.get('/portfolio', (req, res) => {
+  res.sendFile(path.join(__dirname, 'portfolio.html'));
+});
+
+app.get('/referral', (req, res) => {
+  res.sendFile(path.join(__dirname, 'referral.html'));
+});
+
+// ── API: LEAD CAPTURE (exit-intent popup) ────────────────────────────────────
+
+app.post('/api/lead-capture', async (req, res) => {
+  try {
+    const { businessName, email, source } = req.body;
+    const transporter = createMailTransporter();
+    await transporter.sendMail({
+      from: `"Alma Digital Leads" <${process.env.GMAIL_USER_1 || 'desk@almawebcreative.com'}>`,
+      to: 'desk@almawebcreative.com',
+      subject: `New Lead Captured — ${businessName || 'Unknown Business'}`,
+      html: `
+        <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
+          <h2 style="color:#1a1a2e;border-bottom:2px solid #00d4ff;padding-bottom:10px">New Lead — Exit Intent Popup</h2>
+          <table style="width:100%;border-collapse:collapse">
+            <tr><td style="padding:8px;font-weight:bold;width:160px">Business Name</td><td style="padding:8px">${businessName || 'Not provided'}</td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px">${email || 'Not provided'}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold">Source</td><td style="padding:8px">${source || 'website'}</td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px;font-weight:bold">Time</td><td style="padding:8px">${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })} EST</td></tr>
+          </table>
+          <p style="color:#666;font-size:12px;margin-top:20px">Send a free website preview within 24 hours.</p>
+        </div>
+      `,
+    });
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Lead capture email error:', err);
+    res.json({ success: false });
+  }
+});
+
+// ── API: REFERRAL SUBMISSION ──────────────────────────────────────────────────
+
+app.post('/api/referral', async (req, res) => {
+  try {
+    const { yourName, yourEmail, friendBusinessName, rewardChoice } = req.body;
+    const transporter = createMailTransporter();
+    await transporter.sendMail({
+      from: `"Alma Digital Referrals" <${process.env.GMAIL_USER_1 || 'desk@almawebcreative.com'}>`,
+      to: 'desk@almawebcreative.com',
+      subject: `New Referral — ${friendBusinessName || 'Unknown Business'} referred by ${yourName || 'Unknown'}`,
+      html: `
+        <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
+          <h2 style="color:#1a1a2e;border-bottom:2px solid #00d4ff;padding-bottom:10px">New Referral Submission</h2>
+          <table style="width:100%;border-collapse:collapse">
+            <tr><td style="padding:8px;font-weight:bold;width:200px">Referrer Name</td><td style="padding:8px">${yourName || 'Not provided'}</td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px;font-weight:bold">Referrer Email</td><td style="padding:8px">${yourEmail || 'Not provided'}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold">Friend's Business</td><td style="padding:8px">${friendBusinessName || 'Not provided'}</td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px;font-weight:bold">Reward Choice</td><td style="padding:8px">${rewardChoice === 'upgrade' ? 'Free Website Upgrade' : '$10 Cash'}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold">Submitted</td><td style="padding:8px">${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })} EST</td></tr>
+          </table>
+          <p style="color:#666;font-size:12px;margin-top:20px">Reach out to <strong>${friendBusinessName}</strong> with a free preview. Pay the referrer once the friend converts.</p>
+        </div>
+      `,
+    });
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Referral email error:', err);
+    res.json({ success: false });
   }
 });
 
