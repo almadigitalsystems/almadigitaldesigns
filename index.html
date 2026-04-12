@@ -3710,6 +3710,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
+<link rel="alternate" hreflang="en" href="https://almadigitalservices.com/"/>
+<link rel="alternate" hreflang="es-419" href="https://almadigitalservices.com/?lang=es"/>
+<link rel="alternate" hreflang="x-default" href="https://almadigitalservices.com/"/>
 </head>
 
 
@@ -3838,7 +3841,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#how-it-works" data-i18n="nav-how">How It Works</a></li>
 
 
 
@@ -3854,7 +3857,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <li><a href="/checkout">Pricing</a></li>
+      <li><a href="#pricing">Pricing</a></li>
 
 
 
@@ -3870,7 +3873,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <li><a href="#previews">Portfolio</a></li>
+      <li><a href="#previews" data-i18n="nav-portfolio">Portfolio</a></li>
 
 
 
@@ -3886,7 +3889,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
 
 
 
@@ -3918,7 +3921,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <a href="#contact" class="btn btn-primary nav__cta">Get Free Preview →</a>
+    <button id="lang-toggle" onclick="toggleLang()" style="background:transparent;border:1px solid rgba(0,212,255,0.4);color:var(--text-muted);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.8rem;font-weight:700;cursor:pointer;letter-spacing:0.05em;transition:all 0.2s;margin-right:0.75rem">EN | ES</button><a href="#contact" class="btn btn-primary nav__cta" data-i18n="nav-cta">Get Free Preview →</a>
 
 
 
@@ -4126,7 +4129,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <h1>AI-Powered Websites<br/><span class="grad-text">That Actually Convert</span></h1>
+      <h1 data-i18n-html="hero-h1">AI-Powered Websites<br/><span class="grad-text">That Actually Convert</span></h1>
 
 
 
@@ -4142,7 +4145,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <p class="hero__sub">Our team combines human creativity with AI precision. See your new website before you pay a single dollar. From $50. Free domain included.</p>
+      <p class="hero__sub" data-i18n="hero-sub">Our team combines human creativity with AI precision. See your new website before you pay a single dollar. From $50. Free domain included.</p>
 
 
 
@@ -4174,7 +4177,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <a href="#contact" class="btn btn-primary">Get Free Preview →</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="cta-preview">Get Free Preview →</a>
 
 
 
@@ -4190,7 +4193,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <a href="#previews" class="btn btn-ghost">See Examples</a>
+        <a href="#previews" class="btn btn-ghost" data-i18n="cta-examples">See Examples</a>
 
 
 
@@ -4238,7 +4241,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="hero__stat"><span class="hero__stat-num"><span class="counter" data-target="300">300</span>+</span><span class="hero__stat-label">Businesses Contacted Weekly</span></div>
+        <div class="hero__stat"><span class="hero__stat-num"><span class="counter" data-target="300">300</span>+</span><span class="hero__stat-label" data-i18n="stat-businesses">Businesses Contacted Weekly</span></div>
 
 
 
@@ -4254,7 +4257,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="hero__stat"><span class="hero__stat-num">48<span style="font-size:1.2rem">hr</span></span><span class="hero__stat-label">Delivery</span></div>
+        <div class="hero__stat"><span class="hero__stat-num">48<span style="font-size:1.2rem">hr</span></span><span class="hero__stat-label" data-i18n="stat-delivery">Delivery</span></div>
 
 
 
@@ -4270,7 +4273,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="hero__stat"><span class="hero__stat-num">95<span style="font-size:1.2rem">+</span></span><span class="hero__stat-label">PageSpeed</span></div>
+        <div class="hero__stat"><span class="hero__stat-num">95<span style="font-size:1.2rem">+</span></span><span class="hero__stat-label" data-i18n="stat-pagespeed">PageSpeed</span></div>
 
 
 
@@ -4286,7 +4289,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="hero__stat"><span class="hero__stat-num">$50</span><span class="hero__stat-label">Starting Price</span></div>
+        <div class="hero__stat"><span class="hero__stat-num">$50</span><span class="hero__stat-label" data-i18n="stat-price">Starting Price</span></div>
 
 
 
@@ -5486,7 +5489,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <p class="section-label reveal">How It Works</p>
+    <p class="section-label reveal" data-i18n="hiw-label">How It Works</p>
 
 
 
@@ -5502,7 +5505,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <h2 class="section-title reveal">Three Steps to Your<br/><span class="grad-text">New Website</span></h2>
+    <h2 class="section-title reveal" data-i18n-html="hiw-title">Three Steps to Your<br/><span class="grad-text">New Website</span></h2>
 
 
 
@@ -5518,7 +5521,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <p class="section-sub reveal">No commitment. No payment upfront. Just your stunning new website, ready to review.</p>
+    <p class="section-sub reveal" data-i18n="hiw-sub">No commitment. No payment upfront. Just your stunning new website, ready to review.</p>
 
 
 
@@ -5582,7 +5585,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <h3>We Find You Online</h3>
+        <h3 data-i18n="step1-title">We Find You Online</h3>
 
 
 
@@ -5598,7 +5601,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <p>We search for businesses with outdated websites and build you a free custom preview — no commitment needed.</p>
+        <p data-i18n="step1-body">We search for businesses with outdated websites and build you a free custom preview — no commitment needed.</p>
 
 
 
@@ -5662,7 +5665,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <h3>We Build Your Preview in 48 Hours</h3>
+        <h3 data-i18n="step2-title">We Build Your Preview in 48 Hours</h3>
 
 
 
@@ -5678,7 +5681,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <p>Our AI builds a stunning custom website preview for your business. You see it before paying a single dollar.</p>
+        <p data-i18n="step2-body">Our AI builds a stunning custom website preview for your business. You see it before paying a single dollar.</p>
 
 
 
@@ -5742,7 +5745,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <h3>You Only Pay When You Love It</h3>
+        <h3 data-i18n="step3-title">You Only Pay When You Love It</h3>
 
 
 
@@ -5758,7 +5761,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <p>Approve your preview, choose your plan, and go live. Free domain included if you need one.</p>
+        <p data-i18n="step3-body">Approve your preview, choose your plan, and go live. Free domain included if you need one.</p>
 
 
 
@@ -5902,7 +5905,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <p class="section-label reveal">Pricing</p>
+    <p class="section-label reveal" data-i18n="pricing-label">Pricing</p>
 
 
 
@@ -5918,7 +5921,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <h2 class="section-title reveal">Simple, <span class="grad-text">Transparent</span> Pricing</h2>
+    <h2 class="section-title reveal" data-i18n-html="pricing-title">Simple, <span class="grad-text">Transparent</span> Pricing</h2>
 
 
 
@@ -5934,7 +5937,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <p class="section-sub reveal">No surprises. No upsells. Pick your plan after you see your preview.</p>
+    <p class="section-sub reveal" data-i18n="pricing-sub">No surprises. No upsells. Pick your plan after you see your preview.</p>
 
 
 
@@ -5966,7 +5969,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <button class="ptoggle-btn active" id="pt-full" onclick="setPlan('full')">Website Only</button>
+      <button class="ptoggle-btn active" id="pt-full" onclick="setPlan('full')" data-i18n="ptoggle-full">Website Only</button>
 
 
 
@@ -5982,7 +5985,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <button class="ptoggle-btn" id="pt-monthly" onclick="setPlan('monthly')">Website plus Hosting</button>
+      <button class="ptoggle-btn" id="pt-monthly" onclick="setPlan('monthly')" data-i18n="ptoggle-monthly">Website plus Hosting</button>
 
 
 
@@ -6062,7 +6065,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__name">Starter</div>
+        <div class="plan__name" data-i18n="plan-starter">Starter</div>
 
 
 
@@ -6110,7 +6113,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__domain">🌐 Free domain included if you don't already have one</div>
+        <div class="plan__domain" data-i18n="plan-domain">🌐 Free domain included if you don't already have one</div>
 
 
 
@@ -6254,7 +6257,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <a href="#contact" class="btn btn-ghost plan__btn">Get Free Preview →</a>
+        <a href="#contact" class="btn btn-ghost plan__btn" data-i18n="cta-preview">Get Free Preview →</a>
 
 
 
@@ -6318,7 +6321,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__badge">⭐ Most Popular</div>
+        <div class="plan__badge" data-i18n="plan-popular">⭐ Most Popular</div>
 
 
 
@@ -6334,7 +6337,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__name">Growth</div>
+        <div class="plan__name" data-i18n="plan-growth">Growth</div>
 
 
 
@@ -6382,7 +6385,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__domain">🌐 Free domain included if you don't already have one</div>
+        <div class="plan__domain" data-i18n="plan-domain">🌐 Free domain included if you don't already have one</div>
 
 
 
@@ -6542,7 +6545,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <a href="#contact" class="btn btn-primary plan__btn">Get Free Preview →</a>
+        <a href="#contact" class="btn btn-primary plan__btn" data-i18n="cta-preview">Get Free Preview →</a>
 
 
 
@@ -6606,7 +6609,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__name">Premium</div>
+        <div class="plan__name" data-i18n="plan-premium">Premium</div>
 
 
 
@@ -6654,7 +6657,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="plan__domain">🌐 Free domain included if you don't already have one</div>
+        <div class="plan__domain" data-i18n="plan-domain">🌐 Free domain included if you don't already have one</div>
 
 
 
@@ -6814,7 +6817,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <a href="#contact" class="btn btn-ghost plan__btn">Get Free Preview →</a>
+        <a href="#contact" class="btn btn-ghost plan__btn" data-i18n="cta-preview">Get Free Preview →</a>
 
 
 
@@ -8830,7 +8833,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <p class="section-label">FAQ</p>
+    <p class="section-label" data-i18n="faq-label">FAQ</p>
 
 
 
@@ -8846,7 +8849,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <h2 class="section-title">Everything You <span class="grad-text">Need to Know</span></h2>
+    <h2 class="section-title" data-i18n-html="faq-title">Everything You <span class="grad-text">Need to Know</span></h2>
 
 
 
@@ -8910,7 +8913,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-          <span>Do I pay before seeing my website?</span>
+          <span data-i18n="faq1-q">Do I pay before seeing my website?</span>
 
 
 
@@ -8958,7 +8961,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="faq-a"><p>Never. We build your complete custom preview first. You only pay when you love it.</p></div>
+        <div class="faq-a"><p data-i18n="faq1-a">Never. We build your complete custom preview first. You only pay when you love it.</p></div>
 
 
 
@@ -9022,7 +9025,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-          <span>How long does delivery take?</span>
+          <span data-i18n="faq2-q">How long does delivery take?</span>
 
 
 
@@ -9070,7 +9073,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="faq-a"><p>Your preview is ready within 48 hours of starting. We make changes until you are happy.</p></div>
+        <div class="faq-a"><p data-i18n="faq2-a">Your preview is ready within 48 hours of starting. We make changes until you are happy.</p></div>
 
 
 
@@ -9134,7 +9137,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-          <span>What if I already have a domain?</span>
+          <span data-i18n="faq3-q">What if I already have a domain?</span>
 
 
 
@@ -9182,7 +9185,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="faq-a"><p>No problem — we connect your existing domain to your new website for free.</p></div>
+        <div class="faq-a"><p data-i18n="faq3-a">No problem — we connect your existing domain to your new website for free.</p></div>
 
 
 
@@ -9246,7 +9249,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-          <span>Can I cancel my hosting plan?</span>
+          <span data-i18n="faq4-q">Can I cancel my hosting plan?</span>
 
 
 
@@ -9294,7 +9297,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="faq-a"><p>Yes anytime. If you cancel before 6 months there is a $25 file transfer fee. After 6 months the transfer is completely free.</p></div>
+        <div class="faq-a"><p data-i18n="faq4-a">Yes anytime. If you cancel before 6 months there is a $25 file transfer fee. After 6 months the transfer is completely free.</p></div>
 
 
 
@@ -9358,7 +9361,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-          <span>Do you build on templates?</span>
+          <span data-i18n="faq5-q">Do you build on templates?</span>
 
 
 
@@ -9406,7 +9409,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="faq-a"><p>Never. Every website is custom built by our AI specifically for your business.</p></div>
+        <div class="faq-a"><p data-i18n="faq5-a">Never. Every website is custom built by our AI specifically for your business.</p></div>
 
 
 
@@ -9470,7 +9473,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-          <span>What is included in maintenance?</span>
+          <span data-i18n="faq6-q">What is included in maintenance?</span>
 
 
 
@@ -9518,7 +9521,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-        <div class="faq-a"><p>Monthly updates, security monitoring, SSL certificate, uptime guarantee, and priority support.</p></div>
+        <div class="faq-a"><p data-i18n="faq6-a">Monthly updates, security monitoring, SSL certificate, uptime guarantee, and priority support.</p></div>
 
 
 
@@ -9662,7 +9665,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <p class="section-label">Get Started</p>
+    <p class="section-label" data-i18n="contact-label">Get Started</p>
 
 
 
@@ -9678,7 +9681,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <h2>Ready to See What We'd<br/><span class="grad-text">Build For You?</span></h2>
+    <h2 data-i18n-html="contact-title">Ready to See What We'd<br/><span class="grad-text">Build For You?</span></h2>
 
 
 
@@ -9694,7 +9697,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-    <p>Free preview. No commitment. 48 hours.</p>
+    <p data-i18n="contact-sub">Free preview. No commitment. 48 hours.</p>
 
 
 
@@ -9726,7 +9729,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <input class="cta-input" type="text" name="name" placeholder="Your name" required/>
+      <input class="cta-input" type="text" name="name" placeholder="Your name" data-i18n-placeholder="form-name" required/>
 
 
 
@@ -9742,7 +9745,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <input class="cta-input" type="email" name="email" placeholder="Your email" required/>
+      <input class="cta-input" type="email" name="email" placeholder="Your email" data-i18n-placeholder="form-email" required/>
 
 
 
@@ -9758,7 +9761,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <input class="cta-input" type="text" name="business" placeholder="Business name" required/>
+      <input class="cta-input" type="text" name="business" placeholder="Business name" data-i18n-placeholder="form-business" required/>
 
 
 
@@ -9774,7 +9777,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <input class="cta-input" type="url" name="website" placeholder="Website URL"/>
+      <input class="cta-input" type="url" name="website" placeholder="Website URL" data-i18n-placeholder="form-website"/>
 
 
 
@@ -9790,7 +9793,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <textarea class="cta-input" name="message" placeholder="Message" rows="3" style="resize:vertical;min-height:80px;font-family:inherit"></textarea>
+      <textarea class="cta-input" name="message" placeholder="Message" data-i18n-placeholder="form-message" rows="3" style="resize:vertical;min-height:80px;font-family:inherit"></textarea>
 
 
 
@@ -9806,7 +9809,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-      <button type="submit" class="btn btn-primary cta-pulse" style="min-width:200px;justify-content:center">Get My Free Preview →</button>
+      <button type="submit" class="btn btn-primary cta-pulse" style="min-width:200px;justify-content:center" data-i18n="form-submit">Get My Free Preview →</button>
 
 
 
@@ -10286,7 +10289,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
-          <li><a href="/checkout">Pricing</a></li>
+          <li><a href="#pricing">Pricing</a></li>
 
 
 
@@ -10463,22 +10466,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
           <li><a href="/cookie-policy">Cookie Policy</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <li><a href="/ftc-disclosure">FTC Disclosure</a></li>
 
 
 
@@ -12532,6 +12519,92 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 })();
 </script>
 
+
+<!-- LANGUAGE TOGGLE (EN/ES) -->
+<script>
+(function(){
+var T={en:{},es:{}};
+var en=T.en,es=T.es;
+en["nav-cta"]="Get Free Preview →";en["nav-how"]="How It Works";en["nav-pricing"]="Pricing";en["nav-portfolio"]="Portfolio";en["nav-faq"]="FAQ";
+en["hero-badge"]="❆ Human Expertise + AI Speed";
+en["hero-h1"]='AI-Powered Websites<br/><span class="grad-text">That Actually Convert</span>';
+en["hero-sub"]="Our team combines human creativity with AI precision. See your new website before you pay a single dollar. From $50. Free domain included.";
+en["cta-preview"]="Get Free Preview →";en["cta-examples"]="See Examples";
+en["stat-businesses"]="Businesses Contacted Weekly";en["stat-delivery"]="Delivery";en["stat-pagespeed"]="PageSpeed";en["stat-price"]="Starting Price";
+en["hiw-label"]="How It Works";
+en["hiw-title"]='Three Steps to Your<br/><span class="grad-text">New Website</span>';
+en["hiw-sub"]="No commitment. No payment upfront. Just your stunning new website, ready to review.";
+en["step1-title"]="We Find You Online";en["step1-body"]="We search for businesses with outdated websites and build you a free custom preview — no commitment needed.";
+en["step2-title"]="We Build Your Preview in 48 Hours";en["step2-body"]="Our AI builds a stunning custom website preview for your business. You see it before paying a single dollar.";
+en["step3-title"]="You Only Pay When You Love It";en["step3-body"]="Approve your preview, choose your plan, and go live. Free domain included if you need one.";
+en["pricing-label"]="Pricing";
+en["pricing-title"]='Simple, <span class="grad-text">Transparent</span> Pricing';
+en["pricing-sub"]="No surprises. No upsells. Pick your plan after you see your preview.";
+en["ptoggle-full"]="Website Only";en["ptoggle-monthly"]="Website plus Hosting";
+en["plan-starter"]="Starter";en["plan-growth"]="Growth";en["plan-premium"]="Premium";en["plan-popular"]="⭐ Most Popular";
+en["plan-domain"]="🌐 Free domain included if you don’t already have one";
+en["faq-label"]="FAQ";
+en["faq-title"]='Everything You <span class="grad-text">Need to Know</span>';
+en["faq1-q"]="Do I pay before seeing my website?";en["faq1-a"]="Never. We build your complete custom preview first. You only pay when you love it.";
+en["faq2-q"]="How long does delivery take?";en["faq2-a"]="Your preview is ready within 48 hours of starting. We make changes until you are happy.";
+en["faq3-q"]="What if I already have a domain?";en["faq3-a"]="No problem — we connect your existing domain to your new website for free.";
+en["faq4-q"]="Can I cancel my hosting plan?";en["faq4-a"]="Yes anytime. If you cancel before 6 months there is a $25 file transfer fee. After 6 months the transfer is completely free.";
+en["faq5-q"]="Do you build on templates?";en["faq5-a"]="Never. Every website is custom built by our AI specifically for your business.";
+en["faq6-q"]="What is included in maintenance?";en["faq6-a"]="Monthly updates, security monitoring, SSL certificate, uptime guarantee, and priority support.";
+en["contact-label"]="Get Started";
+en["contact-title"]='Ready to See What We\'d<br/><span class="grad-text">Build For You?</span>';
+en["contact-sub"]="Free preview. No commitment. 48 hours.";
+en["form-name"]="Your name";en["form-email"]="Your email";en["form-business"]="Business name";en["form-website"]="Website URL";en["form-message"]="Message";
+en["form-submit"]="Get My Free Preview →";
+es["nav-cta"]="Obtén Vista Previa Gratis";es["nav-how"]="Cómo Funciona";es["nav-pricing"]="Precios";es["nav-portfolio"]="Portafolio";es["nav-faq"]="FAQ";
+es["hero-badge"]="❆ Creatividad Humana + Velocidad de IA";
+es["hero-h1"]='Páginas Web con IA<br/><span class="grad-text">Que Realmente Convierten</span>';
+es["hero-sub"]="Combina creatividad humana con precisión de IA. Ve tu nuevo sitio web antes de pagar. Desde $50. Dominio gratis incluido.";
+es["cta-preview"]="Obtén Vista Previa Gratis";es["cta-examples"]="Ver Ejemplos";
+es["stat-businesses"]="Negocios Contactados por Semana";es["stat-delivery"]="Entrega";es["stat-pagespeed"]="PageSpeed";es["stat-price"]="Precio Inicial";
+es["hiw-label"]="Cómo Funciona";
+es["hiw-title"]='Tres Pasos a Tu<br/><span class="grad-text">Nuevo Sitio Web</span>';
+es["hiw-sub"]="Sin compromiso. Sin pago por adelantado. Solo tu impresionante nuevo sitio, listo para revisar.";
+es["step1-title"]="Te Encontramos en Línea";es["step1-body"]="Buscamos negocios con sitios web desactualizados y creamos una vista previa personalizada y gratuita — sin compromiso.";
+es["step2-title"]="Construimos Tu Vista Previa en 48 Horas";es["step2-body"]="Nuestra IA construye una impresionante vista previa para tu negocio. La ves antes de pagar un solo dólar.";
+es["step3-title"]="Solo Pagas Cuando Te Encanta";es["step3-body"]="Aprueba tu vista previa, elige tu plan y lanza tu sitio. Dominio gratis incluido si lo necesitas.";
+es["pricing-label"]="Precios";
+es["pricing-title"]='Precios Simples y <span class="grad-text">Transparentes</span>';
+es["pricing-sub"]="Sin sorpresas. Sin ventas adicionales. Elige tu plan después de ver tu vista previa.";
+es["ptoggle-full"]="Solo el Sitio Web";es["ptoggle-monthly"]="Sitio Web + Hosting";
+es["plan-starter"]="Básico";es["plan-growth"]="Crecimiento";es["plan-premium"]="Premium";es["plan-popular"]="⭐ Más Popular";
+es["plan-domain"]="🌐 Dominio gratis incluido si no tienes uno";
+es["faq-label"]="Preguntas Frecuentes";
+es["faq-title"]='Todo Lo Que <span class="grad-text">Necesitas Saber</span>';
+es["faq1-q"]="¿Pago antes de ver mi sitio web?";es["faq1-a"]="Nunca. Primero construimos tu vista previa completa. Solo pagas cuando te encanta.";
+es["faq2-q"]="¿Cuánto tiempo tarda la entrega?";es["faq2-a"]="Tu vista previa está lista en 48 horas. Hacemos cambios hasta que estés satisfecho.";
+es["faq3-q"]="¿Qué pasa si ya tengo un dominio?";es["faq3-a"]="No hay problema — conectamos tu dominio existente a tu nuevo sitio web de forma gratuita.";
+es["faq4-q"]="¿Puedo cancelar mi plan de hosting?";es["faq4-a"]="Sí, en cualquier momento. Si cancelas antes de 6 meses hay una tarifa de transferencia de $25. Después de 6 meses la transferencia es completamente gratuita.";
+es["faq5-q"]="¿Construyen con plantillas?";es["faq5-a"]="Nunca. Cada sitio web es construido a medida por nuestra IA específicamente para tu negocio.";
+es["faq6-q"]="¿Qué incluye el mantenimiento?";es["faq6-a"]="Actualizaciones mensuales, monitoreo de seguridad, certificado SSL, garantía de disponibilidad y soporte prioritario.";
+es["contact-label"]="Comenzar";
+es["contact-title"]='<span class="grad-text">¿Listo Para Ver Lo Que Construimos Para Ti?</span>';
+es["contact-sub"]="Vista previa gratis. Sin compromiso. 48 horas.";
+es["form-name"]="Tu nombre";es["form-email"]="Tu correo electrónico";es["form-business"]="Nombre del negocio";es["form-website"]="URL del sitio web";es["form-message"]="Mensaje";
+es["form-submit"]="Obtén Mi Vista Previa Gratis →";
+function applyLang(l){
+  var t=T[l];if(!t)return;
+  document.querySelectorAll("[data-i18n]").forEach(function(e){var k=e.getAttribute("data-i18n");if(t[k]!==undefined)e.textContent=t[k];});
+  document.querySelectorAll("[data-i18n-html]").forEach(function(e){var k=e.getAttribute("data-i18n-html");if(t[k]!==undefined)e.innerHTML=t[k];});
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(function(e){var k=e.getAttribute("data-i18n-placeholder");if(t[k]!==undefined)e.setAttribute("placeholder",t[k]);});
+  document.documentElement.lang=l==="es"?"es-419":"en";
+  var b=document.getElementById("lang-toggle");
+  if(b){b.style.color=l==="es"?"var(--cyan)":"var(--text-muted)";b.style.borderColor=l==="es"?"var(--cyan)":"rgba(0,212,255,0.4)";b.innerHTML=l==="es"?"ES | EN":"EN | ES";}
+  localStorage.setItem("preferredLang",l);
+}
+window.toggleLang=function(){var c=localStorage.getItem("preferredLang")||"en";applyLang(c==="en"?"es":"en");};
+document.addEventListener("DOMContentLoaded",function(){
+  var s=localStorage.getItem("preferredLang");
+  if(!s){var p=new URLSearchParams(window.location.search);s=p.get("lang")||"en";}
+  if(s!=="en")applyLang(s);
+});
+})();
+</script>
 </body>
 
 
