@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="g1-15" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#7b2fff;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="text-15" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#7b2fff;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="#0a0a0f"/>
+  <circle cx="540" cy="540" r="480" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.05"/>
+  <circle cx="540" cy="540" r="380" fill="none" stroke="#7b2fff" stroke-width="1" opacity="0.05"/>
+  <circle cx="540" cy="540" r="280" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.05"/>
+  <!-- Logo mark -->
+  <circle cx="540" cy="420" r="140" fill="url(#g1-15)" opacity="0.15"/>
+  <text x="540" y="460" font-family="'Arial Black', Arial, sans-serif" font-size="160" font-weight="900" text-anchor="middle" fill="url(#g1-15)">A</text>
+  <!-- Brand name -->
+  <text x="540" y="640" font-family="'Arial Black', Arial, sans-serif" font-size="90" font-weight="900" text-anchor="middle" fill="url(#text-15)">ALMA DIGITAL</text>
+  <text x="540" y="720" font-family="'Arial Black', Arial, sans-serif" font-size="52" font-weight="900" text-anchor="middle" fill="#ffffff">SERVICES</text>
+  <text x="540" y="820" font-family="Arial, sans-serif" font-size="40" font-weight="400" text-anchor="middle" fill="#8892a4">AI-Powered Websites · From $50</text>
+  <text x="540" y="890" font-family="Arial, sans-serif" font-size="40" font-weight="400" text-anchor="middle" fill="#8892a4">Free Preview · 48-Hour Delivery</text>
+  <rect x="60" y="960" width="960" height="70" rx="12" fill="url(#g1-15)" opacity="0.15"/>
+  <text x="540" y="1002" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#00d4ff">almadigitalservices.com</text>
+</svg>
