@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pricing — Alma Digital Services</title>
+<meta name="description" content="Choose your website plan. Starter from $50. Growth $100. Premium $150. Free domain, 48-hour delivery, mobile responsive."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--bg-card:#0f0f1a;--cyan:#00d4ff;--purple:#7b2fff;
+  --text:#fff;--text-muted:#8892a4;--border:rgba(0,212,255,0.15);
+  --glow-cyan:0 0 30px rgba(0,212,255,0.4);--glow-purple:0 0 30px rgba(123,47,255,0.4);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(0,212,255,0.3)}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.grad-text{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.25s;border:none;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;box-shadow:var(--glow-cyan)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,255,0.6)}
+.btn-ghost{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan)}
+.btn-ghost:hover{background:rgba(0,212,255,0.1);transform:translateY(-2px)}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-size:1.3rem;font-weight:900;text-decoration:none}
+.nav__links{display:flex;gap:2rem;list-style:none}
+.nav__links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+.nav__links a:hover,.nav__links a.active{color:var(--cyan)}
+.nav__cta{font-size:0.9rem;padding:0.6rem 1.5rem}
+@media(max-width:768px){.nav__links{display:none}}
+/* HERO */
+.hero{padding:9rem 0 4rem;text-align:center}
+.hero__label{font-size:0.8rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+.hero__title{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:1.25rem}
+.hero__sub{font-size:1.1rem;color:var(--text-muted);max-width:560px;margin:0 auto 2.5rem}
+/* TOGGLE */
+.toggle-wrap{display:flex;justify-content:center;margin-bottom:3.5rem}
+.pricing__toggle{display:inline-flex;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:100px;padding:4px}
+.ptoggle-btn{padding:0.6rem 1.5rem;border-radius:100px;border:none;background:transparent;color:var(--text-muted);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s;font-family:inherit}
+.ptoggle-btn.active{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;box-shadow:var(--glow-cyan)}
+/* PLAN GRID */
+.pricing__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;margin-bottom:3rem}
+.plan{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;text-align:left;position:relative;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+.plan:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan);transform:translateY(-4px)}
+.plan--featured{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow-cyan)}
+.plan__badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;font-size:0.75rem;font-weight:800;padding:0.35rem 1.25rem;border-radius:100px;white-space:nowrap}
+.plan__name{font-size:1rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
+.plan__price{font-size:3.5rem;font-weight:900;line-height:1;margin-bottom:0.25rem}
+.plan__period{font-size:0.9rem;color:var(--text-muted);margin-bottom:0.5rem;min-height:1.4em}
+.plan__domain{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);border-radius:6px;padding:0.3rem 0.75rem;font-size:0.8rem;font-weight:600;color:var(--cyan);margin-bottom:1.5rem}
+.plan__features{list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1.5rem}
+.plan__features li{display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:var(--text-muted)}
+.plan__features li::before{content:'';width:18px;height:18px;min-width:18px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:11px;background-repeat:no-repeat;background-position:center}
+/* HOSTING ADDON */
+.plan__addon{background:rgba(123,47,255,0.08);border:1px solid rgba(123,47,255,0.25);border-radius:10px;padding:0.9rem 1rem;margin-bottom:1.5rem}
+.plan__addon-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--purple);margin-bottom:0.5rem}
+.plan__addon-options{display:flex;gap:0.5rem;flex-wrap:wrap}
+.addon-btn{padding:0.4rem 0.85rem;border-radius:6px;border:1px solid rgba(123,47,255,0.4);background:transparent;color:var(--text-muted);font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.addon-btn.selected{background:rgba(123,47,255,0.2);border-color:var(--purple);color:#fff}
+.addon-btn:hover{border-color:var(--purple);color:#fff}
+.plan__btn{width:100%;text-align:center;justify-content:center;position:relative}
+.plan__btn.loading{opacity:0.7;cursor:not-allowed;pointer-events:none}
+.plan__btn .spinner{display:none;width:16px;height:16px;border:2px solid rgba(0,0,0,0.3);border-top-color:#000;border-radius:50%;animation:spin 0.6s linear infinite}
+.plan__btn.loading .spinner{display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pricing__policy{font-size:0.82rem;color:var(--text-muted);margin-top:1.5rem;text-align:center}
+/* TRUST BAR */
+.trust{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.trust__item{display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--text-muted)}
+.trust__icon{font-size:1.1rem}
+/* FAQ */
+.faq{padding:5rem 0;text-align:center}
+.faq__title{font-size:1.8rem;font-weight:900;margin-bottom:2.5rem}
+.faq__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;text-align:left}
+.faq__item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.faq__q{font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;color:var(--text)}
+.faq__a{font-size:0.88rem;color:var(--text-muted);line-height:1.6}
+/* FOOTER */
+.footer{padding:2rem 0;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.82rem}
+.footer a{color:var(--cyan);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo grad-text">Alma Digital</a>
+    <ul class="nav__links">
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/checkout" class="active">Pricing</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+    </ul>
+    <a href="/#contact" class="btn btn-primary nav__cta">Get Free Preview &rarr;</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="hero__label">Pricing</p>
+      <h1 class="hero__title">Simple, <span class="grad-text">Transparent</span> Pricing</h1>
+      <p class="hero__sub">See your website before you pay. Choose your plan, pick optional hosting, and you are live in 48 hours.</p>
+
+      <div class="toggle-wrap">
+        <div class="pricing__toggle">
+          <button class="ptoggle-btn active" id="pt-full" onclick="setMode('full')">Website Only</button>
+          <button class="ptoggle-btn" id="pt-monthly" onclick="setMode('hosting')">Website + Hosting</button>
+        </div>
+      </div>
+
+      <div class="pricing__grid">
+
+        <!-- STARTER -->
+        <div class="plan" id="plan-starter">
+          <div class="plan__name">Starter</div>
+          <div class="plan__price grad-text" id="price-starter">$50</div>
+          <div class="plan__period" id="period-starter">one-time payment</div>
+          <div class="plan__domain">&#127760; Free domain included</div>
+          <ul class="plan__features">
+            <li>1&ndash;5 page website</li>
+            <li>Mobile responsive design</li>
+            <li>95+ PageSpeed score</li>
+            <li>Contact form included</li>
+            <li>SSL certificate</li>
+            <li>48-hour delivery</li>
+          </ul>
+          <div class="plan__addon" id="addon-starter" style="display:none">
+            <div class="plan__addon-label">Add Hosting</div>
+            <div class="plan__addon-options">
+              <button class="addon-btn selected" onclick="setAddon('starter','yes',this)">+ $17/mo hosting</button>
+              <button class="addon-btn" onclick="setAddon('starter','no',this)">No thanks</button>
+            </div>
+          </div>
+          <button class="btn btn-ghost plan__btn" onclick="checkout('starter')">
+            <span class="btn-text">Get Started &rarr;</span>
+            <span class="spinner"></span>
+          </button>
+        </div>
+
+        <!-- GROWTH -->
+        <div class="plan plan--featured" id="plan-growth">
+          <div class="plan__badge">&#11088; Most Popular</div>
+          <div class="plan__name">Growth</div>
+          <div class="plan__price grad-text" id="price-growth">$100</div>
+          <div class="plan__period" id="period-growth">one-time payment</div>
+          <div class="plan__domain">&#127760; Free domain included</div>
+          <ul class="plan__features">
+            <li>6&ndash;10 pages</li>
+            <li>Everything in Starter</li>
+            <li>Contact form + SEO setup</li>
+            <li>Google Analytics included</li>
+            <li>Social media integration</li>
+            <li>48-hour priority delivery</li>
+          </ul>
+          <div class="plan__addon" id="addon-growth" style="display:none">
+            <div class="plan__addon-label">Add Hosting</div>
+            <div class="plan__addon-options">
+              <button class="addon-btn selected" onclick="setAddon('growth','yes',this)">+ $23/mo hosting</button>
+              <button class="addon-btn" onclick="setAddon('growth','no',this)">No thanks</button>
+            </div>
+          </div>
+          <button class="btn btn-primary plan__btn" onclick="checkout('growth')">
+            <span class="btn-text">Get Started &rarr;</span>
+            <span class="spinner"></span>
+          </button>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="plan" id="plan-premium">
+          <div class="plan__name">Premium</div>
+          <div class="plan__price grad-text" id="price-premium">$150</div>
+          <div class="plan__period" id="period-premium">one-time payment</div>
+          <div class="plan__domain">&#127760; Free domain included</div>
+          <ul class="plan__features">
+            <li>10+ pages (no limit)</li>
+            <li>Everything in Growth</li>
+            <li>Blog + advanced SEO</li>
+            <li>Custom animations</li>
+            <li>Priority build &amp; delivery</li>
+            <li>12-month growth support</li>
+          </ul>
+          <div class="plan__addon" id="addon-premium" style="display:none">
+            <div class="plan__addon-label">Add Hosting</div>
+            <div class="plan__addon-options">
+              <button class="addon-btn selected" onclick="setAddon('premium','yes',this)">+ $33/mo hosting</button>
+              <button class="addon-btn" onclick="setAddon('premium','no',this)">No thanks</button>
+            </div>
+          </div>
+          <button class="btn btn-ghost plan__btn" onclick="checkout('premium')">
+            <span class="btn-text">Get Started &rarr;</span>
+            <span class="spinner"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <p class="pricing__policy">Cancel before 6 months: $25 domain transfer fee &nbsp;&middot;&nbsp; Cancel after 6 months: free transfer &nbsp;&middot;&nbsp; Free domain on all plans</p>
+
+      <div class="trust">
+        <div class="trust__item"><span class="trust__icon">&#128274;</span> Secure Stripe checkout</div>
+        <div class="trust__item"><span class="trust__icon">&#9889;</span> 48-hour delivery</div>
+        <div class="trust__item"><span class="trust__icon">&#127760;</span> Free domain included</div>
+        <div class="trust__item"><span class="trust__icon">&#8635;</span> Cancel anytime</div>
+        <div class="trust__item"><span class="trust__icon">&#128065;</span> See it before you pay</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <h2 class="faq__title">Common Questions</h2>
+      <div class="faq__grid">
+        <div class="faq__item">
+          <div class="faq__q">Do I really see the website before I pay?</div>
+          <div class="faq__a">Yes &mdash; we build a free preview of your website first. You only pay once you are happy with it. No commitment, no risk.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q">What is included in hosting?</div>
+          <div class="faq__a">Hosting covers your site being live on the web, ongoing maintenance, monthly revisions, and priority support. Cancel anytime.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q">Do I need to buy hosting?</div>
+          <div class="faq__a">No &mdash; hosting is optional. You can take the one-time build and host it yourself, or use our hosting for a hands-off experience.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q">How fast is 48-hour delivery?</div>
+          <div class="faq__a">We start building immediately after payment. Most sites go live within 24&ndash;48 hours, often same day for simpler projects.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q">Is my payment secure?</div>
+          <div class="faq__a">100%. We use Stripe &mdash; the same payment processor trusted by Amazon, Shopify, and millions of businesses worldwide.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q">What if I already have a domain?</div>
+          <div class="faq__a">No problem &mdash; we will connect your existing domain. The free domain offer is still there if you ever need an extra one.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 Alma Digital Services &middot; <a href="/terms.html">Terms</a> &middot; <a href="/privacy-policy/">Privacy</a> &middot; <a href="mailto:desk@almawebcreative.com">desk@almawebcreative.com</a></p>
+  </div>
+</footer>
+
+<script>
+var currentMode = 'full';
+var addons = { starter: true, growth: true, premium: true };
+
+function setMode(mode) {
+  currentMode = mode;
+  document.getElementById('pt-full').classList.toggle('active', mode === 'full');
+  document.getElementById('pt-monthly').classList.toggle('active', mode === 'hosting');
+  var plans = ['starter', 'growth', 'premium'];
+  var periods = {
+    starter: { full: 'one-time payment', hosting: 'deposit + $17/mo hosting' },
+    growth:  { full: 'one-time payment', hosting: 'deposit + $23/mo hosting' },
+    premium: { full: 'one-time payment', hosting: 'deposit + $33/mo hosting' }
+  };
+  plans.forEach(function(plan) {
+    document.getElementById('period-' + plan).textContent = periods[plan][mode === 'full' ? 'full' : 'hosting'];
+    var addon = document.getElementById('addon-' + plan);
+    if (addon) addon.style.display = mode === 'hosting' ? 'block' : 'none';
+  });
+}
+
+function setAddon(plan, choice, btn) {
+  addons[plan] = choice === 'yes';
+  var siblings = btn.closest('.plan__addon-options').querySelectorAll('.addon-btn');
+  siblings.forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+}
+
+function checkout(plan) {
+  var withHosting = currentMode === 'hosting' && addons[plan];
+  var btn = document.querySelector('#plan-' + plan + ' .plan__btn');
+  btn.classList.add('loading');
+
+  fetch('/api/create-checkout-session', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ plan: plan, withHosting: withHosting })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert('Something went wrong. Please try again or contact us at desk@almawebcreative.com');
+      btn.classList.remove('loading');
+    }
+  })
+  .catch(function() {
+    alert('Something went wrong. Please try again or contact us at desk@almawebcreative.com');
+    btn.classList.remove('loading');
+  });
+}
+</script>
+
+</body>
+</html>
