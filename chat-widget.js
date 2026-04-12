@@ -259,6 +259,46 @@
         right: 16px;
       }
     }
+
+    #alma-chat-notify {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      background: #fff;
+      color: #1a1a2e;
+      border-radius: 12px 12px 4px 12px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      max-width: 220px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: alma-notify-in 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards;
+      cursor: pointer;
+      line-height: 1.4;
+    }
+    #alma-chat-notify.hide {
+      animation: alma-notify-out 0.22s ease forwards;
+      pointer-events: none;
+    }
+    #alma-chat-notify-close {
+      flex-shrink: 0;
+      opacity: 0.45;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 700;
+    }
+    @keyframes alma-notify-in {
+      from { opacity: 0; transform: translateY(10px) scale(0.95); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes alma-notify-out {
+      to { opacity: 0; transform: translateY(6px) scale(0.95); }
+    }
   `;
 
   // ── Inject CSS ──────────────────────────────────────────────────────────────
@@ -307,6 +347,33 @@
 
   document.body.appendChild(bubble);
   document.body.appendChild(chatWindow);
+
+
+  // ── Proactive lead-capture notification ─────────────────────────────────────────
+  (function() {
+    var NOTIFY_KEY = 'alma_notify_dismissed';
+    if (sessionStorage.getItem(NOTIFY_KEY)) return;
+    var notifyEl = null;
+    function removeNotify() {
+      if (!notifyEl) return;
+      notifyEl.classList.add('hide');
+      setTimeout(function () { if (notifyEl && notifyEl.parentNode) notifyEl.parentNode.removeChild(notifyEl); notifyEl = null; }, 250);
+      sessionStorage.setItem(NOTIFY_KEY, '1');
+    }
+    setTimeout(function () {
+      if (isOpen) return;
+      notifyEl = document.createElement('div');
+      notifyEl.id = 'alma-chat-notify';
+      notifyEl.innerHTML = '<span>Want a free preview of your website? Chat with us!</span><span id="alma-chat-notify-close" aria-label="Dismiss">&times;</span>';
+      document.body.appendChild(notifyEl);
+      notifyEl.addEventListener('click', function (e) {
+        if (e.target.id === 'alma-chat-notify-close') { removeNotify(); return; }
+        removeNotify();
+        openChat();
+      });
+      setTimeout(removeNotify, 10000);
+    }, 3000);
+  })();
 
   // ── References ──────────────────────────────────────────────────────────────
   var messagesEl = document.getElementById('alma-chat-messages');
@@ -370,7 +437,7 @@
 
     if (conversationHistory.length === 0) {
       // Show greeting immediately
-      var greeting = "Hi! \uD83D\uDC4B I'm Alex from the Alma Digital team. How can I help you today?";
+      var greeting = "Want a free preview of your website? Chat with us! \uD83D\uDE80 I'm Alex from Alma Digital.";
       addMessage('alex', greeting);
       conversationHistory.push({ role: 'assistant', content: greeting });
     }
