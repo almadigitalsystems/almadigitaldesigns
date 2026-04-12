@@ -690,6 +690,12 @@ app.post('/api/referral', async (req, res) => {
   }
 });
 
+// ── HEALTH CHECK ─────────────────────────────────────────────────────────────
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', env: process.env.NODE_ENV || 'production', ts: new Date().toISOString() });
+});
+
 // ── FALLBACK ──────────────────────────────────────────────────────────────────
 
 app.get('*', (req, res) => {
