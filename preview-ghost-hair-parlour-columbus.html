@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost Hair Parlour | Columbus OH Hair Salon Oddities and Gifts by Crystal</title>
+  <meta name="description" content="Ghost Hair Parlour in Columbus OH - Crystal's 5.0-star hair salon and oddities boutique. Custom color, precision cuts, curated shop. Book now." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0e0c14;
+      --bg2: #13101c;
+      --purple: #7b2d8b;
+      --purple-light: #9d40ae;
+      --teal: #2dd4bf;
+      --teal-dim: rgba(45,212,191,0.15);
+      --card: #1a1626;
+      --border: rgba(123,45,139,0.25);
+      --text: #e8e0f0;
+      --muted: #8b7a9e;
+      --white: #ffffff;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    .preview-banner { background: linear-gradient(90deg, var(--purple), #4a1a7a); color: white; text-align: center; padding: 0.6rem 1rem; font-size: 0.8rem; font-weight: 600; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(14,12,20,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); letter-spacing: 0.08em; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.8rem; color: var(--muted); transition: color 0.2s; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: var(--purple); color: white; padding: 0.5rem 1.25rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--purple-light); }
+    @media(max-width:768px) { .nav-links { display: none; } }
+
+    /* HERO — MODERN AGENCY (DARK GOTHIC) */
+    .hero {
+      min-height: 95vh;
+      background: var(--bg2);
+      padding: 6rem 2rem;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -20%;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(123,45,139,0.15) 0%, transparent 70%);
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 100px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;
+      position: relative;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal);
+    }
+    .hero-eyebrow::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--teal); }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 900;
+      line-height: 1.05; color: var(--white); margin-bottom: 1.25rem;
+    }
+    .hero h1 em { color: var(--teal); font-style: normal; display: block; }
+    .hero-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; max-width: 480px; }
+    .hero-rating { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(45,212,191,0.1); border: 1px solid rgba(45,212,191,0.2); padding: 0.4rem 1rem; border-radius: 4px; font-size: 0.8rem; color: var(--teal); margin-bottom: 2rem; }
+    .hero-rating .stars { letter-spacing: 0.05em; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-teal { background: var(--teal); color: var(--bg); padding: 0.875rem 2rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700; transition: opacity 0.2s; display: inline-block; }
+    .btn-teal:hover { opacity: 0.85; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); padding: 0.875rem 2rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; display: inline-block; transition: border-color 0.2s; }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+    .hero-right { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem; }
+    .hero-right h3 { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--white); margin-bottom: 1.5rem; text-align: center; }
+    .hero-features-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .hero-features-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: var(--muted); }
+    .hero-features-list li span { color: var(--teal); font-size: 1.1rem; }
+    @media(max-width:900px) { .hero-inner { grid-template-columns: 1fr; } .hero-right { display: none; } }
+
+    /* SERVICES */
+    .services { padding: 6rem 2rem; background: var(--bg); }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--white); }
+    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--border); }
+    .service-card { background: var(--bg); padding: 2rem; transition: background 0.2s; }
+    .service-card:hover { background: var(--card); }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+    .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+    /* ABOUT */
+    .about { padding: 6rem 2rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-visual { background: var(--card); border: 1px solid var(--border); border-radius: 8px; height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; position: relative; overflow: hidden; }
+    .about-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(123,45,139,0.15) 0%, transparent 70%); }
+    .about-visual-icon { font-size: 4rem; }
+    .about-visual p { color: var(--muted); font-size: 0.85rem; text-align: center; position: relative; }
+    .about h2 { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; color: var(--white); margin-bottom: 1.25rem; line-height: 1.2; }
+    .about p { color: var(--muted); line-height: 1.85; font-size: 0.875rem; margin-bottom: 1rem; }
+    @media(max-width:768px) { .about-inner { grid-template-columns: 1fr; } }
+
+    /* TESTIMONIALS */
+    .testimonials { padding: 6rem 2rem; background: var(--bg); }
+    .testimonials-grid { max-width: 1000px; margin: 3rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; }
+    .stars { color: #f59e0b; margin-bottom: 0.75rem; }
+    .testimonial p { color: var(--muted); font-size: 0.875rem; line-height: 1.8; margin-bottom: 1rem; font-style: italic; }
+    .reviewer { font-size: 0.75rem; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* CTA */
+    .cta-section { padding: 6rem 2rem; background: var(--purple); text-align: center; }
+    .cta-section h2 { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 3rem); color: white; margin-bottom: 1rem; }
+    .cta-section p { color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; }
+    .btn-white { background: white; color: var(--purple); padding: 0.875rem 2.5rem; border-radius: 4px; font-size: 0.875rem; font-weight: 700; transition: transform 0.15s; display: inline-block; }
+    .btn-white:hover { transform: translateY(-1px); }
+
+    /* CONTACT */
+    .contact { padding: 6rem 2rem; background: var(--bg2); }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact h2 { font-family: 'Cinzel', serif; font-size: 1.6rem; color: var(--white); margin-bottom: 1.5rem; }
+    .contact-info-item { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .contact-info-item span { font-size: 1rem; }
+    .contact-info-item div { color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
+    .contact-info-item strong { color: var(--white); display: block; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 0.8rem 1rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.875rem; transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--teal); }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--muted); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    @media(max-width:768px) { .contact-inner { grid-template-columns: 1fr; } }
+
+    footer { background: var(--bg); padding: 2rem; border-top: 1px solid var(--border); text-align: center; }
+    footer p { font-size: 0.8rem; color: var(--muted); }
+    footer strong { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">FREE Preview Redesign by Alma Digital Designs — Claim Your Free Website Today</div>
+
+  <nav>
+    <div class="nav-logo">GHOST HAIR <span>PARLOUR</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Book</a>
+      <a href="#contact" class="nav-cta">Book with Crystal</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Columbus, OH</div>
+        <div class="hero-rating"><span class="stars">★★★★★</span> 5.0 Stars — Crystal's Studio</div>
+        <h1>Columbus'<br>One-of-a-Kind<br><em>Hair Salon,<br>Oddities &amp; Gift Shop</em></h1>
+        <p class="hero-sub">Crystal's 5.0-star studio blends expert hair artistry with a curated collection of oddities and gifts. A salon experience unlike anything else in Columbus.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-teal">Book with Crystal</a>
+          <a href="#services" class="btn-outline">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <h3>Why Ghost Hair Parlour?</h3>
+        <ul class="hero-features-list">
+          <li><span>✂️</span> Expert hair artistry by Crystal</li>
+          <li><span>⭐</span> 5.0 Stars — Columbus top-rated</li>
+          <li><span>💀</span> Curated oddities & curiosities shop</li>
+          <li><span>🎁</span> Unique gifts and boutique finds</li>
+          <li><span>🔒</span> Private appointments available</li>
+          <li><span>🎨</span> Creative, custom color work</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-header">
+      <div class="section-eyebrow">Services & More</div>
+      <h2 class="section-title">Hair, Oddities & Gifts</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">🎨</div><h3>Custom Color & Balayage</h3><p>Crystal's color artistry transforms hair — from bold fashion colors to seamless balayage and everything in between.</p></div>
+      <div class="service-card"><div class="service-icon">✂️</div><h3>Precision Cuts & Styling</h3><p>Technically perfect cuts tailored to your face shape and lifestyle. Crystal's precision work keeps every client coming back.</p></div>
+      <div class="service-card"><div class="service-icon">💎</div><h3>Extensions & Specialty Hair</h3><p>Extensions, specialty treatments, and unique hair services that most salons don't offer. Crystal does it all.</p></div>
+      <div class="service-card"><div class="service-icon">💀</div><h3>Oddities & Curiosities Collection</h3><p>A carefully curated collection of oddities, specimens, and curiosities for collectors and the curious alike.</p></div>
+      <div class="service-card"><div class="service-icon">🎁</div><h3>Unique Gifts & Boutique Items</h3><p>Thoughtful gifts you won't find anywhere else — crystals, art, curiosities, and more. Perfect for the unconventional soul.</p></div>
+      <div class="service-card"><div class="service-icon">🔒</div><h3>Private Appointments Available</h3><p>Want the studio to yourself? Private appointment bookings available for a fully personal experience.</p></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="about-visual-icon">💀</div>
+        <p>Crystal — Ghost Hair Parlour<br>Columbus OH · 5.0 Stars</p>
+      </div>
+      <div>
+        <div class="section-eyebrow">About Crystal</div>
+        <h2>Where Hair Artistry Meets the Extraordinary</h2>
+        <p>Ghost Hair Parlour is Crystal's Columbus Ohio salon and boutique — a 5.0-star space where exceptional hair work meets a curated collection of oddities, curiosities, and gifts.</p>
+        <p>Crystal has built a loyal following who appreciate her technical skill, creative eye, and the one-of-a-kind atmosphere she has created. There is no other salon quite like this in Columbus.</p>
+        <a href="#contact" class="btn-teal" style="margin-top:1.5rem;">Book with Crystal</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-header">
+      <div class="section-eyebrow">Client Reviews</div>
+      <h2 class="section-title">5.0 Stars — What Columbus Says</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Crystal is a genuine artist. The color she did for me was absolutely stunning and the vibe in the studio is like nothing else. Can't recommend enough."</p><div class="reviewer">— Megan T., Columbus OH</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"5.0 stars and she earns every one. The oddities shop alone is worth the visit — plus you leave with incredible hair. Crystal is uniquely talented."</p><div class="reviewer">— Alex P., Columbus OH</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"I found my forever stylist. Ghost Hair Parlour is the only place I'll go — the atmosphere, the skill, the shop. It's a full experience every single time."</p><div class="reviewer">— Sarah K., Columbus OH</div></div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready for Something Different?</h2>
+    <p>Book with Crystal and experience Columbus's most unique hair salon and boutique.</p>
+    <a href="#contact" class="btn-white">Book with Crystal</a>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <div class="section-eyebrow">Book Now</div>
+      <h2 class="section-title">Schedule with Crystal</h2>
+    </div>
+    <div class="contact-inner">
+      <div>
+        <h2>Ghost Hair Parlour</h2>
+        <div class="contact-info-item"><span>📍</span><div><strong>Location</strong>Columbus, OH</div></div>
+        <div class="contact-info-item"><span>📧</span><div><strong>Email</strong>crystalleisure86@gmail.com</div></div>
+        <div class="contact-info-item"><span>✂️</span><div><strong>Services</strong>Custom Color, Cuts, Extensions, Oddities Shop, Boutique Gifts</div></div>
+        <div class="contact-info-item"><span>⭐</span><div><strong>Rating</strong>5.0 Stars — Columbus Top Salon</div></div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Ghost Hair Parlour - Columbus OH" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <textarea name="message" placeholder="What service are you looking for? Tell Crystal about your hair goals!"></textarea>
+        <button type="submit" class="btn-teal">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Ghost Hair Parlour</strong> — Columbus, OH | Crystal | ★ 5.0 Stars | <a href="mailto:crystalleisure86@gmail.com" style="color:var(--teal);">crystalleisure86@gmail.com</a></p>
+    <p style="margin-top:0.5rem;">Preview designed by <strong>Alma Digital Designs</strong> · almadigitalservices.com</p>
+  </footer>
+</body>
+</html>
