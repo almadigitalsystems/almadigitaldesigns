@@ -552,18 +552,20 @@ const STRIPE_PLANS = {
 app.post('/api/create-checkout-session', async (req, res) => {
   try {
     const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
-    const { plan, withHosting } = req.body;
+    const { plan, withHosting, withCarePlan } = req.body;
     const planData = STRIPE_PLANS[plan];
     if (!planData) return res.status(400).json({ error: 'Invalid plan' });
 
     const baseUrl = process.env.BASE_URL || 'https://almadigitalservices.com';
+    const needsSubscription = withHosting || withCarePlan;
     let session;
 
-    if (withHosting) {
-      // Subscription mode: first invoice includes one-time build fee + recurring hosting
-      session = await stripe.checkout.sessions.create({
-        mode: 'subscription',
-        line_items: [{
+    if (needsSubscription) {
+      // Subscription mode — includes any recurring items (hosting and/or care plan)
+      // One-time build fee goes as a first-invoice item via subscription_data.add_invoice_items
+      const lineItems = [];
+      if (withHosting) {
+        lineItems.push({
           price_data: {
             currency: 'usd',
             product_data: { name: `${planData.name} Website Hosting` },
@@ -571,7 +573,23 @@ app.post('/api/create-checkout-session', async (req, res) => {
             recurring: { interval: 'month' },
           },
           quantity: 1,
-        }],
+        });
+      }
+      if (withCarePlan) {
+        lineItems.push({
+          price_data: {
+            currency: 'usd',
+            product_data: { name: 'Website Care Plan' },
+            unit_amount: 2900,
+            recurring: { interval: 'month' },
+          },
+          quantity: 1,
+        });
+      }
+
+      session = await stripe.checkout.sessions.create({
+        mode: 'subscription',
+        line_items: lineItems,
         subscription_data: {
           add_invoice_items: [{
             price_data: {
@@ -580,14 +598,14 @@ app.post('/api/create-checkout-session', async (req, res) => {
               unit_amount: planData.websiteCents,
             },
           }],
-          metadata: { plan, type: 'build_plus_hosting' },
+          metadata: { plan, withHosting: String(!!withHosting), withCarePlan: String(!!withCarePlan) },
         },
-        metadata: { plan, type: 'build_plus_hosting' },
+        metadata: { plan, type: needsSubscription ? 'subscription' : 'build_only' },
         success_url: `${baseUrl}/thank-you`,
         cancel_url: `${baseUrl}/checkout`,
       });
     } else {
-      // One-time payment mode
+      // One-time payment mode — website build only
       session = await stripe.checkout.sessions.create({
         mode: 'payment',
         line_items: [{
@@ -688,6 +706,12 @@ app.post('/api/referral', async (req, res) => {
     console.error('Referral email error:', err);
     res.json({ success: false });
   }
+});
+
+// ── HEALTH CHECK ─────────────────────────────────────────────────────────────
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', env: process.env.NODE_ENV || 'production', ts: new Date().toISOString() });
 });
 
 // ── FALLBACK ──────────────────────────────────────────────────────────────────
