@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xclusive House Of Kutz | Memphis Barbershop by Derick Tolliver</title>
+  <meta name="description" content="Xclusive House Of Kutz in Memphis TN - Derick Tolliver 4.9-star barbershop. Fades, tapers, beard sculpting, precision cuts. Book now." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #000000;
+      --off-black: #0d0d0d;
+      --dark-gray: #1a1a1a;
+      --mid-gray: #2a2a2a;
+      --light-gray: #888888;
+      --gold: #c9a84c;
+      --gold-light: #e0c068;
+      --white: #ffffff;
+      --off-white: #f5f5f0;
+      --text: #e8e8e0;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--text); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    .preview-banner { background: var(--gold); color: var(--black); text-align: center; padding: 0.6rem 1rem; font-size: 0.8rem; font-weight: 700; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--black); border-bottom: 1px solid rgba(201,168,76,0.2);
+      padding: 0 3rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-size: 1rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { font-size: 0.75rem; color: var(--light-gray); transition: color 0.2s; letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--gold); color: var(--black); }
+    @media(max-width:768px) { .nav-links { display: none; } nav { padding: 0 1.5rem; } }
+
+    /* HERO — MINIMALIST */
+    .hero {
+      min-height: 95vh;
+      background: var(--off-black);
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .hero-inner { max-width: 700px; }
+    .hero-label {
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 7rem); font-weight: 800;
+      line-height: 0.95; color: var(--white); margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .accent { color: var(--gold); }
+    .hero-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 2rem; }
+    .hero-sub { font-size: 0.95rem; color: var(--light-gray); line-height: 1.8; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .hero-rating { display: flex; align-items: center; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; font-size: 0.8rem; color: var(--light-gray); }
+    .hero-rating .stars { color: var(--gold); letter-spacing: 0.05em; }
+    .btn-gold { background: var(--gold); color: var(--black); padding: 0.875rem 2.5rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.2s; border: none; cursor: pointer; display: inline-block; }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 0.875rem 2rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: inline-block; transition: border-color 0.2s; margin-left: 1rem; }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* DIVIDER */
+    .section-divider { display: flex; align-items: center; justify-content: center; padding: 3rem 2rem; background: var(--black); gap: 1rem; }
+    .section-divider::before, .section-divider::after { content: ''; flex: 1; max-width: 200px; height: 1px; background: rgba(255,255,255,0.1); }
+    .section-divider span { color: var(--gold); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; }
+
+    /* SERVICES */
+    .services { padding: 2rem 2rem 6rem; background: var(--black); }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+    .services-list { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: rgba(255,255,255,0.05); }
+    .service-item { background: var(--off-black); padding: 2.5rem 2rem; transition: background 0.2s; }
+    .service-item:hover { background: var(--dark-gray); }
+    .service-num { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; opacity: 0.8; }
+    .service-item h3 { font-size: 1rem; font-weight: 800; color: var(--white); letter-spacing: 0.02em; margin-bottom: 0.75rem; }
+    .service-item p { font-size: 0.8rem; color: var(--light-gray); line-height: 1.7; }
+
+    /* ABOUT */
+    .about { padding: 6rem 2rem; background: var(--off-black); border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .about-visual { background: var(--dark-gray); height: 420px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; border: 1px solid rgba(201,168,76,0.1); }
+    .about-visual-icon { font-size: 4rem; }
+    .about-visual p { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light-gray); }
+    .about-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .about h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1.5rem; line-height: 1.15; }
+    .about p { color: var(--light-gray); line-height: 1.85; font-size: 0.875rem; margin-bottom: 1rem; }
+    @media(max-width:768px) { .about-inner { grid-template-columns: 1fr; gap: 3rem; } }
+
+    /* TESTIMONIALS */
+    .testimonials { padding: 6rem 2rem; background: var(--black); }
+    .testimonials-grid { max-width: 1000px; margin: 3rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: rgba(255,255,255,0.05); }
+    .testimonial { background: var(--off-black); padding: 2.5rem 2rem; }
+    .stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .testimonial p { color: var(--light-gray); font-size: 0.85rem; line-height: 1.8; margin-bottom: 1.25rem; font-style: italic; }
+    .reviewer { font-size: 0.7rem; font-weight: 800; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* CTA */
+    .cta-section { padding: 6rem 2rem; background: var(--off-black); text-align: center; border-top: 1px solid rgba(201,168,76,0.15); }
+    .cta-section h2 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .cta-section p { color: var(--light-gray); margin-bottom: 2.5rem; font-size: 0.9rem; }
+
+    /* CONTACT */
+    .contact { padding: 6rem 2rem; background: var(--black); }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .contact h2 { font-size: 1.5rem; font-weight: 800; color: var(--white); letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+    .contact-info-item { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .contact-info-item span { font-size: 1rem; }
+    .contact-info-item div { color: var(--light-gray); font-size: 0.85rem; line-height: 1.6; }
+    .contact-info-item strong { color: var(--white); display: block; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.15rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea { background: var(--dark-gray); border: 1px solid rgba(255,255,255,0.08); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.85rem; transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--gold); }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--light-gray); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    @media(max-width:768px) { .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    footer { background: var(--off-black); padding: 2rem 3rem; border-top: 1px solid rgba(255,255,255,0.04); text-align: center; }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+    footer strong { color: rgba(255,255,255,0.7); }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">FREE Preview Redesign by Alma Digital Designs — Claim Your Free Website Today</div>
+
+  <nav>
+    <div class="nav-logo">XCLUSIVE <span>HOUSE OF KUTZ</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Book</a>
+      <a href="#contact" class="nav-cta">Book Now</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Memphis, TN — Derick Tolliver</div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9 Stars — Memphis</span>
+      </div>
+      <h1>PRECISION<br>CUTS.<br><span class="accent">4.9</span><br>STARS.</h1>
+      <div class="hero-line"></div>
+      <p class="hero-sub">Derick Tolliver runs Memphis's most exclusive barbershop — where every client leaves looking sharp and every visit feels personal.</p>
+      <div>
+        <a href="#contact" class="btn-gold">Book with Derick Today</a>
+        <a href="#services" class="btn-ghost">Services</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"><span>Xclusive House Of Kutz</span></div>
+
+  <section class="services" id="services">
+    <div class="section-header">
+      <div class="section-label">The Services</div>
+      <h2 class="section-title">What Derick Does</h2>
+    </div>
+    <div class="services-list">
+      <div class="service-item"><div class="service-num">01 — Haircuts</div><h3>Signature Fades & Tapers</h3><p>Derick's signature fade work — skin fades, mid fades, drop fades. Every cut is clean, sharp, and built to last the week.</p></div>
+      <div class="service-item"><div class="service-num">02 — Beards</div><h3>Beard Sculpting & Shaping</h3><p>Whether it's a full beard shaping or a clean line-up, Derick sculpts your beard to frame your face perfectly.</p></div>
+      <div class="service-item"><div class="service-num">03 — Classic</div><h3>Classic Straight Razor Shaves</h3><p>The full barbershop experience — hot lather, straight razor, close clean shave. Old school craft.</p></div>
+      <div class="service-item"><div class="service-num">04 — Young Ones</div><h3>Kids & Teens Haircuts</h3><p>Patient work for young clients. First cuts, school cuts, and fresh fades for Memphis youth.</p></div>
+      <div class="service-item"><div class="service-num">05 — Creative</div><h3>Hair Design & Creative Line-Ups</h3><p>Artistic designs, unique patterns, bold line-ups. Derick brings creative vision to every client who wants something special.</p></div>
+      <div class="service-item"><div class="service-num">06 — No Wait</div><h3>Walk-Ins Welcome</h3><p>No appointment? No problem. Walk in and Derick will take care of you. Book ahead for guaranteed time.</p></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="about-visual-icon">✂️</div>
+        <p>Derick Tolliver — Xclusive House Of Kutz</p>
+      </div>
+      <div>
+        <div class="about-label">About Derick</div>
+        <h2>Where Craft Meets Client Care</h2>
+        <p>Xclusive House Of Kutz is Derick Tolliver's Memphis barbershop — a 4.9-star destination where the craft of barbering meets genuine client care.</p>
+        <p>Known for flawless fades, sharp line-ups, and an atmosphere that keeps clients coming back, Xclusive has built its reputation one cut at a time. Derick doesn't just cut hair — he builds relationships with every client in the chair.</p>
+        <a href="#contact" class="btn-gold" style="margin-top:2rem;">Book with Derick Today</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-header">
+      <div class="section-label">Client Words</div>
+      <h2 class="section-title">What Memphis Says</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Derick is on another level. Every time I leave his chair I feel like a completely different person — in the best way. Xclusive is my barber for life."</p><div class="reviewer">— Jordan S., Memphis TN</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"4.9 stars and every single one earned. The fade Derick gives me is cleaner than anywhere else in Memphis. He's the standard."</p><div class="reviewer">— Malik D., Memphis TN</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Not just a great barber — a great person. The atmosphere at Xclusive is what keeps me coming back as much as the cuts. Highly recommend."</p><div class="reviewer">— Terrence W., Memphis TN</div></div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Book Your Chair<br>with Derick</h2>
+    <p>Walk in or book ahead — Memphis's most exclusive barbershop is ready for you.</p>
+    <a href="#contact" class="btn-gold">Book with Derick Today</a>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Book Your Appointment</h2>
+    </div>
+    <div class="contact-inner">
+      <div>
+        <h2>Xclusive House Of Kutz</h2>
+        <div class="contact-info-item"><span>📍</span><div><strong>Location</strong>Memphis, TN</div></div>
+        <div class="contact-info-item"><span>📧</span><div><strong>Email</strong>dtolliver@xclusive.info</div></div>
+        <div class="contact-info-item"><span>✂️</span><div><strong>Specialties</strong>Fades, Tapers, Beard Sculpting, Line-Ups, Creative Designs</div></div>
+        <div class="contact-info-item"><span>⭐</span><div><strong>Rating</strong>4.9 Stars — Memphis Barbershop</div></div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Xclusive House Of Kutz - Memphis TN" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <textarea name="message" placeholder="What service are you looking for?"></textarea>
+        <button type="submit" class="btn-gold">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Xclusive House Of Kutz</strong> — Memphis, TN | Derick Tolliver | ★ 4.9 Stars | <a href="mailto:dtolliver@xclusive.info" style="color:var(--gold);">dtolliver@xclusive.info</a></p>
+    <p style="margin-top:0.5rem;">Preview designed by <strong>Alma Digital Designs</strong> · almadigitalservices.com</p>
+  </footer>
+</body>
+</html>
