@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Tu Estilo Salon de Belleza | Salon de Belleza en Medellin</title>
+  <meta name="description" content="Cortes color keratina Medellin. Reserva ahora." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#fdf5f7; --bg2:#f8ebef; --pink:#c2185b; --pink-light:#e91e8c; --rose:#f06292; --card:#fff; --text:#2a0a14; --muted:#8b5a6a; --border:rgba(194,24,91,0.15); }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; }
+    a { text-decoration:none; color:inherit; }
+    .preview-banner { background:linear-gradient(90deg,var(--pink),var(--pink-light)); color:#fff; text-align:center; padding:.6rem 1rem; font-size:.8rem; font-weight:600; }
+    nav { position:sticky; top:0; z-index:100; background:rgba(253,245,247,.97); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:0 2rem; height:68px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700; color:var(--text); }
+    .nav-logo span { color:var(--pink); }
+    .nav-links { display:flex; gap:2rem; align-items:center; }
+    .nav-links a { font-size:.8rem; color:var(--muted); transition:color .2s; }
+    .nav-links a:hover { color:var(--pink); }
+    .nav-cta { background:var(--pink); color:#fff; padding:.5rem 1.25rem; border-radius:100px; font-size:.8rem; font-weight:600; }
+    @media(max-width:768px){.nav-links{display:none;}}
+    .hero { min-height:90vh; display:grid; grid-template-columns:1fr 1fr; background:var(--bg); }
+    .hero-left { display:flex; flex-direction:column; justify-content:center; padding:4rem 3rem 4rem 5rem; }
+    .hero-tag { display:inline-flex; align-items:center; gap:.5rem; background:rgba(194,24,91,.1); border:1px solid var(--border); padding:.35rem 1rem; border-radius:100px; font-size:.7rem; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:.08em; margin-bottom:1.5rem; width:fit-content; }
+    .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:700; line-height:1.1; color:var(--text); margin-bottom:1.25rem; }
+    .hero h1 em { color:var(--pink); font-style:italic; }
+    .hero-sub { font-size:.95rem; color:var(--muted); line-height:1.75; margin-bottom:2rem; max-width:420px; }
+    .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn-pink { background:var(--pink); color:#fff; padding:.875rem 2rem; border-radius:100px; font-size:.875rem; font-weight:700; display:inline-block; transition:opacity .2s; }
+    .btn-pink:hover { opacity:.85; }
+    .btn-outline { border:2px solid var(--pink); color:var(--pink); padding:.875rem 2rem; border-radius:100px; font-size:.875rem; font-weight:600; display:inline-block; transition:all .2s; }
+    .btn-outline:hover { background:var(--pink); color:#fff; }
+    .hero-right { background:var(--bg2); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.5rem; padding:3rem; }
+    .hero-card { background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 24px rgba(194,24,91,.1); width:100%; max-width:300px; text-align:center; }
+    .hero-card-icon { font-size:3rem; margin-bottom:.75rem; }
+    .hero-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:.5rem; }
+    .hero-card p { font-size:.8rem; color:var(--muted); }
+    @media(max-width:900px){.hero{grid-template-columns:1fr;}.hero-left{padding:3rem 1.5rem;}.hero-right{display:none;}}
+    .services { padding:5rem 2rem; background:var(--bg); }
+    .section-header { text-align:center; margin-bottom:3rem; }
+    .section-label { font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--pink); margin-bottom:.75rem; }
+    .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:700; color:var(--text); }
+    .services-grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+    .service-card { background:var(--card); border-radius:16px; padding:2rem; border:1px solid rgba(0,0,0,.06); box-shadow:0 2px 8px rgba(0,0,0,.04); transition:box-shadow .2s,transform .2s; }
+    .service-card:hover { box-shadow:0 8px 24px rgba(194,24,91,.1); transform:translateY(-3px); }
+    .service-icon { font-size:2rem; margin-bottom:.75rem; }
+    .service-card h3 { font-size:.95rem; font-weight:700; color:var(--text); margin-bottom:.5rem; }
+    .service-card p { font-size:.85rem; color:var(--muted); line-height:1.65; }
+    .about { padding:5rem 2rem; background:var(--bg2); }
+    .about-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .about h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; color:var(--text); margin-bottom:1.25rem; }
+    .about p { color:var(--muted); line-height:1.85; font-size:.95rem; margin-bottom:1rem; }
+    .about-visual { background:#fff; border-radius:16px; height:340px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; box-shadow:0 4px 24px rgba(194,24,91,.08); }
+    .about-visual-icon { font-size:4rem; }
+    .about-visual p { color:var(--muted); font-size:.85rem; text-align:center; }
+    @media(max-width:768px){.about-inner{grid-template-columns:1fr;}}
+    .testimonials { padding:5rem 2rem; background:var(--bg); }
+    .testimonials-grid { max-width:1000px; margin:2.5rem auto 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+    .testimonial { background:#fff; border-radius:16px; padding:1.75rem; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+    .stars { color:#f59e0b; margin-bottom:.75rem; }
+    .testimonial p { color:var(--muted); font-size:.875rem; line-height:1.75; margin-bottom:1rem; font-style:italic; }
+    .reviewer { font-size:.8rem; font-weight:700; color:var(--pink); }
+    .cta-section { padding:5rem 2rem; background:var(--pink); text-align:center; }
+    .cta-section h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); color:#fff; margin-bottom:1rem; }
+    .cta-section p { color:rgba(255,255,255,.85); margin-bottom:2rem; }
+    .btn-white { background:#fff; color:var(--pink); padding:.875rem 2.5rem; border-radius:100px; font-size:.875rem; font-weight:700; display:inline-block; transition:transform .15s; }
+    .btn-white:hover { transform:translateY(-1px); }
+    .contact { padding:5rem 2rem; background:var(--bg2); }
+    .contact-inner { max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+    .contact h2 { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--text); margin-bottom:1.5rem; }
+    .contact-info-item { display:flex; gap:.75rem; margin-bottom:1.25rem; }
+    .contact-info-item span { font-size:1.1rem; }
+    .contact-info-item div { color:var(--muted); font-size:.875rem; line-height:1.6; }
+    .contact-info-item strong { color:var(--text); display:block; }
+    .contact-form { display:flex; flex-direction:column; gap:1rem; }
+    .contact-form input,.contact-form textarea { background:#fff; border:1px solid var(--border); color:var(--text); padding:.8rem 1rem; border-radius:12px; font-family:'Inter',sans-serif; font-size:.875rem; transition:border-color .2s; }
+    .contact-form input:focus,.contact-form textarea:focus { outline:none; border-color:var(--pink); }
+    .contact-form textarea { min-height:110px; resize:vertical; }
+    @media(max-width:768px){.contact-inner{grid-template-columns:1fr;}}
+    footer { background:var(--text); padding:2rem; text-align:center; }
+    footer p { font-size:.8rem; color:rgba(255,255,255,.4); }
+    footer strong { color:rgba(255,255,255,.75); }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">Vista previa GRATUITA creada por Alma Digital Designs — Reclama tu sitio hoy</div>
+  <nav>
+    <div class="nav-logo">A Tu <span>Estilo</span></div>
+    <div class="nav-links">
+      <a href="#services">Servicios</a>
+      <a href="#about">Nosotros</a>
+      <a href="#contact">Contacto</a>
+      <a href="#contact" class="nav-cta">Reservar Cita</a>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">💅 Medellin, Colombia</div>
+      <h1>Tu Belleza Merece un <em>Salon que Te Vea</em></h1>
+      <p class="hero-sub">En A Tu Estilo te transformamos con cortes, color y tratamientos en el corazon de Medellin. Atencion personalizada, tecnicas modernas.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-pink">Reserva tu cita hoy</a>
+        <a href="#services" class="btn-outline">Ver Servicios</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card"><div class="hero-card-icon">💇‍♀️</div><h3>Tu Transformacion</h3><p>Corte, color y cuidado en un solo lugar en Medellin.</p></div>
+      <div class="hero-card"><div class="hero-card-icon">✨</div><h3>Atencion Personalizada</h3><p>Cada cliente recibe un servicio unico adaptado a su estilo.</p></div>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-header">
+      <div class="section-label">Nuestros Servicios</div>
+      <h2 class="section-title">Lo Que Hacemos en A Tu Estilo</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">✂️</div><h3>Corte y Peinado</h3><p>Cortes modernos y clasicos ejecutados con precision. Desde el corte casual hasta el look mas sofisticado.</p></div>
+      <div class="service-card"><div class="service-icon">🎨</div><h3>Coloracion y Mechas</h3><p>Coloracion completa, mechas, balayage y mas. Colores vibrantes que duran y protegen tu cabello.</p></div>
+      <div class="service-card"><div class="service-icon">💆‍♀️</div><h3>Tratamientos Capilares</h3><p>Hidratacion profunda, reconstruccion y cuidados especializados para un cabello saludable y brillante.</p></div>
+      <div class="service-card"><div class="service-icon">✨</div><h3>Alisado y Keratina</h3><p>Alisados duraderos y tratamientos de keratina que transforman tu cabello con resultados profesionales.</p></div>
+      <div class="service-card"><div class="service-icon">💄</div><h3>Maquillaje</h3><p>Maquillaje para eventos, novias y ocasiones especiales. Te hacemos lucir perfecta para cada momento.</p></div>
+    </div>
+  </section>
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div><div class="section-label">Sobre Nosotros</div>
+        <h2>Salon de Confianza en Medellin</h2>
+        <p>A Tu Estilo es el salon de confianza ubicado en Cra 78, Medellin. Brindamos atencion personalizada y aplicamos tecnicas modernas para que cada cliente salga transformada y feliz.</p>
+        <p>Nuestro equipo se mantiene actualizado con las ultimas tendencias para ofrecerte siempre lo mejor. Tu belleza es nuestra mision.</p>
+        <a href="#contact" class="btn-pink" style="margin-top:1.5rem;">Reserva tu cita hoy</a>
+      </div>
+      <div class="about-visual"><div class="about-visual-icon">💅</div><p>A Tu Estilo<br>Medellin, Colombia</p></div>
+    </div>
+  </section>
+  <section class="testimonials">
+    <div class="section-header"><div class="section-label">Resenas</div><h2 class="section-title">Lo Que Dicen Nuestras Clientas</h2></div>
+    <div class="testimonials-grid">
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"El mejor salon de Medellin. Me hicieron un color increible y el trato fue muy personalizado. Volvere siempre."</p><div class="reviewer">— Carolina V., Medellin</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"La keratina que me aplicaron quedo perfecta. El salon es muy profesional y el ambiente muy agradable."</p><div class="reviewer">— Diana M., Medellin</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Me transformaron completamente. El corte y el peinado quedaron exactamente como los queria. Excelente servicio."</p><div class="reviewer">— Valentina R., Medellin</div></div>
+    </div>
+  </section>
+  <section class="cta-section">
+    <h2>Lista Para tu Transformacion?</h2>
+    <p>Reserva tu cita en A Tu Estilo — el salon de belleza de confianza en Medellin.</p>
+    <a href="#contact" class="btn-white">Reserva tu cita hoy</a>
+  </section>
+  <section class="contact" id="contact">
+    <div class="section-header"><div class="section-label">Contacto</div><h2 class="section-title">Reserva tu Cita</h2></div>
+    <div class="contact-inner">
+      <div>
+        <h2>A Tu Estilo Salon de Belleza</h2>
+        <div class="contact-info-item"><span>📍</span><div><strong>Ubicacion</strong>Cra 78, Medellin, Colombia</div></div>
+        <div class="contact-info-item"><span>📧</span><div><strong>Email</strong>atuestilosalondebelleza@hotmail.com</div></div>
+        <div class="contact-info-item"><span>📱</span><div><strong>Telefono</strong>+57 312 8339773</div></div>
+        <div class="contact-info-item"><span>✂️</span><div><strong>Servicios</strong>Cortes, Coloracion, Keratina, Maquillaje, Tratamientos</div></div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="A Tu Estilo Salon de Belleza - Medellin Colombia" />
+        <input type="text" name="name" placeholder="Tu Nombre" required />
+        <input type="email" name="email" placeholder="Tu Email" required />
+        <input type="tel" name="phone" placeholder="Numero de Telefono" />
+        <textarea name="message" placeholder="Que servicio te interesa? Alguna pregunta?"></textarea>
+        <button type="submit" class="btn-pink">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <p><strong>A Tu Estilo Salon de Belleza</strong> — Medellin, Colombia | <a href="mailto:atuestilosalondebelleza@hotmail.com" style="color:rgba(255,255,255,.6);">atuestilosalondebelleza@hotmail.com</a></p>
+    <p style="margin-top:.5rem;">Vista previa disenada por <strong>Alma Digital Designs</strong> · almadigitalservices.com</p>
+  </footer>
+</body>
+</html>
