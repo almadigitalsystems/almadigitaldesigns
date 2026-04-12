@@ -82,6 +82,21 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 .faq__item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
 .faq__q{font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;color:var(--text)}
 .faq__a{font-size:0.88rem;color:var(--text-muted);line-height:1.6}
+/* CARE PLAN BANNER */
+.care-plan-banner{background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(123,47,255,0.08));border:1px solid rgba(0,212,255,0.25);border-radius:16px;padding:1.5rem 2rem;margin-top:2rem;text-align:left}
+.care-plan-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.care-plan-title{font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.4rem}
+.care-plan-sub{font-size:0.85rem;color:var(--text-muted)}
+.care-plan-toggle{display:flex;align-items:center;gap:0.75rem;cursor:pointer;flex-shrink:0}
+.care-plan-toggle input{display:none}
+.toggle-track{width:44px;height:24px;background:rgba(255,255,255,0.1);border:1px solid var(--border);border-radius:12px;position:relative;transition:background 0.2s,border-color 0.2s;display:block}
+.toggle-thumb{position:absolute;top:3px;left:3px;width:16px;height:16px;background:var(--text-muted);border-radius:50%;transition:transform 0.2s,background 0.2s}
+.care-plan-toggle input:checked ~ .toggle-track{background:rgba(0,212,255,0.25);border-color:var(--cyan)}
+.care-plan-toggle input:checked ~ .toggle-track .toggle-thumb{transform:translateX(20px);background:var(--cyan)}
+.toggle-label{font-size:0.9rem;font-weight:600;color:var(--text-muted);transition:color 0.2s;white-space:nowrap}
+.care-plan-toggle input:checked ~ .toggle-label{color:var(--cyan)}
+.care-plan-learn{display:inline-block;font-size:0.82rem;color:var(--cyan);text-decoration:none;margin-top:0.75rem;opacity:0.7}
+.care-plan-learn:hover{opacity:1}
 /* FOOTER */
 .footer{padding:2rem 0;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.82rem}
 .footer a{color:var(--cyan);text-decoration:none}
@@ -204,6 +219,22 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
       <p class="pricing__policy">Cancel before 6 months: $25 domain transfer fee &nbsp;&middot;&nbsp; Cancel after 6 months: free transfer &nbsp;&middot;&nbsp; Free domain on all plans</p>
 
+      <!-- CARE PLAN ADD-ON -->
+      <div class="care-plan-banner" id="care-plan-banner">
+        <div class="care-plan-inner">
+          <div class="care-plan-text">
+            <div class="care-plan-title">&#128274; Website Care Plan &mdash; $29/mo</div>
+            <div class="care-plan-sub">Monthly content updates &middot; Security monitoring &middot; Uptime monitoring &middot; Priority support &middot; Monthly performance report</div>
+          </div>
+          <label class="care-plan-toggle">
+            <input type="checkbox" id="care-plan-checkbox" onchange="toggleCarePlan(this.checked)"/>
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span class="toggle-label">Add to my plan</span>
+          </label>
+        </div>
+        <a href="/care-plan" class="care-plan-learn">Learn more &rarr;</a>
+      </div>
+
       <div class="trust">
         <div class="trust__item"><span class="trust__icon">&#128274;</span> Secure Stripe checkout</div>
         <div class="trust__item"><span class="trust__icon">&#9889;</span> 48-hour delivery</div>
@@ -256,6 +287,13 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 <script>
 var currentMode = 'full';
 var addons = { starter: true, growth: true, premium: true };
+var carePlanSelected = false;
+
+function toggleCarePlan(checked) {
+  carePlanSelected = checked;
+  var label = document.querySelector('.toggle-label');
+  if (label) label.textContent = checked ? 'Added!' : 'Add to my plan';
+}
 
 function setMode(mode) {
   currentMode = mode;
@@ -289,7 +327,7 @@ function checkout(plan) {
   fetch('/api/create-checkout-session', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ plan: plan, withHosting: withHosting })
+    body: JSON.stringify({ plan: plan, withHosting: withHosting, withCarePlan: carePlanSelected })
   })
   .then(function(res) { return res.json(); })
   .then(function(data) {
