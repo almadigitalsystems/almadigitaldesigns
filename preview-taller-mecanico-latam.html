@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taller Mec&aacute;nico &mdash; Servicio Honesto y Garantizado para Tu Veh&iacute;culo</title>
+<meta name="description" content="Reparaciones mec&aacute;nicas profesionales con garant&iacute;a. Diagn&oacute;stico gratis, precios justos y trabajo de calidad. Agenda tu cita hoy.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#1c1c1c;color:#f0f0f0}
+nav{background:#111;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:3px solid #e65c00}
+.logo{color:#fff;font-weight:900;font-size:1.3rem}
+.logo span{color:#e65c00}
+.nav-cta{background:#e65c00;color:#fff;padding:.5rem 1.3rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem}
+.hero{padding:5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto;align-items:center}
+.hero-text .tag{background:#e65c00;color:#fff;display:inline-block;padding:.25rem .8rem;border-radius:4px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1.5rem}
+.hero-text h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;margin-bottom:1.2rem;color:#fff}
+.hero-text h1 span{color:#e65c00}
+.hero-text p{color:#999;line-height:1.7;margin-bottom:2rem}
+.btn-orange{background:#e65c00;color:#fff;padding:.9rem 2rem;border-radius:6px;font-weight:800;text-decoration:none;display:inline-block}
+.hero-visual{background:linear-gradient(135deg,#e65c00,#ff8c00);border-radius:16px;height:320px;display:flex;align-items:center;justify-content:center;font-size:7rem}
+.services{background:#222;padding:5rem 2rem}
+.services h2{color:#fff;font-size:1.8rem;font-weight:900;text-align:center;margin-bottom:.5rem}
+.services h2 span{color:#e65c00}
+.services .sub{color:#777;text-align:center;margin-bottom:3rem}
+.svc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:1100px;margin:0 auto}
+.svc-item{background:#2d2d2d;border-radius:10px;padding:1.5rem;display:flex;align-items:center;gap:1rem}
+.svc-item:hover{background:#333}
+.svc-icon{font-size:1.8rem;flex-shrink:0}
+.svc-item h3{font-size:.95rem;font-weight:700;color:#fff}
+.stats{background:#e65c00;padding:3rem 2rem;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;text-align:center}
+.stat .num{font-size:2.5rem;font-weight:900;color:#fff}
+.stat p{color:rgba(255,255,255,.8);font-size:.85rem}
+.about{background:#1c1c1c;padding:5rem 2rem;max-width:760px;margin:0 auto;text-align:center}
+.about h2{color:#fff;font-size:2rem;font-weight:900;margin-bottom:1rem}
+.about h2 span{color:#e65c00}
+.about p{color:#999;line-height:1.8}
+.cta{background:#111;padding:5rem 2rem;text-align:center}
+.cta h2{color:#fff;font-size:2rem;font-weight:900;margin-bottom:1rem}
+.cta p{color:#888;margin-bottom:2rem}
+.cta-form{max-width:400px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
+.cta-form input{padding:.8rem 1rem;background:#222;border:1px solid #333;border-radius:6px;color:#fff;font-size:1rem;font-family:'Inter',sans-serif}
+.cta-form input::placeholder{color:#666}
+.btn-sub{background:#e65c00;color:#fff;padding:.9rem;border-radius:6px;font-weight:800;border:none;cursor:pointer;font-size:1rem;width:100%;font-family:'Inter',sans-serif}
+footer{background:#080808;color:#555;padding:1.5rem;text-align:center;font-size:.85rem}
+.alma-badge{color:#e65c00}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.hero-visual{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">&#128663; Taller <span>Mec&aacute;nico</span></div>
+  <a href="#diagnostico" class="nav-cta">Diagn&oacute;stico gratis</a>
+</nav>
+<section class="hero">
+  <div class="hero-text">
+    <div class="tag">&#9989; 15+ a&ntilde;os de experiencia</div>
+    <h1>Tu carro en manos <span>expertas.</span><br>R&aacute;pido, honesto y garantizado.</h1>
+    <p>Servicio mec&aacute;nico completo para todo tipo de veh&iacute;culos. Diagn&oacute;stico gratis en tu primera visita.</p>
+    <a href="#diagnostico" class="btn-orange">Agenda tu diagn&oacute;stico gratis</a>
+  </div>
+  <div class="hero-visual">&#128663;</div>
+</section>
+<section class="services">
+  <h2>Nuestros <span>Servicios</span></h2>
+  <p class="sub">Todo lo que tu veh&iacute;culo necesita, en un solo lugar</p>
+  <div class="svc-list">
+    <div class="svc-item"><div class="svc-icon">&#128167;</div><div><h3>Cambio de aceite y filtros</h3></div></div>
+    <div class="svc-item"><div class="svc-icon">&#9899;</div><div><h3>Frenos y suspensi&oacute;n</h3></div></div>
+    <div class="svc-item"><div class="svc-icon">&#128187;</div><div><h3>Diagn&oacute;stico electr&oacute;nico</h3></div></div>
+    <div class="svc-item"><div class="svc-icon">&#10052;</div><div><h3>Servicio de aire acondicionado</h3></div></div>
+    <div class="svc-item"><div class="svc-icon">&#128295;</div><div><h3>Reparaci&oacute;n de motor y transmisi&oacute;n</h3></div></div>
+  </div>
+</section>
+<div class="stats">
+  <div class="stat"><div class="num">15+</div><p>a&ntilde;os de experiencia</p></div>
+  <div class="stat"><div class="num">1,000+</div><p>veh&iacute;culos reparados</p></div>
+  <div class="stat"><div class="num">100%</div><p>garant&iacute;a en el trabajo</p></div>
+  <div class="stat"><div class="num">5&#9733;</div><p>calificaci&oacute;n de clientes</p></div>
+</div>
+<section class="about">
+  <h2>Mec&aacute;nicos <span>honestos</span> y profesionales</h2>
+  <p>Tenemos m&aacute;s de 15 a&ntilde;os reparando veh&iacute;culos con honestidad y profesionalismo. No te cobramos lo que no necesita tu carro &mdash; solo lo que realmente requiere. Nuestros mec&aacute;nicos certificados trabajan con las herramientas m&aacute;s modernas para darte el mejor servicio.</p>
+</section>
+<section class="cta" id="diagnostico">
+  <h2>&#128663; Agenda tu Diagn&oacute;stico Gratis</h2>
+  <p>Sin compromiso. Revisamos tu veh&iacute;culo y te damos un presupuesto honesto.</p>
+  <form class="cta-form" action="https://formspree.io/f/xojppajv" method="POST">
+    <input type="text" name="name" placeholder="Tu nombre" required>
+    <input type="tel" name="phone" placeholder="Tel&eacute;fono de contacto">
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <input type="text" name="car" placeholder="Marca y modelo de tu veh&iacute;culo">
+    <button type="submit" class="btn-sub">Agendar diagn&oacute;stico gratis</button>
+  </form>
+</section>
+<footer>
+  <p>Dise&ntilde;o web por <span class="alma-badge">Alma Digital Designs</span> &mdash; &copy; 2026 Taller Mec&aacute;nico</p>
+</footer>
+</body>
+</html>
