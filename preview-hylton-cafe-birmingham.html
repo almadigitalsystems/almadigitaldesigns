@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hylton Cafe | Breakfast and Brunch in Birmingham Jewellery Quarter</title>
+  <meta name="description" content="Hylton Cafe in Birmingham Jewellery Quarter - full English breakfasts, brunch, sandwiches, and great coffee since 2016. Find us in B18." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #fdf8f0;
+      --cream2: #f5ede0;
+      --brown: #6b4226;
+      --brown-dark: #4a2d18;
+      --amber: #d97706;
+      --amber-light: #f59e0b;
+      --card: #ffffff;
+      --text: #2c1a0e;
+      --muted: #8b6b55;
+      --border: rgba(107,66,38,0.15);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    .preview-banner {
+      background: var(--brown); color: #fdf8f0; text-align: center; padding: 0.6rem 1rem;
+      font-size: 0.8rem; font-weight: 600;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,248,240,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Lora', serif; font-size: 1.4rem; font-weight: 700; color: var(--brown-dark); letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--brown); }
+    .nav-cta { background: var(--brown); color: var(--cream); padding: 0.5rem 1.25rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--brown-dark); }
+    @media(max-width:768px) { .nav-links { display: none; } }
+
+    /* HERO — STORY STYLE */
+    .hero {
+      min-height: 90vh; padding: 6rem 2rem;
+      background: var(--cream2);
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--cream));
+    }
+    .hero-inner { max-width: 700px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700;
+      line-height: 1.15; color: var(--brown-dark); margin-bottom: 1.5rem;
+    }
+    .hero h1 em { color: var(--amber); font-style: italic; }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+    .hero-since {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(107,66,38,0.08); border: 1px solid var(--border);
+      padding: 0.5rem 1.25rem; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 600; color: var(--brown); margin-bottom: 2rem;
+    }
+    .btn-brown {
+      background: var(--brown); color: var(--cream);
+      padding: 0.9rem 2.5rem; border-radius: 4px; font-size: 0.9rem; font-weight: 600;
+      transition: background 0.2s; display: inline-block;
+    }
+    .btn-brown:hover { background: var(--brown-dark); }
+    .btn-outline-brown {
+      border: 2px solid var(--brown); color: var(--brown);
+      padding: 0.9rem 2.5rem; border-radius: 4px; font-size: 0.9rem; font-weight: 600;
+      display: inline-block; transition: all 0.2s; margin-left: 1rem;
+    }
+    .btn-outline-brown:hover { background: var(--brown); color: var(--cream); }
+
+    /* FEATURES BAR */
+    .features-bar { background: var(--brown); padding: 2rem; }
+    .features-bar-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem;
+    }
+    .feature-item { display: flex; align-items: center; gap: 0.75rem; color: rgba(253,248,240,0.85); font-size: 0.875rem; }
+    .feature-item span { font-size: 1.2rem; }
+
+    /* MENU SECTION */
+    .menu-section { padding: 5rem 2rem; background: var(--cream); }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Lora', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--brown-dark); }
+    .menu-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;
+    }
+    .menu-card {
+      background: var(--card); border-radius: 8px; padding: 1.75rem;
+      border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+    .menu-card:hover { box-shadow: 0 6px 20px rgba(107,66,38,0.1); }
+    .menu-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .menu-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .menu-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+    /* STORY SECTION */
+    .story { padding: 5rem 2rem; background: var(--cream2); }
+    .story-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+    .story-visual { background: var(--card); border-radius: 8px; height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; border: 1px solid var(--border); }
+    .story-visual-icon { font-size: 4rem; }
+    .story-visual p { color: var(--muted); font-size: 0.85rem; text-align: center; }
+    .story h2 { font-family: 'Lora', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--brown-dark); margin-bottom: 1.25rem; }
+    .story p { color: var(--muted); line-height: 1.85; font-size: 0.95rem; margin-bottom: 1rem; }
+    @media(max-width:768px) { .story-inner { grid-template-columns: 1fr; } }
+
+    /* REVIEWS */
+    .reviews { padding: 5rem 2rem; background: var(--cream); }
+    .reviews-grid { max-width: 1000px; margin: 2.5rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .review-card { background: var(--card); border-radius: 8px; padding: 1.75rem; border: 1px solid rgba(0,0,0,0.06); }
+    .review-stars { color: var(--amber-light); font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .review-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.75; margin-bottom: 1rem; font-style: italic; }
+    .reviewer { font-size: 0.8rem; font-weight: 700; color: var(--brown); }
+
+    /* CTA */
+    .cta-section { padding: 5rem 2rem; background: var(--brown-dark); text-align: center; }
+    .cta-section h2 { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--cream); margin-bottom: 1rem; }
+    .cta-section p { color: rgba(253,248,240,0.75); margin-bottom: 2rem; }
+    .btn-cream { background: var(--cream); color: var(--brown-dark); padding: 0.9rem 2.5rem; border-radius: 4px; font-size: 0.875rem; font-weight: 700; transition: transform 0.15s; display: inline-block; }
+    .btn-cream:hover { transform: translateY(-1px); }
+
+    /* CONTACT */
+    .contact { padding: 5rem 2rem; background: var(--cream2); }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact h2 { font-family: 'Lora', serif; font-size: 1.8rem; color: var(--brown-dark); margin-bottom: 1.5rem; }
+    .contact-info-item { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .contact-info-item span { font-size: 1.1rem; }
+    .contact-info-item div { color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
+    .contact-info-item strong { color: var(--text); display: block; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea { background: white; border: 1px solid var(--border); color: var(--text); padding: 0.8rem 1rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.875rem; transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--brown); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    @media(max-width:768px) { .contact-inner { grid-template-columns: 1fr; } }
+
+    footer { background: var(--brown-dark); padding: 2rem; text-align: center; }
+    footer p { font-size: 0.8rem; color: rgba(253,248,240,0.55); }
+    footer strong { color: var(--cream); }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    FREE Preview Redesign by Alma Digital Designs — Claim Your Free Website Today
+  </div>
+
+  <nav>
+    <div class="nav-logo">Hylton Cafe</div>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Find Us</a>
+      <a href="#contact" class="nav-cta">Visit Us</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">☕ Birmingham Jewellery Quarter, B18</div>
+      <div class="hero-since">Est. 2016 — A Jewellery Quarter Institution</div>
+      <h1>Birmingham's <em>Hidden Gem</em><br>for Breakfast<br>&amp; Brunch</h1>
+      <p class="hero-sub">In the heart of Birmingham's Jewellery Quarter, Hylton Cafe has been serving generous breakfasts and great coffee since 2016. A local favourite, now easy to find.</p>
+      <div>
+        <a href="#menu" class="btn-brown">See Our Menu &amp; Visit Us</a>
+        <a href="#story" class="btn-outline-brown">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="features-bar">
+    <div class="features-bar-inner">
+      <div class="feature-item"><span>🍳</span> Full English Breakfasts</div>
+      <div class="feature-item"><span>☕</span> Great Coffee</div>
+      <div class="feature-item"><span>📍</span> Jewellery Quarter B18</div>
+      <div class="feature-item"><span>🥐</span> All-Day Brunch</div>
+      <div class="feature-item"><span>🛍️</span> Takeaway Available</div>
+    </div>
+  </div>
+
+  <section class="menu-section" id="menu">
+    <div class="section-header">
+      <div class="section-eyebrow">What We Serve</div>
+      <h2 class="section-title">The Hylton Cafe Menu</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-icon">🍳</div>
+        <h3>Full English Breakfasts</h3>
+        <p>The classic, done properly. Generous portions with all the trimmings — the way it should be.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🥪</div>
+        <h3>Fresh Sandwiches & Toasties</h3>
+        <p>Hot, fresh, and made to order. Perfect for a quick lunch or a mid-morning bite.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🥑</div>
+        <h3>All-Day Brunch Plates</h3>
+        <p>Whether you want something light or something hearty, our brunch plates have you covered all day.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">☕</div>
+        <h3>Hot & Cold Drinks</h3>
+        <p>Proper coffee the way you like it, plus teas, cold drinks, and everything in between.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🍰</div>
+        <h3>Cakes & Light Bites</h3>
+        <p>Something sweet to go with your coffee — homemade cakes and light snacks to enjoy in or take away.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-icon">🛍️</div>
+        <h3>Takeaway Available</h3>
+        <p>In a rush? Order to takeaway and enjoy our food on the go around the Jewellery Quarter.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="story-inner">
+      <div class="story-visual">
+        <div class="story-visual-icon">☕</div>
+        <p>Hylton Cafe<br>Serving B18 Since 2016</p>
+      </div>
+      <div>
+        <div class="section-eyebrow">Our Story</div>
+        <h2>A Jewellery Quarter Staple Since 2016</h2>
+        <p>Hylton Cafe has been a staple of Birmingham's Jewellery Quarter since 2016, welcoming locals, creatives, and workers for hearty breakfasts and proper brunch.</p>
+        <p>Known for generous portions and a warm, no-fuss atmosphere. Honest food and great coffee — that's what we've always been about. Whether you're a regular or finding us for the first time, you're always welcome at Hylton.</p>
+        <a href="#contact" class="btn-brown" style="margin-top:1.5rem;">Find Us in B18</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="section-header">
+      <div class="section-eyebrow">What People Say</div>
+      <h2 class="section-title">A Local Favourite</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Best full English in the Jewellery Quarter, no question. Been coming since 2017 and the quality never drops. Absolute gem."</p>
+        <div class="reviewer">— James H., Birmingham</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Warm, welcoming, and the coffee is brilliant. Perfect spot to start your day before work. Hylton Cafe is a genuine local treasure."</p>
+        <div class="reviewer">— Sophie M., Jewellery Quarter</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"The toasties here are something else. Quick service, great food, fair prices — everything you want from a neighbourhood cafe."</p>
+        <div class="reviewer">— Amir K., Birmingham B18</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Come in and Say Hello</h2>
+    <p>Find us in the heart of Birmingham's Jewellery Quarter. Breakfast and brunch served daily.</p>
+    <a href="#contact" class="btn-cream">See Our Menu &amp; Visit Us</a>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <div class="section-eyebrow">Find Us</div>
+      <h2 class="section-title">Visit Hylton Cafe</h2>
+    </div>
+    <div class="contact-inner">
+      <div>
+        <h2>Hylton Cafe</h2>
+        <div class="contact-info-item"><span>📍</span><div><strong>Location</strong>Birmingham Jewellery Quarter, B18, England, UK</div></div>
+        <div class="contact-info-item"><span>📧</span><div><strong>Email</strong>hyltoncafe@hotmail.com</div></div>
+        <div class="contact-info-item"><span>🍳</span><div><strong>Serves</strong>Full English, Brunch, Sandwiches, Coffee, Cakes — Takeaway Available</div></div>
+        <div class="contact-info-item"><span>📅</span><div><strong>Since</strong>Serving the Jewellery Quarter since 2016</div></div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Hylton Cafe - Birmingham Jewellery Quarter" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Any questions? Group bookings? Just say hello!"></textarea>
+        <button type="submit" class="btn-brown">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Hylton Cafe</strong> — Birmingham Jewellery Quarter, B18, UK | Est. 2016 | <a href="mailto:hyltoncafe@hotmail.com" style="color:var(--cream);">hyltoncafe@hotmail.com</a></p>
+    <p style="margin-top:0.5rem;">Preview designed by <strong>Alma Digital Designs</strong> · almadigitalservices.com</p>
+  </footer>
+</body>
+</html>
