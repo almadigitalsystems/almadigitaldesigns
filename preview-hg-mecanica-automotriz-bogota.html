@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HG Mecanica Automotriz | Taller Mecanico Fontibon Bogota</title>
+  <meta name="description" content="Taller mecanico Fontibon Bogota. Mantenimiento diagnostico frenos." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #1a1a1a;
+      --charcoal: #2c2c2c;
+      --orange: #f97316;
+      --amber: #fbbf24;
+      --light-gray: #f5f5f5;
+      --mid-gray: #888;
+      --white: #ffffff;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      color: var(--dark);
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-banner span { font-weight: 400; }
+
+    /* NAV */
+    nav {
+      background: var(--dark);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav-logo { color: var(--white); font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #ccc; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #ea6c00; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--charcoal) 60%, #3a2200 100%);
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-content { max-width: 680px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid var(--orange);
+      color: var(--orange);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { color: var(--orange); font-style: normal; }
+    .hero p {
+      color: #bbb;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #ea6c00; transform: translateY(-2px); }
+    .btn-secondary {
+      border: 2px solid #555;
+      color: #ccc;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 50px;
+      padding-top: 40px;
+      border-top: 1px solid #333;
+    }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
+    .stat-label { font-size: 0.8rem; color: #888; margin-top: 2px; }
+
+    /* SERVICES */
+    .services { background: var(--light-gray); padding: 90px 40px; }
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .section-sub { color: var(--mid-gray); font-size: 1rem; max-width: 500px; margin-bottom: 50px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px 24px;
+      border-left: 4px solid var(--orange);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+    .service-icon { font-size: 2rem; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .service-card p { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.6; }
+
+    /* ABOUT */
+    .about {
+      background: var(--dark);
+      padding: 90px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .about-content { }
+    .about-content .section-label { color: var(--amber); }
+    .about-content .section-title { color: var(--white); }
+    .about-content p { color: #aaa; font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
+    .about-feature { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
+    .about-check {
+      background: var(--orange);
+      color: white;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .about-feature-text { color: #ccc; font-size: 0.95rem; }
+    .about-visual {
+      background: linear-gradient(135deg, var(--charcoal), #3a2200);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      border: 1px solid #444;
+    }
+    .about-visual .big-num { font-size: 5rem; font-weight: 800; color: var(--orange); line-height: 1; }
+    .about-visual p { color: #aaa; margin-top: 10px; font-size: 0.95rem; }
+    @media(max-width: 768px) { .about { grid-template-columns: 1fr; } }
+
+    /* TESTIMONIALS */
+    .testimonials { padding: 90px 40px; background: var(--white); }
+    .testimonials .section-label, .testimonials .section-title, .testimonials .section-sub { text-align: center; margin-left: auto; margin-right: auto; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: var(--light-gray);
+      border-radius: 14px;
+      padding: 32px;
+    }
+    .stars { color: var(--orange); font-size: 1rem; margin-bottom: 16px; }
+    .testimonial-card p { font-size: 0.95rem; line-height: 1.7; color: #444; margin-bottom: 20px; }
+    .testimonial-author { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
+    .testimonial-role { font-size: 0.8rem; color: var(--mid-gray); }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--orange), #c2410c);
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--white); margin-bottom: 16px; }
+    .cta-section p { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 32px; }
+    .btn-cta-white {
+      background: var(--white);
+      color: var(--orange);
+      padding: 18px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      display: inline-block;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+
+    /* CONTACT */
+    .contact { background: var(--charcoal); padding: 90px 40px; }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact .section-label { color: var(--orange); text-align: center; }
+    .contact .section-title { color: var(--white); text-align: center; margin-bottom: 8px; }
+    .contact .section-sub { text-align: center; color: #aaa; margin-bottom: 40px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; color: #bbb; font-size: 0.88rem; margin-bottom: 6px; font-weight: 500; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      border-radius: 8px;
+      color: var(--white);
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--orange); }
+    .form-group textarea { height: 120px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      width: 100%;
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: 'Inter', sans-serif;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: #ea6c00; }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      padding: 36px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo { color: var(--white); font-weight: 800; font-size: 1.1rem; }
+    .footer-logo span { color: var(--orange); }
+    footer p { color: #666; font-size: 0.82rem; }
+    .footer-credit { color: #555; font-size: 0.8rem; font-style: italic; }
+
+    @media(max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px; min-height: auto; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+      .services, .testimonials, .contact { padding: 60px 20px; }
+      .cta-section { padding: 60px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+      .about { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">
+    Vista previa GRATUITA creada por Alma Digital Designs &mdash; <span>Reclama tu sitio hoy</span>
+  </div>
+
+  <nav>
+    <div class="nav-logo">HG<span> Mecanica</span></div>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="nav-cta">Llama Ahora</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Fontibon, Bogota &bull; Taller Certificado</div>
+      <h1>Tu Carro en Manos de <em>Expertos</em> en Bogota</h1>
+      <p>Reparamos tu vehiculo con honestidad y rapidez en Fontibon, Bogota. Diagnostico preciso y anos de experiencia en mecanica automotriz.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary">Solicita tu Diagnostico Sin Costo</a>
+        <a href="tel:+573102223434" class="btn-secondary">+57 310 222 3434</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Transparencia</div>
+        </div>
+        <div>
+          <div class="stat-num">+5K</div>
+          <div class="stat-label">Vehiculos Reparados</div>
+        </div>
+        <div>
+          <div class="stat-num">Gratis</div>
+          <div class="stat-label">Diagnostico Inicial</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicios">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-label">Lo Que Hacemos</div>
+      <div class="section-title">Servicios Automotrices Completos</div>
+      <div class="section-sub">Todo lo que tu vehiculo necesita en un solo lugar, con tecnologia y experiencia.</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Mantenimiento Preventivo</h3>
+          <p>Revisions periodicas para mantener tu auto en optimas condiciones y evitar fallas mayores.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Diagnostico Electronico</h3>
+          <p>Escaner de ultima generacion para detectar fallas en sistemas electronicos y de motor.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <h3>Frenos y Suspension</h3>
+          <p>Tu seguridad es prioridad. Revision, ajuste y reemplazo de sistema de frenos y suspension.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Sistema Electrico</h3>
+          <p>Diagnostico y reparacion de tablero, luces, bateria y toda la instalacion electrica.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛢️</div>
+          <h3>Cambio de Aceite</h3>
+          <p>Cambio de aceite y filtros con productos de calidad para proteger el motor de tu vehiculo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:var(--dark);">
+    <section class="about" id="nosotros">
+      <div class="about-content">
+        <div class="section-label">Quienes Somos</div>
+        <div class="section-title" style="color:#fff;">HG Mecanica Automotriz</div>
+        <p>Liderado por J. Gomez, HG Mecanica es el taller de confianza de Fontibon. Contamos con diagnostico preciso y anos de experiencia en mecanica automotriz para resolver cualquier falla de tu vehiculo.</p>
+        <div class="about-feature">
+          <div class="about-check">&#10003;</div>
+          <div class="about-feature-text">Diagnostico inicial sin costo</div>
+        </div>
+        <div class="about-feature">
+          <div class="about-check">&#10003;</div>
+          <div class="about-feature-text">Presupuesto claro antes de trabajar</div>
+        </div>
+        <div class="about-feature">
+          <div class="about-check">&#10003;</div>
+          <div class="about-feature-text">Garantia en todas las reparaciones</div>
+        </div>
+        <div class="about-feature">
+          <div class="about-check">&#10003;</div>
+          <div class="about-feature-text">Tecnicos con experiencia certificada</div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="#contacto" class="btn-primary">Agendar Cita</a>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="big-num">10+</div>
+        <p>Anos de experiencia<br/>en Bogota</p>
+        <div style="margin-top:30px; padding-top:24px; border-top:1px solid #444;">
+          <div class="big-num" style="font-size:3rem;">J. Gomez</div>
+          <p>Mecanico Jefe &amp; Fundador</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="testimonials">
+    <div class="section-label">Lo Que Dicen</div>
+    <div class="section-title">Clientes Satisfechos</div>
+    <div class="section-sub" style="margin-bottom:50px;">La confianza de nuestros clientes es nuestro mayor logro.</div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Excelente servicio. Me diagnosticaron el problema en minutos y el precio fue muy justo. Mi carro lleva meses sin fallas."</p>
+        <div class="testimonial-author">Carlos M.</div>
+        <div class="testimonial-role">Cliente desde 2022 &bull; Fontibon</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Muy honestos. Me dijeron exactamente que necesitaba y que no necesitaba. Eso es muy raro y lo valoro muchisimo."</p>
+        <div class="testimonial-author">Ana P.</div>
+        <div class="testimonial-role">Cliente frecuente &bull; Bogota</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Los frenos de mi carro estaban muy mal. Los arreglaron rapido y con garantia. Ya los recomende con varios conocidos."</p>
+        <div class="testimonial-author">Luis R.</div>
+        <div class="testimonial-role">Dueno de flota &bull; Bogota</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Solicita tu Diagnostico Sin Costo</h2>
+    <p>Descubre el estado real de tu vehiculo sin compromisos. Llevalo hoy y te decimos exactamente que necesita.</p>
+    <a href="#contacto" class="btn-cta-white">Reservar Diagnostico Gratuito</a>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <div class="section-label">Contactanos</div>
+      <div class="section-title">Agenda tu Cita</div>
+      <div class="section-sub">Escríbenos o llamanos. Respondemos rapido.</div>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="HG Mecanica Automotriz - Bogota Colombia" />
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label>Telefono</label>
+            <input type="tel" name="telefono" placeholder="+57 300 000 0000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Correo Electronico</label>
+          <input type="email" name="email" placeholder="tucorreo@gmail.com" required />
+        </div>
+        <div class="form-group">
+          <label>Tipo de Vehiculo</label>
+          <input type="text" name="vehiculo" placeholder="Ej: Mazda 3 2018" />
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea name="mensaje" placeholder="Cuentanos que le pasa a tu carro..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar Solicitud</button>
+      </form>
+      <div style="text-align:center; margin-top:28px;">
+        <p style="color:#888; font-size:0.9rem;">O llamanos directamente:</p>
+        <a href="tel:+573102223434" style="color:var(--orange); font-size:1.2rem; font-weight:700; text-decoration:none;">+57 310 222 3434</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">HG<span> Mecanica</span> Automotriz</div>
+    <p>Fontibon, Bogota &bull; +57 310 222 3434</p>
+    <div class="footer-credit">Vista previa disenada por Alma Digital Designs</div>
+  </footer>
+
+</body>
+</html>
