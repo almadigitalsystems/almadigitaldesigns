@@ -70,3 +70,47 @@ After push, always verify with an HTTP GET to confirm 200 OK before handing off 
 All preview page contact forms submit to: `https://formspree.io/f/xkndqwrg`
 
 The hidden `source` field is set to the page slug for tracking.
+
+---
+
+## Sofia (SMM) — Instagram Social Image Library
+
+All branded images are hosted at . Use these for Instagram posts. They are SVG files at 1080x1080px — open in a browser, screenshot at full resolution, then post.
+
+### Image Library (15 images)
+
+| # | Filename | Use Case |
+|---|----------|----------|
+| 01 |  | Price announcement — Website from $50 |
+| 02 |  | Free preview offer |
+| 03 |  | Speed/delivery pitch |
+| 04 |  | Pain point — business is invisible online |
+| 05 |  | Transformation post |
+| 06 |  | FOMO — your competitors have websites |
+| 07 |  | Niche targeting — plumbers |
+| 08 |  | Niche targeting — electricians |
+| 09 |  | Niche targeting — restaurants |
+| 10 |  | Free domain feature |
+| 11 |  | Mobile-first feature |
+| 12 |  | Small business empowerment |
+| 13 |  | Client spotlight template (customize per client) |
+| 14 |  | Stat/fact template (customize the stat) |
+| 15 |  | Brand card — Alma Digital logo |
+
+### Base URL
+
+\
+### How to Use for Instagram
+
+1. Open the image URL in Chrome at full screen
+2. Screenshot (1080x1080 crop) or use browser zoom to match Instagram dimensions
+3. Post directly — the dark brand aesthetic is optimized for Instagram
+4. Templates (13, 14) should be customized per post — overlay client info or stats using Canva or similar
+
+### Reposting Schedule Recommendation
+
+- Mon: Price/value posts (01, 04, 06)
+- Wed: Feature posts (02, 03, 10, 11)
+- Fri: Niche targeting (07, 08, 09) or client spotlight (13)
+- Rotate 15, 12, 05 for variety
+
