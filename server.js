@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
+const Stripe = require('stripe');
 
 const app = express();
 
@@ -540,6 +541,76 @@ app.post('/api/stripe-webhook', async (req, res) => {
   }
 });
 
+// ── STRIPE CHECKOUT SESSION ───────────────────────────────────────────────────
+
+const STRIPE_PLANS = {
+  starter: { name: 'Starter', websiteCents: 5000, hostingCents: 1700 },
+  growth:  { name: 'Growth',  websiteCents: 10000, hostingCents: 2300 },
+  premium: { name: 'Premium', websiteCents: 15000, hostingCents: 3300 },
+};
+
+app.post('/api/create-checkout-session', async (req, res) => {
+  try {
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+    const { plan, withHosting } = req.body;
+    const planData = STRIPE_PLANS[plan];
+    if (!planData) return res.status(400).json({ error: 'Invalid plan' });
+
+    const baseUrl = process.env.BASE_URL || 'https://almadigitalservices.com';
+    let session;
+
+    if (withHosting) {
+      // Subscription mode: first invoice includes one-time build fee + recurring hosting
+      session = await stripe.checkout.sessions.create({
+        mode: 'subscription',
+        line_items: [{
+          price_data: {
+            currency: 'usd',
+            product_data: { name: `${planData.name} Website Hosting` },
+            unit_amount: planData.hostingCents,
+            recurring: { interval: 'month' },
+          },
+          quantity: 1,
+        }],
+        subscription_data: {
+          add_invoice_items: [{
+            price_data: {
+              currency: 'usd',
+              product_data: { name: `${planData.name} Website Build (One-Time)` },
+              unit_amount: planData.websiteCents,
+            },
+          }],
+          metadata: { plan, type: 'build_plus_hosting' },
+        },
+        metadata: { plan, type: 'build_plus_hosting' },
+        success_url: `${baseUrl}/thank-you`,
+        cancel_url: `${baseUrl}/checkout`,
+      });
+    } else {
+      // One-time payment mode
+      session = await stripe.checkout.sessions.create({
+        mode: 'payment',
+        line_items: [{
+          price_data: {
+            currency: 'usd',
+            product_data: { name: `${planData.name} Website Build` },
+            unit_amount: planData.websiteCents,
+          },
+          quantity: 1,
+        }],
+        metadata: { plan, type: 'build_only' },
+        success_url: `${baseUrl}/thank-you`,
+        cancel_url: `${baseUrl}/checkout`,
+      });
+    }
+
+    res.json({ url: session.url });
+  } catch (err) {
+    console.error('Stripe checkout session error:', err);
+    res.status(500).json({ error: 'Unable to create checkout session' });
+  }
+});
+
 // ── PAGES: PORTFOLIO & REFERRAL ───────────────────────────────────────────────
 
 app.get('/portfolio', (req, res) => {
@@ -548,6 +619,14 @@ app.get('/portfolio', (req, res) => {
 
 app.get('/referral', (req, res) => {
   res.sendFile(path.join(__dirname, 'referral.html'));
+});
+
+app.get('/checkout', (req, res) => {
+  res.sendFile(path.join(__dirname, 'checkout.html'));
+});
+
+app.get('/thank-you', (req, res) => {
+  res.sendFile(path.join(__dirname, 'thank-you.html'));
 });
 
 // ── API: LEAD CAPTURE (exit-intent popup) ────────────────────────────────────
