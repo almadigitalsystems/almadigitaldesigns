@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barberia Tres Colonias | Barberia Roma Sur CDMX</title>
+  <meta name="description" content="Barberia viral Roma Sur 333K Instagram. Cortes fades navaja." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f8f4ed;
+      --mid: #888;
+      --white: #ffffff;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); }
+
+    /* BANNER */
+    .preview-banner {
+      background: var(--gold);
+      color: var(--black);
+      text-align: center;
+      padding: 13px 20px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* NAV */
+    nav {
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(10px);
+      padding: 22px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { color: #999; text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-phone { color: var(--gold); font-size: 0.88rem; font-weight: 600; text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      min-height: 95vh;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      padding: 80px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22vw;
+      color: rgba(201,168,76,0.04);
+      white-space: nowrap;
+      pointer-events: none;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; }
+    .hero-tag {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .hero-tag-line { width: 40px; height: 1px; background: var(--gold); }
+    .hero-tag span { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .highlight { color: var(--gold); }
+    .hero p { color: #777; font-size: 1.05rem; line-height: 1.7; max-width: 500px; margin-bottom: 40px; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+      padding: 16px 36px;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline-gold {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 15px 34px;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--black); }
+    .hero-social { margin-top: 60px; display: flex; align-items: center; gap: 16px; }
+    .social-badge {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: white;
+    }
+    .hero-social p { color: #666; font-size: 0.82rem; }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* SERVICES */
+    .services { background: var(--dark); padding: 100px 50px; }
+    .services-header { text-align: center; margin-bottom: 60px; }
+    .section-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--white);
+    }
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #222;
+      border: 1px solid #222;
+    }
+    .service-item {
+      background: var(--dark);
+      padding: 40px 28px;
+      text-align: center;
+      transition: background 0.2s;
+      cursor: default;
+    }
+    .service-item:hover { background: #1a1a1a; }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); opacity: 0.5; margin-bottom: 12px; }
+    .service-item h3 { font-size: 0.95rem; color: var(--white); font-weight: 600; margin-bottom: 8px; }
+    .service-item p { font-size: 0.82rem; color: #666; line-height: 1.6; }
+
+    /* ABOUT */
+    .about { background: var(--cream); padding: 100px 50px; }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-text .section-eyebrow { color: var(--gold); }
+    .about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--black); margin-bottom: 20px; }
+    .about-text p { color: #555; font-size: 1rem; line-height: 1.85; margin-bottom: 16px; }
+    .about-text .btn-gold { margin-top: 10px; }
+    .about-numbers { display: flex; flex-direction: column; gap: 32px; }
+    .about-num-item { border-left: 3px solid var(--gold); padding-left: 24px; }
+    .about-num-item .num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--black); font-weight: 700; line-height: 1; }
+    .about-num-item .label { color: #888; font-size: 0.88rem; margin-top: 4px; }
+    @media(max-width:768px) { .about-inner { grid-template-columns: 1fr; } }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--black); padding: 100px 50px; }
+    .testimonials-header { text-align: center; margin-bottom: 60px; }
+    .testimonials-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .tcard {
+      border: 1px solid #222;
+      padding: 36px;
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+    .tcard:hover { border-color: var(--gold); }
+    .tcard-stars { color: var(--gold); margin-bottom: 18px; letter-spacing: 2px; }
+    .tcard p { color: #aaa; font-size: 0.95rem; line-height: 1.75; margin-bottom: 22px; font-style: italic; }
+    .tcard-name { color: var(--white); font-weight: 700; font-size: 0.9rem; }
+    .tcard-sub { color: #555; font-size: 0.8rem; }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #1a1408, #2a1f00);
+      border-top: 1px solid #2a2000;
+      border-bottom: 1px solid #2a2000;
+      padding: 90px 50px;
+      text-align: center;
+    }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.4rem); color: var(--white); margin-bottom: 16px; }
+    .cta-section p { color: #888; margin-bottom: 36px; font-size: 1.05rem; }
+
+    /* CONTACT */
+    .contact { background: var(--dark); padding: 100px 50px; }
+    .contact-inner { max-width: 580px; margin: 0 auto; }
+    .contact-inner .section-eyebrow { text-align: center; }
+    .contact-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--white); text-align: center; margin-bottom: 8px; }
+    .contact-inner .sub { color: #666; text-align: center; margin-bottom: 40px; font-size: 0.95rem; }
+    .fgroup { margin-bottom: 18px; }
+    .fgroup label { display: block; color: #777; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 7px; }
+    .fgroup input, .fgroup textarea {
+      width: 100%;
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      color: var(--white);
+      padding: 13px 16px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      border-radius: 3px;
+      transition: border-color 0.2s;
+    }
+    .fgroup input:focus, .fgroup textarea:focus { outline: none; border-color: var(--gold); }
+    .fgroup textarea { height: 110px; resize: vertical; }
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fsubmit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 16px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 3px;
+      font-family: 'Inter', sans-serif;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .fsubmit:hover { background: var(--gold-light); }
+
+    /* FOOTER */
+    footer {
+      background: #060606;
+      border-top: 1px solid #1a1a1a;
+      padding: 40px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold); }
+    footer p { color: #444; font-size: 0.82rem; }
+
+    @media(max-width:600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px; }
+      .services, .about, .testimonials, .cta-section, .contact { padding: 70px 20px; }
+      .frow { grid-template-columns: 1fr; }
+      footer { padding: 28px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">
+    Vista previa GRATUITA creada por Alma Digital Designs &mdash; Reclama tu sitio hoy
+  </div>
+
+  <nav>
+    <div class="nav-logo">Tres Colonias</div>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="mailto:barberiatrescolonias@gmail.com" class="nav-phone">barberiatrescolonias@gmail.com</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-text">BARBER</div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <div class="hero-tag-line"></div>
+        <span>Roma Sur &bull; CDMX &bull; Desde 2018</span>
+      </div>
+      <h1>El Corte que<br/>Siempre <span class="highlight">Quisiste</span><br/>en Roma Sur</h1>
+      <p>La barberia favorita de miles en CDMX. Cada cliente sale transformado. El punto de encuentro para los que se toman en serio su estilo.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn-gold">Ve tu sitio antes de pagar</a>
+        <a href="#servicios" class="btn-outline-gold">Ver Servicios</a>
+      </div>
+      <div class="hero-social">
+        <div class="social-badge">&#9829; Instagram</div>
+        <p>333,000 seguidores y contando</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="services" id="servicios">
+    <div class="services-header">
+      <div class="section-eyebrow">Lo Que Ofrecemos</div>
+      <div class="section-heading">Arte en Cada Corte</div>
+    </div>
+    <div class="services-list">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <h3>Corte Clasico y Moderno</h3>
+        <p>De lo tradicional a lo mas actual. El corte que pides, con la precision que mereces.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <h3>Afeitado con Navaja</h3>
+        <p>Experiencia de barberia clasica con navaja, toalla caliente y crema de lujo.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <h3>Fade y Diseno de Barba</h3>
+        <p>Degradados perfectos y diseños de barba que definen tu identidad.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <h3>Tratamiento Capilar</h3>
+        <p>Productos premium para nutrir, fortalecer y dar brillo a tu cabello.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-num">05</div>
+        <h3>Corte Infantil</h3>
+        <p>Atencion especial para los mas pequenos. Paciencia y buen trato garantizados.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="about" id="nosotros">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-eyebrow">Nuestra Historia</div>
+        <h2>Mas que una Barberia</h2>
+        <p>Barberia Tres Colonias en Roma Sur es un punto de encuentro para los que se toman en serio su estilo. Con 333K seguidores en Instagram, somos una de las barberias mas reconocidas de CDMX.</p>
+        <p>Cada cliente que entra, sale transformado. No solo en apariencia, sino con la confianza que da saberse bien arreglado.</p>
+        <a href="#contacto" class="btn-gold">Agenda Tu Cita</a>
+      </div>
+      <div class="about-numbers">
+        <div class="about-num-item">
+          <div class="num">333K</div>
+          <div class="label">Seguidores en Instagram</div>
+        </div>
+        <div class="about-num-item">
+          <div class="num">+5</div>
+          <div class="label">Anos en Roma Sur</div>
+        </div>
+        <div class="about-num-item">
+          <div class="num">100%</div>
+          <div class="label">Clientes Satisfechos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="testimonials-header">
+      <div class="section-eyebrow">Resenas</div>
+      <h2>Lo Que Dicen Nuestros Clientes</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="tcard-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"Los mejores cortes en Roma Sur sin duda. Llevo anos viniendo y nunca me han fallado. El ambiente es increible."</p>
+        <div class="tcard-name">Diego F.</div>
+        <div class="tcard-sub">Cliente frecuente &bull; Roma Sur</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"Me enteré por Instagram y vine a probar. Desde la primera vez supe que no iba a ir a otra barberia. Excelente servicio."</p>
+        <div class="tcard-name">Marco A.</div>
+        <div class="tcard-sub">Cliente &bull; CDMX</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"El afeitado con navaja es de otro nivel. Te tratan con respeto, el lugar esta limpio y el resultado es perfecto."</p>
+        <div class="tcard-name">Roberto S.</div>
+        <div class="tcard-sub">Cliente &bull; Condesa</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ve Tu Sitio Antes de Pagar un Solo Peso</h2>
+    <p>Comprueba como se veria tu barberia en linea. Sin compromisos, sin pagos anticipados.</p>
+    <a href="#contacto" class="btn-gold">Quiero Mi Sitio Ahora</a>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <div class="section-eyebrow">Contacto</div>
+      <h2>Hablemos</h2>
+      <div class="sub">Envíanos un mensaje y te respondemos a la brevedad.</div>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Barberia Tres Colonias - Roma Sur CDMX Mexico" />
+        <div class="frow">
+          <div class="fgroup">
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="fgroup">
+            <label>Telefono</label>
+            <input type="tel" name="telefono" placeholder="+52 55 0000 0000" />
+          </div>
+        </div>
+        <div class="fgroup">
+          <label>Correo</label>
+          <input type="email" name="email" placeholder="tucorreo@gmail.com" required />
+        </div>
+        <div class="fgroup">
+          <label>Servicio de Interes</label>
+          <input type="text" name="servicio" placeholder="Ej: Fade, Corte clasico..." />
+        </div>
+        <div class="fgroup">
+          <label>Mensaje</label>
+          <textarea name="mensaje" placeholder="Cuentanos algo..."></textarea>
+        </div>
+        <button type="submit" class="fsubmit">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo-text">Tres Colonias</div>
+    <p>Roma Sur, CDMX &bull; barberiatrescolonias@gmail.com</p>
+    <p style="color:#333; font-style:italic;">Vista previa disenada por Alma Digital Designs</p>
+  </footer>
+
+</body>
+</html>
