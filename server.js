@@ -647,6 +647,10 @@ app.get('/thank-you', (req, res) => {
   res.sendFile(path.join(__dirname, 'thank-you.html'));
 });
 
+app.get('/care-plan', (req, res) => {
+  res.sendFile(path.join(__dirname, 'care-plan.html'));
+});
+
 // ── API: LEAD CAPTURE (exit-intent popup) ────────────────────────────────────
 
 app.post('/api/lead-capture', async (req, res) => {
