@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phoenix Auto Repair &amp; Body Shop | 5-Star Collision &amp; Repair, AZ</title>
+<meta name="description" content="5-star auto repair and body shop in Phoenix, AZ. Collision repair, paint matching, engine service. Insurance-approved. Get your free estimate today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#1b2d4f;--navy-dark:#0f1e35;--navy-mid:#243d65;--silver:#9eaaba;--silver-light:#c8d3de;--accent:#c0a060;--light-gray:#f4f5f7;--white:#ffffff;--text:#2a2a2a}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",sans-serif;color:var(--text);background:var(--white);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.preview-banner{background:var(--navy);color:var(--white);text-align:center;padding:.6rem 1rem;font-size:.85rem;font-weight:600;position:sticky;top:0;z-index:200}
+.preview-banner a{color:var(--accent);text-decoration:underline}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;background:rgba(27,45,79,.97);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;border-bottom:1px solid rgba(192,160,96,.2);box-shadow:0 2px 20px rgba(0,0,0,.2)}
+.nav-logo{font-family:"Playfair Display",serif;color:var(--white);font-size:1.1rem;font-weight:700}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:var(--silver);font-size:.88rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:var(--white);padding:.5rem 1.25rem;border-radius:4px;font-size:.85rem;font-weight:700;transition:all .2s}
+.nav-cta:hover{background:#b08e50;transform:translateY(-1px)}
+@media(max-width:768px){.nav-links{display:none}}
+.hero{min-height:100vh;background:linear-gradient(160deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-mid) 100%);display:flex;align-items:center;padding:140px 5% 80px;position:relative;overflow:hidden}
+.hero-pattern{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(192,160,96,.08) 0%,transparent 60%)}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.hero-stars{display:inline-flex;align-items:center;gap:.5rem;background:rgba(192,160,96,.12);border:1px solid rgba(192,160,96,.3);padding:.5rem 1.25rem;border-radius:50px;margin-bottom:1.5rem}
+.hero-stars-text{color:#ffd700;font-size:1rem;letter-spacing:2px}
+.hero-stars-label{color:var(--silver-light);font-size:.82rem;font-weight:600}
+h1{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:1.25rem}
+h1 .accent{color:var(--accent)}
+.hero p{font-size:clamp(1rem,2vw,1.15rem);color:var(--silver);max-width:580px;margin-bottom:2.5rem;line-height:1.8}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:1rem}
+.btn-primary{background:var(--accent);color:var(--white);padding:1rem 2.25rem;border-radius:4px;font-weight:700;font-size:1rem;transition:all .2s;box-shadow:0 4px 20px rgba(192,160,96,.35);display:inline-block}
+.btn-primary:hover{background:#b08e50;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--white);padding:1rem 2.25rem;border-radius:4px;font-weight:600;font-size:1rem;border:2px solid rgba(255,255,255,.2);transition:all .2s;display:inline-block}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat-num{font-family:"Playfair Display",serif;font-size:2.2rem;font-weight:700;color:var(--accent);line-height:1}
+.stat-label{font-size:.78rem;color:var(--silver);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+.trust-bar{background:var(--accent);padding:1rem 5%;display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:center}
+.trust-item{color:var(--white);font-size:.88rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
+.trust-item::before{content:"&#10003;";font-weight:900;font-size:1rem}
+section{padding:80px 5%}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--navy);margin-bottom:1rem}
+.section-subtitle{font-size:1rem;color:#666;max-width:600px;line-height:1.7}
+.section-header{margin-bottom:3rem}
+.services{background:var(--light-gray)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.service-card{background:var(--white);padding:2rem;border-radius:8px;position:relative;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s}
+.service-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--accent))}
+.service-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+.service-icon{font-size:2rem;margin-bottom:.75rem}
+.service-card h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.service-card p{font-size:.9rem;color:#666;line-height:1.6}
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+.about-visual{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);border-radius:12px;padding:3rem;text-align:center;position:relative;overflow:hidden}
+.about-visual::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(192,160,96,.12) 0%,transparent 65%)}
+.about-stars{font-size:2.5rem;color:#ffd700;position:relative;z-index:1;letter-spacing:4px}
+.about-rating-num{font-family:"Playfair Display",serif;font-size:5rem;font-weight:900;color:var(--accent);line-height:1.1;position:relative;z-index:1}
+.about-rating-label{color:var(--white);font-size:1rem;font-weight:600;position:relative;z-index:1}
+.about-insurance{background:rgba(192,160,96,.12);border:1px solid rgba(192,160,96,.3);border-radius:6px;padding:1rem;margin-top:1.5rem;position:relative;z-index:1}
+.about-insurance-text{color:var(--accent);font-size:.9rem;font-weight:700}
+.about-insurance-sub{color:#aab;font-size:.8rem;margin-top:.25rem}
+.about-text p{font-size:1rem;color:#555;line-height:1.8;margin-bottom:1.25rem}
+.about-features{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.about-feature{display:flex;align-items:center;gap:.75rem;font-size:.95rem;font-weight:600;color:var(--navy)}
+.about-feature::before{content:"&#10003;";display:flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--accent);border-radius:50%;color:var(--white);font-size:.7rem;font-weight:900;flex-shrink:0}
+.testimonials{background:var(--navy)}
+.testimonials .section-title{color:var(--white)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.testimonial-card{background:rgba(255,255,255,.04);border:1px solid rgba(192,160,96,.2);padding:2rem;border-radius:8px}
+.stars{color:#ffd700;font-size:1rem;margin-bottom:1rem;letter-spacing:2px}
+blockquote{font-size:.95rem;color:var(--silver);line-height:1.75;font-style:italic;margin-bottom:1.5rem}
+.testimonial-author{display:flex;align-items:center;gap:.75rem}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);font-size:.9rem;flex-shrink:0}
+.author-name{font-weight:700;color:var(--white);font-size:.95rem}
+.author-detail{font-size:.8rem;color:var(--silver)}
+.cta-banner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:60px 5%;text-align:center;border-top:3px solid var(--accent)}
+.cta-banner h2{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);margin-bottom:1rem}
+.cta-banner p{font-size:1.1rem;color:var(--silver);margin-bottom:2rem}
+.btn-accent{background:var(--accent);color:var(--white);padding:1rem 2.5rem;border-radius:4px;font-weight:700;font-size:1.05rem;transition:all .2s;display:inline-block}
+.btn-accent:hover{background:#b08e50;transform:translateY(-2px);box-shadow:0 8px 25px rgba(192,160,96,.3)}
+.contact{background:var(--light-gray)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:start}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-info h3{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:1rem}
+.contact-info p{font-size:.95rem;color:#666;line-height:1.7;margin-bottom:1.5rem}
+.contact-detail{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem}
+.contact-detail-icon{width:36px;height:36px;background:var(--navy);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;flex-shrink:0}
+.contact-detail-text strong{display:block;font-weight:600;color:var(--navy);font-size:.95rem}
+.contact-detail-text span{font-size:.875rem;color:#666}
+.contact-form{background:var(--white);padding:2.5rem;border-radius:8px;box-shadow:0 2px 16px rgba(0,0,0,.07)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:1.25rem}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:.4rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:.75rem 1rem;border:1.5px solid #ddd;border-radius:4px;font-family:"Inter",sans-serif;font-size:.95rem;color:var(--text);background:var(--white);outline:none}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:1rem;border-radius:4px;font-family:"Inter",sans-serif;font-size:1rem;font-weight:700;cursor:pointer}
+.form-submit:hover{background:var(--navy-mid)}
+footer{background:var(--navy-dark);color:#889;padding:40px 5%;text-align:center}
+.footer-logo{font-family:"Playfair Display",serif;font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.footer-logo span{color:var(--accent)}
+footer p{font-size:.85rem;line-height:1.8}
+footer a{color:var(--accent)}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.07);margin:1.5rem 0}
+</style>
+</head>
+<body>
+<div class="preview-banner">Free website preview by <strong>Alma Digital Designs</strong> &mdash; <a href="mailto:hello@almadigitaldesigns.com">Claim Your Free Redesign</a></div>
+<nav>
+  <div class="nav-logo">Phoenix Auto Repair<span> &amp; Body Shop</span></div>
+  <div class="nav-links"><a href="#services">Services</a><a href="#about">About</a><a href="#testimonials">Reviews</a><a href="#contact">Contact</a></div>
+  <a href="#contact" class="nav-cta">Free Estimate</a>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-stars">
+      <span class="hero-stars-text">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="hero-stars-label">5-Star Rated &middot; Insurance-Approved &middot; Phoenix, AZ</span>
+    </div>
+    <h1>Phoenix's <span class="accent">5-Star</span><br>Auto Repair<br>&amp; Body Shop</h1>
+    <p>From collision repairs to engine work &mdash; Phoenix Auto Repair &amp; Body Shop delivers perfection. Insurance-approved, 5-star rated.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Get Your Free Repair Estimate</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">5&#9733;</span><span class="stat-label">Perfect Rating</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Insurance Approved</span></div>
+      <div class="stat"><span class="stat-num">All</span><span class="stat-label">Makes &amp; Models</span></div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="trust-item">5-Star Rated</div>
+  <div class="trust-item">Insurance Claims Accepted</div>
+  <div class="trust-item">Collision &amp; Mechanical</div>
+  <div class="trust-item">Phoenix, AZ</div>
+</div>
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">Our Services</div>
+    <h2 class="section-title">Complete Auto &amp; Body Services</h2>
+    <p class="section-subtitle">From fender-benders to full mechanical repairs, we handle it all under one roof with the precision and care that earned us a perfect 5-star rating.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">&#128663;</div><h3>Collision &amp; Body Repair</h3><p>Expert collision repair restoring your vehicle to pre-accident condition. We work with all insurance companies and guarantee our work.</p></div>
+    <div class="service-card"><div class="service-icon">&#127912;</div><h3>Paint Matching &amp; Refinishing</h3><p>Factory-perfect color matching and professional paint application. Your car will look like it just left the showroom floor.</p></div>
+    <div class="service-card"><div class="service-icon">&#128295;</div><h3>Frame Straightening</h3><p>Computer-guided frame and structural repair to restore your vehicle's safety, alignment, and handling after collision damage.</p></div>
+    <div class="service-card"><div class="service-icon">&#9881;&#65039;</div><h3>Engine &amp; Mechanical Repair</h3><p>Full mechanical services from oil changes to engine rebuilds. One shop for all your vehicle's needs &mdash; body and mechanical.</p></div>
+    <div class="service-card"><div class="service-icon">&#128721;</div><h3>Brake Service</h3><p>Complete brake inspections, pad and rotor replacement, brake fluid service. Safety-first brake repairs at honest prices.</p></div>
+    <div class="service-card"><div class="service-icon">&#128203;</div><h3>Insurance Claim Assistance</h3><p>We work directly with your insurance company to process your claim smoothly, so you can focus on what matters.</p></div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="about-rating-num">5.0</div>
+      <div class="about-rating-label">Perfect Rating &middot; Phoenix, AZ</div>
+      <div class="about-insurance">
+        <div class="about-insurance-text">Insurance-Approved Shop</div>
+        <div class="about-insurance-sub">All major carriers accepted &middot; Direct billing</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">Perfection in Every Repair</h2>
+      <p>Phoenix Auto Repair &amp; Body Shop has earned a perfect 5-star reputation by treating every vehicle like their own. Fully equipped for collision repairs, paint work, and mechanical service &mdash; all in one location.</p>
+      <p>Insurance companies trust us. Customers recommend us. And when your vehicle leaves our shop, it looks and performs exactly as it should &mdash; every time.</p>
+      <div class="about-features">
+        <div class="about-feature">Perfect 5-star rating across all reviews</div>
+        <div class="about-feature">Insurance-approved and direct billing available</div>
+        <div class="about-feature">Collision, body, paint and mechanical in one shop</div>
+        <div class="about-feature">Lifetime warranty on paint and bodywork</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="testimonials" id="testimonials">
+  <div class="section-header">
+    <div class="section-label">Customer Reviews</div>
+    <h2 class="section-title">5 Stars &mdash; Every Single Time</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>My car was rear-ended and the damage was extensive. Phoenix Auto Repair handled my entire insurance claim and returned my car looking absolutely brand new. I could not even tell it had been in an accident. Truly exceptional work.</blockquote><div class="testimonial-author"><div class="author-avatar">LH</div><div><div class="author-name">Laura H.</div><div class="author-detail">Phoenix, AZ &mdash; Collision and Paint Repair</div></div></div></div>
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>I was referred here by my insurance adjuster and I understand why. These guys are professionals in every sense of the word. The paint match on my truck was flawless and they finished three days ahead of schedule.</blockquote><div class="testimonial-author"><div class="author-avatar">BT</div><div><div class="author-name">Brandon T.</div><div class="author-detail">Scottsdale, AZ &mdash; Paint and Body Repair</div></div></div></div>
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Used them for both body work and a brake job at the same time. Having one shop handle everything made the whole process so easy. Perfect results on both. I tell everyone I know about this place.</blockquote><div class="testimonial-author"><div class="author-avatar">NC</div><div><div class="author-name">Nicole C.</div><div class="author-detail">Tempe, AZ &mdash; Body Repair and Brakes</div></div></div></div>
+  </div>
+</section>
+<div class="cta-banner">
+  <h2>Your Vehicle Deserves a Perfect Repair</h2>
+  <p>5-star quality, insurance-approved, and ready to restore your vehicle today.</p>
+  <a href="#contact" class="btn-accent">Claim Your Free Redesign</a>
+</div>
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h3>Get Your Free Repair Estimate</h3>
+      <p>Describe your repair needs and our team will provide a free, detailed estimate. We work with all major insurance companies.</p>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128205;</div><div class="contact-detail-text"><strong>Location</strong><span>Phoenix, Arizona</span></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128222;</div><div class="contact-detail-text"><strong>Call us today</strong><span>Free estimates, insurance claims welcome</span></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128737;&#65039;</div><div class="contact-detail-text"><strong>Insurance Approved</strong><span>All major carriers &middot; Direct billing</span></div></div>
+    </div>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Laura" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Harris" required></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+        <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="(602) 555-0000"></div>
+        <div class="form-group"><label>Service Needed</label><select name="service"><option value="">Select...</option><option>Collision and Body Repair</option><option>Paint Matching and Refinishing</option><option>Frame Straightening</option><option>Engine and Mechanical Repair</option><option>Brake Service</option><option>Insurance Claim Assistance</option><option>Other</option></select></div>
+        <div class="form-group"><label>Insurance Company (if applicable)</label><input type="text" name="insurance" placeholder="State Farm, GEICO, etc."></div>
+        <div class="form-group"><label>Describe the Damage or Issue</label><textarea name="message" placeholder="Year, make, model, and description of damage or repair needed..."></textarea></div>
+        <input type="hidden" name="_subject" value="Free Estimate Request - Phoenix Auto Repair and Body Shop">
+        <button type="submit" class="form-submit">Get Your Free Repair Estimate</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">Phoenix Auto Repair<span> &amp; Body Shop</span></div>
+  <p>Phoenix, Arizona | <strong>Call us today</strong> | <a href="mailto:info@phoenixautorepairaz.com">info@phoenixautorepairaz.com</a></p>
+  <hr class="footer-divider">
+  <p>&copy; 2025 Phoenix Auto Repair &amp; Body Shop. All rights reserved. | 5-Star Collision &amp; Repair | Phoenix, AZ</p>
+  <p style="margin-top:.5rem;font-size:.78rem;color:#556">Website preview by <strong style="color:#c0a060">Alma Digital Designs</strong></p>
+</footer>
+</body>
+</html>
