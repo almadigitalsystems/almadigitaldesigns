@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NP Construction Renovation and Landscaping | Toronto Trusted Contractor Since 2010</title>
+  <meta name="description" content="NP Construction in Toronto - 16+ years of landscaping, interlocking, hardscaping, and contracting. Get your free quote today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f7faf5;
+      --bg2: #eef4ea;
+      --green: #2d6a4f;
+      --green-dark: #1b4332;
+      --green-light: #40916c;
+      --earth: #8b5e3c;
+      --card: #ffffff;
+      --text: #1a2e1f;
+      --muted: #6b7c6b;
+      --border: rgba(45,106,79,0.15);
+      --navy: #1a2e1f;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    .preview-banner { background: var(--green-dark); color: #eef4ea; text-align: center; padding: 0.6rem 1rem; font-size: 0.8rem; font-weight: 600; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(247,250,245,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Merriweather', serif; font-size: 1.1rem; font-weight: 700; color: var(--green-dark); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--green); color: white; padding: 0.5rem 1.25rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--green-dark); }
+    @media(max-width:768px) { .nav-links { display: none; } }
+
+    /* HERO — CLASSIC PROFESSIONAL */
+    .hero {
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 60%, var(--green-light) 100%);
+      padding: 7rem 2rem;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { max-width: 750px; position: relative; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.45rem 1.25rem; border-radius: 100px;
+      font-size: 0.75rem; font-weight: 600; color: white; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 1.75rem;
+    }
+    .hero h1 {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 900;
+      line-height: 1.2; color: white; margin-bottom: 1.25rem;
+    }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.75; margin-bottom: 2rem; max-width: 580px; margin-left: auto; margin-right: auto; }
+    .hero-stats { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .hero-stat { text-align: center; }
+    .hero-stat-num { font-family: 'Merriweather', serif; font-size: 2rem; font-weight: 900; color: white; }
+    .hero-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.2rem; }
+    .btn-white { background: white; color: var(--green-dark); padding: 0.9rem 2.5rem; border-radius: 4px; font-size: 0.875rem; font-weight: 700; transition: transform 0.15s; display: inline-block; }
+    .btn-white:hover { transform: translateY(-1px); }
+    .btn-outline-white { border: 2px solid rgba(255,255,255,0.5); color: white; padding: 0.9rem 2rem; border-radius: 4px; font-size: 0.875rem; font-weight: 600; display: inline-block; transition: border-color 0.2s; margin-left: 1rem; }
+    .btn-outline-white:hover { border-color: white; }
+
+    /* ABOUT STRIP */
+    .about-strip { background: var(--green-dark); padding: 1.75rem 2rem; }
+    .about-strip-inner { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+    .about-strip-item { display: flex; align-items: center; gap: 0.75rem; color: rgba(238,244,234,0.85); font-size: 0.85rem; }
+    .about-strip-item span { font-size: 1.1rem; }
+
+    /* SERVICES */
+    .services { padding: 5.5rem 2rem; background: var(--bg); }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Merriweather', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; color: var(--text); }
+    .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .service-card { background: var(--card); border-radius: 8px; padding: 1.75rem; border: 1px solid var(--border); transition: border-color 0.2s, transform 0.2s; }
+    .service-card:hover { border-color: var(--green); transform: translateY(-3px); }
+    .service-icon { width: 48px; height: 48px; background: rgba(45,106,79,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+    /* ABOUT */
+    .about { padding: 5.5rem 2rem; background: var(--bg2); }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+    .about h2 { font-family: 'Merriweather', serif; font-size: clamp(1.6rem, 2.8vw, 2.3rem); font-weight: 700; color: var(--text); margin-bottom: 1.25rem; }
+    .about p { color: var(--muted); line-height: 1.85; font-size: 0.95rem; margin-bottom: 1rem; }
+    .about-visual { background: var(--card); border-radius: 8px; height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; border: 1px solid var(--border); }
+    .about-visual-icon { font-size: 4rem; }
+    .about-visual p { color: var(--muted); font-size: 0.85rem; text-align: center; }
+    .btn-green { background: var(--green); color: white; padding: 0.875rem 2rem; border-radius: 4px; font-size: 0.875rem; font-weight: 600; transition: background 0.2s; display: inline-block; }
+    .btn-green:hover { background: var(--green-dark); }
+    @media(max-width:768px) { .about-inner { grid-template-columns: 1fr; } }
+
+    /* TESTIMONIALS */
+    .testimonials { padding: 5.5rem 2rem; background: var(--bg); }
+    .testimonials-grid { max-width: 1000px; margin: 2.5rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial { background: var(--card); border-radius: 8px; padding: 1.75rem; border: 1px solid var(--border); }
+    .stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .testimonial p { color: var(--muted); font-size: 0.875rem; line-height: 1.75; margin-bottom: 1rem; font-style: italic; }
+    .reviewer { font-size: 0.8rem; font-weight: 700; color: var(--green-dark); }
+
+    /* CTA */
+    .cta-section { padding: 5rem 2rem; background: var(--green-dark); text-align: center; }
+    .cta-section h2 { font-family: 'Merriweather', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: white; margin-bottom: 1rem; }
+    .cta-section p { color: rgba(238,244,234,0.75); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    /* CONTACT */
+    .contact { padding: 5rem 2rem; background: var(--bg2); }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact h2 { font-family: 'Merriweather', serif; font-size: 1.8rem; color: var(--text); margin-bottom: 1.5rem; }
+    .contact-info-item { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .contact-info-item span { font-size: 1.1rem; }
+    .contact-info-item div { color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
+    .contact-info-item strong { color: var(--text); display: block; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea { background: white; border: 1px solid var(--border); color: var(--text); padding: 0.8rem 1rem; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.875rem; transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--green); }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    @media(max-width:768px) { .contact-inner { grid-template-columns: 1fr; } }
+
+    footer { background: var(--green-dark); padding: 2rem; text-align: center; }
+    footer p { font-size: 0.8rem; color: rgba(238,244,234,0.5); }
+    footer strong { color: rgba(238,244,234,0.85); }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">FREE Preview Redesign by Alma Digital Designs — Claim Your Free Website Today</div>
+
+  <nav>
+    <div class="nav-logo">NP Construction</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Free Quote</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🏗️ Toronto, Ontario, Canada</div>
+      <h1>16 Years Transforming Toronto Properties — NP Construction & Landscaping</h1>
+      <p class="hero-sub">From full landscaping builds to renovation projects, Dexter and the NP Construction team have delivered quality craftsmanship across Toronto since 2010.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">16+</div><div class="hero-stat-label">Years Experience</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">2010</div><div class="hero-stat-label">Serving Toronto Since</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Honest Pricing</div></div>
+      </div>
+      <a href="#contact" class="btn-white">Get a Free Quote</a>
+      <a href="#services" class="btn-outline-white">Our Services</a>
+    </div>
+  </section>
+
+  <div class="about-strip">
+    <div class="about-strip-inner">
+      <div class="about-strip-item"><span>🌿</span> Full Landscaping Builds</div>
+      <div class="about-strip-item"><span>🏗️</span> Renovation &amp; Contracting</div>
+      <div class="about-strip-item"><span>📍</span> Toronto &amp; GTA</div>
+      <div class="about-strip-item"><span>⭐</span> 16+ Years Trusted Experience</div>
+    </div>
+  </div>
+
+  <section class="services" id="services">
+    <div class="section-header">
+      <div class="section-label">What We Build</div>
+      <h2 class="section-title">Our Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">🌱</div><h3>Landscape Design & Installation</h3><p>Full-scope landscape builds from concept to completion. Gardens, lawns, and outdoor spaces designed and built to last.</p></div>
+      <div class="service-card"><div class="service-icon">🧱</div><h3>Interlocking & Hardscaping</h3><p>Driveways, patios, walkways, and retaining walls. Precision interlocking work that adds value and curb appeal.</p></div>
+      <div class="service-card"><div class="service-icon">🔨</div><h3>General Contracting & Renovations</h3><p>Interior and exterior renovation work delivered on time and on budget. 16 years of craftsmanship behind every project.</p></div>
+      <div class="service-card"><div class="service-icon">🏡</div><h3>Deck & Fence Construction</h3><p>Custom decks and fences built to your spec. Quality materials, clean finishes, built to last the Toronto winters.</p></div>
+      <div class="service-card"><div class="service-icon">🌾</div><h3>Sodding & Grading</h3><p>Expert grading and sodding for new lawns and property prep. We leave your yard level, green, and growing.</p></div>
+      <div class="service-card"><div class="service-icon">❄️</div><h3>Snow Removal & Seasonal Maintenance</h3><p>Year-round property care — from spring cleanups to full winter snow removal contracts for residential and commercial.</p></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div>
+        <div class="section-label">About NP Construction</div>
+        <h2>Toronto's Trusted Contractor Since 2010</h2>
+        <p>NP Construction Renovation and Landscaping Ltd has been serving Toronto homeowners since 2010. Led by Dexter Agostini, the team brings over 16 years of hands-on experience and honest pricing to every job site.</p>
+        <p>NP Construction is the trusted call for outdoor and property work across Toronto. Every quote is straightforward, every project is delivered with pride, and every client gets the attention they deserve.</p>
+        <a href="#contact" class="btn-green" style="margin-top:1.5rem;">Get Your Free Quote</a>
+      </div>
+      <div class="about-visual">
+        <div class="about-visual-icon">🏗️</div>
+        <p>Led by Dexter Agostini<br>Toronto's Trusted Contractor</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-header">
+      <div class="section-label">Client Reviews</div>
+      <h2 class="section-title">What Toronto Homeowners Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Dexter and the NP team transformed our backyard completely. Professional, on time, and honest pricing. Best landscaping company in Toronto."</p><div class="reviewer">— Sandra L., North York</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Hired NP Construction for our interlocking driveway and they delivered flawless work. 16 years experience really shows."</p><div class="reviewer">— Robert M., Toronto ON</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Our deck looks incredible. Clean build, great communication, and they were done when they said they'd be done. Will use again."</p><div class="reviewer">— Maria T., Scarborough ON</div></div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Transform Your Property?</h2>
+    <p>Get a free quote from Toronto's trusted contractor. 16+ years of experience, honest pricing, quality results.</p>
+    <a href="#contact" class="btn-white">Get a Free Quote</a>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Request Your Free Quote</h2>
+    </div>
+    <div class="contact-inner">
+      <div>
+        <h2>NP Construction</h2>
+        <div class="contact-info-item"><span>📍</span><div><strong>Location</strong>Toronto, Ontario, Canada</div></div>
+        <div class="contact-info-item"><span>📧</span><div><strong>Email</strong>n.pconstruction@outlook.com</div></div>
+        <div class="contact-info-item"><span>👷</span><div><strong>Led By</strong>Dexter Agostini — 16+ Years Experience</div></div>
+        <div class="contact-info-item"><span>🌿</span><div><strong>Services</strong>Landscaping, Interlocking, Renovations, Decks, Snow Removal</div></div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="NP Construction - Toronto Canada" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <textarea name="message" placeholder="Describe your project — what are you looking to build or renovate?"></textarea>
+        <button type="submit" class="btn-green">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>NP Construction Renovation and Landscaping Ltd</strong> — Toronto, ON, Canada | Est. 2010 | <a href="mailto:n.pconstruction@outlook.com" style="color:rgba(238,244,234,0.6);">n.pconstruction@outlook.com</a></p>
+    <p style="margin-top:0.5rem;">Preview designed by <strong>Alma Digital Designs</strong> · almadigitalservices.com</p>
+  </footer>
+</body>
+</html>
