@@ -1,5 +1,3 @@
-SHA: a8abc745db37125312f1dad1c23256ab91d07035
-LINES: 555
 'use strict';
 
 const crypto = require('crypto');
