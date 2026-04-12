@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tull Auto Services | 29 Years Serving Indianapolis, IN</title>
+<meta name="description" content="Indianapolis trusted auto repair shop with 29 years of experience. Oil changes, brakes, engine work and more. Honest pricing from Loraine and the Tull team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--charcoal:#2d2d2d;--orange:#ff6b35;--orange-dark:#e55a25;--light-gray:#f5f5f5;--white:#ffffff;--text:#2d2d2d}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",sans-serif;color:var(--text);background:var(--white);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.preview-banner{background:var(--orange);color:var(--white);text-align:center;padding:.6rem 1rem;font-size:.85rem;font-weight:600;position:sticky;top:0;z-index:200}
+.preview-banner a{color:var(--white);text-decoration:underline}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;background:rgba(45,45,45,.97);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.nav-logo{font-family:"Playfair Display",serif;color:var(--white);font-size:1.25rem;font-weight:700}
+.nav-logo span{color:var(--orange)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:#ccc;font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{background:var(--orange);color:var(--white);padding:.5rem 1.2rem;border-radius:4px;font-size:.85rem;font-weight:600;transition:background .2s}
+.nav-cta:hover{background:var(--orange-dark)}
+@media(max-width:768px){.nav-links{display:none}}
+.hero{min-height:100vh;background:var(--charcoal);display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden}
+.hero-content{position:relative;z-index:1;max-width:680px}
+.hero-badge{display:inline-block;background:rgba(255,107,53,.15);border:1px solid rgba(255,107,53,.3);color:var(--orange);padding:.4rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:1.25rem}
+.hero h1 span{color:var(--orange)}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:#bbb;max-width:560px;margin-bottom:2.5rem;line-height:1.75}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:1rem}
+.btn-primary{background:var(--orange);color:var(--white);padding:.9rem 2rem;border-radius:4px;font-weight:700;font-size:1rem;transition:all .2s;display:inline-block}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--white);padding:.9rem 2rem;border-radius:4px;font-weight:600;font-size:1rem;border:2px solid rgba(255,255,255,.25);transition:all .2s;display:inline-block}
+.btn-secondary:hover{border-color:var(--orange);color:var(--orange)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat-num{font-family:"Playfair Display",serif;font-size:2.2rem;font-weight:700;color:var(--orange);line-height:1}
+.stat-label{font-size:.8rem;color:#888;text-transform:uppercase;letter-spacing:.1em;margin-top:.25rem}
+.trust-bar{background:var(--orange);padding:1rem 5%;display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:center}
+.trust-item{color:var(--white);font-size:.9rem;font-weight:600}
+section{padding:80px 5%}
+.section-label{font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--charcoal);margin-bottom:1rem}
+.section-subtitle{font-size:1.05rem;color:#666;max-width:600px;line-height:1.7}
+.section-header{margin-bottom:3rem}
+.services{background:var(--light-gray)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.service-card{background:var(--white);padding:2rem;border-radius:8px;border-left:4px solid var(--orange);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .2s}
+.service-card:hover{transform:translateY(-3px)}
+.service-icon{font-size:2rem;margin-bottom:1rem}
+.service-card h3{font-size:1.15rem;font-weight:700;color:var(--charcoal);margin-bottom:.5rem}
+.service-card p{font-size:.9rem;color:#666;line-height:1.6}
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+.about-visual{background:linear-gradient(135deg,var(--charcoal) 0%,#444 100%);border-radius:12px;padding:3rem;text-align:center}
+.about-number{font-family:"Playfair Display",serif;font-size:6rem;font-weight:900;color:var(--orange);line-height:1}
+.about-number-label{color:var(--white);font-size:1.2rem;font-weight:600;margin-top:.5rem}
+.about-text p{font-size:1.05rem;color:#555;line-height:1.8;margin-bottom:1.25rem}
+.about-features{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.about-feature{display:flex;align-items:center;gap:.75rem;font-size:.95rem;font-weight:600;color:var(--charcoal);padding:.5rem 0}
+.about-feature::before{content:"";display:block;width:8px;height:8px;background:var(--orange);border-radius:50%;flex-shrink:0}
+.testimonials{background:var(--charcoal)}
+.testimonials .section-title{color:var(--white)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.testimonial-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:2rem;border-radius:8px}
+.stars{color:var(--orange);font-size:1.1rem;margin-bottom:1rem}
+.testimonial-card blockquote{font-size:.95rem;color:#ccc;line-height:1.75;font-style:italic;margin-bottom:1.5rem}
+.testimonial-author{display:flex;align-items:center;gap:.75rem}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);font-size:1rem;flex-shrink:0}
+.author-name{font-weight:700;color:var(--white);font-size:.95rem}
+.author-detail{font-size:.8rem;color:#888}
+.cta-banner{background:linear-gradient(135deg,var(--orange) 0%,var(--orange-dark) 100%);padding:60px 5%;text-align:center}
+.cta-banner h2{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);margin-bottom:1rem}
+.cta-banner p{font-size:1.1rem;color:rgba(255,255,255,.85);margin-bottom:2rem}
+.btn-white{background:var(--white);color:var(--orange);padding:1rem 2.5rem;border-radius:4px;font-weight:700;font-size:1.05rem;transition:all .2s;display:inline-block}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.contact{background:var(--light-gray)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:start}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-info h3{font-size:1.4rem;font-weight:700;color:var(--charcoal);margin-bottom:1rem}
+.contact-info p{font-size:.95rem;color:#666;line-height:1.7;margin-bottom:1.5rem}
+.contact-detail{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem}
+.contact-detail-icon{width:36px;height:36px;background:var(--orange);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1rem;flex-shrink:0}
+.contact-detail-text strong{display:block;font-weight:600}
+.contact-detail-text span{font-size:.875rem;color:#666}
+.contact-form{background:var(--white);padding:2.5rem;border-radius:8px;box-shadow:0 2px 16px rgba(0,0,0,.07)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:1.25rem}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--charcoal);margin-bottom:.4rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:.75rem 1rem;border:1.5px solid #ddd;border-radius:4px;font-family:"Inter",sans-serif;font-size:.95rem;color:var(--text);background:var(--white);outline:none}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;background:var(--orange);color:var(--white);border:none;padding:1rem;border-radius:4px;font-family:"Inter",sans-serif;font-size:1rem;font-weight:700;cursor:pointer}
+footer{background:var(--charcoal);color:#aaa;padding:40px 5%;text-align:center}
+.footer-logo{font-family:"Playfair Display",serif;font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.footer-logo span{color:var(--orange)}
+footer p{font-size:.85rem;line-height:1.8}
+footer a{color:var(--orange)}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin:1.5rem 0}
+</style>
+</head>
+<body>
+<div class="preview-banner">Free website preview by <strong>Alma Digital Designs</strong> &mdash; <a href="mailto:hello@almadigitaldesigns.com">Claim Your Free Redesign</a></div>
+<nav>
+  <div class="nav-logo">Tull Auto<span>.</span></div>
+  <div class="nav-links"><a href="#services">Services</a><a href="#about">About</a><a href="#testimonials">Reviews</a><a href="#contact">Contact</a></div>
+  <a href="#contact" class="nav-cta">Schedule Service</a>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">Indianapolis, Indiana</div>
+    <h1>29 Years Keeping<br><span>Indianapolis</span> Moving &mdash;<br>Tull Auto Services</h1>
+    <p>Loraine and the Tull team have earned Indianapolis's trust the old-fashioned way. Three decades of honest repairs, fair prices, and real expertise.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Schedule Your Service with Tull</a>
+      <a href="#services" class="btn-secondary">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">29</span><span class="stat-label">Years in Business</span></div>
+      <div class="stat"><span class="stat-num">1000s</span><span class="stat-label">Happy Customers</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Honest Pricing</span></div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="trust-item">&#10003; Family-Owned Since 1995</div>
+  <div class="trust-item">&#10003; ASE-Certified Technicians</div>
+  <div class="trust-item">&#10003; Honest Upfront Pricing</div>
+  <div class="trust-item">&#10003; Indianapolis Trusted Shop</div>
+</div>
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Complete Auto Care You Can Trust</h2>
+    <p class="section-subtitle">From routine oil changes to complex engine diagnostics, Tull Auto Services handles it all with the same honest, expert care given every customer for 29 years.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">&#9881;</div><h3>Oil Change &amp; Lubrication</h3><p>Fast, thorough oil changes using quality oil and filters to keep your engine running strong. In and out without the wait.</p></div>
+    <div class="service-card"><div class="service-icon">&#128721;</div><h3>Brake Service &amp; Repair</h3><p>Brake inspections, pad replacements, rotor resurfacing, and full brake system repairs. Your safety is our priority.</p></div>
+    <div class="service-card"><div class="service-icon">&#128269;</div><h3>Engine Diagnostics &amp; Tune-Up</h3><p>Modern diagnostic tools to find the real problem fast. Spark plugs, filters, timing &mdash; we tune it right the first time.</p></div>
+    <div class="service-card"><div class="service-icon">&#128663;</div><h3>Suspension &amp; Steering</h3><p>Shocks, struts, tie rods, and alignment. We restore your vehicle's ride quality and handling to factory specs.</p></div>
+    <div class="service-card"><div class="service-icon">&#127777;</div><h3>Coolant System Service</h3><p>Radiator flushes, thermostat replacements, and coolant hose repairs to prevent costly overheating damage.</p></div>
+    <div class="service-card"><div class="service-icon">&#128203;</div><h3>Preventive Maintenance</h3><p>Scheduled maintenance services that keep your vehicle in peak condition and help you avoid unexpected breakdowns.</p></div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-number">29</div>
+      <div class="about-number-label">Years Serving Indianapolis</div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">Built on Honesty. Proven by Decades.</h2>
+      <p>For 29 years, Tull Auto Services has been Indianapolis's most trusted neighborhood auto shop. Owner Loraine has built a reputation on honesty and workmanship that keeps customers coming back and referring their kids and grandkids.</p>
+      <p>While other shops have come and gone, Tull has endured because we do things the right way: fair estimates, honest assessments, and repairs done properly the first time. No upsells, no surprises.</p>
+      <div class="about-features">
+        <div class="about-feature">Family-owned and operated since 1995</div>
+        <div class="about-feature">Generations of loyal Indianapolis families</div>
+        <div class="about-feature">Honest estimates, no hidden fees</div>
+        <div class="about-feature">Repairs done right the first time</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="testimonials" id="testimonials">
+  <div class="section-header">
+    <div class="section-label">Customer Reviews</div>
+    <h2 class="section-title">What Indianapolis Says About Tull</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Loraine and her team are the only people I trust with my car. I have been coming here for 15 years and they have never once tried to sell me something I did not need. Honest, fast, and fair every single time.</blockquote><div class="testimonial-author"><div class="author-avatar">DM</div><div><div class="author-name">Debbie M.</div><div class="author-detail">Indianapolis, IN &mdash; Customer since 2009</div></div></div></div>
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>My dad used to bring his car here, and now I do too. There is a reason this shop has been around for nearly 30 years. They treat you like family and their work speaks for itself.</blockquote><div class="testimonial-author"><div class="author-avatar">TR</div><div><div class="author-name">Tyler R.</div><div class="author-detail">Indianapolis, IN &mdash; Second-generation customer</div></div></div></div>
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Brought my car in for what I thought was a major engine issue. Loraine's team diagnosed it in an hour and had it fixed for a fraction of what the dealer quoted me. These folks are the real deal.</blockquote><div class="testimonial-author"><div class="author-avatar">KS</div><div><div class="author-name">Karen S.</div><div class="author-detail">Indianapolis, IN &mdash; Referred by a neighbor</div></div></div></div>
+  </div>
+</section>
+<div class="cta-banner">
+  <h2>Ready to Experience Tull's Honest Service?</h2>
+  <p>Join thousands of Indianapolis drivers who trust Tull Auto Services. Schedule your visit today.</p>
+  <a href="#contact" class="btn-white">Claim Your Free Redesign</a>
+</div>
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h3>Schedule Your Service</h3>
+      <p>Ready to experience the Tull difference? Fill out the form and we will get back to you promptly to confirm your appointment.</p>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128205;</div><div class="contact-detail-text"><strong>Location</strong><span>Indianapolis, Indiana</span></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128222;</div><div class="contact-detail-text"><strong>Call us today</strong><span>Ask for Loraine</span></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128336;</div><div class="contact-detail-text"><strong>Hours</strong><span>Mon-Fri 8am-5pm, Sat by appointment</span></div></div>
+    </div>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="jane@email.com" required></div>
+        <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="(317) 555-0000"></div>
+        <div class="form-group"><label>Service Needed</label><select name="service"><option value="">Select...</option><option>Oil Change and Lubrication</option><option>Brake Service and Repair</option><option>Engine Diagnostics and Tune-Up</option><option>Suspension and Steering</option><option>Coolant System Service</option><option>Preventive Maintenance</option><option>Other</option></select></div>
+        <div class="form-group"><label>About Your Vehicle</label><textarea name="message" placeholder="Year, make, model, and details..."></textarea></div>
+        <input type="hidden" name="_subject" value="New Service Request - Tull Auto Services">
+        <button type="submit" class="form-submit">Schedule Your Service with Tull</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">Tull Auto<span> Services</span></div>
+  <p>Indianapolis, Indiana | <strong>Call us today</strong> | <a href="mailto:info@tullauto.com">info@tullauto.com</a></p>
+  <hr class="footer-divider">
+  <p>&copy; 2025 Tull Auto Services. All rights reserved. | Indianapolis trusted auto repair for 29 years.</p>
+  <p style="margin-top:.5rem;font-size:.78rem;color:#666">Website preview by <strong style="color:#ff6b35">Alma Digital Designs</strong></p>
+</footer>
+</body>
+</html>
