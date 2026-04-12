@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salon de Belleza Blanca Matus | Peluqueria Las Condes Santiago</title>
+  <meta name="description" content="Salon belleza Las Condes Santiago. Coloracion keratina eventos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale: #F5EDD6;
+      --champagne: #FAF5EC;
+      --cream: #FDF9F4;
+      --cream-dark: #F0E8D8;
+      --dark: #1C1410;
+      --dark-mid: #2C221A;
+      --text: #3A2E24;
+      --text-muted: #7A6A5A;
+      --white: #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--dark);
+      color: var(--gold-light);
+      text-align: center;
+      padding: 11px 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-banner a { color: var(--gold); text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--champagne);
+      padding: 0 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--dark);
+      letter-spacing: 0.08em;
+    }
+    .nav-logo span { font-style: italic; color: var(--gold); }
+    .nav-center { display: flex; gap: 32px; }
+    .nav-center a { font-size: 0.8rem; font-weight: 500; color: var(--text-muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-center a:hover { color: var(--gold); }
+    .nav-phone { font-size: 0.85rem; font-weight: 600; color: var(--dark); text-decoration: none; transition: color 0.2s; }
+    .nav-phone:hover { color: var(--gold); }
+
+    /* HERO — STORY STYLE: tall, elegant, centered */
+    .hero {
+      background: var(--dark);
+      min-height: 680px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 7%;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 25% 50%, rgba(201,168,76,0.08) 0%, transparent 55%),
+                        radial-gradient(circle at 75% 50%, rgba(201,168,76,0.06) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-ornament {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      color: var(--gold);
+    }
+    .hero-ornament::before,
+    .hero-ornament::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 60px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .hero-ornament::after { background: linear-gradient(to left, transparent, var(--gold)); }
+    .hero-ornament-text {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero p {
+      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 500px;
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 16px 44px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .hero-tagline {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.25);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hero-tagline::before,
+    .hero-tagline::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* INTRO STRIP */
+    .intro-strip {
+      background: var(--gold);
+      padding: 16px 7%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .intro-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .intro-item-dot { width: 5px; height: 5px; background: var(--dark); border-radius: 50%; opacity: 0.4; }
+
+    /* SERVICES — STORY STYLE: list with roman numerals */
+    .services-section {
+      padding: 100px 7%;
+      background: var(--champagne);
+    }
+    .section-header-center { text-align: center; margin-bottom: 64px; }
+    .section-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .section-rule::before,
+    .section-rule::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-rule span { font-size: 1rem; color: var(--gold); }
+    .section-header-center h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: var(--dark);
+    }
+    .section-header-center h2 em { font-style: italic; }
+    .section-header-center p { color: var(--text-muted); font-size: 0.9rem; margin-top: 12px; font-weight: 300; }
+    .services-story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      background: var(--cream-dark);
+    }
+    .service-story-card {
+      background: var(--champagne);
+      padding: 44px 36px;
+      text-align: center;
+      transition: background 0.2s;
+      position: relative;
+    }
+    .service-story-card:hover { background: var(--white); }
+    .service-roman {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .service-emoji-lg { font-size: 1.8rem; display: block; margin-bottom: 14px; }
+    .service-story-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .service-story-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+    .service-story-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+    .service-story-card:hover::after { width: 60%; }
+
+    /* ABOUT — STORY STYLE */
+    .about-section {
+      padding: 100px 7%;
+      background: var(--cream);
+    }
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-text-side .section-rule { justify-content: flex-start; }
+    .about-text-side h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      color: var(--dark);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    .about-text-side h2 em { font-style: italic; color: var(--gold); }
+    .about-text-side p { color: var(--text-muted); line-height: 1.9; font-size: 0.92rem; margin-bottom: 16px; font-weight: 300; }
+    .about-text-side .address-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: var(--champagne);
+      border-left: 3px solid var(--gold);
+    }
+    .address-note-text { font-size: 0.85rem; color: var(--dark); font-weight: 500; }
+    .address-note-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .about-visual-side { position: relative; }
+    .about-card-stack {
+      background: var(--dark);
+      padding: 60px 48px;
+      text-align: center;
+      position: relative;
+    }
+    .about-card-stack::before {
+      content: '';
+      position: absolute;
+      top: 10px; left: 10px;
+      right: -10px; bottom: -10px;
+      background: var(--gold);
+      z-index: -1;
+    }
+    .about-card-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+    .about-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .about-card-title { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+    .about-card-quote {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    /* TESTIMONIALS */
+    .testi-section {
+      padding: 100px 7%;
+      background: var(--dark);
+    }
+    .testi-header { text-align: center; margin-bottom: 60px; }
+    .testi-header .section-rule-dark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .testi-header .section-rule-dark::before,
+    .testi-header .section-rule-dark::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .testi-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--white);
+    }
+    .testi-header h2 em { font-style: italic; color: var(--gold-light); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      background: rgba(201,168,76,0.15);
+    }
+    .testi-card {
+      background: var(--dark-mid);
+      padding: 44px 32px;
+      position: relative;
+    }
+    .testi-card::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: rgba(201,168,76,0.15);
+      position: absolute;
+      top: 16px; left: 24px;
+      line-height: 1;
+    }
+    .testi-stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.1em; }
+    .testi-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+    .testi-divider { width: 32px; height: 1px; background: var(--gold); margin-bottom: 14px; }
+    .testi-name { font-size: 0.82rem; font-weight: 600; color: var(--gold-light); letter-spacing: 0.08em; }
+    .testi-location { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 4px; }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 7%;
+      background: var(--champagne);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: 'B';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28rem;
+      font-weight: 300;
+      color: rgba(201,168,76,0.06);
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 1rem;
+    }
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300;
+      color: var(--dark);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--gold); }
+    .cta-section p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 40px; max-width: 440px; margin-left: auto; margin-right: auto; font-weight: 300; }
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 0.8rem;
+      padding: 14px 40px;
+      border: 1px solid var(--gold);
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+      margin-left: 16px;
+    }
+    .btn-outline-gold:hover { background: var(--gold-pale); }
+
+    /* CONTACT */
+    .contact-section {
+      padding: 100px 7%;
+      background: var(--cream);
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 72px;
+      align-items: start;
+      margin-top: 56px;
+    }
+    .contact-story-left h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--dark);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .contact-story-left h3 em { font-style: italic; color: var(--gold); }
+    .contact-story-left p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 28px; font-weight: 300; }
+    .contact-detail {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .contact-detail:first-of-type { border-top: 1px solid var(--cream-dark); margin-top: 8px; }
+    .contact-detail-icon { color: var(--gold); font-size: 0.9rem; margin-top: 3px; }
+    .contact-detail-body a { font-size: 0.9rem; font-weight: 600; color: var(--dark); text-decoration: none; }
+    .contact-detail-body a:hover { color: var(--gold); }
+    .contact-detail-body span { font-size: 0.77rem; color: var(--text-muted); display: block; margin-top: 2px; }
+    .contact-form-wrap { background: var(--champagne); padding: 48px 40px; border: 1px solid var(--cream-dark); }
+    .contact-form-wrap h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--dark);
+      margin-bottom: 28px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--cream-dark);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      background: var(--white);
+      color: var(--text);
+      margin-bottom: 14px;
+      transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold); }
+    input::placeholder, textarea::placeholder { color: #BBA898; }
+    textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    button[type="submit"] {
+      width: 100%;
+      background: var(--dark);
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 16px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+      margin-top: 4px;
+    }
+    button[type="submit"]:hover { background: var(--gold); color: var(--dark); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      padding: 36px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold-light);
+      letter-spacing: 0.06em;
+    }
+    footer p { color: rgba(255,255,255,0.3); font-size: 0.78rem; }
+    footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .about-inner, .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-center { display: none; }
+      .contact-form-wrap { padding: 28px 20px; }
+      .intro-strip { gap: 20px; }
+      .intro-item-dot { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PREVIEW BANNER -->
+  <div class="preview-banner">
+    Vista previa GRATUITA creada por Alma Digital Designs — <a href="#contacto">Reclama tu sitio hoy</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Blanca <span>Matus</span></div>
+    <div class="nav-center">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Sobre nosotros</a>
+      <a href="#testimonios">Clientes</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a href="tel:+56222010452" class="nav-phone">+56 2 2201 0452</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-pattern"></div>
+    <div class="hero-ornament">
+      <div class="hero-ornament-text">Las Condes, Santiago &middot; Chile</div>
+    </div>
+    <h1>Elegancia y<br />Cuidado Capilar<br />en <em>Las Condes</em></h1>
+    <p>Blanca Matus espacio exclusivo en Las Condes donde cada cita es una transformacion. Atencion personalizada de la mas alta calidad.</p>
+    <a href="#contacto" class="btn-gold">Agenda tu cita con Blanca</a>
+    <div class="hero-tagline">Salon Premium &middot; Las Condes &middot; Santiago</div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="intro-strip">
+    <div class="intro-item">✂️ Corte y Estilizado</div>
+    <div class="intro-item-dot"></div>
+    <div class="intro-item">🎨 Coloracion Premium</div>
+    <div class="intro-item-dot"></div>
+    <div class="intro-item">✨ Keratina</div>
+    <div class="intro-item-dot"></div>
+    <div class="intro-item">💎 Tratamientos Exclusivos</div>
+    <div class="intro-item-dot"></div>
+    <div class="intro-item">🌹 Peinados para Eventos</div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="servicios">
+    <div class="section-header-center">
+      <div class="section-rule"><span>✦</span></div>
+      <h2>Servicios de<br /><em>Excelencia Capilar</em></h2>
+      <p>Cada servicio con tecnicas premium y productos de la mas alta calidad</p>
+    </div>
+    <div class="services-story-grid">
+      <div class="service-story-card">
+        <span class="service-roman">I</span>
+        <span class="service-emoji-lg">✂️</span>
+        <h3>Corte y Estilizado</h3>
+        <p>Cortes de autor personalizados que realzan tu belleza natural con un estilizado perfecto.</p>
+      </div>
+      <div class="service-story-card">
+        <span class="service-roman">II</span>
+        <span class="service-emoji-lg">🎨</span>
+        <h3>Coloracion y Mechas</h3>
+        <p>Coloraciones precisas, mechas balayage y tecnicas de color de ultima tendencia mundial.</p>
+      </div>
+      <div class="service-story-card">
+        <span class="service-roman">III</span>
+        <span class="service-emoji-lg">💎</span>
+        <h3>Tratamientos Premium</h3>
+        <p>Mascarillas exclusivas, reestructurantes y tratamientos profundos para cabello de lujo.</p>
+      </div>
+      <div class="service-story-card">
+        <span class="service-roman">IV</span>
+        <span class="service-emoji-lg">✨</span>
+        <h3>Keratina</h3>
+        <p>Tratamientos de keratina profesional para un cabello liso, brillante y sin frizz duradero.</p>
+      </div>
+      <div class="service-story-card">
+        <span class="service-roman">V</span>
+        <span class="service-emoji-lg">🌹</span>
+        <h3>Peinados para Eventos</h3>
+        <p>Peinados elegantes para bodas, eventos corporativos y ocasiones especiales inolvidables.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="nosotros">
+    <div class="about-inner">
+      <div class="about-text-side">
+        <div class="section-rule" style="justify-content:flex-start;">
+          <span style="color:var(--gold);font-size:1rem;">✦</span>
+        </div>
+        <h2>Un Salon Reconocido<br />en <em>Las Condes</em></h2>
+        <p>Salon de Belleza Blanca Matus es reconocido en Las Condes por su excelencia y atencion personalizada. Cada clienta recibe un servicio a la medida de sus necesidades.</p>
+        <p>Con anos de trayectoria, Blanca Matus ha construido una reputacion de elegancia, precision y resultados excepcionales que la distinguen en el mercado premium de Santiago.</p>
+        <div class="address-note">
+          <div>
+            <div class="address-note-text">Geronimo de Alderete 541, Las Condes</div>
+            <div class="address-note-sub">Santiago, Chile &middot; Salon exclusivo</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual-side">
+        <div class="about-card-stack">
+          <span class="about-card-icon">💇</span>
+          <div class="about-card-name">Blanca Matus</div>
+          <div class="about-card-title">Estilista &middot; Colorista &middot; Las Condes</div>
+          <div class="about-card-quote">"Cada cita es una oportunidad para transformar no solo tu cabello, sino tu confianza y tu bienestar."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi-section" id="testimonios">
+    <div class="testi-header">
+      <div class="section-rule-dark"></div>
+      <h2>Voces de<br /><em>Nuestras Clientas</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p>Blanca tiene un talento extraordinario. La coloracion que me hizo supero todas mis expectativas. Es el salon mas exclusivo y profesional que he visitado en Santiago.</p>
+        <div class="testi-divider"></div>
+        <div class="testi-name">Gabriela M.</div>
+        <div class="testi-location">Las Condes, Santiago</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p>Fui para mi matrimonio y el peinado fue absolutamente perfecto. Blanca y su equipo son verdaderos artistas. El salon tiene una atmosfera elegante y muy acogedora.</p>
+        <div class="testi-divider"></div>
+        <div class="testi-name">Isidora C.</div>
+        <div class="testi-location">Vitacura, Santiago</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p>Llevo anos yendo con Blanca y nunca me ha decepcionado. Los tratamientos premium son increibles. Mi cabello nunca habia lucido tan bien. Una experiencia de lujo.</p>
+        <div class="testi-divider"></div>
+        <div class="testi-name">Francisca P.</div>
+        <div class="testi-location">Las Condes, Santiago</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-ornament">✦ ✦ ✦</div>
+      <h2>Tu Transformacion<br /><em>Comienza Aqui</em></h2>
+      <p>Reserva tu cita con Blanca y descubre por que somos el salon de confianza en Las Condes.</p>
+      <a href="#contacto" class="btn-gold">Agenda tu cita con Blanca</a>
+      <a href="tel:+56222010452" class="btn-outline-gold">Llamar al salon</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contacto">
+    <div class="section-header-center">
+      <div class="section-rule"><span>✦</span></div>
+      <h2><em>Agenda tu Cita</em></h2>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-story-left">
+        <h3>Visitanos en<br /><em>Las Condes</em></h3>
+        <p>Estamos en Geronimo de Alderete 541, Las Condes. Agenda tu cita y vivamos juntos una experiencia de transformacion y bienestar exclusiva.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-body">
+            <a href="tel:+56222010452">+56 2 2201 0452</a>
+            <span>Llamadas y WhatsApp</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-body">
+            <a href="mailto:blancamatus@yahoo.com">blancamatus@yahoo.com</a>
+            <span>Correo electronico</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-body">
+            <a href="#">Geronimo de Alderete 541</a>
+            <span>Las Condes, Santiago, Chile</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h4>Solicitar una cita</h4>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="hidden" name="business" value="Salon de Belleza Blanca Matus - Las Condes Santiago Chile" />
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="tel" name="telefono" placeholder="Tu telefono" required />
+          </div>
+          <input type="email" name="email" placeholder="Tu correo electronico" required />
+          <select name="servicio">
+            <option value="">Selecciona un servicio</option>
+            <option>Corte y Estilizado</option>
+            <option>Coloracion y Mechas</option>
+            <option>Tratamientos Premium</option>
+            <option>Keratina</option>
+            <option>Peinados para Eventos</option>
+          </select>
+          <textarea name="mensaje" placeholder="Cuentanos sobre lo que deseas o cualquier consulta especial..."></textarea>
+          <button type="submit">Solicitar mi Cita</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Blanca Matus</div>
+    <p>Geronimo de Alderete 541, Las Condes, Santiago &mdash; <a href="tel:+56222010452">+56 2 2201 0452</a></p>
+    <p>Vista previa disenada por <a href="#">Alma Digital Designs</a></p>
+  </footer>
+
+</body>
+</html>
