@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Mata Auto Repair | Indianapolis, IN &mdash; Since 2006</title>
+<meta name="description" content="Indianapolis auto repair since 2006. 4.6 stars, 66 reviews. Engine, transmission, brakes and more on W Washington St. Honest pricing, expert technicians.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--charcoal:#2d2d2d;--dark:#1a1a1a;--red:#cc2200;--red-light:#e53020;--light-gray:#f5f5f5;--white:#ffffff;--text:#2d2d2d}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",sans-serif;color:var(--text);background:var(--white);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.preview-banner{background:var(--red);color:var(--white);text-align:center;padding:.6rem 1rem;font-size:.85rem;font-weight:600;position:sticky;top:0;z-index:200}
+.preview-banner a{color:var(--white);text-decoration:underline}
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;box-shadow:0 2px 16px rgba(0,0,0,.3)}
+.nav-logo{font-family:"Oswald",sans-serif;color:var(--white);font-size:1.3rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:#bbb;font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:var(--white);padding:.5rem 1.2rem;border-radius:3px;font-size:.85rem;font-weight:700;transition:background .2s;text-transform:uppercase;letter-spacing:.05em}
+.nav-cta:hover{background:var(--red-light)}
+@media(max-width:768px){.nav-links{display:none}}
+.hero{min-height:100vh;background:var(--dark);display:flex;align-items:center;padding:140px 5% 80px;position:relative;overflow:hidden}
+.hero-accent{position:absolute;right:0;top:0;bottom:0;width:40%;background:linear-gradient(135deg,rgba(204,34,0,.15) 0%,rgba(204,34,0,.03) 100%);border-left:3px solid rgba(204,34,0,.3)}
+.hero-content{position:relative;z-index:1;max-width:720px}
+.hero-rating{display:inline-flex;align-items:center;gap:.5rem;background:rgba(204,34,0,.15);border:1px solid rgba(204,34,0,.4);padding:.5rem 1.25rem;border-radius:3px;margin-bottom:1.5rem}
+.hero-rating-stars{color:#ffd700;font-size:1rem;letter-spacing:2px}
+.hero-rating-text{color:#ddd;font-size:.85rem;font-weight:600}
+h1{font-family:"Oswald",sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:1.25rem;text-transform:uppercase;letter-spacing:.02em}
+h1 .accent{color:var(--red)}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);color:#bbb;max-width:580px;margin-bottom:2.5rem;line-height:1.75}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:1rem}
+.btn-primary{background:var(--red);color:var(--white);padding:1rem 2.25rem;border-radius:3px;font-weight:700;font-size:1rem;transition:all .2s;text-transform:uppercase;letter-spacing:.05em;box-shadow:0 4px 20px rgba(204,34,0,.4);display:inline-block}
+.btn-primary:hover{background:var(--red-light);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--white);padding:1rem 2.25rem;border-radius:3px;font-weight:600;font-size:1rem;border:2px solid rgba(255,255,255,.2);transition:all .2s;text-transform:uppercase;letter-spacing:.05em;display:inline-block}
+.btn-outline:hover{border-color:var(--red);color:var(--red)}
+.hero-badges{display:flex;gap:2rem;margin-top:3rem;flex-wrap:wrap}
+.hero-badge-item{text-align:center}
+.badge-num{font-family:"Oswald",sans-serif;font-size:2.4rem;font-weight:700;color:var(--red);line-height:1}
+.badge-label{font-size:.8rem;color:#888;text-transform:uppercase;letter-spacing:.08em}
+.trust-bar{background:var(--red);padding:1rem 5%;display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;justify-content:center}
+.trust-item{color:var(--white);font-size:.88rem;font-weight:700;display:flex;align-items:center;gap:.5rem;text-transform:uppercase;letter-spacing:.06em}
+.trust-item::before{content:"âœ”"}
+section{padding:80px 5%}
+.section-label{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.section-title{font-family:"Oswald",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;color:var(--charcoal);margin-bottom:1rem;text-transform:uppercase}
+.section-subtitle{font-size:1rem;color:#666;max-width:600px;line-height:1.7}
+.section-header{margin-bottom:3rem}
+.services{background:var(--light-gray)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.service-card{background:var(--white);padding:1.75rem;border-radius:4px;border-top:4px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s}
+.service-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+.service-icon{font-size:2rem;margin-bottom:.75rem}
+.service-card h3{font-family:"Oswald",sans-serif;font-size:1.2rem;font-weight:600;color:var(--charcoal);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.03em}
+.service-card p{font-size:.9rem;color:#666;line-height:1.6}
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+.about-visual{background:var(--dark);border-radius:8px;padding:3rem;text-align:center;position:relative;overflow:hidden}
+.about-visual-year{font-family:"Oswald",sans-serif;font-size:5rem;font-weight:700;color:var(--red);line-height:1;position:relative;z-index:1}
+.about-visual-text{color:var(--white);font-size:1rem;font-weight:600;margin-top:.5rem;position:relative;z-index:1}
+.about-reviews{background:rgba(204,34,0,.1);border:1px solid rgba(204,34,0,.3);border-radius:4px;padding:1.25rem;margin-top:1.5rem;position:relative;z-index:1}
+.about-reviews-stars{color:#ffd700;font-size:1.3rem}
+.about-reviews-text{color:#ccc;font-size:.9rem;margin-top:.25rem}
+.about-text p{font-size:1rem;color:#555;line-height:1.8;margin-bottom:1.25rem}
+.about-features{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.about-feature{display:flex;align-items:center;gap:.75rem;font-size:.95rem;font-weight:600;color:var(--charcoal)}
+.about-feature::before{content:"";display:block;width:8px;height:8px;background:var(--red);border-radius:1px;flex-shrink:0;transform:rotate(45deg)}
+.testimonials{background:var(--dark)}
+.testimonials .section-title{color:var(--white)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.testimonial-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2rem;border-radius:4px;border-bottom:3px solid var(--red)}
+.stars{color:#ffd700;font-size:1rem;margin-bottom:1rem;letter-spacing:2px}
+blockquote{font-size:.95rem;color:#ccc;line-height:1.75;font-style:italic;margin-bottom:1.5rem}
+.testimonial-author{display:flex;align-items:center;gap:.75rem}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);font-size:.9rem;flex-shrink:0}
+.author-name{font-weight:700;color:var(--white);font-size:.95rem}
+.author-detail{font-size:.8rem;color:#888}
+.cta-banner{background:var(--red);padding:60px 5%;text-align:center}
+.cta-banner h2{font-family:"Oswald",sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);margin-bottom:1rem;text-transform:uppercase}
+.cta-banner p{font-size:1.1rem;color:rgba(255,255,255,.85);margin-bottom:2rem}
+.btn-white{background:var(--white);color:var(--red);padding:1rem 2.5rem;border-radius:3px;font-weight:700;font-size:1.05rem;transition:all .2s;display:inline-block;text-transform:uppercase;letter-spacing:.05em}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.25)}
+.contact{background:var(--light-gray)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:start}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-info h3{font-family:"Oswald",sans-serif;font-size:1.5rem;font-weight:600;color:var(--charcoal);margin-bottom:1rem;text-transform:uppercase}
+.contact-info p{font-size:.95rem;color:#666;line-height:1.7;margin-bottom:1.5rem}
+.contact-detail{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem;font-size:.95rem}
+.contact-detail-icon{width:36px;height:36px;background:var(--red);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1rem;flex-shrink:0}
+.contact-detail-text strong{display:block;font-weight:600;color:var(--charcoal)}
+.contact-detail-text span{font-size:.875rem;color:#666}
+.contact-form{background:var(--white);padding:2.5rem;border-radius:4px;box-shadow:0 2px 16px rgba(0,0,0,.07)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:1.25rem}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--charcoal);margin-bottom:.4rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:.75rem 1rem;border:1.5px solid #ddd;border-radius:3px;font-family:"Inter",sans-serif;font-size:.95rem;color:var(--text);background:var(--white);outline:none}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;background:var(--red);color:var(--white);border:none;padding:1rem;border-radius:3px;font-family:"Inter",sans-serif;font-size:1rem;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.05em}
+.form-submit:hover{background:var(--red-light)}
+footer{background:var(--dark);color:#888;padding:40px 5%;text-align:center}
+.footer-logo{font-family:"Oswald",sans-serif;font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em}
+.footer-logo span{color:var(--red)}
+footer p{font-size:.85rem;line-height:1.8}
+footer a{color:var(--red)}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.07);margin:1.5rem 0}
+</style>
+</head>
+<body>
+<div class="preview-banner">Free website preview by <strong>Alma Digital Designs</strong> &mdash; <a href="mailto:hello@almadigitaldesigns.com">Claim Your Free Redesign</a></div>
+<nav>
+  <div class="nav-logo">El Mata<span> Auto</span></div>
+  <div class="nav-links"><a href="#services">Services</a><a href="#about">About</a><a href="#testimonials">Reviews</a><a href="#contact">Contact</a></div>
+  <a href="#contact" class="nav-cta">Book Repair</a>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="hero-rating">
+      <span class="hero-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="hero-rating-text">4.6 Stars &middot; 66 Reviews &middot; W Washington St</span>
+    </div>
+    <h1>Indianapolis Auto Repair<br>You Can <span class="accent">Trust</span><br>Since <span class="accent">2006</span></h1>
+    <p>4.6 stars, 66 reviews, and 19 years of expertise on W Washington Street. El Mata gets your car fixed right.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Book Your Repair Today</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge-item"><div class="badge-num">19+</div><div class="badge-label">Years Experience</div></div>
+      <div class="hero-badge-item"><div class="badge-num">4.6&#9733;</div><div class="badge-label">Star Rating</div></div>
+      <div class="hero-badge-item"><div class="badge-num">66</div><div class="badge-label">Verified Reviews</div></div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="trust-item">Established 2006</div>
+  <div class="trust-item">W Washington Street</div>
+  <div class="trust-item">All Makes &amp; Models</div>
+  <div class="trust-item">Honest Fair Pricing</div>
+</div>
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">What We Fix</div>
+    <h2 class="section-title">Full-Service Auto Repair</h2>
+    <p class="section-subtitle">From engine rebuilds to quick brake jobs, El Mata Auto Repair has the expertise and equipment to handle any repair on any vehicle.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">&#9881;&#65039;</div><h3>Full Engine Repair</h3><p>Complete engine diagnostics, rebuilds, and replacements. We find the source of engine problems and fix them right the first time.</p></div>
+    <div class="service-card"><div class="service-icon">&#128260;</div><h3>Transmission Service</h3><p>Automatic and manual transmission repairs, fluid flushes, and rebuilds. Keep your drivetrain running smooth.</p></div>
+    <div class="service-card"><div class="service-icon">&#128721;</div><h3>Brake Inspection &amp; Repair</h3><p>Complete brake system service &mdash; pads, rotors, calipers, and brake fluid. Stop safely every time.</p></div>
+    <div class="service-card"><div class="service-icon">&#9889;</div><h3>Electrical Diagnostics</h3><p>Check engine lights, starter and alternator issues, battery replacement, and full electrical system diagnosis.</p></div>
+    <div class="service-card"><div class="service-icon">&#10052;&#65039;</div><h3>AC &amp; Heating Repair</h3><p>Keep your cabin comfortable year-round. We service refrigerant, compressors, heater cores, and blower motors.</p></div>
+    <div class="service-card"><div class="service-icon">&#128270;</div><h3>Pre-Purchase Inspections</h3><p>Buying a used car? Our thorough inspections give you peace of mind and leverage before you sign.</p></div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-visual-year">2006</div>
+      <div class="about-visual-text">Serving Indianapolis West Side</div>
+      <div class="about-reviews">
+        <div class="about-reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="about-reviews-text">4.6 Stars &middot; 66 Verified Reviews</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">West Side Most Trusted Shop</h2>
+      <p>El Mata Auto Repair has been a fixture on Indianapolis's West Side since 2006. With a 4.6-star rating and 66 verified reviews, they have earned the loyalty of families across the community through honest work and fair prices.</p>
+      <p>Located on W Washington Street, El Mata is where Indianapolis turns when they need a shop they can actually trust &mdash; one that does not oversell, does not cut corners, and stands behind every repair.</p>
+      <div class="about-features">
+        <div class="about-feature">19 years of trusted service on the West Side</div>
+        <div class="about-feature">4.6-star rating with 66 verified reviews</div>
+        <div class="about-feature">All makes and models serviced</div>
+        <div class="about-feature">Transparent pricing, no hidden fees</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="testimonials" id="testimonials">
+  <div class="section-header">
+    <div class="section-label">Customer Reviews</div>
+    <h2 class="section-title">4.6 Stars &mdash; Here is Why</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>I have been taking my car to El Mata for years. They always give me a straight answer on what is wrong and never try to upsell me on stuff I do not need. Best shop on the West Side, hands down.</blockquote><div class="testimonial-author"><div class="author-avatar">MG</div><div><div class="author-name">Marcus G.</div><div class="author-detail">Indianapolis, IN</div></div></div></div>
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>My transmission was slipping and two other shops wanted to charge me a fortune. El Mata diagnosed it correctly, fixed it for a fair price, and it has been running perfectly ever since.</blockquote><div class="testimonial-author"><div class="author-avatar">AL</div><div><div class="author-name">Angela L.</div><div class="author-detail">Indianapolis, IN</div></div></div></div>
+    <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>Fast, honest, and incredibly skilled. I brought my car in with a mystery electrical issue that had stumped everyone else. El Mata found it within an hour and had it fixed by end of day.</blockquote><div class="testimonial-author"><div class="author-avatar">RC</div><div><div class="author-name">Roberto C.</div><div class="author-detail">Indianapolis, IN</div></div></div></div>
+  </div>
+</section>
+<div class="cta-banner">
+  <h2>Your Car Deserves Expert Care</h2>
+  <p>19 years of trusted repairs, fair pricing, and a West Side shop that treats you right. Book today.</p>
+  <a href="#contact" class="btn-white">Claim Your Free Redesign</a>
+</div>
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h3>Book Your Repair Today</h3>
+      <p>Fill out the form and El Mata's team will contact you promptly to schedule your service.</p>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128205;</div><div class="contact-detail-text"><strong>Location</strong><span>W Washington Street, Indianapolis, IN</span></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">&#128222;</div><div class="contact-detail-text"><strong>Call us today</strong><span>Indianapolis West Side Auto Experts</span></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">&#11088;</div><div class="contact-detail-text"><strong>4.6 Stars &middot; 66 Reviews</strong><span>Indianapolis trusted auto repair</span></div></div>
+    </div>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Marcus" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Garcia" required></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+        <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="(317) 555-0000"></div>
+        <div class="form-group"><label>Service Needed</label><select name="service"><option value="">Select...</option><option>Full Engine Repair</option><option>Transmission Service</option><option>Brake Inspection and Repair</option><option>Electrical Diagnostics</option><option>AC and Heating Repair</option><option>Pre-Purchase Inspection</option><option>Other</option></select></div>
+        <div class="form-group"><label>Vehicle Details</label><textarea name="message" placeholder="Year, make, model, and description of the issue..."></textarea></div>
+        <input type="hidden" name="_subject" value="New Repair Booking - El Mata Auto Repair">
+        <button type="submit" class="form-submit">Book Your Repair Today</button>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">El Mata<span> Auto Repair</span></div>
+  <p>W Washington Street, Indianapolis, Indiana | <strong>Call us today</strong> | <a href="mailto:info@elmataautoindy.com">info@elmataautoindy.com</a></p>
+  <hr class="footer-divider">
+  <p>&copy; 2025 El Mata Auto Repair. All rights reserved. | Serving Indianapolis since 2006.</p>
+  <p style="margin-top:.5rem;font-size:.78rem;color:#555">Website preview by <strong style="color:#cc2200">Alma Digital Designs</strong></p>
+</footer>
+</body>
+</html>
