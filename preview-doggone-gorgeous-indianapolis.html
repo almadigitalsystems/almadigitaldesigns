@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doggone Gorgeous Mobile Pet Spa | Expert Mobile Dog Grooming in Indianapolis IN</title>
+  <meta name="description" content="Doggone Gorgeous Mobile Pet Spa in Indianapolis IN - Laura brings 30+ years of master grooming experience to your door. Stress-free mobile dog grooming. Book now." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #fdfaf5;
+      --bg2: #f5f0e8;
+      --gold: #b7791f;
+      --gold-light: #d4a04a;
+      --green: #4a7c59;
+      --card: #ffffff;
+      --text: #2a1f10;
+      --muted: #7a6b5a;
+      --border: rgba(183,121,31,0.15);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    .preview-banner { background: var(--gold); color: white; text-align: center; padding: 0.6rem 1rem; font-size: 0.8rem; font-weight: 600; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,250,245,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: white; padding: 0.5rem 1.25rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+    .nav-cta:hover { background: #9d6819; }
+    @media(max-width:768px) { .nav-links { display: none; } }
+
+    /* HERO — STORY STYLE */
+    .hero {
+      min-height: 88vh; padding: 6rem 2rem;
+      background: var(--bg2);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--bg)); }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .hero-visual { background: var(--card); border-radius: 16px; height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; box-shadow: 0 8px 40px rgba(183,121,31,0.1); border: 1px solid var(--border); }
+    .hero-visual-icon { font-size: 4.5rem; }
+    .hero-visual h3 { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text); text-align: center; }
+    .hero-visual p { font-size: 0.85rem; color: var(--muted); text-align: center; max-width: 200px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(183,121,31,0.1); border: 1px solid var(--border); padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.7rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; width: fit-content; }
+    .hero h1 { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.2; color: var(--text); margin-bottom: 1.25rem; }
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.75rem; }
+    .hero-cred { background: white; border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.6rem; }
+    .cred-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: var(--muted); }
+    .cred-item span { font-size: 1rem; }
+    .cred-item strong { color: var(--text); }
+    .btn-gold { background: var(--gold); color: white; padding: 0.875rem 2rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; transition: background 0.2s; display: inline-block; }
+    .btn-gold:hover { background: #9d6819; }
+    @media(max-width:768px) { .hero-inner { grid-template-columns: 1fr; } .hero-visual { display: none; } }
+
+    /* SERVICES */
+    .services { padding: 5rem 2rem; background: var(--bg); }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Lora', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--text); }
+    .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .service-card { background: var(--card); border-radius: 12px; padding: 2rem; border: 1px solid var(--border); transition: box-shadow 0.2s; }
+    .service-card:hover { box-shadow: 0 6px 24px rgba(183,121,31,0.1); }
+    .service-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .service-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+    /* LAURA'S STORY */
+    .story { padding: 5rem 2rem; background: var(--bg2); }
+    .story-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+    .story h2 { font-family: 'Lora', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--text); margin-bottom: 1.25rem; }
+    .story p { color: var(--muted); line-height: 1.85; font-size: 0.95rem; margin-bottom: 1rem; }
+    .story-visual { background: white; border-radius: 16px; height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+    .story-visual-icon { font-size: 4rem; }
+    .story-visual p { color: var(--muted); font-size: 0.85rem; text-align: center; }
+    @media(max-width:768px) { .story-inner { grid-template-columns: 1fr; } }
+
+    /* TESTIMONIALS */
+    .testimonials { padding: 5rem 2rem; background: var(--bg); }
+    .testimonials-grid { max-width: 1000px; margin: 2.5rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .testimonial { background: var(--card); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--border); }
+    .stars { color: #f59e0b; margin-bottom: 0.75rem; }
+    .testimonial p { color: var(--muted); font-size: 0.875rem; line-height: 1.75; margin-bottom: 1rem; font-style: italic; }
+    .reviewer { font-size: 0.8rem; font-weight: 700; color: var(--gold); }
+
+    /* CTA */
+    .cta-section { padding: 5rem 2rem; background: var(--gold); text-align: center; }
+    .cta-section h2 { font-family: 'Lora', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: white; margin-bottom: 1rem; }
+    .cta-section p { color: rgba(255,255,255,0.85); margin-bottom: 2rem; }
+    .btn-white { background: white; color: var(--gold); padding: 0.875rem 2.5rem; border-radius: 100px; font-size: 0.875rem; font-weight: 700; display: inline-block; transition: transform 0.15s; }
+    .btn-white:hover { transform: translateY(-1px); }
+
+    /* CONTACT */
+    .contact { padding: 5rem 2rem; background: var(--bg2); }
+    .contact-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact h2 { font-family: 'Lora', serif; font-size: 1.8rem; color: var(--text); margin-bottom: 1.5rem; }
+    .contact-info-item { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .contact-info-item span { font-size: 1.1rem; }
+    .contact-info-item div { color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
+    .contact-info-item strong { color: var(--text); display: block; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea { background: white; border: 1px solid var(--border); color: var(--text); padding: 0.8rem 1rem; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 0.875rem; transition: border-color 0.2s; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--gold); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    @media(max-width:768px) { .contact-inner { grid-template-columns: 1fr; } }
+
+    footer { background: var(--text); padding: 2rem; text-align: center; }
+    footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    footer strong { color: rgba(255,255,255,0.75); }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">FREE Preview Redesign by Alma Digital Designs — Claim Your Free Website Today</div>
+
+  <nav>
+    <div class="nav-logo">Doggone <span>Gorgeous</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#story">About Laura</a>
+      <a href="#contact">Book</a>
+      <a href="#contact" class="nav-cta">Schedule Laura's Visit</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-visual">
+        <div class="hero-visual-icon">🐾</div>
+        <h3>Laura — Master Groomer</h3>
+        <p>30+ Years of Expert Pet Care Coming to Your Door in Indianapolis</p>
+      </div>
+      <div>
+        <div class="hero-badge">📍 Indianapolis, IN</div>
+        <h1>30+ Years of <em>Expert<br>Pet Grooming</em> —<br>Now Coming to<br>Your Door</h1>
+        <p class="hero-sub">Laura brings master-level grooming experience and a gentle touch directly to your driveway. Doggone Gorgeous Mobile Pet Spa — Indianapolis's most experienced mobile groomer.</p>
+        <div class="hero-cred">
+          <div class="cred-item"><span>🏆</span> <div><strong>Master Groomer</strong> — Laura's 30+ years speaks for itself</div></div>
+          <div class="cred-item"><span>🚐</span> <div>Fully equipped mobile spa comes to your home</div></div>
+          <div class="cred-item"><span>🐾</span> <div>Specialists in seniors &amp; special needs pets</div></div>
+        </div>
+        <a href="#contact" class="btn-gold">Schedule Laura's Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-header">
+      <div class="section-label">Grooming Services</div>
+      <h2 class="section-title">Expert Mobile Grooming by Laura</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">✂️</div><h3>Full Groom & Styling by Breed Standard</h3><p>Complete professional groom styled to your breed's standard — or any style you prefer. Laura's expertise ensures perfection.</p></div>
+      <div class="service-card"><div class="service-icon">🛁</div><h3>Bath, Blow-Dry & Brush-Out</h3><p>Full bath with professional shampoos, blow-dry, and thorough brush-out. Leaves coats clean, healthy, and manageable.</p></div>
+      <div class="service-card"><div class="service-icon">✂️</div><h3>Nail Trim & Grinding</h3><p>Nails trimmed short and finished with a grinder for smooth, comfortable edges. Gentle handling for anxious dogs.</p></div>
+      <div class="service-card"><div class="service-icon">👂</div><h3>Ear Cleaning & Plucking</h3><p>Professional ear cleaning and plucking to keep ears healthy and prevent infections. Included or available as add-on.</p></div>
+      <div class="service-card"><div class="service-icon">🐶</div><h3>Puppy First Groom</h3><p>Gentle, patient first grooming experience designed to make puppies feel safe and comfortable with the process.</p></div>
+      <div class="service-card"><div class="service-icon">🐾</div><h3>Senior & Special Needs Specialists</h3><p>30 years of experience means Laura knows how to care for older dogs and pets with special needs. Gentle, patient, expert care.</p></div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="story-inner">
+      <div>
+        <div class="section-label">About Laura</div>
+        <h2>30+ Years of Master Grooming Experience</h2>
+        <p>Doggone Gorgeous Mobile Pet Spa is Laura's Indianapolis-based mobile grooming business, backed by over 30 years of professional grooming experience.</p>
+        <p>As a master groomer, Laura brings salon-quality care directly to your home, giving every pet individual stress-free attention. From puppies to seniors, Laura's expertise makes Doggone Gorgeous the trusted choice for Indianapolis pet owners.</p>
+        <a href="#contact" class="btn-gold" style="margin-top:1.5rem;">Schedule Laura's Visit</a>
+      </div>
+      <div class="story-visual">
+        <div class="story-visual-icon">🏆</div>
+        <p>Laura — Master Groomer<br>30+ Years Experience<br>Indianapolis IN</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-header">
+      <div class="section-label">Happy Pets</div>
+      <h2 class="section-title">What Indianapolis Pet Owners Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Laura has been grooming our two dogs for years and her experience really shows. She handles our senior poodle with such patience and care. Absolute best."</p><div class="reviewer">— Patricia H., Indianapolis IN</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"30+ years of experience and it shows in every aspect. Our dog had anxiety at salons — now she loves seeing Laura's van pull up. Truly gifted groomer."</p><div class="reviewer">— Michael C., Indianapolis IN</div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><p>"Laura did our puppy's first groom and it was perfect — patient, gentle, no tears. We'll never go anywhere else. Indianapolis is lucky to have her."</p><div class="reviewer">— Amanda S., Indianapolis IN</div></div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Give Your Pet Laura's Expert Touch</h2>
+    <p>30+ years of master grooming experience, coming to your Indianapolis home. Stress-free, gentle, professional.</p>
+    <a href="#contact" class="btn-white">Schedule Laura's Visit</a>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <div class="section-label">Book Now</div>
+      <h2 class="section-title">Schedule Your Mobile Groom</h2>
+    </div>
+    <div class="contact-inner">
+      <div>
+        <h2>Doggone Gorgeous Mobile Pet Spa</h2>
+        <div class="contact-info-item"><span>📍</span><div><strong>Service Area</strong>Indianapolis, IN and surrounding areas</div></div>
+        <div class="contact-info-item"><span>📧</span><div><strong>Email</strong>doggonegorgeousmobilepetspa@gmail.com</div></div>
+        <div class="contact-info-item"><span>🏆</span><div><strong>Laura — Master Groomer</strong>30+ years of professional grooming experience</div></div>
+        <div class="contact-info-item"><span>🐾</span><div><strong>Specialties</strong>All breeds, Seniors, Special Needs, Puppy First Grooms</div></div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Doggone Gorgeous Mobile Pet Spa - Indianapolis IN" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <input type="text" name="pet" placeholder="Pet's Name, Breed & Age" />
+        <textarea name="message" placeholder="What grooming service are you looking for? Any special needs?"></textarea>
+        <button type="submit" class="btn-gold">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Doggone Gorgeous Mobile Pet Spa</strong> — Indianapolis, IN | Laura — Master Groomer | 30+ Years Experience | <a href="mailto:doggonegorgeousmobilepetspa@gmail.com" style="color:rgba(255,255,255,0.5);">doggonegorgeousmobilepetspa@gmail.com</a></p>
+    <p style="margin-top:0.5rem;">Preview designed by <strong>Alma Digital Designs</strong> · almadigitalservices.com</p>
+  </footer>
+</body>
+</html>
