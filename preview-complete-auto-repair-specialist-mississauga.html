@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Auto Repair Specialist | Mississauga, ON</title>
+  <meta name="description" content="4.8-star auto repair in Mississauga, ON. Complete engine, transmission, brakes &amp; electrical service. Transparent pricing. Book your repair today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f2044;
+      --navy-mid: #1a3260;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --charcoal: #2d2d2d;
+      --white: #ffffff;
+      --light: #f4f6fb;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy); padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    .nav-logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1rem; color: var(--white); text-decoration: none; line-height: 1.2; }
+    .nav-logo span { color: var(--gold-light); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta {
+      background: var(--gold); color: var(--navy);
+      padding: 0.6rem 1.3rem; border-radius: 6px;
+      font-weight: 700; font-size: 0.85rem; text-decoration: none;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+    @media(max-width:768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(150deg, var(--navy) 0%, var(--navy-mid) 55%, #0f2044 100%);
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: 45%;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
+    .hero-stars {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold-light); padding: 0.4rem 1rem; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-stars .stars-val { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 900; }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      font-weight: 900; color: var(--white);
+      line-height: 1.1; margin-bottom: 1.2rem;
+    }
+    .hero h1 span { color: var(--gold-light); }
+    .hero p { font-size: clamp(1rem, 2vw, 1.15rem); color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 2.5rem; max-width: 560px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn-primary {
+      background: var(--gold); color: var(--navy);
+      padding: 1rem 2rem; border-radius: 8px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.2s; box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent; color: var(--white);
+      padding: 1rem 2rem; border-radius: 8px;
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.25); transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold-light); color: var(--gold-light); }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.65); font-size: 0.88rem; }
+    .trust-item span { color: var(--gold-light); }
+
+    /* SECTIONS */
+    section { padding: 80px 5%; }
+    .section-label { text-align: center; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .section-title { text-align: center; font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 800; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
+    .section-sub { text-align: center; color: var(--muted); font-size: 1rem; max-width: 560px; margin: 0 auto 3rem; line-height: 1.7; }
+
+    /* SERVICES */
+    .services-bg { background: var(--light); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .service-card {
+      background: var(--white); border-radius: 12px; padding: 2rem;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 2px 14px rgba(15,32,68,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(15,32,68,0.12); }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+    /* ABOUT */
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    @media(max-width:768px) { .about-inner { grid-template-columns: 1fr; gap: 2rem; } }
+    .about-visual {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 16px; padding: 3rem 2.5rem;
+      position: relative; overflow: hidden;
+    }
+    .about-visual::before {
+      content: '&#128665;';
+      position: absolute; bottom: -20px; right: -20px;
+      font-size: 10rem; opacity: 0.05;
+    }
+    .about-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; position: relative; z-index: 1; }
+    .about-stat { text-align: center; padding: 1.5rem 1rem; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; }
+    .about-stat-num { font-family: 'Montserrat', sans-serif; font-size: 2.6rem; font-weight: 900; color: var(--gold-light); line-height: 1; }
+    .about-stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.4rem; line-height: 1.3; }
+    .about-text h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem,3vw,2.4rem); font-weight: 800; color: var(--navy); margin-bottom: 1.2rem; line-height: 1.2; }
+    .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem; }
+    .about-list { list-style: none; margin: 1.2rem 0; }
+    .about-list li { display: flex; align-items: center; gap: 0.7rem; color: var(--text); margin-bottom: 0.7rem; font-size: 0.93rem; }
+    .about-list li::before { content: '&#10003;'; background: var(--gold); color: var(--navy); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+
+    /* TESTIMONIALS */
+    .testimonials-bg { background: var(--navy); }
+    .testimonials-bg .section-title { color: var(--white); }
+    .testimonials-bg .section-sub { color: rgba(255,255,255,0.55); }
+    .testimonials-bg .section-label { color: var(--gold-light); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .testimonial-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 12px; padding: 2rem;
+    }
+    .stars { color: var(--gold-light); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testimonial-card p { color: rgba(255,255,255,0.82); line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.93rem; font-style: italic; }
+    .reviewer { display: flex; align-items: center; gap: 0.8rem; }
+    .reviewer-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 700; font-size: 0.95rem; flex-shrink: 0; }
+    .reviewer-name { color: var(--white); font-weight: 600; font-size: 0.88rem; }
+    .reviewer-loc { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+
+    /* CONTACT */
+    .contact-inner { max-width: 760px; margin: 0 auto; }
+    .contact-form { background: var(--white); border-radius: 14px; padding: 2.5rem; box-shadow: 0 4px 32px rgba(15,32,68,0.1); border-top: 4px solid var(--gold); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media(max-width:600px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: 0.84rem; font-weight: 600; color: var(--navy); }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 0.8rem 1rem; border: 1.5px solid #dde4ef; border-radius: 8px;
+      font-size: 0.93rem; font-family: 'Inter', sans-serif; color: var(--text);
+      background: #f8fafc; transition: border-color 0.2s; outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit { width: 100%; padding: 1rem; background: var(--gold); color: var(--navy); border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; font-family: 'Inter', sans-serif; cursor: pointer; transition: background 0.2s; }
+    .form-submit:hover { background: var(--gold-light); }
+
+    /* FOOTER */
+    footer { background: #070f1f; padding: 3rem 5% 2rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    @media(max-width:768px) { .footer-top { grid-template-columns: 1fr; gap: 2rem; } }
+    .footer-brand p { color: rgba(255,255,255,0.4); font-size: 0.88rem; line-height: 1.6; margin-top: 0.8rem; }
+    .footer-col h4 { color: var(--white); font-weight: 700; margin-bottom: 1rem; font-size: 0.93rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.4); font-size: 0.86rem; margin-bottom: 0.5rem; text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { color: rgba(255,255,255,0.28); font-size: 0.78rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.28); text-decoration: none; }
+    .preview-ribbon {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--navy); border-top: 3px solid var(--gold);
+      padding: 0.7rem 5%; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+    .preview-ribbon p { color: rgba(255,255,255,0.85); font-size: 0.82rem; }
+    .preview-ribbon a { background: var(--gold); color: var(--navy); padding: 0.5rem 1.2rem; border-radius: 6px; font-weight: 700; font-size: 0.82rem; text-decoration: none; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Complete Auto Repair <span>Specialist</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-stars">
+      <span class="stars-val">4.8</span>
+      <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Mississauga&rsquo;s Trusted Auto Repair</span>
+    </div>
+    <h1>Mississauga&rsquo;s Complete Auto Repair Specialist &mdash; <span>4.8 Stars</span></h1>
+    <p>Complete diagnostics, complete repairs, complete peace of mind. Serving Mississauga drivers with 4.8-star quality you can count on.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">&#128221; Get a Complete Service Quote</a>
+      <a href="#services" class="btn-secondary">View All Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span>&#9733;</span> 4.8-Star Rating</div>
+      <div class="trust-item"><span>&#9989;</span> Transparent Pricing</div>
+      <div class="trust-item"><span>&#9989;</span> Full-Service Garage</div>
+      <div class="trust-item"><span>&#9989;</span> Mississauga, Ontario</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <p class="section-label">Complete Service Menu</p>
+  <h2 class="section-title">Full-Service Auto Repair in Mississauga</h2>
+  <p class="section-sub">From complex engine overhauls to routine maintenance &mdash; complete care for every Mississauga vehicle we service.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">&#128269;</div>
+      <h3>Full Vehicle Diagnostics</h3>
+      <p>Comprehensive computer and manual diagnostics to identify every issue &mdash; accurately and affordably, before any work begins.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128295;</div>
+      <h3>Engine Repair &amp; Overhaul</h3>
+      <p>From head gaskets to complete engine rebuilds &mdash; experienced technicians who understand engines inside and out.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#9881;</div>
+      <h3>Transmission Repair</h3>
+      <p>Automatic and manual transmission service, fluid changes, and full rebuilds. Keeping your drivetrain healthy for the long term.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128308;</div>
+      <h3>Brake System Service</h3>
+      <p>Complete brake system inspection and repair &mdash; pads, discs, callipers, ABS, and brake fluid. Safe stopping every time.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#9889;</div>
+      <h3>Electrical System Repair</h3>
+      <p>Modern vehicles are as much computer as car. We diagnose and repair complex electrical faults accurately on all makes and models.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128197;</div>
+      <h3>Preventive Maintenance</h3>
+      <p>Oil changes, filters, fluids, belts and scheduled services to prevent expensive breakdowns and keep your car reliable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-stat-grid">
+        <div class="about-stat">
+          <div class="about-stat-num">4.8</div>
+          <div class="about-stat-label">Star Google Rating</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">100%</div>
+          <div class="about-stat-label">Transparent Pricing</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">Full</div>
+          <div class="about-stat-label">Service Garage</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">GTA</div>
+          <div class="about-stat-label">Mississauga, Ontario</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <h2>Mississauga&rsquo;s Complete Auto Repair You Can Trust</h2>
+      <p>Complete Auto Repair Specialist is Mississauga&rsquo;s trusted full-service garage. With a 4.8-star rating, they&rsquo;ve built a reputation for thorough diagnostics and repairs that last &mdash; at prices that are fair and transparent.</p>
+      <p>Whether your car needs a routine oil change or a complex engine overhaul, the team treats every vehicle with the same careful attention to detail that has earned Mississauga&rsquo;s trust.</p>
+      <ul class="about-list">
+        <li>4.8-star rating from real Mississauga customers</li>
+        <li>Complete service from diagnosis to delivery</li>
+        <li>Transparent pricing &mdash; no surprises on your invoice</li>
+        <li>Expert technicians on all makes and models</li>
+        <li>Repairs that are done right and built to last</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="margin-top:1rem; display:inline-flex;">Claim Your Free Redesign</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-bg" id="testimonials">
+  <p class="section-label">Customer Reviews</p>
+  <h2 class="section-title">4.8 Stars From Mississauga Drivers</h2>
+  <p class="section-sub">Real reviews from real Mississauga customers who trust Complete Auto Repair Specialist with their vehicles.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Brought my car in with an engine warning light. They ran a full diagnostic, explained exactly what was wrong, gave me a written quote, then fixed it properly. No upselling, no drama. 4.8 stars is earned."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">R</div>
+        <div>
+          <div class="reviewer-name">Rajan P.</div>
+          <div class="reviewer-loc">Port Credit, Mississauga</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Transmission was giving me trouble. Three other shops quoted me double. Complete Auto Repair Specialist fixed it properly, on time, on budget. This is the most honest garage I&rsquo;ve ever dealt with in Mississauga."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">K</div>
+        <div>
+          <div class="reviewer-name">Karen L.</div>
+          <div class="reviewer-loc">Streetsville, Mississauga</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Electrical gremlin was driving me crazy. Multiple shops couldn&rsquo;t find it. These guys diagnosed it in one visit and fixed it same day. Brilliant work. My family&rsquo;s cars all come here now. Highly recommend."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">M</div>
+        <div>
+          <div class="reviewer-name">Michael O.</div>
+          <div class="reviewer-loc">Meadowvale, Mississauga</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Get a Quote</p>
+  <h2 class="section-title">Get a Complete Service Quote</h2>
+  <p class="section-sub">Tell us about your vehicle and what it needs. We&rsquo;ll get back to you with a transparent, no-obligation quote.</p>
+  <div class="contact-inner">
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Michael Chen" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 905-555-0000" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vehicle">Vehicle (Year, Make &amp; Model)</label>
+            <input type="text" id="vehicle" name="vehicle" placeholder="e.g. 2020 Toyota Camry">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Required</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>Full Vehicle Diagnostics</option>
+              <option>Engine Repair &amp; Overhaul</option>
+              <option>Transmission Repair</option>
+              <option>Brake System Service</option>
+              <option>Electrical System Repair</option>
+              <option>Preventive Maintenance</option>
+              <option>Other / Multiple Services</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Describe the Issue</label>
+          <textarea id="message" name="message" placeholder="What is your vehicle doing? Any warning lights, unusual sounds, or specific concerns?"></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New Quote Request - Complete Auto Repair Specialist Mississauga">
+        <button type="submit" class="form-submit">Get a Complete Service Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="font-size:1.05rem;">Complete Auto Repair <span style="color:#e8c96a;">Specialist</span></a>
+        <p>Mississauga&rsquo;s trusted full-service garage. 4.8-star reputation built on thorough diagnostics and transparent pricing. Serving the GTA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Full Vehicle Diagnostics</a>
+        <a href="#services">Engine Repair</a>
+        <a href="#services">Transmission Repair</a>
+        <a href="#services">Brake System Service</a>
+        <a href="#services">Electrical Repair</a>
+        <a href="#services">Preventive Maintenance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#contact">&#128221; Get a Quote</a>
+        <a href="#">&#128205; Mississauga, Ontario</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Complete Auto Repair Specialist. All rights reserved.</p>
+      <p>Preview built by <a href="https://almadigitaldesigns.com">Alma Digital Designs</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- PREVIEW RIBBON -->
+<div class="preview-ribbon">
+  <p>&#127775; This is a FREE preview built by Alma Digital Designs for Complete Auto Repair Specialist</p>
+  <a href="https://almadigitaldesigns.com">Claim Your Free Redesign</a>
+</div>
+
+</body>
+</html>
