@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electricistas VALCAT | Servicios Electricos Lima Peru</title>
+  <meta name="description" content="Electricistas certificados Lima. Instalaciones fallas tableros." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFD600;
+      --navy: #0A1628;
+      --navy-mid: #102040;
+      --white: #FFFFFF;
+      --gray: #F4F4F4;
+      --text: #1A1A2E;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--yellow);
+      color: var(--navy);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--navy);
+    }
+    .preview-banner a { color: var(--navy); text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--yellow); letter-spacing: 0.1em; }
+    .nav-phone { color: var(--yellow); font-weight: 700; font-size: 0.95rem; text-decoration: none; }
+    .nav-phone:hover { text-decoration: underline; }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,214,0,0.03) 40px,
+        rgba(255,214,0,0.03) 80px
+      );
+      padding: 80px 5% 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -80px;
+      width: 400px; height: 400px;
+      background: var(--yellow);
+      border-radius: 50%;
+      opacity: 0.06;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--yellow); }
+    .hero p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 32px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.04em;
+      transition: transform 0.15s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 15px 32px;
+      border: 2px solid rgba(255,255,255,0.35);
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--yellow);
+      padding: 20px 5%;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--navy); line-height: 1; }
+    .stat-label { font-size: 0.75rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* SERVICES */
+    .section { padding: 80px 5%; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--navy);
+      margin-bottom: 48px;
+      letter-spacing: 0.03em;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px;
+    }
+    .service-card {
+      background: var(--navy);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .service-card:hover { background: var(--navy-mid); }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 3px;
+      background: var(--yellow);
+      transition: width 0.3s;
+    }
+    .service-card:hover::after { width: 100%; }
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .service-card p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* ABOUT */
+    .about-section {
+      background: var(--gray);
+      padding: 80px 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-badge {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--yellow);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      padding: 8px 20px;
+      margin-bottom: 20px;
+    }
+    .about-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--navy);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .about-section p { color: #444; line-height: 1.8; font-size: 1rem; margin-bottom: 16px; }
+    .check-list { list-style: none; margin-top: 20px; }
+    .check-list li {
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .check-list li::before {
+      content: '✓';
+      position: absolute; left: 0;
+      color: var(--yellow);
+      background: var(--navy);
+      width: 18px; height: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 900;
+    }
+    .about-visual {
+      background: var(--navy);
+      padding: 48px 36px;
+      text-align: center;
+    }
+    .about-visual .big-icon { font-size: 5rem; margin-bottom: 20px; display: block; }
+    .about-visual h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--yellow); margin-bottom: 8px; }
+    .about-visual p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+    /* TESTIMONIALS */
+    .testimonials { padding: 80px 5%; background: var(--navy); }
+    .testimonials .section-label { color: var(--yellow); }
+    .testimonials h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--white); margin-bottom: 48px; letter-spacing: 0.03em; }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .testi-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,214,0,0.2);
+      padding: 32px 28px;
+    }
+    .testi-stars { color: var(--yellow); font-size: 1rem; margin-bottom: 16px; }
+    .testi-card p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .testi-author { font-weight: 700; color: var(--yellow); font-size: 0.9rem; }
+    .testi-location { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+
+    /* CTA */
+    .cta-section {
+      background: var(--yellow);
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--navy); margin-bottom: 12px; letter-spacing: 0.03em; }
+    .cta-section p { color: rgba(10,22,40,0.7); font-size: 1.05rem; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-dark { background: var(--navy); color: var(--yellow); font-weight: 700; font-size: 1rem; padding: 16px 40px; border: none; cursor: pointer; text-decoration: none; display: inline-block; letter-spacing: 0.04em; transition: transform 0.15s; }
+    .btn-dark:hover { transform: translateY(-2px); }
+
+    /* CONTACT FORM */
+    .contact-section { padding: 80px 5%; background: var(--white); }
+    .contact-section .section-label { color: var(--yellow); }
+    .contact-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--navy); margin-bottom: 12px; }
+    .contact-section > p { color: #555; margin-bottom: 40px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-info h3 { font-weight: 700; font-size: 1.1rem; color: var(--navy); margin-bottom: 20px; }
+    .contact-item { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
+    .contact-item-icon { font-size: 1.2rem; margin-top: 2px; }
+    .contact-item-text a { color: var(--navy); text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+    .contact-item-text a:hover { text-decoration: underline; }
+    .contact-item-text span { font-size: 0.8rem; color: #888; display: block; }
+    form { display: flex; flex-direction: column; gap: 14px; }
+    input, textarea, select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 2px solid #E0E0E0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #FAFAFA;
+    }
+    input:focus, textarea:focus { border-color: var(--navy); background: white; }
+    textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    button[type="submit"] {
+      background: var(--navy);
+      color: var(--yellow);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 32px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+    button[type="submit"]:hover { background: var(--yellow); color: var(--navy); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 28px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--yellow); }
+    footer p { color: rgba(255,255,255,0.45); font-size: 0.8rem; }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    footer a:hover { color: var(--yellow); }
+
+    @media (max-width: 768px) {
+      .about-section, .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-bar { gap: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PREVIEW BANNER -->
+  <div class="preview-banner">
+    Vista previa GRATUITA creada por Alma Digital Designs — <a href="#contacto">Reclama tu sitio hoy</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">VALCAT</div>
+    <a class="nav-phone" href="tel:+51918139095">+51 918 139 095</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">Lima, Peru · Certificados</div>
+    <h1>Instalaciones<br /><span>Electricas</span><br />Seguras en Lima</h1>
+    <p>VALCAT soluciones electricas residenciales y comerciales en Lima con transparencia y profesionalismo certificado.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">Solicita tu presupuesto gratis</a>
+      <a href="tel:+51918139095" class="btn-outline">Llamar ahora</a>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Proyectos</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Certificados</div></div>
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Emergencias</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Reclamos</div></div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="servicios">
+    <div class="section-label">Lo que hacemos</div>
+    <h2>Nuestros Servicios Electricos</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🏠</span>
+        <h3>Instalaciones Residenciales</h3>
+        <p>Instalacion y mantenimiento electrico para hogares con materiales de primera calidad.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏢</span>
+        <h3>Instalaciones Comerciales</h3>
+        <p>Soluciones electricas para empresas, oficinas y locales comerciales en Lima.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">⚡</span>
+        <h3>Reparacion de Fallas</h3>
+        <p>Diagnostico y reparacion rapida de cortos, sobrecargas y fallas electricas.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔌</span>
+        <h3>Tableros y Circuitos</h3>
+        <p>Instalacion, ampliacion y modernizacion de tableros electricos y circuitos.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📋</span>
+        <h3>Certificaciones Electricas</h3>
+        <p>Certificados bajo normativa vigente para viviendas y establecimientos comerciales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <div class="about-section" id="nosotros">
+    <div>
+      <div class="about-badge">Sobre VALCAT</div>
+      <h2>Electricistas de Confianza en Lima</h2>
+      <p>Electricistas VALCAT atiende hogares y empresas en toda Lima con un equipo certificado bajo la normativa electrica vigente en Peru.</p>
+      <p>Trabajamos con transparencia, materiales certificados y garantia en cada trabajo. Tu seguridad es nuestra prioridad.</p>
+      <ul class="check-list">
+        <li>Equipo certificado bajo normativa peruana</li>
+        <li>Presupuesto gratuito sin compromisos</li>
+        <li>Atencion de emergencias 24/7</li>
+        <li>Materiales de primera calidad</li>
+        <li>Garantia en todos los trabajos</li>
+      </ul>
+    </div>
+    <div class="about-visual">
+      <span class="big-icon">⚡</span>
+      <h3>Trabajamos con Seguridad</h3>
+      <p>Cada instalacion cumple con los estandares de seguridad electrica exigidos en Peru.</p>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonios">
+    <div class="section-label">Clientes satisfechos</div>
+    <h2>Lo Que Dicen Nuestros Clientes</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"VALCAT hizo la instalacion electrica de mi casa en tiempo record. Muy profesionales, limpios y el precio fue justo. Totalmente recomendados."</p>
+        <div class="testi-author">Carlos M.</div>
+        <div class="testi-location">San Isidro, Lima</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Tuvimos un problema electrico urgente en nuestra tienda y VALCAT resolvio todo en pocas horas. Excelente atencion y trabajo garantizado."</p>
+        <div class="testi-author">Patricia R.</div>
+        <div class="testi-location">Miraflores, Lima</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Instalaron el tablero electrico de mi departamento. Trabajo prolijo, con los documentos en regla. Cumplen con lo que prometen."</p>
+        <div class="testi-author">Jorge V.</div>
+        <div class="testi-location">Surco, Lima</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Solicita tu Presupuesto Gratis</h2>
+    <p>Sin compromiso. Te respondemos el mismo dia. Trabajamos en toda Lima.</p>
+    <a href="#contacto" class="btn-dark">Solicita tu presupuesto gratis</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contacto">
+    <div class="section-label">Contacto</div>
+    <h2>Escribenos Ahora</h2>
+    <p>Respondemos consultas y presupuestos el mismo dia.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Datos de contacto</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <a href="tel:+51918139095">+51 918 139 095</a>
+            <span>Llamadas y WhatsApp</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-text">
+            <a href="mailto:electricistasvalcat@gmail.com">electricistasvalcat@gmail.com</a>
+            <span>Correo electronico</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <a href="#">Lima, Peru</a>
+            <span>Atendemos toda Lima</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="hidden" name="business" value="Electricistas VALCAT - Lima Peru" />
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="tel" name="telefono" placeholder="Tu telefono" required />
+          </div>
+          <input type="email" name="email" placeholder="Tu correo electronico" required />
+          <select name="servicio">
+            <option value="">Selecciona un servicio</option>
+            <option>Instalaciones Residenciales</option>
+            <option>Instalaciones Comerciales</option>
+            <option>Reparacion de Fallas</option>
+            <option>Tableros y Circuitos</option>
+            <option>Certificaciones Electricas</option>
+          </select>
+          <textarea name="mensaje" placeholder="Describe tu proyecto o consulta..."></textarea>
+          <button type="submit">Solicitar Presupuesto Gratis</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">VALCAT</div>
+    <p>Electricistas VALCAT &mdash; Lima, Peru &mdash; <a href="tel:+51918139095">+51 918 139 095</a></p>
+    <p>Vista previa disenada por <a href="#">Alma Digital Designs</a></p>
+  </footer>
+
+</body>
+</html>
