@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salon Arte y Belleza | Salon de Belleza Santiago Chile</title>
+  <meta name="description" content="Salon belleza Santiago. Cortes coloracion keratina." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rose: #C4536A;
+      --rose-light: #E8899A;
+      --rose-pale: #FAE8EC;
+      --burgundy: #6B1A2A;
+      --cream: #FDF6F0;
+      --cream-dark: #F3E8DF;
+      --white: #FFFFFF;
+      --text: #2C1A20;
+      --text-muted: #7A5A62;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--burgundy);
+      color: #FDE8EC;
+      text-align: center;
+      padding: 11px 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-banner a { color: var(--rose-light); text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      padding: 0 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--burgundy);
+    }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-muted); font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--rose); }
+    .nav-cta {
+      background: var(--rose);
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--burgundy); }
+
+    /* HERO — SPLIT SCREEN */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+    }
+    .hero-left {
+      background: var(--burgundy);
+      padding: 72px 7%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--rose-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--rose-light);
+    }
+    .hero-left h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-left h1 em { font-style: italic; color: var(--rose-light); }
+    .hero-left p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+    .btn-rose {
+      background: var(--rose);
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      width: fit-content;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-rose:hover { background: var(--rose-light); transform: translateY(-2px); }
+    .hero-right {
+      background: var(--rose-pale);
+      padding: 48px 7%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .hero-right h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--burgundy);
+      margin-bottom: 28px;
+    }
+    .service-pill {
+      display: inline-block;
+      background: white;
+      border: 1px solid rgba(196,83,106,0.25);
+      color: var(--rose);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 50px;
+      margin: 5px 5px 5px 0;
+      transition: background 0.2s;
+    }
+    .service-pill:hover { background: var(--rose); color: white; }
+    .hero-phone {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--burgundy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    /* SERVICES SECTION */
+    .services-section {
+      padding: 88px 6%;
+      background: var(--white);
+    }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyebrow {
+      display: inline-block;
+      color: var(--rose);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--burgundy);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      text-align: center;
+      padding: 36px 24px;
+      border: 1px solid var(--cream-dark);
+      border-radius: 4px;
+      background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--rose-light);
+      box-shadow: 0 8px 28px rgba(196,83,106,0.12);
+    }
+    .service-emoji { font-size: 2rem; display: block; margin-bottom: 16px; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--burgundy); margin-bottom: 8px; }
+    .service-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ABOUT */
+    .about-section {
+      padding: 88px 6%;
+      background: var(--cream-dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-left { position: relative; }
+    .about-decoration {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--burgundy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .about-deco-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--rose-pale);
+      font-style: italic;
+      opacity: 0.4;
+    }
+    .about-deco-sub { color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .about-accent {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 120px; height: 120px;
+      background: var(--rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .about-accent-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: white; line-height: 1; }
+    .about-accent-label { font-size: 0.65rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.08em; }
+    .about-right .section-eyebrow { text-align: left; display: block; }
+    .about-right h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--burgundy); margin-bottom: 20px; }
+    .about-right p { color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-size: 0.95rem; }
+    .detail-row { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(196,83,106,0.15); }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-icon { color: var(--rose); font-size: 1rem; margin-top: 2px; }
+    .detail-text { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+      padding: 88px 6%;
+      background: var(--white);
+    }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .testi-card {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      padding: 32px 28px;
+      border-radius: 4px;
+      position: relative;
+    }
+    .testi-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--rose-pale);
+      line-height: 1;
+      position: absolute;
+      top: 16px; left: 24px;
+    }
+    .testi-stars { color: var(--rose); font-size: 0.9rem; margin-bottom: 12px; margin-top: 24px; }
+    .testi-card p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .testi-name { font-weight: 700; font-size: 0.88rem; color: var(--burgundy); }
+    .testi-loc { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* CTA */
+    .cta-section {
+      padding: 88px 6%;
+      background: var(--burgundy);
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--rose-light); }
+    .cta-section p { color: rgba(255,255,255,0.65); font-size: 1rem; margin-bottom: 36px; font-weight: 300; }
+    .btn-outline-white {
+      background: transparent;
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 36px;
+      border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.4);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-left: 14px;
+      transition: border-color 0.2s;
+    }
+    .btn-outline-white:hover { border-color: var(--rose-light); color: var(--rose-light); }
+
+    /* CONTACT */
+    .contact-section {
+      padding: 88px 6%;
+      background: var(--cream);
+    }
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--burgundy);
+      margin-bottom: 24px;
+    }
+    .contact-info p { color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin-bottom: 28px; }
+    .contact-detail {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .contact-detail-icon { font-size: 1.1rem; }
+    .contact-detail a { color: var(--burgundy); text-decoration: none; font-weight: 600; font-size: 0.93rem; }
+    .contact-detail a:hover { color: var(--rose); }
+    .contact-detail span { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+    form { background: white; padding: 40px 36px; border: 1px solid var(--cream-dark); }
+    form h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--burgundy); margin-bottom: 24px; }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #E0D0D5;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      background: var(--cream);
+      margin-bottom: 14px;
+      transition: border-color 0.2s;
+      color: var(--text);
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--rose); background: white; }
+    textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    button[type="submit"] {
+      width: 100%;
+      background: var(--rose);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+    }
+    button[type="submit"]:hover { background: var(--burgundy); }
+
+    /* FOOTER */
+    footer {
+      background: var(--text);
+      padding: 32px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer .logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--rose-light);
+    }
+    footer p { color: rgba(255,255,255,0.35); font-size: 0.78rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--rose-light); }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left, .hero-right { padding: 56px 6%; }
+      .about-section, .contact-wrapper { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      form { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PREVIEW BANNER -->
+  <div class="preview-banner">
+    Vista previa GRATUITA creada por Alma Digital Designs — <a href="#contacto">Reclama tu sitio hoy</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Arte y Belleza</div>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="nav-cta">Reservar hora</a>
+    </div>
+  </nav>
+
+  <!-- HERO — SPLIT SCREEN -->
+  <section class="hero" id="inicio">
+    <div class="hero-left">
+      <div class="hero-tag">Santiago, Chile</div>
+      <h1>Tu Salon de Confianza en el <em>Corazon de Santiago</em></h1>
+      <p>Arte y Belleza con tecnicas modernas y trato calido. Cada visita es una experiencia de bienestar y transformacion.</p>
+      <a href="#contacto" class="btn-rose">Reserva tu hora ahora</a>
+    </div>
+    <div class="hero-right">
+      <h2>Nuestros servicios incluyen:</h2>
+      <div>
+        <span class="service-pill">✂️ Corte y Peinado</span>
+        <span class="service-pill">🎨 Tinturas y Coloracion</span>
+        <span class="service-pill">✨ Alisado y Keratina</span>
+        <span class="service-pill">💧 Hidratacion</span>
+        <span class="service-pill">💄 Maquillaje</span>
+      </div>
+      <a href="tel:+56945570041" class="hero-phone">
+        📞 +56 9 4557 0041
+      </a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="servicios">
+    <div class="section-header">
+      <div class="section-eyebrow">Nuestros Servicios</div>
+      <h2>Todo lo que Necesitas para Lucir Hermosa</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-emoji">✂️</span>
+        <h3>Corte y Peinado</h3>
+        <p>Cortes modernos y peinados personalizados para cada rostro y estilo.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🎨</span>
+        <h3>Tinturas y Coloracion</h3>
+        <p>Coloraciones vibrantes, mechas balayage y tecnicas de ultima tendencia.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">✨</span>
+        <h3>Alisado y Keratina</h3>
+        <p>Tratamientos de alisado permanente y keratina para cabello liso y brillante.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">💧</span>
+        <h3>Hidratacion Capilar</h3>
+        <p>Mascarillas y tratamientos de hidratacion profunda para todo tipo de cabello.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">💄</span>
+        <h3>Maquillaje</h3>
+        <p>Maquillaje profesional para eventos, novias y ocasiones especiales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="nosotros">
+    <div class="about-left">
+      <div class="about-decoration">
+        <div class="about-deco-text">Belleza</div>
+        <div class="about-deco-sub">Arte &amp; Estilo</div>
+      </div>
+      <div class="about-accent">
+        <div class="about-accent-num">+10</div>
+        <div class="about-accent-label">Anos de Experiencia</div>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="section-eyebrow">Sobre Nosotros</div>
+      <h2>Pasion por la Belleza en Santiago</h2>
+      <p>Salon Arte y Belleza se encuentra en Santa Isabel 0295, Santiago. Combinamos las ultimas tendencias con una atencion personalizada que te hara sentir unica.</p>
+      <p>Nuestro equipo de profesionales se capacita constantemente para ofrecerte los mejores tratamientos con productos de calidad premium.</p>
+      <div class="detail-row">
+        <div class="detail-icon">📍</div>
+        <div class="detail-text">Santa Isabel 0295, Santiago, Chile</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">📞</div>
+        <div class="detail-text">+56 9 4557 0041</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">⏰</div>
+        <div class="detail-text">Lunes a Sabado · Horarios flexibles</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonios">
+    <div class="section-header">
+      <div class="section-eyebrow">Clientes felices</div>
+      <h2>Lo Que Dicen Nuestras Clientas</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p>Me hice la keratina y quede encantada. El salon es super acogedor, la atencion excelente y el resultado perfecto. Vuelvo siempre.</p>
+        <div class="testi-name">Valentina S.</div>
+        <div class="testi-loc">Providencia, Santiago</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p>La coloracion me quedo espectacular. Son muy profesionales y se nota que aman lo que hacen. Totalmente recomendado para todas.</p>
+        <div class="testi-name">Fernanda R.</div>
+        <div class="testi-loc">Santiago Centro</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p>Vine para el maquillaje de mi matrimonio y estuve hermosa todo el dia. Son artistass del maquillaje. Gracias por hacer mi dia especial.</p>
+        <div class="testi-name">Camila T.</div>
+        <div class="testi-loc">Santiago, Chile</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Lista para tu<br /><em>Transformacion?</em></h2>
+    <p>Reserva tu hora hoy y deja que el arte y la belleza te hagan brillar.</p>
+    <a href="#contacto" class="btn-rose">Reserva tu hora ahora</a>
+    <a href="tel:+56945570041" class="btn-outline-white">Llamar ahora</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contacto">
+    <div class="section-header" style="margin-bottom:48px;">
+      <div class="section-eyebrow">Contacto</div>
+      <h2>Reserva tu Hora</h2>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Visitanos en Santiago</h3>
+        <p>Estamos en el corazon de Santiago. Escríbenos o llamanos para agendar tu cita en el horario que mejor te acomode.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <a href="tel:+56945570041">+56 9 4557 0041</a>
+            <span>WhatsApp y llamadas</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div>
+            <a href="mailto:arteybellezacondell@gmail.com">arteybellezacondell@gmail.com</a>
+            <span>Correo electronico</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <a href="#">Santa Isabel 0295, Santiago</a>
+            <span>Santiago, Chile</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="hidden" name="business" value="Salon Arte y Belleza - Santiago Chile" />
+          <h4>Agenda tu hora</h4>
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="tel" name="telefono" placeholder="Tu telefono" required />
+          </div>
+          <input type="email" name="email" placeholder="Tu correo electronico" required />
+          <select name="servicio">
+            <option value="">Selecciona un servicio</option>
+            <option>Corte y Peinado</option>
+            <option>Tinturas y Coloracion</option>
+            <option>Alisado y Keratina</option>
+            <option>Hidratacion Capilar</option>
+            <option>Maquillaje</option>
+          </select>
+          <textarea name="mensaje" placeholder="Cuentanos que necesitas o cualquier consulta..."></textarea>
+          <button type="submit">Reservar mi Hora</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">Arte y Belleza</div>
+    <p>Santa Isabel 0295, Santiago, Chile &mdash; <a href="tel:+56945570041">+56 9 4557 0041</a></p>
+    <p>Vista previa disenada por <a href="#">Alma Digital Designs</a></p>
+  </footer>
+
+</body>
+</html>
