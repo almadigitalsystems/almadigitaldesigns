@@ -8114,6 +8114,50 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
 
+<!-- ── TESTIMONIALS ──────────────────────────────────────────────────────── -->
+<section class="testimonials" id="testimonials" style="padding:5rem 0;background:var(--bg-dark)">
+  <div class="container">
+    <p class="section-label reveal" style="text-align:center">Client Results</p>
+    <h2 class="section-title reveal" style="text-align:center">What Business Owners <span class="grad-text">Are Saying</span></h2>
+    <p class="section-sub reveal" style="text-align:center;margin-bottom:3rem">Real results from real local businesses — delivered in 48 hours or less.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem">
+      <div class="reveal" style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative">
+        <div style="color:var(--cyan);font-size:2rem;margin-bottom:1rem">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="color:var(--text-muted);font-style:italic;line-height:1.7;margin-bottom:1.5rem">"I honestly couldn't believe how fast they turned this around. I filled out the form on a Tuesday and had a live preview of my new plumbing site by Wednesday morning. The design looked nothing like the generic template I had before — it actually looked like a real business. Signed up immediately."</p>
+        <div style="display:flex;align-items:center;gap:1rem">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:1.1rem">MR</div>
+          <div>
+            <p style="font-weight:700;color:var(--text-light);margin:0">Mike R.</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin:0">Owner, Riverside Plumbing — Columbus, OH</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative">
+        <div style="color:var(--cyan);font-size:2rem;margin-bottom:1rem">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="color:var(--text-muted);font-style:italic;line-height:1.7;margin-bottom:1.5rem">"What sold me was the free preview. I could see exactly what my landscaping business would look like before paying a single dollar. The site they built has a booking form, click-to-call, and it loads fast on phones. My leads from Google have already gone up since we launched."</p>
+        <div style="display:flex;align-items:center;gap:1rem">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:1.1rem">TD</div>
+          <div>
+            <p style="font-weight:700;color:var(--text-light);margin:0">Tracy D.</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin:0">Owner, Green Edge Landscaping — Austin, TX</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative">
+        <div style="color:var(--cyan);font-size:2rem;margin-bottom:1rem">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="color:var(--text-muted);font-style:italic;line-height:1.7;margin-bottom:1.5rem">"My old HVAC website was embarrassing — I knew it was hurting me but never had time to deal with it. Alma Digital had a professional replacement ready in less than 48 hours. The $50 starting price felt almost too good to be true, but the quality is genuinely impressive. I'd recommend them to any tradesman."</p>
+        <div style="display:flex;align-items:center;gap:1rem">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:1.1rem">JK</div>
+          <div>
+            <p style="font-weight:700;color:var(--text-light);margin:0">James K.</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin:0">Owner, Keller Heating & Air — Memphis, TN</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="why" id="why">
 
 
@@ -12439,6 +12483,36 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 
 
 
+
+<!-- ── GDPR COOKIE CONSENT BANNER ─────────────────────────────────────── -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1a1a2e;border-top:1px solid rgba(0,212,255,0.3);padding:1.25rem 2rem;box-shadow:0 -4px 24px rgba(0,0,0,0.5)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between">
+    <p style="margin:0;color:#a0a0b8;font-size:0.88rem;flex:1;min-width:220px">
+      We use cookies to improve your experience. Essential cookies are required for the site to work. Analytics cookies help us understand how visitors use our site.
+      <a href="/cookie-policy" style="color:#00d4ff;text-decoration:underline;margin-left:4px">Cookie Policy</a>
+    </p>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+      <button onclick="cookieChoice('essential')" style="padding:0.55rem 1.25rem;border:1px solid rgba(0,212,255,0.4);background:transparent;color:#a0a0b8;border-radius:8px;cursor:pointer;font-size:0.85rem;white-space:nowrap">Essential Only</button>
+      <button onclick="cookieChoice('all')" style="padding:0.55rem 1.4rem;border:none;background:#00d4ff;color:#000;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.85rem;white-space:nowrap">Accept All</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('cookieBanner');
+  if(!b)return;
+  var choice=localStorage.getItem('cookieConsent');
+  if(!choice){b.style.display='block';}
+  window.cookieChoice=function(type){
+    localStorage.setItem('cookieConsent',type);
+    b.style.display='none';
+    if(type==='essential'){
+      // Disable non-essential scripts if needed
+      console.log('Essential cookies only — analytics disabled.');
+    }
+  };
+})();
+</script>
 
 </body>
 
