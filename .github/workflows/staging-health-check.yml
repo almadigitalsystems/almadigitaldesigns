@@ -1,0 +1,28 @@
+name: Staging Health Check
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  health-check:
+    name: Verify Staging Health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Railway deploy
+        run: sleep 30
+
+      - name: Check staging health endpoint
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://staging.almadigitalservices.com/health)
+          if [ "$STATUS" != "200" ]; then
+            echo "Health check failed with status: $STATUS"
+            echo "Staging is NOT healthy. Do not merge to master."
+            exit 1
+          fi
+          echo "Staging health check passed (HTTP 200)"
+
+      - name: Confirm staging is live
+        run: |
+          curl -s https://staging.almadigitalservices.com/health | python3 -c "import sys,json; d=json.load(sys.stdin); print('Status:', d.get('status'), '| Env:', d.get('env'))"
