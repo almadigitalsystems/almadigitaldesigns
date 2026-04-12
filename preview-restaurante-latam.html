@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Restaurante La Casa &mdash; Cocina Casera con Sabor Aut&eacute;ntico</title>
+<meta name="description" content="Disfruta de platillos preparados con amor y productos frescos. Reserva en l&iacute;nea o haz tu pedido para llevar. Abierto todos los d&iacute;as.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff;color:#2d1b00}
+nav{padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #f0e0c0}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:#8b1a1a}
+.nav-cta{background:#8b1a1a;color:#fff;padding:.5rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:.9rem}
+.hero{background:linear-gradient(135deg,#8b1a1a 0%,#c0392b 50%,#e74c3c 100%);color:#fff;padding:6rem 2rem;text-align:center}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem;line-height:1.2}
+.hero p{font-size:1.1rem;opacity:.9;max-width:580px;margin:0 auto 2rem;line-height:1.7}
+.btn-light{background:#fff;color:#8b1a1a;padding:.85rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block}
+.features{display:flex;justify-content:center;gap:2rem;padding:2rem;background:#fff8f0;flex-wrap:wrap}
+.feature{text-align:center;padding:1rem}
+.feature .icon{font-size:2rem;margin-bottom:.5rem}
+.feature p{font-size:.85rem;color:#555}
+.menu-section{padding:5rem 2rem;background:#fff;text-align:center}
+.menu-section h2{font-family:'Playfair Display',serif;font-size:2.2rem;color:#8b1a1a;margin-bottom:.5rem}
+.menu-section .tagline{font-style:italic;color:#777;margin-bottom:3rem}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.menu-card{border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.menu-card-img{height:120px;background:linear-gradient(135deg,#8b1a1a,#e74c3c);display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.menu-card-body{padding:1rem}
+.menu-card-body h3{font-weight:700;font-size:1rem;color:#2d1b00;margin-bottom:.3rem}
+.menu-card-body p{font-size:.85rem;color:#777}
+.story{padding:5rem 2rem;background:#fff8f0;max-width:800px;margin:0 auto;text-align:center}
+.story h2{font-family:'Playfair Display',serif;font-size:2rem;color:#8b1a1a;margin-bottom:1rem}
+.story p{color:#444;line-height:1.9}
+.reservation{background:#8b1a1a;padding:5rem 2rem;text-align:center;color:#fff}
+.reservation h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:.5rem}
+.reservation p{opacity:.85;margin-bottom:2rem}
+.res-form{max-width:460px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
+.res-form input{padding:.8rem 1rem;border-radius:8px;border:none;font-size:1rem;font-family:'Inter',sans-serif}
+.btn-gold{background:#f5c518;color:#2d1b00;padding:.9rem;border-radius:8px;font-weight:700;border:none;cursor:pointer;font-size:1rem;width:100%;font-family:'Inter',sans-serif}
+footer{background:#2d1b00;color:#aaa;padding:2rem;text-align:center;font-size:.85rem}
+.alma-badge{color:#f5c518}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">&#127859; Restaurante La Casa</div>
+  <a href="#reservar" class="nav-cta">Reservar mesa</a>
+</nav>
+<section class="hero">
+  <h1>Sabor aut&eacute;ntico,<br>ambiente acogedor.<br>Ven a vivir la experiencia.</h1>
+  <p>Cocina preparada con ingredientes frescos y recetas que te har&aacute;n volver. Reserva tu mesa hoy.</p>
+  <a href="#reservar" class="btn-light">Reserva tu mesa ahora</a>
+</section>
+<div class="features">
+  <div class="feature"><div class="icon">&#127805;</div><p>Ingredientes frescos cada d&iacute;a</p></div>
+  <div class="feature"><div class="icon">&#127860;</div><p>Men&uacute; del d&iacute;a casero</p></div>
+  <div class="feature"><div class="icon">&#128666;</div><p>Pedidos a domicilio</p></div>
+  <div class="feature"><div class="icon">&#127775;</div><p>4.9 estrellas en Google</p></div>
+</div>
+<section class="menu-section">
+  <h2>Nuestra Carta</h2>
+  <p class="tagline">Preparado con amor, servido con orgullo</p>
+  <div class="menu-grid">
+    <div class="menu-card"><div class="menu-card-img">&#129368;</div><div class="menu-card-body"><h3>Men&uacute; del D&iacute;a Casero</h3><p>Sopa, plato principal y postre</p></div></div>
+    <div class="menu-card"><div class="menu-card-img">&#129386;</div><div class="menu-card-body"><h3>Platillos de la Carta</h3><p>Recetas tradicionales de la regi&oacute;n</p></div></div>
+    <div class="menu-card"><div class="menu-card-img">&#128666;</div><div class="menu-card-body"><h3>Pedidos para Llevar</h3><p>Entrega a domicilio disponible</p></div></div>
+    <div class="menu-card"><div class="menu-card-img">&#127881;</div><div class="menu-card-body"><h3>Eventos Privados</h3><p>Cumplea&ntilde;os y celebraciones</p></div></div>
+    <div class="menu-card"><div class="menu-card-img">&#128106;</div><div class="menu-card-body"><h3>Men&uacute; para Grupos</h3><p>Tarifas especiales para grupos</p></div></div>
+  </div>
+</section>
+<section class="story">
+  <h2>Nuestra Historia</h2>
+  <p>Nuestra cocina naci&oacute; del amor por los sabores de la regi&oacute;n y el deseo de compartirlos con nuestra comunidad. Cada platillo es preparado con ingredientes frescos seleccionados diariamente. Somos m&aacute;s que un restaurante &mdash; somos tu lugar favorito para reunirte con quienes m&aacute;s quieres.</p>
+</section>
+<section class="reservation" id="reservar">
+  <h2>&#128222; Reserva tu Mesa</h2>
+  <p>Disponible todos los d&iacute;as. Tambi&eacute;n aceptamos pedidos para llevar.</p>
+  <form class="res-form" action="https://formspree.io/f/xojppajv" method="POST">
+    <input type="text" name="name" placeholder="Tu nombre" required>
+    <input type="tel" name="phone" placeholder="Tel&eacute;fono de contacto">
+    <input type="email" name="email" placeholder="Correo electr&oacute;nico" required>
+    <button type="submit" class="btn-gold">Reserva tu mesa ahora</button>
+  </form>
+</section>
+<footer>
+  <p>Dise&ntilde;o web por <span class="alma-badge">Alma Digital Designs</span> &mdash; &copy; 2026 Restaurante La Casa</p>
+</footer>
+</body>
+</html>
