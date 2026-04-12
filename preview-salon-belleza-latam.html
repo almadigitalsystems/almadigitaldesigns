@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sal&oacute;n de Belleza &mdash; Cortes, Color y Tratamientos de Lujo</title>
+<meta name="description" content="El sal&oacute;n donde tu imagen es lo m&aacute;s importante. Cortes, coloraci&oacute;n, keratina y m&aacute;s. Agenda tu cita en l&iacute;nea f&aacute;cil y r&aacute;pido.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#faf8f5;color:#2d2020}
+nav{padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #f0e0d0}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#8b4a6a;font-style:italic}
+.nav-cta{background:#8b4a6a;color:#fff;padding:.5rem 1.3rem;border-radius:20px;text-decoration:none;font-weight:600;font-size:.9rem}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:85vh}
+.hero-left{background:linear-gradient(135deg,#8b4a6a 0%,#c06a8a 60%,#e8a0b8 100%);padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.hero-left .tag{background:rgba(255,255,255,.2);display:inline-block;padding:.3rem .9rem;border-radius:20px;font-size:.8rem;margin-bottom:1.5rem}
+.hero-left h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.2;margin-bottom:1rem}
+.hero-left p{opacity:.9;line-height:1.7;margin-bottom:2rem;font-size:.95rem}
+.btn-white{background:#fff;color:#8b4a6a;padding:.85rem 1.8rem;border-radius:20px;font-weight:700;text-decoration:none;display:inline-block}
+.hero-right{background:linear-gradient(160deg,#fce4ec,#f8bbd9,#e8a0b8);display:flex;align-items:center;justify-content:center;font-size:9rem}
+.services{padding:5rem 2rem;background:#fff;text-align:center}
+.services h2{font-family:'Playfair Display',serif;font-size:2rem;color:#8b4a6a;margin-bottom:.5rem}
+.services .sub{color:#777;margin-bottom:3rem;font-style:italic}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:950px;margin:0 auto}
+.svc-card{background:#faf8f5;border-radius:16px;padding:1.5rem;text-align:center;border:2px solid #f0e0d0}
+.svc-card .icon{font-size:2.2rem;margin-bottom:.7rem}
+.svc-card h3{font-size:.95rem;font-weight:700;color:#2d2020}
+.about{padding:5rem 2rem;background:#faf8f5;display:flex;gap:3rem;max-width:1000px;margin:0 auto;align-items:center;flex-wrap:wrap}
+.about-visual{width:260px;height:280px;border-radius:20px;background:linear-gradient(160deg,#8b4a6a,#e8a0b8);display:flex;align-items:center;justify-content:center;font-size:5.5rem;flex-shrink:0}
+.about-text h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:#8b4a6a;margin-bottom:1rem}
+.about-text p{color:#555;line-height:1.8}
+.cta{background:linear-gradient(135deg,#8b4a6a,#c06a8a);padding:5rem 2rem;text-align:center;color:#fff}
+.cta h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+.cta p{opacity:.9;margin-bottom:2rem}
+.cta-form{max-width:380px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
+.cta-form input{padding:.8rem 1rem;border-radius:20px;border:none;font-size:1rem;font-family:'Inter',sans-serif}
+.btn-cta{background:#fff;color:#8b4a6a;padding:.9rem;border-radius:20px;font-weight:700;border:none;cursor:pointer;font-size:1rem;width:100%;font-family:'Inter',sans-serif}
+footer{background:#2d2020;color:#aaa;padding:1.5rem;text-align:center;font-size:.85rem}
+.alma-badge{color:#e8a0b8}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.hero-right{display:none}.about{flex-direction:column}.about-visual{width:100%;height:160px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">&#9988; Sal&oacute;n Belleza &amp; Style</div>
+  <a href="#cita" class="nav-cta">Reservar cita</a>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="tag">&#128142; Sal&oacute;n Premium &bull; Estilistas Certificadas</div>
+    <h1>Luce incre&iacute;ble.<br>Si&eacute;ntete t&uacute;.<br>Ven a nuestro sal&oacute;n.</h1>
+    <p>Cortes, coloraci&oacute;n, tratamientos y m&aacute;s &mdash; todo con productos de calidad y manos expertas que cuidan tu cabello.</p>
+    <a href="#cita" class="btn-white">Reserva tu cita hoy</a>
+  </div>
+  <div class="hero-right">&#128141;</div>
+</section>
+<section class="services">
+  <h2>Nuestros Servicios</h2>
+  <p class="sub">Donde cada visita es una experiencia VIP</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="icon">&#9988;&#65039;</div><h3>Corte y peinado profesional</h3></div>
+    <div class="svc-card"><div class="icon">&#127912;</div><h3>Coloraci&oacute;n y mechas</h3></div>
+    <div class="svc-card"><div class="icon">&#10024;</div><h3>Tratamientos de keratina y nutrici&oacute;n</h3></div>
+    <div class="svc-card"><div class="icon">&#128133;</div><h3>U&ntilde;as y manicure</h3></div>
+    <div class="svc-card"><div class="icon">&#128132;</div><h3>Maquillaje para eventos</h3></div>
+  </div>
+</section>
+<section class="about">
+  <div class="about-visual">&#128141;</div>
+  <div class="about-text">
+    <h2>Tu sal&oacute;n favorito</h2>
+    <p>Somos un sal&oacute;n boutique donde cada cliente es tratada como VIP. Nuestro equipo de estilistas est&aacute; en constante capacitaci&oacute;n para traerte las &uacute;ltimas tendencias de belleza. Usamos productos premium para cuidar tu cabello y realzar tu belleza natural.</p>
+  </div>
+</section>
+<section class="cta" id="cita">
+  <h2>&#128141; Reserva tu Cita</h2>
+  <p>Cupos limitados. Reserva ahora y asegura tu lugar.</p>
+  <form class="cta-form" action="https://formspree.io/f/xojppajv" method="POST">
+    <input type="text" name="name" placeholder="Tu nombre" required>
+    <input type="tel" name="phone" placeholder="Tu tel&eacute;fono">
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <button type="submit" class="btn-cta">Reserva tu cita hoy</button>
+  </form>
+</section>
+<footer>
+  <p>Dise&ntilde;o web por <span class="alma-badge">Alma Digital Designs</span> &mdash; &copy; 2026 Sal&oacute;n Belleza &amp; Style</p>
+</footer>
+</body>
+</html>
