@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio — Alma Digital Services</title>
+<meta name="description" content="See the websites we've built for local businesses across the US, UK, Canada, and Australia. Real results, real clients."/>
+<link rel="canonical" href="https://almadigitalservices.com/portfolio"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --dark: #0d1b2a;
+    --dark2: #1a1a2e;
+    --cyan: #00d4ff;
+    --blue: #0066ff;
+    --text: #e8eaf0;
+    --muted: #8892a4;
+    --card-bg: #16213e;
+    --card-border: rgba(0,212,255,0.12);
+  }
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+  }
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    background: rgba(13,27,42,0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+  .nav-logo {
+    font-size: 18px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: opacity 0.18s;
+  }
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 72px 20px 56px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.3);
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    padding: 5px 14px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero h1 span {
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* LIVE CLIENT SECTION */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 24px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(34,197,94,0.12);
+    border: 1px solid rgba(34,197,94,0.3);
+    color: #22c55e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    padding: 3px 10px;
+  }
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(34,197,94,0.8);
+  }
+
+  /* GRID */
+  .grid-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .grid.featured { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); margin-bottom: 40px; }
+
+  /* CARD */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    border-color: rgba(0,212,255,0.28);
+  }
+  .card-preview {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-preview::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--bg, linear-gradient(135deg, #0d1b2a 0%, #1a1a2e 100%));
+  }
+  .card-preview span { position: relative; z-index: 1; }
+  .card-body { padding: 18px 20px 20px; }
+  .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .card-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    background: rgba(0,212,255,0.1);
+    border-radius: 100px;
+    padding: 3px 8px;
+  }
+  .card-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .card-location {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .card-actions { display: flex; gap: 8px; }
+  .btn-preview {
+    flex: 1;
+    display: inline-block;
+    text-align: center;
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: opacity 0.18s;
+  }
+  .btn-preview:hover { opacity: 0.88; }
+  .btn-live {
+    flex: 1;
+    display: inline-block;
+    text-align: center;
+    background: rgba(34,197,94,0.12);
+    color: #22c55e;
+    border: 1px solid rgba(34,197,94,0.3);
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.18s;
+  }
+  .btn-live:hover { background: rgba(34,197,94,0.2); }
+
+  /* CTA BANNER */
+  .cta-banner {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 24px 80px;
+  }
+  .cta-inner {
+    background: linear-gradient(135deg, rgba(0,212,255,0.08) 0%, rgba(0,102,255,0.08) 100%);
+    border: 1px solid rgba(0,212,255,0.2);
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .cta-inner h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+  .cta-inner p { font-size: 16px; color: var(--muted); margin-bottom: 28px; }
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 36px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: opacity 0.18s, transform 0.18s;
+  }
+  .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  @media (max-width: 600px) {
+    nav { padding: 14px 16px; }
+    .hero { padding: 48px 16px 40px; }
+    .grid-wrap { padding: 0 16px 60px; }
+    .cta-inner { padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Alma Digital</a>
+  <a class="nav-cta" href="/#contact">Get Your Free Preview</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Our Work</div>
+  <h1>Websites that <span>get results</span></h1>
+  <p>Every site below was designed, built, and delivered in 48 hours or less. See what we can build for you.</p>
+</section>
+
+<div class="grid-wrap">
+
+  <!-- Live Clients -->
+  <div class="section-label">
+    Live Client Sites
+    <span class="live-badge"><span class="live-dot"></span> Live</span>
+  </div>
+  <div class="grid featured">
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%)">
+        <span>🏭</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Industrial</span><span class="card-tag">Manufacturing</span></div>
+        <div class="card-name">Serra Industries</div>
+        <div class="card-location">📍 Miami, FL</div>
+        <div class="card-actions">
+          <a class="btn-live" href="https://serraindustries.com" target="_blank" rel="noopener">View Live Site &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Preview Pages -->
+  <div class="section-label">Prospect Previews</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span></div>
+        <div class="card-name">A Sterling Plumbing</div>
+        <div class="card-location">📍 Columbus, OH</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-a-sterling-plumbing-columbus.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1e2d1e 0%, #0d1b0d 100%)"><span>🌿</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Flooring</span></div>
+        <div class="card-name">All Flooring Solutions</div>
+        <div class="card-location">📍 Brisbane, AU</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-all-flooring-solutions-brisbane-au.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a1a3e 0%, #1a0d2e 100%)"><span>❄️</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">HVAC</span></div>
+        <div class="card-name">Al Britt Air &amp; Heat</div>
+        <div class="card-location">📍 Memphis, TN</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-al-britt-air-heat-memphis.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a3a2a 0%, #0d2a1a 100%)"><span>🛠️</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Appliance Repair</span></div>
+        <div class="card-name">Appliance Clinic</div>
+        <div class="card-location">📍 Vancouver, BC</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-appliance-clinic-vancouver.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span></div>
+        <div class="card-name">Bayside Plumbing</div>
+        <div class="card-location">📍 Sydney, AU</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-bayside-plumbing-sydney.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #3a1a1a 0%, #2a0d0d 100%)"><span>🏠</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Roofing</span></div>
+        <div class="card-name">Bland Roofing</div>
+        <div class="card-location">📍 Macon, GA</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-bland-roofing-macon-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a3a 0%, #0d1a2a 100%)"><span>🧹</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Carpet Cleaning</span></div>
+        <div class="card-name">Capital Area Carpet Cleaners</div>
+        <div class="card-location">📍 Mechanicsburg, PA</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-capital-area-carpet-cleaners-mechanicsburg.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>✨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Cleaning</span></div>
+        <div class="card-name">Capulet Cleaning</div>
+        <div class="card-location">📍 Charlotte, NC</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-capulet-cleaning-charlotte-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span></div>
+        <div class="card-name">Chapman Plumbing</div>
+        <div class="card-location">📍 Cairns, AU</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-chapman-plumbing-cairns.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a1a3e 0%, #1a0d2e 100%)"><span>❄️</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">HVAC</span></div>
+        <div class="card-name">Chuck's HVAC</div>
+        <div class="card-location">📍 Meriden, CT</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-chucks-hvac-meriden-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>🎨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Decorating</span></div>
+        <div class="card-name">Clifton Bristol Decorators</div>
+        <div class="card-location">📍 Bristol, UK</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-clifton-bristol-decorators-bristol-uk.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>🚗</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Automotive</span></div>
+        <div class="card-name">Clintonville Automotive</div>
+        <div class="card-location">📍 Columbus, OH</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-clintonville-automotive-columbus.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #3a1a1a 0%, #2a0d0d 100%)"><span>🏠</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Roofing</span></div>
+        <div class="card-name">Corley Roofing</div>
+        <div class="card-location">📍 Temple Hills, MD</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-corley-roofing-temple-hills-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>🎨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Painting</span></div>
+        <div class="card-name">Dave's Painting</div>
+        <div class="card-location">📍 Hamilton, ON</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-daves-painting-hamilton-ca.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #3a2a1a 0%, #2a1a0d 100%)"><span>🪑</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Upholstery</span></div>
+        <div class="card-name">Denny &amp; Son Upholstery</div>
+        <div class="card-location">📍 Omaha, NE</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-denny-son-upholstery-omaha.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a2a 0%, #0d1a1a 100%)"><span>✨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Cleaning</span></div>
+        <div class="card-name">Done Right Cleaning</div>
+        <div class="card-location">📍 Ottawa, ON</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-done-right-cleaning-ottawa-ca.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>⚡</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Electrical</span></div>
+        <div class="card-name">Efficient Electric Corp</div>
+        <div class="card-location">📍 Columbus, OH</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-efficient-electric-corp-columbus.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #3a1a1a 0%, #2a0d0d 100%)"><span>🏠</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Roofing</span></div>
+        <div class="card-name">Eileen Roofing</div>
+        <div class="card-location">📍 North York, ON</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-eileen-roofing-north-york.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span></div>
+        <div class="card-name">Everest Drain &amp; Plumbing</div>
+        <div class="card-location">📍 Toronto, ON</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-everest-drain-plumbing-toronto.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #3a2a1a 0%, #2a1a0d 100%)"><span>🏗️</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Roofing</span><span class="card-tag">Construction</span></div>
+        <div class="card-name">Foster Roofing &amp; Construction</div>
+        <div class="card-location">📍 Littlestown, PA</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-foster-roofing-construction-littlestown.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>🎨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Painting</span></div>
+        <div class="card-name">Hamilton High Rollers Painting</div>
+        <div class="card-location">📍 Hamilton, ON</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-hamilton-high-rollers-painting-hamilton-ca.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a1a3e 0%, #1a0d2e 100%)"><span>❄️</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">HVAC</span></div>
+        <div class="card-name">Hensley Heating &amp; Air</div>
+        <div class="card-location">📍 Memphis, TN</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-hensley-heating-air-memphis.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a3a2a 0%, #0d2a1a 100%)"><span>🏗️</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">General Contractor</span></div>
+        <div class="card-name">In His Hands Contractors</div>
+        <div class="card-location">📍 Chickamauga, GA</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-in-his-hands-contractors-chickamauga.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>⚡</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Electrical</span></div>
+        <div class="card-name">JAC Electric</div>
+        <div class="card-location">📍 Humble, TX</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-jac-electric-humble-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span><span class="card-tag">Heating</span></div>
+        <div class="card-name">JB7 Plumbing &amp; Heating</div>
+        <div class="card-location">📍 Manchester, UK</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-jb7-plumbing-heating-manchester.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span></div>
+        <div class="card-name">Jim the Plumber</div>
+        <div class="card-location">📍 Cincinnati, OH</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-jim-the-plumber-cincinnati.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>💧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Pump Services</span></div>
+        <div class="card-name">Lovelace Pump Company</div>
+        <div class="card-location">📍 Argyle, TX</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-lovelace-pump-company-argyle.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span></div>
+        <div class="card-name">McGahan Plumbing</div>
+        <div class="card-location">📍 Cairns, AU</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-mcgahan-plumbing-cairns-au.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a1a3e 0%, #1a0d2e 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span><span class="card-tag">Heating</span></div>
+        <div class="card-name">MCR Heating &amp; Plumbing</div>
+        <div class="card-location">📍 Manchester, UK</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-mcr-heating-plumbing-manchester.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>⚡</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Electrical</span></div>
+        <div class="card-name">Mike Fuller Electric</div>
+        <div class="card-location">📍 Ottawa, ON</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-mike-fuller-electric-ottawa.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135degrees, #3a1a1a 0%, #2a0d0d 100%)"><span>🏠</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Roofing</span></div>
+        <div class="card-name">Nateo Roofing</div>
+        <div class="card-location">📍 Russellville, AR</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-nateo-roofing-russellville.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>⚡</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Electrical</span></div>
+        <div class="card-name">Northup Electrical</div>
+        <div class="card-location">📍 Agawam, MA</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-northup-electrical-agawam.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #3a2a1a 0%, #2a1a0d 100%)"><span>👞</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Shoe Repair</span></div>
+        <div class="card-name">Old World Cobbler</div>
+        <div class="card-location">📍 Minneapolis, MN</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-old-world-cobbler-minneapolis.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>🎨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Painting</span></div>
+        <div class="card-name">Painting Perfections</div>
+        <div class="card-location">📍 Fort Wayne, IN</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-painting-perfections-fort-wayne-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a3a2a 0%, #0d2a1a 100%)"><span>🌳</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Landscaping</span></div>
+        <div class="card-name">Philadelphia Gardens</div>
+        <div class="card-location">📍 Philadelphia, PA</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-philadelphia-gardens-philadelphia-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%)"><span>🔧</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Plumbing</span></div>
+        <div class="card-name">Pipeworks</div>
+        <div class="card-location">📍 Manchester, UK</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-pipeworks-manchester.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>⚡</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Electrical</span></div>
+        <div class="card-name">Quality Electric</div>
+        <div class="card-location">📍 Columbus, OH</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-quality-electric-columbus.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a1a3e 0%, #1a0d2e 100%)"><span>❄️</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">HVAC</span></div>
+        <div class="card-name">Simbuild Heating</div>
+        <div class="card-location">📍 Wolverhampton, UK</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-simbuild-heating-wolverhampton-uk.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a3a2a 0%, #0d2a1a 100%)"><span>🌿</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Lawn Care</span></div>
+        <div class="card-name">Simply Lawncare</div>
+        <div class="card-location">📍 Tulsa, OK</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-simply-lawncare-tulsa.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>✨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Cleaning</span></div>
+        <div class="card-name">Smiley Cleaner</div>
+        <div class="card-location">📍 Charlotte, NC</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-smiley-cleaner-charlotte-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a1a1a 0%, #1a0d0d 100%)"><span>🐛</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Pest Control</span></div>
+        <div class="card-name">Smith's Pest Control</div>
+        <div class="card-location">📍 Memphis, TN</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-smiths-pest-control-memphis-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>✨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Cleaning</span></div>
+        <div class="card-name">Sparkle &amp; Shine Cleaning</div>
+        <div class="card-location">📍 Columbia, SC</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-sparkle-shine-cleaning-columbia-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>🎨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Painting</span></div>
+        <div class="card-name">Spreadmaster Painting</div>
+        <div class="card-location">📍 Centerville, OH</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-spreadmaster-painting-centerville-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>🚗</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Auto Repair</span></div>
+        <div class="card-name">Texas Auto Repairs</div>
+        <div class="card-location">📍 San Antonio, TX</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-texas-auto-repairs-san-antonio-us.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>⚡</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Electrical</span></div>
+        <div class="card-name">The Electric Man</div>
+        <div class="card-location">📍 West Columbia, SC</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-the-electric-man-west-columbia.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a1a3e 0%, #1a0d2e 100%)"><span>❄️</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">HVAC</span></div>
+        <div class="card-name">Wade Hatchell HC</div>
+        <div class="card-location">📍 Lawrenceburg, TN</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-wade-hatchell-hc-lawrenceburg.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a1a3e 0%, #1a0d2e 100%)"><span>🔥</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Heating</span><span class="card-tag">Plumbing</span></div>
+        <div class="card-name">West Yorkshire Heating &amp; Plumbing</div>
+        <div class="card-location">📍 Leeds, UK</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-west-yorkshire-heating-plumbing-shipley.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%)"><span>⚡</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Electrical</span></div>
+        <div class="card-name">Wicks Electric</div>
+        <div class="card-location">📍 Vancouver, BC</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-wicks-electric-vancouver.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="--bg: linear-gradient(135deg, #2a2a1a 0%, #1a1a0d 100%)"><span>🎨</span></div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Decorating</span></div>
+        <div class="card-name">Woodwards Decorators</div>
+        <div class="card-location">📍 Nottingham, UK</div>
+        <div class="card-actions"><a class="btn-preview" href="/preview-woodwards-decorators-nottingham-uk.html" target="_blank">View Preview</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <h2>Ready to see yours?</h2>
+    <p>We'll build a free custom preview of your new website — no payment, no commitment.</p>
+    <a class="cta-btn" href="/">Get Your Free Preview Today</a>
+  </div>
+</div>
+
+<script src="/chat-widget.js" defer></script>
+<script src="/whatsapp-widget.js" defer></script>
+</body>
+</html>
