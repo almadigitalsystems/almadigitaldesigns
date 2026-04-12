@@ -533,6 +533,35 @@ app.post('/api/stripe-webhook', async (req, res) => {
       console.log(`Mila onboarding task created: ${taskData.identifier} for ${email}`);
     }
 
+    // Schedule upsell email sequence for this new client
+    if (email) {
+      try {
+        const clientName = (() => {
+          if (eventType === 'checkout.session.completed') {
+            const s = event.data?.object || {};
+            return s.customer_details?.name || s.metadata?.client_name || null;
+          }
+          return (event.data?.object?.metadata?.client_name) || null;
+        })();
+        const siteUrl = (event.data?.object?.metadata?.site_url) || 'https://almadigitalservices.com';
+        const scheduled = scheduleUpsellSequence({
+          clientEmail: email,
+          clientName: clientName || email,
+          siteUrl,
+          planName: products,
+          paymentTimestamp: new Date().toISOString(),
+        });
+        await notifyRileyUpsellTriggered({
+          clientEmail: email,
+          clientName: clientName || email,
+          planName: products,
+          entries: scheduled,
+        });
+      } catch (upsellErr) {
+        console.error('Upsell scheduling error:', upsellErr.message);
+      }
+    }
+
     res.json({ received: true });
   } catch (err) {
     console.error('Stripe webhook processing error:', err);
@@ -552,18 +581,20 @@ const STRIPE_PLANS = {
 app.post('/api/create-checkout-session', async (req, res) => {
   try {
     const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
-    const { plan, withHosting } = req.body;
+    const { plan, withHosting, withCarePlan } = req.body;
     const planData = STRIPE_PLANS[plan];
     if (!planData) return res.status(400).json({ error: 'Invalid plan' });
 
     const baseUrl = process.env.BASE_URL || 'https://almadigitalservices.com';
+    const needsSubscription = withHosting || withCarePlan;
     let session;
 
-    if (withHosting) {
-      // Subscription mode: first invoice includes one-time build fee + recurring hosting
-      session = await stripe.checkout.sessions.create({
-        mode: 'subscription',
-        line_items: [{
+    if (needsSubscription) {
+      // Subscription mode — includes any recurring items (hosting and/or care plan)
+      // One-time build fee goes as a first-invoice item via subscription_data.add_invoice_items
+      const lineItems = [];
+      if (withHosting) {
+        lineItems.push({
           price_data: {
             currency: 'usd',
             product_data: { name: `${planData.name} Website Hosting` },
@@ -571,7 +602,23 @@ app.post('/api/create-checkout-session', async (req, res) => {
             recurring: { interval: 'month' },
           },
           quantity: 1,
-        }],
+        });
+      }
+      if (withCarePlan) {
+        lineItems.push({
+          price_data: {
+            currency: 'usd',
+            product_data: { name: 'Website Care Plan' },
+            unit_amount: 2900,
+            recurring: { interval: 'month' },
+          },
+          quantity: 1,
+        });
+      }
+
+      session = await stripe.checkout.sessions.create({
+        mode: 'subscription',
+        line_items: lineItems,
         subscription_data: {
           add_invoice_items: [{
             price_data: {
@@ -580,14 +627,14 @@ app.post('/api/create-checkout-session', async (req, res) => {
               unit_amount: planData.websiteCents,
             },
           }],
-          metadata: { plan, type: 'build_plus_hosting' },
+          metadata: { plan, withHosting: String(!!withHosting), withCarePlan: String(!!withCarePlan) },
         },
-        metadata: { plan, type: 'build_plus_hosting' },
+        metadata: { plan, type: needsSubscription ? 'subscription' : 'build_only' },
         success_url: `${baseUrl}/thank-you`,
         cancel_url: `${baseUrl}/checkout`,
       });
     } else {
-      // One-time payment mode
+      // One-time payment mode — website build only
       session = await stripe.checkout.sessions.create({
         mode: 'payment',
         line_items: [{
@@ -627,6 +674,10 @@ app.get('/checkout', (req, res) => {
 
 app.get('/thank-you', (req, res) => {
   res.sendFile(path.join(__dirname, 'thank-you.html'));
+});
+
+app.get('/care-plan', (req, res) => {
+  res.sendFile(path.join(__dirname, 'care-plan.html'));
 });
 
 // ── API: LEAD CAPTURE (exit-intent popup) ────────────────────────────────────
@@ -690,6 +741,186 @@ app.post('/api/referral', async (req, res) => {
   }
 });
 
+
+// ── UPSELL EMAIL QUEUE ────────────────────────────────────────────────────────
+// Schedules automated upsell emails at Days 7, 14, 45, and 60 after payment.
+// Queue persisted in upsell-queue.json; log in upsell-log.json.
+
+const fs = require('fs');
+const UPSELL_QUEUE_FILE = path.join(__dirname, 'upsell-queue.json');
+const UPSELL_LOG_FILE   = path.join(__dirname, 'upsell-log.json');
+
+function readUpsellQueue() {
+  try { return JSON.parse(fs.readFileSync(UPSELL_QUEUE_FILE, 'utf8')); } catch { return []; }
+}
+function writeUpsellQueue(queue) {
+  fs.writeFileSync(UPSELL_QUEUE_FILE, JSON.stringify(queue, null, 2), 'utf8');
+}
+function appendUpsellLog(entry) {
+  const log = (() => { try { return JSON.parse(fs.readFileSync(UPSELL_LOG_FILE, 'utf8')); } catch { return []; } })();
+  log.push(entry);
+  fs.writeFileSync(UPSELL_LOG_FILE, JSON.stringify(log, null, 2), 'utf8');
+}
+
+// Schedule 4 emails for a new paying client
+function scheduleUpsellSequence({ clientEmail, clientName, siteUrl, planName, paymentTimestamp }) {
+  const base = new Date(paymentTimestamp);
+  const steps = [
+    { day: 7,  subject: 'How is your new site performing?',             upgradePrice: '$29/mo',      type: 'care_plan' },
+    { day: 14, subject: 'Want more pages on your site?',                upgradePrice: '$60 add-on',  type: 'growth' },
+    { day: 45, subject: 'Your competitors are investing in SEO',        upgradePrice: 'ask us',      type: 'premium' },
+    { day: 60, subject: 'Keeping your site live — quick action needed', upgradePrice: '$17/mo + Care Plan', type: 'renewal' },
+  ];
+
+  const queue = readUpsellQueue();
+  const added = [];
+  for (const step of steps) {
+    const scheduledAt = new Date(base.getTime() + step.day * 86400000).toISOString();
+    const entry = {
+      id: `${clientEmail}-day${step.day}-${Date.now()}`,
+      clientEmail,
+      clientName: clientName || '',
+      siteUrl: siteUrl || '',
+      planName: planName || 'Website plan',
+      upgradePrice: step.upgradePrice,
+      day: step.day,
+      type: step.type,
+      subject: step.subject,
+      scheduledAt,
+      sentAt: null,
+      msgId: null,
+      paymentTimestamp: base.toISOString(),
+    };
+    queue.push(entry);
+    added.push(entry);
+  }
+  writeUpsellQueue(queue);
+  console.log('[upsell] Scheduled ' + added.length + ' emails for ' + clientEmail + ' (Days 7/14/45/60)');
+  return added;
+}
+
+// Email templates per upsell step
+function buildUpsellHtml({ clientName, siteUrl, planName, upgradePrice, type }) {
+  const name = clientName || 'there';
+  const greeting = '<p>Hi ' + name + ',</p>';
+  const footer = '<p style="color:#888;font-size:12px;margin-top:30px">You\'re receiving this because you recently launched a website with Alma Digital. <a href="mailto:desk@almawebcreative.com?subject=Unsubscribe">Unsubscribe</a></p>';
+
+  const bodies = {
+    care_plan:
+      greeting +
+      '<p>It\'s been a week since your new site went live — congratulations again!</p>' +
+      '<p>We wanted to check in: <strong>is everything looking the way you\'d hoped?</strong></p>' +
+      '<p>Many of our clients find that after launch, they want small tweaks — updated hours, a new photo, adjusted copy. That\'s where our <strong>Care Plan (' + upgradePrice + ')</strong> comes in.</p>' +
+      '<p>It covers unlimited small updates so your site always stays current.</p>' +
+      '<p><a href="https://almadigitalservices.com" style="background:#0066cc;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;display:inline-block;margin-top:10px">Learn about the Care Plan</a></p>',
+    growth:
+      greeting +
+      '<p>Two weeks in — how\'s the site performing? We\'d love to hear!</p>' +
+      '<p>A lot of our clients at this stage start thinking about <strong>adding more pages</strong> — a blog, a services detail page, a team page, or a portfolio section.</p>' +
+      '<p>Our <strong>Growth upgrade (' + upgradePrice + ')</strong> gets you up to 3 additional pages, fully designed to match your existing site.</p>' +
+      '<p><a href="https://almadigitalservices.com" style="background:#0066cc;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;display:inline-block;margin-top:10px">Add more pages</a></p>',
+    premium:
+      greeting +
+      '<p>Quick question: have you noticed any new customers mentioning they found you online?</p>' +
+      '<p>Your competitors are actively investing in SEO — making sure they show up when potential customers search for services like yours.</p>' +
+      '<p>Our <strong>Premium upgrade</strong> includes on-page SEO optimization, schema markup, and monthly content tweaks to help you rank higher.</p>' +
+      '<p><a href="https://almadigitalservices.com" style="background:#0066cc;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;display:inline-block;margin-top:10px">See Premium features</a></p>',
+    renewal:
+      greeting +
+      '<p>Just a quick heads-up — your hosting is coming up for renewal soon.</p>' +
+      '<p>Your site has been live and running smoothly. To keep it that way, renewal is <strong>' + upgradePrice + '</strong>.</p>' +
+      '<p>If you haven\'t already, now is a great time to add our <strong>Care Plan</strong> so we can keep making small improvements each month.</p>' +
+      '<p><a href="https://almadigitalservices.com" style="background:#0066cc;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;display:inline-block;margin-top:10px">Renew now</a></p>',
+  };
+
+  const body = bodies[type] || bodies.care_plan;
+  return (
+    '<div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#222">' +
+    '<div style="background:#1a1a2e;padding:20px;text-align:center"><span style="color:#00d4ff;font-size:20px;font-weight:bold">Alma Digital</span></div>' +
+    '<div style="padding:30px 20px">' +
+    body +
+    '<p style="margin-top:30px">Best,<br><strong>Roberto — Alma Digital</strong></p>' +
+    footer +
+    '</div></div>'
+  );
+}
+
+// Send a single queued upsell email
+async function sendUpsellEmail(entry) {
+  try {
+    const transporter = createMailTransporter();
+    const html = buildUpsellHtml(entry);
+    const info = await transporter.sendMail({
+      from: '"Alma Digital" <' + (process.env.GMAIL_USER_1 || 'desk@almawebcreative.com') + '>',
+      to: entry.clientEmail,
+      subject: entry.subject,
+      html,
+    });
+    console.log('[upsell] Sent Day ' + entry.day + ' email to ' + entry.clientEmail + ' msgId: ' + info.messageId);
+    return info.messageId;
+  } catch (err) {
+    console.error('[upsell] Failed to send Day ' + entry.day + ' email to ' + entry.clientEmail + ':', err.message);
+    return null;
+  }
+}
+
+// Create Riley notification task in Paperclip when a sequence is triggered
+async function notifyRileyUpsellTriggered({ clientEmail, clientName, planName, entries }) {
+  try {
+    const paperclipUrl = process.env.PAPERCLIP_API_URL || 'http://127.0.0.1:3100';
+    const companyId = process.env.PAPERCLIP_COMPANY_ID || 'aa9191d4-249a-4574-88f2-1284571ad537';
+    const rileyAgentId = 'f82b2f40-f33b-4595-981d-36ca3149dbe8';
+    const goalId = 'f45eaf59-e75b-4a0a-b6db-b1c7633abb14';
+    const scheduleDates = entries.map(function(e) {
+      return 'Day ' + e.day + ': ' + new Date(e.scheduledAt).toLocaleDateString('en-US', { timeZone: 'America/New_York' });
+    }).join(', ');
+    await fetch(paperclipUrl + '/api/companies/' + companyId + '/issues', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer local-board', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: 'Upsell sequence started for ' + (clientName || clientEmail) + ' — monitor replies',
+        description: 'Automated upsell sequence triggered after Stripe payment.\n\n- **Client:** ' + (clientName || 'Unknown') + ' (' + clientEmail + ')\n- **Plan:** ' + planName + '\n- **Schedule:** ' + scheduleDates + '\n\nPlease monitor replies to desk@almawebcreative.com and follow up personally on any interest shown.',
+        priority: 'medium',
+        assigneeAgentId: rileyAgentId,
+        goalId,
+      }),
+    });
+    console.log('[upsell] Riley notified for ' + clientEmail + ' upsell sequence');
+  } catch (err) {
+    console.error('[upsell] Failed to notify Riley:', err.message);
+  }
+}
+
+// Process the upsell queue — send any emails due now
+async function processUpsellQueue() {
+  const queue = readUpsellQueue();
+  const now = new Date();
+  let changed = false;
+
+  for (const entry of queue) {
+    if (entry.sentAt) continue;
+    if (new Date(entry.scheduledAt) > now) continue;
+
+    const msgId = await sendUpsellEmail(entry);
+    entry.sentAt = now.toISOString();
+    entry.msgId = msgId;
+    changed = true;
+
+    appendUpsellLog({
+      clientEmail: entry.clientEmail,
+      clientName: entry.clientName,
+      type: entry.type,
+      day: entry.day,
+      sentAt: entry.sentAt,
+      msgId: entry.msgId,
+      subject: entry.subject,
+    });
+  }
+
+  if (changed) writeUpsellQueue(queue);
+}
+
+
 // ── HEALTH CHECK ─────────────────────────────────────────────────────────────
 
 app.get('/health', (req, res) => {
@@ -707,4 +938,10 @@ app.get('*', (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Alma Digital Services running on port ${PORT}`);
+
+  // Process upsell queue every hour
+  setInterval(() => {
+    processUpsellQueue().catch(err => console.error('[upsell] Queue processing error:', err));
+  }, 60 * 60 * 1000);
+  console.log('[upsell] Hourly email queue processor started');
 });
