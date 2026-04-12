@@ -651,6 +651,10 @@ app.get('/care-plan', (req, res) => {
   res.sendFile(path.join(__dirname, 'care-plan.html'));
 });
 
+app.get('/ftc-disclosure', (req, res) => {
+  res.sendFile(path.join(__dirname, 'ftc-disclosure.html'));
+});
+
 // ── API: LEAD CAPTURE (exit-intent popup) ────────────────────────────────────
 
 app.post('/api/lead-capture', async (req, res) => {
