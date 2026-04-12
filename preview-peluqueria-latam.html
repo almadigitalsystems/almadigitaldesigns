@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Peluquer&iacute;a &mdash; Barber&iacute;a Cl&aacute;sica con Estilo Moderno</title>
+<meta name="description" content="Cortes de cabello, arreglo de barba y afeitado cl&aacute;sico. Barberos profesionales listos para atenderte. Reserva en l&iacute;nea o vis&iacute;tanos hoy.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#111;color:#f0f0f0}
+nav{background:#0d0d0d;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2a2a2a}
+.logo{color:#c9a84c;font-family:'Playfair Display',serif;font-size:1.5rem}
+.nav-cta{border:2px solid #c9a84c;color:#c9a84c;padding:.45rem 1.2rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.9rem}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:90vh}
+.hero-right{background:#1a1a1a;padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center;order:2}
+.hero-left{background:linear-gradient(135deg,#c9a84c 0%,#f0d080 50%,#c9a84c 100%);display:flex;align-items:center;justify-content:center;font-size:9rem;order:1}
+.hero-right .tag{background:#c9a84c;color:#0d0d0d;display:inline-block;padding:.25rem .8rem;border-radius:2px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.5rem}
+.hero-right h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin-bottom:1.2rem;color:#fff}
+.hero-right h1 span{color:#c9a84c}
+.hero-right p{color:#888;line-height:1.7;margin-bottom:2.5rem;font-size:.95rem}
+.btn-gold{background:#c9a84c;color:#0d0d0d;padding:.9rem 2rem;border-radius:4px;font-weight:800;text-decoration:none;display:inline-block}
+.services{background:#0d0d0d;padding:5rem 2rem;text-align:center}
+.services h2{color:#fff;font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:.5rem}
+.services .sub{color:#666;margin-bottom:3rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.svc-card{border:1px solid #2a2a2a;border-radius:8px;padding:2rem 1rem;text-align:center}
+.svc-card:hover{border-color:#c9a84c;background:#161616}
+.svc-card .icon{font-size:2.5rem;margin-bottom:.8rem}
+.svc-card h3{font-size:.9rem;font-weight:700;color:#fff;line-height:1.3}
+.about{background:#1a1a1a;padding:5rem 2rem;max-width:700px;margin:0 auto;text-align:center}
+.about h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:#c9a84c;margin-bottom:1rem}
+.about p{color:#888;line-height:1.8}
+.testimonials{background:#111;padding:4rem 2rem;text-align:center;border-top:1px solid #1a1a1a}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:800px;margin:2rem auto 0}
+.t-card{background:#1a1a1a;border-radius:8px;padding:1.5rem;border-top:2px solid #c9a84c}
+.stars{color:#c9a84c;font-size:1rem;margin-bottom:.5rem}
+.t-text{font-style:italic;color:#888;font-size:.9rem;line-height:1.6;margin-bottom:.7rem}
+.t-author{color:#c9a84c;font-size:.8rem;font-weight:700}
+.cta{background:linear-gradient(135deg,#c9a84c,#f0d080);padding:5rem 2rem;text-align:center}
+.cta h2{color:#0d0d0d;font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+.cta p{color:#333;margin-bottom:2rem}
+.cta-form{max-width:380px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
+.cta-form input{padding:.8rem 1rem;border-radius:4px;border:none;font-size:1rem;font-family:'Inter',sans-serif}
+.btn-dark{background:#0d0d0d;color:#c9a84c;padding:.9rem;border-radius:4px;font-weight:800;border:none;cursor:pointer;font-size:1rem;width:100%;font-family:'Inter',sans-serif}
+footer{background:#080808;color:#444;padding:1.5rem;text-align:center;font-size:.85rem}
+.alma-badge{color:#c9a84c}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.hero-left{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">&#9988; La Navaja</div>
+  <a href="#turno" class="nav-cta">Reservar turno</a>
+</nav>
+<section class="hero">
+  <div class="hero-left">&#9988;</div>
+  <div class="hero-right">
+    <div class="tag">&#9989; Barberos profesionales</div>
+    <h1>Cortes que te hacen<br>sentir <span>poderoso.</span><br>Ven a la barber&iacute;a.</h1>
+    <p>Barber&iacute;a cl&aacute;sica con t&eacute;cnicas modernas. El lugar donde cada corte es una obra de arte.</p>
+    <a href="#turno" class="btn-gold">Reserva tu turno ahora</a>
+  </div>
+</section>
+<section class="services">
+  <h2>Nuestros Servicios</h2>
+  <p class="sub">Desde el corte cl&aacute;sico hasta los estilos m&aacute;s actuales</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="icon">&#9988;&#65039;</div><h3>Corte cl&aacute;sico y moderno</h3></div>
+    <div class="svc-card"><div class="icon">&#129476;</div><h3>Arreglo y dise&ntilde;o de barba</h3></div>
+    <div class="svc-card"><div class="icon">&#129706;</div><h3>Afeitado tradicional con navaja</h3></div>
+    <div class="svc-card"><div class="icon">&#128134;</div><h3>Tratamientos para el cuero cabelludo</h3></div>
+    <div class="svc-card"><div class="icon">&#128102;</div><h3>Cortes para ni&ntilde;os y adultos</h3></div>
+  </div>
+</section>
+<section class="about">
+  <h2>La barber&iacute;a del barrio</h2>
+  <p>Somos la barber&iacute;a de confianza del barrio, donde cada cliente es recibido como en casa. Nuestros barberos tienen a&ntilde;os de experiencia y pasi&oacute;n por el oficio &mdash; desde cortes cl&aacute;sicos hasta los estilos m&aacute;s actuales. Ven, rel&aacute;jate y sal sinti&eacute;ndote en tu mejor versi&oacute;n.</p>
+</section>
+<section class="testimonials">
+  <h2 style="color:#fff;font-family:'Playfair Display',serif;font-size:1.8rem">Lo que dicen nuestros clientes</h2>
+  <div class="t-grid">
+    <div class="t-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-text">&ldquo;El mejor corte que he tenido. El barbero es un artista. Ya es mi barber&iacute;a de cabecera.&rdquo;</p><p class="t-author">&mdash; Carlos M.</p></div>
+    <div class="t-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-text">&ldquo;Ambiente relajado, trato excelente y el corte qued&oacute; exactamente como ped&iacute;. 100% recomendado.&rdquo;</p><p class="t-author">&mdash; Andres P.</p></div>
+    <div class="t-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-text">&ldquo;Llevo a mi hijo aqu&iacute; desde que era chico. Son pacientes, r&aacute;pidos y muy profesionales.&rdquo;</p><p class="t-author">&mdash; Roberto V.</p></div>
+  </div>
+</section>
+<section class="cta" id="turno">
+  <h2>&#9988; Reserva tu Turno</h2>
+  <p>Sin filas, sin esperas. Reserva en minutos.</p>
+  <form class="cta-form" action="https://formspree.io/f/xojppajv" method="POST">
+    <input type="text" name="name" placeholder="Tu nombre" required>
+    <input type="tel" name="phone" placeholder="Tu tel&eacute;fono">
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <input type="text" name="service" placeholder="Servicio deseado (corte, barba, etc.)">
+    <button type="submit" class="btn-dark">Reserva tu turno ahora</button>
+  </form>
+</section>
+<footer>
+  <p>Dise&ntilde;o web por <span class="alma-badge">Alma Digital Designs</span> &mdash; &copy; 2026 La Navaja</p>
+</footer>
+</body>
+</html>
