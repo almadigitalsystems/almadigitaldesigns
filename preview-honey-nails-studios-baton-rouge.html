@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honey Nails Studios | Baton Rouge Nail Salon | Custom Nail Art & Gel Nails</title>
+<meta name="description" content="Honey Nails Studios in Baton Rouge, LA offers custom nail art, gel manicures, acrylics, and pedicures. Book online with Julie today for nails that stand out.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --black: #000000;
+    --gold: #C9A84C;
+    --white: #FFFFFF;
+    --light-gray: #f8f8f8;
+    --mid-gray: #e8e8e8;
+    --text-gray: #555555;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--white); border-bottom: 1px solid var(--mid-gray);
+    padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.05em; color: var(--black); }
+  .nav-cta {
+    background: var(--black); color: var(--white); padding: 0.6rem 1.4rem;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; border: 2px solid var(--black); transition: all 0.25s;
+  }
+  .nav-cta:hover { background: var(--white); color: var(--black); }
+  .hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 8rem 2rem 4rem; background: var(--white);
+  }
+  .hero-inner { max-width: 800px; }
+  .hero-eyebrow {
+    display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gold); padding-bottom: 0.3rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 900; line-height: 1.05; margin-bottom: 2rem; color: var(--black);
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    font-size: 1.15rem; font-weight: 300; color: var(--text-gray);
+    max-width: 560px; margin: 0 auto 3rem; line-height: 1.8;
+  }
+  .gold-rule { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 2rem; }
+  .btn-primary {
+    display: inline-block; background: var(--black); color: var(--white);
+    padding: 1rem 2.5rem; font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    border: 2px solid var(--black); transition: all 0.25s; margin: 0.4rem;
+  }
+  .btn-primary:hover { background: var(--white); color: var(--black); }
+  .btn-gold {
+    display: inline-block; background: var(--gold); color: var(--white);
+    padding: 1rem 2.5rem; font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    border: 2px solid var(--gold); transition: all 0.25s; margin: 0.4rem;
+  }
+  .btn-gold:hover { background: var(--white); color: var(--gold); }
+  .services { padding: 6rem 2rem; background: var(--black); }
+  .services .section-label {
+    text-align: center; font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .services h2 {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700; text-align: center; color: var(--white); margin-bottom: 3.5rem;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px; max-width: 1000px; margin: 0 auto; border: 1px solid #333;
+  }
+  .service-card {
+    padding: 2.5rem 2rem; background: #0a0a0a;
+    border: 1px solid #222; text-align: center; transition: background 0.25s;
+  }
+  .service-card:hover { background: #111; }
+  .service-icon { font-size: 1.5rem; margin-bottom: 1rem; color: var(--gold); }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.5rem;
+  }
+  .about { padding: 6rem 2rem; background: var(--light-gray); }
+  .about-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .about .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: block;
+  }
+  .about h2 {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700; margin-bottom: 2rem; color: var(--black);
+  }
+  .about p { font-size: 1.05rem; color: var(--text-gray); line-height: 1.9; margin-bottom: 1.5rem; }
+  .contact { padding: 6rem 2rem; background: var(--white); }
+  .contact-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+  .contact .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: block;
+  }
+  .contact h2 {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700; margin-bottom: 0.8rem; color: var(--black);
+  }
+  .contact p { color: var(--text-gray); margin-bottom: 2.5rem; font-size: 1rem; }
+  form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+  form input, form textarea {
+    padding: 0.9rem 1rem; border: 1px solid var(--mid-gray);
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; background: var(--white);
+    color: var(--black); outline: none; transition: border-color 0.2s; width: 100%;
+  }
+  form input:focus, form textarea:focus { border-color: var(--gold); }
+  form textarea { min-height: 130px; resize: vertical; }
+  form button {
+    background: var(--black); color: var(--white); border: 2px solid var(--black);
+    padding: 1rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.25s;
+  }
+  form button:hover { background: var(--white); color: var(--black); }
+  .secondary-cta { background: var(--gold); padding: 3rem 2rem; text-align: center; }
+  .secondary-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+  .secondary-cta p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; font-size: 0.95rem; }
+  .btn-white {
+    display: inline-block; background: var(--white); color: var(--gold);
+    padding: 0.85rem 2rem; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    border: 2px solid var(--white); transition: all 0.25s;
+  }
+  .btn-white:hover { background: transparent; color: var(--white); }
+  footer { background: var(--black); color: rgba(255,255,255,0.5); padding: 2rem; text-align: center; font-size: 0.8rem; letter-spacing: 0.05em; }
+  footer strong { color: var(--gold); }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Honey Nails Studios</div>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Baton Rouge, Louisiana</span>
+    <h1>Baton Rouge's Favourite Nail Studio<br><span>Where Every Set Tells a Story</span></h1>
+    <div class="gold-rule"></div>
+    <p>Honey Nails Studios crafts stunning custom nail designs for Baton Rouge clients who want more than a basic manicure. Bookable online, delivered with care.</p>
+    <a href="#contact" class="btn-primary">Book Your Set with Julie</a>
+    <a href="#services" class="btn-gold">See Our Services</a>
+  </div>
+</section>
+<section class="services" id="services">
+  <p class="section-label">What We Offer</p>
+  <h2>Services at Honey Nails Studios</h2>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">&#10022;</div><h3>Custom Nail Art &amp; Press-On Sets</h3></div>
+    <div class="service-card"><div class="service-icon">&#10022;</div><h3>Gel &amp; Dip Powder Manicures</h3></div>
+    <div class="service-card"><div class="service-icon">&#10022;</div><h3>Acrylic Nail Extensions</h3></div>
+    <div class="service-card"><div class="service-icon">&#10022;</div><h3>Nail Repair &amp; Maintenance</h3></div>
+    <div class="service-card"><div class="service-icon">&#10022;</div><h3>Pedicures &amp; Foot Care</h3></div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-inner">
+    <span class="section-label">About Julie &amp; The Studio</span>
+    <h2>Artistry Meets Precision</h2>
+    <div class="gold-rule"></div>
+    <p>Honey Nails Studios is Baton Rouge's creative nail destination, led by Julie, whose eye for detail and passion for nail art have earned her a devoted following. From everyday styles to elaborate custom sets, Honey Nails brings artistry and precision to every appointment.</p>
+    <p>Clients love the personalised experience and the consistently beautiful results.</p>
+    <br><a href="#contact" class="btn-primary">Book Your Appointment</a>
+  </div>
+</section>
+<div class="secondary-cta">
+  <h3>Is Your Nail Salon Website Costing You Clients?</h3>
+  <p>See what a professional website could do for Honey Nails Studios &mdash; completely free.</p>
+  <a href="#contact" class="btn-white">Claim Your Free Redesign</a>
+</div>
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <span class="section-label">Get In Touch</span>
+    <h2>Book Your Set with Julie &mdash; Nail Art You'll Love</h2>
+    <p>Ready for nails that turn heads? Send Julie a message and let's get you booked.</p>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Tell Julie what you're envisioning for your nails..."></textarea>
+      <button type="submit">Book My Appointment</button>
+    </form>
+  </div>
+</section>
+<footer><strong>Honey Nails Studios</strong> &nbsp;|&nbsp; Baton Rouge, Louisiana &nbsp;|&nbsp; &copy; 2025 All Rights Reserved</footer>
+</body>
+</html>
