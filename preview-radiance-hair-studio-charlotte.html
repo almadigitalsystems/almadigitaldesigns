@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radiance Hair Studio Charlotte NC</title>
+  <meta name="description" content="Charlotte natural hair salon. Book today.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown: #3e2723;
+      --brown-mid: #5d4037;
+      --rose: #c2956c;
+      --rose-light: #d4aa8a;
+      --cream: #faf7f4;
+      --cream-dark: #f0ebe5;
+      --white: #ffffff;
+      --text-dark: #2c1810;
+      --text-mid: #6b4c3b;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--rose);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 44px;
+      z-index: 999;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--brown);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--rose); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--rose); }
+    .nav-cta {
+      background: var(--brown);
+      color: var(--cream) !important;
+      padding: 10px 24px !important;
+      border-radius: 50px;
+      font-weight: 700 !important;
+    }
+    .nav-cta:hover { background: var(--rose) !important; color: var(--white) !important; }
+
+    /* HERO — Bold full screen */
+    .hero {
+      background: var(--brown);
+      color: var(--white);
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 260px;
+      font-weight: 900;
+      color: rgba(194, 149, 108, 0.08);
+      letter-spacing: -10px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rose-light);
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--rose);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(44px, 7vw, 84px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 28px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-sub {
+      font-size: 19px;
+      color: rgba(250,247,244,0.7);
+      margin-bottom: 48px;
+      line-height: 1.8;
+      max-width: 540px;
+      font-weight: 300;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--rose);
+      color: var(--white);
+      text-decoration: none;
+      padding: 18px 44px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: all 0.25s;
+    }
+
+    .btn-hero:hover {
+      background: var(--rose-light);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(194,149,108,0.4);
+    }
+
+    .hero-tag-line {
+      margin-top: 48px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.5px;
+    }
+
+    /* PAIN SECTION */
+    .pain-section {
+      background: var(--cream-dark);
+      padding: 96px 48px;
+    }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 16px;
+    }
+
+    .pain-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      margin-bottom: 60px;
+      line-height: 1.15;
+      color: var(--brown);
+      max-width: 640px;
+    }
+
+    .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+    .pain-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 44px 40px;
+      border-top: 3px solid var(--rose);
+    }
+
+    .pain-icon { font-size: 36px; margin-bottom: 20px; }
+    .pain-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 12px; color: var(--brown); }
+    .pain-card p { font-size: 15px; color: var(--text-mid); line-height: 1.85; }
+
+    /* SERVICES */
+    .services-section {
+      background: var(--brown);
+      color: var(--white);
+      padding: 96px 48px;
+    }
+
+    .services-section .section-kicker { color: var(--rose-light); }
+
+    .services-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      margin-bottom: 60px;
+      line-height: 1.15;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      border: 1px solid rgba(194,149,108,0.2);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all 0.3s;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .service-card:hover {
+      background: rgba(194,149,108,0.15);
+      border-color: var(--rose);
+      transform: translateY(-4px);
+    }
+
+    .service-icon { font-size: 36px; margin-bottom: 16px; }
+    .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .service-card p { font-size: 14px; color: rgba(250,247,244,0.6); line-height: 1.7; }
+
+    /* ABOUT */
+    .about-section {
+      background: var(--cream);
+      padding: 96px 48px;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.15;
+      color: var(--brown);
+    }
+
+    .about-section p {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .about-portrait {
+      background: var(--brown-mid);
+      border-radius: 24px;
+      aspect-ratio: 4/5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-portrait::before {
+      content: '✂️';
+      font-size: 120px;
+      opacity: 0.1;
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+    }
+
+    .about-portrait-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .about-portrait-title { font-size: 14px; color: var(--rose-light); font-weight: 600; margin-top: 8px; }
+
+    .about-badge {
+      background: var(--rose);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--cream-dark);
+      padding: 96px 48px;
+    }
+
+    .contact-inner { max-width: 620px; margin: 0 auto; }
+
+    .contact-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      margin-bottom: 40px;
+      line-height: 1.15;
+      color: var(--brown);
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--brown); margin-bottom: 8px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid var(--cream-dark);
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--text-dark);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--rose); }
+    .form-group textarea { min-height: 130px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--brown);
+      color: var(--cream);
+      border: none;
+      padding: 18px;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .form-submit:hover { background: var(--rose); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--brown);
+      color: var(--white);
+      padding: 56px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; }
+    .footer-logo span { color: var(--rose); }
+    .footer-cta {
+      background: var(--rose);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .footer-cta:hover { background: var(--rose-light); }
+    .footer-copy { color: rgba(255,255,255,0.4); font-size: 13px; width: 100%; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px; }
+      .pain-section, .services-section, .about-section, #contact { padding: 60px 20px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      footer { padding: 40px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">💇‍♀️ Free Website Preview — Radiance Hair Studio | Designed by Alma Digital Services</div>
+
+  <nav>
+    <a href="#" class="nav-logo">Radiance <span>Hair Studio</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Regina</a></li>
+      <li><a href="#contact" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-text">R</div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Natural Hair Specialist · Charlotte, NC</div>
+      <h1>Charlotte<br>Natural Hair<br>Studio <em>Radiance</em></h1>
+      <p class="hero-sub">Transformations that celebrate your natural beauty. Book with Regina and experience Charlotte's premier natural hair destination.</p>
+      <a href="#contact" class="btn-hero">Book Your Appointment with Regina →</a>
+      <p class="hero-tag-line">Charlotte's most trusted natural hair studio.</p>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain-section">
+    <div class="section-inner">
+      <div class="section-kicker">Your Business Deserves Better</div>
+      <h2>Charlotte clients are searching — and finding someone else.</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">🔍</div>
+          <h3>Invisible in Charlotte Search Results</h3>
+          <p>When Charlotte clients search for natural hair salons, they're finding competitors who have a real web presence — while Radiance Hair Studio stays invisible online.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">📸</div>
+          <h3>No Online Portfolio to Attract Clients</h3>
+          <p>Regina's stunning work deserves to be seen. Without an online portfolio of hairstyling, new clients have no way to discover and trust the studio before booking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-inner">
+      <div class="section-kicker">Our Services</div>
+      <h2>Every service crafted for your natural beauty.</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Natural Hair Styling</h3>
+          <p>Expert styling that works with your hair's natural texture and personality.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💆‍♀️</div>
+          <h3>Braids & Protective Styles</h3>
+          <p>Beautiful braids and protective styles that promote hair health and growth.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Hair Treatments</h3>
+          <p>Nourishing treatments to restore moisture, strength, and shine to your hair.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Color Services</h3>
+          <p>Vibrant, healthy color that complements and celebrates your natural beauty.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👰‍♀️</div>
+          <h3>Bridal Styling</h3>
+          <p>Unforgettable bridal looks for your most important day in Charlotte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-kicker">Meet Regina</div>
+        <h2>Charlotte's premier natural hair destination.</h2>
+        <p>Radiance Hair Studio is Charlotte's leading destination for natural hair care and styling. Regina combines deep expertise with a warm, personal touch that makes every client feel celebrated.</p>
+        <p>From protective styles to bridal transformations, every service at Radiance is designed to honor the natural beauty of your hair while keeping it healthy and thriving.</p>
+        <a href="#contact" class="btn-hero" style="margin-top: 20px;">Book with Regina Today →</a>
+      </div>
+      <div class="about-portrait">
+        <div class="about-portrait-name">Regina</div>
+        <div class="about-portrait-title">Owner · Natural Hair Specialist</div>
+        <div class="about-badge">Charlotte, NC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-kicker">Book Your Appointment</div>
+      <h2>Book Your Appointment with Regina</h2>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Radiance Hair Studio Charlotte NC">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(704) 000-0000" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Service Requested</label>
+          <select name="service">
+            <option value="">Select a service...</option>
+            <option>Natural Hair Styling</option>
+            <option>Braids and Protective Styles</option>
+            <option>Hair Treatments</option>
+            <option>Color Services</option>
+            <option>Bridal Styling</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us about your hair goals or any questions..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Book My Appointment with Regina →</button>
+      </form>
+      <p style="margin-top:16px; font-size:14px; color:var(--text-mid); text-align:center;">
+        Contact Regina directly: <a href="mailto:reginabryant515@yahoo.com" style="color:var(--rose); font-weight:600;">reginabryant515@yahoo.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Radiance <span>Hair Studio</span></div>
+      <div style="color:rgba(255,255,255,0.4); font-size:13px; margin-top:6px;">Charlotte, NC</div>
+    </div>
+    <a href="#contact" class="footer-cta">Claim Your Free Redesign</a>
+    <p class="footer-copy">© 2024 Radiance Hair Studio. Designed by <strong>Alma Digital Services</strong>. This is a free website preview.</p>
+  </footer>
+
+</body>
+</html>
