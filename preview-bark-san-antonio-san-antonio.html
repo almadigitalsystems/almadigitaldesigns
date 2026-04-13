@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bark San Antonio Dog Grooming San Antonio TX</title>
+  <meta name="description" content="San Antonio trusted dog grooming since 2010. Book today.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #00897b;
+      --teal-light: #00acc1;
+      --orange: #ff8f00;
+      --dark: #1a1a2e;
+      --dark2: #16213e;
+      --white: #ffffff;
+      --light: #f4fffe;
+      --gray: #666;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--teal);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--dark);
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 44px;
+      z-index: 999;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--orange); }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--dark) !important;
+      padding: 10px 24px !important;
+      border-radius: 50px;
+      font-weight: 700 !important;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--dark);
+      color: var(--white);
+      padding: 100px 48px;
+      position: relative;
+      overflow: hidden;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: '🐾';
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 280px;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .hero-inner { max-width: 700px; position: relative; z-index: 2; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,137,123,0.25);
+      border: 1px solid var(--teal);
+      color: var(--teal-light);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 20px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--dark);
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover { background: #ffab40; transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--white); }
+
+    /* TRUST STATS */
+    .trust-bar {
+      background: var(--teal);
+      padding: 32px 48px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .trust-stat { text-align: center; color: var(--white); }
+    .trust-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .trust-stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+
+    /* PAIN POINTS */
+    .pain-section {
+      background: var(--light);
+      padding: 96px 48px;
+    }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .pain-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 56px;
+      line-height: 1.2;
+      max-width: 600px;
+    }
+
+    .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+    .pain-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      border-left: 4px solid var(--orange);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .pain-card-icon { font-size: 36px; margin-bottom: 16px; }
+    .pain-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: var(--dark); }
+    .pain-card p { font-size: 15px; color: var(--gray); line-height: 1.8; }
+
+    /* SERVICES */
+    .services-section {
+      background: var(--dark2);
+      padding: 96px 48px;
+      color: var(--white);
+    }
+
+    .services-section .section-tag { color: var(--orange); }
+
+    .services-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 56px;
+      line-height: 1.2;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      background: rgba(0,137,123,0.2);
+      border-color: var(--teal);
+      transform: translateY(-4px);
+    }
+
+    .service-card-icon { font-size: 40px; margin-bottom: 16px; }
+    .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .service-card p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* ABOUT */
+    .about-section {
+      background: var(--white);
+      padding: 96px 48px;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-section .section-tag { color: var(--teal); }
+
+    .about-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .about-section p {
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .about-card {
+      background: var(--dark);
+      border-radius: 24px;
+      padding: 56px 48px;
+      color: var(--white);
+      text-align: center;
+      position: relative;
+    }
+
+    .about-card::before {
+      content: '🐾';
+      font-size: 80px;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .about-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .about-card-name span { color: var(--orange); }
+
+    .about-card-sub { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+
+    .about-card-tag {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--light);
+      padding: 96px 48px;
+    }
+
+    .contact-inner {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .contact-inner .section-tag { color: var(--teal); }
+
+    .contact-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--teal); }
+    .form-group textarea { min-height: 130px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--orange);
+      color: var(--dark);
+      border: none;
+      padding: 16px;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .form-submit:hover { background: var(--teal); color: var(--white); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 56px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .footer-logo span { color: var(--orange); }
+
+    .footer-cta {
+      background: var(--orange);
+      color: var(--dark);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .footer-cta:hover { background: var(--teal); color: var(--white); }
+    .footer-copy { color: #555; font-size: 13px; width: 100%; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px; }
+      .trust-bar { gap: 32px; padding: 24px 20px; }
+      .pain-section, .services-section, .about-section, #contact { padding: 60px 20px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      footer { padding: 40px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">🐾 Free Website Preview — Bark San Antonio | Designed by Alma Digital Services</div>
+
+  <nav>
+    <a href="#" class="nav-logo">Bark <span>San Antonio</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Gloria</a></li>
+      <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🐾 San Antonio's Most Loved Dog Grooming Studio</div>
+      <h1>San Antonio's Beloved<br><span>Dog Grooming</span><br>Studio</h1>
+      <p class="hero-sub">14 years of happy tails. Book online and let Gloria pamper your pup today.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Book Your Dog's Appointment 🐶</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-stat">
+      <div class="trust-stat-number">14</div>
+      <div class="trust-stat-label">Years Experience</div>
+    </div>
+    <div class="trust-stat">
+      <div class="trust-stat-number">2010</div>
+      <div class="trust-stat-label">Established Since</div>
+    </div>
+    <div class="trust-stat">
+      <div class="trust-stat-number">SA's</div>
+      <div class="trust-stat-label">Favorite Studio</div>
+    </div>
+  </div>
+
+  <!-- PAIN POINTS -->
+  <section class="pain-section">
+    <div class="section-inner">
+      <div class="section-tag">Why This Matters</div>
+      <h2>Your pups deserve the best — and so does your business.</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-card-icon">🔍</div>
+          <h3>Invisible in Local Searches</h3>
+          <p>An auto-generated Google page is not showing up in local pet groomer searches — San Antonio dog owners are going to competitors who have real websites.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-icon">📅</div>
+          <h3>No Online Booking or Portfolio</h3>
+          <p>Without a grooming portfolio, pricing, or online booking, potential clients have nowhere to go — and every missed booking is revenue lost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-inner">
+      <div class="section-tag">Grooming Services</div>
+      <h2>Everything your dog needs, done with love.</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-icon">✂️</div>
+          <h3>Full Grooming</h3>
+          <p>Complete head-to-tail grooming session — bath, dry, cut, nails, and ears.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">🛁</div>
+          <h3>Bath and Brush</h3>
+          <p>Deep cleansing bath with professional brushout to keep coats healthy and shiny.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">💅</div>
+          <h3>Nail Trim & Ear Cleaning</h3>
+          <p>Safe, stress-free nail trims and gentle ear cleaning for your pup's comfort.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">🌀</div>
+          <h3>De-Shedding</h3>
+          <p>Specialized treatment to reduce shedding and keep your home fur-free.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">🐶</div>
+          <h3>Puppy's First Groom</h3>
+          <p>A gentle, positive first grooming experience designed especially for puppies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-tag">Meet Gloria</div>
+        <h2>14 years of tails wagging in San Antonio.</h2>
+        <p>Bark San Antonio has pampered San Antonio dogs since 2010. Owner Gloria built her reputation one happy pup at a time — treating every dog that walks through the door like family.</p>
+        <p>Whether it's a quick bath or a full makeover, Gloria's expertise and gentle touch ensure your dog leaves looking and feeling their absolute best.</p>
+        <a href="#contact" class="btn-primary" style="margin-top: 16px; display: inline-flex;">Book an Appointment →</a>
+      </div>
+      <div class="about-card">
+        <div class="about-card-name">Gloria</div>
+        <div class="about-card-sub">Owner & Master Groomer · Since 2010</div>
+        <div class="about-card-tag">San Antonio's Trusted Dog Groomer</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-tag">Book an Appointment</div>
+      <h2>Book Your Dog's Appointment Today</h2>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Bark San Antonio San Antonio TX">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(210) 000-0000" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Dog's Breed & Size</label>
+          <input type="text" name="dog_info" placeholder="e.g., Golden Retriever, Large">
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select name="service">
+            <option value="">Select a service...</option>
+            <option>Full Grooming</option>
+            <option>Bath and Brush</option>
+            <option>Nail Trim and Ear Cleaning</option>
+            <option>De-Shedding</option>
+            <option>Puppy First Groom</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us about your pup or any special requests..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Book Your Dog's Appointment 🐾</button>
+      </form>
+      <p style="margin-top:16px; font-size:14px; color:var(--gray); text-align:center;">
+        Questions? Email <a href="mailto:barkpetgrooming2010@gmail.com" style="color:var(--teal); font-weight:600;">barkpetgrooming2010@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Bark <span>San Antonio</span></div>
+      <div style="color:#555; font-size:13px; margin-top:6px;">San Antonio, TX · Since 2010</div>
+    </div>
+    <a href="#contact" class="footer-cta">Claim Your Free Redesign</a>
+    <p class="footer-copy">© 2024 Bark San Antonio. Designed by <strong>Alma Digital Services</strong>. This is a free website preview.</p>
+  </footer>
+
+</body>
+</html>
