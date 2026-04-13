@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustang Service Center Dallas TX</title>
+  <meta name="description" content="Dallas auto repair 15 years. Schedule today.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --charcoal: #212121;
+      --charcoal2: #1a1a1a;
+      --charcoal3: #2c2c2c;
+      --orange: #e65100;
+      --orange-bright: #f57c00;
+      --silver: #9e9e9e;
+      --silver-light: #bdbdbd;
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+      --text-light: rgba(255,255,255,0.7);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--charcoal); line-height: 1.6; }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--charcoal);
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 44px;
+      z-index: 999;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--silver-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white) !important;
+      padding: 10px 24px !important;
+      border-radius: 3px;
+      font-weight: 700 !important;
+    }
+    .nav-cta:hover { background: var(--orange-bright) !important; }
+
+    /* HERO — SPLIT SCREEN */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+    }
+
+    .hero-left {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--orange);
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 24px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-light);
+      margin-bottom: 44px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 18px 40px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 15px;
+      width: fit-content;
+      transition: all 0.2s;
+    }
+
+    .btn-hero:hover {
+      background: var(--orange-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(230,81,0,0.4);
+    }
+
+    .hero-right {
+      background: var(--charcoal2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(230,81,0,0.1) 0%, transparent 60%);
+    }
+
+    .hero-icon-main {
+      font-size: 140px;
+      line-height: 1;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 32px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      border-top: 1px solid #333;
+    }
+
+    .hero-stat {
+      flex: 1;
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--white);
+      border-right: 1px solid #333;
+    }
+
+    .hero-stat:last-child { border-right: none; }
+
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-top: 6px;
+    }
+
+    /* PAIN SECTION */
+    .pain-section {
+      background: var(--off-white);
+      padding: 96px 48px;
+    }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 18px;
+    }
+
+    .pain-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      margin-bottom: 60px;
+      line-height: 1.15;
+      max-width: 640px;
+    }
+
+    .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    .pain-card {
+      background: var(--white);
+      padding: 44px 40px;
+      border-left: 4px solid var(--orange);
+      border-radius: 2px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    .pain-icon { font-size: 40px; margin-bottom: 20px; }
+    .pain-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+    .pain-card p { font-size: 15px; color: #666; line-height: 1.85; }
+
+    /* SERVICES */
+    .services-section {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 96px 48px;
+    }
+
+    .services-section .section-kicker { color: var(--orange); }
+
+    .services-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      margin-bottom: 60px;
+      line-height: 1.15;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+      background: #333;
+    }
+
+    .service-item {
+      background: var(--charcoal3);
+      padding: 44px 32px;
+      transition: background 0.2s;
+    }
+
+    .service-item:hover { background: #363636; }
+
+    .service-item::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .service-icon { font-size: 36px; margin-bottom: 16px; }
+    .service-item h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .service-item p { font-size: 14px; color: var(--silver); line-height: 1.7; }
+
+    /* ABOUT */
+    .about-section {
+      background: var(--white);
+      padding: 96px 48px;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.15;
+    }
+
+    .about-section p { font-size: 16px; color: #555; line-height: 1.9; margin-bottom: 16px; }
+
+    .about-card {
+      background: var(--charcoal);
+      border-radius: 4px;
+      padding: 56px 48px;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+    }
+
+    .about-card-icon { font-size: 64px; margin-bottom: 24px; }
+    .about-card-name { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; margin-bottom: 8px; }
+    .about-card-name span { color: var(--orange); }
+    .about-card-title { font-size: 14px; color: var(--silver); margin-bottom: 24px; }
+    .about-tag {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--off-white);
+      padding: 96px 48px;
+    }
+
+    .contact-inner { max-width: 640px; margin: 0 auto; }
+
+    .contact-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      margin-bottom: 44px;
+      line-height: 1.15;
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 3px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--charcoal);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--orange); }
+    .form-group textarea { min-height: 130px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      padding: 18px;
+      border-radius: 3px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .form-submit:hover { background: var(--orange-bright); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal2);
+      color: var(--white);
+      padding: 56px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; }
+    .footer-logo span { color: var(--orange); }
+    .footer-sub { color: var(--silver); font-size: 13px; margin-top: 6px; }
+    .footer-cta {
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .footer-cta:hover { background: var(--orange-bright); }
+    .footer-copy { color: #444; font-size: 13px; width: 100%; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 300px; padding: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero-left { padding: 60px 20px; }
+      .pain-section, .services-section, .about-section, #contact { padding: 60px 20px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      footer { padding: 40px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">🔧 Free Website Preview — Mustang Service Center | Designed by Alma Digital Services</div>
+
+  <nav>
+    <a href="#" class="nav-logo">Mustang <span>Service Center</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Craig</a></li>
+      <li><a href="#contact" class="nav-cta">Schedule Service</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO — SPLIT SCREEN -->
+  <section class="hero">
+    <!-- LEFT: TEXT CTA -->
+    <div class="hero-left">
+      <div class="hero-tag">Dallas, TX — Trusted Since 2009</div>
+      <h1>Dallas Trusted<br>Auto <span>Service</span><br>Center</h1>
+      <p class="hero-sub">15 years of reliable repairs. Open, ready, and now easy to find online — schedule with Craig today.</p>
+      <a href="#contact" class="btn-hero">Schedule Your Service with Craig →</a>
+    </div>
+
+    <!-- RIGHT: VISUAL -->
+    <div class="hero-right">
+      <div class="hero-right-bg"></div>
+      <div class="hero-icon-main">🔧</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">15</div>
+          <div class="hero-stat-label">Years</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">DAL</div>
+          <div class="hero-stat-label">Trusted</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">TX</div>
+          <div class="hero-stat-label">State Inspections</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN SECTION -->
+  <section class="pain-section">
+    <div class="section-inner">
+      <div class="section-kicker">The Problem</div>
+      <h2>A broken website is costing you daily business.</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">🔗</div>
+          <h3>Broken Domain Makes You Look Closed</h3>
+          <p>When Dallas drivers Google Mustang Service Center, a broken domain makes the business appear closed or gone — sending real customers straight to your competitors.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">📅</div>
+          <h3>No Online Booking Means Lost Appointments Daily</h3>
+          <p>Every day without an online booking option is a day of missed appointments — competitors with working websites capture those customers the moment someone searches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-inner">
+      <div class="section-kicker">Our Services</div>
+      <h2>Full-service repairs you can count on.</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-icon">🔬</div>
+          <h3>Engine Diagnostics</h3>
+          <p>Advanced diagnostic tools to identify issues fast and get your car back on the road.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🛑</div>
+          <h3>Brake Service</h3>
+          <p>Complete brake inspections, pad replacements, and rotor service for your safety.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🛢️</div>
+          <h3>Oil Changes</h3>
+          <p>Quick, professional oil changes with quality fluids for all makes and models.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">❄️</div>
+          <h3>AC & Heating Repair</h3>
+          <p>Keep Dallas heat and cold at bay with expert HVAC diagnostics and repair.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">📋</div>
+          <h3>State Inspection</h3>
+          <p>Fast, certified Texas state vehicle inspections — in and out same day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-kicker">About Craig</div>
+        <h2>15 years of honest auto repair in Dallas.</h2>
+        <p>Mustang Service Center has served Dallas drivers for 15 years. Owner Craig McWhirter built his reputation on honest work, fair prices, and getting the job done right — every time.</p>
+        <p>From routine oil changes to complex engine diagnostics, Craig's team delivers the quality repairs Dallas drivers have come to depend on since day one.</p>
+        <a href="#contact" class="btn-hero" style="margin-top: 20px;">Schedule Service with Craig →</a>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🔧</div>
+        <div class="about-card-name">Craig <span>McWhirter</span></div>
+        <div class="about-card-title">Owner · Master Technician · 15 Years in Dallas</div>
+        <div class="about-tag">Dallas Trusted Auto Repair</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-kicker">Schedule Service</div>
+      <h2>Schedule Your Service with Craig</h2>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Mustang Service Center Dallas TX">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(214) 000-0000" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Vehicle Year, Make & Model</label>
+          <input type="text" name="vehicle" placeholder="e.g., 2019 Ford F-150">
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select name="service">
+            <option value="">Select a service...</option>
+            <option>Engine Diagnostics</option>
+            <option>Brake Service</option>
+            <option>Oil Change</option>
+            <option>AC and Heating Repair</option>
+            <option>State Inspection</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Describe the Issue</label>
+          <textarea name="message" placeholder="Tell Craig what's going on with your vehicle..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Schedule My Service Appointment →</button>
+      </form>
+      <p style="margin-top:16px; font-size:14px; color:#666; text-align:center;">
+        Email Craig directly: <a href="mailto:Craig.mcwhirter@att.net" style="color:var(--orange); font-weight:600;">Craig.mcwhirter@att.net</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Mustang <span>Service Center</span></div>
+      <div class="footer-sub">Dallas, TX · 15 Years Trusted Auto Repair</div>
+    </div>
+    <a href="#contact" class="footer-cta">Claim Your Free Redesign</a>
+    <p class="footer-copy">© 2024 Mustang Service Center. Designed by <strong>Alma Digital Services</strong>. This is a free website preview.</p>
+  </footer>
+
+</body>
+</html>
