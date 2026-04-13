@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sherry's Dog Grooming | Edmonton Dog Groomer | 40 Years of Experience</title>
+<meta name="description" content="Sherry's Dog Grooming in Edmonton, AB has 40+ years of experience with all breeds. Full grooms, de-shedding, nail trims, and more. Book your dog's appointment online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green: #2D5016; --amber: #FFB300; --white: #FFFFFF;
+    --dark-green: #1a2e0a; --light-green: #f2f6ee; --mid-green: #3d6b1f;
+    --amber-light: #fff8e1; --text: #1a2e0a; --muted: #5a7040;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--dark-green); padding: 0 2rem;
+    display: flex; justify-content: space-between; align-items: center; height: 64px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); }
+  .nav-logo span { color: var(--amber); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--amber); }
+  .nav-cta {
+    background: var(--amber); color: var(--dark-green); padding: 0.6rem 1.4rem;
+    font-size: 0.82rem; font-weight: 800; text-decoration: none;
+    letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.25s; border: 2px solid var(--amber);
+  }
+  .nav-cta:hover { background: transparent; color: var(--amber); }
+  .hero {
+    background: linear-gradient(160deg, var(--dark-green) 0%, var(--green) 60%, var(--mid-green) 100%);
+    padding: 6rem 2rem 5rem; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; right: 0; bottom: 0;
+    width: 40%; background: linear-gradient(180deg, rgba(255,179,0,0.07) 0%, transparent 100%);
+  }
+  .hero-inner { max-width: 850px; margin: 0 auto; position: relative; z-index: 2; }
+  .heritage-badge {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    background: rgba(255,179,0,0.15); border: 1px solid rgba(255,179,0,0.35);
+    padding: 0.5rem 1.2rem; margin-bottom: 2rem; border-radius: 3px;
+  }
+  .heritage-badge span { color: var(--amber); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .hero h1 .highlight { color: var(--amber); }
+  .amber-rule { width: 70px; height: 3px; background: var(--amber); margin-bottom: 1.5rem; border-radius: 2px; }
+  .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 580px; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .btn-amber {
+    display: inline-block; background: var(--amber); color: var(--dark-green);
+    padding: 1rem 2.2rem; font-size: 0.88rem; font-weight: 800;
+    letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
+    border: 2px solid var(--amber); transition: all 0.25s;
+  }
+  .btn-amber:hover { background: transparent; color: var(--amber); }
+  .btn-outline-white {
+    display: inline-block; background: transparent; color: var(--white);
+    padding: 1rem 2.2rem; font-size: 0.88rem; font-weight: 500;
+    text-decoration: none; border: 2px solid rgba(255,255,255,0.3); transition: all 0.25s;
+  }
+  .btn-outline-white:hover { border-color: white; }
+  .years-block { margin-left: auto; text-align: right; border-left: 3px solid var(--amber); padding-left: 1.5rem; }
+  .years-num { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900; color: var(--amber); line-height: 1; }
+  .years-label { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; }
+  .proof-strip { background: var(--amber); padding: 1.5rem 2rem; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+  .proof-item { text-align: center; }
+  .proof-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--dark-green); }
+  .proof-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); }
+  .services { padding: 6rem 2rem; background: var(--light-green); }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mid-green); margin-bottom: 0.6rem; display: block; }
+  .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--dark-green); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .service-card {
+    background: white; padding: 2rem 1.5rem; border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(45,80,22,0.08); transition: all 0.25s; border-bottom: 3px solid transparent;
+  }
+  .service-card:hover { border-bottom-color: var(--amber); transform: translateY(-3px); }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark-green); }
+  .about { padding: 6rem 2rem; background: white; }
+  .about-inner { max-width: 1000px; margin: 0 auto; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-visual { background: linear-gradient(135deg, var(--green), var(--dark-green)); border-radius: 8px; padding: 3rem 2rem; text-align: center; }
+  .about-visual .big-year { font-family: 'Playfair Display', serif; font-size: 8rem; font-weight: 900; color: rgba(255,179,0,0.15); line-height: 1; }
+  .about-visual .year-label { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; }
+  .about-visual .founded { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--amber); margin-top: 1rem; }
+  .about-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--dark-green); margin-bottom: 1.5rem; }
+  .about-text p { font-size: 1rem; color: #4a5c35; line-height: 1.9; margin-bottom: 1rem; }
+  .secondary-cta { background: var(--amber-light); padding: 4rem 2rem; text-align: center; border-top: 3px solid var(--amber); }
+  .secondary-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--dark-green); margin-bottom: 0.5rem; }
+  .secondary-cta p { color: #5a6a3a; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .contact { padding: 6rem 2rem; background: var(--dark-green); }
+  .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+  .contact h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--white); margin-bottom: 0.8rem; }
+  .contact p { color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; }
+  form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+  form input, form textarea {
+    padding: 0.9rem 1rem; background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,179,0,0.25);
+    font-family: 'Inter', sans-serif; font-size: 0.95rem;
+    color: var(--white); outline: none; border-radius: 4px; width: 100%; transition: border-color 0.2s;
+  }
+  form input::placeholder, form textarea::placeholder { color: rgba(255,255,255,0.3); }
+  form input:focus, form textarea:focus { border-color: var(--amber); }
+  form textarea { min-height: 130px; resize: vertical; }
+  form button {
+    background: var(--amber); color: var(--dark-green); border: 2px solid var(--amber);
+    padding: 1rem; font-size: 0.88rem; font-weight: 800; letter-spacing: 0.05em;
+    text-transform: uppercase; border-radius: 4px; cursor: pointer; transition: all 0.25s;
+  }
+  form button:hover { background: transparent; color: var(--amber); }
+  footer { background: #0d1a05; color: rgba(255,255,255,0.3); padding: 2rem; text-align: center; font-size: 0.8rem; }
+  footer strong { color: var(--amber); }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-visual { display: none; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .years-block { display: none; }
+    .proof-strip { gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Sherry's <span>Dog Grooming</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Sherry</a></li>
+    <li><a href="#contact">Book Online</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="heritage-badge"><span>Est. Since 1985 &middot; Edmonton, Alberta</span></div>
+    <h1><span class="highlight">40 Years</span> of Happy Dogs &mdash;<br>Edmonton's Most Experienced Dog Groomer</h1>
+    <div class="amber-rule"></div>
+    <p>Sherry's Dog Grooming has been keeping Edmonton's dogs clean, comfortable, and looking their best for four decades. Book online today.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-amber">Book Your Dog's Grooming with Sherry Today</a>
+      <a href="#services" class="btn-outline-white">Our Services</a>
+      <div class="years-block">
+        <div class="years-num">40+</div>
+        <div class="years-label">Years Serving Edmonton</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="proof-strip">
+  <div class="proof-item"><div class="proof-num">40+</div><div class="proof-label">Years Experience</div></div>
+  <div class="proof-item"><div class="proof-num">All</div><div class="proof-label">Breeds Welcome</div></div>
+  <div class="proof-item"><div class="proof-num">1000s</div><div class="proof-label">Happy Edmonton Dogs</div></div>
+  <div class="proof-item"><div class="proof-num">100%</div><div class="proof-label">Trusted Care</div></div>
+</div>
+<section class="services" id="services">
+  <div class="section-header">
+    <span class="section-label">Grooming Services</span>
+    <h2>Professional Care for Every Breed</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">&#128704;</div><h3>Full Groom &amp; Bath Packages</h3></div>
+    <div class="service-card"><div class="service-icon">&#9988;&#65039;</div><h3>Breed-Specific Cuts &amp; Styling</h3></div>
+    <div class="service-card"><div class="service-icon">&#127807;</div><h3>De-Shedding &amp; Undercoat Treatments</h3></div>
+    <div class="service-card"><div class="service-icon">&#128062;</div><h3>Nail Trimming &amp; Ear Cleaning</h3></div>
+    <div class="service-card"><div class="service-icon">&#128021;</div><h3>Senior Dog Gentle Grooming</h3></div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="big-year">40</div>
+        <div class="year-label">Years of Excellence</div>
+        <div class="founded">Edmonton's Most Trusted Groomer</div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">About Sherry</span>
+        <h2>Four Decades of Happy, Tail-Wagging Dogs</h2>
+        <p>Sherry's Dog Grooming has been a beloved part of the Edmonton community for over 40 years. Sherry's decades of experience mean she knows how to handle every breed and temperament with patience, care, and expertise.</p>
+        <p>Generations of Edmonton families have trusted Sherry with their dogs &mdash; and every wagging tail at pickup says it all.</p>
+        <br><a href="#contact" class="btn-amber">Book with Sherry Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="secondary-cta">
+  <h3>Want More Dog Owners to Discover Sherry's?</h3>
+  <p>See what a professionally designed website could do for Sherry's Dog Grooming &mdash; no obligation, completely free.</p>
+  <a href="#contact" class="btn-amber">Claim Your Free Redesign</a>
+</div>
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <span class="section-label">Book Online</span>
+    <h2>Book Your Dog's Grooming with Sherry Today</h2>
+    <p>Ready to get your dog looking their best? Send Sherry a message and she'll get you booked in.</p>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="dog" placeholder="Your Dog's Name &amp; Breed">
+      <textarea name="message" placeholder="Any special requirements or notes for Sherry?"></textarea>
+      <button type="submit">Book My Dog's Grooming Appointment</button>
+    </form>
+  </div>
+</section>
+<footer><strong>Sherry's Dog Grooming</strong> &nbsp;|&nbsp; Edmonton, Alberta, Canada &nbsp;|&nbsp; &copy; 2025 All Rights Reserved</footer>
+</body>
+</html>
