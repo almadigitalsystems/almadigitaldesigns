@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cherie's Pet Salon | Nashville Dog Grooming | Cage-Free &amp; Loving Care</title>
+<meta name="description" content="Cherie's Pet Salon in Nashville, TN offers cage-free dog grooming, breed cuts, baths, de-shedding, and puppy grooms. Book your pet's appointment online today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --brown: #5C3D2E; --teal: #2BACB3; --cream: #FFF8F0;
+    --dark-brown: #3a2219; --light-teal: #e8f8f9; --text: #3a2219; --mid: #c4a882;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(92,61,46,0.97); backdrop-filter: blur(8px);
+    padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--cream); font-weight: 700; }
+  .nav-cta {
+    background: var(--teal); color: white; padding: 0.65rem 1.5rem;
+    font-size: 0.82rem; font-weight: 700; text-decoration: none; border-radius: 30px;
+    letter-spacing: 0.05em; transition: all 0.25s;
+  }
+  .nav-cta:hover { background: white; color: var(--teal); }
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--brown) 0%, var(--dark-brown) 55%, #2a1a0e 100%);
+    display: flex; align-items: center; padding: 7rem 2rem 4rem; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -20%; right: -10%;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(43,172,179,0.15) 0%, transparent 70%);
+  }
+  .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(43,172,179,0.2); border: 1px solid rgba(43,172,179,0.4);
+    color: var(--teal); padding: 0.5rem 1.2rem; border-radius: 30px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+    font-weight: 900; color: var(--cream); line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: normal; color: var(--teal); }
+  .hero p { font-size: 1.1rem; color: rgba(255,248,240,0.75); max-width: 560px; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-teal {
+    display: inline-block; background: var(--teal); color: white;
+    padding: 1rem 2.2rem; font-size: 0.9rem; font-weight: 700;
+    text-decoration: none; border-radius: 4px; transition: all 0.25s; border: 2px solid var(--teal);
+  }
+  .btn-teal:hover { background: transparent; color: var(--teal); }
+  .btn-outline-cream {
+    display: inline-block; background: transparent; color: var(--cream);
+    padding: 1rem 2.2rem; font-size: 0.9rem; font-weight: 600;
+    text-decoration: none; border-radius: 4px; transition: all 0.25s;
+    border: 2px solid rgba(255,248,240,0.4);
+  }
+  .btn-outline-cream:hover { border-color: var(--cream); }
+  .trust-strip { background: var(--teal); padding: 1.2rem 2rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+  .trust-item { color: white; font-size: 0.85rem; font-weight: 600; }
+  .services { padding: 6rem 2rem; background: var(--cream); }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; display: block; }
+  .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--brown); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .service-card {
+    background: white; border-radius: 12px; padding: 2rem 1.5rem;
+    box-shadow: 0 2px 20px rgba(92,61,46,0.08); transition: transform 0.25s, box-shadow 0.25s;
+    border-top: 3px solid var(--teal);
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(92,61,46,0.15); }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--brown); }
+  .about { padding: 6rem 2rem; background: linear-gradient(135deg, var(--dark-brown) 0%, var(--brown) 100%); }
+  .about-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .about h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--cream); margin-bottom: 1.5rem; }
+  .about p { font-size: 1.05rem; color: rgba(255,248,240,0.8); line-height: 1.9; margin-bottom: 1.2rem; }
+  .about-divider { width: 50px; height: 3px; background: var(--teal); margin: 0 auto 2rem; border-radius: 2px; }
+  .secondary-cta { background: var(--light-teal); padding: 4rem 2rem; text-align: center; border-top: 3px solid var(--teal); }
+  .secondary-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--brown); margin-bottom: 0.5rem; }
+  .secondary-cta p { color: #555; margin-bottom: 1.5rem; font-size: 0.95rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .contact { padding: 6rem 2rem; background: var(--cream); }
+  .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+  .contact h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--brown); margin-bottom: 0.8rem; }
+  .contact p { color: #666; margin-bottom: 2.5rem; }
+  form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+  form input, form textarea {
+    padding: 0.9rem 1rem; border: 2px solid #e0d5cc;
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; background: white;
+    color: var(--text); border-radius: 6px; outline: none; width: 100%; transition: border-color 0.2s;
+  }
+  form input:focus, form textarea:focus { border-color: var(--teal); }
+  form textarea { min-height: 130px; resize: vertical; }
+  form button {
+    background: var(--teal); color: white; border: none;
+    padding: 1rem; font-size: 0.9rem; font-weight: 700;
+    border-radius: 6px; cursor: pointer; transition: background 0.25s;
+  }
+  form button:hover { background: var(--brown); }
+  footer { background: var(--dark-brown); color: rgba(255,248,240,0.5); padding: 2rem; text-align: center; font-size: 0.8rem; }
+  footer strong { color: var(--teal); }
+  @media (max-width: 600px) { .trust-strip { gap: 1.5rem; } .hero-btns { flex-direction: column; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Cherie's Pet Salon</div>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Cage-Free Grooming &middot; Nashville, TN</div>
+    <h1>Nashville's Cage-Free Pet Grooming &mdash;<br><em>Because Your Dog Deserves Better</em></h1>
+    <p>Cherie's Pet Salon keeps Nashville dogs clean, happy, and stress-free with cage-free grooming in a calm, caring environment. Book online today.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-teal">Book Your Dog's Grooming Appointment Today</a>
+      <a href="#services" class="btn-outline-cream">Our Services</a>
+    </div>
+  </div>
+</section>
+<div class="trust-strip">
+  <div class="trust-item">100% Cage-Free</div>
+  <div class="trust-item">All Breeds Welcome</div>
+  <div class="trust-item">Nashville's Most Caring Groomer</div>
+  <div class="trust-item">Easy Online Booking</div>
+</div>
+<section class="services" id="services">
+  <div class="section-header">
+    <span class="section-label">Grooming Services</span>
+    <h2>Everything Your Dog Needs</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">&#128704;</div><h3>Full Groom &amp; Bath Packages</h3></div>
+    <div class="service-card"><div class="service-icon">&#9988;&#65039;</div><h3>Breed-Specific Styling &amp; Cuts</h3></div>
+    <div class="service-card"><div class="service-icon">&#127807;</div><h3>De-Shedding Treatments</h3></div>
+    <div class="service-card"><div class="service-icon">&#129463;</div><h3>Teeth Brushing &amp; Ear Cleaning</h3></div>
+    <div class="service-card"><div class="service-icon">&#128021;</div><h3>Puppy's First Groom</h3></div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-inner">
+    <span class="section-label" style="color:var(--teal);">Meet Cherie</span>
+    <h2>Where Nashville Dogs Are Family</h2>
+    <div class="about-divider"></div>
+    <p>Cherie's Pet Salon is Nashville's trusted cage-free grooming studio, where dogs are treated with the same patience and love they get at home. Cherie has built a loyal client base across Nashville through her gentle handling, attention to detail, and genuine love for animals.</p>
+    <p>Every dog leaves looking great &mdash; and more importantly, feeling great.</p>
+    <br><a href="#contact" class="btn-teal">Book Your Appointment</a>
+  </div>
+</section>
+<div class="secondary-cta">
+  <h3>Want More Bookings for Your Pet Salon?</h3>
+  <p>Find out what a professionally designed website could do for Cherie's Pet Salon &mdash; no cost, no commitment.</p>
+  <a href="#contact" class="btn-teal">Claim Your Free Redesign</a>
+</div>
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <span class="section-label">Book Online</span>
+    <h2>Book Your Dog's Grooming Appointment Today</h2>
+    <p>Send Cherie a message and she'll get your pup scheduled right away.</p>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="dog" placeholder="Your Dog's Name &amp; Breed">
+      <textarea name="message" placeholder="Any special notes or requests for Cherie?"></textarea>
+      <button type="submit">Book My Dog's Grooming Now</button>
+    </form>
+  </div>
+</section>
+<footer><strong>Cherie's Pet Salon</strong> &nbsp;|&nbsp; Nashville, Tennessee &nbsp;|&nbsp; &copy; 2025 All Rights Reserved</footer>
+</body>
+</html>
