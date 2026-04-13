@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidos Auto Repair Memphis TN</title>
+  <meta name="description" content="Memphis trusted auto repair. Book online today.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0d;
+      --orange: #ff6b35;
+      --orange-dark: #e5521c;
+      --charcoal: #1a1a1a;
+      --charcoal2: #222222;
+      --text: #f0f0f0;
+      --muted: #999;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--orange);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      position: relative;
+      z-index: 1001;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13,13,13,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #2a2a2a;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.04em; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--orange-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=1600&q=80') center/cover no-repeat;
+      opacity: 0.12;
+    }
+    .hero-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,107,53,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-accent {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,107,53,0.12);
+      border: 1px solid rgba(255,107,53,0.3);
+      color: var(--orange);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+    .hero h1 em { font-style: normal; color: var(--orange); }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1px solid #333;
+      color: var(--text);
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid #2a2a2a;
+      flex-wrap: wrap;
+    }
+    .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--orange); line-height: 1; }
+    .hero-stat-label { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    /* PAIN POINTS */
+    .pain-section {
+      background: var(--charcoal);
+      padding: 80px 40px;
+    }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      max-width: 600px;
+      margin-bottom: 48px;
+      line-height: 1.2;
+    }
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .pain-card {
+      background: var(--charcoal2);
+      border: 1px solid #2a2a2a;
+      border-left: 4px solid var(--orange);
+      padding: 32px;
+      border-radius: 0 6px 6px 0;
+    }
+    .pain-icon { font-size: 2rem; margin-bottom: 16px; }
+    .pain-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .pain-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+    /* SERVICES */
+    .services-section { padding: 100px 40px; background: var(--bg); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 48px; }
+    .service-card {
+      background: var(--charcoal);
+      border: 1px solid #2a2a2a;
+      padding: 36px 28px;
+      border-radius: 6px;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+    .service-card:hover { border-color: #3a3a3a; transform: translateY(-4px); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-num { font-size: 0.7rem; color: var(--orange); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .service-card p { color: var(--muted); font-size: 0.88rem; }
+
+    /* ABOUT */
+    .about-section { padding: 100px 40px; background: var(--charcoal); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .about-visual {
+      position: relative;
+    }
+    .about-img-wrap {
+      background: var(--charcoal2);
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+    .about-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--orange);
+      color: #fff;
+      padding: 20px 28px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .about-badge-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; line-height: 1; }
+    .about-badge-text { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; margin-top: 4px; }
+    .about-content { padding-bottom: 20px; }
+    .about-content .section-title { max-width: 100%; margin-bottom: 24px; }
+    .about-content p { color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+    .about-list { list-style: none; margin-bottom: 36px; }
+    .about-list li { display: flex; align-items: center; gap: 12px; color: var(--text); font-size: 0.92rem; padding: 8px 0; border-bottom: 1px solid #2a2a2a; }
+    .about-list li::before { content: '✓'; color: var(--orange); font-weight: 700; font-size: 0.85rem; }
+
+    /* CONTACT */
+    .contact-section { padding: 100px 40px; background: var(--bg); }
+    .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
+    .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+    .contact-info p { color: var(--muted); margin-bottom: 40px; line-height: 1.8; }
+    .contact-detail { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .contact-detail-icon { width: 44px; height: 44px; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .contact-detail-text { font-size: 0.9rem; color: var(--muted); }
+    .contact-detail-text strong { color: var(--text); display: block; margin-bottom: 2px; }
+    form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    input, textarea, select {
+      background: var(--charcoal);
+      border: 1px solid #2a2a2a;
+      color: var(--text);
+      padding: 14px 18px;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      width: 100%;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    input:focus, textarea:focus { border-color: var(--orange); }
+    textarea { resize: vertical; min-height: 120px; }
+    input::placeholder, textarea::placeholder { color: #555; }
+    .form-submit {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 16px 36px;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .form-submit:hover { background: var(--orange-dark); }
+
+    /* FOOTER */
+    footer {
+      background: #080808;
+      border-top: 1px solid #1a1a1a;
+      padding: 40px;
+      text-align: center;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .footer-logo span { color: var(--orange); }
+    .footer-text { color: var(--muted); font-size: 0.85rem; margin-bottom: 20px; }
+    .footer-cta {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .footer-cta:hover { background: var(--orange-dark); }
+    .footer-bottom { margin-top: 30px; padding-top: 20px; border-top: 1px solid #1a1a1a; color: #444; font-size: 0.8rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .about-badge { bottom: 16px; right: 16px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-content { padding: 0 20px; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-stats { gap: 28px; }
+      .pain-section, .services-section, .about-section, .contact-section { padding: 60px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-banner">🔧 Free Website Preview — Unidos Auto Repair | Designed by Alma Digital Services</div>
+
+<nav>
+  <a href="#" class="nav-logo">Unidos<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book Now</a>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Memphis, TN Auto Repair</div>
+    <h1>Memphis <em>Trusted</em> Auto Repair Shop Now Online</h1>
+    <p class="hero-sub">Fast honest repairs. Book your appointment online.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Schedule Your Appointment Today</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Honest Pricing</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Fast</div>
+        <div class="hero-stat-label">Turnaround</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5★</div>
+        <div class="hero-stat-label">Rated Service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pain-section">
+  <div class="section-inner">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">You Need More Customers. Here's What's Holding You Back.</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🔍</div>
+        <h3>Invisible to Online Searchers</h3>
+        <p>Without a website, every Memphis driver searching "auto repair near me" is finding your competitors — not you. That's thousands of potential customers lost every month.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📵</div>
+        <h3>No Online Presence</h3>
+        <p>Your services, pricing, and customer reviews are completely invisible online. Potential customers can't verify your work or build trust before calling — so they don't call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Complete Auto Repair Services in Memphis</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Engine Diagnostics</h3>
+        <p>Advanced scan tools to identify issues fast and accurately.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Brake Service</h3>
+        <p>Pads, rotors, calipers — full brake inspection and repair.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Oil Changes</h3>
+        <p>Conventional and synthetic oil changes with filter replacement.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Transmission</h3>
+        <p>Transmission service, fluid flushes, and repair for all makes.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <h3>Tire Rotation</h3>
+        <p>Even tire wear for longer life and better handling on Memphis roads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Auto repair shop">
+      </div>
+      <div class="about-badge">
+        <div class="about-badge-num">Memphis</div>
+        <div class="about-badge-text">Trusted & Local</div>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">Unidos Auto Repair — Built on Honesty</h2>
+      <p>Unidos Auto Repair serves Memphis drivers with honest, reliable service. We get you back on the road at a fair price — no upselling, no surprises.</p>
+      <p>Whether it's a quick oil change or a complex engine repair, we treat every vehicle like it's our own. Our shop is where Memphis comes when they need it done right the first time.</p>
+      <ul class="about-list">
+        <li>Honest, upfront pricing — always</li>
+        <li>Fast turnaround — get back on the road</li>
+        <li>All makes and models welcome</li>
+        <li>Locally owned and operated in Memphis</li>
+      </ul>
+      <a href="#contact" class="btn-primary">Schedule Your Appointment</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h2>Schedule Your Appointment Today</h2>
+      <p>Ready to get your vehicle fixed right? Fill out the form and we'll get back to you within the hour during business hours.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div class="contact-detail-text"><strong>Location</strong>Memphis, TN</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉️</div>
+        <div class="contact-detail-text"><strong>Email</strong>Unidosautorepair901@gmail.com</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🔧</div>
+        <div class="contact-detail-text"><strong>Service</strong>All Makes & Models</div>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="business" value="Unidos Auto Repair Memphis TN">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+      </div>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="vehicle" placeholder="Year, Make & Model (e.g. 2018 Toyota Camry)">
+      <textarea name="message" placeholder="Describe the issue or service needed..."></textarea>
+      <button type="submit" class="form-submit">Schedule Your Appointment Today →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Unidos<span>.</span></div>
+  <p class="footer-text">Memphis Trusted Auto Repair · Fast · Honest · Reliable</p>
+  <a href="#contact" class="footer-cta">Claim Your Free Redesign</a>
+  <div class="footer-bottom">© 2025 Unidos Auto Repair, Memphis TN · Preview by Alma Digital Services</div>
+</footer>
+
+</body>
+</html>
