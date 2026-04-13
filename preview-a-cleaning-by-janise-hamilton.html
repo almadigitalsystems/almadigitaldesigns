@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Cleaning By Janise</title>
+<meta name="description" content="A Cleaning By Janise has served Hamilton and Stoney Creek for over 30 years. Residential cleaning, deep cleans, and move-in/out services. Book online today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #0077B6;
+    --blue-dark: #005f8e;
+    --blue-light: #00a8e8;
+    --white: #FFFFFF;
+    --light: #F0F4F8;
+    --mid: #dce8f0;
+    --text: #1a2a3a;
+    --muted: #6b7c8d;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white); border-bottom: 1px solid var(--mid);
+    padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 12px rgba(0,119,182,0.08);
+  }
+  @media (max-width: 600px) { nav { padding: 14px 20px; } }
+  .nav-brand { display: flex; align-items: center; gap: 10px; }
+  .nav-icon { width: 40px; height: 40px; background: var(--blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .nav-name { font-weight: 700; font-size: 1rem; color: var(--text); }
+  .nav-name span { color: var(--blue); }
+  .nav-links { display: flex; align-items: center; gap: 24px; }
+  @media (max-width: 700px) { .nav-links a:not(.nav-btn) { display: none; } }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-btn { background: var(--blue); color: white !important; font-weight: 700; font-size: 0.88rem; padding: 10px 20px; border-radius: 6px; transition: all 0.2s; }
+  .nav-btn:hover { background: var(--blue-dark) !important; }
+
+  .hero { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 60%, #003a5e 100%); padding: 100px 24px; text-align: center; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 18px; border-radius: 50px; margin-bottom: 28px; border: 1px solid rgba(255,255,255,0.2); }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 900; color: var(--white); line-height: 1.1; max-width: 800px; margin: 0 auto 24px; }
+  .hero h1 em { color: #90d4f5; font-style: normal; }
+  .hero p { color: rgba(255,255,255,0.8); font-size: clamp(1rem, 2vw, 1.2rem); max-width: 560px; margin: 0 auto 48px; line-height: 1.7; }
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .btn-white { background: var(--white); color: var(--blue); font-weight: 700; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: all 0.25s; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+  .btn-white-outline { background: transparent; color: var(--white); font-weight: 600; font-size: 1rem; padding: 15px 32px; border: 2px solid rgba(255,255,255,0.5); border-radius: 6px; text-decoration: none; transition: all 0.25s; }
+  .btn-white-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 60px; }
+  .badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); padding: 10px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+
+  .why { background: var(--light); padding: 100px 24px; }
+  .section-center { text-align: center; margin-bottom: 60px; }
+  .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+  .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--text); }
+  .icon-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+  .icon-card { background: var(--white); border-radius: 16px; padding: 36px 24px; text-align: center; box-shadow: 0 4px 20px rgba(0,119,182,0.06); transition: all 0.3s; border: 2px solid transparent; }
+  .icon-card:hover { border-color: var(--blue-light); transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,119,182,0.12); }
+  .icon-circle { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--blue-light)); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 20px; }
+  .icon-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .icon-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+  .services { background: var(--blue-dark); padding: 100px 24px; }
+  .services .tag { color: #90d4f5; }
+  .services .sec-title { color: var(--white); }
+  .services-list { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+  .svc-row { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px 28px; display: flex; align-items: center; gap: 20px; transition: all 0.3s; }
+  .svc-row:hover { background: rgba(255,255,255,0.1); border-color: rgba(144,212,245,0.4); transform: translateX(6px); }
+  .svc-num { font-size: 1.5rem; font-weight: 900; color: rgba(144,212,245,0.4); font-family: 'Playfair Display', serif; min-width: 40px; }
+  .svc-row h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .svc-row p { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+
+  .about { padding: 100px 24px; background: var(--white); }
+  .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  @media (max-width: 768px) { .about-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .about-bg { background: linear-gradient(135deg, var(--blue), var(--blue-light)); border-radius: 20px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 5rem; box-shadow: 0 20px 60px rgba(0,119,182,0.25); }
+  .about-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: var(--text); margin-bottom: 20px; }
+  .about-text h2 span { color: var(--blue); }
+  .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .years-badge { display: inline-flex; align-items: center; gap: 12px; background: var(--light); border-left: 4px solid var(--blue); padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 16px; }
+  .years-badge span { font-size: 2rem; font-weight: 900; color: var(--blue); font-family: 'Playfair Display', serif; }
+  .years-badge small { font-size: 0.85rem; color: var(--muted); }
+
+  .redesign { background: var(--blue); padding: 80px 24px; text-align: center; }
+  .redesign h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 12px; }
+  .redesign p { color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+  .btn-light { background: var(--light); color: var(--blue); font-weight: 700; font-size: 1rem; padding: 14px 32px; border-radius: 6px; text-decoration: none; transition: all 0.25s; }
+  .btn-light:hover { background: var(--white); }
+
+  .contact { background: var(--light); padding: 100px 24px; }
+  .contact-inner { max-width: 600px; margin: 0 auto; }
+  .contact-inner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--text); margin-bottom: 12px; text-align: center; }
+  .contact-inner > p { color: var(--muted); text-align: center; margin-bottom: 40px; line-height: 1.7; }
+  form { display: flex; flex-direction: column; gap: 16px; }
+  input, textarea {
+    background: var(--white); border: 2px solid var(--mid); color: var(--text);
+    padding: 14px 16px; font-family: 'Inter', sans-serif; font-size: 0.95rem; border-radius: 8px; outline: none; transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus { border-color: var(--blue); }
+  input::placeholder, textarea::placeholder { color: #b0bec8; }
+  textarea { resize: vertical; min-height: 130px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+  .btn-submit { background: var(--blue); color: white; font-weight: 700; font-size: 1rem; padding: 16px; border: none; border-radius: 8px; cursor: pointer; transition: all 0.25s; }
+  .btn-submit:hover { background: var(--blue-dark); transform: translateY(-2px); }
+
+  footer { background: var(--text); padding: 40px 24px; text-align: center; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.8; }
+  footer strong { color: var(--blue-light); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-icon">🏠</div>
+    <div class="nav-name">A Cleaning <span>By Janise</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-btn">Book a Cleaning</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">⭐ Trusted Since 1995 — Hamilton, ON</div>
+  <h1>30 Years of Spotless Homes —<em>Hamilton's Most Trusted House Cleaners</em></h1>
+  <p>A Cleaning By Janise has been making Hamilton and Stoney Creek homes shine for over 30 years. Reliable, thorough, and trusted by hundreds of families.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-white">Book Your First Cleaning</a>
+    <a href="#services" class="btn-white-outline">See the Difference</a>
+  </div>
+  <div class="hero-badges">
+    <div class="badge">30+ Years in Business</div>
+    <div class="badge">Hamilton &amp; Stoney Creek</div>
+    <div class="badge">Word of Mouth Reputation</div>
+    <div class="badge">Fully Trusted Team</div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-center">
+    <p class="tag">Why Choose Us</p>
+    <h2 class="sec-title">Why Hundreds of Hamilton Families Trust Us</h2>
+  </div>
+  <div class="icon-cards">
+    <div class="icon-card">
+      <div class="icon-circle">⏰</div>
+      <h3>Reliable &amp; On-Time</h3>
+      <p>We show up when we say we will. Every time. No excuses, no last-minute cancellations.</p>
+    </div>
+    <div class="icon-card">
+      <div class="icon-circle">🔍</div>
+      <h3>Meticulous Attention to Detail</h3>
+      <p>Every corner, every surface. We don't cut corners — we clean them.</p>
+    </div>
+    <div class="icon-card">
+      <div class="icon-circle">💙</div>
+      <h3>Genuine Care</h3>
+      <p>Bonnie and her team treat every home like their own. Your space matters to us.</p>
+    </div>
+    <div class="icon-card">
+      <div class="icon-circle">🌟</div>
+      <h3>30+ Years Trusted</h3>
+      <p>Built entirely on word of mouth — a testament to the consistency you can count on.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-center">
+    <p class="tag">Our Services</p>
+    <h2 class="sec-title">What We Offer</h2>
+  </div>
+  <div class="services-list">
+    <div class="svc-row">
+      <div class="svc-num">01</div>
+      <div>
+        <h3>Regular Weekly &amp; Bi-Weekly Cleaning</h3>
+        <p>Scheduled home cleaning that keeps your space consistently fresh and tidy.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">02</div>
+      <div>
+        <h3>Deep Cleaning &amp; Move-In/Move-Out Cleaning</h3>
+        <p>Top-to-bottom deep cleans for new homes, rental turnovers, or annual freshening up.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">03</div>
+      <div>
+        <h3>Post-Construction Cleaning</h3>
+        <p>Thorough dust and debris removal after renovations — making your new space ready to live in.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">04</div>
+      <div>
+        <h3>Senior &amp; Accessibility Cleaning Services</h3>
+        <p>Compassionate, flexible cleaning for seniors and those with accessibility needs.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">05</div>
+      <div>
+        <h3>One-Time Spring Cleaning</h3>
+        <p>A thorough seasonal refresh that leaves your home feeling brand new.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-bg">🏡</div>
+    <div class="about-text">
+      <p class="tag">Our Story</p>
+      <h2>Hamilton's <span>Cleaning Legacy</span></h2>
+      <p>A Cleaning By Janise has been a fixture in the Hamilton and Stoney Creek community for over 30 years. Bonnie and her team bring decades of expertise, genuine care, and a meticulous eye to every home they clean.</p>
+      <p>Their loyal client base — built entirely through word of mouth — speaks to the trust and consistency they deliver on every visit.</p>
+      <div class="years-badge">
+        <span>30+</span>
+        <small>Years serving Hamilton &amp; Stoney Creek families</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="redesign">
+  <h2>Claim Your Free Website Redesign</h2>
+  <p>We're giving select Hamilton businesses a free professionally designed website this month. No cost, no commitment.</p>
+  <a href="#contact" class="btn-light">Claim Your Free Redesign</a>
+</div>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="tag" style="text-align:center">Get In Touch</p>
+    <h2>Book Your First Cleaning</h2>
+    <p>Ready to see the difference 30 years of experience makes? Fill in the form and Bonnie's team will be in touch right away.</p>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Tell us about your home and what type of cleaning you need..."></textarea>
+      <input type="hidden" name="_subject" value="New Booking Enquiry — A Cleaning By Janise">
+      <button type="submit" class="btn-submit">Book My Cleaning →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p><strong>A Cleaning By Janise</strong></p>
+  <p>Hamilton &amp; Stoney Creek, ON, Canada</p>
+  <p>© 2025 A Cleaning By Janise. All rights reserved.</p>
+  <p style="margin-top:10px;font-size:0.75rem;color:#2a3a4a;">Preview page by <a href="https://almadigitalservices.com" style="color:#00a8e8;">Alma Digital Services</a></p>
+</footer>
+
+</body>
+</html>
