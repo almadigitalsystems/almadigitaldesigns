@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan Alexander Hair Studio</title>
+<meta name="description" content="Ryan Alexander Hair Studio in Sheffield offers expert haircuts, colour, balayage, and styling. Book online today and see your transformation before you commit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --charcoal: #1a1a2e;
+    --gold: #d4a017;
+    --gold-light: #e8b84b;
+    --white: #ffffff;
+    --gray: #aaaaaa;
+    --dark2: #0f0f1a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--charcoal); color: var(--white); overflow-x: hidden; }
+
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #2a1a3e 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 40px 24px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(212,160,23,0.12) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block; background: var(--gold); color: var(--dark2);
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 6px 18px; border-radius: 2px; margin-bottom: 28px; position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 6rem); font-weight: 900;
+    line-height: 1.05; color: var(--white); position: relative; max-width: 900px;
+    margin-bottom: 12px;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; display: block; }
+  .hero-line { width: 80px; height: 3px; background: var(--gold); margin: 24px auto; }
+  .hero p {
+    font-size: clamp(1rem, 2vw, 1.25rem); color: var(--gray); max-width: 620px;
+    line-height: 1.7; margin-bottom: 40px; position: relative;
+  }
+  .btn-group { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; position: relative; }
+  .btn-primary {
+    background: var(--gold); color: var(--dark2); font-weight: 700; font-size: 1rem;
+    padding: 16px 36px; border: none; border-radius: 3px; cursor: pointer; text-decoration: none;
+    letter-spacing: 0.04em; transition: all 0.25s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent; color: var(--gold); font-weight: 600; font-size: 1rem;
+    padding: 16px 36px; border: 2px solid var(--gold); border-radius: 3px; cursor: pointer;
+    text-decoration: none; letter-spacing: 0.04em; transition: all 0.25s;
+  }
+  .btn-outline:hover { background: var(--gold); color: var(--dark2); }
+  .scroll-hint { margin-top: 60px; color: var(--gray); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; position: relative; }
+  .scroll-hint::after { content: ' ↓'; }
+
+  .services { background: var(--dark2); padding: 100px 24px; }
+  .section-label {
+    text-align: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  }
+  .section-title {
+    text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700; color: var(--white); margin-bottom: 60px;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px; max-width: 1100px; margin: 0 auto;
+  }
+  .service-card {
+    border: 1px solid rgba(212,160,23,0.25); padding: 36px 28px;
+    background: rgba(255,255,255,0.03); border-radius: 4px; transition: all 0.3s;
+  }
+  .service-card:hover { border-color: var(--gold); transform: translateY(-4px); background: rgba(212,160,23,0.06); }
+  .service-icon { font-size: 2rem; margin-bottom: 16px; }
+  .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+  .service-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.6; }
+
+  .about { padding: 100px 24px; background: var(--charcoal); }
+  .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  @media (max-width: 768px) { .about-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .about-visual {
+    aspect-ratio: 4/5; background: linear-gradient(135deg, #2a1a3e, #1a1a2e);
+    border-radius: 4px; border: 1px solid rgba(212,160,23,0.3); display: flex;
+    align-items: center; justify-content: center; font-family: 'Playfair Display', serif;
+    font-size: 5rem; color: rgba(212,160,23,0.4);
+  }
+  .about-text h2 {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700; color: var(--white); margin-bottom: 20px;
+  }
+  .about-text h2 span { color: var(--gold); }
+  .about-text p { color: var(--gray); line-height: 1.8; font-size: 1rem; margin-bottom: 16px; }
+  .about-stats { display: flex; gap: 32px; margin-top: 32px; }
+  .stat span { display: block; font-size: 2rem; font-weight: 900; color: var(--gold); font-family: 'Playfair Display', serif; }
+  .stat small { font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .redesign-banner {
+    background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
+    padding: 60px 24px; text-align: center;
+  }
+  .redesign-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--dark2); margin-bottom: 12px; }
+  .redesign-banner p { color: rgba(15,15,26,0.7); margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; font-size: 0.95rem; }
+  .btn-dark { background: var(--dark2); color: var(--gold); font-weight: 700; font-size: 1rem; padding: 14px 32px; border: none; border-radius: 3px; cursor: pointer; text-decoration: none; transition: all 0.25s; }
+  .btn-dark:hover { background: #050510; }
+
+  .contact { background: var(--dark2); padding: 100px 24px; }
+  .contact-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+  .contact-inner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--white); margin-bottom: 12px; }
+  .contact-inner p { color: var(--gray); margin-bottom: 40px; line-height: 1.7; }
+  form { display: flex; flex-direction: column; gap: 16px; }
+  input, textarea {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: var(--white);
+    padding: 14px 16px; font-family: 'Inter', sans-serif; font-size: 0.95rem; border-radius: 3px; outline: none;
+    transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus { border-color: var(--gold); }
+  input::placeholder, textarea::placeholder { color: var(--gray); }
+  textarea { resize: vertical; min-height: 130px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+  .btn-submit { background: var(--gold); color: var(--dark2); font-weight: 700; font-size: 1rem; padding: 16px; border: none; border-radius: 3px; cursor: pointer; transition: all 0.25s; }
+  .btn-submit:hover { background: var(--gold-light); }
+
+  footer { background: #060610; padding: 40px 24px; text-align: center; border-top: 1px solid rgba(212,160,23,0.2); }
+  footer p { color: var(--gray); font-size: 0.85rem; line-height: 1.8; }
+  footer strong { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-badge">Sheffield's Premier Salon</div>
+  <h1>Sheffield's Premier<br><em>Hair Studio</em></h1>
+  <p>Book Your Transformation Today</p>
+  <div class="hero-line"></div>
+  <p>Expert cuts, colours, and styling from Ryan Alexander — Sheffield's trusted hair specialist. Your perfect look is one appointment away.</p>
+  <div class="btn-group">
+    <a href="#contact" class="btn-primary">Book Your Appointment</a>
+    <a href="#services" class="btn-outline">See Your New Look</a>
+  </div>
+  <p class="scroll-hint">Explore our services</p>
+</section>
+
+<section class="services" id="services">
+  <p class="section-label">What We Offer</p>
+  <h2 class="section-title">Our Expert Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">✂️</div>
+      <h3>Precision Haircuts &amp; Styling</h3>
+      <p>Tailored cuts that complement your face shape, lifestyle, and personal style. Every detail matters.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Colour, Highlights &amp; Balayage</h3>
+      <p>From bold transformations to subtle sun-kissed balayage — colour work that turns heads.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💆</div>
+      <h3>Hair Treatments &amp; Conditioning</h3>
+      <p>Restore health, shine, and strength with professional conditioning and repair treatments.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👰</div>
+      <h3>Bridal &amp; Special Occasion Styling</h3>
+      <p>Look flawless on your big day. Bespoke bridal hair that lasts from ceremony to celebration.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💈</div>
+      <h3>Men's Grooming &amp; Cuts</h3>
+      <p>Sharp fades, classic cuts, and beard shaping. Looking good has never been simpler.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-visual">✂</div>
+    <div class="about-text">
+      <p class="section-label">About the Studio</p>
+      <h2>Sheffield's Go-To <span>Hair Destination</span></h2>
+      <p>Ryan Alexander Hair Studio is Sheffield's go-to destination for expert cuts, colour, and styling. Ryan has built a reputation for delivering personalised results that suit each client's unique style and lifestyle.</p>
+      <p>Whether you're after a bold new look or a polished refresh, the studio brings skill and care to every appointment.</p>
+      <div class="about-stats">
+        <div class="stat"><span>500+</span><small>Happy Clients</small></div>
+        <div class="stat"><span>10+</span><small>Years Experience</small></div>
+        <div class="stat"><span>5★</span><small>Reviews</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="redesign-banner">
+  <h2>Claim Your Free Website Redesign</h2>
+  <p>We're offering a free custom website to select Sheffield businesses this month. See what your business looks like online.</p>
+  <a href="#contact" class="btn-dark">Claim Your Free Redesign</a>
+</div>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Get In Touch</p>
+    <h2>Book Your Appointment</h2>
+    <p>Ready for your transformation? Fill in your details and Ryan's team will be in touch to confirm your booking.</p>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Tell us what service you're interested in..."></textarea>
+      <input type="hidden" name="_subject" value="New Booking Enquiry — Ryan Alexander Hair Studio">
+      <button type="submit" class="btn-submit">Book My Appointment →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Ryan Alexander Hair Studio</strong></p>
+  <p>Sheffield, UK</p>
+  <p>© 2025 Ryan Alexander Hair Studio. All rights reserved.</p>
+  <p style="margin-top:10px;font-size:0.75rem;color:#555;">Preview page by <a href="https://almadigitalservices.com" style="color:#d4a017;">Alma Digital Services</a></p>
+</footer>
+
+</body>
+</html>
