@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hair Klaudt Charlotte NC</title>
+  <meta name="description" content="Charlotte creative color by Karl Klaudt. Book today.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --black2: #111111;
+      --magenta: #c2185b;
+      --magenta-bright: #e91e63;
+      --magenta-dim: rgba(194,24,91,0.15);
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+      --gray: #888888;
+      --gray-dark: #333333;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); line-height: 1.6; }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--magenta);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--black);
+      border-bottom: 1px solid #1a1a1a;
+      padding: 22px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 44px;
+      z-index: 999;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: var(--magenta); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { color: var(--gray); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--magenta); }
+    .nav-cta {
+      background: var(--magenta);
+      color: var(--white) !important;
+      padding: 10px 24px !important;
+      border-radius: 2px;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px;
+    }
+    .nav-cta:hover { background: var(--magenta-bright) !important; }
+
+    /* HERO */
+    .hero {
+      background: var(--black);
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(194,24,91,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(194,24,91,0.04) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(194,24,91,0.12) 0%, transparent 70%);
+      right: -100px;
+      top: -100px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--magenta);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 9vw, 110px);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 .line-accent { color: var(--magenta); }
+    .hero h1 .line-italic { font-style: italic; }
+
+    .hero-sub {
+      font-size: 19px;
+      color: var(--gray);
+      margin-bottom: 52px;
+      line-height: 1.75;
+      max-width: 520px;
+      font-weight: 300;
+    }
+
+    .hero-sub strong { color: var(--white); font-weight: 600; }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--magenta);
+      color: var(--white);
+      text-decoration: none;
+      padding: 18px 44px;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--magenta-bright);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(194,24,91,0.4);
+    }
+
+    .hero-scroll {
+      margin-top: 72px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #333;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #333;
+    }
+
+    /* PAIN SECTION */
+    .pain-section {
+      background: var(--black2);
+      padding: 100px 48px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--magenta);
+      margin-bottom: 20px;
+    }
+
+    .pain-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 800;
+      margin-bottom: 64px;
+      line-height: 1.1;
+      max-width: 680px;
+    }
+
+    .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #1a1a1a; }
+
+    .pain-card {
+      background: var(--black2);
+      padding: 52px 44px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .pain-card:hover { border-bottom-color: var(--magenta); }
+
+    .pain-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      font-weight: 900;
+      color: var(--magenta);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .pain-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 14px; }
+    .pain-card p { font-size: 15px; color: var(--gray); line-height: 1.85; }
+
+    /* SERVICES / GALLERY */
+    .services-section {
+      background: var(--black);
+      padding: 100px 48px;
+    }
+
+    .services-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 800;
+      margin-bottom: 64px;
+      line-height: 1.1;
+    }
+
+    .services-section h2 em { font-style: italic; color: var(--magenta); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 200px;
+      gap: 3px;
+    }
+
+    .gallery-item {
+      background: var(--black2);
+      border: 1px solid #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .gallery-item:hover {
+      border-color: var(--magenta);
+    }
+
+    .gallery-item:hover .gallery-bg { opacity: 1; }
+
+    .gallery-item.tall { grid-row: span 2; }
+
+    .gallery-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--magenta-dim), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-item-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery-item h3 {
+      font-size: 18px;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 6px;
+    }
+
+    .gallery-item p {
+      font-size: 13px;
+      color: var(--gray);
+      position: relative;
+      z-index: 2;
+      line-height: 1.6;
+    }
+
+    .gallery-item .service-tag {
+      display: inline-block;
+      background: var(--magenta);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ABOUT */
+    .about-section {
+      background: var(--black2);
+      padding: 100px 48px;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .about-section p { font-size: 16px; color: var(--gray); line-height: 1.9; margin-bottom: 16px; }
+
+    .about-studio-card {
+      background: var(--black);
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+      padding: 56px 48px;
+      text-align: center;
+      position: relative;
+    }
+
+    .about-studio-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--magenta);
+    }
+
+    .studio-initial {
+      font-family: 'Playfair Display', serif;
+      font-size: 120px;
+      font-weight: 900;
+      color: var(--magenta);
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .studio-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .studio-owner { font-size: 15px; color: var(--gray); margin-bottom: 24px; }
+
+    .studio-speciality {
+      display: inline-block;
+      border: 1px solid var(--magenta);
+      color: var(--magenta);
+      padding: 10px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--black);
+      padding: 100px 48px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .contact-inner { max-width: 640px; margin: 0 auto; }
+
+    .contact-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 800;
+      margin-bottom: 48px;
+      line-height: 1.1;
+    }
+
+    .contact-inner h2 em { font-style: italic; color: var(--magenta); }
+
+    .form-group { margin-bottom: 24px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 16px 20px;
+      border: 1px solid #222;
+      background: #0f0f0f;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group select option { background: #111; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--magenta); }
+    .form-group textarea { min-height: 140px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--magenta);
+      color: var(--white);
+      border: none;
+      padding: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .form-submit:hover { background: var(--magenta-bright); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--black2);
+      border-top: 1px solid #1a1a1a;
+      padding: 56px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; letter-spacing: -0.5px; }
+    .footer-logo span { color: var(--magenta); }
+    .footer-sub { color: #444; font-size: 13px; margin-top: 6px; }
+    .footer-cta {
+      background: var(--magenta);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 32px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .footer-cta:hover { background: var(--magenta-bright); }
+    .footer-copy { color: #333; font-size: 13px; width: 100%; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px; }
+      .pain-section, .services-section, .about-section, #contact { padding: 60px 20px; }
+      .pain-grid { grid-template-columns: 1fr; gap: 1px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item.tall { grid-row: span 1; }
+      .about-inner { grid-template-columns: 1fr; }
+      footer { padding: 40px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-banner">🎨 Free Website Preview — Hair Klaudt | Designed by Alma Digital Services</div>
+
+  <nav>
+    <a href="#" class="nav-logo">Hair <span>Klaudt</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Work</a></li>
+      <li><a href="#about">About Karl</a></li>
+      <li><a href="#contact" class="nav-cta">Book Consultation</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div class="hero-tag">Charlotte, NC — Avant-Garde Color Specialist</div>
+      <h1>
+        <span class="line-italic">Charlotte</span><br>
+        <span class="line-accent">Avant-Garde</span><br>
+        Color<br>
+        <span class="line-italic">Specialist</span>
+      </h1>
+      <p class="hero-sub">Bold, creative color for clients who want to stand out. <strong>Karl brings your vision to life</strong> — no templates, no limits.</p>
+      <a href="#contact" class="hero-cta">Book a Color Consultation with Karl →</a>
+      <div class="hero-scroll">Scroll to explore</div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain-section">
+    <div class="section-inner">
+      <div class="section-tag">The Problem</div>
+      <h2>Your art is extraordinary.<br>Your online presence isn't showing it.</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-num">01</div>
+          <h3>Square Template Is Failing You in Google</h3>
+          <p>A basic Square page isn't showing up in Google local searches for hair salons in Charlotte — clients are finding competitors while Karl's unique talent remains hidden.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">02</div>
+          <h3>Your Avant-Garde Specialty Is Completely Hidden</h3>
+          <p>Charlotte's clients searching for creative color specialists, vivid color, and avant-garde hair have no way to find Hair Klaudt — the one place that can truly deliver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / GALLERY -->
+  <section class="services-section" id="services">
+    <div class="section-inner">
+      <div class="section-tag">The Work</div>
+      <h2>Art you wear.<br><em>Color you own.</em></h2>
+      <div class="gallery-grid">
+        <div class="gallery-item tall">
+          <div class="gallery-bg"></div>
+          <div class="service-tag">Signature</div>
+          <div class="gallery-item-icon">🎨</div>
+          <h3>Avant-Garde Creative Color</h3>
+          <p>Boundary-pushing color work that turns heads and starts conversations.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg"></div>
+          <div class="service-tag">Classic</div>
+          <div class="gallery-item-icon">🌊</div>
+          <h3>Balayage & Highlights</h3>
+          <p>Seamless, sun-kissed tones with Karl's precise technique.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg"></div>
+          <div class="service-tag">Bold</div>
+          <div class="gallery-item-icon">⚡</div>
+          <h3>Vivid Color</h3>
+          <p>Saturated, vivid fashion colors that stay vibrant longer.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg"></div>
+          <div class="service-tag">Expert</div>
+          <div class="gallery-item-icon">🔬</div>
+          <h3>Color Correction</h3>
+          <p>Complex corrections done right — from box dye disasters to total transformations.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-bg"></div>
+          <div class="service-tag">Precision</div>
+          <div class="gallery-item-icon">✂️</div>
+          <h3>Precision Haircuts</h3>
+          <p>Architecture for your hair — cuts that frame your features perfectly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-tag">About Karl</div>
+        <h2>Charlotte's destination for artistic hair color.</h2>
+        <p>Hair Klaudt is Charlotte's go-to destination for clients who refuse to blend in. Karl specializes in avant-garde work that transforms hair into a personal statement — blending technical mastery with an artist's eye.</p>
+        <p>Every client gets a personalized consultation and a result that's uniquely theirs. No cookie-cutter looks. No compromises.</p>
+        <a href="#contact" class="hero-cta" style="margin-top: 20px;">Book with Karl →</a>
+      </div>
+      <div class="about-studio-card">
+        <div class="studio-initial">K</div>
+        <div class="studio-name">Karl Klaudt</div>
+        <div class="studio-owner">Owner · Avant-Garde Color Specialist</div>
+        <div class="studio-speciality">Hair Klaudt · Charlotte, NC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-tag">Book a Consultation</div>
+      <h2>Ready for<br><em>bold color?</em></h2>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Hair Klaudt Charlotte NC">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(704) 000-0000" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Service Interested In</label>
+          <select name="service">
+            <option value="">Select a service...</option>
+            <option>Avant-Garde Creative Color</option>
+            <option>Balayage and Highlights</option>
+            <option>Vivid Color</option>
+            <option>Color Correction</option>
+            <option>Precision Haircuts</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Describe Your Vision</label>
+          <textarea name="message" placeholder="Tell Karl about the look you want to create..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Book a Color Consultation with Karl →</button>
+      </form>
+      <p style="margin-top:16px; font-size:14px; color:var(--gray); text-align:center;">
+        Or email: <a href="mailto:zombiesnotthair@gmail.com" style="color:var(--magenta); font-weight:600;">zombiesnotthair@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Hair <span>Klaudt</span></div>
+      <div class="footer-sub">Charlotte, NC — Avant-Garde Color Studio</div>
+    </div>
+    <a href="#contact" class="footer-cta">Claim Your Free Redesign</a>
+    <p class="footer-copy">© 2024 Hair Klaudt. Designed by <strong>Alma Digital Services</strong>. This is a free website preview.</p>
+  </footer>
+
+</body>
+</html>
