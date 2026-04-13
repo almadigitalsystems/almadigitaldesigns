@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limpio y Luminoso Bogota Colombia</title>
+  <meta name="description" content="Limpieza profesional Bogota. Cotizacion hoy.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --gold: #f4b942;
+      --light-gray: #f8f8f8;
+      --mid-gray: #666666;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* PREVIEW BANNER */
+    .preview-banner {
+      background: var(--gold);
+      color: var(--black);
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #e8e8e8;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 44px;
+      z-index: 999;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--black);
+      color: var(--white) !important;
+      padding: 10px 24px !important;
+      border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 40px;
+      background: var(--white);
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -2px;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--mid-gray);
+      margin-bottom: 48px;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gold);
+      color: var(--black);
+      text-decoration: none;
+      padding: 18px 40px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+      border-radius: 2px;
+    }
+
+    .hero-cta:hover {
+      background: var(--black);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 60px;
+    }
+
+    /* PAIN POINTS */
+    .pain-points {
+      background: var(--black);
+      color: var(--white);
+      padding: 100px 40px;
+    }
+
+    .pain-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .pain-points h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      margin-bottom: 64px;
+      line-height: 1.1;
+      max-width: 700px;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 48px;
+    }
+
+    .pain-card {
+      border-top: 2px solid var(--gold);
+      padding-top: 32px;
+    }
+
+    .pain-number {
+      font-size: 64px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: 0.4;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .pain-card p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #cccccc;
+    }
+
+    /* SERVICES */
+    .services {
+      background: var(--white);
+      padding: 100px 40px;
+    }
+
+    .services-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .services h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      margin-bottom: 64px;
+      line-height: 1.1;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px;
+      background: #e8e8e8;
+    }
+
+    .service-item {
+      background: var(--white);
+      padding: 48px 36px;
+      transition: background 0.2s;
+    }
+
+    .service-item:hover { background: var(--light-gray); }
+
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .service-item h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .service-item p {
+      font-size: 14px;
+      color: var(--mid-gray);
+      line-height: 1.7;
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--light-gray);
+      padding: 100px 40px;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text .section-label { color: var(--gold); }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.15;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: var(--mid-gray);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .about-visual {
+      background: var(--black);
+      aspect-ratio: 4/3;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .about-stat {
+      text-align: center;
+    }
+
+    .about-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .about-stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #888;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .about-divider {
+      width: 1px;
+      height: 60px;
+      background: #333;
+    }
+
+    /* CONTACT */
+    #contacto {
+      background: var(--white);
+      padding: 100px 40px;
+    }
+
+    .contact-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .contact-inner .section-label { color: var(--gold); }
+
+    .contact-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      margin-bottom: 48px;
+      line-height: 1.1;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid #e8e8e8;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--black);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea { min-height: 140px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .form-submit:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 60px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-cta {
+      background: var(--gold);
+      color: var(--black);
+      text-decoration: none;
+      padding: 14px 32px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .footer-cta:hover { background: var(--white); }
+
+    .footer-copy {
+      color: #555;
+      font-size: 13px;
+      width: 100%;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px; min-height: auto; }
+      .pain-points, .services, .about, #contacto { padding: 60px 20px; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      footer { padding: 40px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PREVIEW BANNER -->
+  <div class="preview-banner">✨ Vista Previa Gratuita — Limpio y Luminoso | Diseñado por Alma Digital Services</div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-logo">Limpio<span>&</span>Luminoso</a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto" class="nav-cta">Cotización Gratis</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Bogotá, Colombia — Limpieza Profesional</div>
+      <h1>Limpieza<br>Profesional para<br>su Hogar <em>Oficina</em><br>y Vehículo</h1>
+      <p class="hero-sub">Resultados brillantes garantizados. Tapicería, muebles y espacios de trabajo impecables.</p>
+      <a href="#contacto" class="hero-cta">Solicite su Cotización Gratis →</a>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain-points">
+    <div class="pain-inner">
+      <div class="section-label">El Problema</div>
+      <h2>¿Por qué sus vecinos eligen a la competencia?</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-number">01</div>
+          <p>Clientes en Bogotá buscando servicios de limpieza especializados encuentran a los competidores que tienen sitio web — mientras usted permanece invisible en línea.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-number">02</div>
+          <p>Sin portafolio ni precios en línea para convertir visitantes en clientes — cada día sin presencia digital es un día de ingresos perdidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="servicios">
+    <div class="services-inner">
+      <div class="section-label">Nuestros Servicios</div>
+      <h2>Todo lo que necesita,<br>hecho con excelencia.</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-icon">🚗</div>
+          <h3>Lavado de Tapicería de Vehículos</h3>
+          <p>Limpieza profunda de asientos, alfombras y superficies interiores de su vehículo.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🛋️</div>
+          <h3>Limpieza de Muebles y Sofás</h3>
+          <p>Restauramos el aspecto y frescura de sus muebles con técnicas profesionales.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🏢</div>
+          <h3>Limpieza de Oficinas</h3>
+          <p>Ambientes de trabajo limpios y productivos para su empresa en Bogotá.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">✨</div>
+          <h3>Limpieza Profunda</h3>
+          <p>Servicio exhaustivo para hogares y espacios que requieren atención detallada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="nosotros">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-label">Quiénes Somos</div>
+        <h2>Limpieza con propósito, resultados que brillan.</h2>
+        <p>Limpio y Luminoso es una empresa de limpieza especializada en Bogotá. Nos enfocamos en tapicería de vehículos, muebles y espacios de trabajo, llevando excelencia a cada rincón que tocamos.</p>
+        <p>Nuestro equipo comprometido garantiza resultados que superan sus expectativas, utilizando productos de alta calidad y técnicas comprobadas para cada tipo de superficie.</p>
+        <a href="#contacto" style="display:inline-block; margin-top:20px; background:var(--gold); color:var(--black); padding:14px 32px; text-decoration:none; font-weight:700; border-radius:2px;">Solicitar Cotización</a>
+      </div>
+      <div class="about-visual">
+        <div class="about-stat">
+          <div class="about-stat-number">100%</div>
+          <div class="about-stat-label">Garantía de Calidad</div>
+        </div>
+        <div class="about-divider"></div>
+        <div class="about-stat">
+          <div class="about-stat-number">✓</div>
+          <div class="about-stat-label">Bogotá Reconocida</div>
+        </div>
+        <div class="about-divider"></div>
+        <div class="about-stat">
+          <div class="about-stat-number">3</div>
+          <div class="about-stat-label">Especialidades</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto">
+    <div class="contact-inner">
+      <div class="section-label">Contacto</div>
+      <h2>Solicite su Cotización Gratis</h2>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="business" value="Limpio y Luminoso Bogota Colombia">
+        <div class="form-group">
+          <label>Nombre Completo</label>
+          <input type="text" name="nombre" placeholder="Su nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Teléfono o WhatsApp</label>
+          <input type="tel" name="telefono" placeholder="300 000 0000" required>
+        </div>
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" name="email" placeholder="su@correo.com">
+        </div>
+        <div class="form-group">
+          <label>Tipo de Servicio</label>
+          <select name="servicio">
+            <option value="">Seleccione un servicio...</option>
+            <option>Lavado de Tapicería de Vehículos</option>
+            <option>Limpieza de Muebles y Sofás</option>
+            <option>Limpieza de Oficinas</option>
+            <option>Limpieza Profunda</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea name="mensaje" placeholder="Cuéntenos sobre su necesidad de limpieza..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar Solicitud de Cotización →</button>
+      </form>
+      <p style="margin-top:20px; font-size:14px; color:var(--mid-gray); text-align:center;">
+        También puede escribirnos a: <a href="mailto:limpioyluminoso@gmail.com" style="color:var(--gold); font-weight:600;">limpioyluminoso@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Limpio<span>&</span>Luminoso</div>
+      <div style="color:#555; font-size:13px; margin-top:6px;">Bogotá, Colombia</div>
+    </div>
+    <a href="#contacto" class="footer-cta">Solicite su Sitio Web Gratis</a>
+    <p class="footer-copy">© 2024 Limpio y Luminoso. Diseñado por <strong>Alma Digital Services</strong>. Esta es una vista previa gratuita.</p>
+  </footer>
+
+</body>
+</html>
