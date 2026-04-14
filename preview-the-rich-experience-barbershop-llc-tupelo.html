@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rich Experience Barbershop | Top-Rated Barber in Tupelo, MS</title>
+    <meta name="description" content="5-star barbershop in Tupelo, MS. Precision haircuts, shaves, kids cuts & hair replacement by Sadarian Richardson. 1128 W Main St. Book online or walk in today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0d0d0d;
+            --bg-section: #141414;
+            --bg-card: #1c1c1c;
+            --accent: #c9a84c;
+            --accent-hover: #dbbe6a;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --text-white: #ffffff;
+            --border: rgba(201,168,76,0.2);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(13,13,13,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-cta {
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.3s;
+        }
+        .nav-cta:hover { background: var(--accent-hover); }
+
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
+        .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--text-light); margin: 5px 0; transition: 0.3s; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201,168,76,0.1);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            max-width: 800px;
+            margin-bottom: 1.5rem;
+            color: var(--text-white);
+        }
+        .hero h1 span { color: var(--accent); }
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+        }
+        .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-light);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .hero-stat .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        /* SECTIONS */
+        section { padding: 6rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header .overline {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 550px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* SERVICES */
+        .services-section { background: var(--bg-section); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { border-color: var(--border); transform: translateY(-4px); }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(201,168,76,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+        }
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+        }
+        .service-card .price {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ABOUT */
+        .about-section { background: var(--bg-dark); }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-image {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--bg-card), rgba(201,168,76,0.15));
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-image-inner {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(201,168,76,0.15);
+            line-height: 1;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .about-highlights {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .highlight {
+            text-align: center;
+        }
+        .highlight .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .highlight .txt {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        /* REVIEWS */
+        .reviews-section { background: var(--bg-section); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .review-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        .review-stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+        .review-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .review-author {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* LOCATION */
+        .location-section { background: var(--bg-dark); }
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .location-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-white);
+            margin-bottom: 1.5rem;
+        }
+        .location-detail {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            align-items: flex-start;
+        }
+        .location-detail .icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: rgba(201,168,76,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        .location-detail .info .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .location-detail .info .value {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 0.2rem;
+        }
+        .map-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .map-wrapper iframe { display: block; }
+
+        /* CONTACT */
+        .contact-section { background: var(--bg-section); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .contact-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .contact-text p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 1rem;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .contact-form textarea { min-height: 120px; resize: vertical; }
+        .contact-form button {
+            background: var(--accent);
+            color: var(--bg-dark);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover { background: var(--accent-hover); }
+
+        /* CTA BANNER */
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04));
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .cta-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .cta-banner p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-dark);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 2rem 2rem;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .footer-info {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--accent); }
+
+        /* ALMA BADGE */
+        .alma-badge {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            background: var(--bg-dark);
+        }
+        .alma-badge p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+        .alma-badge a { color: var(--accent); text-decoration: none; }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            nav { padding: 0 1rem; }
+            .nav-links, .nav-cta { display: none; }
+            .mobile-toggle { display: block; }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; left: 0; right: 0;
+                background: rgba(13,13,13,0.98);
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .hero { padding: 7rem 1.5rem 3rem; min-height: auto; }
+            .hero-stats { flex-direction: row; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+
+            section { padding: 4rem 1.5rem; }
+
+            .about-content,
+            .location-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="nav-brand">The Rich Experience</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Book Now</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">&#9733; 5.0 Stars &middot; 150+ Reviews</div>
+        <h1>Tupelo's Top-Rated Barbershop &mdash; <span>15+ Years</span> of Five-Star Cuts</h1>
+        <p>Premium haircuts, clean shaves, and expert hair replacement services at 1128 W Main St. Walk-ins welcome, online booking available.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Book Your Cut Today</a>
+            <a href="#services" class="btn-secondary">View Services</a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="number">5.0</div>
+                <div class="label">Google Rating</div>
+            </div>
+            <div class="hero-stat">
+                <div class="number">150+</div>
+                <div class="label">5-Star Reviews</div>
+            </div>
+            <div class="hero-stat">
+                <div class="number">15+</div>
+                <div class="label">Years Experience</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="overline">What We Offer</div>
+                <h2>Premium Grooming Services</h2>
+                <p>Every service at The Rich Experience is delivered with precision, care, and 15+ years of expertise.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#9986;</div>
+                    <h3>Precision Haircuts</h3>
+                    <div class="price">$50</div>
+                    <p>Signature cuts tailored to your style. Every detail considered, every line clean.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#127912;</div>
+                    <h3>Haircut &amp; Shave Combo</h3>
+                    <div class="price">$55</div>
+                    <p>The full experience, start to finish. Walk out looking and feeling your absolute best.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#11088;</div>
+                    <h3>Kids Cuts</h3>
+                    <div class="price">$35</div>
+                    <p>Patient, child-friendly service in a relaxed environment. First cuts to fresh fades.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#10024;</div>
+                    <h3>Big Chop</h3>
+                    <div class="price">$70+</div>
+                    <p>Bold transformations for a fresh new look. Ready for a change? We make it happen.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">&#128142;</div>
+                    <h3>Hair Replacement Units</h3>
+                    <div class="price">$250+</div>
+                    <p>Discreet, expert installations by appointment. Confidential consultations available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <div class="about-image-inner">TRE</div>
+                </div>
+                <div class="about-text fade-in">
+                    <div class="overline" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-weight:600;margin-bottom:1rem;">Our Story</div>
+                    <h2>More Than a Barbershop &mdash; A Community Staple</h2>
+                    <p>The Rich Experience Barbershop has been Tupelo's go-to destination for premium grooming since owner Sadarian Richardson first picked up the clippers. With a perfect 5.0-star rating across nearly 150 reviews, Sadarian and barber Kesha Wesley have built a loyal following &mdash; some clients going back over 15 years.</p>
+                    <p>Selected for Tupelo's prestigious "The Pitch" business competition, The Rich Experience is more than a barbershop &mdash; it's a community staple where every client leaves looking and feeling their best.</p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <div class="num">5.0</div>
+                            <div class="txt">Perfect Rating</div>
+                        </div>
+                        <div class="highlight">
+                            <div class="num">15+</div>
+                            <div class="txt">Years of Service</div>
+                        </div>
+                        <div class="highlight">
+                            <div class="num">2</div>
+                            <div class="txt">Expert Barbers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="overline">Client Testimonials</div>
+                <h2>What Our Clients Say</h2>
+                <p>A perfect 5.0 rating from nearly 150 reviews speaks for itself.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card fade-in">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Best barbershop in Tupelo, hands down. Sadarian takes his time and makes sure every cut is perfect. Been coming here for years and never been disappointed."</p>
+                    <div class="review-author">&mdash; Loyal Client, 5+ Years</div>
+                </div>
+                <div class="review-card fade-in">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Great atmosphere, professional service, and the cleanest fades in town. The Rich Experience lives up to its name every single visit."</p>
+                    <div class="review-author">&mdash; Repeat Client</div>
+                </div>
+                <div class="review-card fade-in">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Took my son for his first real haircut and they were so patient and gentle with him. He loved it and so did I. Our new go-to spot."</p>
+                    <div class="review-author">&mdash; Local Parent</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location-section" id="location">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="overline">Visit Us</div>
+                <h2>Find The Rich Experience</h2>
+            </div>
+            <div class="location-grid">
+                <div class="location-info fade-in">
+                    <h3>Stop By Anytime</h3>
+                    <div class="location-detail">
+                        <div class="icon">&#128205;</div>
+                        <div class="info">
+                            <div class="label">Address</div>
+                            <div class="value">1128 W Main St, Tupelo, MS 38801</div>
+                        </div>
+                    </div>
+                    <div class="location-detail">
+                        <div class="icon">&#128337;</div>
+                        <div class="info">
+                            <div class="label">Hours</div>
+                            <div class="value">Walk-ins welcome &middot; Online booking available</div>
+                        </div>
+                    </div>
+                    <div class="location-detail">
+                        <div class="icon">&#9986;</div>
+                        <div class="info">
+                            <div class="label">Barbers</div>
+                            <div class="value">Sadarian Richardson &middot; Kesha Wesley</div>
+                        </div>
+                    </div>
+                    <div class="location-detail">
+                        <div class="icon">&#11088;</div>
+                        <div class="info">
+                            <div class="label">Accolade</div>
+                            <div class="value">Selected for Tupelo's "The Pitch" Business Competition</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-wrapper fade-in">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0!2d-88.713!3d34.257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDE1JzI1LjIiTiA4OMKwNDInNDYuOCJX!5e0!3m2!1sen!2sus!4v1"
+                        width="100%"
+                        height="400"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container fade-in">
+            <h2>Book Your Cut Today</h2>
+            <p>Walk in or schedule online. Your best look is one appointment away.</p>
+            <a href="#contact" class="btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-text fade-in">
+                    <div class="overline" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-weight:600;margin-bottom:1rem;">Get In Touch</div>
+                    <h2>Ready for the Rich Experience?</h2>
+                    <p>Drop us a message or swing by the shop. Walk-ins are always welcome at 1128 W Main St, Tupelo. Your best cut is waiting.</p>
+                </div>
+                <form class="contact-form fade-in" action="https://formspree.io/f/xojppajv" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                    <textarea name="message" placeholder="How can we help you?"></textarea>
+                    <input type="hidden" name="_subject" value="New inquiry from The Rich Experience preview page">
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">The Rich Experience Barbershop</div>
+            <div class="footer-info">1128 W Main St, Tupelo, MS 38801</div>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="alma-badge">
+        <p>Preview redesign by <a href="https://almadigitalservices.com" target="_blank">Alma Digital Services</a></p>
+    </div>
+
+    <script>
+        // Mobile nav toggle
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Scroll fade-in animation
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
