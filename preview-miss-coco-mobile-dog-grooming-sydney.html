@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miss Coco Mobile Dog Grooming | Northern Beaches Sydney</title>
+  <meta name="description" content="Mobile dog grooming on Sydney's Northern Beaches. Professional grooming at your door — full groom, wash & dry, de-shedding, and puppy grooms. Book now." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #1a1a1a;
+      --white: #ffffff;
+      --coral: #FF6B6B;
+      --coral-dark: #e55a5a;
+      --gray-light: #f5f5f5;
+      --gray-mid: #999;
+      --gray-border: #e0e0e0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-border);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--coral); }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-cta {
+      background: var(--black);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      letter-spacing: 0.06em !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--coral) !important; color: var(--white) !important; }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--black);
+      transition: all 0.3s;
+    }
+
+    /* MOBILE NAV */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-border);
+      padding: 24px 40px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 160px 40px 120px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--coral);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 32px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: #555;
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 48px;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--coral);
+      color: var(--white);
+      text-decoration: none;
+      padding: 18px 44px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--coral-dark); transform: translateY(-1px); }
+
+    /* DIVIDER */
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--coral);
+      margin: 0 auto;
+    }
+
+    /* SERVICES */
+    .services {
+      background: var(--gray-light);
+      padding: 100px 40px;
+    }
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 56px;
+    }
+    .services-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .services-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--gray-border);
+      transition: background 0.2s;
+    }
+    .services-list li:first-child { border-top: 1px solid var(--gray-border); }
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--black);
+    }
+    .service-arrow {
+      color: var(--coral);
+      font-size: 1.2rem;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 100px 40px;
+    }
+    .about-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      background: var(--coral);
+      height: 400px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      color: var(--white);
+    }
+    .about-visual-icon {
+      font-size: 4rem;
+    }
+    .about-visual-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .about p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+    .about-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .about-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .about-detail-item::before {
+      content: '—';
+      color: var(--coral);
+      flex-shrink: 0;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--black);
+      padding: 100px 40px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--coral);
+      color: var(--white);
+      text-decoration: none;
+      padding: 18px 48px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-btn:hover { background: var(--coral-dark); transform: translateY(-1px); }
+
+    /* CONTACT / FORM */
+    .contact {
+      padding: 100px 40px;
+      background: var(--gray-light);
+    }
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .contact-inner p {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    form input:focus,
+    form textarea:focus { border-color: var(--coral); }
+    form textarea { min-height: 130px; resize: vertical; }
+    form button {
+      background: var(--coral);
+      color: var(--white);
+      border: none;
+      padding: 16px 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      align-self: center;
+    }
+    form button:hover { background: var(--coral-dark); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: #aaa;
+      padding: 48px 40px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 300;
+    }
+    footer strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    footer p { margin-bottom: 8px; }
+    footer p:last-child { margin-bottom: 0; }
+
+    /* ALMA BANNER */
+    .alma-banner {
+      background: #111;
+      border-top: 1px solid #2a2a2a;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: #666;
+    }
+    .alma-banner a {
+      color: var(--coral);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .alma-banner a:hover { text-decoration: underline; }
+    .alma-claim {
+      background: var(--coral);
+      color: var(--white) !important;
+      padding: 6px 16px;
+      border-radius: 2px;
+      font-weight: 600 !important;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { padding: 120px 20px 80px; }
+      .hero h1 { font-size: 2.4rem; }
+      .services { padding: 70px 20px; }
+      .about { padding: 70px 20px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { height: 250px; }
+      .cta-section { padding: 70px 20px; }
+      .contact { padding: 70px 20px; }
+      footer { padding: 40px 20px; }
+      .alma-banner { padding: 16px 20px; text-align: center; }
+      .mobile-menu { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#top" class="nav-logo">Miss <span>Coco</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    <a href="#contact" onclick="closeMobileMenu()">Book Now</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-tag">Sydney's Northern Beaches</div>
+    <h1>Mobile Dog Grooming on Sydney's Northern Beaches</h1>
+    <p>Miss Coco brings the salon to your driveway. Professional grooming your dog will love — no travel, no kennels, no fuss.</p>
+    <a href="#contact" class="hero-cta">Book Your Mobile Groom Now</a>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Grooming Services</h2>
+      <ul class="services-list">
+        <li>
+          <span class="service-name">Full Groom &amp; Style</span>
+          <span class="service-arrow">→</span>
+        </li>
+        <li>
+          <span class="service-name">Wash, Dry &amp; Brush</span>
+          <span class="service-arrow">→</span>
+        </li>
+        <li>
+          <span class="service-name">De-Shedding Treatments</span>
+          <span class="service-arrow">→</span>
+        </li>
+        <li>
+          <span class="service-name">Puppy Introduction Grooms</span>
+          <span class="service-arrow">→</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-visual-icon">🐾</div>
+        <div class="about-visual-text">Professional Mobile<br>Grooming at Your Door</div>
+      </div>
+      <div>
+        <p class="section-label">About Miss Coco</p>
+        <h2 class="section-title" style="margin-bottom: 24px;">Gentle care. Your driveway. Zero stress.</h2>
+        <p>Miss Coco Mobile Dog Grooming serves Sydney's Northern Beaches with fully equipped mobile grooming right at your door. Jasmine delivers gentle, professional care in a calm one-on-one setting — keeping your dog comfortable and looking their best without the stress of a busy salon.</p>
+        <div class="about-detail">
+          <div class="about-detail-item">Fully equipped mobile grooming van</div>
+          <div class="about-detail-item">One-on-one attention for every dog</div>
+          <div class="about-detail-item">Serving Sydney's Northern Beaches</div>
+          <div class="about-detail-item">Owned &amp; operated by Jasmine</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <h2>Ready to Book?</h2>
+    <p>Bring the salon to your door. Professional grooming — on your schedule.</p>
+    <a href="#contact" class="cta-btn">Book Your Mobile Groom Now</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <h2>Get in Touch</h2>
+      <p>Fill in the form below and Jasmine will be in touch to confirm your booking.</p>
+      <form action="https://formspree.io/f/xojppajv" method="POST">
+        <input type="hidden" name="_subject" value="New Booking Enquiry — Miss Coco Mobile Dog Grooming" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <input type="text" name="suburb" placeholder="Your Suburb (Northern Beaches)" />
+        <textarea name="message" placeholder="Tell us about your dog — breed, size, and any special requirements..."></textarea>
+        <button type="submit">Book Your Mobile Groom Now</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Miss Coco Mobile Dog Grooming</strong></p>
+    <p>Sydney's Northern Beaches, Australia</p>
+    <p style="margin-top: 20px; font-size: 0.78rem; color: #555;">© 2025 Miss Coco Mobile Dog Grooming. All rights reserved.</p>
+  </footer>
+
+  <!-- ALMA BANNER -->
+  <div class="alma-banner">
+    <span>Website preview designed by <a href="https://almadigitalservices.com" target="_blank" rel="noopener">Alma Digital Services</a></span>
+    <a href="https://almadigitalservices.com" target="_blank" rel="noopener" class="alma-claim">Claim Your Free Redesign</a>
+  </div>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+    }
+  </script>
+</body>
+</html>
