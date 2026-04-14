@@ -2384,7 +2384,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 .preview-scroll::-webkit-scrollbar{display:none}
 .order-section{padding:7rem 0;text-align:center;background:#0d1117}
-.order-columns{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
+.order-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
 .order-col{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:left}
 .order-col--recommended{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow-cyan)}
 .order-col__label{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.5rem}
@@ -3879,6 +3879,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#google-kit" data-i18n="nav-google-kit">Google Kit</a></li>
       <li><a href="#order">Order</a></li>
 
 
@@ -8876,6 +8877,39 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
         </div>
       </div>
 
+
+      <!-- Triple Bundle: Website + Hosting + Google Presence Kit -->
+      <div class="order-col" style="border-color:rgba(123,47,255,0.5);box-shadow:0 0 40px rgba(123,47,255,0.15)">
+        <div class="order-col__label">Ultimate Bundle <span class="order-col__badge" style="background:linear-gradient(135deg,#7b2fff,var(--cyan))">Save More</span></div>
+        <h3 style="font-size:1.2rem;margin-bottom:0.5rem">Website + Hosting + Google Kit</h3>
+        <p class="order-col__note">Everything in Website + Hosting, plus a full Google Presence Kit &#8212; the complete package to get found &amp; convert visitors.</p>
+
+        <div class="order-tier">
+          <div><div class="order-tier__name">Starter</div><div style="font-size:0.8rem;color:var(--text-muted)">$50 up + $17/mo</div></div>
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;justify-content:flex-end">
+            <a href="https://buy.stripe.com/3cI14mcgKfhc8wvfCr6Zy0u" target="_blank" class="order-tier__btn" style="font-size:0.75rem;padding:0.4rem 0.8rem">Step 1 &#8594;</a>
+            <a href="https://buy.stripe.com/28EcN41C62uq5kjeyn6Zy0v" target="_blank" class="order-tier__btn" style="font-size:0.75rem;padding:0.4rem 0.8rem;background:linear-gradient(135deg,#7b2fff,var(--cyan))">Step 2 &#8594;</a>
+          </div>
+        </div>
+
+        <div class="order-tier">
+          <div><div class="order-tier__name">Growth <span class="order-tier__popular">(Most Popular)</span></div><div style="font-size:0.8rem;color:var(--text-muted)">$100 up + $23/mo</div></div>
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;justify-content:flex-end">
+            <a href="https://buy.stripe.com/fZubJ0fsWglgcMLcqf6Zy0w" target="_blank" class="order-tier__btn" style="font-size:0.75rem;padding:0.4rem 0.8rem">Step 1 &#8594;</a>
+            <a href="https://buy.stripe.com/aFaeVc4OiglG3cb2PF6Zy0x" target="_blank" class="order-tier__btn" style="font-size:0.75rem;padding:0.4rem 0.8rem;background:linear-gradient(135deg,#7b2fff,var(--cyan))">Step 2 &#8594;</a>
+          </div>
+        </div>
+
+        <div class="order-tier">
+          <div><div class="order-tier__name">Premium</div><div style="font-size:0.8rem;color:var(--text-muted)">$150 up + $23/mo</div></div>
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;justify-content:flex-end">
+            <a href="https://buy.stripe.com/aFa5kC4Oi6KG8wvbmb6Zy0y" target="_blank" class="order-tier__btn" style="font-size:0.75rem;padding:0.4rem 0.8rem">Step 1 &#8594;</a>
+            <a href="https://buy.stripe.com/00weVccgK0mi28789Z6Zy0z" target="_blank" class="order-tier__btn" style="font-size:0.75rem;padding:0.4rem 0.8rem;background:linear-gradient(135deg,#7b2fff,var(--cyan))">Step 2 &#8594;</a>
+          </div>
+        </div>
+
+        <p class="order-muted" style="margin-top:1rem;font-size:0.78rem">Two-step checkout: Step 1 = upfront website fee, Step 2 = monthly hosting + Google Kit subscription.</p>
+      </div>
     </div>
 
     <!-- Add-on: Care Plan -->
@@ -8887,6 +8921,75 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
       <p class="order-muted">Can be added at any time after purchase. Not required to get started.</p>
     </div>
 
+  </div>
+</section>
+
+<!-- ── GOOGLE PRESENCE KIT ── -->
+
+<section class="order-section" id="google-kit" style="background:var(--bg-dark);border-top:1px solid var(--border)">
+  <div class="container">
+    <p class="section-label reveal">Google Presence Kit</p>
+    <h2 class="section-title reveal">Get Found on <span class="grad-text">Google</span></h2>
+    <p class="section-sub reveal">We set up and optimize your Google Business Profile, Google Maps listing, and local SEO &#8212; so customers find you when they search.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2.5rem" class="reveal">
+
+      <div class="order-col" style="text-align:center">
+        <div class="order-col__label">Standalone</div>
+        <h3 style="font-size:1.8rem;font-weight:900;margin:0.5rem 0">$49</h3>
+        <p class="order-col__note">Google Presence Kit only &#8212; perfect if you already have a website.</p>
+        <ul style="list-style:none;text-align:left;font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;line-height:2">
+          <li>&#10003; Google Business Profile setup</li>
+          <li>&#10003; Google Maps optimization</li>
+          <li>&#10003; Local SEO keywords</li>
+          <li>&#10003; NAP consistency check</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVq5kC80u1qm3cbfCr6Zy0q" target="_blank" class="order-tier__btn" style="width:100%;text-align:center;display:block">Get Kit &#8212; $49 &#8594;</a>
+      </div>
+
+      <div class="order-col" style="text-align:center">
+        <div class="order-col__label">Starter + Kit</div>
+        <h3 style="font-size:1.8rem;font-weight:900;margin:0.5rem 0">$89</h3>
+        <p class="order-col__note">Starter website (5 pages) + Google Presence Kit bundled.</p>
+        <ul style="list-style:none;text-align:left;font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;line-height:2">
+          <li>&#10003; 5-page website</li>
+          <li>&#10003; Google Business Profile</li>
+          <li>&#10003; Google Maps listing</li>
+          <li>&#10003; Local SEO optimization</li>
+        </ul>
+        <a href="https://buy.stripe.com/14A7sKdkOc50fYXeyn6Zy0r" target="_blank" class="order-tier__btn" style="width:100%;text-align:center;display:block">Get Bundle &#8212; $89 &#8594;</a>
+      </div>
+
+      <div class="order-col order-col--recommended" style="text-align:center">
+        <div class="order-col__label">Growth + Kit <span class="order-col__badge">Most Popular</span></div>
+        <h3 style="font-size:1.8rem;font-weight:900;margin:0.5rem 0">$139</h3>
+        <p class="order-col__note">Growth website (10 pages) + Google Presence Kit bundled.</p>
+        <ul style="list-style:none;text-align:left;font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;line-height:2">
+          <li>&#10003; 10-page website</li>
+          <li>&#10003; Google Business Profile</li>
+          <li>&#10003; Google Maps listing</li>
+          <li>&#10003; Local SEO optimization</li>
+          <li>&#10003; Review management setup</li>
+        </ul>
+        <a href="https://buy.stripe.com/6oU9ASfsW8SO28789Z6Zy0s" target="_blank" class="order-tier__btn" style="width:100%;text-align:center;display:block">Get Bundle &#8212; $139 &#8594;</a>
+      </div>
+
+      <div class="order-col" style="text-align:center">
+        <div class="order-col__label">Premium + Kit</div>
+        <h3 style="font-size:1.8rem;font-weight:900;margin:0.5rem 0">$179</h3>
+        <p class="order-col__note">Premium website (20+ pages) + Google Presence Kit bundled.</p>
+        <ul style="list-style:none;text-align:left;font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;line-height:2">
+          <li>&#10003; 20+ page website</li>
+          <li>&#10003; Google Business Profile</li>
+          <li>&#10003; Google Maps listing</li>
+          <li>&#10003; Local SEO optimization</li>
+          <li>&#10003; Review management setup</li>
+          <li>&#10003; Schema markup</li>
+        </ul>
+        <a href="https://buy.stripe.com/14AbJ00y29WScMLbmb6Zy0t" target="_blank" class="order-tier__btn" style="width:100%;text-align:center;display:block">Get Bundle &#8212; $179 &#8594;</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
