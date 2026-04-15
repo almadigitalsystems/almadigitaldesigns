@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bry Barber | Barbería en Bogotá &mdash; Fades, Cortes y Diseños con Bryan</title>
-<meta name="description" content="Bry Barber en Bogotá, Colombia. Cortes modernos, fades, degradados, diseños y perfilado de barba. Reserva tu cita con Bryan hoy.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bry Barber | Barberia en Bogota - Fades, Cortes y Disenos con Bryan</title>
+<meta name="description" content="Bry Barber en Bogota, Colombia. Cortes modernos, fades, degradados, disenos y perfilado de barba. Reserva tu cita con Bryan hoy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#2d2d2d;background:#fff}
-nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,30,0.95);backdrop-filter:blur(10px)}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;font-weight:700}nav .logo span{color:#c0a36e}
-nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;transition:color .3s}nav ul li a:hover{color:#c0a36e}
-.hero{min-height:100vh;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 50%,#0a0a0a 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}
-.hero-content{max-width:850px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.5rem);color:#fff;margin-bottom:1.5rem;line-height:1.15;font-weight:800}
-.hero h1 span{color:#c0a36e}.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:rgba(255,255,255,.85);margin-bottom:2.5rem;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
-.btn{display:inline-block;padding:1rem 2.5rem;background:#c0a36e;color:#fff;font-weight:600;font-size:1.05rem;border-radius:50px;text-decoration:none;transition:all .3s;border:2px solid #c0a36e}.btn:hover{background:transparent}
-.services{padding:6rem 2rem;background:#faf8f3}.services .container{max-width:1100px;margin:0 auto}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);text-align:center;margin-bottom:1rem;color:#0a0a0a}
-.section-sub{text-align:center;color:#666;max-width:600px;margin:0 auto 3rem;line-height:1.7}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.service-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s;border-top:4px solid #c0a36e}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
-.service-card .icon{width:50px;height:50px;background:#faf8f3;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.5rem}
-.service-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.75rem;color:#0a0a0a}.service-card p{color:#666;line-height:1.6;font-size:.95rem}
-.about{padding:6rem 2rem;background:#0a0a0a;color:#fff}.about .container{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;color:#c0a36e}
-.about-text p{color:rgba(255,255,255,.8);line-height:1.8;font-size:1.05rem}
-.about-visual{background:rgba(255,255,255,.05);border-radius:16px;padding:3rem;text-align:center;border:1px solid rgba(255,255,255,.1)}
-.about-visual .stat{margin-bottom:2rem}.about-visual .stat:last-child{margin-bottom:0}
-.about-visual .stat-number{font-family:'Playfair Display',serif;font-size:2.5rem;color:#c0a36e;font-weight:800}
-.about-visual .stat-label{color:rgba(255,255,255,.7);font-size:.95rem;margin-top:.25rem}
-.pain-points{padding:5rem 2rem;background:#fff}.pain-points .container{max-width:900px;margin:0 auto;text-align:center}
-.pain-points h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.2rem);color:#0a0a0a;margin-bottom:2rem}
-.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
-.pain-card{background:#fef9f0;border-radius:12px;padding:2rem;text-align:left;border-left:4px solid #e8a838}
-.pain-card h3{color:#0a0a0a;margin-bottom:.75rem;font-size:1.05rem}.pain-card p{color:#666;line-height:1.6;font-size:.95rem}
-.contact{padding:6rem 2rem;background:#faf8f3}.contact .container{max-width:700px;margin:0 auto;text-align:center}
-.contact h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#0a0a0a;margin-bottom:1rem}
-.contact .container>p{color:#666;margin-bottom:2rem;line-height:1.6}
-.contact form{display:flex;flex-direction:column;gap:1rem;text-align:left}
-.contact input,.contact textarea{padding:1rem;border:1px solid #ddd;border-radius:8px;font-family:inherit;font-size:1rem;transition:border-color .3s}
-.contact input:focus,.contact textarea:focus{outline:none;border-color:#c0a36e}.contact textarea{min-height:120px;resize:vertical}
-.contact button{padding:1rem 2rem;background:#0a0a0a;color:#fff;border:none;border-radius:50px;font-size:1.05rem;font-weight:600;cursor:pointer}.contact button:hover{opacity:.9}
-.cta-section{padding:5rem 2rem;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 50%,#0a0a0a 100%);text-align:center}
-.cta-section h2{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}
-.cta-section p{color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:1.1rem}
-footer{background:#111;color:rgba(255,255,255,.6);padding:3rem 2rem;text-align:center}
-footer .name{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-bottom:.5rem}footer p{font-size:.9rem;margin-bottom:.25rem}
-footer .powered{margin-top:1.5rem;font-size:.8rem;color:rgba(255,255,255,.3)}
-@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.pain-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}}
-</style></head><body>
-<nav><div class="logo">Bry <span>Barber</span></div>
-<ul><li><a href="#services">Servicios</a></li><li><a href="#about">Nosotros</a></li><li><a href="#contact">Contacto</a></li></ul></nav>
-<section class="hero"><div class="hero-content"><h1><span>Bry Barber</span> &mdash; Cortes con Estilo en el Corazón de Bogotá</h1><p>Fades, diseños y barbería clásica de la mano de Bryan. Tu mejor look empieza aquí.</p><a href="#contact" class="btn">Reserva Tu Corte con Bryan</a></div></section>
-<section class="services" id="services"><div class="container"><h2 class="section-title">Nuestros Servicios</h2><p class="section-sub">Barbería profesional en Bogotá.</p>
-<div class="services-grid"><div class="service-card"><div class="icon">&#9988;</div><h3>Corte Clásico</h3><p>El look limpio y atemporal que nunca falla.</p></div><div class="service-card"><div class="icon">&#128136;</div><h3>Fade y Degradado</h3><p>Precisión en cada línea.</p></div><div class="service-card"><div class="icon">&#127912;</div><h3>Diseños y Líneas</h3><p>Tu estilo, tu identidad.</p></div><div class="service-card"><div class="icon">&#129492;</div><h3>Barba y Perfilado</h3><p>Definición profesional para tu barba.</p></div><div class="service-card"><div class="icon">&#10024;</div><h3>Combo Corte + Barba</h3><p>El paquete completo para el hombre moderno.</p></div></div></div></section>
-<section class="about" id="about"><div class="container"><div class="about-text"><h2>Sobre Bry Barber</h2><p>Bry Barber es una barbería en Bogotá liderada por Bryan, especializada en cortes modernos, fades y diseños personalizados. Con atención al detalle y un estilo fresco, la barbería se ha convertido en referente para hombres que buscan más que un simple corte. Bryan combina técnica y creatividad para que cada cliente salga con un look que refleje su personalidad.</p></div>
-<div class="about-visual"><div class="stat"><div class="stat-number">Bogotá</div><div class="stat-label">Sirviendo con orgullo</div></div>
-<div class="stat"><div class="stat-number">100%</div><div class="stat-label">Satisfacción del Cliente</div></div>
-<div class="stat"><div class="stat-number">Profesional</div><div class="stat-label">Barbería</div></div></div></div></section>
-<section class="pain-points"><div class="container"><h2>Entendemos Tus Desafíos</h2><div class="pain-grid">
-<div class="pain-card"><h3>Sin Presencia Online</h3><p>Sin una página web profesional, los clientes que buscan en Google no pueden encontrarte. Esos clientes terminan eligiendo a la competencia.</p></div>
-<div class="pain-card"><h3>Perdiendo Clientes Locales</h3><p>Cada día, personas en Bogotá buscan servicios como los tuyos en internet. Sin presencia online, esas oportunidades se pierden.</p></div>
-</div><a href="#contact" class="btn" style="background:#0a0a0a;border-color:#0a0a0a">Reclama Tu Rediseño Gratis</a></div></section>
-<section class="contact" id="contact"><div class="container"><h2>Contáctanos</h2><p>Envíanos un mensaje y te respondemos en 24 horas.</p>
-<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="Nuevo contacto desde Bry Barber preview">
-<input type="text" name="name" placeholder="Tu Nombre" required><input type="email" name="email" placeholder="Tu Email" required>
-<input type="tel" name="phone" placeholder="Tu Teléfono"><textarea name="message" placeholder="Cuéntanos sobre tus necesidades..." required></textarea>
-<button type="submit">Enviar Mensaje</button></form></div></section>
-<section class="cta-section"><h2>¿Listo para tu mejor look?</h2><p>Reserva Tu Corte con Bryan</p><a href="#contact" class="btn">Comenzar Ahora</a></section>
-<footer><div class="name">Bry Barber</div><p>Barbería en Bogotá, Colombia</p><p class="powered">Vista previa por Alma Digital Services</p></footer>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#333;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,20,.92);backdrop-filter:blur(10px)}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#ffd54f;font-weight:700}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}nav ul li a:hover{color:#ffd54f}
+.hero{min-height:100vh;background:linear-gradient(135deg,#000 0%,#212121 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{position:relative;z-index:1;max-width:880px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5.5vw,4.2rem);color:#fff;line-height:1.12;margin-bottom:1.5rem;font-weight:800}
+.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:#fff9c4;max-width:680px;margin:0 auto 2.5rem;line-height:1.7}
+.btn{display:inline-block;padding:1rem 2.5rem;background:#ffd54f;color:#000;font-weight:700;text-decoration:none;border-radius:4px;font-size:1.05rem;transition:all .3s;border:none;cursor:pointer}
+.btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
+.services{padding:5.5rem 2rem;background:#f8f7f4}.services .container{max-width:1200px;margin:0 auto}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:1rem;color:#000}
+.section-sub{text-align:center;color:#666;max-width:580px;margin:0 auto 3rem;font-size:1rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1.8rem}
+.service-card{background:#fff;padding:2.2rem;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.05);border-left:4px solid #ffd54f;transition:all .3s}
+.service-card:hover{transform:translateY(-3px);box-shadow:0 6px 25px rgba(0,0,0,.1)}
+.service-card h3{font-size:1.15rem;margin-bottom:.6rem;color:#000;font-weight:700}
+.service-card p{color:#555;line-height:1.6;font-size:.95rem}
+.about{padding:5.5rem 2rem;background:#fff}.about .container{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.about-text h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.2rem;color:#000}
+.about-text p{color:#555;line-height:1.8;font-size:1rem}
+.about-visual{background:linear-gradient(135deg,#212121,#ffd54f);border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center}
+.cta-section{padding:4.5rem 2rem;background:linear-gradient(135deg,#000,#212121);text-align:center}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:#fff;margin-bottom:1rem}
+.cta-section p{color:#fff9c4;margin-bottom:2rem;font-size:1.05rem}
+.contact{padding:5rem 2rem;background:#1a1a1a;color:#fff}.contact .container{max-width:780px;margin:0 auto;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.8rem}
+.contact>div>.sub{color:#aaa;margin-bottom:2rem}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
+.contact-item h4{color:#ffd54f;margin-bottom:.4rem;font-size:.95rem}
+.contact-item p{color:#ccc;font-size:.9rem}
+form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
+form input,form textarea{padding:.8rem;border:1px solid #444;background:#222;color:#fff;border-radius:4px;font-size:.95rem;font-family:inherit}
+form textarea{resize:vertical}
+footer{padding:1.8rem;background:#111;text-align:center;color:#555;font-size:.8rem}
+.preview-banner{background:#ffd54f;color:#000;text-align:center;padding:.7rem;font-size:.82rem;font-weight:600;position:fixed;bottom:0;left:0;right:0;z-index:200}
+.preview-banner a{color:#000;text-decoration:underline}
+@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Bry Barber</div><ul><li><a href="#services">Servicios</a></li><li><a href="#about">Nosotros</a></li><li><a href="#contact">Contacto</a></li></ul></nav>
+<section class="hero"><div class="hero-content"><h1>Bry Barber &#8212; Cortes con Estilo en el Coraz&#243;n de Bogot&#225;</h1><p>Fades, dise&#241;os y barber&#237;a cl&#225;sica de la mano de Bryan. Tu mejor look empieza aqu&#237;.</p><a href="#contact" class="btn">Reserva Tu Corte con Bryan</a></div></section>
+<section class="services" id="services"><div class="container"><h2 class="section-title">Nuestros Servicios</h2><div class="services-grid"><div class="service-card"><h3>Corte Cl&#225;sico</h3><p>El look limpio y atemporal que nunca falla.</p></div><div class="service-card"><h3>Fade y Degradado</h3><p>Precisi&#243;n en cada l&#237;nea.</p></div><div class="service-card"><h3>Dise&#241;os y L&#237;neas</h3><p>Tu estilo, tu identidad.</p></div><div class="service-card"><h3>Barba y Perfilado</h3><p>Definici&#243;n profesional para tu barba.</p></div><div class="service-card"><h3>Combo Corte + Barba</h3><p>El paquete completo para el hombre moderno.</p></div></div></div></section>
+<section class="about" id="about"><div class="container"><div class="about-text"><h2>Sobre Nosotros</h2><p>Bry Barber es una barber&#237;a en Bogot&#225; liderada por Bryan, especializada en cortes modernos, fades y dise&#241;os personalizados. Con atenci&#243;n al detalle y un estilo fresco, la barber&#237;a se ha convertido en referente para hombres que buscan m&#225;s que un simple corte. Bryan combina t&#233;cnica y creatividad para que cada cliente salga con un look que refleje su personalidad.</p></div><div class="about-visual"></div></div></section>
+<section class="cta-section"><h2>Reserva Tu Corte con Bryan</h2><a href="#contact" class="btn">Cont&#225;ctanos</a></section>
+<section class="contact" id="contact"><div class="container"><h2>Contacto</h2><p class="sub">Bogota, Colombia</p><div class="contact-grid"><div class="contact-item"><h4>Ubicaci&#243;n</h4><p>Bogota, Colombia</p></div><div class="contact-item"><h4>Email</h4><p>bryanbejarano45@gmail.com</p></div><div class="contact-item"><h4>Area de Servicio</h4><p>Bogota y alrededores</p></div></div>
+<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="Bry Barber - Website Inquiry"><input type="text" name="name" placeholder="Tu Nombre" required><input type="email" name="email" placeholder="Tu Email" required><textarea name="message" placeholder="Cu&#233;ntanos sobre tu proyecto" rows="4" required></textarea><button type="submit" class="btn">Enviar Mensaje</button></form>
+</div></section>
+<footer><p>&copy; 2026 Bry Barber &#8212; Bogota, Colombia.</p></footer>
+<div class="preview-banner">Vista previa gratuita dise&#241;ada por <a href="https://almadigitalservices.com">Alma Digital Services</a> &#8212; <a href="#contact">Reclama Tu Redise&#241;o Gratis</a></div>
 </body></html>
