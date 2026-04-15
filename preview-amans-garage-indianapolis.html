@@ -1,144 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Aman's Garage Auto Repair Shop | Trusted Mechanic in Indianapolis, IN</title>
-<meta name="description" content="Aman's Garage Auto Repair Shop LLC offers honest, affordable auto repair in Indianapolis, IN. Brake service, engine diagnostics, oil changes and more. Book your appointment today.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta name="description" content="Aman's Garage Auto Repair Shop LLC offers honest, affordable auto repair in Indianapolis, IN. Brake service, engine diagnostics, oil changes & more. Book your appointment today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;color:#2d2d2d;background:#fff}
-nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,40,0.95);backdrop-filter:blur(10px)}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;font-weight:700}
-nav .logo span{color:#e67e22}
-nav ul{list-style:none;display:flex;gap:2rem}
-nav ul li a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.95rem;transition:color .3s}
-nav ul li a:hover{color:#e67e22}
-.hero{min-height:100vh;background:linear-gradient(135deg,#2c2c3e 0%,#1a1a2e 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative}
-.hero-content{position:relative;z-index:1;max-width:850px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.5rem);color:#fff;margin-bottom:1.5rem;line-height:1.15;font-weight:800}
-.hero h1 span{color:#e67e22}
-.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:rgba(255,255,255,0.85);margin-bottom:2.5rem;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
-.btn{display:inline-block;padding:1rem 2.5rem;background:#e67e22;color:#fff;font-weight:600;font-size:1.05rem;border-radius:50px;text-decoration:none;transition:all .3s;border:2px solid #e67e22}
-.btn:hover{background:transparent}
-.services{padding:6rem 2rem;background:#f9f3ed}
-.services .container{max-width:1100px;margin:0 auto}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);text-align:center;margin-bottom:1rem;color:#1a1a2e}
-.section-sub{text-align:center;color:#666;max-width:600px;margin:0 auto 3rem;line-height:1.7}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.service-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s;border-top:4px solid #e67e22}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,0.1)}
-.service-card .icon{width:50px;height:50px;background:#f9f3ed;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.5rem}
-.service-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:0.75rem;color:#1a1a2e}
-.service-card p{color:#666;line-height:1.6;font-size:0.95rem}
-.about{padding:6rem 2rem;background:#1a1a2e;color:#fff}
-.about .container{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;color:#e67e22}
-.about-text p{color:rgba(255,255,255,0.8);line-height:1.8;font-size:1.05rem}
-.about-visual{background:rgba(255,255,255,0.05);border-radius:16px;padding:3rem;text-align:center;border:1px solid rgba(255,255,255,0.1)}
-.about-visual .stat{margin-bottom:2rem}
-.about-visual .stat:last-child{margin-bottom:0}
-.about-visual .stat-number{font-family:'Playfair Display',serif;font-size:2.5rem;color:#e67e22;font-weight:800}
-.about-visual .stat-label{color:rgba(255,255,255,0.7);font-size:0.95rem;margin-top:0.25rem}
-.pain-points{padding:5rem 2rem;background:#fff}
-.pain-points .container{max-width:900px;margin:0 auto;text-align:center}
-.pain-points h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.2rem);color:#1a1a2e;margin-bottom:2rem}
-.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
-.pain-card{background:#fef9f0;border-radius:12px;padding:2rem;text-align:left;border-left:4px solid #e8a838}
-.pain-card h3{color:#1a1a2e;margin-bottom:0.75rem;font-size:1.05rem}
-.pain-card p{color:#666;line-height:1.6;font-size:0.95rem}
-.contact{padding:6rem 2rem;background:#f9f3ed}
-.contact .container{max-width:700px;margin:0 auto;text-align:center}
-.contact h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#1a1a2e;margin-bottom:1rem}
-.contact>p,.contact .container>p{color:#666;margin-bottom:2rem;line-height:1.6}
-.contact form{display:flex;flex-direction:column;gap:1rem;text-align:left}
-.contact input,.contact textarea{padding:1rem;border:1px solid #ddd;border-radius:8px;font-family:inherit;font-size:1rem;transition:border-color .3s}
-.contact input:focus,.contact textarea:focus{outline:none;border-color:#e67e22}
-.contact textarea{min-height:120px;resize:vertical}
-.contact button{padding:1rem 2rem;background:#1a1a2e;color:#fff;border:none;border-radius:50px;font-size:1.05rem;font-weight:600;cursor:pointer;transition:background .3s}
-.contact button:hover{opacity:0.9}
-.cta-section{padding:5rem 2rem;background:linear-gradient(135deg,#2c2c3e 0%,#1a1a2e 100%);text-align:center}
-.cta-section h2{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}
-.cta-section p{color:rgba(255,255,255,0.8);margin-bottom:2rem;font-size:1.1rem}
-footer{background:#111;color:rgba(255,255,255,0.6);padding:3rem 2rem;text-align:center}
-footer .name{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-bottom:0.5rem}
-footer p{font-size:0.9rem;margin-bottom:0.25rem}
-footer .powered{margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.3)}
-@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.pain-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#333;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:#fff;box-shadow:0 1px 10px rgba(0,0,0,.06)}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:#333;font-weight:700}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:#444;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}nav ul li a:hover{color:#ff6b00}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:4rem}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:4rem;background:#fafafa}
+.hero-right{background:linear-gradient(135deg,#333,#ff6b00);display:flex;align-items:center;justify-content:center}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);color:#1a1a1a;line-height:1.15;margin-bottom:1.2rem}
+.hero p{font-size:1.05rem;color:#666;margin-bottom:2rem;line-height:1.7;max-width:500px}
+.btn{display:inline-block;padding:.9rem 2.2rem;background:#ff6b00;color:#fff;font-weight:700;text-decoration:none;border-radius:50px;font-size:1rem;transition:all .3s;border:none;cursor:pointer}
+.btn:hover{background:#1a1a1a;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.services{padding:5rem 2rem;background:#fff}.services .container{max-width:1100px;margin:0 auto}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);text-align:center;margin-bottom:3rem;color:#1a1a1a}
+.h-cards{display:flex;flex-direction:column;gap:1.2rem}
+.h-card{display:flex;align-items:start;gap:1.5rem;padding:1.8rem;background:#fafafa;border-radius:12px;transition:all .3s}
+.h-card:hover{background:#ffd6b3;transform:translateX(4px)}
+.h-card .num{font-family:'Playfair Display',serif;font-size:2rem;color:#ff6b00;font-weight:800;min-width:50px}
+.h-card h3{font-size:1.1rem;color:#1a1a1a;margin-bottom:.3rem;font-weight:700}
+.h-card p{font-size:.9rem;color:#666;line-height:1.5}
+.about{padding:5rem 2rem;background:#ffd6b3}.about .container{max-width:800px;margin:0 auto;text-align:center}
+.about h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem;color:#1a1a1a}
+.about p{color:#555;line-height:1.8;font-size:1.05rem}
+.contact{padding:5rem 2rem;background:#1a1a1a;color:#fff}.contact .container{max-width:600px;margin:0 auto;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.6rem}
+.contact .sub{color:rgba(255,255,255,.7);margin-bottom:2rem}
+form{display:flex;flex-direction:column;gap:.8rem}
+form input,form textarea{padding:.85rem;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;border-radius:8px;font-size:.95rem;font-family:inherit}
+form textarea{resize:vertical}form input::placeholder,form textarea::placeholder{color:rgba(255,255,255,.5)}
+footer{padding:1.5rem;background:#0a0a0a;text-align:center;color:#555;font-size:.8rem}
+.preview-banner{background:#ff6b00;color:#fff;text-align:center;padding:.7rem;font-size:.82rem;font-weight:600;position:fixed;bottom:0;left:0;right:0;z-index:200}
+.preview-banner a{color:#fff;text-decoration:underline}
+@media(max-width:768px){nav ul{display:none}.hero{grid-template-columns:1fr}.hero-right{min-height:200px}.hero-left{padding:2rem}}
 </style>
 </head>
 <body>
-<nav>
-<div class="logo">Aman&#39;s Garage <span>Auto Repair</span></div>
-<ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
-</nav>
-<section class="hero">
-<div class="hero-content">
-<h1>Honest Auto Repair in Indianapolis &mdash; Your Car Deserves Aman's Garage</h1>
-<p>From brake jobs to engine diagnostics, Aman's Garage keeps Indianapolis drivers on the road with transparent pricing and reliable workmanship.</p>
-<a href="#contact" class="btn">Schedule Your Repair &mdash; Book an Appointment with Aman's Garage</a>
-</div>
-</section>
-<section class="services" id="services">
-<div class="container">
-<h2 class="section-title">Our Services</h2>
-<p class="section-sub">Professional auto repair services in Indianapolis, IN.</p>
-<div class="services-grid">
-<div class="service-card"><div class="icon">&#128295;</div><h3>Engine Diagnostics & Repair</h3><p>Pinpointing problems fast so you are back on the road.</p></div>
-<div class="service-card"><div class="icon">&#128722;</div><h3>Brake Service & Replacement</h3><p>Stopping power you can trust, every time.</p></div>
-<div class="service-card"><div class="icon">&#128739;</div><h3>Oil Changes & Fluid Services</h3><p>Routine maintenance done right, on schedule.</p></div>
-<div class="service-card"><div class="icon">&#9881;</div><h3>Transmission Repair</h3><p>Expert care for your vehicle most complex system.</p></div>
-<div class="service-card"><div class="icon">&#128663;</div><h3>Suspension & Steering</h3><p>Smooth rides start with proper alignment and parts.</p></div>
-</div>
-</div>
-</section>
-<section class="about" id="about">
-<div class="container">
-<div class="about-text">
-<h2>About Aman's Garage Auto Repair Shop LLC</h2>
-<p>Aman's Garage Auto Repair Shop LLC is a locally owned repair shop in Indianapolis, IN, offering full-service auto repair for domestic and foreign vehicles. Owner Aman built the shop on a straightforward philosophy: honest diagnostics, fair pricing, and repairs done right the first time. The shop handles everything from routine oil changes to complex engine and transmission work.</p>
-</div>
-<div class="about-visual">
-<div class="stat"><div class="stat-number">Indianapolis</div><div class="stat-label">Proudly Serving</div></div>
-<div class="stat"><div class="stat-number">100%</div><div class="stat-label">Customer Satisfaction Focus</div></div>
-<div class="stat"><div class="stat-number">Full-Service</div><div class="stat-label">Auto Repair Solutions</div></div>
-</div>
-</div>
-</section>
-<section class="pain-points">
-<div class="container">
-<h2>We Understand Your Challenges</h2>
-<div class="pain-grid">
-<div class="pain-card"><h3>Outdated Online Presence</h3><p>Your current website does not reflect the quality of work you deliver. Potential customers searching online see a site that does not match your reputation.</p></div>
-<div class="pain-card"><h3>Missing Local Customers</h3><p>When people in Indianapolis search for auto repair services, they pick companies with professional websites. Without one, you are losing business to competitors.</p></div>
-</div>
-<a href="#contact" class="btn" style="background:#1a1a2e;border-color:#1a1a2e">Claim Your Free Redesign</a>
-</div>
-</section>
-<section class="contact" id="contact">
-<div class="container">
-<h2>Get in Touch</h2>
-<p>Send us a message and we will get back to you within 24 hours.</p>
-<form action="https://formspree.io/f/xojppajv" method="POST">
-<input type="hidden" name="_subject" value="New lead from Aman's Garage Auto Repair Shop LLC preview page">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="tel" name="phone" placeholder="Your Phone Number">
-<textarea name="message" placeholder="Tell us about your needs..." required></textarea>
-<button type="submit">Send Message</button>
-</form>
-</div>
-</section>
-<section class="cta-section">
-<h2>Ready for a Professional Website?</h2>
-<p>Schedule Your Repair &mdash; Book an Appointment with Aman's Garage</p>
-<a href="#contact" class="btn">Get Started Now</a>
-</section>
-<footer>
-<div class="name">Aman&#39;s Garage Auto Repair Shop LLC</div>
-<p>Auto Repair in Indianapolis, IN</p>
-<p class="powered">Website preview by Alma Digital Services</p>
-</footer>
-</body>
-</html>
+<nav><div class="logo">Aman&#8217;s Garage Auto Repair Shop LLC</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero"><div class="hero-left"><h1>Honest Auto Repair in Indianapolis &#8212; Your Car Deserves Aman&#8217;s Garage</h1><p>From brake jobs to engine diagnostics, Aman&#8217;s Garage keeps Indianapolis drivers on the road with transparent pricing and reliable workmanship.</p><a href="#contact" class="btn">Schedule Your Repair &#8212; Book an Appointment with Aman&#8217;s Garage</a></div><div class="hero-right"></div></section>
+<section class="services" id="services"><div class="container"><h2 class="section-title">Our Services</h2><div class="h-cards"><div class="h-card"><div class="num">01</div><div><h3>Engine Diagnostics &amp; Repair</h3><p>Pinpointing problems fast so you&#8217;re back on the road.</p></div></div><div class="h-card"><div class="num">02</div><div><h3>Brake Service &amp; Replacement</h3><p>Stopping power you can trust.</p></div></div><div class="h-card"><div class="num">03</div><div><h3>Oil Changes &amp; Fluid Services</h3><p>Routine maintenance done right.</p></div></div><div class="h-card"><div class="num">04</div><div><h3>Transmission Repair</h3><p>Expert care for your vehicle&#8217;s most complex system.</p></div></div><div class="h-card"><div class="num">05</div><div><h3>Suspension &amp; Steering</h3><p>Smooth rides start here.</p></div></div></div></div></section>
+<section class="about" id="about"><div class="container"><h2>About Us</h2><p>Aman&#8217;s Garage Auto Repair Shop LLC is a locally owned repair shop in Indianapolis, IN, offering full-service auto repair for domestic and foreign vehicles. Owner Aman built the shop on a straightforward philosophy: honest diagnostics, fair pricing, and repairs done right the first time. The shop handles everything from routine oil changes to complex engine and transmission work.</p></div></section>
+<section class="contact" id="contact"><div class="container"><h2>Get In Touch</h2><p class="sub">Indianapolis, IN</p>
+<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="Aman's Garage Auto Repair Shop LLC - Website Inquiry"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><textarea name="message" placeholder="Your Message" rows="4" required></textarea><button type="submit" class="btn">Send Message</button></form>
+</div></section>
+<footer><p>&copy; 2026 Aman's Garage Auto Repair Shop LLC &#8212; Indianapolis, IN.</p></footer>
+<div class="preview-banner">Free preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a> &#8212; <a href="#contact">Claim Your Free Redesign</a></div>
+</body></html>
