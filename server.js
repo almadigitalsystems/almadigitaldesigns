@@ -970,53 +970,183 @@ app.post('/api/stripe-webhook', async (req, res) => {
 
 
 
-    const taskTitle = `New client payment confirmed — start onboarding for ${email || 'unknown client'}`;
-
-    const taskDescription = [
-
-      `**Payment confirmed** via Stripe webhook (\`${eventType}\`).`,
-
-      '',
-
-      `- **Email:** ${email || 'Not captured — check Stripe dashboard'}`,
-
-      `- **Amount:** ${amountDisplay}`,
-
-      `- **Products/Plan:** ${products}`,
-
-      `- **Payment ID:** \`${paymentId}\``,
-
-      `- **Event ID:** \`${event.id}\``,
-
-      '',
-
-      '> **IMPORTANT:** The payment email may differ from the prospect\'s contact email. Always cross-reference with Instantly leads (campaign_id `b80b7623`) and the Google Sheet at https://docs.google.com/spreadsheets/d/14hDlASmDxl434OtkRiN6pJVu6-Bdca83lFlsTqHn-zQ to find the correct contact email before sending any onboarding communications.',
-
-      '',
-
-      'Start full onboarding pipeline immediately:',
-
-      '1. Verify the correct contact email via Instantly leads and Google Sheet before any outreach',
-
-      '2. Reach out to client and confirm their domain situation',
-
-      '3. Trigger domain registration or DNS setup as needed',
-
-      '4. Kick off website build process',
-
-      '5. All steps per the onboarding checklist',
-
-    ].join('\n');
-
-
-
     const paperclipUrl = process.env.PAPERCLIP_API_URL || 'http://127.0.0.1:3100';
 
     const companyId = process.env.PAPERCLIP_COMPANY_ID || 'aa9191d4-249a-4574-88f2-1284571ad537';
 
-    const milaAgentId = '4c048967-aae9-4f50-8d77-6c83322d10f1';
-
     const goalId = 'f45eaf59-e75b-4a0a-b6db-b1c7633abb14';
+
+
+
+    // Detect branding orders vs web design orders
+
+    const sessionMetadata = (eventType === 'checkout.session.completed' ? (event.data?.object?.metadata || {}) : {});
+
+    const isBrandingOrder = sessionMetadata.service === 'branding';
+
+
+
+    let taskTitle, taskDescription, assigneeAgentId;
+
+
+
+    if (isBrandingOrder) {
+
+      // ── BRANDING ORDER → Frida (Art Specialist) ──
+
+      const fridaAgentId = '81fabfba-11f6-42d9-916b-e82da6279073';
+
+      const tier = sessionMetadata.tier || 'unknown';
+
+      const businessName = sessionMetadata.business_name || 'Unknown business';
+
+      const businessType = sessionMetadata.business_type || 'Unknown type';
+
+      const styleAndColors = sessionMetadata.style_and_colors || 'No preferences specified';
+
+      const tierNames = { '1': 'Logo Only ($25)', '2': 'Brand Starter ($50)', '3': 'Full Brand Identity ($100)' };
+
+      const tierName = tierNames[tier] || `Tier ${tier}`;
+
+
+
+      taskTitle = `Branding order: ${tierName} for ${businessName}`;
+
+      taskDescription = [
+
+        `**Branding order confirmed** via Stripe webhook (\`${eventType}\`).`,
+
+        '',
+
+        `## Client Details`,
+
+        `- **Email:** ${email || 'Not captured — check Stripe dashboard'}`,
+
+        `- **Business Name:** ${businessName}`,
+
+        `- **Business Type:** ${businessType}`,
+
+        `- **Style & Color Preferences:** ${styleAndColors}`,
+
+        '',
+
+        `## Order Details`,
+
+        `- **Tier:** ${tierName}`,
+
+        `- **Amount:** ${amountDisplay}`,
+
+        `- **Payment ID:** \`${paymentId}\``,
+
+        `- **Event ID:** \`${event.id}\``,
+
+        '',
+
+        `## Tier Deliverables`,
+
+        ...(tier === '1' ? [
+
+          '- 2 logo concepts, 3 revisions',
+
+          '- PNG + SVG + PDF, light and dark versions',
+
+          '- 24hr delivery',
+
+        ] : tier === '2' ? [
+
+          '- 3 logo concepts, 5 revisions',
+
+          '- PNG + SVG + PDF, light and dark versions',
+
+          '- Color palette + typography',
+
+          '- Social media kit (FB/IG/LinkedIn profile + cover)',
+
+          '- Email signature',
+
+          '- 24hr delivery',
+
+        ] : tier === '3' ? [
+
+          '- 5 logo concepts, unlimited revisions',
+
+          '- PNG + SVG + PDF, light and dark versions',
+
+          '- Color palette + typography',
+
+          '- Social media kit (FB/IG/LinkedIn profile + cover)',
+
+          '- Email signature',
+
+          '- Full brand style guide PDF',
+
+          '- Business card design + letterhead',
+
+          '- 5 custom social post templates',
+
+          '- Brand voice and tagline',
+
+          '- 24hr delivery',
+
+        ] : ['- Check tier details in branding pipeline spec']),
+
+        '',
+
+        'Begin branding fulfillment pipeline immediately per the pipeline spec.',
+
+      ].join('\n');
+
+      assigneeAgentId = fridaAgentId;
+
+    } else {
+
+      // ── WEB DESIGN ORDER → Mila (CSS) ──
+
+      const milaAgentId = '4c048967-aae9-4f50-8d77-6c83322d10f1';
+
+
+
+      taskTitle = `New client payment confirmed — start onboarding for ${email || 'unknown client'}`;
+
+      taskDescription = [
+
+        `**Payment confirmed** via Stripe webhook (\`${eventType}\`).`,
+
+        '',
+
+        `- **Email:** ${email || 'Not captured — check Stripe dashboard'}`,
+
+        `- **Amount:** ${amountDisplay}`,
+
+        `- **Products/Plan:** ${products}`,
+
+        `- **Payment ID:** \`${paymentId}\``,
+
+        `- **Event ID:** \`${event.id}\``,
+
+        '',
+
+        '> **IMPORTANT:** The payment email may differ from the prospect\'s contact email. Always cross-reference with Instantly leads (campaign_id `b80b7623`) and the Google Sheet at https://docs.google.com/spreadsheets/d/14hDlASmDxl434OtkRiN6pJVu6-Bdca83lFlsTqHn-zQ to find the correct contact email before sending any onboarding communications.',
+
+        '',
+
+        'Start full onboarding pipeline immediately:',
+
+        '1. Verify the correct contact email via Instantly leads and Google Sheet before any outreach',
+
+        '2. Reach out to client and confirm their domain situation',
+
+        '3. Trigger domain registration or DNS setup as needed',
+
+        '4. Kick off website build process',
+
+        '5. All steps per the onboarding checklist',
+
+      ].join('\n');
+
+      assigneeAgentId = milaAgentId;
+
+    }
 
 
 
@@ -1040,7 +1170,7 @@ app.post('/api/stripe-webhook', async (req, res) => {
 
         priority: 'critical',
 
-        assigneeAgentId: milaAgentId,
+        assigneeAgentId,
 
         goalId,
 
@@ -1054,7 +1184,7 @@ app.post('/api/stripe-webhook', async (req, res) => {
 
       const errText = await taskRes.text();
 
-      console.error('Failed to create Mila task:', taskRes.status, errText);
+      console.error(`Failed to create ${isBrandingOrder ? 'branding fulfillment' : 'Mila onboarding'} task:`, taskRes.status, errText);
 
       // Still return 200 to Stripe so it doesn't retry — log the failure
 
@@ -1062,7 +1192,7 @@ app.post('/api/stripe-webhook', async (req, res) => {
 
       const taskData = await taskRes.json();
 
-      console.log(`Mila onboarding task created: ${taskData.identifier} for ${email}`);
+      console.log(`${isBrandingOrder ? 'Branding fulfillment' : 'Mila onboarding'} task created: ${taskData.identifier} for ${email}`);
 
     }
 
