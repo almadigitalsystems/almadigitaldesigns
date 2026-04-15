@@ -1,72 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Reese's Lawn Care & Service | Lawn Mowing & Landscaping in Calgary, AB</title>
 <meta name="description" content="Reese's Lawn Care & Service in Calgary, AB. Professional lawn mowing, aeration, landscaping, and seasonal cleanup. Book your free yard assessment with Reese today.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#2d2d2d;background:#fff}
-nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,30,0.95);backdrop-filter:blur(10px)}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;font-weight:700}nav .logo span{color:#8bc34a}
-nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;transition:color .3s}nav ul li a:hover{color:#8bc34a}
-.hero{min-height:100vh;background:linear-gradient(135deg,#2d5a27 0%,#3e7a34 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}
-.hero-content{max-width:850px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.5rem);color:#fff;margin-bottom:1.5rem;line-height:1.15;font-weight:800}
-.hero h1 span{color:#8bc34a}.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:rgba(255,255,255,.85);margin-bottom:2.5rem;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
-.btn{display:inline-block;padding:1rem 2.5rem;background:#8bc34a;color:#fff;font-weight:600;font-size:1.05rem;border-radius:50px;text-decoration:none;transition:all .3s;border:2px solid #8bc34a}.btn:hover{background:transparent}
-.services{padding:6rem 2rem;background:#f5f9f0}.services .container{max-width:1100px;margin:0 auto}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);text-align:center;margin-bottom:1rem;color:#2d5a27}
-.section-sub{text-align:center;color:#666;max-width:600px;margin:0 auto 3rem;line-height:1.7}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.service-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s;border-top:4px solid #8bc34a}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
-.service-card .icon{width:50px;height:50px;background:#f5f9f0;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.5rem}
-.service-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.75rem;color:#2d5a27}.service-card p{color:#666;line-height:1.6;font-size:.95rem}
-.about{padding:6rem 2rem;background:#2d5a27;color:#fff}.about .container{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;color:#8bc34a}
-.about-text p{color:rgba(255,255,255,.8);line-height:1.8;font-size:1.05rem}
-.about-visual{background:rgba(255,255,255,.05);border-radius:16px;padding:3rem;text-align:center;border:1px solid rgba(255,255,255,.1)}
-.about-visual .stat{margin-bottom:2rem}.about-visual .stat:last-child{margin-bottom:0}
-.about-visual .stat-number{font-family:'Playfair Display',serif;font-size:2.5rem;color:#8bc34a;font-weight:800}
-.about-visual .stat-label{color:rgba(255,255,255,.7);font-size:.95rem;margin-top:.25rem}
-.pain-points{padding:5rem 2rem;background:#fff}.pain-points .container{max-width:900px;margin:0 auto;text-align:center}
-.pain-points h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.2rem);color:#2d5a27;margin-bottom:2rem}
-.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
-.pain-card{background:#fef9f0;border-radius:12px;padding:2rem;text-align:left;border-left:4px solid #e8a838}
-.pain-card h3{color:#2d5a27;margin-bottom:.75rem;font-size:1.05rem}.pain-card p{color:#666;line-height:1.6;font-size:.95rem}
-.contact{padding:6rem 2rem;background:#f5f9f0}.contact .container{max-width:700px;margin:0 auto;text-align:center}
-.contact h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#2d5a27;margin-bottom:1rem}
-.contact .container>p{color:#666;margin-bottom:2rem;line-height:1.6}
-.contact form{display:flex;flex-direction:column;gap:1rem;text-align:left}
-.contact input,.contact textarea{padding:1rem;border:1px solid #ddd;border-radius:8px;font-family:inherit;font-size:1rem;transition:border-color .3s}
-.contact input:focus,.contact textarea:focus{outline:none;border-color:#8bc34a}.contact textarea{min-height:120px;resize:vertical}
-.contact button{padding:1rem 2rem;background:#2d5a27;color:#fff;border:none;border-radius:50px;font-size:1.05rem;font-weight:600;cursor:pointer}.contact button:hover{opacity:.9}
-.cta-section{padding:5rem 2rem;background:linear-gradient(135deg,#2d5a27 0%,#3e7a34 100%);text-align:center}
-.cta-section h2{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}
-.cta-section p{color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:1.1rem}
-footer{background:#111;color:rgba(255,255,255,.6);padding:3rem 2rem;text-align:center}
-footer .name{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-bottom:.5rem}footer p{font-size:.9rem;margin-bottom:.25rem}
-footer .powered{margin-top:1.5rem;font-size:.8rem;color:rgba(255,255,255,.3)}
-@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.pain-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}}
-</style></head><body>
-<nav><div class="logo">Reese's <span>Lawn Care</span></div>
-<ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-<section class="hero"><div class="hero-content"><h1><span>Reese's Lawn Care</span> &mdash; Calgary's Go-To for a Better-Looking Yard</h1><p>From weekly mowing to full yard makeovers, Reese delivers lawn care that Calgary homeowners trust. Get a quote in minutes.</p><a href="#contact" class="btn">Book Reese for Your Free Yard Assessment</a></div></section>
-<section class="services" id="services"><div class="container"><h2 class="section-title">Our Services</h2><p class="section-sub">Professional lawn care services in Calgary, AB.</p>
-<div class="services-grid"><div class="service-card"><div class="icon">&#127793;</div><h3>Lawn Mowing & Edging</h3><p>A clean, sharp lawn every time.</p></div><div class="service-card"><div class="icon">&#127807;</div><h3>Aeration & Overseeding</h3><p>Healthier, thicker grass from the roots up.</p></div><div class="service-card"><div class="icon">&#127810;</div><h3>Spring & Fall Cleanup</h3><p>Prepare your yard for every Calgary season.</p></div><div class="service-card"><div class="icon">&#127793;</div><h3>Fertilization & Weed Control</h3><p>Feed your lawn, starve the weeds.</p></div><div class="service-card"><div class="icon">&#127795;</div><h3>Landscaping & Sod Installation</h3><p>Transform your outdoor space completely.</p></div></div></div></section>
-<section class="about" id="about"><div class="container"><div class="about-text"><h2>About Reese's Lawn Care</h2><p>Reese's Lawn Care & Service, owned and operated by Reese, is a Calgary-based lawn care and landscaping company dedicated to keeping residential properties in top shape. From regular mowing and edging to seasonal aeration and full yard renovations, Reese brings hands-on expertise and reliable service to every job. Known for a straightforward approach and quality results, Reese's has become a trusted name among Calgary homeowners.</p></div>
-<div class="about-visual"><div class="stat"><div class="stat-number">Calgary</div><div class="stat-label">Proudly Serving</div></div>
-<div class="stat"><div class="stat-number">100%</div><div class="stat-label">Customer Satisfaction Focus</div></div>
-<div class="stat"><div class="stat-number">Full-Service</div><div class="stat-label">Lawn Care Solutions</div></div></div></div></section>
-<section class="pain-points"><div class="container"><h2>We Understand Your Challenges</h2><div class="pain-grid">
-<div class="pain-card"><h3>Outdated Online Presence</h3><p>Your current website does not reflect the quality of work you deliver. Potential customers see a site that does not match your reputation.</p></div>
-<div class="pain-card"><h3>Missing Local Customers</h3><p>When people in Calgary search for lawn care services, they pick companies with professional websites. You are losing business to competitors.</p></div>
-</div><a href="#contact" class="btn" style="background:#2d5a27;border-color:#2d5a27">Claim Your Free Redesign</a></div></section>
-<section class="contact" id="contact"><div class="container"><h2>Get in Touch</h2><p>Send us a message and we will get back to you within 24 hours.</p>
-<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="New lead from Reese's Lawn Care & Service preview">
-<input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required>
-<input type="tel" name="phone" placeholder="Your Phone Number"><textarea name="message" placeholder="Tell us about your needs..." required></textarea>
-<button type="submit">Send Message</button></form></div></section>
-<section class="cta-section"><h2>Ready for a Professional Website?</h2><p>Book Reese for Your Free Yard Assessment</p><a href="#contact" class="btn">Get Started Now</a></section>
-<footer><div class="name">Reese's Lawn Care & Service</div><p>Lawn Care in Calgary, AB</p><p class="powered">Website preview by Alma Digital Services</p></footer>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#333;overflow-x:hidden}
+nav{padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:#33691e;max-width:100%}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;font-weight:700}
+nav ul{list-style:none;display:flex;gap:1.5rem}nav ul li a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .3s}nav ul li a:hover{color:#9ccc65}
+.banner{background:linear-gradient(to right,#33691e,#558b2f);padding:5rem 2rem;text-align:center}
+.banner h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;line-height:1.15;margin-bottom:1.2rem;max-width:800px;margin-left:auto;margin-right:auto}
+.banner p{font-size:1.05rem;color:rgba(255,255,255,.75);max-width:620px;margin:0 auto 2rem;line-height:1.65}
+.btn{display:inline-block;padding:.9rem 2rem;background:#9ccc65;color:#fff;font-weight:700;text-decoration:none;border-radius:6px;font-size:1rem;transition:all .3s;border:none;cursor:pointer}
+.btn:hover{opacity:.9;transform:translateY(-2px)}
+.about-strip{display:grid;grid-template-columns:1fr 1.2fr;max-width:1100px;margin:0 auto;padding:4rem 2rem;gap:3rem;align-items:center}
+.about-photo{background:#f1f8e9;border-radius:10px;height:320px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#558b2f}
+.about-text h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:#33691e;margin-bottom:1rem}
+.about-text p{color:#555;line-height:1.8;font-size:1rem}
+.services{padding:4.5rem 2rem;background:#f5f5f5}.services .container{max-width:1100px;margin:0 auto}
+.section-title{font-family:'Playfair Display',serif;font-size:2rem;text-align:center;margin-bottom:2.5rem;color:#33691e}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.svc-box{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.04);transition:all .3s;border-top:3px solid transparent}
+.svc-box:hover{border-top-color:#9ccc65;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.svc-box h3{font-size:1.1rem;color:#33691e;margin-bottom:.5rem;font-weight:700}
+.svc-box p{color:#666;line-height:1.6;font-size:.92rem}
+.cta-bar{padding:3.5rem 2rem;background:#558b2f;text-align:center}
+.cta-bar h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin-bottom:1.2rem}
+.contact{padding:4.5rem 2rem;background:#fff}.contact .container{max-width:600px;margin:0 auto;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:#33691e;margin-bottom:.5rem}
+.contact .sub{color:#888;margin-bottom:1.5rem;font-size:.9rem}
+form{display:flex;flex-direction:column;gap:.7rem}
+form input,form textarea{padding:.8rem;border:1px solid #ddd;border-radius:6px;font-size:.95rem;font-family:inherit}
+form textarea{resize:vertical}
+footer{padding:2rem;background:#33691e;color:rgba(255,255,255,.4);font-size:.8rem}
+footer .container{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer a{color:rgba(255,255,255,.6);text-decoration:none}
+.preview-banner{background:#9ccc65;color:#fff;text-align:center;padding:.7rem;font-size:.82rem;font-weight:600;position:fixed;bottom:0;left:0;right:0;z-index:200}
+.preview-banner a{color:#fff;text-decoration:underline}
+@media(max-width:768px){nav ul{display:none}.about-strip{grid-template-columns:1fr}.svc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Reese&#8217;s Lawn Care &amp; Service</div><ul><li><a href="#about">About Us</a></li><li><a href="#services">Our Services</a></li><li><a href="#contact">Contact Us</a></li></ul></nav>
+<section class="banner"><h1>Reese&#8217;s Lawn Care &#8212; Calgary&#8217;s Go-To for a Better-Looking Yard</h1><p>From weekly mowing to full yard makeovers, Reese delivers lawn care that Calgary homeowners trust. Get a quote in minutes.</p><a href="#contact" class="btn">Book Reese for Your Free Yard Assessment</a></section>
+<section class="about-strip" id="about"><div class="about-photo">&#9733;</div><div class="about-text"><h2>About Us</h2><p>Reese&#8217;s Lawn Care &amp; Service, owned and operated by Reese, is a Calgary-based lawn care and landscaping company dedicated to keeping residential properties in top shape. From regular mowing and edging to seasonal aeration and full yard renovations, Reese brings hands-on expertise and reliable service to every job. Known for a straightforward approach and quality results, Reese&#8217;s has become a trusted name among Calgary homeowners.</p></div></section>
+<section class="services" id="services"><div class="container"><h2 class="section-title">Our Services</h2><div class="svc-grid"><div class="svc-box"><h3>Lawn Mowing &amp; Edging</h3><p>A clean, sharp lawn every time.</p></div><div class="svc-box"><h3>Aeration &amp; Overseeding</h3><p>Healthier, thicker grass from the roots up.</p></div><div class="svc-box"><h3>Spring &amp; Fall Cleanup</h3><p>Prepare your yard for every Calgary season.</p></div><div class="svc-box"><h3>Fertilization &amp; Weed Control</h3><p>Feed your lawn, starve the weeds.</p></div><div class="svc-box"><h3>Landscaping &amp; Sod Installation</h3><p>Transform your outdoor space.</p></div></div></div></section>
+<section class="cta-bar"><h2>Book Reese for Your Free Yard Assessment</h2><a href="#contact" class="btn">Contact Us</a></section>
+<section class="contact" id="contact"><div class="container"><h2>Contact Us</h2><p class="sub">Calgary, AB &#8212; Reeseshort3@gmail.com</p>
+<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="Reese's Lawn Care & Service - Inquiry"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><textarea name="message" placeholder="Your message" rows="4" required></textarea><button type="submit" class="btn">Send Message</button></form>
+</div></section>
+<footer><div class="container"><p>&copy; 2026 Reese's Lawn Care & Service</p><p>Calgary, AB</p></div></footer>
+<div class="preview-banner">Free preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a> &#8212; <a href="#contact">Claim Your Free Redesign</a></div>
 </body></html>
