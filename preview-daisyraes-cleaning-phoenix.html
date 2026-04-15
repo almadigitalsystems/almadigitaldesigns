@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DaisyRae's Cleaning LLC | Residential Cleaning Services in Phoenix, AZ</title>
+<meta name="description" content="DaisyRae's Cleaning LLC offers reliable residential cleaning in Phoenix, AZ. Standard cleans, deep cleaning, move-in/move-out and recurring plans. Get your free estimate today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#2d2d2d;background:#fff}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,40,0.95);backdrop-filter:blur(10px)}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;font-weight:700}
+nav .logo span{color:#3ec1d3}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul li a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.95rem;transition:color .3s}
+nav ul li a:hover{color:#3ec1d3}
+.hero{min-height:100vh;background:linear-gradient(135deg,#0a2463 0%,#1e3a6e 50%,#0a2463 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative}
+.hero-content{position:relative;z-index:1;max-width:850px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.5rem);color:#fff;margin-bottom:1.5rem;line-height:1.15;font-weight:800}
+.hero h1 span{color:#3ec1d3}
+.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:rgba(255,255,255,0.85);margin-bottom:2.5rem;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
+.btn{display:inline-block;padding:1rem 2.5rem;background:#3ec1d3;color:#fff;font-weight:600;font-size:1.05rem;border-radius:50px;text-decoration:none;transition:all .3s;border:2px solid #3ec1d3}
+.btn:hover{background:transparent}
+.services{padding:6rem 2rem;background:#f0fafb}
+.services .container{max-width:1100px;margin:0 auto}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);text-align:center;margin-bottom:1rem;color:#0a2463}
+.section-sub{text-align:center;color:#666;max-width:600px;margin:0 auto 3rem;line-height:1.7}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.service-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s;border-top:4px solid #3ec1d3}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+.service-card .icon{width:50px;height:50px;background:#f0fafb;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.5rem}
+.service-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:0.75rem;color:#0a2463}
+.service-card p{color:#666;line-height:1.6;font-size:0.95rem}
+.about{padding:6rem 2rem;background:#0a2463;color:#fff}
+.about .container{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;color:#3ec1d3}
+.about-text p{color:rgba(255,255,255,0.8);line-height:1.8;font-size:1.05rem}
+.about-visual{background:rgba(255,255,255,0.05);border-radius:16px;padding:3rem;text-align:center;border:1px solid rgba(255,255,255,0.1)}
+.about-visual .stat{margin-bottom:2rem}
+.about-visual .stat:last-child{margin-bottom:0}
+.about-visual .stat-number{font-family:'Playfair Display',serif;font-size:2.5rem;color:#3ec1d3;font-weight:800}
+.about-visual .stat-label{color:rgba(255,255,255,0.7);font-size:0.95rem;margin-top:0.25rem}
+.pain-points{padding:5rem 2rem;background:#fff}
+.pain-points .container{max-width:900px;margin:0 auto;text-align:center}
+.pain-points h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.2rem);color:#0a2463;margin-bottom:2rem}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.pain-card{background:#fef9f0;border-radius:12px;padding:2rem;text-align:left;border-left:4px solid #e8a838}
+.pain-card h3{color:#0a2463;margin-bottom:0.75rem;font-size:1.05rem}
+.pain-card p{color:#666;line-height:1.6;font-size:0.95rem}
+.contact{padding:6rem 2rem;background:#f0fafb}
+.contact .container{max-width:700px;margin:0 auto;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#0a2463;margin-bottom:1rem}
+.contact>p,.contact .container>p{color:#666;margin-bottom:2rem;line-height:1.6}
+.contact form{display:flex;flex-direction:column;gap:1rem;text-align:left}
+.contact input,.contact textarea{padding:1rem;border:1px solid #ddd;border-radius:8px;font-family:inherit;font-size:1rem;transition:border-color .3s}
+.contact input:focus,.contact textarea:focus{outline:none;border-color:#3ec1d3}
+.contact textarea{min-height:120px;resize:vertical}
+.contact button{padding:1rem 2rem;background:#0a2463;color:#fff;border:none;border-radius:50px;font-size:1.05rem;font-weight:600;cursor:pointer;transition:background .3s}
+.contact button:hover{opacity:0.9}
+.cta-section{padding:5rem 2rem;background:linear-gradient(135deg,#0a2463 0%,#1e3a6e 50%,#0a2463 100%);text-align:center}
+.cta-section h2{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}
+.cta-section p{color:rgba(255,255,255,0.8);margin-bottom:2rem;font-size:1.1rem}
+footer{background:#111;color:rgba(255,255,255,0.6);padding:3rem 2rem;text-align:center}
+footer .name{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-bottom:0.5rem}
+footer p{font-size:0.9rem;margin-bottom:0.25rem}
+footer .powered{margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.3)}
+@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.pain-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">DaisyRae&#39;s Cleaning <span>LLC</span></div>
+<ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<h1>Spotless Homes, Happy Clients &mdash; DaisyRae&#39;s Cleaning Serves All of Phoenix</h1>
+<p>Reliable, detailed residential cleaning services that give Phoenix homeowners their time back &mdash; with flexible scheduling and transparent pricing.</p>
+<a href="#contact" class="btn">Book Your First Clean &mdash; Get a Free Estimate from DaisyRae's</a>
+</div>
+</section>
+<section class="services" id="services">
+<div class="container">
+<h2 class="section-title">Our Services</h2>
+<p class="section-sub">Professional cleaning services in Phoenix, AZ.</p>
+<div class="services-grid">
+<div class="service-card"><div class="icon">&#128998;</div><h3>Standard Home Cleaning</h3><p>A thorough clean for your everyday spaces.</p></div>
+<div class="service-card"><div class="icon">&#10024;</div><h3>Deep Cleaning</h3><p>Top-to-bottom detailing for a fresh start.</p></div>
+<div class="service-card"><div class="icon">&#127968;</div><h3>Move-In / Move-Out Cleaning</h3><p>Get your deposit back or start fresh.</p></div>
+<div class="service-card"><div class="icon">&#128197;</div><h3>Recurring Cleaning Plans</h3><p>Weekly, biweekly and monthly options available.</p></div>
+<div class="service-card"><div class="icon">&#127970;</div><h3>Office & Small Business Cleaning</h3><p>Professional spaces deserve professional results.</p></div>
+</div>
+</div>
+</section>
+<section class="about" id="about">
+<div class="container">
+<div class="about-text">
+<h2>About DaisyRae's Cleaning LLC</h2>
+<p>DaisyRae's Cleaning LLC is a Phoenix-based residential cleaning company founded by Breanna with a mission to deliver consistent, detail-oriented cleaning at fair prices. The company serves homeowners across the Phoenix metro area with services ranging from routine weekly cleans to intensive deep-cleaning packages. DaisyRae's has built a loyal client base through dependability, clear communication, and a commitment to leaving every home spotless.</p>
+</div>
+<div class="about-visual">
+<div class="stat"><div class="stat-number">Phoenix</div><div class="stat-label">Proudly Serving</div></div>
+<div class="stat"><div class="stat-number">100%</div><div class="stat-label">Customer Satisfaction Focus</div></div>
+<div class="stat"><div class="stat-number">Full-Service</div><div class="stat-label">Cleaning Solutions</div></div>
+</div>
+</div>
+</section>
+<section class="pain-points">
+<div class="container">
+<h2>We Understand Your Challenges</h2>
+<div class="pain-grid">
+<div class="pain-card"><h3>Outdated Online Presence</h3><p>Your current website does not reflect the quality of work you deliver. Potential customers searching online see a site that does not match your reputation.</p></div>
+<div class="pain-card"><h3>Missing Local Customers</h3><p>When people in Phoenix search for cleaning services, they pick companies with professional websites. Without one, you are losing business to competitors.</p></div>
+</div>
+<a href="#contact" class="btn" style="background:#0a2463;border-color:#0a2463">Claim Your Free Redesign</a>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="container">
+<h2>Get in Touch</h2>
+<p>Send us a message and we will get back to you within 24 hours.</p>
+<form action="https://formspree.io/f/xojppajv" method="POST">
+<input type="hidden" name="_subject" value="New lead from DaisyRae's Cleaning LLC preview page">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Your Phone Number">
+<textarea name="message" placeholder="Tell us about your needs..." required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</section>
+<section class="cta-section">
+<h2>Ready for a Professional Website?</h2>
+<p>Book Your First Clean &mdash; Get a Free Estimate from DaisyRae's</p>
+<a href="#contact" class="btn">Get Started Now</a>
+</section>
+<footer>
+<div class="name">DaisyRae&#39;s Cleaning LLC</div>
+<p>Cleaning in Phoenix, AZ</p>
+<p class="powered">Website preview by Alma Digital Services</p>
+</footer>
+</body>
+</html>
