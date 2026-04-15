@@ -1,72 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salon Arte y Belleza | Peluquería y Centro de Belleza en Santiago, Chile</title>
-<meta name="description" content="Salon Arte y Belleza en Santiago, Chile. Servicios de corte, coloración, balayage, manicure y maquillaje profesional. Agenda tu hora online hoy.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Salon Arte y Belleza | Peluqueria y Centro de Belleza en Santiago, Chile</title>
+<meta name="description" content="Salon Arte y Belleza en Santiago, Chile. Servicios de corte, coloracion, balayage, manicure y maquillaje profesional. Agenda tu hora online hoy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#2d2d2d;background:#fff}
-nav{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,30,0.95);backdrop-filter:blur(10px)}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;font-weight:700}nav .logo span{color:#e84393}
-nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;transition:color .3s}nav ul li a:hover{color:#e84393}
-.hero{min-height:100vh;background:linear-gradient(135deg,#1a1a2e 0%,#2d2a4a 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}
-.hero-content{max-width:850px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.5rem);color:#fff;margin-bottom:1.5rem;line-height:1.15;font-weight:800}
-.hero h1 span{color:#e84393}.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:rgba(255,255,255,.85);margin-bottom:2.5rem;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
-.btn{display:inline-block;padding:1rem 2.5rem;background:#e84393;color:#fff;font-weight:600;font-size:1.05rem;border-radius:50px;text-decoration:none;transition:all .3s;border:2px solid #e84393}.btn:hover{background:transparent}
-.services{padding:6rem 2rem;background:#fef5f9}.services .container{max-width:1100px;margin:0 auto}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);text-align:center;margin-bottom:1rem;color:#1a1a2e}
-.section-sub{text-align:center;color:#666;max-width:600px;margin:0 auto 3rem;line-height:1.7}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.service-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s;border-top:4px solid #e84393}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
-.service-card .icon{width:50px;height:50px;background:#fef5f9;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.5rem}
-.service-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.75rem;color:#1a1a2e}.service-card p{color:#666;line-height:1.6;font-size:.95rem}
-.about{padding:6rem 2rem;background:#1a1a2e;color:#fff}.about .container{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem;color:#e84393}
-.about-text p{color:rgba(255,255,255,.8);line-height:1.8;font-size:1.05rem}
-.about-visual{background:rgba(255,255,255,.05);border-radius:16px;padding:3rem;text-align:center;border:1px solid rgba(255,255,255,.1)}
-.about-visual .stat{margin-bottom:2rem}.about-visual .stat:last-child{margin-bottom:0}
-.about-visual .stat-number{font-family:'Playfair Display',serif;font-size:2.5rem;color:#e84393;font-weight:800}
-.about-visual .stat-label{color:rgba(255,255,255,.7);font-size:.95rem;margin-top:.25rem}
-.pain-points{padding:5rem 2rem;background:#fff}.pain-points .container{max-width:900px;margin:0 auto;text-align:center}
-.pain-points h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.2rem);color:#1a1a2e;margin-bottom:2rem}
-.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
-.pain-card{background:#fef9f0;border-radius:12px;padding:2rem;text-align:left;border-left:4px solid #e8a838}
-.pain-card h3{color:#1a1a2e;margin-bottom:.75rem;font-size:1.05rem}.pain-card p{color:#666;line-height:1.6;font-size:.95rem}
-.contact{padding:6rem 2rem;background:#fef5f9}.contact .container{max-width:700px;margin:0 auto;text-align:center}
-.contact h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#1a1a2e;margin-bottom:1rem}
-.contact .container>p{color:#666;margin-bottom:2rem;line-height:1.6}
-.contact form{display:flex;flex-direction:column;gap:1rem;text-align:left}
-.contact input,.contact textarea{padding:1rem;border:1px solid #ddd;border-radius:8px;font-family:inherit;font-size:1rem;transition:border-color .3s}
-.contact input:focus,.contact textarea:focus{outline:none;border-color:#e84393}.contact textarea{min-height:120px;resize:vertical}
-.contact button{padding:1rem 2rem;background:#1a1a2e;color:#fff;border:none;border-radius:50px;font-size:1.05rem;font-weight:600;cursor:pointer}.contact button:hover{opacity:.9}
-.cta-section{padding:5rem 2rem;background:linear-gradient(135deg,#1a1a2e 0%,#2d2a4a 100%);text-align:center}
-.cta-section h2{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}
-.cta-section p{color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:1.1rem}
-footer{background:#111;color:rgba(255,255,255,.6);padding:3rem 2rem;text-align:center}
-footer .name{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-bottom:.5rem}footer p{font-size:.9rem;margin-bottom:.25rem}
-footer .powered{margin-top:1.5rem;font-size:.8rem;color:rgba(255,255,255,.3)}
-@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.pain-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}}
-</style></head><body>
-<nav><div class="logo">Salon <span>Arte y Belleza</span></div>
-<ul><li><a href="#services">Servicios</a></li><li><a href="#about">Nosotros</a></li><li><a href="#contact">Contacto</a></li></ul></nav>
-<section class="hero"><div class="hero-content"><h1><span>Salon Arte y Belleza</span> &mdash; Donde Tu Imagen Se Transforma en Santiago</h1><p>Color, corte y estilo profesional en un solo lugar. Descubre por qué las santiaguinas confían en Arte y Belleza para lucir increíbles.</p><a href="#contact" class="btn">Agenda Tu Hora en Arte y Belleza</a></div></section>
-<section class="services" id="services"><div class="container"><h2 class="section-title">Nuestros Servicios</h2><p class="section-sub">Belleza profesional en Santiago, Chile.</p>
-<div class="services-grid"><div class="service-card"><div class="icon">&#9988;</div><h3>Corte y Estilo</h3><p>Looks modernos adaptados a tu personalidad.</p></div><div class="service-card"><div class="icon">&#127912;</div><h3>Coloración y Balayage</h3><p>Tendencias de color con técnica profesional.</p></div><div class="service-card"><div class="icon">&#128133;</div><h3>Manicure y Pedicure</h3><p>Manos y pies impecables.</p></div><div class="service-card"><div class="icon">&#10024;</div><h3>Tratamientos de Belleza</h3><p>Cuida tu piel y tu cabello.</p></div><div class="service-card"><div class="icon">&#127881;</div><h3>Maquillaje Profesional</h3><p>El toque final para cualquier ocasión.</p></div></div></div></section>
-<section class="about" id="about"><div class="container"><div class="about-text"><h2>Sobre Arte y Belleza</h2><p>Salon Arte y Belleza es un centro de belleza integral ubicado en Santiago de Chile, que ofrece servicios de peluquería, estética y cuidado personal. Con un equipo de estilistas profesionales, el salón se ha ganado la preferencia de clientas que buscan resultados de calidad en un ambiente cálido. Desde cortes modernos hasta tratamientos de color avanzados, Arte y Belleza cubre todas las necesidades de imagen personal.</p></div>
-<div class="about-visual"><div class="stat"><div class="stat-number">Santiago</div><div class="stat-label">Sirviendo con orgullo</div></div>
-<div class="stat"><div class="stat-number">100%</div><div class="stat-label">Satisfacción del Cliente</div></div>
-<div class="stat"><div class="stat-number">Profesional</div><div class="stat-label">Salón de Belleza</div></div></div></div></section>
-<section class="pain-points"><div class="container"><h2>Entendemos Tus Desafíos</h2><div class="pain-grid">
-<div class="pain-card"><h3>Sin Presencia Online</h3><p>Sin una página web profesional, los clientes que buscan en Google no pueden encontrarte. Esos clientes terminan eligiendo a la competencia.</p></div>
-<div class="pain-card"><h3>Perdiendo Clientes Locales</h3><p>Cada día, personas en Santiago buscan servicios como los tuyos en internet. Sin presencia online, esas oportunidades se pierden.</p></div>
-</div><a href="#contact" class="btn" style="background:#1a1a2e;border-color:#1a1a2e">Reclama Tu Rediseño Gratis</a></div></section>
-<section class="contact" id="contact"><div class="container"><h2>Contáctanos</h2><p>Envíanos un mensaje y te respondemos en 24 horas.</p>
-<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="Nuevo contacto desde Salon Arte y Belleza preview">
-<input type="text" name="name" placeholder="Tu Nombre" required><input type="email" name="email" placeholder="Tu Email" required>
-<input type="tel" name="phone" placeholder="Tu Teléfono"><textarea name="message" placeholder="Cuéntanos sobre tus necesidades..." required></textarea>
-<button type="submit">Enviar Mensaje</button></form></div></section>
-<section class="cta-section"><h2>¿Lista para transformar tu imagen?</h2><p>Agenda Tu Hora en Arte y Belleza</p><a href="#contact" class="btn">Comenzar Ahora</a></section>
-<footer><div class="name">Salon Arte y Belleza</div><p>Salón de Belleza en Santiago, Chile</p><p class="powered">Vista previa por Alma Digital Services</p></footer>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#111;background:#fff;overflow-x:hidden}
+nav{padding:2rem;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto}
+nav .logo{font-size:1.2rem;font-weight:800;letter-spacing:-1px;color:#111}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:#666;text-decoration:none;font-size:.85rem;font-weight:600;transition:color .3s}nav ul li a:hover{color:#ff80ab}
+.hero{max-width:900px;margin:4rem auto;padding:0 2rem;text-align:left}
+.hero h1{font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:1.5rem;color:#000}
+.hero p{font-size:1.15rem;color:#888;max-width:550px;line-height:1.7;margin-bottom:2.5rem;font-weight:300}
+.btn{display:inline-block;padding:.85rem 2.2rem;background:#000;color:#fff;font-weight:600;text-decoration:none;border-radius:0;font-size:.9rem;letter-spacing:.5px;transition:all .3s;border:none;cursor:pointer}
+.btn:hover{background:#ff80ab;color:#000}
+.line{width:100%;height:1px;background:#eee;max-width:1100px;margin:4rem auto}
+.services{max-width:900px;margin:0 auto;padding:0 2rem}
+.services h2{font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:#aaa;margin-bottom:2.5rem}
+.svc-list-min{list-style:none;display:flex;flex-direction:column}
+.svc-list-min li{padding:1.5rem 0;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:start;gap:2rem}
+.svc-list-min li h3{font-size:1.15rem;font-weight:600;color:#111;flex:1}
+.svc-list-min li p{font-size:.9rem;color:#888;flex:1;line-height:1.5;font-weight:300}
+.about{max-width:700px;margin:4rem auto;padding:0 2rem}
+.about h2{font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:#aaa;margin-bottom:1.5rem}
+.about p{color:#555;line-height:2;font-size:1.05rem;font-weight:300}
+.cta-block{max-width:900px;margin:3rem auto;padding:3rem 2rem;background:#000;color:#fff;text-align:center}
+.cta-block h2{font-size:1.5rem;font-weight:800;margin-bottom:1rem;letter-spacing:-.5px}
+.cta-block .btn{background:#ff80ab;color:#000}
+.cta-block .btn:hover{background:#fff}
+.contact{max-width:500px;margin:4rem auto;padding:0 2rem 4rem;text-align:left}
+.contact h2{font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:#aaa;margin-bottom:.5rem}
+.contact .sub{color:#bbb;margin-bottom:1.5rem;font-size:.9rem;font-weight:300}
+form{display:flex;flex-direction:column;gap:.6rem}
+form input,form textarea{padding:.8rem 0;border:none;border-bottom:1px solid #ddd;font-size:.95rem;font-family:inherit;font-weight:300;background:transparent;color:#111}
+form input:focus,form textarea:focus{border-bottom-color:#000;outline:none}
+form textarea{resize:none}
+footer{padding:3rem 2rem;text-align:center;color:#ccc;font-size:.75rem;font-weight:300;letter-spacing:1px}
+.preview-banner{background:#000;color:#fff;text-align:center;padding:.7rem;font-size:.82rem;font-weight:600;position:fixed;bottom:0;left:0;right:0;z-index:200}
+.preview-banner a{color:#ff80ab;text-decoration:underline}
+@media(max-width:768px){nav ul{display:none}.svc-list-min li{flex-direction:column;gap:.3rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Salon Arte y Belleza</div><ul><li><a href="#services">Servicios</a></li><li><a href="#about">Sobre Nosotros</a></li><li><a href="#contact">Contacto</a></li></ul></nav>
+<section class="hero"><h1>Salon Arte y Belleza &#8212; Donde Tu Imagen Se Transforma en Santiago</h1><p>Color, corte y estilo profesional en un solo lugar. Descubre por qu&#233; las santiaguinas conf&#237;an en Arte y Belleza para lucir incre&#237;bles.</p><a href="#contact" class="btn">Agenda Tu Hora en Arte y Belleza</a></section>
+<div class="line"></div>
+<section class="services" id="services"><h2>Servicios</h2><ul class="svc-list-min"><li><h3>Corte y Estilo</h3><p>Looks modernos adaptados a tu personalidad.</p></li><li><h3>Coloraci&#243;n y Balayage</h3><p>Tendencias de color con t&#233;cnica profesional.</p></li><li><h3>Manicure y Pedicure</h3><p>Manos y pies impecables.</p></li><li><h3>Tratamientos de Belleza</h3><p>Cuida tu piel y tu cabello.</p></li><li><h3>Maquillaje Profesional</h3><p>El toque final para cualquier ocasi&#243;n.</p></li></ul></section>
+<div class="line"></div>
+<section class="about" id="about"><h2>Sobre Nosotros</h2><p>Salon Arte y Belleza es un centro de belleza integral ubicado en Santiago de Chile, que ofrece servicios de peluquer&#237;a, est&#233;tica y cuidado personal. Con un equipo de estilistas profesionales, el sal&#243;n se ha ganado la preferencia de clientas que buscan resultados de calidad en un ambiente c&#225;lido. Desde cortes modernos hasta tratamientos de color avanzados, Arte y Belleza cubre todas las necesidades de imagen personal.</p></section>
+<section class="cta-block"><h2>Agenda Tu Hora en Arte y Belleza</h2><a href="#contact" class="btn">Cont&#225;ctanos</a></section>
+<section class="contact" id="contact"><h2>Contacto</h2><p class="sub">Santiago, Chile &#8212; arteybellezacondell@gmail.com</p>
+<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="Salon Arte y Belleza - Inquiry"><input type="text" name="name" placeholder="Nombre" required><input type="email" name="email" placeholder="Email" required><textarea name="message" placeholder="Mensaje" rows="3" required></textarea><button type="submit" class="btn">Enviar</button></form>
+</section>
+<footer>SALON ARTE Y BELLEZA &mdash; SANTIAGO, CHILE &mdash; &copy; 2026</footer>
+<div class="preview-banner">Vista previa gratuita dise&#241;ada por <a href="https://almadigitalservices.com">Alma Digital Services</a> &#8212; <a href="#contact">Reclama Tu Redise&#241;o Gratis</a></div>
 </body></html>
