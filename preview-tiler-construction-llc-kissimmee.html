@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiler Construction LLC | Expert Tile and Flooring Installation in Kissimmee, FL</title>
+  <meta name="description" content="Tiler Construction LLC provides professional tile installation, bathroom remodeling, and flooring services in Kissimmee, FL. 4 years of quality craftsmanship. Get your free estimate today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown: #8B6914;
+      --brown-light: #a67c1a;
+      --brown-dark: #6b4f10;
+      --warm-gray: #4a4a4a;
+      --slate: #2d3436;
+      --slate-dark: #1e2526;
+      --cream: #f5f0e8;
+      --cream-dark: #e8e0d0;
+      --white: #ffffff;
+      --text-muted: #999;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--slate-dark);
+      color: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      background: rgba(30, 37, 38, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(139, 105, 20, 0.25);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--brown); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--cream-dark);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brown); }
+
+    .nav-cta {
+      background: var(--brown);
+      color: var(--cream) !important;
+      padding: 0.55rem 1.2rem;
+      border-radius: 3px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--brown-light) !important; color: var(--cream) !important; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      nav { padding: 1rem 1.25rem; }
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 60% 40%, rgba(139,105,20,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 70%, rgba(139,105,20,0.10) 0%, transparent 50%),
+        linear-gradient(160deg, #1e2526 0%, #2d3436 55%, #1a1f20 100%);
+    }
+
+    /* Tile-pattern overlay */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(139,105,20,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139,105,20,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(30,37,38,0.7) 100%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(139,105,20,0.2);
+      border: 1px solid rgba(139,105,20,0.4);
+      color: var(--brown-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    h1.hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 1.08;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    h1.hero-headline em {
+      font-style: normal;
+      color: var(--brown);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--cream-dark);
+      opacity: 0.85;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--brown);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 1rem 2.2rem;
+      border-radius: 3px;
+      border: 2px solid var(--brown);
+      transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(139,105,20,0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--brown-light);
+      border-color: var(--brown-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139,105,20,0.5);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 0.95rem 2rem;
+      border-radius: 3px;
+      border: 2px solid rgba(245,240,232,0.35);
+      transition: border-color 0.25s, color 0.25s, transform 0.2s;
+      margin-left: 1rem;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cream);
+      color: var(--cream);
+      transform: translateY(-2px);
+    }
+
+    .hero-cta-group { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      margin-top: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--brown);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 6rem 1.5rem; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--cream-dark);
+      opacity: 0.75;
+      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--slate);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #services::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(139,105,20,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139,105,20,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    .service-card {
+      background: rgba(30,37,38,0.7);
+      border: 1px solid rgba(139,105,20,0.2);
+      border-radius: 6px;
+      padding: 2rem 1.75rem;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brown-dark), var(--brown-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      border-color: rgba(139,105,20,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    /* last service card spans full width on 3-col grid when 5 items */
+    .service-card:last-child:nth-child(3n+2) {
+      grid-column: 2 / 3;
+    }
+
+    @media (max-width: 900px) {
+      .service-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        max-width: 420px;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(139,105,20,0.15);
+      border: 1px solid rgba(139,105,20,0.3);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-icon svg { width: 24px; height: 24px; color: var(--brown); }
+
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--cream-dark);
+      opacity: 0.75;
+      line-height: 1.6;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--slate-dark);
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+    }
+
+    .about-visual {
+      position: relative;
+      height: 380px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .about-visual-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(139,105,20,0.25) 0%, transparent 55%),
+        linear-gradient(135deg, #2d3436 0%, #1e2526 100%);
+    }
+
+    .about-tile-pattern {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 4px;
+      padding: 24px;
+      opacity: 0.35;
+    }
+
+    .tile-sq {
+      border-radius: 2px;
+      background: linear-gradient(135deg, rgba(139,105,20,0.6), rgba(139,105,20,0.2));
+      border: 1px solid rgba(139,105,20,0.3);
+    }
+
+    .tile-sq:nth-child(3n) { background: linear-gradient(135deg, rgba(74,74,74,0.8), rgba(74,74,74,0.3)); }
+    .tile-sq:nth-child(5n) { background: linear-gradient(135deg, rgba(245,240,232,0.15), rgba(245,240,232,0.05)); }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      background: rgba(30,37,38,0.95);
+      border: 1px solid rgba(139,105,20,0.4);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .about-badge-float svg { width: 28px; height: 28px; color: var(--brown); flex-shrink: 0; }
+
+    .float-text strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+    }
+
+    .float-text span { font-size: 0.78rem; color: var(--text-muted); }
+
+    .about-text .section-sub { text-align: left; max-width: 100%; }
+
+    @media (max-width: 768px) {
+      .about-text .section-sub { text-align: center; }
+    }
+
+    .about-bullets {
+      list-style: none;
+      margin-top: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-bullets { align-items: center; }
+    }
+
+    .about-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--cream-dark);
+    }
+
+    .about-bullets li::before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(139,105,20,0.2);
+      border: 1px solid rgba(139,105,20,0.4);
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B6914' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 13px 13px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--slate);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contact::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,105,20,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .contact-info { padding-top: 0.5rem; }
+
+    .contact-info .section-title { text-align: left; }
+    .contact-info .section-label { text-align: left; }
+
+    .contact-details {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      background: rgba(139,105,20,0.15);
+      border: 1px solid rgba(139,105,20,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon svg { width: 20px; height: 20px; color: var(--brown); }
+
+    .contact-item-text strong {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-item-text a,
+    .contact-item-text span {
+      color: var(--cream);
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item-text a:hover { color: var(--brown-light); }
+
+    /* Form */
+    .contact-form {
+      background: rgba(30,37,38,0.6);
+      border: 1px solid rgba(139,105,20,0.2);
+      border-radius: 8px;
+      padding: 2.25rem;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cream-dark);
+      opacity: 0.7;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(30,37,38,0.8);
+      border: 1px solid rgba(139,105,20,0.25);
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+
+    .form-group select option { background: #2d3436; }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(245,240,232,0.3); }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--brown);
+      box-shadow: 0 0 0 3px rgba(139,105,20,0.15);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      background: var(--brown);
+      color: var(--cream);
+      border: none;
+      border-radius: 3px;
+      padding: 0.9rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover {
+      background: var(--brown-light);
+      transform: translateY(-1px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--slate-dark);
+      border-top: 1px solid rgba(139,105,20,0.15);
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span { color: var(--brown); }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--cream-dark);
+      text-decoration: none;
+      font-size: 0.82rem;
+      opacity: 0.6;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 1; color: var(--brown-light); }
+
+    .footer-divider {
+      height: 1px;
+      background: rgba(139,105,20,0.12);
+      margin-bottom: 1.75rem;
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+
+    /* ── ALMA DIGITAL BANNER ── */
+    .alma-banner {
+      background: linear-gradient(135deg, #1a1f20 0%, #232b2d 100%);
+      border-top: 1px solid rgba(139,105,20,0.2);
+      padding: 1.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .alma-banner-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .alma-banner-text strong { color: var(--cream-dark); }
+
+    .alma-banner-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--brown);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.55rem 1.1rem;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .alma-banner-cta:hover {
+      background: var(--brown-light);
+      transform: translateY(-1px);
+    }
+
+    .alma-banner-cta svg { width: 14px; height: 14px; }
+
+    /* ── DIVIDER ── */
+    .divider-line {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brown), var(--brown-light));
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+
+    .section-header .divider-line { margin: 1rem auto 0; }
+
+    /* Scroll reveal helper */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    [data-reveal].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Tiler <span>Construction</span> LLC</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-badge" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color:#8B6914">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        Kissimmee, FL &nbsp;·&nbsp; Serving Greater Orlando
+      </div>
+
+      <h1 class="hero-headline" data-reveal>
+        Quality Tile and Flooring<br />in Kissimmee —<br /><em>Built by Tiler Construction</em>
+      </h1>
+
+      <p class="hero-sub" data-reveal>
+        From kitchen backsplashes to full bathroom remodels, Tiler Construction LLC delivers expert tile installation that transforms Central Florida homes — one project at a time.
+      </p>
+
+      <div class="hero-cta-group" data-reveal>
+        <a href="#contact" class="btn-primary">Get Your Free Tile Estimate — Contact Tiler Construction Today</a>
+      </div>
+
+      <div class="hero-stats" data-reveal>
+        <div class="stat">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Core Services</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Residential Focus</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-header" data-reveal>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Expert Tile Services for Every Space</h2>
+      <div class="divider-line"></div>
+      <p class="section-sub" style="margin-top:1rem;">From bathrooms to patios, we bring precision craftsmanship to every tile and flooring project in the Kissimmee area.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="8" height="8" rx="1"/>
+            <rect x="13" y="3" width="8" height="8" rx="1"/>
+            <rect x="3" y="13" width="8" height="8" rx="1"/>
+            <rect x="13" y="13" width="8" height="8" rx="1"/>
+          </svg>
+        </div>
+        <div class="service-name">Tile Installation</div>
+        <div class="service-desc">Precision Floor and Wall Tile for Every Room. Flawless alignment, lasting adhesion, and clean finishes — for kitchens, bathrooms, living areas, and more.</div>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+        </div>
+        <div class="service-name">Bathroom Remodeling</div>
+        <div class="service-desc">Complete Tile Upgrades That Elevate Your Space. From shower walls to floor tile, we handle full bathroom transformations with professional precision.</div>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+          </svg>
+        </div>
+        <div class="service-name">Kitchen Backsplashes</div>
+        <div class="service-desc">Custom Designs That Bring Your Kitchen to Life. Mosaic, subway, or patterned — we install backsplashes that are as functional as they are beautiful.</div>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+        </div>
+        <div class="service-name">Flooring Installation</div>
+        <div class="service-desc">Durable, Beautiful Floors Built to Last. Tile, stone, or luxury vinyl — we lay floors that withstand Florida's climate and everyday life.</div>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+          </svg>
+        </div>
+        <div class="service-name">Outdoor Tile &amp; Pavers</div>
+        <div class="service-desc">Weather-Ready Surfaces for Patios and Pool Decks. Built to handle Florida sun, rain, and humidity — outdoor tile and paver installations done right.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-visual" data-reveal>
+        <div class="about-visual-bg"></div>
+        <div class="about-tile-pattern">
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+          <div class="tile-sq"></div><div class="tile-sq"></div><div class="tile-sq"></div>
+        </div>
+        <div class="about-badge-float">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+          </svg>
+          <div class="float-text">
+            <strong>Ramon Colina Acosta</strong>
+            <span>Owner &amp; Lead Installer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text" data-reveal>
+        <div class="section-label">About Us</div>
+        <h2 class="section-title" style="text-align:left;">The Local Tile Experts Kissimmee Trusts</h2>
+        <div class="divider-line" style="margin-left:0;"></div>
+        <p class="section-sub" style="margin-top:1.25rem;text-align:left;">
+          Tiler Construction LLC, led by Ramon Colina Acosta, has been serving homeowners across Kissimmee and the greater Orlando area for four years. Specializing in residential tile and flooring installation, the team handles everything from intricate bathroom tilework to large-scale flooring projects. With a hands-on approach and a growing reputation built through quality craftsmanship, Tiler Construction is the local choice for homeowners who want the job done right.
+        </p>
+        <ul class="about-bullets">
+          <li>4 years serving Kissimmee &amp; Greater Orlando</li>
+          <li>Residential tile &amp; flooring specialists</li>
+          <li>Hands-on approach from estimate to completion</li>
+          <li>Trusted by local homeowners for quality results</li>
+        </ul>
+        <div style="margin-top:2rem;">
+          <a href="#contact" class="btn-primary">Request Your Free Estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-info" data-reveal>
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title" style="text-align:left;">Ready to Transform Your Space?</h2>
+        <div class="divider-line" style="margin-left:0; margin-top:1rem;"></div>
+        <p style="margin-top:1.25rem; color:var(--cream-dark); opacity:0.75; font-size:0.95rem; line-height:1.7;">
+          Fill out the form and Ramon will get back to you quickly with a free, no-obligation estimate tailored to your project.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Email</strong>
+              <a href="mailto:tilerconstruction@gmail.com">tilerconstruction@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Service Area</strong>
+              <span>Kissimmee, FL &amp; Greater Orlando</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Response Time</strong>
+              <span>Usually within 24 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form" data-reveal>
+        <div class="form-title">Get Your Free Estimate</div>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(407) 000-0000" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="Tile Installation">Tile Installation</option>
+              <option value="Bathroom Remodeling">Bathroom Remodeling</option>
+              <option value="Kitchen Backsplash">Kitchen Backsplash</option>
+              <option value="Flooring Installation">Flooring Installation</option>
+              <option value="Outdoor Tile & Pavers">Outdoor Tile &amp; Pavers</option>
+              <option value="Other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell Us About Your Project</label>
+            <textarea id="message" name="message" placeholder="Describe your project, square footage, timeline, or any questions you have..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Send My Free Estimate Request &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tiler <span>Construction</span> LLC</div>
+    <div class="footer-tagline">Expert Tile &amp; Flooring Installation · Kissimmee, FL</div>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="mailto:tilerconstruction@gmail.com">Email Us</a></li>
+    </ul>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; 2026 Tiler Construction LLC · Kissimmee, FL · All Rights Reserved</p>
+  </footer>
+
+  <!-- ALMA DIGITAL BANNER -->
+  <div class="alma-banner">
+    <p class="alma-banner-text">
+      This preview was designed by <strong>Alma Digital Designs</strong> — your local digital marketing partner.
+    </p>
+    <a href="https://almadigitaldesigns.com" class="alma-banner-cta" target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+      </svg>
+      Claim Your Free Redesign
+    </a>
+  </div>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach((el) => observer.observe(el));
+
+    // Stagger service cards
+    document.querySelectorAll('.service-card[data-reveal]').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.08) + 's';
+    });
+  </script>
+
+</body>
+</html>
