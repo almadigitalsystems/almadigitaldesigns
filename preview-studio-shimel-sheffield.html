@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Shimel | 5-Star Unisex Hair Salon in Sheffield, UK</title>
+  <meta name="description" content="Studio Shimel is a top-rated unisex hair salon in Sheffield. Haircuts, colour, treatments and styling for men and women. 5-star rated. Book your appointment today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --rose: #b5656b;
+      --rose-dark: #c0392b;
+      --cream: #fdf6f0;
+      --charcoal: #2d3436;
+      --gold: #d4a574;
+      --white: #fefefe;
+      --rose-light: #f5e0e1;
+      --text-muted: #6b6b6b;
+      --border: #e8d8ce;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(253, 246, 240, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--rose);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--rose);
+    }
+
+    .nav-cta {
+      background: var(--rose);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-weight: 500 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--rose-dark) !important;
+      color: var(--white) !important;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(212, 165, 116, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(181, 101, 107, 0.08) 0%, transparent 55%),
+        linear-gradient(160deg, var(--white) 0%, var(--cream) 50%, #f5ede4 100%);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d3436' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--rose-light);
+      border: 1px solid rgba(181, 101, 107, 0.2);
+      color: var(--rose);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .hero-stars {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-stars {
+        justify-content: center;
+      }
+    }
+
+    .stars {
+      display: flex;
+      gap: 3px;
+    }
+
+    .stars svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .stars-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .stars-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--rose);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(181, 101, 107, 0.35);
+    }
+
+    .hero-cta:hover {
+      background: var(--rose-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(181, 101, 107, 0.45);
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 3/4;
+      border-radius: 2rem;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #e8c5a0 0%, #d4a574 30%, #c0897a 60%, #b5656b 100%);
+      box-shadow: 0 24px 60px rgba(181, 101, 107, 0.25), 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .hero-card-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0,0,0,0.15) 0%, transparent 50%);
+    }
+
+    .hero-card-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .hero-scissors {
+      width: 80px;
+      height: 80px;
+      opacity: 0.9;
+    }
+
+    .hero-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .hero-card-sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero-card-badge {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-card-loc {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+    }
+
+    .hero-card-loc svg {
+      width: 14px;
+      height: 14px;
+      fill: rgba(255,255,255,0.8);
+    }
+
+    /* ── SECTION COMMON ── */
+    section {
+      padding: 5rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+
+    /* ── STORY / ABOUT ── */
+    #about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-shape {
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 420px;
+      border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+      background: linear-gradient(135deg, var(--rose-light) 0%, #f0d4c0 50%, #e8c5a0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-shape-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .about-initial {
+      font-family: 'Playfair Display', serif;
+      font-size: 7rem;
+      font-weight: 700;
+      color: rgba(181, 101, 107, 0.25);
+      line-height: 1;
+    }
+
+    .about-name-tag {
+      background: var(--rose);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 1.5rem;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+    }
+
+    .about-float {
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 1rem;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .about-float-stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .about-float-stars svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .about-float-text {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .about-float-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .about-tag {
+      background: var(--rose-light);
+      color: var(--rose);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      border: 1px solid rgba(181,101,107,0.15);
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--cream);
+    }
+
+    .services-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .services-header .divider {
+      margin: 0 auto 2rem;
+    }
+
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 1.75rem 2rem;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .service-item:hover {
+      transform: translateX(6px);
+      box-shadow: 0 8px 32px rgba(181,101,107,0.12);
+      border-color: rgba(181,101,107,0.3);
+    }
+
+    .service-icon {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--rose-light), rgba(212,165,116,0.2));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .service-text {
+      flex: 1;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.3rem;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .service-arrow {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      color: var(--rose);
+      opacity: 0.6;
+      align-self: center;
+    }
+
+    /* ── RATING SPOTLIGHT ── */
+    #rating {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #1e2729 100%);
+      padding: 4rem 1.5rem;
+    }
+
+    .rating-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .rating-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .rating-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .rating-stars-big {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .rating-stars-big svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .rating-score {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .rating-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+    }
+
+    .rating-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .rating-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .rating-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: left;
+    }
+
+    .rating-card-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 0.75rem;
+    }
+
+    .rating-card-stars svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .rating-card-text {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    .rating-card-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .contact-info p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--rose-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--rose);
+    }
+
+    .contact-detail-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .contact-detail-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+
+    .contact-detail-value a {
+      color: var(--rose);
+      text-decoration: none;
+    }
+
+    .contact-detail-value a:hover {
+      text-decoration: underline;
+    }
+
+    /* Form */
+    .contact-form {
+      background: var(--cream);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid var(--border);
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(181,101,107,0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--rose);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(181,101,107,0.3);
+      letter-spacing: 0.02em;
+    }
+
+    .form-submit:hover {
+      background: var(--rose-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(181,101,107,0.4);
+    }
+
+    /* ── ALMA DIGITAL CTA ── */
+    #alma {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      padding: 4rem 1.5rem;
+    }
+
+    .alma-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .alma-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .alma-logo-mark {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #6c63ff, #a78bfa);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .alma-logo-mark svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .alma-logo-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .alma-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .alma-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .alma-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #6c63ff, #a78bfa);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.9rem 2.25rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px rgba(108,99,255,0.4);
+    }
+
+    .alma-cta:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .alma-note {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span {
+      color: var(--rose);
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Studio <span>Shimel</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          5-Star Rated in Sheffield
+        </div>
+        <h1>Sheffield <em>Feel-Good</em> Hair Salon — Welcome to Studio Shimel</h1>
+        <p class="hero-sub">Cuts, colour, styling, and treatments for everyone — Studio Shimel is the 5-star rated unisex salon where Sheffield locals look and feel their best.</p>
+        <div class="hero-stars">
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="stars-label">5.0</span>
+          <span class="stars-sub">· Perfect Google Rating</span>
+        </div>
+        <a href="#contact" class="hero-cta">Book Your Appointment — Visit Studio Shimel in Sheffield</a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-overlay"></div>
+          <div class="hero-card-content">
+            <svg class="hero-scissors" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="30" r="12" stroke="rgba(255,255,255,0.9)" stroke-width="4" fill="none"/>
+              <circle cx="75" cy="30" r="12" stroke="rgba(255,255,255,0.9)" stroke-width="4" fill="none"/>
+              <circle cx="25" cy="30" r="4" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="75" cy="30" r="4" fill="rgba(255,255,255,0.9)"/>
+              <line x1="33" y1="37" x2="62" y2="70" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round"/>
+              <line x1="67" y1="37" x2="38" y2="70" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round"/>
+              <line x1="38" y1="70" x2="30" y2="88" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="62" y1="70" x2="70" y2="88" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <div class="hero-card-title">Studio Shimel</div>
+            <div class="hero-card-sub">Unisex Hair Salon</div>
+            <div class="hero-card-badge">5-Star Rated</div>
+            <div class="hero-card-loc">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Sheffield, UK
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / STORY -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-shape">
+            <div class="about-shape-inner">
+              <div class="about-initial">S</div>
+              <div class="about-name-tag">Sheila &amp; Team</div>
+            </div>
+          </div>
+          <div class="about-float">
+            <div>
+              <div class="about-float-stars">
+                <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="about-float-text">Perfect 5-Star Rating</div>
+              <div class="about-float-sub">Google &amp; Fresha Reviews</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-heading">A Sheffield Salon Built on <em>Care and Craft</em></h2>
+          <div class="divider"></div>
+          <p>Studio Shimel is a unisex hair salon in Sheffield run by Sheila, offering a welcoming space for haircuts, colour, and treatments for clients of all ages.</p>
+          <p>With a perfect 5-star Google rating and a loyal customer base built through Fresha bookings and word-of-mouth, Studio Shimel has become a neighbourhood favourite.</p>
+          <p>Whether it is a fresh cut, a bold new colour, or a relaxing treatment, Sheila and the team make every visit count.</p>
+          <div class="about-highlights">
+            <span class="about-tag">Unisex Salon</span>
+            <span class="about-tag">All Ages Welcome</span>
+            <span class="about-tag">5-Star Google Rating</span>
+            <span class="about-tag">Sheffield Local Favourite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="services-header">
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-heading">Services Crafted for <em>Every Client</em></h2>
+        <div class="divider"></div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">From sharp cuts to vibrant colour — Studio Shimel delivers expert hair care for men, women, and children in Sheffield.</p>
+      </div>
+      <div class="services-list">
+
+        <!-- Service 1: Haircuts and Styling -->
+        <div class="service-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 6.5C7.5 4.57 9.07 3 11 3s3.5 1.57 3.5 3.5c0 .77-.25 1.48-.67 2.06L19 14l-1.41 1.41-4.5-4.5c-.4.06-.82.09-1.09.09C9.07 11 7.5 9.43 7.5 7.5" stroke="#b5656b" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <circle cx="11" cy="7" r="1.5" fill="#d4a574"/>
+              <path d="M14.5 14.5L19 19" stroke="#b5656b" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M5 19c0-2.76 2.24-5 5-5h2" stroke="rgba(181,101,107,0.5)" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-text">
+            <div class="service-title">Haircuts and Styling</div>
+            <div class="service-desc">Tailored Cuts for Men, Women and Children</div>
+          </div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+
+        <!-- Service 2: Colour and Highlights -->
+        <div class="service-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3C9 3 6.5 5.5 6.5 9c0 2.2 1.1 4.1 2.7 5.3V16h5.6v-1.7C16.4 13.1 17.5 11.2 17.5 9c0-3.5-2.5-6-5.5-6z" fill="rgba(212,165,116,0.25)" stroke="#d4a574" stroke-width="1.5"/>
+              <path d="M9 9c0-1.66 1.34-3 3-3" stroke="#b5656b" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="8.75" y="16" width="6.5" height="1.5" rx="0.75" fill="#b5656b"/>
+              <rect x="9.5" y="18" width="5" height="1.5" rx="0.75" fill="rgba(181,101,107,0.5)"/>
+            </svg>
+          </div>
+          <div class="service-text">
+            <div class="service-title">Colour and Highlights</div>
+            <div class="service-desc">Expert Colour Work That Turns Heads</div>
+          </div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+
+        <!-- Service 3: Hair Treatments -->
+        <div class="service-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3c-1.5 0-3 1.2-3 3.5 0 1.2.5 2.2 1.2 2.9C9.5 10.2 9 11.5 9 13c0 2.76 1.34 5 3 5s3-2.24 3-5c0-1.5-.5-2.8-1.2-3.6C14.5 8.7 15 7.7 15 6.5 15 4.2 13.5 3 12 3z" fill="rgba(181,101,107,0.15)" stroke="#b5656b" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="#d4a574"/>
+              <circle cx="12" cy="13" r="1.5" fill="#b5656b"/>
+              <path d="M10 11.5c.6.3 1.3.5 2 .5s1.4-.2 2-.5" stroke="#d4a574" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-text">
+            <div class="service-title">Hair Treatments</div>
+            <div class="service-desc">Deep Conditioning, Keratin and Damage Repair</div>
+          </div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+
+        <!-- Service 4: Blow Dry and Finish -->
+        <div class="service-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6h8a4 4 0 010 8H6V6z" fill="rgba(181,101,107,0.2)" stroke="#b5656b" stroke-width="1.5" stroke-linejoin="round"/>
+              <line x1="6" y1="10" x2="4" y2="10" stroke="#b5656b" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="14" x2="14" y2="18" stroke="#b5656b" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M17 8c1 .5 2 1.5 2 3s-1 2.5-2 3" stroke="#d4a574" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M19 6c1.5 1 3 2.5 3 5s-1.5 4-3 5" stroke="rgba(212,165,116,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-text">
+            <div class="service-title">Blow Dry and Finish</div>
+            <div class="service-desc">Event-Ready Hair for Any Occasion</div>
+          </div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+
+        <!-- Service 5: Beard Trims and Grooming -->
+        <div class="service-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5h8a2 2 0 012 2v3c0 3.31-2.69 6-6 6H12c-3.31 0-6-2.69-6-6V7a2 2 0 012-2z" fill="rgba(212,165,116,0.2)" stroke="#d4a574" stroke-width="1.5"/>
+              <path d="M9 15.5c0 1.38 1.34 2.5 3 2.5s3-1.12 3-2.5" stroke="#b5656b" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="9.5" cy="9" r="1" fill="#b5656b"/>
+              <circle cx="14.5" cy="9" r="1" fill="#b5656b"/>
+              <path d="M10 12h4" stroke="#b5656b" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M8 5V4M16 5V4" stroke="#d4a574" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-text">
+            <div class="service-title">Beard Trims and Grooming</div>
+            <div class="service-desc">Sharp Looks for the Modern Gent</div>
+          </div>
+          <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RATING SPOTLIGHT -->
+  <section id="rating">
+    <div class="rating-inner">
+      <div class="rating-label">Sheffield's Favourite Salon</div>
+      <h2 class="rating-heading">A Perfect Rating, Every Single Time</h2>
+      <div class="rating-stars-big">
+        <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="rating-score">5.0</div>
+      <div class="rating-sub">Perfect Google Rating &middot; Trusted on Fresha &middot; Sheffield's neighbourhood favourite</div>
+      <div class="rating-cards">
+        <div class="rating-card">
+          <div class="rating-card-stars">
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="rating-card-text">"Sheila is absolutely brilliant — always knows exactly what I want. I wouldn't go anywhere else in Sheffield."</p>
+          <div class="rating-card-author">— Sarah M., Sheffield</div>
+        </div>
+        <div class="rating-card">
+          <div class="rating-card-stars">
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="rating-card-text">"Fantastic colour work — exactly what I asked for. The salon is so warm and welcoming. Five stars all round!"</p>
+          <div class="rating-card-author">— James T., Sheffield</div>
+        </div>
+        <div class="rating-card">
+          <div class="rating-card-stars">
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#d4a574" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="rating-card-text">"Best keratin treatment I've ever had. My hair has never felt this healthy. I recommend Studio Shimel to everyone."</p>
+          <div class="rating-card-author">— Rachel K., Sheffield</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Get in Touch</div>
+          <h2 class="section-heading">Book Your Visit to <em>Studio Shimel</em></h2>
+          <div class="divider"></div>
+          <p>Ready for a fresh look? Send us a message or get in touch directly. Sheila and the team are here to help you look and feel your very best.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Email</div>
+                <div class="contact-detail-value"><a href="mailto:shilashiela@yahoo.co.uk">shilashiela@yahoo.co.uk</a></div>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Location</div>
+                <div class="contact-detail-value">Sheffield, UK</div>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Booking</div>
+                <div class="contact-detail-value">Available via Fresha</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+            <div class="form-title">Send Us a Message</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Sarah Johnson" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 0114 123 4567" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Service of Interest</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="haircut">Haircuts and Styling</option>
+                <option value="colour">Colour and Highlights</option>
+                <option value="treatment">Hair Treatments</option>
+                <option value="blowdry">Blow Dry and Finish</option>
+                <option value="beard">Beard Trims and Grooming</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us what you're looking for, or let us know your preferred appointment time..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message to Studio Shimel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALMA DIGITAL CTA -->
+  <section id="alma">
+    <div class="alma-inner">
+      <div class="alma-logo">
+        <div class="alma-logo-mark">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span class="alma-logo-text">Alma Digital</span>
+      </div>
+      <h2 class="alma-headline">Is Your Business Website This Good?</h2>
+      <p class="alma-sub">Alma Digital builds professional, conversion-focused websites for local businesses across the UK. Claim your free website redesign consultation today — no commitment, no pressure.</p>
+      <a href="https://almadigital.co.uk" class="alma-cta" target="_blank" rel="noopener noreferrer">Claim Your Free Redesign</a>
+      <p class="alma-note">Free consultation. No obligation. Built for local UK businesses.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Studio <span>Shimel</span></div>
+      <p class="footer-text">Unisex Hair Salon &middot; Sheffield, UK &middot; 5-Star Rated &middot; &copy; 2026 Studio Shimel. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
