@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter One Coffee Sheffield | Locally Roasted Coffee and Homemade Food — 4.8 Stars</title>
+    <meta name="description" content="Independent family-run cafe in Sheffield. Locally roasted coffee, homemade cakes, full breakfasts and more. 4.8 stars, 120+ reviews. Open 7 days. Visit Chapter One Coffee.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --dark: #1c1917;
+            --brown: #44403c;
+            --primary: #92400e;
+            --primary-light: #b45309;
+            --warm: #fef3c7;
+            --cream: #fefbf3;
+            --sage: #65a30d;
+            --white: #ffffff;
+            --gray: #78716c;
+            --stone: #f5f0e8;
+        }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); background: var(--cream); }
+
+        /* PREVIEW BANNER */
+        .preview-banner {
+            background: linear-gradient(90deg, #00b4d8, #0096c7);
+            color: #fff;
+            text-align: center;
+            padding: 0.9rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 200;
+            position: relative;
+        }
+        .preview-banner a { color: #fff; text-decoration: underline; }
+
+        /* NAV */
+        nav {
+            background: var(--dark);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: var(--white);
+            text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--warm); }
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+        .nav-cta:hover { background: var(--primary-light); }
+
+        /* HERO — Bold full screen warm */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(170deg, var(--dark) 0%, var(--brown) 40%, var(--primary) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 60% 30%, rgba(254,243,199,0.08) 0%, transparent 50%);
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 850px; }
+        .hero-icon { font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(254,243,199,0.15);
+            border: 1px solid rgba(254,243,199,0.3);
+            color: var(--warm);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-warm {
+            display: inline-block;
+            background: var(--warm);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-warm:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .btn-ghost {
+            display: inline-block;
+            color: rgba(255,255,255,0.8);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.25);
+            transition: all 0.3s;
+        }
+        .btn-ghost:hover { border-color: var(--warm); color: var(--warm); }
+
+        /* LOCAL SOURCING BAR */
+        .sourcing-bar {
+            background: var(--stone);
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .source-item { display: flex; align-items: center; gap: 0.75rem; }
+        .source-icon { font-size: 1.3rem; }
+        .source-item strong { font-size: 0.9rem; color: var(--dark); }
+        .source-item span { font-size: 0.8rem; color: var(--gray); }
+
+        /* MENU SECTIONS */
+        .menu {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+        .section-container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
+        .section-header h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+        .section-header p { color: var(--gray); font-size: 1rem; max-width: 550px; margin: 0 auto; }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .menu-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .menu-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
+        .menu-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .menu-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--dark); }
+        .menu-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.6; }
+
+        /* ABOUT */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .about-text h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        .about-text p { color: var(--gray); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+        .about-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+        .about-tag {
+            background: var(--stone);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--brown);
+        }
+        .about-visual {
+            background: linear-gradient(135deg, var(--primary), var(--brown));
+            border-radius: 20px;
+            padding: 3rem;
+            color: var(--white);
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .about-visual .big-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+        .about-visual h3 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; margin-bottom: 1rem; }
+        .about-visual p { color: rgba(255,255,255,0.8); line-height: 1.7; }
+
+        /* REVIEWS */
+        .reviews {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .review-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        .stars { color: var(--primary-light); font-size: 1rem; margin-bottom: 1rem; }
+        .review-card blockquote { color: var(--gray); font-style: italic; line-height: 1.7; margin-bottom: 1rem; }
+        .review-author { font-weight: 600; font-size: 0.85rem; color: var(--primary); }
+
+        /* CTA */
+        .cta {
+            background: var(--dark);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+        .cta p { font-size: 1.05rem; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2rem; }
+        .btn-cta {
+            display: inline-block;
+            background: var(--warm);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(254,243,199,0.3); }
+
+        /* CONTACT */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--stone);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-info h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+        .contact-info p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; }
+        .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: var(--dark); font-weight: 500; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #e0d8cf;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            background: var(--white);
+        }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .contact-form button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .contact-form button:hover { background: var(--primary-light); }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.5);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+        .footer-brand { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 0.5rem; }
+        footer p { font-size: 0.85rem; margin-top: 0.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; }
+        .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--warm); }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta { display: none; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .sourcing-bar { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        This is a free preview designed for Chapter One Coffee by <a href="https://almadigitalservices.com">Alma Digital Services</a>
+    </div>
+
+    <nav>
+        <a href="#" class="nav-brand">Chapter One Coffee</a>
+        <ul class="nav-links">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Visit</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Visit Us</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Family-Run — Barber Road, Sheffield</div>
+            <h1>Sheffield's Favourite Independent Coffee Shop — 4.8 Stars Rated</h1>
+            <p>Chapter One Coffee serves locally roasted coffee, homemade pastries, and award-worthy breakfasts on Barber Road. Family-run, community-loved, and open seven days a week.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn-warm">See Our Menu</a>
+                <a href="#contact" class="btn-ghost">Visit Us This Week</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="sourcing-bar">
+        <div class="source-item">
+            <span class="source-icon">☕</span>
+            <div>
+                <strong>Smith Street Coffee Roasters</strong><br>
+                <span>Locally roasted coffee</span>
+            </div>
+        </div>
+        <div class="source-item">
+            <span class="source-icon">🍞</span>
+            <div>
+                <strong>Depot Bakery</strong><br>
+                <span>Freshly baked bread</span>
+            </div>
+        </div>
+        <div class="source-item">
+            <span class="source-icon">🍰</span>
+            <div>
+                <strong>Local Bakers</strong><br>
+                <span>Homemade cakes daily</span>
+            </div>
+        </div>
+        <div class="source-item">
+            <span class="source-icon">♿</span>
+            <div>
+                <strong>Wheelchair Accessible</strong><br>
+                <span>Everyone welcome</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="menu" id="menu">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What We Serve</h2>
+                <p>Locally sourced, freshly made, and served with care — every single day of the week.</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="menu-card-icon">☕</div>
+                    <h3>Specialty Coffee</h3>
+                    <p>Locally roasted by Smith Street Coffee Roasters, served with care. From flat whites to pour overs — every cup is made to order.</p>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-icon">🍳</div>
+                    <h3>Breakfast and Brunch</h3>
+                    <p>Full English, pancakes, and fresh options to start your day right. Our Nutella pancakes have become a Sheffield favourite.</p>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-icon">🍰</div>
+                    <h3>Homemade Cakes and Pastries</h3>
+                    <p>Baked locally every day, from Nutella pancakes to classic favourites. Fresh from the oven to your table.</p>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-icon">🎉</div>
+                    <h3>Catering</h3>
+                    <p>Bring Chapter One's food and coffee to your next meeting or event. Let us make your gathering special.</p>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-icon">🛵</div>
+                    <h3>Takeaway</h3>
+                    <p>Grab your favourite coffee and food on the go via Uber Eats. Chapter One delivered to your door.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>About Chapter One Coffee</h2>
+                <p>Chapter One Coffee is an independent, family-run cafe on Barber Road in Sheffield, earning a 4.8-star Google rating from over 120 reviews.</p>
+                <p>The team is committed to sourcing locally — bread from Depot Bakery, coffee from Smith Street Coffee Roasters, and all cakes and pastries made by local bakers. With a warm, cosy atmosphere, wheelchair-accessible entrance, and friendly staff, Chapter One has become a beloved neighbourhood spot for breakfast, brunch, and the perfect cup of coffee.</p>
+                <div class="about-tags">
+                    <span class="about-tag">Family-Run</span>
+                    <span class="about-tag">Locally Sourced</span>
+                    <span class="about-tag">Wheelchair Accessible</span>
+                    <span class="about-tag">Open 7 Days</span>
+                    <span class="about-tag">Dog Friendly</span>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="big-icon">☕</div>
+                <h3>A Neighbourhood Favourite</h3>
+                <p>4.8 stars from 120+ reviews. Where Barber Road comes together over great coffee, warm food, and friendly faces — every day of the week.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What Our Regulars Say</h2>
+                <p>4.8 stars from over 120 Google reviews. Sheffield loves Chapter One.</p>
+            </div>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"The best coffee in Sheffield, hands down. Smith Street beans brewed perfectly. And the pancakes are incredible."</blockquote>
+                    <div class="review-author">— Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Our family's favourite Saturday spot. The kids love the pastries, we love the coffee, and the staff always remember our order."</blockquote>
+                    <div class="review-author">— Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Cosy atmosphere, brilliant food, and the best full English on Barber Road. A real neighbourhood gem."</blockquote>
+                    <div class="review-author">— Google Review</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>See Our Menu and Visit Us This Week</h2>
+        <p>Open seven days a week on Barber Road. Start your next chapter with a great cup of coffee.</p>
+        <a href="#contact" class="btn-cta">Visit Chapter One Coffee</a>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Visit Us</h3>
+                <p>We're open seven days a week on Barber Road. Pop in for a coffee, stay for breakfast, and leave with a smile.</p>
+                <div class="contact-detail">📍 Barber Road, Sheffield, UK</div>
+                <div class="contact-detail">📧 chapteronesheffield@gmail.com</div>
+                <div class="contact-detail">🕐 Open 7 days a week</div>
+                <div class="contact-detail">♿ Wheelchair accessible</div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+                <input type="hidden" name="_subject" value="New inquiry from Chapter One Coffee preview">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number">
+                <textarea name="message" placeholder="Questions about catering, events, or visiting us..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">Chapter One Coffee</div>
+        <p>Independent Family-Run Cafe — Barber Road, Sheffield</p>
+        <div class="footer-links">
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Visit</a>
+        </div>
+        <p>&copy; 2026 Chapter One Coffee. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem;">Preview designed by <a href="https://almadigitalservices.com" style="color: #00b4d8; text-decoration: none;">Alma Digital Services</a></p>
+    </footer>
+</body>
+</html>
