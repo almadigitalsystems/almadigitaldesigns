@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plomeria Acuario CDMX | Plomeros 24/7 — Fugas, Tinacos y Emergencias</title>
+    <meta name="description" content="Plomeros profesionales en Ciudad de Mexico. Servicio 24/7. Fugas, humedades, tinacos y cisternas. Personal calificado con garantia de satisfaccion. Llame ahora.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --dark: #1a2332;
+            --navy: #0d1b2a;
+            --primary: #1b6ca8;
+            --primary-light: #2196f3;
+            --accent: #00bcd4;
+            --teal: #26c6da;
+            --light: #f4f8fb;
+            --white: #ffffff;
+            --gray: #6b7b8d;
+            --cream: #fafcfe;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--light); }
+
+        /* PREVIEW BANNER */
+        .preview-banner {
+            background: linear-gradient(90deg, #00b4d8, #0096c7);
+            color: #fff;
+            text-align: center;
+            padding: 0.9rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 200;
+            position: relative;
+        }
+        .preview-banner a { color: #fff; text-decoration: underline; }
+
+        /* NAV — Layout 5: Classic Professional */
+        nav {
+            background: var(--navy);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        .nav-brand span { color: var(--accent); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-phone {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* HERO — Banner style */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 50%, var(--primary) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0,188,212,0.15);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover { background: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,188,212,0.3); }
+
+        /* EMERGENCY BAR */
+        .emergency-bar {
+            background: var(--primary);
+            padding: 1.25rem 2rem;
+            text-align: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* SERVICES — Grid with images */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+        .section-container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+        .section-header p { color: var(--gray); font-size: 1rem; max-width: 550px; margin: 0 auto; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            border-top: 4px solid var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-top-color: var(--accent); }
+        .service-icon {
+            width: 56px; height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+        }
+        .service-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--dark); }
+        .service-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.6; }
+
+        /* ABOUT */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        .about-text p { color: var(--gray); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+        .about-list { list-style: none; margin-top: 1.5rem; }
+        .about-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eef2f5;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        .about-list li span { color: var(--accent); font-size: 1.2rem; }
+        .about-visual {
+            background: linear-gradient(135deg, var(--navy), var(--primary));
+            border-radius: 16px;
+            padding: 3rem;
+            color: var(--white);
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .about-visual h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem; }
+        .about-visual p { color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 1.5rem; }
+        .about-visual .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0,188,212,0.2);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* REVIEWS */
+        .reviews {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .review-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .stars { color: #f5a623; font-size: 1rem; margin-bottom: 1rem; }
+        .review-card p { color: var(--gray); font-style: italic; line-height: 1.7; margin-bottom: 1rem; }
+        .review-author { font-weight: 600; font-size: 0.9rem; color: var(--primary); }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--navy), var(--primary));
+            padding: 5rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+        .cta p { font-size: 1.05rem; opacity: 0.85; max-width: 550px; margin: 0 auto 2rem; }
+        .btn-accent {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-accent:hover { background: var(--teal); transform: translateY(-2px); }
+
+        /* CONTACT */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+        .contact-info p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; }
+        .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: var(--dark); font-weight: 500; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #d8e2ea;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            background: var(--cream);
+        }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .contact-form button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .contact-form button:hover { background: var(--accent); color: var(--navy); }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.6);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+        .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 0.5rem; }
+        footer p { font-size: 0.85rem; margin-top: 0.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-phone { display: none; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        Vista previa gratuita disenada para Plomeria Acuario por <a href="https://almadigitalservices.com">Alma Digital Services</a>
+    </div>
+
+    <nav>
+        <a href="#" class="nav-brand"><span>Plomeria</span> Acuario</a>
+        <ul class="nav-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#resenas">Resenas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="nav-phone">🕐 Disponible 24/7</div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Servicio 24/7, los 365 Dias</div>
+            <h1>Plomeros de Confianza en CDMX — Servicio 24/7, los 365 Dias</h1>
+            <p>Plomeria Acuario resuelve fugas, humedades y emergencias con personal altamente calificado en toda la Ciudad de Mexico y Area Metropolitana.</p>
+            <a href="#contacto" class="btn-primary">Solicite Su Servicio Ahora</a>
+        </div>
+    </section>
+
+    <div class="emergency-bar">
+        🚨 Emergencia de Plomeria? Estamos disponibles 24/7 — Llame ahora para atencion inmediata
+    </div>
+
+    <section class="services" id="servicios">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Nuestros Servicios</h2>
+                <p>Soluciones profesionales de plomeria para hogares y negocios en toda la CDMX.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Reparacion de Fugas</h3>
+                    <p>Deteccion y solucion rapida para evitar danos mayores. Atendemos cualquier tipo de fuga con equipo especializado.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Limpieza de Tinacos y Cisternas</h3>
+                    <p>Agua limpia y segura para su hogar o negocio. Mantenimiento preventivo y limpieza profunda profesional.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Reparacion de Humedades</h3>
+                    <p>Diagnostico preciso y soluciones permanentes para eliminar problemas de humedad en paredes y techos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Plomeria General</h3>
+                    <p>Instalaciones, mantenimiento y reparaciones de todo tipo. Trabajo profesional con materiales de calidad.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚨</div>
+                    <h3>Servicio de Emergencia 24/7</h3>
+                    <p>Disponibles dia y noche, todos los dias del ano. Respuesta rapida para emergencias de plomeria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Sobre Plomeria Acuario</h2>
+                <p>Plomeria Acuario ofrece servicio profesional de plomeria en toda la Ciudad de Mexico y el Area Metropolitana. Con personal altamente calificado y disponibilidad las 24 horas, los 365 dias del ano, se especializan en reparacion de fugas, limpieza de tinacos y cisternas, y solucion de problemas de humedad.</p>
+                <p>Su compromiso es resolver cada problema en el menor tiempo posible con seguridad y confiabilidad.</p>
+                <ul class="about-list">
+                    <li><span>✓</span> Personal altamente calificado</li>
+                    <li><span>✓</span> Disponibilidad 24/7, los 365 dias</li>
+                    <li><span>✓</span> Cobertura CDMX y Area Metropolitana</li>
+                    <li><span>✓</span> Materiales de primera calidad</li>
+                    <li><span>✓</span> Garantia de satisfaccion</li>
+                </ul>
+            </div>
+            <div class="about-visual">
+                <h3>Servicio Confiable en Toda la CDMX</h3>
+                <p>Cubrimos toda la Ciudad de Mexico y Area Metropolitana con personal capacitado y equipamiento profesional. Cada trabajo incluye diagnostico preciso y solucion adaptada a sus necesidades.</p>
+                <div class="badge">✓ Disponible 24/7 — 365 Dias</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="resenas">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Lo Que Dicen Nuestros Clientes</h2>
+                <p>Confianza y calidad respaldada por nuestros clientes en la CDMX.</p>
+            </div>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Tenia una fuga de emergencia a medianoche y respondieron de inmediato. Trabajo profesional y precio justo."</p>
+                    <div class="review-author">— Cliente en CDMX</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Limpiaron mi tinaco y cisterna en tiempo record. Personal muy amable y trabajaron con mucho cuidado."</p>
+                    <div class="review-author">— Propietario de Casa</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excelente servicio. Resolvieron mi problema de humedad que otros plomeros no pudieron arreglar."</p>
+                    <div class="review-author">— Cliente Frecuente</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Solicite Su Servicio Ahora — Disponible 24/7</h2>
+        <p>No espere a que el problema empeore. Contactenos hoy para una solucion rapida y profesional.</p>
+        <a href="#contacto" class="btn-accent">Solicitar Servicio Ahora</a>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contactenos</h3>
+                <p>Estamos listos para resolver su emergencia de plomeria. Servicio en toda la Ciudad de Mexico y Area Metropolitana.</p>
+                <div class="contact-detail">📍 Ciudad de Mexico y Area Metropolitana</div>
+                <div class="contact-detail">📧 plomeros08@gmail.com</div>
+                <div class="contact-detail">🕐 Disponible 24/7 — 365 dias del ano</div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+                <input type="hidden" name="_subject" value="New inquiry from Plomeria Acuario preview">
+                <input type="text" name="name" placeholder="Su Nombre" required>
+                <input type="email" name="email" placeholder="Su Email" required>
+                <input type="tel" name="phone" placeholder="Su Telefono">
+                <textarea name="message" placeholder="Describa su problema de plomeria..." required></textarea>
+                <button type="submit">Solicitar Servicio Ahora</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">Plomeria Acuario</div>
+        <p>Plomeros Profesionales — Ciudad de Mexico y Area Metropolitana</p>
+        <div class="footer-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#resenas">Resenas</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <p>&copy; 2026 Plomeria Acuario. Todos los derechos reservados.</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem;">Vista previa disenada por <a href="https://almadigitalservices.com" style="color: #00b4d8; text-decoration: none;">Alma Digital Services</a></p>
+    </footer>
+</body>
+</html>
