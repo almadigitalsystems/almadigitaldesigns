@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layla's Beauty Salon | Beauty Treatments in Sheffield, UK</title>
+  <meta name="description" content="Layla's Beauty Salon in Sheffield offers facials, waxing, lash extensions, nails and more. 4.8-star rated on Firth Park Road. Book your next beauty appointment today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #6c5ce7;
+      --purple-dark: #5a4bd1;
+      --pink: #fd79a8;
+      --pink-light: #feb8d0;
+      --dark: #1a1a2e;
+      --dark-mid: #16213e;
+      --light: #fdf2f8;
+      --white: #ffffff;
+      --text-muted: #6b6b8a;
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(108,92,231,0.13);
+      --shadow-hover: 0 16px 48px rgba(108,92,231,0.22);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(26,26,46,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(253,121,168,0.15);
+      padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .nav-logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: var(--white) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      transition: opacity 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); color: var(--white) !important; }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px; left: 0; right: 0;
+        background: var(--dark);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(253,121,168,0.15);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0 1.5rem; }
+      .nav-links a { display: block; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .nav-links li:last-child a { border-bottom: none; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 5rem 1.5rem 4rem;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 30%, rgba(108,92,231,0.28) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(253,121,168,0.22) 0%, transparent 60%);
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hero-inner {
+      position: relative;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(253,121,168,0.12);
+      border: 1px solid rgba(253,121,168,0.3);
+      color: var(--pink-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: var(--white);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #a29bfe 0%, var(--pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.72);
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 24px rgba(108,92,231,0.35);
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 36px rgba(108,92,231,0.45);
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-stat-num .gradient-text {
+      background: linear-gradient(135deg, #a29bfe, var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.3rem;
+    }
+    .hero-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.12);
+      align-self: center;
+    }
+    @media (max-width: 500px) {
+      .hero-divider { display: none; }
+      .hero-stats { gap: 1.5rem; }
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 5rem 1.5rem; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .section-header { margin-bottom: 3rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ── SERVICES ── */
+    .services-section { background: var(--light); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem 1.75rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.28s, box-shadow 0.28s;
+      cursor: default;
+      border: 1px solid rgba(108,92,231,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(108,92,231,0.10), rgba(253,121,168,0.10));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .service-icon svg { width: 26px; height: 26px; }
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+    .service-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── RATING STRIP ── */
+    .rating-strip {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .rating-strip-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .stars-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .star-svg {
+      width: 34px; height: 34px;
+      fill: #FFD700;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+    }
+    .star-svg.partial { opacity: 0.82; }
+    .rating-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .rating-label {
+      font-size: 1.05rem;
+      opacity: 0.95;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .rating-source {
+      font-size: 0.82rem;
+      opacity: 0.72;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── ABOUT ── */
+    .about-section { background: var(--dark); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, rgba(108,92,231,0.22) 0%, rgba(253,121,168,0.18) 100%);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .about-dots-bg {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .about-visual-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .about-visual-icon {
+      width: 80px; height: 80px;
+      opacity: 0.45;
+    }
+    .about-visual-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 0 1.5rem;
+      font-style: italic;
+    }
+    .about-floater {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 12px;
+      padding: 0.8rem 1.1rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .about-floater-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #FFD700;
+      line-height: 1;
+    }
+    .about-floater-label {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 0.2rem;
+    }
+    .about-content .section-label { color: var(--pink-light); }
+    .about-content .section-title { color: var(--white); }
+    .about-content .section-sub { color: rgba(255,255,255,0.66); max-width: 100%; }
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+    .about-pill {
+      background: rgba(108,92,231,0.18);
+      border: 1px solid rgba(108,92,231,0.32);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.4rem 0.95rem;
+      border-radius: 50px;
+    }
+    @media (max-width: 800px) {
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-visual { max-width: 420px; margin: 0 auto; width: 100%; }
+    }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--light); }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .contact-info h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 1rem; }
+    .contact-info p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .contact-items { display: flex; flex-direction: column; gap: 1.1rem; }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .contact-item-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(108,92,231,0.10), rgba(253,121,168,0.10));
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-item-icon svg { width: 20px; height: 20px; }
+    .contact-item-label {
+      font-size: 0.73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--purple);
+      margin-bottom: 0.18rem;
+    }
+    .contact-item-val {
+      font-size: 0.95rem;
+      color: var(--dark);
+      font-weight: 500;
+    }
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(108,92,231,0.08);
+    }
+    .contact-form h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid rgba(108,92,231,0.18);
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: var(--dark);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(108,92,231,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      padding: 0.95rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 20px rgba(108,92,231,0.28);
+      letter-spacing: 0.01em;
+      margin-top: 0.4rem;
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(108,92,231,0.4); }
+    @media (max-width: 860px) {
+      .contact-inner { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ── ALMA DIGITAL CTA ── */
+    .alma-strip {
+      background: var(--dark);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(108,92,231,0.18);
+    }
+    .alma-inner { max-width: 680px; margin: 0 auto; }
+    .alma-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(108,92,231,0.14);
+      border: 1px solid rgba(108,92,231,0.28);
+      color: rgba(255,255,255,0.55);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem;
+    }
+    .alma-strip h2 {
+      font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+      color: var(--white);
+      margin-bottom: 0.85rem;
+      line-height: 1.25;
+    }
+    .alma-strip p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.97rem;
+      line-height: 1.7;
+      margin-bottom: 2.2rem;
+    }
+    .btn-alma {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.97rem;
+      padding: 0.95rem 2.1rem;
+      border-radius: 50px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 20px rgba(108,92,231,0.3);
+    }
+    .btn-alma:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(108,92,231,0.45); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0f0f1e;
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+    .footer-logo .gradient-text {
+      background: linear-gradient(135deg, #a29bfe, var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    footer p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.32);
+    }
+    footer a { color: rgba(253,121,168,0.55); text-decoration: none; }
+    footer a:hover { color: var(--pink-light); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" aria-label="Layla's Beauty Salon home">
+      <div class="nav-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2C6.5 2 6.5 8 6.5 8s0 3 2 4.5L7 22h10l-1.5-9.5C17.5 11 17.5 8 17.5 8S17.5 2 12 2z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+      </div>
+      Layla's Beauty Salon
+    </a>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-dots" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-badge" aria-label="Sheffield's Favourite Beauty Salon">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Sheffield's Favourite Beauty Salon
+    </div>
+    <h1>Your Beauty Destination in Sheffield &mdash; <span class="gradient-text">Layla's Beauty Salon</span></h1>
+    <p>Facials, waxing, lash extensions, and more &mdash; Layla's Beauty Salon on Firth Park Road brings Sheffield clients the pampering they deserve at prices they love.</p>
+    <a href="#contact" class="btn-primary">Treat Yourself &mdash; Book Your Beauty Appointment at Layla's Today</a>
+    <div class="hero-stats" role="list" aria-label="Salon highlights">
+      <div class="hero-stat" role="listitem">
+        <div class="hero-stat-num"><span class="gradient-text">4.8</span>&thinsp;&#9733;</div>
+        <div class="hero-stat-label">Google Rating</div>
+      </div>
+      <div class="hero-divider" aria-hidden="true"></div>
+      <div class="hero-stat" role="listitem">
+        <div class="hero-stat-num"><span class="gradient-text">5</span>+</div>
+        <div class="hero-stat-label">Treatments</div>
+      </div>
+      <div class="hero-divider" aria-hidden="true"></div>
+      <div class="hero-stat" role="listitem">
+        <div class="hero-stat-num"><span class="gradient-text">100%</span></div>
+        <div class="hero-stat-label">Personal Touch</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Our Beauty Services</h2>
+      <p class="section-sub">From radiant skin to polished nails &mdash; everything you need, all in one welcoming Sheffield studio.</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Facials -->
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="11" r="7" stroke="url(#sg1)" stroke-width="1.8"/>
+            <path d="M9 11c0 1.66 1.34 3 3 3s3-1.34 3-3" stroke="url(#sg1)" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="9.5" cy="9.5" r="1" fill="#6c5ce7"/>
+            <circle cx="14.5" cy="9.5" r="1" fill="#fd79a8"/>
+            <path d="M12 18v3M8 21h8" stroke="url(#sg1)" stroke-width="1.8" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="sg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6c5ce7"/>
+                <stop offset="100%" stop-color="#fd79a8"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h3>Facials and Skin Care</h3>
+        <p>Refreshing Treatments for Every Skin Type</p>
+      </article>
+
+      <!-- Waxing -->
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 3h14a1 1 0 0 1 1 1v3a8 8 0 0 1-8 8 8 8 0 0 1-8-8V4a1 1 0 0 1 1-1z" stroke="url(#sg2)" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M12 15v6M9 21h6" stroke="url(#sg2)" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M9 8h6" stroke="url(#sg2)" stroke-width="1.8" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="sg2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6c5ce7"/>
+                <stop offset="100%" stop-color="#fd79a8"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h3>Waxing Services</h3>
+        <p>Smooth, Professional Results Every Time</p>
+      </article>
+
+      <!-- Lash & Brow -->
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="12" cy="13" rx="9" ry="6" stroke="url(#sg3)" stroke-width="1.8"/>
+            <circle cx="12" cy="13" r="2.5" stroke="url(#sg3)" stroke-width="1.8"/>
+            <path d="M5 8 C7 5 10 4 12 4 C14 4 17 5 19 8" stroke="url(#sg3)" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6 7l-1-2M9 5.5l-.5-2.5M12 5V2M15 5.5l.5-2.5M18 7l1-2" stroke="url(#sg3)" stroke-width="1.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="sg3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6c5ce7"/>
+                <stop offset="100%" stop-color="#fd79a8"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h3>Lash and Brow Treatments</h3>
+        <p>Extensions, Tinting and Shaping That Frame Your Face</p>
+      </article>
+
+      <!-- Nails -->
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 11V6a2 2 0 0 0-4 0v1M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8M6 14l-1.6-1.6a2 2 0 1 0-2.8 2.8L5 18.6A8 8 0 0 0 12 22h2a8 8 0 0 0 8-8v-3a2 2 0 0 0-4 0" stroke="url(#sg4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="sg4" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6c5ce7"/>
+                <stop offset="100%" stop-color="#fd79a8"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h3>Nail Services</h3>
+        <p>Manicures, Pedicures and Gel Nails</p>
+      </article>
+
+      <!-- Massage -->
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="url(#sg5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="sg5" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6c5ce7"/>
+                <stop offset="100%" stop-color="#fd79a8"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h3>Massage and Body Treatments</h3>
+        <p>Relax, Recharge and Renew</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- RATING STRIP -->
+<div class="rating-strip" role="region" aria-label="Customer rating">
+  <div class="rating-strip-inner">
+    <div class="stars-row" aria-label="4.8 out of 5 stars rating">
+      <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="star-svg partial" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    </div>
+    <div class="rating-num" aria-label="Rating: 4.8 out of 5">4.8</div>
+    <div class="rating-label">Outstanding Client Satisfaction</div>
+    <div class="rating-source">Based on Google Reviews &nbsp;&bull;&nbsp; Bookings via Fresha</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual" aria-hidden="true">
+        <div class="about-dots-bg"></div>
+        <div class="about-visual-inner">
+          <svg class="about-visual-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="42" r="26" stroke="rgba(253,121,168,0.55)" stroke-width="2"/>
+            <circle cx="60" cy="42" r="12" fill="rgba(108,92,231,0.2)" stroke="rgba(108,92,231,0.5)" stroke-width="1.5"/>
+            <path d="M34 90 C34 68 86 68 86 90" stroke="rgba(253,121,168,0.45)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M20 60 Q60 24 100 60" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" fill="none"/>
+            <circle cx="60" cy="42" r="4" fill="rgba(253,121,168,0.6)"/>
+          </svg>
+          <div class="about-visual-text">Firth Park Road,<br>Sheffield</div>
+        </div>
+        <div class="about-floater">
+          <div class="about-floater-num">4.8 &#9733;</div>
+          <div class="about-floater-label">Google Rating</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="section-label">About the Salon</span>
+        <h2 class="section-title" style="color: var(--white);">Beauty Care With a Personal Touch</h2>
+        <p class="section-sub">Layla's Beauty Salon is a welcoming beauty studio located on Firth Park Road in Sheffield, offering a full menu of beauty treatments at affordable prices. With a 4.8-star Google rating and a growing client base booking through Fresha, the salon has earned its reputation as a trusted local go-to for facials, waxing, lash work, and more. It is beauty care with a personal touch &mdash; right in the heart of the community.</p>
+        <div class="about-pills" role="list" aria-label="Key highlights">
+          <span class="about-pill" role="listitem">Firth Park Road, Sheffield</span>
+          <span class="about-pill" role="listitem">4.8&#9733; Google Rated</span>
+          <span class="about-pill" role="listitem">Book via Fresha</span>
+          <span class="about-pill" role="listitem">Affordable Prices</span>
+          <span class="about-pill" role="listitem">Local &amp; Trusted</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Ready to Book Your Beauty Treatment?</h2>
+        <p>Fill in the form and the team at Layla's Beauty Salon will be in touch to confirm your appointment. We'd love to welcome you on Firth Park Road.</p>
+        <div class="contact-items">
+
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="url(#ci1)" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="url(#ci1)" stroke-width="2"/>
+                <defs>
+                  <linearGradient id="ci1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6c5ce7"/>
+                    <stop offset="100%" stop-color="#fd79a8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-val">Firth Park Road, Sheffield, UK</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="20" height="16" rx="2" stroke="url(#ci2)" stroke-width="2"/>
+                <polyline points="2,6 12,13 22,6" stroke="url(#ci2)" stroke-width="2" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="ci2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6c5ce7"/>
+                    <stop offset="100%" stop-color="#fd79a8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-val">
+                <a href="mailto:aramcamara78@googlemail.com" style="color: var(--dark); text-decoration: none;">aramcamara78@googlemail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="18" height="18" rx="2" stroke="url(#ci3)" stroke-width="2"/>
+                <line x1="16" y1="2" x2="16" y2="6" stroke="url(#ci3)" stroke-width="2" stroke-linecap="round"/>
+                <line x1="8" y1="2" x2="8" y2="6" stroke="url(#ci3)" stroke-width="2" stroke-linecap="round"/>
+                <line x1="3" y1="10" x2="21" y2="10" stroke="url(#ci3)" stroke-width="2"/>
+                <defs>
+                  <linearGradient id="ci3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6c5ce7"/>
+                    <stop offset="100%" stop-color="#fd79a8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Bookings</div>
+              <div class="contact-item-val">Available via Fresha</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Book an Appointment</h3>
+        <form action="https://formspree.io/f/xojppajv" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="Jane" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Smith" required autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="femail">Email Address</label>
+            <input type="email" id="femail" name="email" placeholder="jane@email.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="fphone">Phone Number</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+44 7700 000000" autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="fservice">Treatment Interested In</label>
+            <select id="fservice" name="service">
+              <option value="">Select a treatment&hellip;</option>
+              <option value="Facials and Skin Care">Facials and Skin Care</option>
+              <option value="Waxing Services">Waxing Services</option>
+              <option value="Lash and Brow Treatments">Lash and Brow Treatments</option>
+              <option value="Nail Services">Nail Services</option>
+              <option value="Massage and Body Treatments">Massage and Body Treatments</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmessage">Additional Notes</label>
+            <textarea id="fmessage" name="message" placeholder="Anything you'd like us to know before your appointment&hellip;"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Booking Request</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ALMA DIGITAL CTA -->
+<div class="alma-strip" role="complementary" aria-label="Alma Digital promotion">
+  <div class="alma-inner">
+    <div class="alma-badge" aria-label="Powered by Alma Digital">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Powered by Alma Digital
+    </div>
+    <h2>Does Your Business Deserve a Website Like This?</h2>
+    <p>This page was built by Alma Digital &mdash; specialists in beautiful, conversion-focused websites for local businesses across the UK. Claim your free no-obligation redesign consultation today.</p>
+    <a href="mailto:hello@almadigital.co.uk?subject=Free%20Redesign%20Enquiry%20via%20Layla%27s%20Beauty%20Salon" class="btn-alma">Claim Your Free Redesign &mdash; Contact Alma Digital</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Layla's <span class="gradient-text">Beauty Salon</span></div>
+    <p>Firth Park Road, Sheffield, UK &nbsp;&bull;&nbsp; <a href="mailto:aramcamara78@googlemail.com">aramcamara78@googlemail.com</a></p>
+    <p>&copy; 2026 Layla's Beauty Salon. Website by <a href="mailto:hello@almadigital.co.uk">Alma Digital</a>.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  function toggleMenu(btn) {
+    var nav = document.getElementById('navLinks');
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+
+  // Close mobile menu on nav link click
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+      document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Navbar shadow on scroll
+  var navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', function() {
+    navbar.style.boxShadow = window.scrollY > 60
+      ? '0 4px 28px rgba(0,0,0,0.35)'
+      : 'none';
+  }, { passive: true });
+
+  // Service card fade-in on scroll
+  var cards = document.querySelectorAll('.service-card');
+  var cardObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  cards.forEach(function(card, i) {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(22px)';
+    card.style.transition =
+      'opacity 0.55s ease ' + (i * 0.09) + 's, ' +
+      'transform 0.55s ease ' + (i * 0.09) + 's, ' +
+      'box-shadow 0.28s, border-color 0.28s';
+    cardObserver.observe(card);
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Trigger cards already in viewport on load
+    cards.forEach(function(card) {
+      var rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }
+    });
+  });
+
+  // Add visible class handling
+  var style = document.createElement('style');
+  style.textContent = '.service-card.visible { opacity: 1 !important; transform: translateY(0) !important; }';
+  document.head.appendChild(style);
+</script>
+</body>
+</html>
