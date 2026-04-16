@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffe Tucci Sheffield | Neapolitan Coffee, Focaccia and Italian Deli — 4.9 Stars</title>
+    <meta name="description" content="Sheffield's favourite Italian cafe. Authentic Neapolitan coffee, focaccia, cannoli and deli. 4.9 stars, 650+ reviews. Open 7 days a week. Visit Caffe Tucci today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --dark: #2c1810;
+            --espresso: #3e2418;
+            --primary: #c0392b;
+            --primary-light: #e74c3c;
+            --cream: #fdf5ee;
+            --warm-cream: #f9efe3;
+            --gold: #d4a754;
+            --olive: #6b7a3a;
+            --white: #ffffff;
+            --gray: #7a6b5e;
+            --light-gray: #f5f0eb;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--cream); }
+
+        /* PREVIEW BANNER */
+        .preview-banner {
+            background: linear-gradient(90deg, #00b4d8, #0096c7);
+            color: #fff;
+            text-align: center;
+            padding: 0.9rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 200;
+            position: relative;
+        }
+        .preview-banner a { color: #fff; text-decoration: underline; }
+
+        /* NAV — Minimal */
+        nav {
+            background: transparent;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* HERO — Layout 3: Story Style */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 4rem;
+        }
+        .hero-content {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        .hero h1 em { font-style: italic; color: var(--primary); }
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+        .btn-outline {
+            display: inline-block;
+            color: var(--dark);
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid var(--dark);
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover { background: var(--dark); color: var(--white); }
+
+        /* RATING BAR */
+        .rating-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .rating-item { display: flex; align-items: center; gap: 0.5rem; }
+        .rating-stars { color: var(--gold); font-size: 1.1rem; }
+        .rating-text { font-weight: 600; font-size: 0.95rem; color: var(--dark); }
+        .rating-sub { font-size: 0.85rem; color: var(--gray); }
+
+        /* STORY SECTION */
+        .story {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .story h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        .story p { color: var(--gray); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.5rem; }
+        .story-photo {
+            width: 120px; height: 120px;
+            background: linear-gradient(135deg, var(--primary), var(--espresso));
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* MENU/SERVICES — Vertical list with icons */
+        .menu {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+        .section-container { max-width: 900px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+        .section-header p { color: var(--gray); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+        .menu-list { list-style: none; }
+        .menu-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .menu-icon {
+            width: 60px; height: 60px;
+            background: var(--warm-cream);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .menu-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--dark); }
+        .menu-item p { font-size: 0.95rem; color: var(--gray); line-height: 1.6; }
+
+        /* GALLERY STRIP */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--espresso);
+        }
+        .gallery-item {
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--white);
+            border-right: 1px solid rgba(255,255,255,0.08);
+        }
+        .gallery-item:last-child { border-right: none; }
+        .gallery-item .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+        .gallery-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .gallery-item p { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+        /* REVIEWS */
+        .reviews {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .review-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        .stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; }
+        .review-card blockquote { color: var(--gray); font-style: italic; line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
+        .review-author { font-weight: 600; font-size: 0.85rem; color: var(--espresso); }
+
+        /* CTA */
+        .cta {
+            background: var(--espresso);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+        .cta p { font-size: 1.05rem; opacity: 0.8; max-width: 550px; margin: 0 auto 2rem; }
+        .btn-cream {
+            display: inline-block;
+            background: var(--cream);
+            color: var(--espresso);
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-cream:hover { background: var(--white); transform: translateY(-2px); }
+
+        /* CONTACT */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+        .contact-info p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; }
+        .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: var(--dark); font-weight: 500; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #e0d8cf;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            background: var(--white);
+        }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .contact-form button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .contact-form button:hover { background: var(--primary-light); }
+
+        /* FOOTER */
+        footer {
+            background: var(--espresso);
+            color: rgba(255,255,255,0.6);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+        .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.5rem; }
+        footer p { font-size: 0.85rem; margin-top: 0.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        This is a free preview designed for Caffe Tucci by <a href="https://almadigitalservices.com">Alma Digital Services</a>
+    </div>
+
+    <nav>
+        <a href="#" class="nav-brand">Caffe Tucci</a>
+        <ul class="nav-links">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Visit Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Surrey Street, Sheffield</div>
+            <h1>A Taste of <em>Naples</em> in the Heart of Sheffield</h1>
+            <p>Caffe Tucci brings authentic Neapolitan coffee, focaccia, and pastries to Sheffield. From pistachio lattes to the finest cannoli — every visit feels like a trip to Italy.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">View Our Menu and Visit Us Today</a>
+                <a href="#about" class="btn-outline">Our Story</a>
+            </div>
+            <div class="rating-bar">
+                <div class="rating-item">
+                    <div class="rating-stars">★★★★★</div>
+                    <div>
+                        <div class="rating-text">4.9 Stars</div>
+                        <div class="rating-sub">650+ Google Reviews</div>
+                    </div>
+                </div>
+                <div class="rating-item">
+                    <div class="rating-text">Open 7 Days</div>
+                    <div class="rating-sub">a Week</div>
+                </div>
+                <div class="rating-item">
+                    <div class="rating-text">Authentic</div>
+                    <div class="rating-sub">Neapolitan Caffe</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="about">
+        <div class="story-content">
+            <div class="story-photo">☕</div>
+            <h2>Our Story</h2>
+            <p>Caffe Tucci is a Neapolitan caffe and deli on Surrey Street in Sheffield, founded by Stefano Brasile. With a 4.9-star Google rating from over 650 reviews, it has become one of Sheffield's most beloved independent eateries.</p>
+            <p>The menu features authentic Italian focaccia, handmade pastries, and specialty coffee — all served by a passionate team that makes every customer feel at home. Open seven days a week, Caffe Tucci is where Sheffield comes for a genuine taste of Italy.</p>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What We Serve</h2>
+                <p>Authentic Neapolitan flavours, made fresh daily with imported Italian ingredients.</p>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <div class="menu-icon">☕</div>
+                    <div>
+                        <h3>Authentic Italian Coffee</h3>
+                        <p>Espresso, pistachio lattes, and specialty brews made the Neapolitan way. Every cup is a tribute to Italian coffee culture.</p>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <div class="menu-icon">🥖</div>
+                    <div>
+                        <h3>Focaccia and Sandwiches</h3>
+                        <p>Freshly baked, handcrafted, and described as the best in Sheffield. Made with authentic Italian recipes passed down through generations.</p>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <div class="menu-icon">🍰</div>
+                    <div>
+                        <h3>Pastries and Dolci</h3>
+                        <p>Cannoli, tarts, and cakes made with imported Italian ingredients. Each pastry is a small piece of Naples in Sheffield.</p>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <div class="menu-icon">🧀</div>
+                    <div>
+                        <h3>Italian Deli</h3>
+                        <p>Take home authentic Italian products, sauces, and pantry staples. Bring the Caffe Tucci experience into your own kitchen.</p>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <div class="menu-icon">🎉</div>
+                    <div>
+                        <h3>Catering and Events</h3>
+                        <p>Bring the Caffe Tucci experience to your next event. Authentic Italian food and coffee for any occasion.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <div class="icon">☕</div>
+            <h4>Neapolitan Coffee</h4>
+            <p>Made the authentic way</p>
+        </div>
+        <div class="gallery-item">
+            <div class="icon">🥖</div>
+            <h4>Fresh Focaccia</h4>
+            <p>Baked daily in-house</p>
+        </div>
+        <div class="gallery-item">
+            <div class="icon">🍰</div>
+            <h4>Handmade Cannoli</h4>
+            <p>Imported ingredients</p>
+        </div>
+        <div class="gallery-item">
+            <div class="icon">🇮🇹</div>
+            <h4>Italian Deli</h4>
+            <p>Take a piece home</p>
+        </div>
+    </div>
+
+    <section class="reviews" id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What Sheffield Says</h2>
+                <p>4.9 stars from over 650 Google reviews — one of Sheffield's most loved cafes.</p>
+            </div>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Best focaccia I've ever had — and I've been to Italy. The pistachio latte is absolutely incredible."</blockquote>
+                    <div class="review-author">— Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"A genuine taste of Naples in Sheffield. The cannoli are perfect and the staff make you feel like family."</blockquote>
+                    <div class="review-author">— Google Review</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"We come here every weekend. The coffee is the best in Sheffield and the pastries are always fresh. An absolute gem."</blockquote>
+                    <div class="review-author">— Google Review</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>View Our Menu and Visit Us Today</h2>
+        <p>Open seven days a week on Surrey Street. Come for the coffee, stay for the cannoli.</p>
+        <a href="#contact" class="btn-cream">Find Us on Surrey Street</a>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Visit Caffe Tucci</h3>
+                <p>We're open seven days a week, serving authentic Neapolitan coffee and food on Surrey Street in the heart of Sheffield.</p>
+                <div class="contact-detail">📍 Surrey Street, Sheffield, UK</div>
+                <div class="contact-detail">📧 stefanobrasile1993@gmail.com</div>
+                <div class="contact-detail">🕐 Open 7 days a week</div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+                <input type="hidden" name="_subject" value="New inquiry from Caffe Tucci preview">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number">
+                <textarea name="message" placeholder="Questions about catering, events, or our menu..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">Caffe Tucci</div>
+        <p>Neapolitan Caffe and Deli — Surrey Street, Sheffield</p>
+        <div class="footer-links">
+            <a href="#menu">Menu</a>
+            <a href="#about">Our Story</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Visit Us</a>
+        </div>
+        <p>&copy; 2026 Caffe Tucci. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem;">Preview designed by <a href="https://almadigitalservices.com" style="color: #00b4d8; text-decoration: none;">Alma Digital Services</a></p>
+    </footer>
+</body>
+</html>
