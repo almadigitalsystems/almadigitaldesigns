@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backstage Salon Medellin | Balayage, Color and Styling by Sebastian</title>
+    <meta name="description" content="Medellin's top-rated hair salon. Balayage, color correction, keratin treatments and more. 37K+ Instagram followers. Book your appointment with Backstage Salon today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --dark: #1a1a1a;
+            --primary: #c8956c;
+            --primary-dark: #a67850;
+            --accent: #e8c4a0;
+            --blush: #f5e6d8;
+            --light: #faf7f4;
+            --white: #ffffff;
+            --gray: #6b6b6b;
+            --rose: #d4a0a0;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--light); }
+
+        /* PREVIEW BANNER */
+        .preview-banner {
+            background: linear-gradient(90deg, #00b4d8, #0096c7);
+            color: #fff;
+            text-align: center;
+            padding: 0.9rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 200;
+            position: relative;
+        }
+        .preview-banner a { color: #fff; text-decoration: underline; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250,247,244,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .nav-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* HERO — Layout 2: Split Screen */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 70px;
+        }
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 3rem 4rem 4rem;
+            background: var(--light);
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .hero-left h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+        .hero-left p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover { background: var(--primary); color: var(--white); }
+        .hero-social {
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .social-stat {
+            text-align: center;
+        }
+        .social-stat .num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; color: var(--dark); }
+        .social-stat .label { font-size: 0.8rem; color: var(--gray); }
+        .hero-right {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 40%, #8b5e3c 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            top: -50px; right: -50px;
+        }
+        .hero-right::after {
+            content: '';
+            position: absolute;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+            bottom: -30px; left: -30px;
+        }
+        .hero-right-content { position: relative; z-index: 2; }
+        .hero-right .salon-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+        .hero-right h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 1rem; }
+        .hero-right p { opacity: 0.85; line-height: 1.7; max-width: 350px; }
+
+        /* SERVICES — Horizontal Cards */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .section-container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+        .section-header p { color: var(--gray); font-size: 1rem; max-width: 550px; margin: 0 auto; }
+        .service-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .service-card {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            background: var(--light);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .service-card:hover { border-color: var(--accent); transform: translateX(8px); }
+        .service-icon {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+        }
+        .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--dark); }
+        .service-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+
+        /* ABOUT */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .about-content p { color: var(--gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .highlight {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        .highlight .num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--primary); }
+        .highlight .label { font-size: 0.85rem; color: var(--gray); margin-top: 0.25rem; }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .stars { color: var(--primary); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+        .testimonial-card p { color: var(--gray); font-style: italic; line-height: 1.7; margin-bottom: 1rem; }
+        .testimonial-author { font-weight: 600; font-size: 0.9rem; color: var(--primary-dark); }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--dark) 0%, #2a2020 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+        .cta p { font-size: 1.05rem; opacity: 0.8; max-width: 550px; margin: 0 auto 2rem; }
+        .btn-accent {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-accent:hover { background: var(--accent); color: var(--dark); transform: translateY(-2px); }
+
+        /* CONTACT */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+        .contact-info p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; }
+        .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: var(--dark); font-weight: 500; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #e0d8d0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            background: var(--white);
+        }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .contact-form button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .contact-form button:hover { background: var(--primary-dark); }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.6);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+        .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.5rem; }
+        footer p { font-size: 0.85rem; margin-top: 0.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-right { min-height: 300px; }
+            .nav-links { display: none; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .about-highlights { grid-template-columns: 1fr; }
+            .service-card { grid-template-columns: 60px 1fr; }
+            .service-icon { width: 60px; height: 60px; font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        Vista previa gratuita disenada para Backstage Salon por <a href="https://almadigitalservices.com">Alma Digital Services</a>
+    </div>
+
+    <nav>
+        <a href="#" class="nav-brand">Backstage Salon</a>
+        <ul class="nav-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#resenas">Resenas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-left">
+            <div class="hero-tag">Balayage Specialists — Medellin</div>
+            <h1>Medellin's Balayage Specialists — 37,000 Followers Can't Be Wrong</h1>
+            <p>Backstage Salon delivers world-class color transformations and styling from the heart of Medellin. Book your appointment with Sebastian and his expert team.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn-primary">Reserva Tu Cita</a>
+                <a href="#servicios" class="btn-outline">Ver Servicios</a>
+            </div>
+            <div class="hero-social">
+                <div class="social-stat">
+                    <div class="num">37K+</div>
+                    <div class="label">Instagram Followers</div>
+                </div>
+                <div class="social-stat">
+                    <div class="num">86%</div>
+                    <div class="label">Tasa de Recomendacion</div>
+                </div>
+                <div class="social-stat">
+                    <div class="num">4.8</div>
+                    <div class="label">Estrellas Facebook</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-right-content">
+                <div class="salon-icon">✂️</div>
+                <h2>Transformaciones de Color de Clase Mundial</h2>
+                <p>Desde balayage hasta correcciones de color, cada servicio es una obra de arte personalizada por Sebastian y su equipo experto.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Nuestros Servicios</h2>
+                <p>Transformaciones de cabello personalizadas con tecnicas de clase mundial en el corazon de Medellin.</p>
+            </div>
+            <div class="service-list">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <div>
+                        <h3>Balayage y Color</h3>
+                        <p>Tecnicas de pintura a mano para un look natural y radiante, como besado por el sol. Nuestra especialidad y firma del salon.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <div>
+                        <h3>Cortes y Styling</h3>
+                        <p>Cortes de precision para todo tipo de cabello y ocasion, adaptados a tu estilo personal.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <div>
+                        <h3>Keratina y Alisados</h3>
+                        <p>Resultados suaves y sin frizz que duran meses. Recupera el brillo y la manejabilidad de tu cabello.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👑</div>
+                    <div>
+                        <h3>Styling para Ocasiones Especiales</h3>
+                        <p>Looks dignos de alfombra roja para eventos, bodas y celebraciones especiales.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <div>
+                        <h3>Correccion de Color</h3>
+                        <p>Soluciones expertas para color danado o desigual. Restauramos la belleza de tu cabello.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <div class="about-content">
+            <h2>Sobre Backstage Salon</h2>
+            <p>Backstage Salon, liderado por Sebastian, se ha convertido en uno de los estudios de cabello mas buscados de Medellin, con mas de 37,000 seguidores en Instagram y un 86% de tasa de recomendacion en Facebook. Ubicado en el Edificio C13 sobre la Carrera 32, el salon es conocido por sus impresionantes trabajos de balayage y consultas personalizadas.</p>
+            <p>Ya seas local o estes visitando Medellin, Backstage entrega resultados de calidad salon en un ambiente elegante y profesional.</p>
+            <div class="about-highlights">
+                <div class="highlight">
+                    <div class="num">37K+</div>
+                    <div class="label">Seguidores en Instagram</div>
+                </div>
+                <div class="highlight">
+                    <div class="num">86%</div>
+                    <div class="label">Tasa de Recomendacion</div>
+                </div>
+                <div class="highlight">
+                    <div class="num">Carrera 32</div>
+                    <div class="label">Edificio C13, Medellin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="resenas">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Lo Que Dicen Nuestros Clientes</h2>
+                <p>Miles confian en Backstage Salon para sus transformaciones de cabello.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"El mejor balayage que he tenido en mi vida. Sebastian es un artista. El resultado fue exactamente lo que queria."</p>
+                    <div class="testimonial-author">— Cliente de Medellin</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Ambiente increible y atencion personalizada. Mi keratina quedo perfecta y duro mas de 3 meses."</p>
+                    <div class="testimonial-author">— Cliente Frecuente</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Vine de visita a Medellin y encontre este salon por Instagram. La experiencia fue de primer nivel."</p>
+                    <div class="testimonial-author">— Visitante Internacional</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Reserva Tu Cita — Book Your Appointment Now</h2>
+        <p>Transforma tu cabello con los especialistas en balayage de Medellin. Tu proxima cita esta a un clic de distancia.</p>
+        <a href="#contacto" class="btn-accent">Reservar Ahora</a>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contactanos</h3>
+                <p>Agenda tu cita con Sebastian y el equipo de Backstage Salon. Transformamos tu cabello, transformamos tu confianza.</p>
+                <div class="contact-detail">📍 Edificio C13, Carrera 32 — Medellin, Colombia</div>
+                <div class="contact-detail">📧 backstageprofessionnel@gmail.com</div>
+                <div class="contact-detail">📱 Siguenos: @backstagesalon</div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+                <input type="hidden" name="_subject" value="New inquiry from Backstage Salon preview">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Email" required>
+                <input type="tel" name="phone" placeholder="Tu Telefono">
+                <textarea name="message" placeholder="Cuentanos que servicio te interesa..." required></textarea>
+                <button type="submit">Reserva Tu Cita</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">Backstage Salon</div>
+        <p>Balayage, Color y Styling — Medellin, Colombia</p>
+        <div class="footer-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#resenas">Resenas</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <p>&copy; 2026 Backstage Salon. Todos los derechos reservados.</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem;">Vista previa disenada por <a href="https://almadigitalservices.com" style="color: #00b4d8; text-decoration: none;">Alma Digital Services</a></p>
+    </footer>
+</body>
+</html>
