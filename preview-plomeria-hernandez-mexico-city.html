@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plomeria Hernandez CDMX | Plomeros y Electricistas — 4.9 Estrellas</title>
+    <meta name="description" content="Plomeria y electricidad profesional en Ciudad de Mexico. 4.9 estrellas. Sergio y su equipo ofrecen servicio puntual, materiales de calidad y garantia. Llame ahora.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --dark: #141414;
+            --white: #ffffff;
+            --accent: #2563eb;
+            --accent-light: #3b82f6;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-400: #a3a3a3;
+            --gray-600: #525252;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); }
+
+        /* PREVIEW BANNER */
+        .preview-banner {
+            background: linear-gradient(90deg, #00b4d8, #0096c7);
+            color: #fff;
+            text-align: center;
+            padding: 0.9rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 200;
+            position: relative;
+        }
+        .preview-banner a { color: #fff; text-decoration: underline; }
+
+        /* NAV — Layout 6: Minimalist */
+        nav {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--gray-600); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.3s; letter-spacing: 0.5px; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* HERO — Minimalist large text */
+        .hero {
+            padding: 6rem 2rem 5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .hero-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            display: block;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 2rem;
+            color: var(--black);
+            letter-spacing: -2px;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            padding: 1.1rem 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        .btn-primary:hover { background: var(--accent); }
+
+        /* DIVIDER */
+        .divider {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .divider hr { border: none; border-top: 1px solid var(--gray-200); }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .stat-num { font-size: 3rem; font-weight: 700; color: var(--black); letter-spacing: -1px; }
+        .stat-label { font-size: 0.8rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 2px; margin-top: 0.5rem; }
+
+        /* SERVICES — Simple list */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--gray-100);
+        }
+        .section-container { max-width: 900px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 3rem;
+            letter-spacing: -1px;
+        }
+        .service-list { list-style: none; }
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .service-item:first-child { border-top: 1px solid var(--gray-200); }
+        .service-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            max-width: 400px;
+            text-align: right;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+
+        /* REVIEWS */
+        .reviews {
+            padding: 5rem 2rem;
+            background: var(--gray-100);
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .review-card {
+            background: var(--white);
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+        }
+        .stars { color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 3px; }
+        .review-card p { color: var(--gray-600); font-style: italic; line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
+        .review-author { font-weight: 600; font-size: 0.85rem; color: var(--black); }
+
+        /* CTA */
+        .cta {
+            background: var(--black);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+        .cta h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; letter-spacing: -1px; }
+        .cta p { font-size: 1.05rem; color: var(--gray-400); max-width: 500px; margin: 0 auto 2.5rem; }
+        .btn-white {
+            display: inline-block;
+            background: var(--white);
+            color: var(--black);
+            padding: 1.1rem 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        .btn-white:hover { background: var(--accent); color: var(--white); }
+
+        /* CONTACT */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.5px; }
+        .contact-info p { color: var(--gray-600); line-height: 1.8; margin-bottom: 1.5rem; }
+        .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: var(--black); font-weight: 500; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            background: var(--gray-100);
+        }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .contact-form button {
+            background: var(--black);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            letter-spacing: 0.5px;
+        }
+        .contact-form button:hover { background: var(--accent); }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            color: var(--gray-400);
+            padding: 2.5rem 2rem 1.5rem;
+            text-align: center;
+        }
+        .footer-brand { font-size: 1.1rem; color: var(--white); font-weight: 700; letter-spacing: -0.5px; }
+        footer p { font-size: 0.8rem; margin-top: 0.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; }
+        .footer-links a { color: var(--gray-400); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .stats { grid-template-columns: 1fr; gap: 2rem; }
+            .service-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .service-desc { text-align: left; max-width: 100%; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        Vista previa gratuita disenada para Plomeria Hernandez por <a href="https://almadigitalservices.com">Alma Digital Services</a>
+    </div>
+
+    <nav>
+        <a href="#" class="nav-brand">Plomeria Hernandez</a>
+        <ul class="nav-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#resenas">Resenas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <span class="hero-label">Plomeria y Electricidad — CDMX</span>
+        <h1>Plomeria y Electricidad de Confianza en CDMX</h1>
+        <p class="hero-sub">Plomeria Hernandez ofrece servicio profesional de plomeria y electricidad con diagnosticos precisos, materiales de calidad, y atencion personalizada en toda la Ciudad de Mexico.</p>
+        <a href="#contacto" class="btn-primary">Solicite Su Diagnostico Gratuito Hoy</a>
+    </section>
+
+    <div class="divider"><hr></div>
+
+    <div class="stats">
+        <div>
+            <div class="stat-num">4.9</div>
+            <div class="stat-label">Estrellas</div>
+        </div>
+        <div>
+            <div class="stat-num">CDMX</div>
+            <div class="stat-label">Cobertura</div>
+        </div>
+        <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Garantia</div>
+        </div>
+    </div>
+
+    <section class="services" id="servicios">
+        <div class="section-container">
+            <div class="section-label">Servicios</div>
+            <h2 class="section-title">Lo que hacemos</h2>
+            <ul class="service-list">
+                <li class="service-item">
+                    <span class="service-name">Plomeria General</span>
+                    <span class="service-desc">Instalaciones, reparaciones y mantenimiento residencial y comercial</span>
+                </li>
+                <li class="service-item">
+                    <span class="service-name">Servicios Electricos</span>
+                    <span class="service-desc">Instalaciones electricas, reparaciones y diagnosticos profesionales</span>
+                </li>
+                <li class="service-item">
+                    <span class="service-name">Reparacion de Fugas</span>
+                    <span class="service-desc">Deteccion y solucion rapida con garantia de satisfaccion</span>
+                </li>
+                <li class="service-item">
+                    <span class="service-name">Servicio de Emergencia</span>
+                    <span class="service-desc">Atencion puntual cuando mas lo necesita</span>
+                </li>
+                <li class="service-item">
+                    <span class="service-name">Mantenimiento Preventivo</span>
+                    <span class="service-desc">Evite problemas costosos con revisiones programadas</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <div class="about-content">
+            <div class="section-label">Nosotros</div>
+            <h2 class="section-title">Sobre Plomeria Hernandez</h2>
+            <p>Plomeria Hernandez, dirigida por Sergio Rodriguez Hernandez, se ha consolidado como una opcion confiable para resolver problemas de plomeria y electricidad en la Ciudad de Mexico.</p>
+            <p>Con calificacion de 4.9 estrellas, el equipo se distingue por su experiencia, puntualidad y uso de materiales de calidad. Cada trabajo incluye un diagnostico preciso y soluciones adaptadas a las necesidades del cliente, con garantia de satisfaccion.</p>
+        </div>
+    </section>
+
+    <section class="reviews" id="resenas">
+        <div class="section-container">
+            <div class="section-label">Resenas</div>
+            <h2 class="section-title">Nuestros clientes opinan</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p>"Sergio llego puntual, diagnostico el problema rapidamente y lo resolvio el mismo dia. Precios justos y trabajo de calidad."</p>
+                    <div class="review-author">— Cliente en CDMX</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p>"Excelente trabajo en la instalacion electrica. Profesional, limpio y con materiales de primera. Totalmente recomendado."</p>
+                    <div class="review-author">— Propietario</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p>"Tenia una fuga que otros no pudieron arreglar. Sergio la detecto y reparo en una visita. Gran servicio."</p>
+                    <div class="review-author">— Cliente Frecuente</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Solicite Su Diagnostico Gratuito Hoy</h2>
+        <p>Plomeria y electricidad profesional con garantia de satisfaccion en toda la Ciudad de Mexico.</p>
+        <a href="#contacto" class="btn-white">Contactar a Sergio</a>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contactenos</h3>
+                <p>Solicite su diagnostico gratuito. Sergio y su equipo estan listos para resolver su problema de plomeria o electricidad.</p>
+                <div class="contact-detail">📍 Ciudad de Mexico, Mexico</div>
+                <div class="contact-detail">📧 sergiorodr.hdez@gmail.com</div>
+                <div class="contact-detail">⭐ 4.9 estrellas — Servicio garantizado</div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+                <input type="hidden" name="_subject" value="New inquiry from Plomeria Hernandez preview">
+                <input type="text" name="name" placeholder="Su Nombre" required>
+                <input type="email" name="email" placeholder="Su Email" required>
+                <input type="tel" name="phone" placeholder="Su Telefono">
+                <textarea name="message" placeholder="Describa su problema..." required></textarea>
+                <button type="submit">Solicitar Diagnostico Gratuito</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">Plomeria Hernandez</div>
+        <p>Plomeria y Electricidad Profesional — Ciudad de Mexico</p>
+        <div class="footer-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#resenas">Resenas</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <p>&copy; 2026 Plomeria Hernandez. Todos los derechos reservados.</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem;">Vista previa disenada por <a href="https://almadigitalservices.com" style="color: #00b4d8; text-decoration: none;">Alma Digital Services</a></p>
+    </footer>
+</body>
+</html>
