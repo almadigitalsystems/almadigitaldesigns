@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Plug Electric | Licensed Electrician in Toronto, ON</title>
+<meta name="description" content="The Plug Electric provides licensed residential and commercial electrical services in Toronto, ON. Panel upgrades, EV chargers, emergency repairs, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:#000;background:#fff;}
+a{text-decoration:none;color:inherit;}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;background:#fff;border-bottom:1px solid #eee;}
+.nav .logo{font-family:'Inter',sans-serif;font-size:1.2rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#000;}
+.nav .logo span{color:#ffd60a;}
+.nav ul{list-style:none;display:flex;gap:2rem;}
+.nav ul li a{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#000;transition:color .3s;}
+.nav ul li a:hover{color:#ffd60a;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;}
+.hamburger span{width:26px;height:2px;background:#000;}
+.hero-min{min-height:95vh;display:flex;align-items:center;justify-content:center;padding:4rem 2rem;background:#000;text-align:center;}
+.hero-min h1{font-family:'Inter',sans-serif;font-size:3.5rem;font-weight:900;color:#fff;max-width:800px;line-height:1.1;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:-1px;}
+.hero-min h1 span{color:#ffd60a;}
+.hero-min p{font-size:1.1rem;color:#aaa;max-width:500px;margin:0 auto 2.5rem;line-height:1.7;font-weight:400;}
+.hero-min .btn{display:inline-block;background:#ffd60a;color:#000;padding:1rem 2.5rem;font-weight:800;font-size:.9rem;text-transform:uppercase;letter-spacing:1px;transition:background .3s;}
+.hero-min .btn:hover{background:#ffea00;}
+.spacer{height:80px;background:#fff;}
+section.services{padding:5rem 3rem;background:#fff;}
+.sec-head{margin-bottom:3rem;}
+.sec-head h2{font-size:2.5rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;color:#000;}
+.sec-head .line{width:60px;height:4px;background:#ffd60a;margin-top:.8rem;}
+.svc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0;max-width:800px;}
+.svc-item{padding:1.5rem 0;border-bottom:1px solid #eee;display:flex;align-items:center;gap:1rem;}
+.svc-item .dot{width:10px;height:10px;background:#ffd60a;flex-shrink:0;}
+.svc-item h3{font-size:1rem;font-weight:600;color:#000;}
+.about-min{padding:5rem 3rem;background:#f8f9fa;}
+.about-min h2{font-size:2.5rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin-bottom:1.5rem;}
+.about-min p{max-width:700px;line-height:2;color:#444;font-size:1rem;}
+.pain-section{padding:5rem 3rem;background:#000;color:#fff;}
+.pain-section h2{font-size:2.5rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin-bottom:2.5rem;}
+.pain-row{display:flex;gap:3rem;max-width:800px;}
+.pain-block{flex:1;border-left:3px solid #ffd60a;padding-left:1.5rem;}
+.pain-block h3{font-size:1.1rem;font-weight:700;color:#ffd60a;margin-bottom:.6rem;}
+.pain-block p{color:#bbb;line-height:1.8;font-size:.95rem;}
+.contact-min{padding:5rem 3rem;background:#fff;}
+.contact-min h2{font-size:2.5rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin-bottom:2rem;}
+.contact-form{max-width:500px;}
+form{display:flex;flex-direction:column;gap:1rem;}
+form input,form textarea{padding:1rem;border:none;border-bottom:2px solid #000;font-family:'Inter',sans-serif;font-size:.95rem;background:transparent;transition:border-color .3s;}
+form input:focus,form textarea:focus{border-color:#ffd60a;outline:none;}
+form textarea{resize:vertical;min-height:100px;}
+form button{background:#000;color:#fff;border:none;padding:1rem;font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:background .3s;}
+form button:hover{background:#333;}
+.cta-banner{background:#ffd60a;text-align:center;padding:4rem 2rem;}
+.cta-banner h2{font-size:2rem;font-weight:900;text-transform:uppercase;color:#000;margin-bottom:.5rem;}
+.cta-banner p{color:#333;margin-bottom:1.5rem;font-size:.95rem;}
+.cta-banner .btn-cta{display:inline-block;background:#000;color:#fff;padding:1rem 2.5rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;font-size:.85rem;transition:background .3s;}
+.cta-banner .btn-cta:hover{background:#333;}
+footer{background:#000;color:#666;text-align:center;padding:2rem;}
+footer p{font-size:.8rem;margin-bottom:.3rem;}
+footer a{color:#ffd60a;text-decoration:underline;}
+@media(max-width:768px){
+.nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem 2rem;gap:1rem;border-bottom:1px solid #eee;z-index:50;}
+.nav ul.open{display:flex;}
+.nav{position:relative;padding:1.2rem 1.5rem;}
+.hamburger{display:flex;}
+.hero-min h1{font-size:2.2rem;}
+.hero-min{padding:3rem 1.5rem;}
+section.services,.about-min,.pain-section,.contact-min{padding:3rem 1.5rem;}
+.svc-list{grid-template-columns:1fr;}
+.pain-row{flex-direction:column;gap:2rem;}
+.sec-head h2,.about-min h2,.pain-section h2,.contact-min h2{font-size:1.8rem;}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="logo">The <span>Plug</span> Electric</div>
+<button class="hamburger" onclick="document.querySelector('.nav ul').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#pain">Why This Matters</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero-min">
+<div>
+<h1>Toronto&rsquo;s Electrician That <span>Picks Up the Phone</span> &mdash; And Gets the Job Done</h1>
+<p>Licensed electrical services for homes and businesses across the GTA. Fast response, clean work, fair pricing &mdash; every time.</p>
+<a href="#contact" class="btn">Request a Free Electrical Quote</a>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="sec-head">
+<h2>Services</h2>
+<div class="line"></div>
+</div>
+<div class="svc-list">
+<div class="svc-item"><div class="dot"></div><h3>Residential Electrical Installations</h3></div>
+<div class="svc-item"><div class="dot"></div><h3>Commercial Wiring &amp; Upgrades</h3></div>
+<div class="svc-item"><div class="dot"></div><h3>Panel Upgrades &amp; Circuit Breakers</h3></div>
+<div class="svc-item"><div class="dot"></div><h3>Lighting Design &amp; Installation</h3></div>
+<div class="svc-item"><div class="dot"></div><h3>EV Charger Installation</h3></div>
+<div class="svc-item"><div class="dot"></div><h3>Emergency Electrical Repairs</h3></div>
+</div>
+</section>
+
+<section class="about-min" id="about">
+<h2>About The Plug Electric</h2>
+<p>The Plug Electric, led by Billy, provides licensed electrical services across Toronto and the Greater Toronto Area. From panel upgrades and new construction wiring to EV charger installations and emergency repairs, The Plug Electric delivers professional, code-compliant work that homeowners and businesses can rely on. Fast response times and transparent pricing are standard &mdash; not extras.</p>
+</section>
+
+<section class="pain-section" id="pain">
+<h2>Why You Need a Website</h2>
+<div class="pain-row">
+<div class="pain-block">
+<h3>No Website At All</h3>
+<p>Without any online presence, Toronto homeowners searching for electricians cannot find The Plug Electric. Every day without a site is lost business.</p>
+</div>
+<div class="pain-block">
+<h3>Cannot Showcase Credentials</h3>
+<p>Licensed, insured electricians need a website to display certifications and build trust before customers call.</p>
+</div>
+</div>
+</section>
+
+<section class="contact-min" id="contact">
+<h2>Get In Touch</h2>
+<div class="contact-form">
+<form action="https://formspree.io/f/xojppajv" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone">
+<textarea name="message" placeholder="What do you need?"></textarea>
+<button type="submit">Send</button>
+</form>
+</div>
+</section>
+
+<section class="cta-banner">
+<h2>Claim Your Free Redesign</h2>
+<p>Get a professional website that matches your professional work.</p>
+<a href="mailto:desk@almawebcreative.com" class="btn-cta">Get Started</a>
+</section>
+
+<footer>
+<p>&copy; 2026 The Plug Electric &mdash; Toronto, Ontario, Canada</p>
+<p>Preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a></p>
+</footer>
+</body>
+</html>
