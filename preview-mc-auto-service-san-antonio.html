@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MC Auto Service | Reliable Auto Repair in San Antonio, TX</title>
+<meta name="description" content="Affordable, honest auto repair in San Antonio, TX. MC Auto Service offers oil changes, brake service, engine diagnostics, and more. Call today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #1c1c1c; color: #f5f5f5; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* Navbar */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  background: rgba(28, 28, 28, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232, 101, 26, 0.15);
+  transition: background 0.3s;
+}
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 1.5rem; color: #f5f5f5;
+  text-decoration: none; letter-spacing: -0.5px;
+}
+.navbar-brand span { color: #e8651a; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: #b0b0b0; text-decoration: none; font-size: 0.9rem;
+  font-weight: 500; letter-spacing: 0.3px; transition: color 0.3s;
+  text-transform: uppercase;
+}
+.nav-links a:hover { color: #e8651a; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.nav-toggle span {
+  display: block; width: 26px; height: 2px; background: #f5f5f5;
+  margin: 6px 0; transition: all 0.3s;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 8rem 2rem 4rem;
+  position: relative; overflow: hidden;
+  background: radial-gradient(ellipse at 30% 80%, rgba(232, 101, 26, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 20%, rgba(232, 101, 26, 0.05) 0%, transparent 50%),
+              linear-gradient(180deg, #1c1c1c 0%, #111111 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 100px,
+    rgba(232, 101, 26, 0.02) 100px, rgba(232, 101, 26, 0.02) 101px
+  );
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; max-width: 900px; }
+.hero-badge {
+  display: inline-block; padding: 0.5rem 1.5rem; margin-bottom: 2rem;
+  border: 1px solid rgba(232, 101, 26, 0.4); border-radius: 50px;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: #e8651a;
+  background: rgba(232, 101, 26, 0.08);
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 900; line-height: 1.05;
+  margin-bottom: 1.75rem; letter-spacing: -2px;
+  color: #f5f5f5;
+}
+.hero h1 em {
+  font-style: normal; color: #e8651a;
+  position: relative;
+}
+.hero h1 em::after {
+  content: '';
+  position: absolute; bottom: 0.05em; left: 0; right: 0;
+  height: 4px; background: #e8651a; opacity: 0.3;
+  border-radius: 2px;
+}
+.hero p {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  color: #999; max-width: 650px; margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+.btn-primary {
+  display: inline-block; padding: 1.15rem 3rem;
+  background: #e8651a; color: #fff; font-size: 1rem;
+  font-weight: 700; text-decoration: none; border: none;
+  border-radius: 6px; cursor: pointer;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 25px rgba(232, 101, 26, 0.35);
+}
+.btn-primary:hover {
+  background: #d45a15; transform: translateY(-2px);
+  box-shadow: 0 8px 35px rgba(232, 101, 26, 0.45);
+}
+.hero-divider {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+  background: linear-gradient(to bottom, transparent, #1c1c1c);
+}
+
+/* Section shared */
+section { padding: 6rem 2rem; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-label {
+  display: inline-block; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; color: #e8651a;
+  margin-bottom: 1rem;
+}
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800; letter-spacing: -1px;
+  color: #f5f5f5;
+}
+.section-header p {
+  color: #888; font-size: 1.1rem; max-width: 550px;
+  margin: 1rem auto 0; line-height: 1.7;
+}
+
+/* Services */
+.services { background: #1c1c1c; }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem; max-width: 1100px; margin: 0 auto;
+}
+.service-card {
+  background: linear-gradient(145deg, #252525, #1f1f1f);
+  border: 1px solid #333; border-radius: 12px;
+  padding: 2.5rem 2rem; text-align: center;
+  transition: all 0.4s ease; position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: #e8651a; transform: scaleX(0);
+  transition: transform 0.4s ease; transform-origin: left;
+}
+.service-card:hover { border-color: #e8651a; transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon {
+  font-size: 2.5rem; margin-bottom: 1.25rem;
+  display: block;
+}
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 700;
+  margin-bottom: 0.75rem; color: #f5f5f5;
+}
+.service-card p {
+  font-size: 0.9rem; color: #888; line-height: 1.6;
+}
+
+/* About */
+.about {
+  background: linear-gradient(180deg, #1c1c1c 0%, #222 50%, #1c1c1c 100%);
+}
+.about-container {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: center;
+}
+.about-visual {
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+.about-stat {
+  background: linear-gradient(135deg, #252525, #1f1f1f);
+  border: 1px solid #333; border-radius: 10px;
+  padding: 1.75rem; display: flex; align-items: center; gap: 1.25rem;
+  transition: border-color 0.3s;
+}
+.about-stat:hover { border-color: #e8651a; }
+.stat-icon {
+  font-size: 2rem; flex-shrink: 0;
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(232, 101, 26, 0.1); border-radius: 10px;
+}
+.stat-text h4 { font-size: 1rem; font-weight: 700; color: #f5f5f5; margin-bottom: 0.2rem; }
+.stat-text p { font-size: 0.85rem; color: #888; }
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800; letter-spacing: -1px; margin-bottom: 1.5rem;
+}
+.about-text h2 span { color: #e8651a; }
+.about-text p {
+  color: #999; font-size: 1.05rem; line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+.about-text .bilingual-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(232, 101, 26, 0.1); border: 1px solid rgba(232, 101, 26, 0.3);
+  padding: 0.6rem 1.25rem; border-radius: 8px;
+  font-size: 0.85rem; font-weight: 600; color: #e8651a;
+  margin-top: 0.5rem;
+}
+
+/* Contact */
+.contact { background: #1c1c1c; }
+.contact-container {
+  max-width: 650px; margin: 0 auto;
+}
+.contact-form {
+  background: linear-gradient(145deg, #252525, #1f1f1f);
+  border: 1px solid #333; border-radius: 14px;
+  padding: 3rem;
+}
+.form-group { margin-bottom: 1.5rem; }
+.form-group label {
+  display: block; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: #999; margin-bottom: 0.5rem;
+}
+.form-group input, .form-group textarea {
+  width: 100%; padding: 0.95rem 1.25rem;
+  background: #1c1c1c; border: 1px solid #444;
+  border-radius: 8px; color: #f5f5f5;
+  font-family: 'Inter', sans-serif; font-size: 1rem;
+  transition: border-color 0.3s;
+  outline: none;
+}
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #e8651a;
+}
+.form-group textarea { resize: vertical; min-height: 130px; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: #555; }
+.form-submit {
+  width: 100%; padding: 1.1rem;
+  background: #e8651a; color: #fff;
+  font-size: 0.95rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  border: none; border-radius: 8px; cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(232, 101, 26, 0.3);
+}
+.form-submit:hover {
+  background: #d45a15; transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(232, 101, 26, 0.4);
+}
+
+/* Footer */
+.footer {
+  background: #111; border-top: 1px solid #2a2a2a;
+  padding: 3rem 2rem 2rem; text-align: center;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 900; color: #f5f5f5;
+  margin-bottom: 0.75rem;
+}
+.footer-brand span { color: #e8651a; }
+.footer-location {
+  color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;
+}
+.footer-bilingual {
+  color: #e8651a; font-size: 0.85rem; font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.footer-divider {
+  height: 1px; background: #2a2a2a;
+  max-width: 400px; margin: 0 auto 1.5rem;
+}
+.footer-copy {
+  color: #555; font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.footer-powered {
+  color: #444; font-size: 0.7rem;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-container { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-visual { order: 2; }
+}
+@media (max-width: 700px) {
+  .navbar { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-links.active {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(28, 28, 28, 0.98);
+    padding: 1.5rem 2rem; gap: 1.25rem;
+    border-bottom: 1px solid #333;
+  }
+  .nav-toggle { display: block; }
+  .services-grid { grid-template-columns: 1fr; }
+  .hero { padding: 7rem 1.5rem 3rem; }
+  .contact-form { padding: 2rem 1.5rem; }
+  section { padding: 4rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <a href="#" class="navbar-brand"><span>MC</span> Auto Service</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">San Antonio, TX</div>
+    <h1>Honest Auto Repair You Can <em>Count On</em> in San Antonio</h1>
+    <p>From oil changes to engine diagnostics &mdash; MC Auto Service keeps San Antonio drivers on the road with reliable, affordable repairs.</p>
+    <a href="#contact" class="btn-primary">Schedule Your Service Today</a>
+  </div>
+  <div class="hero-divider"></div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">What We Do</div>
+    <h2>Our Services</h2>
+    <p>Quality repairs and maintenance to keep your vehicle running strong.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Wrench">&#x1F527;</span>
+      <h3>Engine Diagnostics &amp; Repair</h3>
+      <p>Advanced diagnostics to identify issues fast, plus expert engine repair you can trust.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Oil drum">&#x1F6E2;&#xFE0F;</span>
+      <h3>Oil Changes &amp; Fluid Services</h3>
+      <p>Keep your engine protected with routine oil changes and complete fluid maintenance.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Nut and bolt">&#x1F529;</span>
+      <h3>Brake Inspections &amp; Replacement</h3>
+      <p>Thorough brake inspections and reliable replacements to keep you safe on the road.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Thermometer">&#x1F321;&#xFE0F;</span>
+      <h3>A/C &amp; Heating Repair</h3>
+      <p>Stay comfortable year-round with expert climate control diagnostics and repair.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" role="img" aria-label="Gear">&#x2699;&#xFE0F;</span>
+      <h3>General Maintenance &amp; Tune-Ups</h3>
+      <p>Preventive maintenance and tune-ups to extend the life of your vehicle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="about-container">
+    <div class="about-text">
+      <div class="section-label">About Us</div>
+      <h2>Built on <span>Honesty</span> &amp; Quality Workmanship</h2>
+      <p>MC Auto Service is a trusted auto repair shop serving the San Antonio community. As a newer business built on honesty and quality workmanship, MC Auto Service handles everything from routine maintenance to complex engine work.</p>
+      <p>We believe every driver deserves a mechanic they can trust. No surprises, no upsells &mdash; just straightforward service and fair pricing.</p>
+      <div class="bilingual-badge">&#x1F30E; Bilingual Service Available &mdash; Se Habla Espa&ntilde;ol</div>
+    </div>
+    <div class="about-visual">
+      <div class="about-stat">
+        <div class="stat-icon">&#x1F3AF;</div>
+        <div class="stat-text">
+          <h4>Honest Pricing</h4>
+          <p>Transparent quotes with no hidden fees</p>
+        </div>
+      </div>
+      <div class="about-stat">
+        <div class="stat-icon">&#x1F527;</div>
+        <div class="stat-text">
+          <h4>Full-Service Shop</h4>
+          <p>From oil changes to engine overhauls</p>
+        </div>
+      </div>
+      <div class="about-stat">
+        <div class="stat-icon">&#x1F91D;</div>
+        <div class="stat-text">
+          <h4>Community Focused</h4>
+          <p>Proudly serving San Antonio drivers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="section-header">
+    <div class="section-label">Get In Touch</div>
+    <h2>Schedule Your Service</h2>
+    <p>Ready to get your vehicle serviced? Send us a message and we will get back to you promptly.</p>
+  </div>
+  <div class="contact-container">
+    <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="John Smith" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(210) 555-1234">
+      </div>
+      <div class="form-group">
+        <label for="message">How Can We Help?</label>
+        <textarea id="message" name="message" placeholder="Tell us about your vehicle and the service you need..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand"><span>MC</span> Auto Service</div>
+  <div class="footer-location">San Antonio, TX</div>
+  <div class="footer-bilingual">Bilingual Service Available</div>
+  <div class="footer-divider"></div>
+  <div class="footer-copy">&copy; 2026 MC Auto Service. All rights reserved.</div>
+  <div class="footer-powered">Powered by Alma Digital</div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>
