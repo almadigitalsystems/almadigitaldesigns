@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uneek Nails | Custom Nail Art &amp; Salon in Memphis, TN</title>
+<meta name="description" content="Stand out with custom nail art, acrylics, and gel manicures at Uneek Nails in Memphis, TN. Creative designs that are uniquely yours. Book today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--lavender:#e8d5f5;--plum:#5b2c6f;--blush:#f8e8ee;--white:#ffffff;--rose-gold:#b76e79;
+--font-body:'Inter',sans-serif;--font-heading:'Playfair Display',serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:#3a3a3a;background:var(--white);line-height:1.6;overflow-x:hidden}
+
+/* --- Navbar --- */
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(232,213,245,0.4);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+.navbar.scrolled{box-shadow:0 2px 20px rgba(91,44,111,0.08)}
+.nav-brand{font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:var(--plum);text-decoration:none;letter-spacing:-0.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:#555;font-size:.875rem;font-weight:500;letter-spacing:.03em;text-transform:uppercase;transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--rose-gold);transition:width .3s}
+.nav-links a:hover{color:var(--plum)}
+.nav-links a:hover::after{width:100%}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--plum);border-radius:2px;transition:transform .3s}
+
+/* --- Hero Split Screen --- */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 4rem 4rem;background:var(--white)}
+.hero-left h1{font-family:var(--font-heading);font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;color:var(--plum);line-height:1.15;margin-bottom:1.25rem;letter-spacing:-0.02em}
+.hero-left p{font-size:1.125rem;color:#666;line-height:1.7;margin-bottom:2.5rem;max-width:480px;font-weight:300}
+.cta-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--plum);color:var(--white);padding:1rem 2.25rem;border:none;border-radius:50px;font-size:1rem;font-weight:600;font-family:var(--font-body);cursor:pointer;text-decoration:none;transition:all .35s;box-shadow:0 4px 20px rgba(91,44,111,0.25);letter-spacing:.02em}
+.cta-btn:hover{background:var(--rose-gold);box-shadow:0 6px 28px rgba(183,110,121,0.3);transform:translateY(-2px)}
+.cta-btn svg{width:18px;height:18px;transition:transform .3s}
+.cta-btn:hover svg{transform:translateX(3px)}
+
+.hero-right{position:relative;background:linear-gradient(135deg,var(--lavender) 0%,var(--blush) 50%,rgba(183,110,121,0.15) 100%);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-right::before{content:'';position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(183,110,121,0.2) 0%,transparent 70%);top:15%;right:10%;animation:float 8s ease-in-out infinite}
+.hero-right::after{content:'';position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(91,44,111,0.1) 0%,transparent 70%);bottom:20%;left:10%;animation:float 6s ease-in-out infinite reverse}
+.hero-visual{position:relative;z-index:1;text-align:center}
+.hero-icon{font-size:8rem;filter:drop-shadow(0 8px 24px rgba(91,44,111,0.15));animation:float 4s ease-in-out infinite}
+.hero-badge{display:inline-block;margin-top:2rem;padding:.75rem 1.75rem;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);border-radius:50px;font-family:var(--font-heading);font-style:italic;color:var(--plum);font-size:1.1rem;border:1px solid rgba(91,44,111,0.1)}
+
+/* decorative dots */
+.dot-pattern{position:absolute;top:2rem;right:2rem;display:grid;grid-template-columns:repeat(5,8px);gap:10px;opacity:.25}
+.dot-pattern span{width:8px;height:8px;border-radius:50%;background:var(--plum)}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+
+/* --- Section Styles --- */
+section{padding:5rem 2rem}
+.section-label{font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--rose-gold);margin-bottom:.75rem;display:block}
+.section-title{font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--plum);margin-bottom:1rem;letter-spacing:-0.02em}
+.section-subtitle{font-size:1.05rem;color:#777;max-width:560px;line-height:1.7;font-weight:300}
+
+/* --- Services --- */
+.services{background:linear-gradient(180deg,var(--white) 0%,var(--blush) 100%)}
+.services-header{text-align:center;margin-bottom:3rem}
+.services-header .section-subtitle{margin:0 auto}
+.services-scroll{display:flex;gap:1.5rem;overflow-x:auto;padding:1rem .5rem 2rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.services-scroll::-webkit-scrollbar{display:none}
+.service-card{flex:0 0 260px;scroll-snap-align:start;background:var(--white);border-radius:20px;padding:2rem 1.5rem;text-align:center;border:1px solid rgba(232,213,245,0.5);transition:all .35s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--lavender),var(--rose-gold));opacity:0;transition:opacity .35s}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(91,44,111,0.1);border-color:var(--lavender)}
+.service-card:hover::before{opacity:1}
+.service-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.service-card h3{font-family:var(--font-heading);font-size:1.15rem;color:var(--plum);margin-bottom:.5rem;font-weight:600}
+.service-card p{font-size:.875rem;color:#888;line-height:1.6;font-weight:300}
+
+/* --- About --- */
+.about{background:var(--white)}
+.about-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:start}
+.about-accent{width:4px;border-radius:4px;background:linear-gradient(180deg,var(--plum),var(--rose-gold),var(--lavender));min-height:100%;justify-self:center}
+.about-content .section-label,.about-content .section-title{text-align:left}
+.about-text{font-size:1.1rem;color:#555;line-height:1.85;font-weight:300;margin-top:1.25rem}
+.about-text strong{color:var(--plum);font-weight:600}
+
+/* --- Contact --- */
+.contact{background:linear-gradient(180deg,var(--blush) 0%,var(--lavender) 100%)}
+.contact-inner{max-width:600px;margin:0 auto;text-align:center}
+.contact-form{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.25rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.contact-form input,.contact-form textarea{width:100%;padding:1rem 1.25rem;border:1px solid rgba(91,44,111,0.15);border-radius:14px;font-family:var(--font-body);font-size:.95rem;background:var(--white);color:#3a3a3a;transition:border-color .3s,box-shadow .3s;outline:none}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#b0b0b0;font-weight:300}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--plum);box-shadow:0 0 0 3px rgba(91,44,111,0.08)}
+.contact-form textarea{resize:vertical;min-height:130px}
+.submit-btn{align-self:center;background:var(--plum);color:var(--white);padding:1rem 3rem;border:none;border-radius:50px;font-size:1rem;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:all .35s;box-shadow:0 4px 20px rgba(91,44,111,0.2);letter-spacing:.02em}
+.submit-btn:hover{background:var(--rose-gold);box-shadow:0 6px 28px rgba(183,110,121,0.3);transform:translateY(-2px)}
+
+/* --- Footer --- */
+.footer{background:var(--plum);color:rgba(255,255,255,0.8);padding:3rem 2rem 2rem;text-align:center}
+.footer-brand{font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.footer-location{font-size:.9rem;margin-bottom:1.5rem;font-weight:300}
+.footer-divider{width:60px;height:2px;background:var(--rose-gold);margin:0 auto 1.5rem;border-radius:2px}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,0.5);margin-bottom:.25rem}
+.footer-powered{font-size:.7rem;color:rgba(255,255,255,0.35);font-weight:300}
+
+/* --- Responsive --- */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:6rem 2rem 3rem;text-align:center;align-items:center}
+  .hero-left p{margin-left:auto;margin-right:auto}
+  .hero-right{min-height:340px}
+  .about-inner{grid-template-columns:1fr;gap:0}
+  .about-accent{width:60px;height:4px;min-height:auto;background:linear-gradient(90deg,var(--plum),var(--rose-gold),var(--lavender));margin-bottom:1.5rem}
+  .about-content .section-label,.about-content .section-title{text-align:center}
+  .about-text{text-align:center}
+}
+@media(max-width:640px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(255,255,255,0.98);backdrop-filter:blur(12px);padding:1.5rem 2rem;gap:1.25rem;border-bottom:1px solid var(--lavender);box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:flex}
+  .hero-left{padding:5rem 1.5rem 2.5rem}
+  .hero-left h1{font-size:2rem}
+  .form-row{grid-template-columns:1fr}
+  .service-card{flex:0 0 220px;padding:1.5rem 1.25rem}
+  section{padding:3.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-brand">Uneek Nails</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <h1>Custom Nail Art That Turns Heads in Memphis</h1>
+    <p>From bold designs to flawless acrylics &mdash; Uneek Nails brings your vision to life, one nail at a time.</p>
+    <a href="#contact" class="cta-btn">
+      Book Your Appointment Now
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <div class="dot-pattern">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-visual">
+      <span class="hero-icon" aria-hidden="true">&#x1F485;</span>
+      <div class="hero-badge">Uniquely Yours</div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="services-header">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">Every set is a masterpiece. Explore the services that keep Memphis coming back.</p>
+  </div>
+  <div class="services-scroll">
+    <div class="service-card">
+      <span class="service-icon" aria-hidden="true">&#x1F3A8;</span>
+      <h3>Custom Nail Art &amp; Designs</h3>
+      <p>Hand-painted artwork and intricate designs tailored to your personal style and vision.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" aria-hidden="true">&#x2728;</span>
+      <h3>Acrylic Full Sets &amp; Fills</h3>
+      <p>Durable, flawless acrylic nails sculpted to perfection with long-lasting results.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" aria-hidden="true">&#x1F48E;</span>
+      <h3>Gel Manicures &amp; Pedicures</h3>
+      <p>High-shine gel finishes for hands and feet that stay gorgeous for weeks.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" aria-hidden="true">&#x1F6E0;&#xFE0F;</span>
+      <h3>Nail Repair &amp; Maintenance</h3>
+      <p>Expert repair and upkeep to keep your nails healthy, strong, and beautiful.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon" aria-hidden="true">&#x1F451;</span>
+      <h3>Special Occasion Nails</h3>
+      <p>Show-stopping designs for weddings, proms, birthdays, and every celebration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-accent"></div>
+    <div class="about-content">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">About Uneek Nails</h2>
+      <p class="about-text">
+        <strong>Uneek Nails</strong> is Memphis's go-to destination for one-of-a-kind nail art and flawless nail care. Owner <strong>Tasha Powell</strong> has built a reputation for creative designs that stand out &mdash; from intricate hand-painted art to elegant gel sets. Every client leaves with nails that are uniquely theirs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title">Book Your Appointment</h2>
+    <p class="section-subtitle" style="margin:0 auto">Ready for nails that are uniquely you? Send us a message and we will get you scheduled.</p>
+    <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <input type="text" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="Tell us about the look you want..." required></textarea>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand">Uneek Nails</div>
+  <div class="footer-location">Memphis, TN</div>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">&copy; 2026 Uneek Nails. All rights reserved.</p>
+  <p class="footer-powered">Powered by Alma Digital</p>
+</footer>
+
+<script>
+// Navbar scroll effect
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>20)});
+
+// Mobile nav toggle
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.getElementById('navLinks');
+navToggle.addEventListener('click',()=>{navLinks.classList.toggle('open')});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open')}));
+
+// Intersection Observer for fade-in
+const observerOptions={threshold:0.15,rootMargin:'0px 0px -40px 0px'};
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},observerOptions);
+document.querySelectorAll('.service-card, .about-inner, .contact-inner').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .6s ease, transform .6s ease';observer.observe(el)});
+</script>
+</body>
+</html>
