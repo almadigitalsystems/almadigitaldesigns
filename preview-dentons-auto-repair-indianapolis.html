@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dentons Auto Repair LLC | Trusted Auto Repair in Indianapolis, IN</title>
+<meta name="description" content="Dentons Auto Repair LLC offers reliable engine diagnostics, brake service, oil changes, and more in Indianapolis, IN. Schedule your appointment today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--dark:#1a1a1a;--red:#8b1a1a;--red-light:#b22222;--gray:#2a2a2a;--light:#f0f0f0;--white:#ffffff}
+body{font-family:'Inter',sans-serif;color:var(--white);background:var(--dark)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{background:rgba(26,26,26,0.95);padding:16px 0;position:fixed;width:100%;top:0;z-index:100;border-bottom:2px solid var(--red)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--white)}
+.logo span{color:var(--red-light)}
+nav ul{list-style:none;display:flex;gap:28px}
+nav a{color:var(--light);text-decoration:none;font-weight:600;font-size:0.95rem;transition:color 0.3s}
+nav a:hover{color:var(--red-light)}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 80px;background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 40%,#2d1111 100%)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.15;max-width:900px;margin:0 auto 24px}
+.hero h1 span{color:var(--red-light)}
+.hero p{font-size:clamp(1rem,2vw,1.25rem);color:#b0b0b0;max-width:640px;margin:0 auto 40px;line-height:1.7}
+.btn{display:inline-block;padding:16px 40px;background:var(--red-light);color:var(--white);text-decoration:none;font-weight:700;font-size:1.05rem;border-radius:4px;transition:all 0.3s;border:2px solid var(--red-light)}
+.btn:hover{background:transparent;color:var(--red-light)}
+.services{padding:100px 0;background:var(--gray)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:16px}
+.section-subtitle{text-align:center;color:#999;font-size:1.05rem;margin-bottom:60px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.service-card{background:var(--dark);padding:40px 30px;border-radius:8px;border-top:3px solid var(--red-light);transition:transform 0.3s}
+.service-card:hover{transform:translateY(-5px)}
+.service-icon{font-size:2.2rem;margin-bottom:16px}
+.service-card h3{font-size:1.15rem;margin-bottom:10px;font-weight:700}
+.service-card p{color:#999;font-size:0.95rem;line-height:1.6}
+.about{padding:100px 0;background:var(--dark)}
+.about .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-content h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:24px}
+.about-content p{color:#b0b0b0;line-height:1.8;font-size:1.05rem;margin-bottom:24px}
+.about-visual{background:linear-gradient(135deg,var(--red),#0d0d0d);border-radius:12px;padding:60px;display:flex;align-items:center;justify-content:center;min-height:350px}
+.about-visual .stat{text-align:center}
+.about-visual .stat h3{font-family:'Playfair Display',serif;font-size:3rem;color:var(--red-light)}
+.about-visual .stat p{color:#ccc;margin-top:8px;font-size:1.1rem}
+.pain{padding:80px 0;background:var(--gray)}
+.pain .container{max-width:800px}
+.pain h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);text-align:center;margin-bottom:40px}
+.pain-item{background:var(--dark);padding:30px;border-radius:8px;margin-bottom:20px;border-left:4px solid var(--red-light)}
+.pain-item h3{font-size:1.1rem;margin-bottom:8px;color:var(--red-light)}
+.pain-item p{color:#b0b0b0;line-height:1.6}
+.contact{padding:100px 0;background:var(--dark);text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:16px}
+.contact p.sub{color:#999;margin-bottom:40px;font-size:1.05rem}
+.contact-info{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:40px}
+.contact-info div{color:#b0b0b0;font-size:1rem}
+.contact-info strong{color:var(--white);display:block;margin-bottom:4px}
+.cta-banner{padding:80px 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-light) 100%);text-align:center}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:16px}
+.cta-banner p{font-size:1.1rem;margin-bottom:32px;opacity:0.9}
+.btn-white{display:inline-block;padding:16px 40px;background:var(--white);color:var(--red);text-decoration:none;font-weight:700;font-size:1.05rem;border-radius:4px;transition:all 0.3s}
+.btn-white:hover{background:transparent;color:var(--white);outline:2px solid var(--white)}
+footer{padding:40px 0;background:#0d0d0d;text-align:center;color:#666;font-size:0.85rem}
+footer .powered{margin-top:12px;color:#555;font-size:0.8rem}
+footer .powered a{color:var(--red-light);text-decoration:none}
+input,textarea{font-family:'Inter',sans-serif}
+@media(max-width:768px){
+nav ul{display:none}
+.services-grid{grid-template-columns:1fr}
+.about .container{grid-template-columns:1fr}
+.contact-info{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo">Dentons <span>Auto Repair</span></div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+<section class="hero"><div class="container"><h1>Indianapolis Trusts Dentons Auto Repair &#8212; <span>Now It&#8217;s Time the Internet Did Too</span></h1><p>Reliable auto repair from a team that treats every vehicle like their own. Book online, see services upfront, and get back on the road faster.</p><a href="#contact" class="btn">Schedule Your Repair Today</a></div></section>
+<section class="services" id="services"><div class="container"><h2 class="section-title">Our Services</h2><p class="section-subtitle">Complete auto care under one roof in Indianapolis</p><div class="services-grid"><div class="service-card"><div class="service-icon">&#128295;</div><h3>Engine Diagnostics &amp; Repair</h3><p>Advanced diagnostic equipment to pinpoint issues fast and get your engine running at peak performance.</p></div><div class="service-card"><div class="service-icon">&#128736;</div><h3>Brake Service &amp; Replacement</h3><p>Complete brake inspections, pad replacements, rotor resurfacing, and full brake system repairs.</p></div><div class="service-card"><div class="service-icon">&#9881;</div><h3>Oil Changes &amp; Routine Maintenance</h3><p>Keep your vehicle running smoothly with regular oil changes, filter replacements, and fluid checks.</p></div><div class="service-card"><div class="service-icon">&#9879;</div><h3>Transmission Repair</h3><p>Expert transmission diagnostics, fluid services, and full rebuilds for automatic and manual transmissions.</p></div><div class="service-card"><div class="service-icon">&#128663;</div><h3>Tire Sales &amp; Alignment</h3><p>New tire installation, wheel alignment, rotation, and balancing to extend tire life and improve handling.</p></div><div class="service-card"><div class="service-icon">&#10052;</div><h3>AC &amp; Heating System Repair</h3><p>Stay comfortable year-round with professional AC recharge, heating repair, and climate system service.</p></div></div></div></section>
+<section class="about" id="about"><div class="container"><div class="about-content"><h2>About Dentons Auto Repair</h2><p>Dentons Auto Repair LLC has built a loyal customer base in Indianapolis through honest work, fair pricing, and real mechanical expertise. Led by Terry Denton, the shop delivers dependable service for everything from routine oil changes to complex engine diagnostics.</p><p>When your car needs attention, Dentons gets you back on the road &#8212; no guesswork, no runaround.</p><a href="#contact" class="btn">Get In Touch</a></div><div class="about-visual"><div class="stat"><h3>Indianapolis, IN</h3><p>Trusted Local Auto Repair</p></div></div></div></section>
+<section class="pain"><div class="container"><h2>We Understand Your Challenges</h2><div class="pain-item"><h3>No Online Presence</h3><p>Without a website, potential customers searching for auto repair in Indianapolis cannot find Dentons online. You are losing business to competitors who show up in search results.</p></div><div class="pain-item"><h3>Customers Cannot Book or Learn About You Online</h3><p>Today&#8217;s drivers expect to see your services, read reviews, and contact you from their phone. Without that, they move on to the next shop that makes it easy.</p></div></div></section>
+<section class="contact" id="contact"><div class="container"><h2>Contact Dentons Auto Repair</h2><p class="sub">Ready to schedule your repair? Reach out today.</p><div class="contact-info"><div><strong>Location</strong>Indianapolis, Indiana</div><div><strong>Business</strong>Dentons Auto Repair LLC</div><div><strong>Owner</strong>Terry Denton</div></div><form action="https://formspree.io/f/xojppajv" method="POST" style="max-width:500px;margin:0 auto;text-align:left"><input type="hidden" name="_subject" value="New lead from Dentons Auto Repair preview"><input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:14px;margin-bottom:12px;background:#2a2a2a;border:1px solid #444;color:#fff;border-radius:4px;font-size:1rem"><input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:14px;margin-bottom:12px;background:#2a2a2a;border:1px solid #444;color:#fff;border-radius:4px;font-size:1rem"><textarea name="message" placeholder="How can we help?" rows="4" required style="width:100%;padding:14px;margin-bottom:12px;background:#2a2a2a;border:1px solid #444;color:#fff;border-radius:4px;font-size:1rem;resize:vertical"></textarea><button type="submit" class="btn" style="width:100%;border:none;cursor:pointer">Send Message</button></form></div></section>
+<section class="cta-banner"><div class="container"><h2>Claim Your Free Website Redesign</h2><p>This is a preview of what your professional website could look like. Interested? Let us make it happen.</p><a href="mailto:desk@almawebcreative.com?subject=Interested in website redesign - Dentons Auto Repair" class="btn-white">Claim Your Free Redesign</a></div></section>
+<footer><div class="container"><p>&#169; 2026 Dentons Auto Repair LLC &#8212; Indianapolis, Indiana</p><p class="powered">Preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a></p></div></footer>
+</body>
+</html>
