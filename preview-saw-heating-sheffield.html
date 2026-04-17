@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SAW Heating | Gas Engineer & Plumber in Sheffield, South Yorkshire</title>
-<meta name="description" content="SAW Heating offers Gas Safe-registered boiler installation, central heating repair, and plumbing services in Sheffield. Emergency call-outs available. Get your free quote from Scott.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SAW Heating — Gas Engineers & Plumbers in Sheffield, UK</title>
+<meta name="description" content="Reliable heating and plumbing in Sheffield. Boiler repair, central heating installation, gas safety checks, and emergency callouts. Contact SAW Heating today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#333;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,20,.92);backdrop-filter:blur(10px)}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#ff5252;font-weight:700}
-nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}nav ul li a:hover{color:#ff5252}
-.hero{min-height:100vh;background:linear-gradient(135deg,#8e0000 0%,#c62828 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E")}
-.hero-content{position:relative;z-index:1;max-width:880px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5.5vw,4.2rem);color:#fff;line-height:1.12;margin-bottom:1.5rem;font-weight:800}
-.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:#ffcdd2;max-width:680px;margin:0 auto 2.5rem;line-height:1.7}
-.btn{display:inline-block;padding:1rem 2.5rem;background:#ff5252;color:#8e0000;font-weight:700;text-decoration:none;border-radius:4px;font-size:1.05rem;transition:all .3s;border:none;cursor:pointer}
-.btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
-.services{padding:5.5rem 2rem;background:#f8f7f4}.services .container{max-width:1200px;margin:0 auto}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:1rem;color:#8e0000}
-.section-sub{text-align:center;color:#666;max-width:580px;margin:0 auto 3rem;font-size:1rem}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1.8rem}
-.service-card{background:#fff;padding:2.2rem;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.05);border-left:4px solid #ff5252;transition:all .3s}
-.service-card:hover{transform:translateY(-3px);box-shadow:0 6px 25px rgba(0,0,0,.1)}
-.service-card h3{font-size:1.15rem;margin-bottom:.6rem;color:#8e0000;font-weight:700}
-.service-card p{color:#555;line-height:1.6;font-size:.95rem}
-.about{padding:5.5rem 2rem;background:#fff}.about .container{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
-.about-text h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.2rem;color:#8e0000}
-.about-text p{color:#555;line-height:1.8;font-size:1rem}
-.about-visual{background:linear-gradient(135deg,#c62828,#ff5252);border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center}
-.cta-section{padding:4.5rem 2rem;background:linear-gradient(135deg,#8e0000,#c62828);text-align:center}
-.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:#fff;margin-bottom:1rem}
-.cta-section p{color:#ffcdd2;margin-bottom:2rem;font-size:1.05rem}
-.contact{padding:5rem 2rem;background:#1a1a1a;color:#fff}.contact .container{max-width:780px;margin:0 auto;text-align:center}
-.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.8rem}
-.contact>div>.sub{color:#aaa;margin-bottom:2rem}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
-.contact-item h4{color:#ff5252;margin-bottom:.4rem;font-size:.95rem}
-.contact-item p{color:#ccc;font-size:.9rem}
-form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
-form input,form textarea{padding:.8rem;border:1px solid #444;background:#222;color:#fff;border-radius:4px;font-size:.95rem;font-family:inherit}
-form textarea{resize:vertical}
-footer{padding:1.8rem;background:#111;text-align:center;color:#555;font-size:.8rem}
-.preview-banner{background:#ff5252;color:#8e0000;text-align:center;padding:.7rem;font-size:.82rem;font-weight:600;position:fixed;bottom:0;left:0;right:0;z-index:200}
-.preview-banner a{color:#8e0000;text-decoration:underline}
-@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#f8f9fa;background:#0f1e2e}
+a{text-decoration:none;color:inherit}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#0f1e2e,#1a3a5c);padding:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:800;margin-bottom:1rem;color:#4a9eda;max-width:800px}
+.hero p{font-size:clamp(1rem,2vw,1.3rem);max-width:600px;margin-bottom:2rem;color:#ccc;line-height:1.6}
+.btn{display:inline-block;padding:16px 40px;background:#4a9eda;color:#fff;font-weight:600;font-size:1.1rem;border-radius:8px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px #4a9eda44}
+nav{position:fixed;top:0;width:100%;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:100;background:rgba(15,30,46,.95)}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#4a9eda}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul li a{font-size:.95rem;font-weight:500;color:#f8f9fa;transition:color .2s}
+nav ul li a:hover{color:#4a9eda}
+section{padding:5rem 2rem}
+.services{background:#152a3e;text-align:center}
+.services h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;color:#4a9eda}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+.svc-card{background:#122436;border-radius:12px;padding:2.5rem 2rem;transition:transform .2s}
+.svc-card:hover{transform:translateY(-4px)}
+.svc-card h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem;color:#4a9eda}
+.about{background:#0f1e2e;max-width:900px;margin:0 auto;padding:5rem 2rem}
+.about h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem;color:#4a9eda}
+.about p{font-size:1.05rem;line-height:1.8;color:#ddd}
+.cta-section{text-align:center;padding:5rem 2rem;background:#1a3a5c}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem;color:#f8f9fa}
+.contact{background:#0b1822;padding:5rem 2rem;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem;color:#4a9eda}
+.contact p{color:#ccc;margin-bottom:2rem;font-size:1.05rem}
+.contact form{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.contact input,.contact textarea{padding:14px;border-radius:8px;border:1px solid #333;background:#1a1a2e;color:#f8f9fa;font-size:1rem;font-family:'Inter',sans-serif}
+.contact textarea{min-height:120px;resize:vertical}
+footer{background:#0d0d1a;padding:3rem 2rem;text-align:center;color:#888;font-size:.85rem}
+footer .footer-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:#4a9eda;margin-bottom:.5rem}
+.alma-badge{margin-top:2rem;padding:1rem;font-size:.75rem;color:#666}
+@media(max-width:768px){nav ul{display:none}.services-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav><div class="logo">SAW Heating</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-<section class="hero"><div class="hero-content"><h1>Sheffield&#8217;s Trusted Heating Engineer &#8212; SAW Heating Keeps Your Home Warm</h1><p>Gas Safe-registered engineer delivering boiler installations, central heating repairs, and emergency plumbing services across Sheffield and South Yorkshire.</p><a href="#contact" class="btn">Book a Heating Engineer &#8212; Call Scott for a Free Quote Today</a></div></section>
-<section class="services" id="services"><div class="container"><h2 class="section-title">Our Services</h2><div class="services-grid"><div class="service-card"><h3>Boiler Installation &amp; Replacement</h3><p>Energy-efficient systems fitted by Gas Safe engineers.</p></div><div class="service-card"><h3>Boiler Repair &amp; Servicing</h3><p>Annual servicing and fast fault diagnosis.</p></div><div class="service-card"><h3>Central Heating Systems</h3><p>Full installations, powerflushing &amp; radiator upgrades.</p></div><div class="service-card"><h3>Plumbing Services</h3><p>Leak repairs, pipe work &amp; bathroom installations.</p></div><div class="service-card"><h3>Emergency Heating Repair</h3><p>Urgent call-outs when your heating fails.</p></div></div></div></section>
-<section class="about" id="about"><div class="container"><div class="about-text"><h2>About SAW Heating</h2><p>SAW Heating is a Gas Safe-registered heating and plumbing business run by Scott, serving homeowners across Sheffield and the wider South Yorkshire area. The company specialises in boiler installations, central heating system design, and general plumbing &#8212; with a strong reputation for responsive emergency call-outs during the cold months. Scott&#8217;s hands-on approach and commitment to clear communication have made SAW Heating a trusted name in Sheffield homes.</p></div><div class="about-visual"></div></div></section>
-<section class="cta-section"><h2>Book a Heating Engineer &#8212; Call Scott for a Free Quote Today</h2><a href="#contact" class="btn">Get Started</a></section>
-<section class="contact" id="contact"><div class="container"><h2>Contact SAW Heating</h2><p class="sub">Sheffield, UK</p><div class="contact-grid"><div class="contact-item"><h4>Location</h4><p>Sheffield, UK</p></div><div class="contact-item"><h4>Email</h4><p>sawheating@gmail.com</p></div><div class="contact-item"><h4>Service Area</h4><p>Sheffield and surrounding areas</p></div></div>
-<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="SAW Heating - Website Inquiry"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><textarea name="message" placeholder="Tell us about your project" rows="4" required></textarea><button type="submit" class="btn">Send Message</button></form>
-</div></section>
-<footer><p>&copy; 2026 SAW Heating &#8212; Sheffield, UK.</p></footer>
-<div class="preview-banner">Free preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a> &#8212; <a href="#contact">Claim Your Free Redesign</a></div>
+<nav><span class="logo">SAW Heating</span><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero"><h1>Sheffield's Reliable Heating & Plumbing Engineers</h1><p>From boiler breakdowns to full central heating installations — SAW Heating keeps Sheffield warm.</p><a href="#contact" class="btn">Book Your Heating or Plumbing Service Today</a></section>
+<section class="services" id="services"><h2>Our Services</h2><div class="services-grid"><div class="svc-card"><h3>Boiler Installation & Repair</h3></div><div class="svc-card"><h3>Central Heating Systems</h3></div><div class="svc-card"><h3>Gas Safety Inspections</h3></div><div class="svc-card"><h3>Emergency Plumbing Repairs</h3></div><div class="svc-card"><h3>Radiator Installation & Powerflushing</h3></div></div></section>
+<section class="about" id="about"><h2>About SAW Heating</h2><p>SAW Heating provides professional gas engineering, plumbing, and central heating services across Sheffield. Led by Scott, the company specializes in boiler installations, repairs, and emergency heating callouts. Whether it's a routine gas safety check or an urgent breakdown, SAW Heating responds fast and gets the job done right.</p></section>
+<section class="cta-section"><h2>Ready to Get Started?</h2><a href="#contact" class="btn">Book Your Heating or Plumbing Service Today</a></section>
+<section class="contact" id="contact"><h2>Contact SAW Heating</h2><p>Sheffield, UK</p>
+<form action="https://formspree.io/f/xojppajv" method="POST"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><input type="tel" name="phone" placeholder="Your Phone"><textarea name="message" placeholder="How can we help you?" required></textarea><button type="submit" class="btn">Book Your Heating or Plumbing Service Today</button></form></section>
+<footer><div class="footer-name">SAW Heating</div><p>Sheffield, UK</p><p style="margin-top:1rem">&copy; 2026 SAW Heating. All rights reserved.</p><div class="alma-badge">Preview designed by Alma Digital Services</div></footer>
 </body></html>
