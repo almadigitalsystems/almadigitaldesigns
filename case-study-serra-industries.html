@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Case Study: Serra Industries — Alma Digital Services</title>
+<meta name="description" content="How Alma Digital built Serra Industries a professional website that matches 22+ years of AV and event production expertise in Miami, FL."/>
+<meta property="og:title" content="Case Study: Serra Industries — Alma Digital Services"/>
+<meta property="og:description" content="AV and event production company in Miami gets a professional online presence with a custom website from Alma Digital."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://almadigitalservices.com/case-study-serra-industries.html"/>
+<link rel="canonical" href="https://almadigitalservices.com/case-study-serra-industries.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1b2a;--bg-card:#16213e;--cyan:#00d4ff;--blue:#0066ff;
+  --text:#e8eaf0;--muted:#8892a4;--border:rgba(0,212,255,0.12);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;min-height:100vh}
+::selection{background:rgba(0,212,255,0.3)}
+a{color:var(--cyan);text-decoration:none;transition:opacity 0.2s}
+a:hover{opacity:0.85}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:rgba(13,27,42,0.95);backdrop-filter:blur(12px);z-index:100}
+.nav-logo{font-size:18px;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
+.nav-links{display:flex;gap:24px;align-items:center;list-style:none}
+.nav-links a{color:var(--muted);font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--cyan);opacity:1}
+.nav-cta{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff!important;-webkit-text-fill-color:#fff!important;padding:9px 20px;border-radius:100px;font-size:14px;font-weight:700}
+@media(max-width:768px){.nav-links{display:none}nav{padding:14px 16px}}
+
+/* HERO */
+.cs-hero{padding:80px 24px 60px;text-align:center;max-width:800px;margin:0 auto}
+.cs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);border-radius:100px;padding:5px 16px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
+.cs-hero h1{font-size:clamp(28px,5vw,44px);font-weight:900;line-height:1.15;margin-bottom:16px}
+.cs-hero h1 span{background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cs-hero .subtitle{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto}
+
+/* META BAR */
+.cs-meta{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:32px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:900px;margin:0 auto}
+.cs-meta-item{text-align:center}
+.cs-meta-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cs-meta-value{font-size:16px;font-weight:700;color:#fff}
+
+/* CONTENT */
+.cs-content{max-width:760px;margin:0 auto;padding:60px 24px}
+.cs-section{margin-bottom:56px}
+.cs-section h2{font-size:24px;font-weight:800;margin-bottom:16px;color:#fff}
+.cs-section h2::before{content:'';display:inline-block;width:4px;height:24px;background:linear-gradient(135deg,var(--cyan),var(--blue));border-radius:2px;margin-right:12px;vertical-align:middle}
+.cs-section p{font-size:16px;color:var(--muted);margin-bottom:16px;line-height:1.8}
+
+/* STATS ROW */
+.cs-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin:40px 0}
+.cs-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center}
+.cs-stat-num{font-size:32px;font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.cs-stat-label{font-size:13px;color:var(--muted);font-weight:500}
+
+/* FEATURES LIST */
+.cs-features{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:24px 0}
+.cs-features li{display:flex;align-items:flex-start;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;font-size:14px;color:var(--text)}
+.cs-features li::before{content:'';width:8px;height:8px;min-width:8px;background:var(--cyan);border-radius:50%;margin-top:6px;box-shadow:0 0 8px rgba(0,212,255,0.5)}
+
+/* QUOTE */
+.cs-quote{background:var(--bg-card);border-left:4px solid var(--cyan);border-radius:0 16px 16px 0;padding:32px;margin:40px 0}
+.cs-quote blockquote{font-size:20px;font-weight:500;font-style:italic;color:#fff;line-height:1.6;margin-bottom:12px}
+.cs-quote cite{font-size:14px;color:var(--muted);font-style:normal;font-weight:600}
+
+/* RESULTS */
+.cs-results{list-style:none;margin:24px 0}
+.cs-results li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--text)}
+.cs-results li:last-child{border-bottom:none}
+.cs-check{width:24px;height:24px;min-width:24px;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#22c55e}
+
+/* CTA */
+.cs-cta{text-align:center;padding:80px 24px;max-width:700px;margin:0 auto}
+.cs-cta h2{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:16px}
+.cs-cta p{font-size:17px;color:var(--muted);margin-bottom:32px}
+.cs-cta-btn{display:inline-block;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;padding:16px 40px;border-radius:100px;font-size:16px;font-weight:700;transition:opacity 0.2s,transform 0.2s}
+.cs-cta-btn:hover{opacity:0.9;transform:translateY(-2px);color:#fff}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--cyan)}
+
+@media(max-width:600px){
+  .cs-hero{padding:48px 16px 40px}
+  .cs-content{padding:40px 16px}
+  .cs-meta{gap:24px}
+  .cs-quote{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Alma Digital</a>
+  <ul class="nav-links">
+    <li><a href="/portfolio.html">Portfolio</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+  </ul>
+  <a class="nav-cta" href="/#contact">Get Free Preview</a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-badge">Case Study</div>
+  <h1>AV &amp; Event Production Company Gets a <span>Professional Online Presence</span></h1>
+  <p class="subtitle">How Alma Digital built Serra Industries a website that matches 22+ years of live event production expertise in Miami, FL.</p>
+</section>
+
+<div class="cs-meta">
+  <div class="cs-meta-item">
+    <div class="cs-meta-label">Client</div>
+    <div class="cs-meta-value">Serra Industries</div>
+  </div>
+  <div class="cs-meta-item">
+    <div class="cs-meta-label">Industry</div>
+    <div class="cs-meta-value">AV &amp; Event Production</div>
+  </div>
+  <div class="cs-meta-item">
+    <div class="cs-meta-label">Location</div>
+    <div class="cs-meta-value">Miami, FL</div>
+  </div>
+  <div class="cs-meta-item">
+    <div class="cs-meta-label">Project</div>
+    <div class="cs-meta-value">Custom Website</div>
+  </div>
+</div>
+
+<div class="cs-content">
+
+  <div class="cs-stats">
+    <div class="cs-stat">
+      <div class="cs-stat-num">22+</div>
+      <div class="cs-stat-label">Years in Business</div>
+    </div>
+    <div class="cs-stat">
+      <div class="cs-stat-num">500+</div>
+      <div class="cs-stat-label">Events Produced</div>
+    </div>
+    <div class="cs-stat">
+      <div class="cs-stat-num">100%</div>
+      <div class="cs-stat-label">Client Satisfaction</div>
+    </div>
+    <div class="cs-stat">
+      <div class="cs-stat-num">8</div>
+      <div class="cs-stat-label">Core Services</div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <h2>The Problem</h2>
+    <p>Serra Industries has been a trusted name in Miami's live event production scene for over 22 years, delivering professional audio, lighting, video, and staging for everything from corporate conferences to large-scale concerts.</p>
+    <p>But despite decades of hands-on expertise and 500+ successful events, their online presence didn't match the caliber of their work. Without a professional website, potential clients searching for event production services in Miami had no way to evaluate Serra Industries' capabilities, view past work, or request a quote — costing them leads at the exact moment prospects were ready to hire.</p>
+  </div>
+
+  <div class="cs-section">
+    <h2>The Solution</h2>
+    <p>Alma Digital Designs built Serra Industries a clean, modern, mobile-friendly website at <a href="https://serraindustries.com" target="_blank" rel="noopener">serraindustries.com</a> that showcases their full range of services and establishes immediate credibility.</p>
+
+    <ul class="cs-features">
+      <li>Professional design with a confidence-building layout, including credibility metrics (22+ years experience, 500+ events, 100% client satisfaction)</li>
+      <li>Clear service breakdown across all eight core competencies — from audio engineering and intelligent lighting to LED walls and custom staging</li>
+      <li>Portfolio section showcasing past event work</li>
+      <li>Multiple lead capture paths including prominent "Get a Quote" CTAs and a dedicated contact page</li>
+      <li>Client testimonials with 5-star ratings to build social proof</li>
+      <li>SSL-secured with custom domain, hosted on reliable infrastructure</li>
+      <li>Mobile-optimized so prospects on any device get a professional experience</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <h2>Client Feedback</h2>
+    <div class="cs-quote">
+      <blockquote>"The site is working well, thanks for checking in."</blockquote>
+      <cite>— Anthony Serra, Owner, Serra Industries</cite>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <h2>The Result</h2>
+    <p>Serra Industries now has a professional digital storefront that matches the quality of their 22+ years of live event production work. The site gives prospects a clear picture of capabilities, past work, and an easy path to request a quote — turning online searches into real business conversations.</p>
+
+    <ul class="cs-results">
+      <li><span class="cs-check">&#10003;</span>Custom domain serraindustries.com — live and SSL-secured</li>
+      <li><span class="cs-check">&#10003;</span>Mobile-friendly, fast-loading design</li>
+      <li><span class="cs-check">&#10003;</span>Professional credibility established with testimonials, stats, and portfolio</li>
+      <li><span class="cs-check">&#10003;</span>Clear CTAs driving quote requests and inquiries</li>
+      <li><span class="cs-check">&#10003;</span>Full service showcase across 8 core competencies</li>
+    </ul>
+  </div>
+
+</div>
+
+<section class="cs-cta">
+  <h2>Ready for a website that matches your expertise?</h2>
+  <p>See your new site before you pay. Free preview, no commitment, delivered in 48 hours.</p>
+  <a class="cs-cta-btn" href="/#contact">Get Your Free Preview &rarr;</a>
+</section>
+
+<footer>
+  <p>&copy; 2026 Alma Digital Services — <a href="/">Home</a> · <a href="/portfolio.html">Portfolio</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+</footer>
+
+</body>
+</html>
