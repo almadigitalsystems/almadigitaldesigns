@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edward Scissorhands Barber | South Melbourne Barber Shop Since 1991</title>
+<meta name="description" content="Edward Scissorhands Barber &mdash; South Melbourne's trusted barber since 1991. Precision haircuts, hot towel shaves, and expert grooming. Walk-ins welcome.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:#2c2c2c;background:#fdf6e3;}
+a{text-decoration:none;color:inherit;}
+.navbar{position:sticky;top:0;z-index:100;background:rgba(253,246,227,.97);backdrop-filter:blur(8px);border-bottom:2px solid #5c4033;display:flex;justify-content:space-between;align-items:center;padding:.8rem 2.5rem;}
+.navbar .logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:#5c4033;font-weight:800;}
+.navbar .logo span{color:#b8860b;}
+.navbar ul{list-style:none;display:flex;gap:1.8rem;}
+.navbar ul li a{font-size:.85rem;font-weight:600;color:#5c4033;text-transform:uppercase;letter-spacing:.5px;transition:color .3s;}
+.navbar ul li a:hover{color:#b8860b;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;}
+.hamburger span{width:24px;height:3px;background:#5c4033;}
+.hero-agency{background:#2c2c2c;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden;}
+.hero-agency::before{content:'EST. 1991';position:absolute;font-family:'Playfair Display',serif;font-size:12rem;color:rgba(184,134,11,.05);font-weight:800;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;}
+.hero-agency h1{font-family:'Playfair Display',serif;font-size:3rem;color:#fdf6e3;max-width:750px;line-height:1.15;margin-bottom:1rem;position:relative;z-index:1;}
+.hero-agency h1 span{color:#b8860b;}
+.hero-agency p{font-size:1.1rem;color:rgba(253,246,227,.7);max-width:580px;margin:0 auto 2rem;line-height:1.7;position:relative;z-index:1;}
+.hero-agency .btn{display:inline-block;background:#b8860b;color:#fdf6e3;padding:.9rem 2.5rem;border-radius:0;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:.9rem;transition:background .3s;position:relative;z-index:1;}
+.hero-agency .btn:hover{background:#9a7209;}
+.section-cream{background:#fdf6e3;padding:5rem 2rem;}
+.section-brown{background:#5c4033;padding:5rem 2rem;color:#fdf6e3;}
+.section-title{font-family:'Playfair Display',serif;font-size:2.2rem;text-align:center;margin-bottom:.5rem;}
+.section-sub{text-align:center;margin-bottom:3rem;font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;}
+.section-cream .section-sub{color:#b8860b;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:960px;margin:0 auto;}
+.svc-card{background:#fff;padding:2rem;text-align:center;border-bottom:3px solid #b8860b;transition:transform .3s;box-shadow:0 2px 10px rgba(92,64,51,.08);}
+.svc-card:hover{transform:translateY(-5px);}
+.svc-card .icon{font-size:2rem;margin-bottom:.8rem;color:#5c4033;}
+.svc-card h3{font-size:.95rem;font-weight:700;color:#2c2c2c;}
+.about-wrap{max-width:700px;margin:0 auto;text-align:center;}
+.about-wrap h2{font-family:'Playfair Display',serif;font-size:2rem;color:#b8860b;margin-bottom:1.2rem;}
+.about-wrap p{color:rgba(253,246,227,.8);line-height:1.9;font-size:1rem;}
+.pain-section{background:#fdf6e3;padding:5rem 2rem;}
+.pain-section .section-title{color:#5c4033;}
+.pain-grid{display:flex;gap:2rem;max-width:800px;margin:0 auto;}
+.pain-card{flex:1;padding:2rem;background:#fff;border-top:4px solid #b8860b;box-shadow:0 2px 12px rgba(92,64,51,.08);}
+.pain-card h3{color:#5c4033;font-size:1.05rem;margin-bottom:.8rem;}
+.pain-card p{color:#555;line-height:1.7;font-size:.95rem;}
+.contact-section{padding:5rem 2rem;background:#2c2c2c;}
+.contact-inner{max-width:500px;margin:0 auto;}
+.contact-inner h2{font-family:'Playfair Display',serif;font-size:2rem;text-align:center;color:#fdf6e3;margin-bottom:2rem;}
+form{display:flex;flex-direction:column;gap:1rem;}
+form input,form textarea{padding:.85rem 1rem;border:1px solid rgba(184,134,11,.3);border-radius:0;font-family:'Inter',sans-serif;font-size:.95rem;background:rgba(255,255,255,.05);color:#fdf6e3;transition:border-color .3s;}
+form input:focus,form textarea:focus{border-color:#b8860b;outline:none;}
+form input::placeholder,form textarea::placeholder{color:rgba(253,246,227,.4);}
+form textarea{resize:vertical;min-height:110px;}
+form button{background:#b8860b;color:#fdf6e3;border:none;padding:1rem;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:background .3s;}
+form button:hover{background:#9a7209;}
+.cta-banner{background:#b8860b;text-align:center;padding:3.5rem 2rem;}
+.cta-banner h2{font-family:'Playfair Display',serif;color:#fdf6e3;font-size:2rem;margin-bottom:.5rem;}
+.cta-banner p{color:rgba(253,246,227,.85);margin-bottom:1.5rem;}
+.cta-banner .btn-cta{display:inline-block;background:#2c2c2c;color:#fdf6e3;padding:.9rem 2.5rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:background .3s;}
+.cta-banner .btn-cta:hover{background:#5c4033;}
+footer{background:#2c2c2c;color:rgba(253,246,227,.4);text-align:center;padding:1.8rem;border-top:1px solid rgba(184,134,11,.15);}
+footer p{font-size:.82rem;margin-bottom:.3rem;}
+footer a{color:#b8860b;text-decoration:underline;}
+@media(max-width:768px){
+.navbar ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fdf6e3;flex-direction:column;padding:1rem 2rem;gap:.8rem;border-bottom:2px solid #5c4033;}
+.navbar ul.open{display:flex;}
+.hamburger{display:flex;}
+.hero-agency h1{font-size:2rem;}
+.hero-agency::before{font-size:5rem;}
+.services-grid{grid-template-columns:1fr;}
+.pain-grid{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="logo">Edward <span>Scissorhands</span> Barber</div>
+<button class="hamburger" onclick="document.querySelector('.navbar ul').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">Our Story</a></li>
+<li><a href="#pain">Why a Website</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero-agency">
+<div>
+<h1>South Melbourne&rsquo;s Original Barber &mdash; <span>Cutting Since 1991</span></h1>
+<p>Three decades of precision cuts, classic grooming, and a chair that feels like home. Walk in or book ahead &mdash; Edward Scissorhands has you covered.</p>
+<a href="#contact" class="btn">Book Your Cut Today</a>
+</div>
+</section>
+
+<section class="section-cream" id="services">
+<h2 class="section-title">Our Services</h2>
+<p class="section-sub">Classic Grooming &bull; Modern Style</p>
+<div class="services-grid">
+<div class="svc-card"><div class="icon">&#9986;</div><h3>Men&rsquo;s Haircuts &amp; Styling</h3></div>
+<div class="svc-card"><div class="icon">&#129508;</div><h3>Beard Trimming &amp; Shaping</h3></div>
+<div class="svc-card"><div class="icon">&#127873;</div><h3>Hot Towel Shaves</h3></div>
+<div class="svc-card"><div class="icon">&#128118;</div><h3>Kids&rsquo; Haircuts</h3></div>
+<div class="svc-card"><div class="icon">&#127912;</div><h3>Hair Colouring &amp; Grey Blending</h3></div>
+<div class="svc-card"><div class="icon">&#128141;</div><h3>Wedding &amp; Event Grooming</h3></div>
+</div>
+</section>
+
+<section class="section-brown" id="about">
+<div class="about-wrap">
+<h2>Three Decades of Craft</h2>
+<p>Edward Scissorhands Barber has been a South Melbourne institution since 1991. Run by the same family for over three decades, the shop delivers precision haircuts, traditional hot towel shaves, and expert beard grooming in a space that feels like a neighbourhood landmark. From regulars who have been coming for 30 years to first-time visitors discovering a local gem, every client gets the same level of care and craftsmanship.</p>
+</div>
+</section>
+
+<section class="pain-section" id="pain">
+<h2 class="section-title">Why You Need a Website</h2>
+<div class="pain-grid">
+<div class="pain-card">
+<h3>No Website At All</h3>
+<p>Without a website, people searching for barbers in South Melbourne cannot discover a shop that has been there for 35 years.</p>
+</div>
+<div class="pain-card">
+<h3>Cannot Showcase Three Decades of Heritage</h3>
+<p>A family barber shop since 1991 has an incredible story. Without a website, that story stays untold and the heritage goes unmarketed.</p>
+</div>
+</div>
+</section>
+
+<section class="contact-section" id="contact">
+<div class="contact-inner">
+<h2>Get In Touch</h2>
+<form action="https://formspree.io/f/xojppajv" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Phone Number">
+<textarea name="message" placeholder="How can we help?"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</section>
+
+<section class="cta-banner">
+<h2>Claim Your Free Redesign</h2>
+<p>Give 35 years of barber heritage the online presence it deserves.</p>
+<a href="mailto:desk@almawebcreative.com" class="btn-cta">Get Started Now</a>
+</section>
+
+<footer>
+<p>&copy; 2026 Edward Scissorhands Barber &mdash; South Melbourne, Victoria, Australia</p>
+<p>Preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a></p>
+</footer>
+</body>
+</html>
