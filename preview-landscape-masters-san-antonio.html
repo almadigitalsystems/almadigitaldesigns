@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Landscape Masters | Professional Landscaping Services in San Antonio, TX</title>
-<meta name="description" content="Landscape Masters provides expert landscaping design, lawn maintenance, irrigation, and hardscaping in San Antonio, TX. Call today for a free estimate from a trusted local team.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Landscape Masters — Professional Landscaping in San Antonio, TX</title>
+<meta name="description" content="San Antonio's trusted landscaping company. Lawn care, landscape design, tree trimming, and irrigation services. Get your free quote from Landscape Masters today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#333;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,20,.92);backdrop-filter:blur(10px)}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#8bc34a;font-weight:700}
-nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}nav ul li a:hover{color:#8bc34a}
-.hero{min-height:100vh;background:linear-gradient(135deg,#1a3d18 0%,#2d5a27 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E")}
-.hero-content{position:relative;z-index:1;max-width:880px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5.5vw,4.2rem);color:#fff;line-height:1.12;margin-bottom:1.5rem;font-weight:800}
-.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:#c5e1a5;max-width:680px;margin:0 auto 2.5rem;line-height:1.7}
-.btn{display:inline-block;padding:1rem 2.5rem;background:#8bc34a;color:#1a3d18;font-weight:700;text-decoration:none;border-radius:4px;font-size:1.05rem;transition:all .3s;border:none;cursor:pointer}
-.btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
-.services{padding:5.5rem 2rem;background:#f8f7f4}.services .container{max-width:1200px;margin:0 auto}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:1rem;color:#1a3d18}
-.section-sub{text-align:center;color:#666;max-width:580px;margin:0 auto 3rem;font-size:1rem}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1.8rem}
-.service-card{background:#fff;padding:2.2rem;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.05);border-left:4px solid #8bc34a;transition:all .3s}
-.service-card:hover{transform:translateY(-3px);box-shadow:0 6px 25px rgba(0,0,0,.1)}
-.service-card h3{font-size:1.15rem;margin-bottom:.6rem;color:#1a3d18;font-weight:700}
-.service-card p{color:#555;line-height:1.6;font-size:.95rem}
-.about{padding:5.5rem 2rem;background:#fff}.about .container{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
-.about-text h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.2rem;color:#1a3d18}
-.about-text p{color:#555;line-height:1.8;font-size:1rem}
-.about-visual{background:linear-gradient(135deg,#2d5a27,#8bc34a);border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center}
-.cta-section{padding:4.5rem 2rem;background:linear-gradient(135deg,#1a3d18,#2d5a27);text-align:center}
-.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:#fff;margin-bottom:1rem}
-.cta-section p{color:#c5e1a5;margin-bottom:2rem;font-size:1.05rem}
-.contact{padding:5rem 2rem;background:#1a1a1a;color:#fff}.contact .container{max-width:780px;margin:0 auto;text-align:center}
-.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.8rem}
-.contact>div>.sub{color:#aaa;margin-bottom:2rem}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
-.contact-item h4{color:#8bc34a;margin-bottom:.4rem;font-size:.95rem}
-.contact-item p{color:#ccc;font-size:.9rem}
-form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
-form input,form textarea{padding:.8rem;border:1px solid #444;background:#222;color:#fff;border-radius:4px;font-size:.95rem;font-family:inherit}
-form textarea{resize:vertical}
-footer{padding:1.8rem;background:#111;text-align:center;color:#555;font-size:.8rem}
-.preview-banner{background:#8bc34a;color:#1a3d18;text-align:center;padding:.7rem;font-size:.82rem;font-weight:600;position:fixed;bottom:0;left:0;right:0;z-index:200}
-.preview-banner a{color:#1a3d18;text-decoration:underline}
-@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#f8f9fa;background:#1a2e1a}
+a{text-decoration:none;color:inherit}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#1a2e1a,#2d4a2d);padding:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:800;margin-bottom:1rem;color:#5fa855;max-width:800px}
+.hero p{font-size:clamp(1rem,2vw,1.3rem);max-width:600px;margin-bottom:2rem;color:#ccc;line-height:1.6}
+.btn{display:inline-block;padding:16px 40px;background:#5fa855;color:#fff;font-weight:600;font-size:1.1rem;border-radius:8px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px #5fa85544}
+nav{position:fixed;top:0;width:100%;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:100;background:rgba(26,46,26,.95)}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#5fa855}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul li a{font-size:.95rem;font-weight:500;color:#f8f9fa;transition:color .2s}
+nav ul li a:hover{color:#5fa855}
+section{padding:5rem 2rem}
+.services{background:#243524;text-align:center}
+.services h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;color:#5fa855}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+.svc-card{background:#1e3a1e;border-radius:12px;padding:2.5rem 2rem;transition:transform .2s}
+.svc-card:hover{transform:translateY(-4px)}
+.svc-card h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem;color:#5fa855}
+.about{background:#1a2e1a;max-width:900px;margin:0 auto;padding:5rem 2rem}
+.about h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem;color:#5fa855}
+.about p{font-size:1.05rem;line-height:1.8;color:#ddd}
+.cta-section{text-align:center;padding:5rem 2rem;background:#2d4a2d}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem;color:#f8f9fa}
+.contact{background:#162416;padding:5rem 2rem;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem;color:#5fa855}
+.contact p{color:#ccc;margin-bottom:2rem;font-size:1.05rem}
+.contact form{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.contact input,.contact textarea{padding:14px;border-radius:8px;border:1px solid #333;background:#1a1a2e;color:#f8f9fa;font-size:1rem;font-family:'Inter',sans-serif}
+.contact textarea{min-height:120px;resize:vertical}
+footer{background:#0d0d1a;padding:3rem 2rem;text-align:center;color:#888;font-size:.85rem}
+footer .footer-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:#5fa855;margin-bottom:.5rem}
+.alma-badge{margin-top:2rem;padding:1rem;font-size:.75rem;color:#666}
+@media(max-width:768px){nav ul{display:none}.services-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav><div class="logo">Landscape Masters</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-<section class="hero"><div class="hero-content"><h1>San Antonio&#8217;s Landscape Experts &#8212; Transforming Outdoor Spaces Since Day One</h1><p>From full-yard redesigns to weekly lawn maintenance, Landscape Masters delivers professional landscaping that boosts curb appeal and property value across San Antonio.</p><a href="#contact" class="btn">Get Your Free Landscape Estimate &#8212; Call Roy Today</a></div></section>
-<section class="services" id="services"><div class="container"><h2 class="section-title">Our Services</h2><div class="services-grid"><div class="service-card"><h3>Landscape Design &amp; Installation</h3><p>Custom plans that bring your vision to life &#8212; from concept to completed outdoor space, tailored to your property and preferences.</p></div><div class="service-card"><h3>Lawn Maintenance &amp; Mowing</h3><p>Keep your yard looking its best year-round with reliable, scheduled lawn care from a team that takes pride in every cut.</p></div><div class="service-card"><h3>Irrigation &amp; Sprinkler Systems</h3><p>Efficient watering solutions designed for the Texas heat &#8212; installation, repair, and system optimization.</p></div><div class="service-card"><h3>Hardscaping &amp; Outdoor Living</h3><p>Patios, walkways, and retaining walls built to last. Transform your backyard into a functional outdoor living space.</p></div><div class="service-card"><h3>Tree Trimming &amp; Removal</h3><p>Safe, professional arbor care including pruning, trimming, and complete tree removal when needed.</p></div></div></div></section>
-<section class="about" id="about"><div class="container"><div class="about-text"><h2>About Landscape Masters</h2><p>Landscape Masters is a full-service landscaping company serving homeowners and commercial properties throughout the San Antonio metro area. Led by owner Roy, the team specializes in custom landscape design, seasonal maintenance, and hardscaping solutions tailored to South Texas climate conditions. With a reputation built on word-of-mouth referrals and quality craftsmanship, Landscape Masters is the go-to choice for property owners who demand results.</p></div><div class="about-visual"></div></div></section>
-<section class="cta-section"><h2>Get Your Free Landscape Estimate &#8212; Call Roy Today</h2><a href="#contact" class="btn">Get Started</a></section>
-<section class="contact" id="contact"><div class="container"><h2>Contact Landscape Masters</h2><p class="sub">San Antonio, TX</p><div class="contact-grid"><div class="contact-item"><h4>Location</h4><p>San Antonio, TX</p></div><div class="contact-item"><h4>Email</h4><p>royortizjr@yahoo.com</p></div><div class="contact-item"><h4>Service Area</h4><p>San Antonio and surrounding areas</p></div></div>
-<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="Landscape Masters - Website Inquiry"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><textarea name="message" placeholder="Tell us about your project" rows="4" required></textarea><button type="submit" class="btn">Send Message</button></form>
-</div></section>
-<footer><p>&copy; 2026 Landscape Masters &#8212; San Antonio, TX.</p></footer>
-<div class="preview-banner">Free preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a> &#8212; <a href="#contact">Claim Your Free Redesign</a></div>
+<nav><span class="logo">Landscape Masters</span><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero"><h1>San Antonio's Trusted Landscaping Experts</h1><p>From lawn care to full outdoor transformations — Landscape Masters brings your vision to life.</p><a href="#contact" class="btn">Get Your Free Landscaping Quote Today</a></section>
+<section class="services" id="services"><h2>Our Services</h2><div class="services-grid"><div class="svc-card"><h3>Lawn Maintenance & Mowing</h3></div><div class="svc-card"><h3>Landscape Design & Installation</h3></div><div class="svc-card"><h3>Tree Trimming & Removal</h3></div><div class="svc-card"><h3>Irrigation Systems & Repair</h3></div><div class="svc-card"><h3>Seasonal Cleanup & Mulching</h3></div></div></section>
+<section class="about" id="about"><h2>About Landscape Masters</h2><p>Landscape Masters has been serving San Antonio homeowners and businesses with reliable, professional landscaping services. Led by Roy, the team takes pride in transforming outdoor spaces — from routine lawn care to complete landscape overhauls. Whether you need weekly maintenance or a full backyard redesign, Landscape Masters delivers quality work you can count on.</p></section>
+<section class="cta-section"><h2>Ready to Get Started?</h2><a href="#contact" class="btn">Get Your Free Landscaping Quote Today</a></section>
+<section class="contact" id="contact"><h2>Contact Landscape Masters</h2><p>San Antonio, TX, USA</p>
+<form action="https://formspree.io/f/xojppajv" method="POST"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><input type="tel" name="phone" placeholder="Your Phone"><textarea name="message" placeholder="How can we help you?" required></textarea><button type="submit" class="btn">Get Your Free Landscaping Quote Today</button></form></section>
+<footer><div class="footer-name">Landscape Masters</div><p>San Antonio, TX, USA</p><p style="margin-top:1rem">&copy; 2026 Landscape Masters. All rights reserved.</p><div class="alma-badge">Preview designed by Alma Digital Services</div></footer>
 </body></html>
