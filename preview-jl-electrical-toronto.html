@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JL Electrical | Licensed Electrician Serving Toronto, ON</title>
+<meta name="description" content="JL Electrical offers licensed residential and commercial electrical services in Toronto, ON. Rewiring, panel upgrades, potlights, and more. Call Jon Lin's team today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:#fff;background:#0a1628;}
+a{text-decoration:none;color:inherit;}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2.5rem;background:rgba(10,22,40,.95);position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(10px);}
+.nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#00b4d8;font-weight:800;}
+.nav ul{list-style:none;display:flex;gap:1.5rem;}
+.nav ul li a{font-size:.85rem;color:rgba(255,255,255,.7);font-weight:500;transition:color .3s;}
+.nav ul li a:hover{color:#00b4d8;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;}
+.hamburger span{width:24px;height:3px;background:#00b4d8;}
+.hero-full{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;background:radial-gradient(ellipse at center,#003049 0%,#0a1628 70%);position:relative;overflow:hidden;}
+.hero-full::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(0,180,216,.04);top:-100px;right:-100px;}
+.hero-full::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(0,180,216,.06);bottom:-50px;left:-50px;}
+.hero-full h1{font-family:'Playfair Display',serif;font-size:3.5rem;color:#ffffff;max-width:800px;line-height:1.1;margin-bottom:1.2rem;position:relative;z-index:1;}
+.hero-full h1 span{color:#00b4d8;}
+.hero-full p{font-size:1.1rem;color:rgba(255,255,255,.65);max-width:550px;margin:0 auto 2.5rem;line-height:1.7;position:relative;z-index:1;}
+.hero-full .btn{display:inline-block;background:#00b4d8;color:#fff;padding:1rem 2.5rem;border-radius:50px;font-weight:600;font-size:1rem;transition:background .3s;position:relative;z-index:1;}
+.hero-full .btn:hover{background:#0096b7;}
+.section-dark{padding:5rem 2rem;background:#0a1628;}
+.section-mid{padding:5rem 2rem;background:#003049;}
+.section-title{font-family:'Playfair Display',serif;font-size:2.2rem;text-align:center;margin-bottom:.5rem;color:#fff;}
+.section-sub{text-align:center;color:rgba(255,255,255,.5);margin-bottom:3rem;font-size:.9rem;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:0 auto;}
+.svc-card{background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);padding:2rem 1.5rem;border-radius:12px;text-align:center;transition:background .3s,transform .3s;}
+.svc-card:hover{background:rgba(0,180,216,.15);transform:translateY(-4px);}
+.svc-card .icon{font-size:1.8rem;margin-bottom:.8rem;color:#00b4d8;}
+.svc-card h3{font-size:.95rem;font-weight:600;color:#fff;}
+.about-content{max-width:700px;margin:0 auto;text-align:center;}
+.about-content h2{font-family:'Playfair Display',serif;font-size:2rem;color:#00b4d8;margin-bottom:1.2rem;}
+.about-content p{color:rgba(255,255,255,.75);line-height:1.9;font-size:1rem;}
+.pain-section{padding:5rem 2rem;background:#0a1628;}
+.pain-cards{display:flex;gap:2rem;max-width:800px;margin:0 auto;}
+.pain-card{flex:1;background:rgba(0,48,73,.6);padding:2rem;border-radius:12px;border-top:3px solid #00b4d8;}
+.pain-card h3{color:#00b4d8;font-size:1.05rem;margin-bottom:.8rem;}
+.pain-card p{color:rgba(255,255,255,.65);line-height:1.7;font-size:.95rem;}
+.contact-section{padding:5rem 2rem;background:#003049;}
+.contact-inner{max-width:500px;margin:0 auto;}
+.contact-inner h2{font-family:'Playfair Display',serif;font-size:2rem;text-align:center;color:#fff;margin-bottom:2rem;}
+form{display:flex;flex-direction:column;gap:1rem;}
+form input,form textarea{padding:.85rem 1rem;border:1px solid rgba(0,180,216,.3);border-radius:8px;font-family:'Inter',sans-serif;font-size:.95rem;background:rgba(255,255,255,.05);color:#fff;transition:border-color .3s;}
+form input:focus,form textarea:focus{border-color:#00b4d8;outline:none;}
+form input::placeholder,form textarea::placeholder{color:rgba(255,255,255,.4);}
+form textarea{resize:vertical;min-height:110px;}
+form button{background:#00b4d8;color:#fff;border:none;padding:1rem;border-radius:50px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .3s;}
+form button:hover{background:#0096b7;}
+.cta-banner{background:#00b4d8;text-align:center;padding:3.5rem 2rem;}
+.cta-banner h2{font-family:'Playfair Display',serif;color:#0a1628;font-size:2rem;margin-bottom:.5rem;}
+.cta-banner p{color:rgba(10,22,40,.75);margin-bottom:1.5rem;}
+.cta-banner .btn-cta{display:inline-block;background:#0a1628;color:#fff;padding:.9rem 2.5rem;border-radius:50px;font-weight:600;transition:background .3s;}
+.cta-banner .btn-cta:hover{background:#003049;}
+footer{background:#0a1628;color:rgba(255,255,255,.4);text-align:center;padding:1.8rem;border-top:1px solid rgba(0,180,216,.1);}
+footer p{font-size:.82rem;margin-bottom:.3rem;}
+footer a{color:#00b4d8;text-decoration:underline;}
+@media(max-width:768px){
+.nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(10,22,40,.98);flex-direction:column;padding:1rem 2rem;gap:1rem;}
+.nav ul.open{display:flex;}
+.hamburger{display:flex;}
+.hero-full h1{font-size:2.2rem;}
+.hero-full{padding:5rem 1.5rem;}
+.services-grid{grid-template-columns:1fr;}
+.pain-cards{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="logo">JL Electrical</div>
+<button class="hamburger" onclick="document.querySelector('.nav ul').classList.toggle('open')" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#pain">Why Upgrade</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero-full">
+<div>
+<h1>Jon Lin&rsquo;s Team Wires Toronto <span>Right</span> &mdash; Licensed, Insured, Proven</h1>
+<p>Professional electrical work for Toronto homes and businesses. Every job done to code, on time, and backed by experience you can trust.</p>
+<a href="#contact" class="btn">Book Your Electrical Service Today</a>
+</div>
+</section>
+
+<section class="section-dark" id="services">
+<h2 class="section-title">Our Services</h2>
+<p class="section-sub">Licensed electrical work for every need.</p>
+<div class="services-grid">
+<div class="svc-card"><div class="icon">&#9889;</div><h3>Full Home Rewiring</h3></div>
+<div class="svc-card"><div class="icon">&#9889;</div><h3>Electrical Panel Upgrades</h3></div>
+<div class="svc-card"><div class="icon">&#128161;</div><h3>Potlight &amp; Lighting Installation</h3></div>
+<div class="svc-card"><div class="icon">&#128268;</div><h3>Knob &amp; Tube Replacement</h3></div>
+<div class="svc-card"><div class="icon">&#128680;</div><h3>Smoke &amp; Carbon Monoxide Detectors</h3></div>
+<div class="svc-card"><div class="icon">&#127970;</div><h3>Commercial Electrical Services</h3></div>
+</div>
+</section>
+
+<section class="section-mid" id="about">
+<div class="about-content">
+<h2>About JL Electrical</h2>
+<p>JL Electrical, founded by Jon Lin, serves homeowners and businesses across Toronto with licensed, insured electrical services. From complete home rewires and panel upgrades to potlight installations and safety inspections, Jon and his team deliver meticulous, code-compliant work. Toronto clients trust JL Electrical for the craftsmanship and reliability that word-of-mouth alone has built.</p>
+</div>
+</section>
+
+<section class="pain-section" id="pain">
+<h2 class="section-title">Why Your Website Needs Work</h2>
+<div class="pain-cards">
+<div class="pain-card">
+<h3>Bad Wix Site</h3>
+<p>Your current Wix site looks generic and does not reflect the quality of JL Electrical&rsquo;s craftsmanship. First impressions matter online.</p>
+</div>
+<div class="pain-card">
+<h3>Losing Word-of-Mouth Potential</h3>
+<p>When satisfied customers try to refer JL Electrical, there is no professional site to share. A modern website turns referrals into bookings.</p>
+</div>
+</div>
+</section>
+
+<section class="contact-section" id="contact">
+<div class="contact-inner">
+<h2>Get In Touch</h2>
+<form action="https://formspree.io/f/xojppajv" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Phone Number">
+<textarea name="message" placeholder="Describe your electrical needs"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</section>
+
+<section class="cta-banner">
+<h2>Claim Your Free Redesign</h2>
+<p>A professional website to match professional electrical work.</p>
+<a href="mailto:desk@almawebcreative.com" class="btn-cta">Get Started Now</a>
+</section>
+
+<footer>
+<p>&copy; 2026 JL Electrical &mdash; Toronto, Ontario, Canada</p>
+<p>Preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a></p>
+</footer>
+</body>
+</html>
