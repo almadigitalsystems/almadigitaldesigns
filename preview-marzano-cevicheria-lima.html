@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Marzano Cevicheria | Ceviche Fresco en Ancon, Lima - Menu y Delivery</title>
-<meta name="description" content="Marzano Cevicheria Restaurant en Ancon, Lima. Ceviches frescos, tiraditos, arroces con mariscos y mas. Consulta nuestro menu y haz tu pedido para delivery.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Marzano Cevicheria — Authentic Ceviche Restaurant in Lima, Peru</title>
+<meta name="description" content="Fresh ceviche and Peruvian seafood in Ancón, Lima. Traditional recipes, daily specials, takeout & delivery. Visit Marzano Cevicheria today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#333;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:#fff;box-shadow:0 1px 10px rgba(0,0,0,.06)}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:#bf360c;font-weight:700}
-nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:#444;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}nav ul li a:hover{color:#ff6e40}
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:4rem}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:4rem;background:#fafafa}
-.hero-right{background:linear-gradient(135deg,#bf360c,#ff6e40);display:flex;align-items:center;justify-content:center}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);color:#870000;line-height:1.15;margin-bottom:1.2rem}
-.hero p{font-size:1.05rem;color:#666;margin-bottom:2rem;line-height:1.7;max-width:500px}
-.btn{display:inline-block;padding:.9rem 2.2rem;background:#ff6e40;color:#fff;font-weight:700;text-decoration:none;border-radius:50px;font-size:1rem;transition:all .3s;border:none;cursor:pointer}
-.btn:hover{background:#870000;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
-.services{padding:5rem 2rem;background:#fff}.services .container{max-width:1100px;margin:0 auto}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);text-align:center;margin-bottom:3rem;color:#870000}
-.h-cards{display:flex;flex-direction:column;gap:1.2rem}
-.h-card{display:flex;align-items:start;gap:1.5rem;padding:1.8rem;background:#fafafa;border-radius:12px;transition:all .3s}
-.h-card:hover{background:#fbe9e7;transform:translateX(4px)}
-.h-card .num{font-family:'Playfair Display',serif;font-size:2rem;color:#ff6e40;font-weight:800;min-width:50px}
-.h-card h3{font-size:1.1rem;color:#870000;margin-bottom:.3rem;font-weight:700}
-.h-card p{font-size:.9rem;color:#666;line-height:1.5}
-.about{padding:5rem 2rem;background:#fbe9e7}.about .container{max-width:800px;margin:0 auto;text-align:center}
-.about h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem;color:#870000}
-.about p{color:#555;line-height:1.8;font-size:1.05rem}
-.contact{padding:5rem 2rem;background:#870000;color:#fff}.contact .container{max-width:600px;margin:0 auto;text-align:center}
-.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.6rem}
-.contact .sub{color:rgba(255,255,255,.7);margin-bottom:2rem}
-form{display:flex;flex-direction:column;gap:.8rem}
-form input,form textarea{padding:.85rem;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;border-radius:8px;font-size:.95rem;font-family:inherit}
-form textarea{resize:vertical}form input::placeholder,form textarea::placeholder{color:rgba(255,255,255,.5)}
-footer{padding:1.5rem;background:#0a0a0a;text-align:center;color:#555;font-size:.8rem}
-.preview-banner{background:#ff6e40;color:#fff;text-align:center;padding:.7rem;font-size:.82rem;font-weight:600;position:fixed;bottom:0;left:0;right:0;z-index:200}
-.preview-banner a{color:#fff;text-decoration:underline}
-@media(max-width:768px){nav ul{display:none}.hero{grid-template-columns:1fr}.hero-right{min-height:200px}.hero-left{padding:2rem}}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#333;background:#fff}a{text-decoration:none;color:inherit}
+nav{padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid #eee;position:fixed;width:100%;z-index:100}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c0392b}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{font-size:.95rem;font-weight:500;color:#555;transition:color .2s}nav ul li a:hover{color:#c0392b}
+.hero-split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;margin-top:60px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:4rem 3rem;background:#fdf8f5}
+.hero-left h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#5a1a1a;margin-bottom:1rem;line-height:1.2}
+.hero-left p{font-size:1.1rem;color:#666;line-height:1.7;margin-bottom:2rem}
+.hero-right{background:#c0392b;display:flex;align-items:center;justify-content:center;padding:3rem}
+.hero-right .visual-box{width:80%;max-width:350px;aspect-ratio:1;border-radius:20px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2rem;color:#fff;text-align:center;padding:2rem}
+.btn{display:inline-block;padding:14px 36px;background:#c0392b;color:#fff;font-weight:600;font-size:1rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px #c0392b33}
+section{padding:5rem 3rem}
+.services{background:#faf3f0;text-align:center}
+.services h2{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:3rem;color:#5a1a1a}
+.cards-row{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;max-width:1100px;margin:0 auto}
+.h-card{flex:1 1 300px;max-width:350px;background:#fff;border-radius:12px;padding:2rem;box-shadow:0 2px 12px rgba(0,0,0,.06);border-left:4px solid #c0392b;text-align:left}
+.h-card h3{font-size:1.05rem;font-weight:600;color:#c0392b;margin-bottom:.3rem}
+.about{max-width:800px;margin:0 auto;text-align:center}
+.about h2{font-family:'Playfair Display',serif;font-size:2rem;color:#5a1a1a;margin-bottom:1.5rem}
+.about p{font-size:1.05rem;line-height:1.8;color:#555}
+.cta-band{text-align:center;padding:4rem 2rem;background:#c0392b;color:#fff}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem}
+.cta-band .btn{background:#fff;color:#c0392b}
+.contact{text-align:center;background:#fafafa}
+.contact h2{font-family:'Playfair Display',serif;font-size:2rem;color:#5a1a1a;margin-bottom:.5rem}
+.contact p.loc{color:#888;margin-bottom:2rem}
+.contact form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.contact input,.contact textarea{padding:14px;border-radius:8px;border:1px solid #ddd;font-size:1rem;font-family:'Inter',sans-serif}
+.contact textarea{min-height:110px;resize:vertical}.contact .btn{border:none}
+footer{background:#222;color:#aaa;text-align:center;padding:2.5rem;font-size:.85rem}
+footer .fname{font-family:'Playfair Display',serif;color:#c0392b;font-size:1.1rem;margin-bottom:.3rem}
+.alma-badge{margin-top:1.5rem;font-size:.75rem;color:#666}
+@media(max-width:768px){.hero-split{grid-template-columns:1fr}.hero-right{min-height:250px}nav ul{display:none}}
 </style>
 </head>
 <body>
-<nav><div class="logo">Marzano Cevicheria Restaurant</div><ul><li><a href="#services">Servicios</a></li><li><a href="#about">Nosotros</a></li><li><a href="#contact">Contacto</a></li></ul></nav>
-<section class="hero"><div class="hero-left"><h1>Marzano Cevicheria &#8212; El Sabor del Mar en Anc&#243;n, Lima</h1><p>Ceviche fresco, platos marinos y la saz&#243;n que te hace volver. Descubre nuestro men&#250; y haz tu pedido hoy.</p><a href="#contact" class="btn">Mira Nuestro Men&#250; y Haz Tu Pedido</a></div><div class="hero-right"></div></section>
-<section class="services" id="services"><div class="container"><h2 class="section-title">Nuestros Servicios</h2><div class="h-cards"><div class="h-card"><div class="num">01</div><div><h3>Ceviches y Tiraditos</h3><p>Frescura del oc&#233;ano en cada bocado.</p></div></div><div class="h-card"><div class="num">02</div><div><h3>Platos de Fondo</h3><p>Arroces, sudados y m&#225;s del mar a tu mesa.</p></div></div><div class="h-card"><div class="num">03</div><div><h3>Entradas y Piqueos</h3><p>Para compartir y disfrutar.</p></div></div><div class="h-card"><div class="num">04</div><div><h3>Bebidas y Refrescos</h3><p>El complemento perfecto para tu almuerzo.</p></div></div><div class="h-card"><div class="num">05</div><div><h3>Delivery y Para Llevar</h3><p>El sabor de Marzano donde est&#233;s.</p></div></div></div></div></section>
-<section class="about" id="about"><div class="container"><h2>Sobre Nosotros</h2><p>Marzano Cevicheria Restaurant es una cevicher&#237;a ubicada en el distrito de Anc&#243;n, Lima, reconocida por sus ceviches frescos y platos marinos preparados con ingredientes de calidad. Con un ambiente familiar y atenci&#243;n cercana, Marzano se ha posicionado como una opci&#243;n favorita para los amantes del pescado y mariscos en la zona norte de Lima. Su carta combina recetas tradicionales peruanas con toques de casa que hacen la diferencia.</p></div></section>
-<section class="contact" id="contact"><div class="container"><h2>Contacto</h2><p class="sub">Lima, Ancon</p>
-<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="Marzano Cevicheria - Website Inquiry"><input type="text" name="name" placeholder="Tu Nombre" required><input type="email" name="email" placeholder="Tu Email" required><textarea name="message" placeholder="Tu mensaje" rows="4" required></textarea><button type="submit" class="btn">Enviar Mensaje</button></form>
-</div></section>
-<footer><p>&copy; 2026 Marzano Cevicheria &#8212; Lima, Ancon.</p></footer>
-<div class="preview-banner">Vista previa gratuita dise&#241;ada por <a href="https://almadigitalservices.com">Alma Digital Services</a> &#8212; <a href="#contact">Reclama Tu Redise&#241;o Gratis</a></div>
+<nav><span class="logo">Marzano Cevicheria Restaurant</span><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<div class="hero-split"><div class="hero-left"><h1>Cevichería de Tradición en Lima — Marzano</h1><p>Ceviche fresco, sabores auténticos — Marzano Cevicheria en Ancón, Lima.</p><a href="#contact" class="btn">See Our Menu & Order Today</a></div><div class="hero-right"><div class="visual-box">Marzano Cevicheria Restaurant</div></div></div>
+<section class="services" id="services"><h2>What We Offer</h2><div class="cards-row"><div class="h-card"><h3>Fresh Ceviche & Seafood</h3></div><div class="h-card"><h3>Peruvian Classics & Criollo Dishes</h3></div><div class="h-card"><h3>Takeout & Delivery</h3></div><div class="h-card"><h3>Catering for Events</h3></div><div class="h-card"><h3>Daily Lunch Specials</h3></div></div></section>
+<section class="about" id="about"><h2>About Us</h2><p>Marzano Cevicheria Restaurant serves authentic Peruvian ceviche and seafood dishes in Ancón, Lima. Known for fresh ingredients and traditional recipes, Marzano is a go-to destination for locals craving quality ceviche and criollo cuisine. Whether dining in or ordering for delivery, every dish captures the flavors of Peru.</p></section>
+<section class="cta-band"><h2>Ready to Get Started?</h2><a href="#contact" class="btn">See Our Menu & Order Today</a></section>
+<section class="contact" id="contact"><h2>Get In Touch</h2><p class="loc">Ancón, Lima, Peru</p>
+<form action="https://formspree.io/f/xojppajv" method="POST"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><input type="tel" name="phone" placeholder="Phone Number"><textarea name="message" placeholder="Tell us about your project" required></textarea><button type="submit" class="btn">See Our Menu & Order Today</button></form></section>
+<footer><div class="fname">Marzano Cevicheria Restaurant</div><p>Ancón, Lima, Peru</p><p style="margin-top:.8rem">&copy; 2026 Marzano Cevicheria Restaurant. All rights reserved.</p><div class="alma-badge">Preview designed by Alma Digital Services</div></footer>
 </body></html>
