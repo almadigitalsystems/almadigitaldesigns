@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>McKenzie Decorators Ltd | Professional Painters & Decorators in Calgary, AB</title>
-<meta name="description" content="McKenzie Decorators Ltd in Calgary, AB. Journeyman-quality interior and exterior painting, cabinet refinishing, and decorating. Request your free estimate today.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>McKenzie Decorators — Painters & Decorators in Calgary, AB</title>
+<meta name="description" content="Professional painting and decorating in Calgary. Interior, exterior, wallpaper, and commercial projects. Journeyman-quality finishes. Get your free estimate from McKenzie Decorators.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#333;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(20,20,20,.92);backdrop-filter:blur(10px)}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#d4a373;font-weight:700}
-nav ul{list-style:none;display:flex;gap:2rem}nav ul li a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}nav ul li a:hover{color:#d4a373}
-.hero{min-height:100vh;background:linear-gradient(135deg,#3e2723 0%,#4e342e 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E")}
-.hero-content{position:relative;z-index:1;max-width:880px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5.5vw,4.2rem);color:#fff;line-height:1.12;margin-bottom:1.5rem;font-weight:800}
-.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:#efebe9;max-width:680px;margin:0 auto 2.5rem;line-height:1.7}
-.btn{display:inline-block;padding:1rem 2.5rem;background:#d4a373;color:#3e2723;font-weight:700;text-decoration:none;border-radius:4px;font-size:1.05rem;transition:all .3s;border:none;cursor:pointer}
-.btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
-.services{padding:5.5rem 2rem;background:#f8f7f4}.services .container{max-width:1200px;margin:0 auto}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:1rem;color:#3e2723}
-.section-sub{text-align:center;color:#666;max-width:580px;margin:0 auto 3rem;font-size:1rem}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1.8rem}
-.service-card{background:#fff;padding:2.2rem;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.05);border-left:4px solid #d4a373;transition:all .3s}
-.service-card:hover{transform:translateY(-3px);box-shadow:0 6px 25px rgba(0,0,0,.1)}
-.service-card h3{font-size:1.15rem;margin-bottom:.6rem;color:#3e2723;font-weight:700}
-.service-card p{color:#555;line-height:1.6;font-size:.95rem}
-.about{padding:5.5rem 2rem;background:#fff}.about .container{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
-.about-text h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.2rem;color:#3e2723}
-.about-text p{color:#555;line-height:1.8;font-size:1rem}
-.about-visual{background:linear-gradient(135deg,#4e342e,#d4a373);border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center}
-.cta-section{padding:4.5rem 2rem;background:linear-gradient(135deg,#3e2723,#4e342e);text-align:center}
-.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:#fff;margin-bottom:1rem}
-.cta-section p{color:#efebe9;margin-bottom:2rem;font-size:1.05rem}
-.contact{padding:5rem 2rem;background:#1a1a1a;color:#fff}.contact .container{max-width:780px;margin:0 auto;text-align:center}
-.contact h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.8rem}
-.contact>div>.sub{color:#aaa;margin-bottom:2rem}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
-.contact-item h4{color:#d4a373;margin-bottom:.4rem;font-size:.95rem}
-.contact-item p{color:#ccc;font-size:.9rem}
-form{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
-form input,form textarea{padding:.8rem;border:1px solid #444;background:#222;color:#fff;border-radius:4px;font-size:.95rem;font-family:inherit}
-form textarea{resize:vertical}
-footer{padding:1.8rem;background:#111;text-align:center;color:#555;font-size:.8rem}
-.preview-banner{background:#d4a373;color:#3e2723;text-align:center;padding:.7rem;font-size:.82rem;font-weight:600;position:fixed;bottom:0;left:0;right:0;z-index:200}
-.preview-banner a{color:#3e2723;text-decoration:underline}
-@media(max-width:768px){nav ul{display:none}.about .container{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#f8f9fa;background:#faf9f7}
+a{text-decoration:none;color:inherit}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#2c3e50,#34495e);padding:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:800;margin-bottom:1rem;color:#e67e22;max-width:800px}
+.hero p{font-size:clamp(1rem,2vw,1.3rem);max-width:600px;margin-bottom:2rem;color:#ccc;line-height:1.6}
+.btn{display:inline-block;padding:16px 40px;background:#e67e22;color:#fff;font-weight:600;font-size:1.1rem;border-radius:8px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px #e67e2244}
+nav{position:fixed;top:0;width:100%;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:100;background:rgba(44,62,80,.95)}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#e67e22}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul li a{font-size:.95rem;font-weight:500;color:#f8f9fa;transition:color .2s}
+nav ul li a:hover{color:#e67e22}
+section{padding:5rem 2rem}
+.services{background:#2c3e50;text-align:center}
+.services h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:3rem;color:#e67e22}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+.svc-card{background:#34495e;border-radius:12px;padding:2.5rem 2rem;transition:transform .2s}
+.svc-card:hover{transform:translateY(-4px)}
+.svc-card h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem;color:#e67e22}
+.about{background:#faf9f7;max-width:900px;margin:0 auto;padding:5rem 2rem}
+.about h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem;color:#e67e22}
+.about p{font-size:1.05rem;line-height:1.8;color:#ddd}
+.cta-section{text-align:center;padding:5rem 2rem;background:#2c3e50}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem;color:#f8f9fa}
+.contact{background:#1a252f;padding:5rem 2rem;text-align:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem;color:#e67e22}
+.contact p{color:#ccc;margin-bottom:2rem;font-size:1.05rem}
+.contact form{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.contact input,.contact textarea{padding:14px;border-radius:8px;border:1px solid #333;background:#1a1a2e;color:#f8f9fa;font-size:1rem;font-family:'Inter',sans-serif}
+.contact textarea{min-height:120px;resize:vertical}
+footer{background:#0d0d1a;padding:3rem 2rem;text-align:center;color:#888;font-size:.85rem}
+footer .footer-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:#e67e22;margin-bottom:.5rem}
+.alma-badge{margin-top:2rem;padding:1rem;font-size:.75rem;color:#666}
+@media(max-width:768px){nav ul{display:none}.services-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav><div class="logo">McKenzie Decorators Ltd</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-<section class="hero"><div class="hero-content"><h1>McKenzie Decorators &#8212; Journeyman-Quality Painting for Calgary Homes</h1><p>Interior and exterior painting with the precision and finish that only certified journeyman decorators deliver. See the difference quality makes.</p><a href="#contact" class="btn">Request Your Free Painting Estimate</a></div></section>
-<section class="services" id="services"><div class="container"><h2 class="section-title">Our Services</h2><div class="services-grid"><div class="service-card"><h3>Interior Painting</h3><p>Flawless walls, ceilings &amp; trim in every room.</p></div><div class="service-card"><h3>Exterior Painting</h3><p>Protect and transform your home&#8217;s curb appeal.</p></div><div class="service-card"><h3>Cabinet Refinishing</h3><p>A fresh kitchen without the renovation price tag.</p></div><div class="service-card"><h3>Wallpaper Installation &amp; Removal</h3><p>Clean application, seamless results.</p></div><div class="service-card"><h3>Commercial Painting</h3><p>Professional finishes for offices, retail &amp; more.</p></div></div></div></section>
-<section class="about" id="about"><div class="container"><div class="about-text"><h2>About McKenzie Decorators Ltd</h2><p>McKenzie Decorators Ltd is a professional painting and decorating company based in Calgary, Alberta, staffed by certified journeyman painters. Specializing in both interior and exterior residential projects as well as commercial work, McKenzie Decorators brings trade-level skill to every brush stroke. Their portfolio of completed projects across Calgary speaks to a standard of finish that sets them apart from general handyman painters.</p></div><div class="about-visual"></div></div></section>
-<section class="cta-section"><h2>Request Your Free Painting Estimate</h2><a href="#contact" class="btn">Get Started</a></section>
-<section class="contact" id="contact"><div class="container"><h2>Contact McKenzie Decorators Ltd</h2><p class="sub">Calgary, AB</p><div class="contact-grid"><div class="contact-item"><h4>Location</h4><p>Calgary, AB</p></div><div class="contact-item"><h4>Email</h4><p>mckenziedecorators@telus.net</p></div><div class="contact-item"><h4>Service Area</h4><p>Calgary and surrounding areas</p></div></div>
-<form action="https://formspree.io/f/xojppajv" method="POST"><input type="hidden" name="_subject" value="McKenzie Decorators Ltd - Website Inquiry"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><textarea name="message" placeholder="Tell us about your project" rows="4" required></textarea><button type="submit" class="btn">Send Message</button></form>
-</div></section>
-<footer><p>&copy; 2026 McKenzie Decorators Ltd &#8212; Calgary, AB.</p></footer>
-<div class="preview-banner">Free preview designed by <a href="https://almadigitalservices.com">Alma Digital Services</a> &#8212; <a href="#contact">Claim Your Free Redesign</a></div>
+<nav><span class="logo">McKenzie Decorators Ltd</span><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero"><h1>Professional Painters & Decorators in Calgary</h1><p>Journeyman-quality painting and decorating — McKenzie Decorators transforms Calgary homes and businesses.</p><a href="#contact" class="btn">Get a Free Painting Estimate</a></section>
+<section class="services" id="services"><h2>Our Services</h2><div class="services-grid"><div class="svc-card"><h3>Interior Painting</h3></div><div class="svc-card"><h3>Exterior Painting</h3></div><div class="svc-card"><h3>Wallpaper Installation & Removal</h3></div><div class="svc-card"><h3>Commercial Painting Projects</h3></div><div class="svc-card"><h3>Cabinet & Trim Refinishing</h3></div></div></section>
+<section class="about" id="about"><h2>About McKenzie Decorators Ltd</h2><p>McKenzie Decorators Ltd is a professional painting and decorating company serving Calgary, AB. With journeyman-level expertise, the team delivers flawless finishes on every project — from interior home repaints to large commercial jobs. Meticulous preparation, premium materials, and a commitment to craftsmanship define every McKenzie project.</p></section>
+<section class="cta-section"><h2>Ready to Get Started?</h2><a href="#contact" class="btn">Get a Free Painting Estimate</a></section>
+<section class="contact" id="contact"><h2>Contact McKenzie Decorators Ltd</h2><p>Calgary, AB, Canada</p>
+<form action="https://formspree.io/f/xojppajv" method="POST"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><input type="tel" name="phone" placeholder="Your Phone"><textarea name="message" placeholder="How can we help you?" required></textarea><button type="submit" class="btn">Get a Free Painting Estimate</button></form></section>
+<footer><div class="footer-name">McKenzie Decorators Ltd</div><p>Calgary, AB, Canada</p><p style="margin-top:1rem">&copy; 2026 McKenzie Decorators Ltd. All rights reserved.</p><div class="alma-badge">Preview designed by Alma Digital Services</div></footer>
 </body></html>
