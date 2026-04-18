@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kim's Nail Salon Too | Nail Salon in Toronto, ON</title>
+<meta name="description" content="Kim's Nail Salon Too in Toronto — 106+ Google reviews. Expert manicures, pedicures, gel nails, acrylics, and nail art in the Bayview area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --lavender: #f0e6f6;
+  --soft-purple: #9b72cf;
+  --deep-purple: #6b3fa0;
+  --cream: #faf8ff;
+  --white: #ffffff;
+  --charcoal: #2c2c2c;
+  --shadow-sm: 0 1px 3px rgba(107,63,160,0.08);
+  --shadow-md: 0 4px 16px rgba(107,63,160,0.10);
+  --shadow-lg: 0 8px 32px rgba(107,63,160,0.14);
+  --radius: 12px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(250,248,255,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(155,114,207,0.1);
+  transition: box-shadow var(--transition);
+}
+.navbar.scrolled { box-shadow: var(--shadow-md); }
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--deep-purple);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-brand span { font-size: 1.4rem; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  position: relative;
+  transition: color var(--transition);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--soft-purple);
+  transition: width var(--transition);
+}
+.nav-links a:hover { color: var(--deep-purple); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--deep-purple);
+  color: var(--white) !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background var(--transition), transform var(--transition);
+}
+.nav-cta:hover { background: var(--soft-purple); transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  width: 24px; height: 2.5px;
+  background: var(--charcoal);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ── Hero Split Screen ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  padding-top: 68px;
+}
+.hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 48px 60px 0;
+  padding-left: calc((100vw - 1140px) / 2 + 24px);
+}
+.hero-left h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+.hero-left h1 em {
+  color: var(--deep-purple);
+  font-style: italic;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 460px;
+  margin-bottom: 36px;
+  line-height: 1.8;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--deep-purple);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 20px rgba(107,63,160,0.3);
+}
+.hero-cta:hover {
+  background: var(--soft-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(107,63,160,0.35);
+}
+.hero-right {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, var(--lavender) 0%, #dcc8f0 40%, var(--soft-purple) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-right::before {
+  content: '';
+  position: absolute;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+  top: 15%; right: 10%;
+}
+.hero-right::after {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,63,160,0.15) 0%, transparent 70%);
+  bottom: 20%; left: 10%;
+}
+.hero-visual {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.hero-emoji {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 28px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+  animation: float 3.5s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.review-badge {
+  background: var(--white);
+  padding: 20px 32px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  display: inline-block;
+}
+.review-badge .count {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--deep-purple);
+  display: block;
+}
+.review-badge .label {
+  font-size: 0.85rem;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.review-badge .stars {
+  font-size: 1.3rem;
+  color: #f5a623;
+  letter-spacing: 2px;
+}
+
+/* ── Section Base ── */
+.section { padding: 100px 0; }
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--soft-purple);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--charcoal);
+  margin-bottom: 20px;
+}
+.section-desc {
+  font-size: 1.05rem;
+  color: #666;
+  max-width: 620px;
+  line-height: 1.8;
+}
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* ── Pain Points ── */
+.pain-section { background: var(--white); }
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+.pain-card {
+  background: var(--cream);
+  border: 1px solid rgba(155,114,207,0.12);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.pain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.pain-icon {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  display: block;
+}
+.pain-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--charcoal);
+}
+.pain-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ── About ── */
+.about-section { background: var(--cream); }
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 48px;
+}
+.about-visual {
+  background: linear-gradient(135deg, var(--lavender), #dcc8f0);
+  border-radius: 20px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-visual::before {
+  content: '';
+  position: absolute;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  top: -30px; right: -30px;
+}
+.about-emoji-group {
+  font-size: 3.5rem;
+  display: flex;
+  gap: 16px;
+  z-index: 1;
+}
+.about-text p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.about-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid rgba(155,114,207,0.15);
+  padding: 14px 24px;
+  border-radius: 50px;
+}
+.about-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--deep-purple);
+}
+.about-stat .txt {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ── Services ── */
+.services-section { background: var(--white); }
+.services-scroll {
+  display: flex;
+  gap: 24px;
+  margin-top: 48px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--soft-purple) transparent;
+}
+.service-card {
+  min-width: 240px;
+  flex-shrink: 0;
+  background: var(--cream);
+  border: 1px solid rgba(155,114,207,0.1);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  text-align: center;
+  scroll-snap-align: start;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.service-icon {
+  font-size: 2.6rem;
+  margin-bottom: 18px;
+  display: block;
+}
+.service-card h3 {
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+.service-card p {
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.6;
+}
+
+/* ── Testimonial ── */
+.testimonial-section {
+  background: linear-gradient(135deg, var(--deep-purple), var(--soft-purple));
+  color: var(--white);
+}
+.testimonial-card {
+  max-width: 700px;
+  margin: 48px auto 0;
+  text-align: center;
+}
+.testimonial-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  position: relative;
+}
+.testimonial-quote::before {
+  content: '\201C';
+  font-size: 4rem;
+  position: absolute;
+  top: -30px; left: -10px;
+  opacity: 0.3;
+  font-family: 'Playfair Display', serif;
+}
+.testimonial-author {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+.testimonial-stars {
+  font-size: 1.2rem;
+  margin-top: 12px;
+  letter-spacing: 3px;
+}
+
+/* ── CTA Section ── */
+.cta-section {
+  background: var(--cream);
+  text-align: center;
+}
+.cta-section .section-title { max-width: 560px; margin: 0 auto 20px; }
+.cta-section .section-desc { margin: 0 auto 36px; }
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--deep-purple);
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 18px 42px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 20px rgba(107,63,160,0.3);
+}
+.cta-btn:hover {
+  background: var(--soft-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(107,63,160,0.35);
+}
+
+/* ── Contact ── */
+.contact-section { background: var(--white); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 48px;
+}
+.contact-info { display: flex; flex-direction: column; gap: 28px; }
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.contact-item-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  width: 48px; height: 48px;
+  background: var(--lavender);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-item h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.contact-item p {
+  font-size: 0.9rem;
+  color: #666;
+}
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+.form-group input,
+.form-group textarea {
+  padding: 14px 18px;
+  border: 1px solid rgba(155,114,207,0.2);
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  background: var(--cream);
+  color: var(--charcoal);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--soft-purple);
+  box-shadow: 0 0 0 3px rgba(155,114,207,0.15);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-submit {
+  background: var(--deep-purple);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  align-self: flex-start;
+}
+.form-submit:hover {
+  background: var(--soft-purple);
+  transform: translateY(-2px);
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.7);
+  padding: 48px 0 0;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 0.8rem;
+}
+.footer-bottom a { color: var(--soft-purple); }
+.footer-bottom a:hover { color: var(--lavender); }
+
+/* ── Alma Banner ── */
+.alma-banner {
+  background: linear-gradient(135deg, var(--deep-purple), #4a2a70);
+  text-align: center;
+  padding: 14px 24px;
+}
+.alma-banner a {
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  transition: opacity var(--transition);
+}
+.alma-banner a:hover { opacity: 1; }
+
+/* ── Mobile Nav Overlay ── */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 999;
+  background: rgba(250,248,255,0.98);
+  backdrop-filter: blur(20px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-nav.active { display: flex; }
+.mobile-nav a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: color var(--transition);
+}
+.mobile-nav a:hover { color: var(--deep-purple); }
+.mobile-nav .nav-cta {
+  font-size: 1rem;
+  padding: 14px 32px;
+}
+.mobile-close {
+  position: absolute;
+  top: 20px; right: 24px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--charcoal);
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .hero-left {
+    padding: 100px 24px 60px;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-right {
+    min-height: 360px;
+  }
+  .about-content { grid-template-columns: 1fr; gap: 36px; }
+  .about-visual { height: 280px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .pain-grid { grid-template-columns: 1fr; }
+  .section { padding: 72px 0; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .services-scroll { gap: 16px; }
+  .service-card { min-width: 220px; }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1 { font-size: 1.9rem; }
+  .hero-cta { font-size: 0.9rem; padding: 14px 28px; }
+  .review-badge .count { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="nav-brand"><span>💅</span> Kim's Nail Salon Too</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#contact" class="nav-cta" onclick="closeMobile()">Book Now</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <h1>Toronto's Trusted <em>Neighbourhood</em> Nail Salon</h1>
+    <p class="hero-sub">Kim's Nail Salon Too has earned over 100 five-star reviews for a reason — quality nail care, every single visit.</p>
+    <a href="#contact" class="hero-cta">Book Your Nails at Kim's Nail Salon Too &rarr;</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <span class="hero-emoji">💅</span>
+      <div class="review-badge">
+        <span class="label">Google Reviews</span>
+        <span class="count">106+</span>
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain Points -->
+<section class="section pain-section" id="why">
+  <div class="container">
+    <p class="section-label text-center">The Opportunity</p>
+    <h2 class="section-title text-center mx-auto" style="max-width:640px;">A Stellar Reputation That Deserves to Be Seen Online</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <span class="pain-icon">⭐</span>
+        <h3>106 Google Reviews — But No Website</h3>
+        <p>Kim's Nail Salon Too has built incredible trust with over 106 Google reviews. But without a website, potential clients searching online have nowhere to land, learn more, or take action. That's traffic — and revenue — left on the table.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-icon">📋</span>
+        <h3>No Online Service Menu or Booking</h3>
+        <p>Clients want to browse services and book appointments before they call or walk in. Without an online service menu or booking system, the salon misses out on the convenience today's customers expect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section about-section" id="about">
+  <div class="container">
+    <p class="section-label">About Us</p>
+    <h2 class="section-title">Where Every Client Becomes a Regular</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Kim's Nail Salon Too is a beloved nail salon in Toronto's Bayview neighbourhood, proudly serving the community with top-quality nail services. With over 106 Google reviews, clients trust Phong Luong and the team for consistently excellent manicures, pedicures, and nail enhancements. It's the kind of salon where you walk in as a customer and leave as a regular.</p>
+        <div class="about-stat">
+          <span class="num">106+</span>
+          <span class="txt">Five-Star Google Reviews</span>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-emoji-group">
+          <span>💅</span>
+          <span>✨</span>
+          <span>💜</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <p class="section-label text-center">Our Services</p>
+    <h2 class="section-title text-center">Expert Nail Care, Tailored to You</h2>
+    <p class="section-desc text-center mx-auto">From classic manicures to dazzling nail art, every service is delivered with precision and care.</p>
+    <div class="services-scroll">
+      <div class="service-card">
+        <span class="service-icon">💅</span>
+        <h3>Manicures &amp; Shellac Nails</h3>
+        <p>Classic, gel, and Shellac manicures for a flawless, long-lasting finish every time.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🦶</span>
+        <h3>Relaxing Pedicures</h3>
+        <p>Treat your feet to a luxurious pedicure — soothing, refreshing, and beautifully polished.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💎</span>
+        <h3>Acrylic &amp; Gel Extensions</h3>
+        <p>Durable, gorgeous nail extensions sculpted to your desired length and shape.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🎨</span>
+        <h3>Nail Art &amp; Custom Designs</h3>
+        <p>Express your style with hand-painted nail art, rhinestones, and custom designs.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌸</span>
+        <h3>Waxing Services</h3>
+        <p>Professional waxing for smooth, silky skin — quick, gentle, and effective.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="section testimonial-section" id="testimonials">
+  <div class="container">
+    <p class="section-label text-center" style="color:rgba(255,255,255,0.7);">What Clients Say</p>
+    <h2 class="section-title text-center" style="color:#fff;">Loved by the Bayview Community</h2>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">Kim's Nail Salon Too is my absolute go-to. The team always does an amazing job, and the attention to detail is unmatched. I wouldn't trust my nails to anyone else in Toronto!</p>
+      <p class="testimonial-author">— Satisfied Client, Google Review</p>
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section cta-section">
+  <div class="container">
+    <p class="section-label">Ready for Beautiful Nails?</p>
+    <h2 class="section-title">Book Your Next Appointment at Kim's Nail Salon Too</h2>
+    <p class="section-desc mx-auto">Join over 100 happy clients who trust us for their nail care. Walk-ins welcome, or reach out to book ahead.</p>
+    <a href="#contact" class="cta-btn">Get in Touch &rarr;</a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">We'd Love to Hear from You</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Bayview Area, Toronto, ON, Canada</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>luongphong52@yahoo.ca</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⏰</div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon – Sat: By appointment &amp; walk-ins<br>Sun: Closed</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⭐</div>
+          <div>
+            <h4>Reviews</h4>
+            <p>106+ five-star reviews on Google</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(416) 555-1234">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="I'd like to book an appointment for..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><span>💅</span> Kim's Nail Salon Too</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Kim's Nail Salon Too. Toronto, ON, Canada.</span>
+      <span>Contact: <a href="mailto:luongphong52@yahoo.ca">luongphong52@yahoo.ca</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Alma Banner -->
+<div class="alma-banner">
+  <a href="https://almadigitalservices.com" target="_blank" rel="noopener">Designed by Alma Digital Services &mdash; Professional websites for local businesses</a>
+</div>
+
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+const mobileClose = document.getElementById('mobileClose');
+
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.add('active');
+  document.body.style.overflow = 'hidden';
+});
+
+function closeMobile() {
+  mobileNav.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+mobileClose.addEventListener('click', closeMobile);
+
+// Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 68;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+// Fade-in animation on scroll
+const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.pain-card, .service-card, .about-content, .contact-grid, .testimonial-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
