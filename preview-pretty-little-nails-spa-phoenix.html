@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pretty Little Nails &amp; Spa | Nail Salon in Phoenix, AZ</title>
+<meta name="description" content="Pretty Little Nails & Spa in Phoenix, AZ — professional manicures, pedicures, acrylics, gel nails, and spa services. Walk-ins welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#ffffff;--mint:#e8f5f0;--teal:#5f9ea0;--dark-teal:#3d7a7c;--text:#1a1a1a;--light-gray:#f9fafb;--border:#e5e7eb}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7;font-weight:300}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.3}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* Navbar */
+.navbar{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.navbar.scrolled{box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-brand{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--dark-teal);letter-spacing:-0.02em}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:400;color:var(--text);letter-spacing:.03em;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--teal);transition:width .3s}
+.nav-links a:hover{color:var(--dark-teal)}
+.nav-links a:hover::after{width:100%}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:1.5px;background:var(--text);transition:all .3s}
+
+/* Mobile Nav */
+.mobile-nav{display:none;position:fixed;top:64px;left:0;width:100%;background:var(--white);border-bottom:1px solid var(--border);padding:1.5rem 2rem;z-index:999}
+.mobile-nav.active{display:block}
+.mobile-nav a{display:block;padding:.75rem 0;font-size:.95rem;color:var(--text);border-bottom:1px solid var(--border)}
+.mobile-nav a:last-child{border-bottom:none}
+
+/* Sections */
+section{padding:6rem 2rem}
+.container{max-width:900px;margin:0 auto}
+.section-label{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.section-title{font-size:2rem;margin-bottom:1.5rem;color:var(--text)}
+.section-divider{width:40px;height:2px;background:var(--teal);margin-bottom:2rem}
+
+/* Hero */
+.hero{padding:10rem 2rem 8rem;text-align:center;background:var(--white)}
+.hero-inner{max-width:700px;margin:0 auto}
+.hero h1{font-size:3rem;font-weight:700;color:var(--text);margin-bottom:1.5rem;letter-spacing:-0.02em}
+.hero p{font-size:1.1rem;color:#555;margin-bottom:2.5rem;line-height:1.8;font-weight:300}
+.btn{display:inline-block;padding:.9rem 2.2rem;background:var(--teal);color:var(--white);font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.04em;border:none;border-radius:2px;cursor:pointer;transition:all .3s}
+.btn:hover{background:var(--dark-teal);transform:translateY(-1px)}
+
+/* Pain Points */
+.pain-section{background:var(--white);padding:5rem 2rem}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto}
+.pain-card{background:var(--light-gray);border:1px solid var(--border);padding:2.5rem 2rem;border-radius:3px}
+.pain-icon{font-size:1.5rem;margin-bottom:1rem}
+.pain-card h3{font-size:1.1rem;margin-bottom:.75rem;font-weight:500}
+.pain-card p{font-size:.9rem;color:#666;line-height:1.7}
+
+/* About */
+.about-section{background:var(--mint);padding:6rem 2rem}
+.about-section p{font-size:1.05rem;color:#444;line-height:1.9;max-width:750px}
+
+/* Services */
+.services-section{background:var(--white);padding:6rem 2rem}
+.services-list{list-style:none;max-width:600px}
+.services-list li{padding:1.2rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1rem;font-size:1rem;color:var(--text)}
+.services-list li:last-child{border-bottom:none}
+.service-icon{font-size:1.1rem;width:32px;text-align:center;flex-shrink:0}
+
+/* Testimonial */
+.testimonial-section{background:var(--light-gray);padding:5rem 2rem;text-align:center}
+.stars{font-size:1.3rem;letter-spacing:4px;color:#e8b923;margin-bottom:1.5rem}
+.testimonial-quote{font-family:'Playfair Display',serif;font-size:1.25rem;font-style:italic;color:#444;max-width:600px;margin:0 auto 1rem;line-height:1.8}
+.testimonial-author{font-size:.8rem;color:#999;letter-spacing:.05em}
+
+/* CTA */
+.cta-section{background:var(--mint);padding:5rem 2rem;text-align:center}
+.cta-section h2{font-size:2rem;margin-bottom:1rem}
+.cta-section p{font-size:1rem;color:#555;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+
+/* Contact */
+.contact-section{background:var(--white);padding:6rem 2rem}
+.contact-form{max-width:520px;margin:0 auto}
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#888;margin-bottom:.5rem}
+.form-group input,.form-group textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--border);border-radius:2px;font-family:'Inter',sans-serif;font-size:.9rem;color:var(--text);background:var(--light-gray);transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--teal);background:var(--white)}
+.form-group textarea{height:130px;resize:vertical}
+.form-submit{text-align:center;margin-top:2rem}
+.form-submit .btn{padding:.85rem 3rem}
+
+/* Footer */
+.footer{background:var(--white);border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--dark-teal);margin-bottom:.5rem}
+.footer p{font-size:.8rem;color:#999;line-height:1.8}
+.footer a{color:var(--teal);transition:color .2s}
+.footer a:hover{color:var(--dark-teal)}
+
+/* Alma Banner */
+.alma-banner{background:var(--text);color:rgba(255,255,255,0.7);text-align:center;padding:1rem 2rem;font-size:.75rem;letter-spacing:.03em}
+.alma-banner a{color:var(--teal);font-weight:500;transition:color .2s}
+.alma-banner a:hover{color:#8fc4c6}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{padding:8rem 1.5rem 5rem}
+  .hero h1{font-size:2.2rem}
+  .hero p{font-size:1rem}
+  .pain-grid{grid-template-columns:1fr}
+  section{padding:4rem 1.5rem}
+  .section-title{font-size:1.6rem}
+  .cta-section h2{font-size:1.6rem}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.8rem}
+  .nav-inner{padding:0 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Pretty Little Nails &amp; Spa</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Your Go-To Nail Salon in Phoenix</h1>
+    <p>Pretty Little Nails &amp; Spa offers expert nail care and relaxing spa services in a clean, welcoming space. Walk-ins welcome.</p>
+    <a href="#contact" class="btn">Visit Pretty Little Nails &amp; Spa Today</a>
+  </div>
+</section>
+
+<!-- Pain Points -->
+<section class="pain-section">
+  <div class="container" style="text-align:center;margin-bottom:2.5rem">
+    <span class="section-label">Why This Matters</span>
+  </div>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">&#128269;</div>
+      <h3>No Website = Invisible to Phoenix Searchers</h3>
+      <p>When potential customers in Phoenix search for nail salons, businesses without a website simply don't show up. You're missing out on clients who are ready to book right now.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">&#128203;</div>
+      <h3>No Online Menu or Service Pricing</h3>
+      <p>Customers want to see your services and prices before they visit. Without an online menu, they'll choose a competitor that makes it easy to browse and compare.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about-section" id="about">
+  <div class="container">
+    <span class="section-label">About</span>
+    <h2 class="section-title">Pretty Little Nails &amp; Spa</h2>
+    <div class="section-divider"></div>
+    <p>Pretty Little Nails &amp; Spa is a full-service nail salon in Phoenix, AZ, run by Christina H. and a team of skilled nail technicians. From everyday manicures to special-occasion nail art, every service is delivered with attention to detail and hygiene. The salon's relaxing atmosphere makes it the perfect spot to unwind and leave looking polished.</p>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services-section" id="services">
+  <div class="container">
+    <span class="section-label">Services</span>
+    <h2 class="section-title">What We Offer</h2>
+    <div class="section-divider"></div>
+    <ul class="services-list">
+      <li><span class="service-icon">&#128133;</span> Classic &amp; Gel Manicures</li>
+      <li><span class="service-icon">&#129526;</span> Luxury Pedicures</li>
+      <li><span class="service-icon">&#10024;</span> Acrylic &amp; Dip Powder Nails</li>
+      <li><span class="service-icon">&#127912;</span> Nail Art &amp; Designs</li>
+      <li><span class="service-icon">&#128134;</span> Spa &amp; Waxing Services</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="testimonial-section" id="reviews">
+  <div class="container">
+    <span class="section-label">Reviews</span>
+    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="testimonial-quote">"Absolutely love this salon! The staff is so friendly and talented. My nails always come out perfect. Highly recommend Pretty Little Nails &amp; Spa to anyone in Phoenix!"</p>
+    <p class="testimonial-author">&mdash; Happy Customer, Phoenix AZ</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready for Beautiful Nails?</h2>
+    <p>Book your appointment or walk in today. Pretty Little Nails &amp; Spa is here to make you feel your best.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <span class="section-label">Contact</span>
+    <h2 class="section-title">Send Us a Message</h2>
+    <div class="section-divider"></div>
+    <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand">Pretty Little Nails &amp; Spa</div>
+  <p>Phoenix, AZ &nbsp;|&nbsp; USA</p>
+  <p><a href="mailto:prettylittlenailsspa@yahoo.com">prettylittlenailsspa@yahoo.com</a></p>
+</footer>
+
+<!-- Alma Banner -->
+<div class="alma-banner">
+  This is a free website preview designed exclusively for Pretty Little Nails &amp; Spa &nbsp;&mdash;&nbsp; <a href="https://almadigitalservices.com" target="_blank" rel="noopener">almadigitalservices.com</a>
+</div>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll',function(){
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10);
+});
+
+// Mobile menu
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',function(){
+  mobileNav.classList.toggle('active');
+  const spans=hamburger.querySelectorAll('span');
+  if(mobileNav.classList.contains('active')){
+    spans[0].style.transform='rotate(45deg) translate(4px,4px)';
+    spans[1].style.opacity='0';
+    spans[2].style.transform='rotate(-45deg) translate(4px,-4px)';
+  }else{
+    spans[0].style.transform='none';
+    spans[1].style.opacity='1';
+    spans[2].style.transform='none';
+  }
+});
+
+// Close mobile nav on link click
+mobileNav.querySelectorAll('a').forEach(function(link){
+  link.addEventListener('click',function(){
+    mobileNav.classList.remove('active');
+    const spans=hamburger.querySelectorAll('span');
+    spans[0].style.transform='none';
+    spans[1].style.opacity='1';
+    spans[2].style.transform='none';
+  });
+});
+</script>
+</body>
+</html>
