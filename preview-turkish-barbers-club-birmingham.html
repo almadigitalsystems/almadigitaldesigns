@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turkish Barbers Club | Turkish Barbershop in Birmingham, UK</title>
+<meta name="description" content="Turkish Barbers Club in Birmingham — 513+ Google reviews. Traditional Turkish haircuts, hot towel shaves, beard trims, and grooming. Book today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--burgundy:#4a1525;--gold:#c4962c;--off-white:#f5f0eb;--charcoal:#1e1e1e;--cream:#faf5ef;
+--burgundy-light:#6b2240;--gold-light:#d4a94a;--gold-dark:#a37a1f;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#333;line-height:1.7;background:var(--cream)}
+h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',serif;line-height:1.2}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.navbar{position:sticky;top:0;z-index:1000;background:var(--burgundy);padding:0;transition:box-shadow .3s}
+.navbar.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 24px;height:68px}
+.nav-brand{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#fff;letter-spacing:.5px}
+.nav-brand span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.85);font-size:.9rem;font-weight:500;transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{width:26px;height:2.5px;background:#fff;border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--burgundy);padding:24px;z-index:999;border-top:1px solid rgba(255,255,255,.1)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;color:#fff;padding:14px 0;font-size:1rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-menu a:last-child{border-bottom:none}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--charcoal) 0%,var(--burgundy) 100%);padding:100px 0 110px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,150,44,.1) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(74,21,37,.4) 0%,transparent 70%)}
+.hero-content{position:relative;z-index:2;max-width:780px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,150,44,.15);border:1px solid rgba(196,150,44,.35);color:var(--gold);padding:8px 20px;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:28px;animation:fadeInUp .8s ease}
+.hero h1{font-size:3.4rem;font-weight:800;color:#fff;margin-bottom:22px;animation:fadeInUp .8s ease .15s both}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,.75);margin-bottom:38px;max-width:620px;line-height:1.8;animation:fadeInUp .8s ease .3s both}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center;animation:fadeInUp .8s ease .45s both}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:6px;font-size:1rem;font-weight:600;border:none;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 4px 15px rgba(196,150,44,.35)}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 6px 25px rgba(196,150,44,.45)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.3);padding:13px 32px}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.review-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:14px 24px;border-radius:10px;margin-top:32px;animation:fadeInUp .8s ease .6s both}
+.review-stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px}
+.review-text{color:rgba(255,255,255,.8);font-size:.9rem}
+.review-text strong{color:#fff;font-size:1.1rem}
+
+/* PAIN POINTS */
+.pain-section{background:var(--cream);padding:90px 0}
+.section-label{display:inline-block;color:var(--gold);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-title{font-size:2.4rem;font-weight:700;color:var(--charcoal);margin-bottom:18px}
+.section-sub{color:#666;font-size:1.05rem;max-width:600px;margin-bottom:50px}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.pain-card{background:#fff;border-radius:14px;padding:40px 34px;border:1px solid rgba(0,0,0,.06);transition:all .35s;position:relative;overflow:hidden}
+.pain-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:var(--gold);transition:height .4s}
+.pain-card:hover::before{height:100%}
+.pain-card:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(0,0,0,.08)}
+.pain-icon{font-size:2.2rem;margin-bottom:18px}
+.pain-card h3{font-size:1.25rem;font-weight:700;color:var(--charcoal);margin-bottom:12px}
+.pain-card p{color:#666;font-size:.95rem;line-height:1.7}
+
+/* ABOUT */
+.about-section{background:var(--charcoal);padding:90px 0;color:#fff}
+.about-section .section-label{color:var(--gold)}
+.about-section .section-title{color:#fff}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text p{color:rgba(255,255,255,.75);font-size:1.02rem;line-height:1.85;margin-bottom:20px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.stat-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:28px 24px;text-align:center;transition:all .3s}
+.stat-box:hover{background:rgba(196,150,44,.1);border-color:rgba(196,150,44,.25)}
+.stat-number{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--gold);margin-bottom:6px}
+.stat-label{color:rgba(255,255,255,.6);font-size:.85rem;font-weight:500}
+
+/* SERVICES */
+.services-section{background:var(--cream);padding:90px 0}
+.services-section .section-title{text-align:center}
+.services-section .section-label{text-align:center;display:block}
+.services-section .section-sub{text-align:center;margin-left:auto;margin-right:auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:#fff;border-radius:14px;padding:38px 30px;text-align:center;border:1px solid rgba(0,0,0,.05);transition:all .4s;cursor:default;position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--burgundy),var(--gold));transform:scaleX(0);transition:transform .4s}
+.service-card:hover::after{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(74,21,37,.1)}
+.service-icon{font-size:2.6rem;margin-bottom:18px;display:block}
+.service-card h3{font-size:1.15rem;font-weight:700;color:var(--charcoal);margin-bottom:10px}
+.service-card p{color:#777;font-size:.9rem;line-height:1.65}
+
+/* TESTIMONIAL */
+.testimonial-section{background:var(--burgundy);padding:90px 0;text-align:center;position:relative;overflow:hidden}
+.testimonial-section::before{content:'\201C';position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:18rem;color:rgba(255,255,255,.03);font-family:'Playfair Display',serif;line-height:1}
+.testimonial-content{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.testimonial-stars{color:var(--gold);font-size:1.3rem;letter-spacing:3px;margin-bottom:24px}
+.testimonial-quote{font-family:'Playfair Display',serif;font-size:1.55rem;color:#fff;font-weight:600;line-height:1.6;margin-bottom:28px;font-style:italic}
+.testimonial-author{color:rgba(255,255,255,.7);font-size:.95rem}
+.testimonial-author strong{color:#fff;display:block;margin-bottom:4px;font-size:1.05rem}
+
+/* CTA SECTION */
+.cta-section{background:linear-gradient(135deg,var(--charcoal) 0%,#2a1520 50%,var(--burgundy) 100%);padding:90px 0;text-align:center}
+.cta-section h2{font-size:2.6rem;color:#fff;margin-bottom:16px}
+.cta-section p{color:rgba(255,255,255,.7);font-size:1.1rem;max-width:550px;margin:0 auto 36px}
+.cta-section .btn-gold{padding:17px 42px;font-size:1.05rem}
+
+/* CONTACT */
+.contact-section{background:var(--cream);padding:90px 0}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-info h3{font-size:1.3rem;color:var(--charcoal);margin-bottom:20px}
+.contact-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}
+.contact-item-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.contact-item-text{color:#555;font-size:.95rem;line-height:1.6}
+.contact-item-text strong{color:var(--charcoal);display:block;margin-bottom:2px}
+.contact-form{background:#fff;border-radius:14px;padding:40px;border:1px solid rgba(0,0,0,.06);box-shadow:0 8px 30px rgba(0,0,0,.04)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--charcoal);margin-bottom:7px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:13px 16px;border:1.5px solid #ddd;border-radius:8px;font-size:.95rem;font-family:'Inter',sans-serif;transition:border-color .3s;background:#fafafa}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--gold);background:#fff}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-submit{width:100%}
+
+/* FOOTER */
+.footer{background:var(--charcoal);padding:50px 0 0;color:rgba(255,255,255,.6)}
+.footer-inner{display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:30px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:10px}
+.footer-brand span{color:var(--gold)}
+.footer-desc{font-size:.88rem;max-width:320px;line-height:1.7}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:10px}
+.footer-links a{font-size:.88rem;transition:color .25s}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:22px 0;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.8rem}
+
+/* ALMA BANNER */
+.alma-banner{background:var(--burgundy);padding:14px 0;text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+.alma-banner p{color:rgba(255,255,255,.7);font-size:.82rem}
+.alma-banner a{color:var(--gold);font-weight:600;transition:color .25s}
+.alma-banner a:hover{color:var(--gold-light)}
+
+/* ANIMATIONS */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(24px);transition:all .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:968px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.hero h1{font-size:2.5rem}
+.pain-grid{grid-template-columns:1fr}
+.about-inner{grid-template-columns:1fr}
+.services-grid{grid-template-columns:repeat(2,1fr)}
+.contact-inner{grid-template-columns:1fr}
+.footer-inner{flex-direction:column}
+}
+@media(max-width:600px){
+.hero{padding:70px 0 80px}
+.hero h1{font-size:2rem}
+.hero-sub{font-size:1rem}
+.section-title{font-size:1.9rem}
+.services-grid{grid-template-columns:1fr}
+.cta-section h2{font-size:2rem}
+.about-stats{grid-template-columns:1fr 1fr}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+<div class="nav-inner">
+<a href="#" class="nav-brand">Turkish Barbers <span>Club</span></a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#testimonials">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#testimonials">Reviews</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-badge">&#9733; 513+ Five-Star Google Reviews</div>
+<h1>Birmingham's <span>Top-Rated</span> Turkish Barbershop</h1>
+<p class="hero-sub">Over 500 five-star reviews. Turkish Barbers Club delivers traditional cuts, hot towel shaves, and expert grooming since 2019.</p>
+<div class="hero-actions">
+<a href="#contact" class="btn btn-gold">Book Your Cut at Turkish Barbers Club</a>
+<a href="#services" class="btn btn-outline">View Services</a>
+</div>
+<div class="review-badge">
+<div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="review-text"><strong>513+ Reviews</strong>Rated 5 stars on Google</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section">
+<div class="container">
+<span class="section-label">The Problem</span>
+<h2 class="section-title">What's Holding the Shop Back</h2>
+<p class="section-sub">With 513+ glowing reviews and years of loyal clients, two gaps are costing the business real growth.</p>
+<div class="pain-grid">
+<div class="pain-card fade-in">
+<div class="pain-icon">&#128683;</div>
+<h3>Blank Website = Invisible Online</h3>
+<p>Turkish Barbers Club has 513+ Google reviews and a stellar reputation, but the current website shows nothing. New customers searching online land on a blank page and move on. All that trust built over years simply doesn't translate when there's nothing to see.</p>
+</div>
+<div class="pain-card fade-in">
+<div class="pain-icon">&#128197;</div>
+<h3>5+ Years, Zero Online Booking</h3>
+<p>Since 2019, clients have only been able to book by calling or walking in. There's no online booking, no way for busy customers to secure a slot on their own time. That means missed appointments, quieter hours with empty chairs, and revenue left on the table every single day.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+<div class="container">
+<div class="about-inner">
+<div>
+<span class="section-label">About Us</span>
+<h2 class="section-title">Turkish Barbers Club</h2>
+<div class="about-text fade-in">
+<p>Turkish Barbers Club is an established barbershop in Birmingham, UK, with over 513 Google reviews and a loyal client base built since 2019. Owner Cemil Maman and his team bring authentic Turkish barbering traditions &mdash; from precision fades to relaxing hot towel shaves &mdash; to every visit.</p>
+<p>It's the kind of barbershop where craftsmanship meets a genuinely welcoming experience.</p>
+</div>
+</div>
+<div class="about-stats fade-in">
+<div class="stat-box">
+<div class="stat-number">513+</div>
+<div class="stat-label">Google Reviews</div>
+</div>
+<div class="stat-box">
+<div class="stat-number">2019</div>
+<div class="stat-label">Established</div>
+</div>
+<div class="stat-box">
+<div class="stat-number">5&#9733;</div>
+<div class="stat-label">Average Rating</div>
+</div>
+<div class="stat-box">
+<div class="stat-number">1000+</div>
+<div class="stat-label">Happy Clients</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+<div class="container">
+<span class="section-label">What We Offer</span>
+<h2 class="section-title">Our Services</h2>
+<p class="section-sub">Traditional Turkish barbering techniques combined with modern styling, all in one chair.</p>
+<div class="services-grid">
+<div class="service-card fade-in">
+<span class="service-icon">&#9986;</span>
+<h3>Turkish Haircuts &amp; Fades</h3>
+<p>Precision cuts from classic styles to modern skin fades, tailored to your look with authentic Turkish technique.</p>
+</div>
+<div class="service-card fade-in">
+<span class="service-icon">&#127873;</span>
+<h3>Traditional Hot Towel Shaves</h3>
+<p>The full Turkish hot towel shave experience &mdash; steamed towels, straight razor, and a finish that feels unreal.</p>
+</div>
+<div class="service-card fade-in">
+<span class="service-icon">&#129492;</span>
+<h3>Beard Trimming &amp; Styling</h3>
+<p>Sharp, clean beard shaping and trimming to keep your facial hair looking its absolute best at all times.</p>
+</div>
+<div class="service-card fade-in">
+<span class="service-icon">&#128135;</span>
+<h3>Hair Washing &amp; Styling</h3>
+<p>A thorough wash and professional blow-dry styling to finish your cut with a polished, fresh look.</p>
+</div>
+<div class="service-card fade-in">
+<span class="service-icon">&#10024;</span>
+<h3>Eyebrow Threading &amp; Nose Waxing</h3>
+<p>Clean, precise grooming details that complete your look &mdash; the finishing touches that make the difference.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section" id="testimonials">
+<div class="container">
+<div class="testimonial-content fade-in">
+<div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<p class="testimonial-quote">"Best barbershop in Birmingham, hands down. Cemil and the lads always deliver a clean fade and the hot towel shave is next level. Been coming here for years and never been let down."</p>
+<div class="testimonial-author">
+<strong>Satisfied Customer</strong>
+Google Review &mdash; Turkish Barbers Club
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container fade-in">
+<h2>Ready for a Fresh Cut?</h2>
+<p>Join 500+ satisfied clients and experience the Turkish Barbers Club difference. Book your appointment today.</p>
+<a href="#contact" class="btn btn-gold">Book Your Appointment</a>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+<div class="container">
+<div class="contact-inner">
+<div>
+<span class="section-label">Get in Touch</span>
+<h2 class="section-title">Book Your Visit</h2>
+<p class="section-sub">Drop us a message or swing by the shop. We'll get you sorted.</p>
+<div class="contact-info fade-in">
+<div class="contact-item">
+<span class="contact-item-icon">&#128205;</span>
+<div class="contact-item-text">
+<strong>Location</strong>
+Birmingham, UK
+</div>
+</div>
+<div class="contact-item">
+<span class="contact-item-icon">&#9993;</span>
+<div class="contact-item-text">
+<strong>Email</strong>
+cemilmaman@hotmail.co.uk
+</div>
+</div>
+<div class="contact-item">
+<span class="contact-item-icon">&#11088;</span>
+<div class="contact-item-text">
+<strong>Reviews</strong>
+513+ Google Reviews &mdash; 5 Star Rated
+</div>
+</div>
+</div>
+</div>
+<form class="contact-form fade-in" action="https://formspree.io/f/xojppajv" method="POST">
+<div class="form-group">
+<label for="name">Your Name</label>
+<input type="text" id="name" name="name" placeholder="e.g. John Smith" required>
+</div>
+<div class="form-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" placeholder="e.g. john@example.com" required>
+</div>
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="e.g. 07123 456789">
+</div>
+<div class="form-group">
+<label for="service">Service Interested In</label>
+<select id="service" name="service">
+<option value="">Select a service</option>
+<option value="Turkish Haircut & Fade">Turkish Haircut &amp; Fade</option>
+<option value="Hot Towel Shave">Hot Towel Shave</option>
+<option value="Beard Trim & Styling">Beard Trim &amp; Styling</option>
+<option value="Hair Washing & Styling">Hair Washing &amp; Styling</option>
+<option value="Eyebrow Threading & Nose Waxing">Eyebrow Threading &amp; Nose Waxing</option>
+</select>
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Anything you'd like us to know..."></textarea>
+</div>
+<button type="submit" class="btn btn-gold form-submit">Send Message</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-inner">
+<div>
+<div class="footer-brand">Turkish Barbers <span>Club</span></div>
+<p class="footer-desc">Authentic Turkish barbering in the heart of Birmingham. Precision cuts, hot towel shaves, and a welcoming atmosphere since 2019.</p>
+</div>
+<div>
+<h4 style="color:#fff;font-size:.95rem;margin-bottom:14px">Quick Links</h4>
+<ul class="footer-links">
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#testimonials">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color:#fff;font-size:.95rem;margin-bottom:14px">Contact</h4>
+<ul class="footer-links">
+<li>Birmingham, UK</li>
+<li>cemilmaman@hotmail.co.uk</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Turkish Barbers Club. All rights reserved.</p>
+<p>Birmingham, UK</p>
+</div>
+</div>
+</footer>
+
+<!-- ALMA BANNER -->
+<div class="alma-banner">
+<p>Website designed by <a href="https://almadigitalservices.com" target="_blank" rel="noopener">Alma Digital Services</a></p>
+</div>
+
+<script>
+// Sticky navbar shadow
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50)});
+
+// Hamburger menu
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{
+mobileMenu.classList.toggle('open');
+const spans=hamburger.querySelectorAll('span');
+if(mobileMenu.classList.contains('open')){
+spans[0].style.transform='rotate(45deg) translate(5px,5px)';
+spans[1].style.opacity='0';
+spans[2].style.transform='rotate(-45deg) translate(5px,-5px)';
+}else{
+spans[0].style.transform='none';
+spans[1].style.opacity='1';
+spans[2].style.transform='none';
+}
+});
+
+// Close mobile menu on link click
+mobileMenu.querySelectorAll('a').forEach(a=>{
+a.addEventListener('click',()=>{
+mobileMenu.classList.remove('open');
+const spans=hamburger.querySelectorAll('span');
+spans[0].style.transform='none';
+spans[1].style.opacity='1';
+spans[2].style.transform='none';
+});
+});
+
+// Scroll fade-in
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}
+});
+},{threshold:0.15});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
