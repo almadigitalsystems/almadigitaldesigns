@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Barbers Den | Barber Shop Philadelphia | South Street</title>
+<meta name="description" content="Philadelphia barbershop on South Street. Precision haircuts, fades, and beard grooming in the heart of Philly. Walk-ins welcome at The Barbers Den.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#0d0010;color:#fff}
+nav{position:fixed;top:0;width:100%;background:rgba(13,0,16,.95);z-index:100;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(148,0,211,.3)}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.01em}
+.logo span{color:#9400d3}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#ccc;text-decoration:none;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;transition:color .3s}nav ul a:hover{color:#9400d3}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;background:radial-gradient(ellipse at center,#1a0025 0%,#0d0010 70%)}
+.hero .badge{background:rgba(148,0,211,.2);border:1px solid rgba(148,0,211,.4);color:#c060f0;padding:.35rem 1.1rem;border-radius:2rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6.5rem);font-weight:900;line-height:.95;letter-spacing:-.03em;margin-bottom:2rem}
+.hero h1 em{font-style:normal;color:#9400d3;display:block}
+.hero p{font-size:1.1rem;color:#bbb;max-width:560px;margin:0 auto 3rem;line-height:1.7}
+.btn{background:#9400d3;color:#fff;padding:1rem 2.8rem;border:none;border-radius:4px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;letter-spacing:.06em;text-transform:uppercase}
+.btn:hover{background:#7b00b0;transform:translateY(-2px)}
+.btn-o{border:2px solid rgba(148,0,211,.5);color:#c060f0;padding:.9rem 2.2rem;border-radius:4px;font-size:.9rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;margin-left:.75rem;letter-spacing:.05em;text-transform:uppercase}
+.btn-o:hover{border-color:#9400d3;color:#fff}
+.strip{background:#9400d3;padding:1.5rem;text-align:center;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.services{background:#0d0010;padding:6rem 2rem}.inner{max-width:1100px;margin:0 auto}
+.lbl{color:#9400d3;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:.75rem}
+.sub{color:#888;max-width:480px;margin-bottom:2.5rem;line-height:1.6;font-size:.95rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
+.card{background:#130018;border:1px solid rgba(148,0,211,.2);border-radius:8px;padding:2rem;transition:all .3s}
+.card:hover{border-color:#9400d3;transform:translateY(-4px)}
+.card-icon{font-size:2rem;margin-bottom:.75rem}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.card p{font-size:.82rem;color:#888;line-height:1.5}
+.about{background:#130018;padding:6rem 2rem}
+.ab-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ab-visual{background:radial-gradient(circle,#2a0040,#0d0010);border-radius:12px;height:380px;display:flex;align-items:center;justify-content:center;font-size:7rem;border:1px solid rgba(148,0,211,.2)}
+.ab-content p{color:#aaa;line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.loc-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(148,0,211,.1);border:1px solid rgba(148,0,211,.3);border-radius:2rem;padding:.5rem 1rem;font-size:.82rem;color:#c060f0;margin-top:1rem;font-weight:600}
+.cta-s{background:linear-gradient(135deg,#9400d3,#5a008a);padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:.75rem}
+.cta-s p{color:rgba(255,255,255,.85);margin-bottom:2rem}
+.btn-w{background:#fff;color:#9400d3;padding:.9rem 2.2rem;border:none;border-radius:4px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s;text-transform:uppercase;letter-spacing:.05em}
+.btn-w:hover{transform:translateY(-2px)}
+.contact{background:#0d0010;padding:6rem 2rem}
+.c-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem}
+.ci h4{font-size:.82rem;font-weight:700;color:#9400d3;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#aaa;font-size:.88rem}
+form input,form textarea{width:100%;background:#130018;border:1px solid rgba(148,0,211,.25);border-radius:4px;padding:.75rem 1rem;color:#fff;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#9400d3}
+form textarea{height:110px;resize:vertical}
+footer{background:#000;padding:1.75rem;text-align:center;color:#555;font-size:.78rem}
+footer a{color:#9400d3;text-decoration:none}
+@media(max-width:768px){.ab-grid,.c-grid{grid-template-columns:1fr}.ab-visual{height:180px}.btn-o{margin-left:0;margin-top:.5rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">The Barbers <span>Den</span></div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero">
+  <div>
+    <div class="badge">115 South Street &middot; Philadelphia, PA</div>
+    <h1>Your South Street Barber <em>Right in the Heart of Philly</em></h1>
+    <p>Steps from South Street's best shops and restaurants, The Barbers Den delivers the kind of cut that turns heads on Philadelphia's most iconic strip.</p>
+    <a href="#contact" class="btn">Book Your Cut on South Street</a>
+    <a href="#services" class="btn-o">See Services</a>
+  </div>
+</section>
+<div class="strip">Walk-Ins Always Welcome &mdash; South Street's Premier Barbershop</div>
+<section class="services" id="services"><div class="inner">
+  <div class="lbl">What We Do</div><h2>Our Services</h2>
+  <p class="sub">Quality craftsmanship every time &mdash; for locals, students, and visitors alike.</p>
+  <div class="svc-grid">
+    <div class="card"><div class="card-icon">&#9986;&#65039;</div><h3>Men's Precision Haircuts</h3><p>Sharp, tailored cuts for every style and face shape.</p></div>
+    <div class="card"><div class="card-icon">&#128136;</div><h3>Skin Fades &amp; Tapers</h3><p>Smooth skin fades with seamless blending.</p></div>
+    <div class="card"><div class="card-icon">&#129690;</div><h3>Beard Grooming &amp; Shaping</h3><p>Expert beard shaping and crisp line-ups.</p></div>
+    <div class="card"><div class="card-icon">&#129494;</div><h3>Hot Towel Shaves</h3><p>Classic hot towel shave experience in Philly.</p></div>
+    <div class="card"><div class="card-icon">&#128104;</div><h3>Walk-Ins &amp; Appointments</h3><p>Flexible &mdash; drop in or book your spot.</p></div>
+  </div>
+</div></section>
+<section class="about" id="about"><div class="ab-grid">
+  <div class="ab-visual">&#128136;</div>
+  <div class="ab-content">
+    <div class="lbl">About Us</div>
+    <h2>Philadelphia's Go-To Barbershop on Legendary South Street</h2>
+    <p>The Barbers Den is Philadelphia's go-to barbershop on legendary South Street. Whether you're a local, student, or visitor, the Den delivers quality craftsmanship every time.</p>
+    <p>Walk-ins always welcome on South Street's most iconic strip.</p>
+    <div class="loc-pill">&#128205; 115 South Street, Philadelphia, PA</div>
+  </div>
+</div></section>
+<section class="cta-s">
+  <h2>Book Your Cut on South Street</h2>
+  <p>Philly's best barbershop is right here waiting for you.</p>
+  <a href="#contact" class="btn-w">Book Now</a>
+</section>
+<section class="contact" id="contact"><div class="c-grid">
+  <div>
+    <h2>Visit The Barbers Den</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Address</h4><p>115 South Street, Philadelphia, PA</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>thebarbersdenphilly@gmail.com</p></div></div>
+    <div class="ci"><div>&#8987;</div><div><h4>Walk-Ins</h4><p>Always Welcome</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service Requested">
+      <textarea name="message" placeholder="Questions or notes?"></textarea>
+      <button type="submit" class="btn" style="width:100%">Send Message</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 The Barbers Den &middot; 115 South Street, Philadelphia, PA &middot; Designed by <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Want a site like this? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
