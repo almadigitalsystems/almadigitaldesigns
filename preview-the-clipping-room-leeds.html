@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Clipping Room | Barber Shop Leeds | Men's Haircuts &amp; Fades</title>
+<meta name="description" content="Leeds' trusted barber shop for sharp cuts, clean fades, and beard trims. Friendly, affordable, always welcoming. Book at The Clipping Room.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#f8f9fa;color:#1a1a1a}
+nav{background:#1a1a2e;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#00b4d8}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#ccc;text-decoration:none;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;transition:color .3s}nav ul a:hover{color:#00b4d8}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-left{background:#1a1a2e;display:flex;align-items:center;padding:4rem 3rem}
+.hero-right{background:linear-gradient(135deg,#00b4d8 0%,#0077a0 100%);display:flex;align-items:center;justify-content:center;font-size:10rem}
+.badge{background:#00b4d8;color:#fff;padding:.3rem .9rem;border-radius:2rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:1.25rem}
+.hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:1.25rem}
+.hero-content h1 span{color:#00b4d8}
+.hero-content p{color:#aaa;line-height:1.7;margin-bottom:2rem;font-size:.95rem;max-width:420px}
+.btn{background:#00b4d8;color:#fff;padding:.85rem 2rem;border:none;border-radius:4px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;text-transform:uppercase;letter-spacing:.06em}
+.btn:hover{background:#0097b8;transform:translateY(-2px)}
+.btn-l{border:2px solid rgba(255,255,255,.3);color:#fff;padding:.8rem 1.75rem;border-radius:4px;font-size:.88rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;margin-left:.75rem;text-transform:uppercase}
+.btn-l:hover{border-color:#00b4d8;color:#00b4d8}
+.services{background:#fff;padding:6rem 2rem}.inner{max-width:1100px;margin:0 auto}
+.lbl{color:#00b4d8;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#1a1a2e;margin-bottom:.75rem}
+.sub{color:#666;max-width:480px;margin-bottom:2.5rem;line-height:1.6;font-size:.95rem}
+.svc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.svc-item{background:#f8f9fa;border-left:4px solid #00b4d8;padding:1.5rem;border-radius:0 8px 8px 0;transition:transform .3s}
+.svc-item:hover{transform:translateX(6px)}
+.svc-item h3{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:.4rem}
+.svc-item p{font-size:.85rem;color:#666;line-height:1.5}
+.about{background:#1a1a2e;padding:6rem 2rem}
+.ab-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ab-content p{color:#aaa;line-height:1.8;font-size:.95rem;margin-bottom:1.25rem}
+.disc-box{background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.3);border-radius:8px;padding:1.25rem;margin-top:1.5rem}
+.disc-box p{color:#00b4d8;font-weight:600;font-size:.9rem;margin:0}
+.ab-visual{background:linear-gradient(135deg,#00b4d8,#0077a0);border-radius:12px;height:380px;display:flex;align-items:center;justify-content:center;font-size:7rem}
+.cta-s{background:#00b4d8;padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:.75rem}
+.cta-s p{color:rgba(255,255,255,.85);margin-bottom:2rem;font-size:1.05rem}
+.btn-w{background:#fff;color:#00b4d8;padding:.9rem 2.2rem;border:none;border-radius:4px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s;text-transform:uppercase;letter-spacing:.05em}
+.btn-w:hover{transform:translateY(-2px)}
+.contact{background:#fff;padding:6rem 2rem}
+.c-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:#1a1a2e;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem;align-items:flex-start}
+.ci h4{font-size:.82rem;font-weight:700;color:#00b4d8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#555;font-size:.88rem}
+form input,form textarea{width:100%;background:#f8f9fa;border:1px solid #ddd;border-radius:4px;padding:.75rem 1rem;color:#1a1a1a;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#00b4d8}
+form textarea{height:110px;resize:vertical}
+footer{background:#1a1a2e;padding:1.75rem;text-align:center;color:#555;font-size:.78rem}
+footer a{color:#00b4d8;text-decoration:none}
+@media(max-width:768px){.hero{grid-template-columns:1fr}.hero-right{display:none}.ab-grid,.c-grid{grid-template-columns:1fr}.btn-l{margin-left:0;margin-top:.5rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">The Clipping Room</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-content">
+      <div class="badge">Leeds, UK &middot; Barbershop</div>
+      <h1>Leeds' Favourite Barber &mdash; <span>Sharp Cuts</span>, Great Prices</h1>
+      <p>From classic crops to modern fades, The Clipping Room gives Leeds students and professionals exactly what they're looking for.</p>
+      <a href="#contact" class="btn">Book Your Appointment</a>
+      <a href="#services" class="btn-l">See Services</a>
+    </div>
+  </div>
+  <div class="hero-right">&#128136;</div>
+</section>
+<section class="services" id="services"><div class="inner">
+  <div class="lbl">Services</div><h2>What We Offer</h2>
+  <p class="sub">Quality cuts at fair prices for Leeds students, professionals, and everyone in between.</p>
+  <div class="svc-list">
+    <div class="svc-item"><h3>Men's Haircuts &amp; Crops</h3><p>Classic cuts delivered with skill every time.</p></div>
+    <div class="svc-item"><h3>Skin Fades &amp; Tapers</h3><p>Precision fades blended smooth from skin to length.</p></div>
+    <div class="svc-item"><h3>Beard Shaping &amp; Trims</h3><p>Clean line-ups and full grooming services.</p></div>
+    <div class="svc-item"><h3>Student Discounts</h3><p>Affordable cuts for Leeds students &mdash; show your ID.</p></div>
+    <div class="svc-item"><h3>Walk-In &amp; Appointment</h3><p>Flexible booking &mdash; walk in anytime or book ahead.</p></div>
+  </div>
+</div></section>
+<section class="about" id="about"><div class="ab-grid">
+  <div class="ab-content">
+    <div class="lbl" style="color:#00b4d8">About Us</div>
+    <h2 style="color:#fff">Leeds' Neighbourhood Barber</h2>
+    <p>The Clipping Room is Leeds' neighbourhood barber shop, built for students, professionals, and everyone in between. With skilled barbers and a relaxed welcoming vibe, it's a go-to spot for a reliable cut at a fair price.</p>
+    <p>Conveniently located and always friendly &mdash; exactly what Leeds needs.</p>
+    <div class="disc-box"><p>&#127891; Student Discounts Always Available &mdash; Just Show Your ID</p></div>
+  </div>
+  <div class="ab-visual">&#9986;&#65039;</div>
+</div></section>
+<section class="cta-s">
+  <h2>Book Your Appointment Today</h2>
+  <p>Walk in or book ahead &mdash; The Clipping Room is ready for you.</p>
+  <a href="#contact" class="btn-w">Book Now</a>
+</section>
+<section class="contact" id="contact"><div class="c-grid">
+  <div>
+    <h2>Find Us in Leeds</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Location</h4><p>Leeds, UK</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>theclippingroomleeds@gmail.com</p></div></div>
+    <div class="ci"><div>&#127891;</div><div><h4>Student Discount</h4><p>Available &mdash; show your student ID</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service Requested">
+      <textarea name="message" placeholder="Walk-in or appointment? Any questions?"></textarea>
+      <button type="submit" class="btn" style="width:100%">Send Message</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 The Clipping Room &middot; Leeds, UK &middot; Designed by <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Want a site like this? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
