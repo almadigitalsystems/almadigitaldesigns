@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distinguished Gentleman Barbershop | Charlotte NC | SouthPark | Premium Cuts</title>
+<meta name="description" content="Charlotte's premier barbershop near SouthPark. Expert fades, gentleman's cuts, and hot towel shaves. Book with Eddie at Distinguished Gentleman today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#f0f2f5;color:#0d1b2a}
+nav{background:#0d1b2a;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#b8c8d8;letter-spacing:-.01em}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#b8c8d8;text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:opacity .3s}nav ul a:hover{opacity:.7}
+.hero{background:#0d1b2a;padding:8rem 2rem 6rem;text-align:center;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,#f0f2f5)}
+.loc-tag{color:#6a8caa;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:2rem}
+.crown{font-size:4rem;display:block;margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:900;color:#fff;margin-bottom:.75rem;line-height:1.1}
+.hero h1 em{font-style:italic;color:#b8c8d8}
+.hero p{color:#8aa8c4;max-width:560px;margin:0 auto 2.5rem;line-height:1.8;font-size:1rem}
+.btn{background:#b8c8d8;color:#0d1b2a;padding:.9rem 2.5rem;border:none;border-radius:2px;font-size:.88rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;text-transform:uppercase;letter-spacing:.12em}
+.btn:hover{background:#fff;transform:translateY(-2px)}
+.premium-bar{background:#182840;padding:2rem;text-align:center}
+.premium-bar p{color:#6a8caa;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+.premium-bar p strong{color:#b8c8d8}
+.services{background:#fff;padding:7rem 2rem}.inner{max-width:1000px;margin:0 auto}
+.lbl-c{color:#6a8caa;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;text-align:center}
+h2c{display:block;font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;margin-bottom:.5rem;color:#0d1b2a}
+.subc{color:#888;text-align:center;margin-bottom:3rem;font-size:.95rem}
+.svc-row{display:flex;align-items:center;gap:2rem;padding:1.75rem 0;border-bottom:1px solid #eee}
+.svc-row:first-of-type{border-top:1px solid #eee}
+.svc-num{font-family:'Playfair Display',serif;font-size:1.5rem;color:#b8c8d8;font-weight:700;min-width:2rem}
+.svc-row h3{font-size:1rem;font-weight:700;color:#0d1b2a;margin-bottom:.3rem;flex:1}
+.svc-row p{font-size:.85rem;color:#888;max-width:300px;line-height:1.5}
+.story{background:#0d1b2a;padding:7rem 2rem}
+.story-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.story-visual{border-radius:4px;height:440px;background:linear-gradient(160deg,#182840,#243855);display:flex;align-items:center;justify-content:center;font-size:8rem;border:1px solid rgba(184,200,216,.1)}
+.lbl-silver{color:#6a8caa;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+.story-content h2{font-family:'Playfair Display',serif;font-size:2.2rem;color:#fff;margin-bottom:1.25rem;line-height:1.15}
+.story-content p{color:#8aa8c4;line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.addr-box{background:rgba(184,200,216,.06);border:1px solid rgba(184,200,216,.2);border-radius:4px;padding:1rem 1.25rem;margin-top:1.5rem}
+.addr-box p{color:#b8c8d8;font-size:.88rem;margin:0;font-weight:600}
+.cta-s{background:linear-gradient(135deg,#1a2e45,#243855);border-top:3px solid #b8c8d8;padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;margin-bottom:.75rem}
+.cta-s p{color:#8aa8c4;margin-bottom:2rem;font-size:1.05rem}
+.btn-silver{background:#b8c8d8;color:#0d1b2a;padding:.9rem 2.5rem;border:none;border-radius:2px;font-size:.88rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;text-transform:uppercase;letter-spacing:.12em}
+.btn-silver:hover{background:#fff;transform:translateY(-2px)}
+.contact{background:#f0f2f5;padding:6rem 2rem}
+.c-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:#0d1b2a;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem}
+.ci h4{font-size:.82rem;font-weight:700;color:#1a3a5c;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#555;font-size:.88rem}
+form input,form textarea{width:100%;background:#fff;border:1px solid #d0d8e0;border-radius:2px;padding:.75rem 1rem;color:#0d1b2a;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#6a8caa}
+form textarea{height:110px;resize:vertical}
+footer{background:#0d1b2a;padding:1.75rem;text-align:center;color:#555;font-size:.78rem}
+footer a{color:#b8c8d8;text-decoration:none}
+@media(max-width:768px){.story-grid,.c-grid{grid-template-columns:1fr}.story-visual{height:200px}.svc-row{flex-direction:column;align-items:flex-start;gap:1rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Distinguished Gentleman</div><ul><li><a href="#services">Services</a></li><li><a href="#story">About Eddie</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero">
+  <div class="loc-tag">1100 McAlway Rd &middot; Near SouthPark &middot; Charlotte, NC</div>
+  <span class="crown">&#128081;</span>
+  <h1>SouthPark's Finest Barbershop &mdash;<br><em>Cuts Worthy of a Gentleman</em></h1>
+  <p>Eddie and the team at Distinguished Gentleman deliver the premium grooming experience that Charlotte's most discerning clients demand.</p>
+  <a href="#contact" class="btn">Book Your Appointment with Eddie</a>
+</section>
+<div class="premium-bar"><p>Charlotte's Premier Grooming Destination &middot; <strong>Near SouthPark &middot; 1100 McAlway Road</strong></p></div>
+<section class="services" id="services"><div class="inner">
+  <div class="lbl-c">Our Services</div>
+  <h2c>The Distinguished Experience</h2c>
+  <p class="subc">Premium grooming for Charlotte's business and creative community.</p>
+  <div style="max-width:800px;margin:0 auto">
+    <div class="svc-row"><div class="svc-num">&#8544;</div><h3>Gentleman's Precision Cut</h3><p>Impeccable, tailored cuts that command respect.</p></div>
+    <div class="svc-row"><div class="svc-num">&#8545;</div><h3>Signature Skin Fades</h3><p>Flawless skin fades &mdash; Eddie's signature technique.</p></div>
+    <div class="svc-row"><div class="svc-num">&#8546;</div><h3>Beard Sculpting &amp; Hot Towel Shave</h3><p>Full beard service with the indulgent hot towel experience.</p></div>
+    <div class="svc-row"><div class="svc-num">&#8547;</div><h3>Executive Grooming Packages</h3><p>Comprehensive grooming packages for the Charlotte executive.</p></div>
+    <div class="svc-row"><div class="svc-num">&#8548;</div><h3>Consultations for New Clients</h3><p>First visit? Let Eddie understand your style before he starts.</p></div>
+  </div>
+</div></section>
+<section class="story" id="story"><div class="story-grid">
+  <div class="story-visual">&#128084;</div>
+  <div class="story-content">
+    <div class="lbl-silver">About Eddie</div>
+    <h2>Charlotte's Premier Grooming Destination</h2>
+    <p>Distinguished Gentleman Barbershop is Charlotte's premier grooming destination near SouthPark at 1100 McAlway Road. Owner Eddie blends expert barbering with a refined atmosphere where the city's business and creative community feel right at home.</p>
+    <p>This is more than a haircut. This is the Distinguished experience.</p>
+    <div class="addr-box"><p>&#128205; 1100 McAlway Rd, near SouthPark, Charlotte, NC</p></div>
+  </div>
+</div></section>
+<section class="cta-s">
+  <h2>Book Your Appointment with Eddie</h2>
+  <p>Charlotte's most distinguished grooming experience &mdash; near SouthPark.</p>
+  <a href="#contact" class="btn-silver">Book with Eddie</a>
+</section>
+<section class="contact" id="contact"><div class="c-grid">
+  <div>
+    <h2>Visit Distinguished Gentleman</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Address</h4><p>1100 McAlway Rd, near SouthPark, Charlotte, NC</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>eddiecatlin2@gmail.com</p></div></div>
+    <div class="ci"><div>&#128084;</div><div><h4>Owner</h4><p>Eddie &mdash; Charlotte's Master Barber</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service Requested">
+      <textarea name="message" placeholder="Any preferences for Eddie to know?"></textarea>
+      <button type="submit" class="btn" style="width:100%">Book with Eddie</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 Distinguished Gentleman Barbershop &middot; Charlotte, NC &middot; Designed by <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Want a site like this? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
