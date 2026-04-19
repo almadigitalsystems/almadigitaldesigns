@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LM Hairlounge | Salon de Belleza en Narvarte CDMX | Cortes y Color</title>
+<meta name="description" content="Salon de belleza profesional en Narvarte Oriente, CDMX. Cortes, coloracion, keratina y mas. Agenda tu cita en LM Hairlounge.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a}
+nav{background:#fff;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 0 #eee;position:sticky;top:0;z-index:100}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#6b2d8b}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#555;text-decoration:none;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;transition:color .3s}nav ul a:hover{color:#6b2d8b}
+.banner{background:linear-gradient(135deg,#6b2d8b 0%,#9b4fc8 50%,#c87dd8 100%);color:#fff;padding:8rem 2rem 6rem;text-align:center}
+.lbl{color:rgba(255,255,255,.75);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.25rem}
+.banner h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:900;margin-bottom:1.25rem;line-height:1.1}
+.banner p{color:rgba(255,255,255,.85);max-width:580px;margin:0 auto 2.5rem;line-height:1.7;font-size:1.05rem}
+.btn{background:#fff;color:#6b2d8b;padding:.9rem 2.2rem;border:none;border-radius:30px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;text-transform:uppercase;letter-spacing:.06em}
+.btn:hover{background:#f0e0f8;transform:translateY(-2px)}
+.btn-out{border:2px solid rgba(255,255,255,.5);color:#fff;padding:.8rem 2rem;border-radius:30px;font-size:.88rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;margin-left:.75rem}
+.btn-out:hover{background:rgba(255,255,255,.1)}
+.services{background:#faf6fd;padding:6rem 2rem}.inner{max-width:1100px;margin:0 auto}
+.lbl-p{color:#6b2d8b;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;text-align:center}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:.75rem;color:#1a1a1a}
+.sub{color:#888;text-align:center;max-width:480px;margin:0 auto 3rem;line-height:1.6;font-size:.95rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem}
+.svc-card{background:#fff;border-radius:12px;padding:2rem 1.5rem;text-align:center;box-shadow:0 2px 20px rgba(107,45,139,.08);transition:all .3s}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 8px 30px rgba(107,45,139,.15)}
+.svc-icon{font-size:2.2rem;margin-bottom:1rem}
+.svc-card h3{font-size:.95rem;font-weight:700;color:#1a1a1a;margin-bottom:.4rem}
+.svc-card p{font-size:.82rem;color:#888;line-height:1.5}
+.about{background:#fff;padding:6rem 2rem}
+.ab-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ab-visual{background:linear-gradient(135deg,#f0e0f8,#d4a0e8);border-radius:16px;height:400px;display:flex;align-items:center;justify-content:center;font-size:7rem}
+.ab-content .lbl-p{text-align:left}
+.ab-content h2{text-align:left;margin-bottom:1.25rem}
+.ab-content p{color:#666;line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.addr-pill{display:inline-flex;align-items:center;gap:.5rem;background:#faf6fd;border:1px solid #e0c8f0;border-radius:2rem;padding:.5rem 1rem;font-size:.82rem;color:#6b2d8b;margin-top:1rem;font-weight:600}
+.cta-s{background:linear-gradient(135deg,#6b2d8b,#9b4fc8);padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:.75rem}
+.cta-s p{color:rgba(255,255,255,.85);margin-bottom:2rem;font-size:1.05rem}
+.contact{background:#faf6fd;padding:6rem 2rem}
+.c-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:#1a1a1a;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem;align-items:flex-start}
+.ci h4{font-size:.82rem;font-weight:700;color:#6b2d8b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#555;font-size:.88rem}
+form input,form textarea{width:100%;background:#fff;border:1px solid #e0c8f0;border-radius:8px;padding:.75rem 1rem;color:#1a1a1a;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#6b2d8b}
+form textarea{height:110px;resize:vertical}
+.btn-p{background:#6b2d8b;color:#fff;padding:.9rem 2.2rem;border:none;border-radius:30px;font-size:.9rem;font-weight:700;cursor:pointer;width:100%;text-transform:uppercase;letter-spacing:.06em;transition:all .2s}
+.btn-p:hover{background:#5a1e7a}
+footer{background:#1a1a1a;padding:1.75rem;text-align:center;color:#666;font-size:.78rem}
+footer a{color:#9b4fc8;text-decoration:none}
+@media(max-width:768px){.ab-grid,.c-grid{grid-template-columns:1fr}.ab-visual{height:200px}.btn-out{margin-left:0;margin-top:.5rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">LM Hairlounge</div><ul><li><a href="#servicios">Servicios</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+<section class="banner">
+  <div class="lbl">Narvarte Oriente &middot; CDMX, M&eacute;xico</div>
+  <h1>El Sal&oacute;n que Narvarte Estaba Esperando</h1>
+  <p>Cortes, color y tratamientos de nivel profesional en el coraz&oacute;n de Narvarte Oriente, CDMX.</p>
+  <a href="#contacto" class="btn">Agenda tu Cita Hoy</a>
+  <a href="#servicios" class="btn-out">Ver Servicios</a>
+</section>
+<section class="services" id="servicios"><div class="inner">
+  <div class="lbl-p">Lo que Hacemos</div>
+  <h2>Nuestros Servicios</h2>
+  <p class="sub">T&eacute;cnica profesional con ambiente sofisticado &mdash; para el look que siempre quisiste.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-icon">&#9986;&#65039;</div><h3>Corte de Cabello</h3><p>Cortes precisos adaptados a tu estilo y tipo de rostro.</p></div>
+    <div class="svc-card"><div class="svc-icon">&#127912;</div><h3>Coloraci&oacute;n y Mechas</h3><p>Coloraci&oacute;n profesional y mechas de &uacute;ltima tendencia.</p></div>
+    <div class="svc-card"><div class="svc-icon">&#128134;</div><h3>Tratamientos de Keratina</h3><p>Alisado y keratina para un cabello perfecto.</p></div>
+    <div class="svc-card"><div class="svc-icon">&#128131;</div><h3>Peinados y Alisados</h3><p>Peinados para cualquier ocasi&oacute;n.</p></div>
+    <div class="svc-card"><div class="svc-icon">&#10024;</div><h3>Extensiones de Cabello</h3><p>Extensiones profesionales para m&aacute;s volumen y largo.</p></div>
+  </div>
+</div></section>
+<section class="about" id="nosotros"><div class="ab-grid">
+  <div class="ab-visual">&#128131;</div>
+  <div class="ab-content">
+    <div class="lbl-p">Qui&eacute;nes Somos</div>
+    <h2>El Sal&oacute;n de Referencia en Narvarte</h2>
+    <p>LM Hairlounge es el sal&oacute;n de referencia en Narvarte Oriente, CDMX. Ubicado en Romero de Terreros 1464, combina t&eacute;cnica profesional con ambiente sofisticado.</p>
+    <p>En LM Hairlounge cada cliente sale con el look que siempre quiso.</p>
+    <div class="addr-pill">&#128205; Romero de Terreros 1464, Narvarte Oriente, CDMX</div>
+  </div>
+</div></section>
+<section class="cta-s">
+  <h2>&iquest;Lista para tu nuevo look?</h2>
+  <p>Agenda tu cita hoy en LM Hairlounge &mdash; Narvarte Oriente, CDMX.</p>
+  <a href="#contacto" class="btn">Agenda Ahora</a>
+</section>
+<section class="contact" id="contacto"><div class="c-grid">
+  <div>
+    <h2>Enc&uacute;entranos</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Direcci&oacute;n</h4><p>Romero de Terreros 1464, Narvarte Oriente, CDMX</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Correo</h4><p>lm.hairlounge@gmail.com</p></div></div>
+    <div class="ci"><div>&#128144;</div><div><h4>Especializamos en</h4><p>Cortes, Color, Keratina &amp; M&aacute;s</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Tu Nombre" required>
+      <input type="email" name="email" placeholder="Tu Correo" required>
+      <input type="text" name="service" placeholder="Servicio Deseado">
+      <textarea name="message" placeholder="Alguna pregunta o comentario?"></textarea>
+      <button type="submit" class="btn-p">Enviar Mensaje</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 LM Hairlounge &middot; Narvarte Oriente, CDMX &middot; Dise&ntilde;ado por <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Quieres un sitio asi? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
