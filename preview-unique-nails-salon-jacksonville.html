@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unique Nails Salon | Jacksonville FL | San Marco | Manicures &amp; Pedicures</title>
+<meta name="description" content="San Marco Jacksonville's trusted nail salon for nearly 20 years. Manicures, pedicures, acrylics, nail art. 294 five-star reviews. Book at Unique Nails Salon.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a}
+nav{background:#fff;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #f5d0d8;position:sticky;top:0;z-index:100}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c0607a;font-style:italic}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#555;text-decoration:none;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;transition:color .3s}nav ul a:hover{color:#c0607a}
+.banner{background:linear-gradient(135deg,#c0607a 0%,#e0809a 40%,#f5c0cc 100%);color:#fff;padding:7rem 2rem 6rem;text-align:center;position:relative;overflow:hidden}
+.banner::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="none" stroke="white" stroke-width=".3" opacity="0.15"/></svg>') 0 0/80px repeat}
+.reviews-badge{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;padding:.4rem 1.2rem;border-radius:2rem;font-size:.75rem;font-weight:700;letter-spacing:.12em;display:inline-block;margin-bottom:1.5rem}
+.banner h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:700;margin-bottom:1rem;line-height:1.1;font-style:italic}
+.banner p{color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2.5rem;line-height:1.7;font-size:1.05rem}
+.btn{background:#fff;color:#c0607a;padding:.9rem 2.2rem;border:none;border-radius:30px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;text-transform:uppercase;letter-spacing:.06em}
+.btn:hover{background:#fff8fa;transform:translateY(-2px)}
+.btn-out{border:2px solid rgba(255,255,255,.6);color:#fff;padding:.8rem 2rem;border-radius:30px;font-size:.88rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;margin-left:.75rem}
+.btn-out:hover{background:rgba(255,255,255,.15)}
+.trust-bar{background:#fff8fa;padding:2rem;text-align:center;border-bottom:1px solid #f5d0d8}
+.trust-bar p{color:#c0607a;font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.trust-bar p strong{font-size:1rem}
+.services{background:#fff;padding:6rem 2rem}.inner{max-width:1100px;margin:0 auto}
+.lbl{color:#c0607a;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;text-align:center}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:.75rem;color:#1a1a1a}
+.sub{color:#888;text-align:center;max-width:480px;margin:0 auto 3rem;line-height:1.6;font-size:.95rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.5rem}
+.svc-card{background:#fff8fa;border:1px solid #f5d0d8;border-radius:12px;padding:2rem;text-align:center;transition:all .3s}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(192,96,122,.12)}
+.svc-icon{font-size:2.2rem;margin-bottom:1rem}
+.svc-card h3{font-size:.95rem;font-weight:700;color:#1a1a1a;margin-bottom:.4rem}
+.svc-card p{font-size:.82rem;color:#888;line-height:1.5}
+.about{background:#fff8fa;padding:6rem 2rem;border-top:1px solid #f5d0d8;border-bottom:1px solid #f5d0d8}
+.ab-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ab-visual{background:linear-gradient(135deg,#f5d0d8,#f0b0c0);border-radius:16px;height:400px;display:flex;align-items:center;justify-content:center;font-size:7rem}
+.ab-content .lbl{text-align:left}
+.ab-content h2{text-align:left;margin-bottom:1.25rem}
+.ab-content p{color:#555;line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.review-count{background:linear-gradient(135deg,#c0607a,#e0809a);color:#fff;border-radius:12px;padding:1.5rem;margin-top:1.5rem;text-align:center}
+.review-count .stars{font-size:1.5rem;margin-bottom:.4rem}
+.review-count p{font-size:.88rem;opacity:.9}
+.review-count strong{font-size:1.4rem;display:block;font-family:'Playfair Display',serif}
+.cta-s{background:linear-gradient(135deg,#c0607a,#e0809a);padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:.75rem;font-style:italic}
+.cta-s p{color:rgba(255,255,255,.9);margin-bottom:2rem;font-size:1.05rem}
+.btn-w{background:#fff;color:#c0607a;padding:.9rem 2.2rem;border:none;border-radius:30px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s;text-transform:uppercase;letter-spacing:.06em}
+.btn-w:hover{transform:translateY(-2px)}
+.contact{background:#fff;padding:6rem 2rem}
+.c-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:#1a1a1a;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem}
+.ci h4{font-size:.82rem;font-weight:700;color:#c0607a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#555;font-size:.88rem}
+form input,form textarea{width:100%;background:#fff8fa;border:1px solid #f0c8d0;border-radius:8px;padding:.75rem 1rem;color:#1a1a1a;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#c0607a}
+form textarea{height:110px;resize:vertical}
+.btn-p{background:#c0607a;color:#fff;padding:.9rem 2.2rem;border:none;border-radius:30px;font-size:.9rem;font-weight:700;cursor:pointer;width:100%;text-transform:uppercase;letter-spacing:.06em;transition:all .2s}
+.btn-p:hover{background:#a84d65}
+footer{background:#1a1a1a;padding:1.75rem;text-align:center;color:#666;font-size:.78rem}
+footer a{color:#e0809a;text-decoration:none}
+@media(max-width:768px){.ab-grid,.c-grid{grid-template-columns:1fr}.ab-visual{height:200px}.btn-out{margin-left:0;margin-top:.5rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Unique Nails Salon</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="banner">
+  <div class="reviews-badge">&#11088; 294 Five-Star Reviews &middot; Nearly 20 Years Serving San Marco</div>
+  <h1>Jacksonville's Most Trusted Nail Salon &mdash; Nearly 20 Years in San Marco</h1>
+  <p>Over 294 five-star reviews and nearly two decades of perfection. San Marco's favourite nail salon is right here on Hendricks Avenue.</p>
+  <a href="#contact" class="btn">Book Your Nail Appointment Today</a>
+  <a href="#services" class="btn-out">Our Services</a>
+</section>
+<div class="trust-bar"><p>&#128205; 1630 Hendricks Ave, San Marco, Jacksonville, FL &middot; <strong>Family-Run &middot; Nearly 20 Years &middot; 294+ Reviews</strong></p></div>
+<section class="services" id="services"><div class="inner">
+  <div class="lbl">What We Offer</div>
+  <h2>Our Services</h2>
+  <p class="sub">Expert nail care from a family-run salon that Jacksonville has trusted for nearly two decades.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-icon">&#128137;</div><h3>Manicures &amp; Gel Nails</h3><p>Classic manicures and long-lasting gel finishes.</p></div>
+    <div class="svc-card"><div class="svc-icon">&#129696;</div><h3>Pedicures &amp; Foot Treatments</h3><p>Relaxing pedicures with premium foot care treatments.</p></div>
+    <div class="svc-card"><div class="svc-icon">&#10024;</div><h3>Acrylic Nails &amp; Extensions</h3><p>Full sets and fills for stunning length and shape.</p></div>
+    <div class="svc-card"><div class="svc-icon">&#127912;</div><h3>Nail Art &amp; Custom Designs</h3><p>Intricate nail art crafted just for you.</p></div>
+    <div class="svc-card"><div class="svc-icon">&#128145;</div><h3>Waxing Services</h3><p>Professional waxing for a smooth, clean finish.</p></div>
+  </div>
+</div></section>
+<section class="about" id="about"><div class="ab-grid">
+  <div class="ab-visual">&#128137;</div>
+  <div class="ab-content">
+    <div class="lbl">Our Story</div>
+    <h2>A San Marco Institution for Nearly 20 Years</h2>
+    <p>Unique Nails Salon has served San Marco, Jacksonville for nearly 20 years, earning 294+ glowing reviews. A family-run salon combining expert technique with warm personal service at 1630 Hendricks Avenue.</p>
+    <p>When Jacksonville wants nails done right, they come to Unique.</p>
+    <div class="review-count">
+      <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+      <strong>294+ Five-Star Reviews</strong>
+      <p>Nearly 20 years serving San Marco</p>
+    </div>
+  </div>
+</div></section>
+<section class="cta-s">
+  <h2>Book Your Nail Appointment Today</h2>
+  <p>San Marco's most trusted nail salon &mdash; 294+ reviews don't lie.</p>
+  <a href="#contact" class="btn-w">Book Now</a>
+</section>
+<section class="contact" id="contact"><div class="c-grid">
+  <div>
+    <h2>Visit Unique Nails Salon</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Address</h4><p>1630 Hendricks Ave, San Marco, Jacksonville, FL</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>Virakving@yahoo.com</p></div></div>
+    <div class="ci"><div>&#11088;</div><div><h4>Reviews</h4><p>294+ Five-Star Google Reviews</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service Requested">
+      <textarea name="message" placeholder="Questions or preferences?"></textarea>
+      <button type="submit" class="btn-p">Book Appointment</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 Unique Nails Salon &middot; San Marco, Jacksonville, FL &middot; Designed by <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Want a site like this? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
