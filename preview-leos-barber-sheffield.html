@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leo's Barber Sheffield | Hot Towel Shave &amp; Classic Cuts | Leopold Street</title>
+<meta name="description" content="Sheffield's traditional barbershop on Leopold Street, S1. Leo specialises in hot towel shaves, gentleman's cuts, and expert beard grooming. Book today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#f5f0eb;color:#2a1a0e}
+nav{background:#2a1a0e;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#c9a96e}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#c9a96e;text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;transition:opacity .3s}nav ul a:hover{opacity:.7}
+.hero{background:#2a1a0e;padding:8rem 2rem 6rem;text-align:center}
+.loc-tag{color:#c9a96e;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:2rem}
+.hero-icon{font-size:5rem;margin-bottom:1.5rem;display:block}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;color:#fff;margin-bottom:.75rem;line-height:1.1}
+.hero h1 em{font-style:italic;color:#c9a96e}
+.hero p{color:#aaa;max-width:560px;margin:0 auto 2.5rem;line-height:1.8;font-size:1rem}
+.btn{background:#c9a96e;color:#2a1a0e;padding:.9rem 2.2rem;border:none;border-radius:2px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;text-transform:uppercase;letter-spacing:.1em}
+.btn:hover{background:#b8905a;transform:translateY(-2px)}
+.spec{background:#fff;padding:5rem 2rem;text-align:center}
+.spec-badge{display:inline-block;background:#2a1a0e;color:#c9a96e;padding:.5rem 1.5rem;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:2rem;border-radius:2px}
+.spec h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:1rem;color:#2a1a0e}
+.spec p{color:#666;max-width:600px;margin:0 auto;line-height:1.8}
+.services{background:#f5f0eb;padding:6rem 2rem}.inner{max-width:1000px;margin:0 auto}
+.lbl-c{color:#c9a96e;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;text-align:center}
+h2c{display:block;font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;margin-bottom:.5rem;color:#2a1a0e}
+.subc{color:#888;text-align:center;margin-bottom:3rem;font-size:.95rem}
+.svc-v{display:flex;align-items:center;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid #ddd}
+.svc-v:last-child{border-bottom:none}
+.svc-num{font-family:'Playfair Display',serif;font-size:2rem;color:#c9a96e;font-weight:700;min-width:2.5rem}
+.svc-v h3{font-size:1rem;font-weight:700;color:#2a1a0e;margin-bottom:.3rem}
+.svc-v p{font-size:.85rem;color:#888;line-height:1.5}
+.story{background:#2a1a0e;padding:7rem 2rem}
+.story-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.story-visual{border-radius:4px;height:420px;background:linear-gradient(160deg,#3d2510,#5c3820);display:flex;align-items:center;justify-content:center;font-size:8rem;border:1px solid rgba(201,169,110,.2)}
+.lbl-gold{color:#c9a96e;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+.story-content h2{font-family:'Playfair Display',serif;font-size:2.2rem;color:#fff;margin-bottom:1.25rem;line-height:1.2}
+.story-content p{color:#aaa;line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.addr-box{background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.3);border-radius:4px;padding:1rem 1.25rem;margin-top:1.5rem}
+.addr-box p{color:#c9a96e;font-size:.88rem;margin:0;font-weight:600}
+.cta-s{background:#c9a96e;padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#2a1a0e;margin-bottom:.75rem}
+.cta-s p{color:rgba(42,26,14,.75);margin-bottom:2rem;font-size:1.05rem}
+.btn-dark{background:#2a1a0e;color:#c9a96e;padding:.9rem 2.2rem;border:none;border-radius:2px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s;text-transform:uppercase;letter-spacing:.1em}
+.btn-dark:hover{transform:translateY(-2px)}
+.contact{background:#f5f0eb;padding:6rem 2rem}
+.c-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:#2a1a0e;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem;align-items:flex-start}
+.ci h4{font-size:.82rem;font-weight:700;color:#c9a96e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#555;font-size:.88rem}
+form input,form textarea{width:100%;background:#fff;border:1px solid #ddd;border-radius:2px;padding:.75rem 1rem;color:#2a1a0e;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#c9a96e}
+form textarea{height:110px;resize:vertical}
+footer{background:#2a1a0e;padding:1.75rem;text-align:center;color:#666;font-size:.78rem}
+footer a{color:#c9a96e;text-decoration:none}
+@media(max-width:768px){.story-grid,.c-grid{grid-template-columns:1fr}.story-visual{height:200px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Leo's Barber</div><ul><li><a href="#services">Services</a></li><li><a href="#story">About Leo</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero">
+  <div class="loc-tag">47 Leopold Street &middot; Sheffield S1 2GY</div>
+  <span class="hero-icon">&#129690;</span>
+  <h1>Sheffield's Master of the<br><em>Traditional Hot Towel Shave</em></h1>
+  <p>Leo brings old-world barbering craft to the heart of Sheffield's Leopold Street &mdash; where precision, tradition, and genuine style meet.</p>
+  <a href="#contact" class="btn">Experience the Craft &mdash; Book with Leo</a>
+</section>
+<section class="spec">
+  <div class="spec-badge">Sheffield's Rarest Skill</div>
+  <h2>The Art of the Hot Towel Shave</h2>
+  <p>In a city full of generic barbershops, Leo has mastered a skill that's becoming harder to find &mdash; the traditional hot towel shave. A ritual of precision, warmth, and craft that leaves you feeling like a different person.</p>
+</section>
+<section class="services" id="services"><div class="inner">
+  <div class="lbl-c">Our Craft</div>
+  <h2c>Services</h2c>
+  <p class="subc">Traditional skills for the modern gentleman.</p>
+  <div style="max-width:700px;margin:0 auto">
+    <div class="svc-v"><div class="svc-num">01</div><div><h3>Traditional Hot Towel Shave</h3><p>The signature service &mdash; warm towels, precision razor, smooth finish.</p></div></div>
+    <div class="svc-v"><div class="svc-num">02</div><div><h3>Classic Gentleman's Cut</h3><p>Timeless, well-crafted haircuts for the discerning Sheffield gentleman.</p></div></div>
+    <div class="svc-v"><div class="svc-num">03</div><div><h3>Beard Sculpting &amp; Grooming</h3><p>Expert beard shaping with old-school technique and modern precision.</p></div></div>
+    <div class="svc-v"><div class="svc-num">04</div><div><h3>Modern Fades &amp; Tapers</h3><p>Contemporary fade work alongside classic barbering tradition.</p></div></div>
+    <div class="svc-v"><div class="svc-num">05</div><div><h3>Father &amp; Son Appointments</h3><p>A tradition worth passing down &mdash; book together.</p></div></div>
+  </div>
+</div></section>
+<section class="story" id="story"><div class="story-grid">
+  <div class="story-visual">&#128136;</div>
+  <div class="story-content">
+    <div class="lbl-gold">About Leo</div>
+    <h2>Sheffield's Home for Traditional Barbering</h2>
+    <p>Leo's Barber is Sheffield's home for traditional gentlemen's barbering at 47 Leopold Street. Owner Leo is a specialist in the hot towel shave &mdash; a rare skill that sets this shop apart from every generic barber in Sheffield.</p>
+    <p>Whether you want a classic cut or the full shave experience, Leo delivers craftsmanship you can feel.</p>
+    <div class="addr-box"><p>&#128205; 47 Leopold Street, Sheffield S1 2GY</p></div>
+  </div>
+</div></section>
+<section class="cta-s">
+  <h2>Experience the Craft</h2>
+  <p>Book with Leo today &mdash; Sheffield's master barber on Leopold Street.</p>
+  <a href="#contact" class="btn-dark">Book with Leo</a>
+</section>
+<section class="contact" id="contact"><div class="c-grid">
+  <div>
+    <h2>Visit Leo's Barber</h2>
+    <div class="ci"><div>&#127968;</div><div><h4>Address</h4><p>47 Leopold Street, Sheffield S1 2GY</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>BARBER-LEO@OUTLOOK.COM</p></div></div>
+    <div class="ci"><div>&#9986;&#65039;</div><div><h4>Speciality</h4><p>Traditional Hot Towel Shaves</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service (e.g. Hot Towel Shave)">
+      <textarea name="message" placeholder="Anything you'd like Leo to know?"></textarea>
+      <button type="submit" class="btn" style="width:100%">Book with Leo</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 Leo's Barber &middot; 47 Leopold Street, Sheffield S1 2GY &middot; Designed by <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Want a site like this? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
