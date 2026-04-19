@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr Fade Barbershop | Memphis TN | Summer Avenue | Precision Fades &amp; Cuts</title>
+<meta name="description" content="Memphis barbershop on Summer Avenue. Precision fades, tapers, beard trims, kids' cuts. Walk-ins welcome at Mr Fade Barbershop.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#080c10;color:#fff}
+nav{position:fixed;top:0;width:100%;background:rgba(8,12,16,.96);z-index:100;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,200,150,.2)}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:#fff;letter-spacing:-.02em}
+.logo span{color:#00c896}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#bbb;text-decoration:none;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;transition:color .3s}nav ul a:hover{color:#00c896}
+.hero{min-height:100vh;background:linear-gradient(135deg,#080c10 0%,#0d1e18 50%,#080c10 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden}
+.hero::before{content:'MR FADE';position:absolute;font-family:'Playfair Display',serif;font-size:20vw;font-weight:900;color:rgba(0,200,150,.03);letter-spacing:-.05em;pointer-events:none;line-height:1}
+.hero .badge{background:rgba(0,200,150,.15);border:1px solid rgba(0,200,150,.35);color:#00c896;padding:.35rem 1.1rem;border-radius:2rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,7rem);font-weight:900;line-height:.9;letter-spacing:-.04em;margin-bottom:2rem}
+.hero h1 em{font-style:normal;color:#00c896;display:block;font-size:.45em;letter-spacing:.02em;font-weight:700}
+.hero p{font-size:1.1rem;color:#999;max-width:540px;margin:0 auto 3rem;line-height:1.7}
+.btn{background:#00c896;color:#080c10;padding:1rem 2.8rem;border:none;border-radius:4px;font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;letter-spacing:.06em;text-transform:uppercase}
+.btn:hover{background:#00e0aa;transform:translateY(-2px)}
+.btn-o{border:2px solid rgba(0,200,150,.4);color:#00c896;padding:.9rem 2rem;border-radius:4px;font-size:.9rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;margin-left:.75rem;letter-spacing:.05em;text-transform:uppercase}
+.btn-o:hover{background:rgba(0,200,150,.1)}
+.ticker{background:#00c896;color:#080c10;padding:1rem;text-align:center;font-size:.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.services{background:#080c10;padding:6rem 2rem}.inner{max-width:1100px;margin:0 auto}
+.lbl{color:#00c896;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:.75rem}
+.sub{color:#888;max-width:480px;margin-bottom:2.5rem;line-height:1.6;font-size:.95rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.25rem}
+.card{background:#0d1820;border:1px solid rgba(0,200,150,.12);border-radius:8px;padding:2rem;transition:all .3s}
+.card:hover{border-color:#00c896;transform:translateY(-4px)}
+.card-icon{font-size:1.8rem;margin-bottom:.75rem}
+.card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.card p{font-size:.82rem;color:#888;line-height:1.5}
+.about{background:#0d1820;padding:6rem 2rem}
+.ab-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ab-visual{background:linear-gradient(135deg,#0d1e18,#122a20);border-radius:12px;height:380px;display:flex;align-items:center;justify-content:center;font-size:7rem;border:1px solid rgba(0,200,150,.12)}
+.ab-content p{color:#999;line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.addr-box{background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.2);border-radius:8px;padding:1rem 1.25rem;margin-top:1.5rem}
+.addr-box p{color:#00c896;font-size:.88rem;margin:0;font-weight:600}
+.fam-note{background:rgba(0,200,150,.04);border:1px solid rgba(0,200,150,.1);border-radius:8px;padding:1rem 1.25rem;margin-top:.75rem}
+.fam-note p{color:#888;font-size:.85rem;margin:0;line-height:1.5}
+.cta-s{background:linear-gradient(135deg,#00c896,#00a070);padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#080c10;margin-bottom:.75rem}
+.cta-s p{color:rgba(8,12,16,.7);margin-bottom:2rem;font-size:1.05rem}
+.btn-dark{background:#080c10;color:#00c896;padding:.9rem 2.2rem;border:none;border-radius:4px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s;text-transform:uppercase;letter-spacing:.06em}
+.btn-dark:hover{transform:translateY(-2px)}
+.contact{background:#080c10;padding:6rem 2rem}
+.c-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem}
+.ci h4{font-size:.82rem;font-weight:700;color:#00c896;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#aaa;font-size:.88rem}
+form input,form textarea{width:100%;background:#0d1820;border:1px solid rgba(0,200,150,.18);border-radius:4px;padding:.75rem 1rem;color:#fff;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#00c896}
+form textarea{height:110px;resize:vertical}
+footer{background:#050810;padding:1.75rem;text-align:center;color:#444;font-size:.78rem;border-top:1px solid rgba(0,200,150,.1)}
+footer a{color:#00c896;text-decoration:none}
+@media(max-width:768px){.ab-grid,.c-grid{grid-template-columns:1fr}.ab-visual{height:180px}.btn-o{margin-left:0;margin-top:.5rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Mr <span>Fade</span></div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero">
+  <div>
+    <div class="badge">4824 Summer Ave &middot; Memphis, TN 38122</div>
+    <h1>Mr Fade <em>Summer Avenue's Signature Fade</em></h1>
+    <p>Memphis's go-to spot for precision fades and clean cuts on Summer Ave. Walk in or book online and see why the neighbourhood comes to Mr Fade.</p>
+    <a href="#contact" class="btn">Get Your Fade Today</a>
+    <a href="#services" class="btn-o">See Services</a>
+  </div>
+</section>
+<div class="ticker">Memphis's Premier Fade Destination &middot; Walk-Ins Welcome &middot; Summer Avenue, Memphis TN</div>
+<section class="services" id="services"><div class="inner">
+  <div class="lbl">What We Do</div><h2>Our Services</h2>
+  <p class="sub">Precision fades and sharp cuts &mdash; the Summer Avenue way.</p>
+  <div class="svc-grid">
+    <div class="card"><div class="card-icon">&#128136;</div><h3>Signature Fade Haircuts</h3><p>Mr Fade's signature &mdash; the cleanest fade in Memphis.</p></div>
+    <div class="card"><div class="card-icon">&#9986;&#65039;</div><h3>Skin Tapers &amp; Line-Ups</h3><p>Precision skin tapers with razor-sharp line-ups.</p></div>
+    <div class="card"><div class="card-icon">&#129490;</div><h3>Beard Trims &amp; Grooming</h3><p>Expert beard shaping to complete your look.</p></div>
+    <div class="card"><div class="card-icon">&#128102;</div><h3>Kids' Cuts</h3><p>Fun, patient cuts for the little ones too.</p></div>
+    <div class="card"><div class="card-icon">&#128241;</div><h3>Walk-In &amp; Online Booking</h3><p>Your schedule, your choice &mdash; walk in or book ahead.</p></div>
+  </div>
+</div></section>
+<section class="about" id="about"><div class="ab-grid">
+  <div class="ab-visual">&#128136;</div>
+  <div class="ab-content">
+    <div class="lbl">About Mr Fade</div>
+    <h2>Memphis's Summer Avenue Favourite</h2>
+    <p>Mr Fade Barbershop is a Memphis favourite on Summer Avenue, serving Berclair and Highland Heights with precision fades and sharp line-ups. Known for skilled hands and a shop culture that feels like family.</p>
+    <p>On Summer Ave, Mr Fade is the name everyone knows &mdash; and keeps coming back to.</p>
+    <div class="addr-box"><p>&#128205; 4824 Summer Ave, Memphis, TN 38122</p></div>
+    <div class="fam-note"><p>&#128106; A Memphis shop where the neighbourhood feels like family from the first visit.</p></div>
+  </div>
+</div></section>
+<section class="cta-s">
+  <h2>Get Your Fade Today &mdash; Book Online</h2>
+  <p>Walk in or book online &mdash; Summer Avenue is waiting for you.</p>
+  <a href="#contact" class="btn-dark">Book Now</a>
+</section>
+<section class="contact" id="contact"><div class="c-grid">
+  <div>
+    <h2>Find Mr Fade</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Address</h4><p>4824 Summer Ave, Memphis, TN 38122</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>Mrfade.biz@gmail.com</p></div></div>
+    <div class="ci"><div>&#8987;</div><div><h4>Walk-Ins</h4><p>Always Welcome on Summer Ave</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service Requested">
+      <textarea name="message" placeholder="Questions or notes?"></textarea>
+      <button type="submit" class="btn" style="width:100%">Send Message</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 Mr Fade Barbershop &middot; Memphis, TN &middot; Designed by <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Want a site like this? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
