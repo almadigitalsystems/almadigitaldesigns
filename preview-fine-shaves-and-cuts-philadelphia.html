@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fine Shaves and Cuts | Philadelphia Barber | Precision Cuts &amp; Straight Razor Shaves</title>
+<meta name="description" content="Philadelphia barbershop specialising in precision haircuts, skin fades, and straight razor shaves. Book at Fine Shaves and Cuts today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#f4f6f8;color:#1a1a2e}
+nav{background:#1a1a2e;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#7eb8d4}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#ccc;text-decoration:none;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;transition:color .3s}nav ul a:hover{color:#7eb8d4}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-left{background:#1a1a2e;display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem}
+.hero-right{background:linear-gradient(160deg,#2a3a50 0%,#3a5068 100%);display:flex;align-items:center;justify-content:center;font-size:9rem;position:relative;overflow:hidden}
+.hero-right::before{content:'PRECISION';position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:900;letter-spacing:.4em;color:rgba(255,255,255,.12);text-transform:uppercase;white-space:nowrap}
+.badge{background:rgba(126,184,212,.2);border:1px solid rgba(126,184,212,.4);color:#7eb8d4;padding:.3rem .9rem;border-radius:2rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:1.5rem}
+.hero-left h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:1.25rem}
+.hero-left h1 em{font-style:normal;color:#7eb8d4}
+.hero-left p{color:#aaa;line-height:1.7;margin-bottom:1.5rem;font-size:.95rem;max-width:420px}
+.upgrade-note{background:rgba(126,184,212,.08);border-left:3px solid #7eb8d4;padding:.75rem 1rem;margin-bottom:2rem;font-size:.82rem;color:#7eb8d4}
+.btn{background:#7eb8d4;color:#1a1a2e;padding:.85rem 2rem;border:none;border-radius:4px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;text-transform:uppercase;letter-spacing:.06em}
+.btn:hover{background:#5fa0c0;transform:translateY(-2px)}
+.btn-l{border:2px solid rgba(255,255,255,.25);color:#fff;padding:.8rem 1.75rem;border-radius:4px;font-size:.88rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;margin-left:.75rem;text-transform:uppercase}
+.btn-l:hover{border-color:#7eb8d4;color:#7eb8d4}
+.services{background:#fff;padding:6rem 2rem}.inner{max-width:1100px;margin:0 auto}
+.lbl{color:#7eb8d4;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#1a1a2e;margin-bottom:.75rem}
+.sub{color:#666;max-width:480px;margin-bottom:2.5rem;line-height:1.6;font-size:.95rem}
+.svc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.svc-item{background:#f4f6f8;border-bottom:3px solid #7eb8d4;padding:1.5rem;border-radius:8px 8px 0 0;transition:all .3s}
+.svc-item:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.svc-item h3{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:.4rem}
+.svc-item p{font-size:.85rem;color:#666;line-height:1.5}
+.about{background:#1a1a2e;padding:6rem 2rem}
+.ab-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ab-content h2{color:#fff;margin-bottom:1.25rem}
+.ab-content p{color:#aaa;line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.wix-note{background:rgba(126,184,212,.08);border:1px solid rgba(126,184,212,.2);border-radius:8px;padding:1rem 1.25rem;margin-top:1.5rem}
+.wix-note p{color:#7eb8d4;font-size:.85rem;margin:0;line-height:1.5}
+.ab-visual{background:linear-gradient(135deg,#2a3a50,#1a2a3e);border-radius:12px;height:380px;display:flex;align-items:center;justify-content:center;font-size:7rem;border:1px solid rgba(126,184,212,.15)}
+.cta-s{background:#7eb8d4;padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#1a1a2e;margin-bottom:.75rem}
+.cta-s p{color:rgba(26,26,46,.75);margin-bottom:2rem;font-size:1.05rem}
+.btn-dark{background:#1a1a2e;color:#fff;padding:.9rem 2.2rem;border:none;border-radius:4px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s;text-transform:uppercase;letter-spacing:.05em}
+.btn-dark:hover{transform:translateY(-2px)}
+.contact{background:#fff;padding:6rem 2rem}
+.c-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:#1a1a2e;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem}
+.ci h4{font-size:.82rem;font-weight:700;color:#7eb8d4;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#555;font-size:.88rem}
+form input,form textarea{width:100%;background:#f4f6f8;border:1px solid #ddd;border-radius:4px;padding:.75rem 1rem;color:#1a1a1a;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#7eb8d4}
+form textarea{height:110px;resize:vertical}
+footer{background:#1a1a2e;padding:1.75rem;text-align:center;color:#555;font-size:.78rem}
+footer a{color:#7eb8d4;text-decoration:none}
+@media(max-width:768px){.hero{grid-template-columns:1fr}.hero-right{display:none}.ab-grid,.c-grid{grid-template-columns:1fr}.btn-l{margin-left:0;margin-top:.5rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Fine Shaves and Cuts</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="badge">Philadelphia, PA &middot; Barbershop</div>
+    <h1>Philadelphia's Precision Barbershop &mdash; <em>Fine Shaves, Finer Cuts</em></h1>
+    <div class="upgrade-note">Currently upgrading from a free Wix site &mdash; see what a professional site could look like.</div>
+    <p>Step away from the generic chains. Fine Shaves and Cuts brings old-school craft and modern style to Philadelphia &mdash; on a professional site that finally matches the quality inside.</p>
+    <a href="#contact" class="btn">Book Your Appointment in Philly</a>
+    <a href="#services" class="btn-l">See Services</a>
+  </div>
+  <div class="hero-right">&#129690;</div>
+</section>
+<section class="services" id="services"><div class="inner">
+  <div class="lbl">Services</div><h2>Our Craft</h2>
+  <p class="sub">Classic straight-razor technique meets contemporary style in Philadelphia.</p>
+  <div class="svc-list">
+    <div class="svc-item"><h3>Classic Haircuts &amp; Crops</h3><p>Timeless cuts with modern precision and attention to detail.</p></div>
+    <div class="svc-item"><h3>Skin Fades &amp; Line-Ups</h3><p>Crisp skin fades and sharp line-ups that last.</p></div>
+    <div class="svc-item"><h3>Straight Razor Shaves</h3><p>The signature service &mdash; old-school straight razor precision.</p></div>
+    <div class="svc-item"><h3>Beard Sculpting &amp; Hot Towel</h3><p>Expert beard shaping with the full hot towel treatment.</p></div>
+    <div class="svc-item"><h3>Hair &amp; Scalp Treatments</h3><p>Nourishing treatments for a healthy scalp and stronger hair.</p></div>
+  </div>
+</div></section>
+<section class="about" id="about"><div class="ab-grid">
+  <div class="ab-content">
+    <div class="lbl" style="color:#7eb8d4">About Us</div>
+    <h2>Philadelphia's Precision Barbershop</h2>
+    <p>Fine Shaves and Cuts is a Philadelphia barbershop dedicated to precision grooming, combining classic straight-razor technique with contemporary styles. Known for meticulous attention to detail and a chair-side manner that turns first-timers into regulars.</p>
+    <p>Every client gets the kind of service that makes them come back &mdash; and tell their friends.</p>
+    <div class="wix-note"><p>&#128640; This is a preview of what Fine Shaves and Cuts could look like with a professional website &mdash; instead of the current free Wix subdomain.</p></div>
+  </div>
+  <div class="ab-visual">&#129690;</div>
+</div></section>
+<section class="cta-s">
+  <h2>Book Your Appointment in Philly</h2>
+  <p>Precision barbering &mdash; the way it should be done.</p>
+  <a href="#contact" class="btn-dark">Book Now</a>
+</section>
+<section class="contact" id="contact"><div class="c-grid">
+  <div>
+    <h2>Find Fine Shaves and Cuts</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Location</h4><p>Philadelphia, PA</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>fineshavesandcuts@gmail.com</p></div></div>
+    <div class="ci"><div>&#9986;&#65039;</div><div><h4>Specialty</h4><p>Straight Razor Shaves &amp; Precision Cuts</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service Requested">
+      <textarea name="message" placeholder="Questions or notes?"></textarea>
+      <button type="submit" class="btn" style="width:100%">Send Message</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 Fine Shaves and Cuts &middot; Philadelphia, PA &middot; Designed by <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Want a site like this? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
