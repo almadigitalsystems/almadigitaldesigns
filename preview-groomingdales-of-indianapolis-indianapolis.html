@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groomingdales of Indianapolis | Expert Pet Grooming in Indianapolis, IN</title>
+    <meta name="description" content="Groomingdales of Indianapolis offers boutique pet grooming for dogs and cats in Indianapolis, IN. Full grooms, baths, nail trims, de-shedding treatments, and more. Book your appointment today!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark: #1E1B2E;
+            --dark2: #2A2440;
+            --cream: #FAF8F5;
+            --cream2: #F2EDE8;
+            --purple: #8B5CF6;
+            --purple-light: #A78BFA;
+            --teal: #14B8A6;
+            --teal-light: #2DD4BF;
+            --warm: #F472B6;
+            --text-dark: #1E1B2E;
+            --text-mid: #4A4560;
+            --text-light: #F8F5FF;
+            --white: #FFFFFF;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(30, 27, 46, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 0 40px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(139,92,246,0.2);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--white);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--teal-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--teal-light); }
+
+        .nav-cta {
+            background: var(--purple);
+            color: var(--white) !important;
+            padding: 10px 22px !important;
+            border-radius: 50px;
+            transition: background 0.2s, transform 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--purple-light) !important;
+            transform: translateY(-1px);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1E1B2E 0%, #2D1B55 45%, #1B3A4B 100%);
+            display: flex;
+            align-items: center;
+            padding: 120px 40px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(20,184,166,0.12) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(20,184,166,0.15);
+            border: 1px solid rgba(20,184,166,0.4);
+            color: var(--teal-light);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+        }
+
+        .hero-badge::before {
+            content: '🐾';
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 5vw, 62px);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .accent {
+            color: var(--teal-light);
+            font-style: italic;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 520px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple), var(--teal));
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 24px rgba(139,92,246,0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(139,92,246,0.5);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            color: rgba(255,255,255,0.85);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            border: 1.5px solid rgba(255,255,255,0.25);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--teal-light);
+            color: var(--teal-light);
+        }
+
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 24px;
+            color: var(--white);
+        }
+
+        .hero-card-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--teal-light);
+            margin-bottom: 8px;
+        }
+
+        .hero-card-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .hero-card-desc {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+        }
+
+        .hero-card-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .hero-card.featured {
+            background: linear-gradient(135deg, rgba(139,92,246,0.25), rgba(20,184,166,0.15));
+            border-color: rgba(139,92,246,0.35);
+        }
+
+        .trust-bar {
+            margin-top: 48px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+        }
+
+        .trust-icon {
+            font-size: 16px;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 40px;
+            background: var(--cream);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139,92,246,0.1);
+            border: 1px solid rgba(139,92,246,0.2);
+            color: var(--purple);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 7px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-sub {
+            font-size: 17px;
+            color: var(--text-mid);
+            line-height: 1.65;
+            max-width: 560px;
+            margin-bottom: 56px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px 28px;
+            transition: transform 0.25s, box-shadow 0.25s;
+            border: 1px solid rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--purple), var(--teal));
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover::before { opacity: 1; }
+
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .service-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .service-desc {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 100px 40px;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .about-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .about-stat {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-align: center;
+        }
+
+        .about-stat.purple-card {
+            background: linear-gradient(135deg, rgba(139,92,246,0.25), rgba(139,92,246,0.1));
+            border-color: rgba(139,92,246,0.3);
+        }
+
+        .about-stat.teal-card {
+            background: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(20,184,166,0.05));
+            border-color: rgba(20,184,166,0.3);
+        }
+
+        .about-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .about-stat-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .about-tagline {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--teal-light);
+            margin-bottom: 20px;
+        }
+
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 3.5vw, 44px);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .highlight-dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--teal));
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: white;
+        }
+
+        .highlight-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 100px 40px;
+            background: var(--cream2);
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section .section-label {
+            background: rgba(20,184,166,0.1);
+            border-color: rgba(20,184,166,0.25);
+            color: var(--teal);
+        }
+
+        .cta-section .section-title {
+            font-size: clamp(32px, 4vw, 52px);
+            margin-bottom: 20px;
+        }
+
+        .cta-section .section-sub {
+            margin: 0 auto 40px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple), var(--teal));
+            color: var(--white);
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 30px rgba(139,92,246,0.35);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(139,92,246,0.5);
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 80px 40px;
+            background: var(--dark2);
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .contact-sub {
+            font-size: 16px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(139,92,246,0.2);
+            border: 1px solid rgba(139,92,246,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-size: 15px;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: var(--white);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.25);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--purple-light);
+        }
+
+        .form-group select option {
+            background: var(--dark2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            background: linear-gradient(135deg, var(--purple), var(--teal));
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .form-submit:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 40px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .footer-logo span { color: var(--teal-light); }
+
+        .footer-info {
+            font-size: 14px;
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--teal-light); }
+
+        /* BANNER */
+        .preview-banner {
+            background: linear-gradient(135deg, var(--purple), var(--teal));
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 200;
+        }
+
+        .preview-banner a {
+            color: white;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links { display: none; }
+            .hero { padding: 100px 20px 60px; }
+            .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+            .hero h1 { font-size: 36px; }
+            .hero-sub { font-size: 16px; }
+            .services { padding: 70px 20px; }
+            .services-grid { grid-template-columns: 1fr; gap: 14px; }
+            .about { padding: 70px 20px; }
+            .about-inner { grid-template-columns: 1fr; gap: 48px; }
+            .cta-section { padding: 70px 20px; }
+            .contact { padding: 60px 20px; }
+            .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+            .form-row { grid-template-columns: 1fr; }
+            footer { padding: 30px 20px; }
+            .footer-inner { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preview Banner -->
+    <div class="preview-banner">
+        ✨ This is your free website preview from Alma Digital — <a href="mailto:hello@almadigital.com">claim your redesign today</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">Groomingdales <span>Indianapolis</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge">Boutique Pet Grooming · Indianapolis, IN</div>
+                <h1>The Boutique Grooming Experience <span class="accent">Indianapolis Pet Parents</span> Trust</h1>
+                <p class="hero-sub">At Groomingdales, every appointment is personalized — because your pet deserves more than a cookie-cutter groom. Expert care, tail-to-nose, every single visit.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Book Your Pet's Groom Today</a>
+                    <a href="#services" class="btn-secondary">View All Services</a>
+                </div>
+                <div class="trust-bar">
+                    <div class="trust-item"><span class="trust-icon">⭐</span> 5-Star Grooming</div>
+                    <div class="trust-item"><span class="trust-icon">🐕</span> Dogs & Cats Welcome</div>
+                    <div class="trust-item"><span class="trust-icon">📍</span> Indianapolis, IN</div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card featured">
+                    <div class="hero-card-label">Our Promise</div>
+                    <div class="hero-card-value">Personalized Care</div>
+                    <div class="hero-card-desc">Every pet gets undivided attention and a groom tailored to their unique needs</div>
+                </div>
+                <div class="hero-card-row">
+                    <div class="hero-card">
+                        <div class="hero-card-label">Services</div>
+                        <div class="hero-card-value">8+</div>
+                        <div class="hero-card-desc">Grooming packages for every pet</div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-label">Pets Served</div>
+                        <div class="hero-card-value">Dogs &amp; Cats</div>
+                        <div class="hero-card-desc">Expert care for all breeds</div>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-label">Location</div>
+                    <div class="hero-card-value" style="font-size:20px;">Indianapolis, Indiana</div>
+                    <div class="hero-card-desc">Proudly serving Indianapolis and surrounding neighborhoods</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-label">🐾 What We Offer</div>
+            <h2 class="section-title">Grooming Services Tailored<br>to Every Pet</h2>
+            <p class="section-sub">From full spa packages to quick add-ons, every service is performed with expert hands and genuine love for animals.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">✂️</span>
+                    <div class="service-name">Full Groom Package</div>
+                    <p class="service-desc">The works — bath, blow-dry, breed-specific haircut, nail trim, ear cleaning, and a finishing spritz. Your pet walks out looking runway-ready.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🛁</span>
+                    <div class="service-name">Bath &amp; Brush Out</div>
+                    <p class="service-desc">A deep, thorough wash and full brush-out that leaves your pet's coat clean, shiny, and manageable. Perfect for in-between full grooms.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">💅</span>
+                    <div class="service-name">Nail Trim &amp; File</div>
+                    <p class="service-desc">Quick, safe, and stress-free nail trimming and filing to keep your pet comfortable and your floors scratch-free.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🌊</span>
+                    <div class="service-name">De-Shedding Treatment</div>
+                    <p class="service-desc">Our specialized de-shedding treatment removes loose undercoat and reduces shedding significantly — your furniture will thank you.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🐶</span>
+                    <div class="service-name">Puppy's First Groom</div>
+                    <p class="service-desc">A gentle, patient introduction to grooming designed to make your new pup comfortable with the process for life. We go at their pace, always.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🐱</span>
+                    <div class="service-name">Cat Grooming</div>
+                    <p class="service-desc">We love our feline clients too. From baths to lion cuts to nail trims, our groomers are experienced and patient with even the most particular cats.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🦷</span>
+                    <div class="service-name">Teeth Brushing</div>
+                    <p class="service-desc">A quick but important add-on that keeps your pet's breath fresh and their dental health on track between vet visits.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">👂</span>
+                    <div class="service-name">Ear Cleaning</div>
+                    <p class="service-desc">Gentle, professional ear cleaning to prevent infections and keep your pet healthy and comfortable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-inner">
+            <div class="about-visual">
+                <div class="about-stat purple-card">
+                    <div class="about-stat-num">100%</div>
+                    <div class="about-stat-label">Personalized Appointments</div>
+                </div>
+                <div class="about-stat teal-card">
+                    <div class="about-stat-num">8+</div>
+                    <div class="about-stat-label">Grooming Services</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-num">🐕🐈</div>
+                    <div class="about-stat-label">Dogs &amp; Cats Welcome</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-num">Indy</div>
+                    <div class="about-stat-label">Serving All of Indianapolis</div>
+                </div>
+            </div>
+            <div>
+                <div class="about-tagline">Our Story</div>
+                <h2 class="about-title">More Than a Groomer.<br>A Boutique Spa for Your Pet.</h2>
+                <p class="about-text">Groomingdales of Indianapolis is a boutique pet grooming salon dedicated to keeping your furry family members looking and feeling their absolute best. Proudly serving Indianapolis and surrounding neighborhoods, we combine expert grooming techniques with genuine love for animals — every dog and cat is treated like our own.</p>
+                <p class="about-text">Whether it's a quick nail trim or a full spa day, our skilled groomers ensure your pet leaves happy, healthy, and head-turning.</p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-dot">✓</div>
+                        <div class="highlight-text"><strong style="color:white;">Breed-specific expertise</strong> — we know that a Golden Retriever needs a very different groom than a Shih Tzu or a Maine Coon</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-dot">✓</div>
+                        <div class="highlight-text"><strong style="color:white;">Stress-free environment</strong> — calm, quiet, and designed with your pet's comfort as the top priority</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-dot">✓</div>
+                        <div class="highlight-text"><strong style="color:white;">Genuine love for animals</strong> — every member of our team is a true pet lover, not just a technician</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <div class="section-label">Ready to Book?</div>
+            <h2 class="section-title">Your Pet Deserves the Best</h2>
+            <p class="section-sub">Give your furry family member the boutique grooming experience they deserve. Personalized, expert, and full of love — every single visit.</p>
+            <a href="#contact" class="cta-btn">Book Your Pet's Groom Today</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div>
+                <h2 class="contact-title">Get in Touch</h2>
+                <p class="contact-sub">Ready to book or have questions? Reach out and we'll get back to you quickly. We'd love to meet your pet!</p>
+                <div class="contact-detail">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Indianapolis, Indiana, USA</div>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">groomingdalesofindy@gmail.com</div>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">🐾</div>
+                    <div>
+                        <div class="contact-label">Serving</div>
+                        <div class="contact-value">Indianapolis &amp; Surrounding Neighborhoods</div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xojppajv" method="POST">
+                <input type="hidden" name="_subject" value="Grooming Appointment Request — Groomingdales of Indianapolis">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="name" placeholder="Jane Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" name="phone" placeholder="(317) 555-0100">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="you@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Interested In</label>
+                    <select name="service">
+                        <option value="">Select a service…</option>
+                        <option>Full Groom Package</option>
+                        <option>Bath &amp; Brush Out</option>
+                        <option>Nail Trim &amp; File</option>
+                        <option>De-Shedding Treatment</option>
+                        <option>Puppy's First Groom</option>
+                        <option>Cat Grooming</option>
+                        <option>Teeth Brushing</option>
+                        <option>Ear Cleaning</option>
+                        <option>Not sure — need advice</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tell us about your pet</label>
+                    <textarea name="message" placeholder="Breed, age, any special needs…"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Book Your Pet's Groom Today →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">Groomingdales <span>Indianapolis</span></div>
+            <div class="footer-info">
+                Boutique Pet Grooming · Indianapolis, Indiana<br>
+                <span style="font-size:12px;">© 2026 Groomingdales of Indianapolis. All rights reserved.</span>
+            </div>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Book Now</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
