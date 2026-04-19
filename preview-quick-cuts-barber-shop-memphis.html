@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Cuts Barber Shop | Memphis, TN | Haircuts, Fades &amp; Beard Trims</title>
+<meta name="description" content="Memphis's trusted barber shop for precision fades, haircuts, and beard trims. Walk-ins welcome. Book your appointment online at Quick Cuts Barber Shop today.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#111;color:#fff}
+nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,.95);z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#ff6b2b}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:#ccc;text-decoration:none;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;transition:color .3s}nav ul a:hover{color:#ff6b2b}
+.hero{min-height:100vh;background:linear-gradient(135deg,#0a0a0a 0%,#1c0800 60%,#0d0d0d 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 4rem}
+.badge{background:#ff6b2b;color:#fff;padding:.3rem 1rem;border-radius:2rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem;background:linear-gradient(135deg,#fff 0%,#ff6b2b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.1rem;color:#aaa;max-width:580px;margin:0 auto 2.5rem;line-height:1.7}
+.btn{background:#ff6b2b;color:#fff;padding:.9rem 2.2rem;border:none;border-radius:4px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;letter-spacing:.05em;text-transform:uppercase}
+.btn:hover{background:#e55a1a;transform:translateY(-2px)}
+.btn-o{border:2px solid #ff6b2b;color:#ff6b2b;padding:.8rem 2rem;border-radius:4px;font-size:.9rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;margin-left:.75rem;letter-spacing:.05em;text-transform:uppercase}
+.btn-o:hover{background:#ff6b2b;color:#fff}
+.services{background:#111;padding:6rem 2rem}.inner{max-width:1100px;margin:0 auto}
+.lbl{color:#ff6b2b;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:.75rem}
+.sub{color:#888;max-width:480px;margin-bottom:2.5rem;line-height:1.6;font-size:.95rem}
+.grid5{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem}
+.card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:1.75rem;transition:all .3s}
+.card:hover{border-color:#ff6b2b;transform:translateY(-4px)}
+.card-icon{font-size:1.8rem;margin-bottom:.75rem}
+.card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.card p{font-size:.82rem;color:#888;line-height:1.5}
+.dark{background:#0d0d0d;padding:6rem 2rem}
+.ab-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.visual{background:linear-gradient(135deg,#1a0800,#2a1200);border-radius:12px;height:380px;display:flex;align-items:center;justify-content:center;font-size:7rem;border:1px solid #2a2a2a}
+.ab-content p{color:#aaa;line-height:1.8;font-size:.95rem;margin-bottom:1.25rem}
+.stats{display:flex;gap:2rem;margin-top:1.5rem}
+.stat-n{font-family:'Playfair Display',serif;font-size:1.8rem;color:#ff6b2b;font-weight:700}
+.stat-l{font-size:.7rem;color:#888;text-transform:uppercase;letter-spacing:.1em}
+.cta-s{background:linear-gradient(135deg,#ff6b2b,#cc4400);padding:5rem 2rem;text-align:center}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:.75rem}
+.cta-s p{color:rgba(255,255,255,.85);margin-bottom:2rem;font-size:1.05rem}
+.btn-w{background:#fff;color:#ff6b2b;padding:.9rem 2.2rem;border:none;border-radius:4px;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s;text-transform:uppercase;letter-spacing:.05em}
+.btn-w:hover{transform:translateY(-2px)}
+.contact{background:#111;padding:6rem 2rem}
+.c-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.c-grid h2{font-family:'Playfair Display',serif;font-size:1.9rem;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.25rem;align-items:flex-start}
+.ci h4{font-size:.82rem;font-weight:700;color:#ff6b2b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci p{color:#aaa;font-size:.88rem}
+form input,form textarea{width:100%;background:#1a1a1a;border:1px solid #333;border-radius:4px;padding:.75rem 1rem;color:#fff;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#ff6b2b}
+form textarea{height:110px;resize:vertical}
+footer{background:#000;padding:1.75rem;text-align:center;color:#555;font-size:.78rem;border-top:1px solid #1a1a1a}
+footer a{color:#ff6b2b;text-decoration:none}
+@media(max-width:768px){.ab-grid,.c-grid{grid-template-columns:1fr}.visual{height:180px}.btn-o{margin-left:0;margin-top:.5rem}.stats{gap:1rem}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Quick Cuts</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero">
+  <div>
+    <div class="badge">Memphis, TN &middot; Barbershop</div>
+    <h1>Memphis's Go-To Barber Shop<br>Fresh Cuts, No Wait</h1>
+    <p>Walk in or book online &mdash; Quick Cuts delivers sharp fades, classic cuts, and clean shaves right here in Memphis.</p>
+    <a href="#contact" class="btn">Book Your Cut Today</a>
+    <a href="#services" class="btn-o">Our Services</a>
+  </div>
+</section>
+<section class="services" id="services"><div class="inner">
+  <div class="lbl">What We Do</div><h2>Our Services</h2>
+  <p class="sub">Precision cuts and grooming for every man. Walk-ins always welcome.</p>
+  <div class="grid5">
+    <div class="card"><div class="card-icon">&#9986;&#65039;</div><h3>Precision Haircuts</h3><p>Sharp, clean cuts tailored to your style.</p></div>
+    <div class="card"><div class="card-icon">&#128136;</div><h3>Skin Fades &amp; Tapers</h3><p>Smooth skin fades blended to perfection.</p></div>
+    <div class="card"><div class="card-icon">&#129690;</div><h3>Beard Trims &amp; Line-Ups</h3><p>Crisp beard shaping and clean line-ups.</p></div>
+    <div class="card"><div class="card-icon">&#129494;</div><h3>Hot Towel Shaves</h3><p>Classic hot towel shave for a smooth finish.</p></div>
+    <div class="card"><div class="card-icon">&#128102;</div><h3>Kids Cuts</h3><p>Patient, fun cuts for the little ones.</p></div>
+  </div>
+</div></section>
+<section class="dark" id="about"><div class="ab-grid">
+  <div class="visual">&#9986;&#65039;</div>
+  <div class="ab-content">
+    <div class="lbl">Our Story</div>
+    <h2>A Memphis Community Staple</h2>
+    <p>Quick Cuts Barber Shop has been a staple of the Memphis community, delivering clean, precise cuts with speed and skill. Traditional barbering technique meets a welcoming, no-nonsense atmosphere that keeps clients coming back week after week.</p>
+    <p>Walk-ins always welcome. No appointment? No problem.</p>
+    <div class="stats">
+      <div><div class="stat-n">5&#9733;</div><div class="stat-l">Rated</div></div>
+      <div><div class="stat-n">Fast</div><div class="stat-l">Service</div></div>
+      <div><div class="stat-n">Local</div><div class="stat-l">Trusted</div></div>
+    </div>
+  </div>
+</div></section>
+<section class="cta-s">
+  <h2>Ready for a Fresh Cut?</h2>
+  <p>Walk in or book online &mdash; we're ready for you in Memphis.</p>
+  <a href="#contact" class="btn-w">Book Your Cut Today</a>
+</section>
+<section class="contact" id="contact"><div class="c-grid">
+  <div>
+    <h2>Visit Us in Memphis</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Location</h4><p>Memphis, TN, USA</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>quickcutsbarber@gmail.com</p></div></div>
+    <div class="ci"><div>&#8987;</div><div><h4>Walk-Ins</h4><p>Always Welcome</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service Requested">
+      <textarea name="message" placeholder="Questions or notes?"></textarea>
+      <button type="submit" class="btn" style="width:100%">Send Message</button>
+    </form>
+  </div>
+</div></section>
+<footer>
+  <p>&copy; 2025 Quick Cuts Barber Shop &middot; Memphis, TN &middot; Designed by <strong>Alma Digital Designs</strong></p>
+  <p style="margin-top:.5rem"><a href="https://almadigitaldesigns.com">Want a site like this? &rarr; almadigitaldesigns.com</a></p>
+</footer>
+</body></html>
