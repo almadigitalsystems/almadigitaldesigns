@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbershop Lounge Memphis | Hacks Cross | Fades, Cuts &amp; Beard Trims</title>
+<meta name="description" content="Memphis barbershop on Hacks Cross Road. Precision fades, beard trims, and kids' cuts. Walk-ins welcome at Barbershop Lounge.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fff;color:#0a0a0a}
+nav{padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #000}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;letter-spacing:-.02em}
+nav ul{list-style:none;display:flex;gap:2.5rem}nav ul a{color:#0a0a0a;text-decoration:none;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;transition:color .3s}nav ul a:hover{color:#e84b00}
+.hero{padding:7rem 3rem 6rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:end}
+.hero-left h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,6rem);font-weight:900;line-height:.95;letter-spacing:-.03em;margin-bottom:2rem}
+.hero-left h1 span{display:block;color:#e84b00}
+.hero-left p{font-size:1rem;color:#444;line-height:1.7;max-width:420px;margin-bottom:2.5rem}
+.btn{background:#0a0a0a;color:#fff;padding:.9rem 2.5rem;border:none;border-radius:0;font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;letter-spacing:.12em;text-transform:uppercase}
+.btn:hover{background:#e84b00}
+.hero-right{text-align:right;padding-bottom:1rem}
+.hero-right .big-num{font-family:'Playfair Display',serif;font-size:8rem;font-weight:900;line-height:1;color:#f0f0f0;letter-spacing:-.05em}
+.hero-right p{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:#888}
+.divider{border:none;border-top:1px solid #000;margin:0 3rem}
+.services{padding:6rem 3rem;max-width:1100px;margin:0 auto}
+.lbl{font-size:.7rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#888;margin-bottom:1.5rem}
+.svc-row{display:flex;align-items:baseline;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid #eee}
+.svc-row:first-of-type{border-top:1px solid #eee}
+.svc-idx{font-family:'Playfair Display',serif;font-size:1rem;color:#ccc;min-width:2rem}
+.svc-name{font-size:1.2rem;font-weight:700;flex:1}
+.svc-desc{font-size:.85rem;color:#666;max-width:320px;line-height:1.5}
+.about{background:#0a0a0a;color:#fff;padding:7rem 3rem}
+.about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.about-visual{font-size:8rem;text-align:center;background:#111;border-radius:4px;height:360px;display:flex;align-items:center;justify-content:center;border:1px solid #222}
+.about-content .lbl{color:#e84b00}
+.about-content h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1.5rem;line-height:1.1}
+.about-content p{color:#aaa;line-height:1.8;font-size:.95rem;margin-bottom:1rem}
+.pill{display:inline-block;border:1px solid #e84b00;color:#e84b00;padding:.35rem 1rem;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:1rem;border-radius:0}
+.cta-s{background:#e84b00;padding:5rem 3rem;display:flex;align-items:center;justify-content:space-between}
+.cta-s h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);color:#fff;max-width:500px;line-height:1.1}
+.btn-w{background:#fff;color:#e84b00;padding:.9rem 2.5rem;border:none;border-radius:0;font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:all .2s}
+.btn-w:hover{background:#f5f5f5}
+.contact{padding:6rem 3rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem}
+.contact h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:2rem}
+.ci{display:flex;gap:1rem;margin-bottom:1.5rem}
+.ci h4{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#e84b00;margin-bottom:.25rem}
+.ci p{color:#444;font-size:.9rem}
+form input,form textarea{width:100%;background:#f8f8f8;border:1px solid #ddd;border-radius:0;padding:.8rem 1rem;color:#0a0a0a;font-family:'Inter',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:#e84b00}
+form textarea{height:110px;resize:vertical}
+footer{border-top:1px solid #000;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:#888}
+footer a{color:#e84b00;text-decoration:none}
+@media(max-width:768px){.hero,.about-inner,.contact{grid-template-columns:1fr}.cta-s{flex-direction:column;gap:2rem;text-align:center}.hero-right{display:none}.about-visual{height:180px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Barbershop Lounge</div><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<section class="hero">
+  <div class="hero-left">
+    <h1>Hacks Cross's <span>Best-Kept</span> Secret</h1>
+    <p>Find us at 4202 Hacks Cross Road and discover why locals keep coming back &mdash; clean cuts, great vibes, unbeatable service in Memphis.</p>
+    <a href="#contact" class="btn">Get Directions &amp; Book Today</a>
+  </div>
+  <div class="hero-right">
+    <div class="big-num">&#9986;</div>
+    <p>Memphis, TN</p>
+  </div>
+</section>
+<hr class="divider">
+<section class="services" id="services">
+  <div class="lbl">Our Services</div>
+  <div class="svc-row"><div class="svc-idx">01</div><div class="svc-name">Precision Haircuts</div><div class="svc-desc">Sharp, clean cuts tailored to your style and face shape.</div></div>
+  <div class="svc-row"><div class="svc-idx">02</div><div class="svc-name">Skin Fades &amp; High Tapers</div><div class="svc-desc">Smooth skin fades and high tapers with seamless blends.</div></div>
+  <div class="svc-row"><div class="svc-idx">03</div><div class="svc-name">Beard Trims &amp; Shaping</div><div class="svc-desc">Expert beard shaping and crisp line-ups every time.</div></div>
+  <div class="svc-row"><div class="svc-idx">04</div><div class="svc-name">Hot Lather Shaves</div><div class="svc-desc">Classic hot lather shave for the smoothest finish.</div></div>
+  <div class="svc-row"><div class="svc-idx">05</div><div class="svc-name">Kids &amp; Student Cuts</div><div class="svc-desc">Patient, fun cuts for the kids and student specials.</div></div>
+</section>
+<section class="about" id="about"><div class="about-inner">
+  <div class="about-visual">&#128136;</div>
+  <div class="about-content">
+    <div class="lbl">About Us</div>
+    <h2>Memphis's Neighbourhood Staple</h2>
+    <p>Barbershop Lounge is a neighbourhood staple in the Hacks Cross Road strip centre in Memphis. We've built a loyal following with consistent high-quality cuts and a welcoming atmosphere that feels like home from the first visit.</p>
+    <p>Located at 4202 Hacks Cross Rd Unit 117 &mdash; right where Memphis comes to get right.</p>
+    <div class="pill">Walk-Ins Always Welcome</div>
+  </div>
+</div></section>
+<section class="cta-s">
+  <h2>Come See Why Memphis Keeps Coming Back</h2>
+  <a href="#contact" class="btn-w">Get Directions &amp; Book</a>
+</section>
+<section class="contact" id="contact">
+  <div>
+    <h2>Visit Barbershop Lounge</h2>
+    <div class="ci"><div>&#128205;</div><div><h4>Address</h4><p>4202 Hacks Cross Rd Unit 117, Memphis, TN</p></div></div>
+    <div class="ci"><div>&#128231;</div><div><h4>Email</h4><p>thebarbershoplounge17@gmail.com</p></div></div>
+    <div class="ci"><div>&#8987;</div><div><h4>Walk-Ins</h4><p>Always Welcome</p></div></div>
+  </div>
+  <div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="service" placeholder="Service Requested">
+      <textarea name="message" placeholder="Questions or notes?"></textarea>
+      <button type="submit" class="btn" style="width:100%">Send Message</button>
+    </form>
+  </div>
+</section>
+<footer>
+  <span>&copy; 2025 Barbershop Lounge &middot; Memphis, TN</span>
+  <a href="https://almadigitaldesigns.com">Designed by Alma Digital Designs &rarr;</a>
+</footer>
+</body></html>
