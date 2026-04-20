@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nail Decor Sheffield | Nail Salon Near University of Sheffield | Gel &amp; Acrylics</title>
+<meta name="description" content="Nail Decor Sheffield — gel nails, acrylics, nail art, manicures and pedicures near the University of Sheffield. Book your appointment online today.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--purple:#2D1B69;--lavender:#9B7FD4;--light-lav:#E8E0FF;--cream:#FDFCFF;--text:#1a1a1a}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+nav{background:var(--purple);padding:20px 60px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;letter-spacing:1px}
+.logo span{color:var(--lavender);font-style:italic}
+.nav-cta{background:var(--lavender);color:#fff;padding:10px 24px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:#7B5CB8}
+.hero{min-height:100vh;background:linear-gradient(160deg,var(--purple) 0%,#1a0f45 60%,#0d0830 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 40px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(155,127,212,.15) 0%,transparent 70%)}
+.hero-inner{max-width:860px;position:relative}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--lavender);display:block;margin-bottom:24px}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(38px,6vw,80px);color:#fff;line-height:1.08;margin-bottom:28px}
+h1 em{font-style:italic;color:var(--lavender)}
+.hero p{font-size:18px;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto 44px;line-height:1.8;font-weight:300}
+.btn-lav{background:var(--lavender);color:#fff;padding:16px 44px;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s}
+.btn-lav:hover{background:#7B5CB8;transform:translateY(-2px)}
+.btn-outline{border:1px solid rgba(155,127,212,.5);color:var(--lavender);padding:16px 44px;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;margin-left:16px}
+.btn-outline:hover{border-color:var(--lavender)}
+.services-s{background:#fff;padding:100px 60px}
+.section-center{text-align:center;margin-bottom:60px}
+h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,54px);color:var(--purple);margin-bottom:12px;line-height:1.15}
+h2 em{font-style:italic;color:var(--lavender)}
+.svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1100px;margin:20px auto 0}
+.svc{padding:36px 24px;text-align:center;border:1px solid var(--light-lav);transition:all .4s}
+.svc:hover{background:var(--purple);border-color:var(--purple)}
+.svc:hover h3,.svc:hover p{color:#fff}
+.svc:hover .icon{filter:none}
+.icon{font-size:36px;margin-bottom:16px;display:block}
+.svc h3{font-family:'DM Serif Display',serif;font-size:18px;color:var(--purple);margin-bottom:10px;transition:color .3s}
+.svc p{font-size:14px;color:#888;line-height:1.7;transition:color .3s}
+.about-s{background:var(--light-lav);padding:100px 60px}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1080px;margin:0 auto}
+.about-img{background:linear-gradient(135deg,var(--purple),var(--lavender));height:460px;display:flex;align-items:center;justify-content:center;font-size:90px}
+.about-text h2{color:var(--purple);margin-bottom:20px}
+.about-text p{font-size:16px;color:#555;line-height:1.9;margin-bottom:18px}
+.cta-s{background:var(--purple);padding:80px 60px;text-align:center}
+.cta-s h2{color:#fff}
+.cta-s p{color:rgba(255,255,255,.75);font-size:18px;margin:16px 0 40px}
+.contact-s{background:var(--cream);padding:100px 60px}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto;align-items:start}
+.c-left h3{font-family:'DM Serif Display',serif;font-size:28px;color:var(--purple);margin-bottom:24px}
+.c-left p{font-size:15px;color:#777;line-height:2.1;margin-bottom:14px}
+.c-left strong{color:var(--purple)}
+.preview-note{background:var(--light-lav);border-left:3px solid var(--lavender);padding:18px;margin-top:20px}
+.preview-note p{font-size:13px;color:#888}
+form{display:flex;flex-direction:column;gap:14px}
+input,textarea{border:1px solid #ddd;background:#fff;color:var(--text);padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border .3s}
+input:focus,textarea:focus{border-color:var(--lavender)}
+textarea{height:140px;resize:vertical}
+footer{background:var(--purple);text-align:center;padding:28px;font-size:13px;color:rgba(255,255,255,.35)}
+footer span{color:var(--lavender)}
+@media(max-width:768px){nav{padding:16px 20px}.about-inner,.contact-inner{grid-template-columns:1fr}.about-img{height:240px}.services-s,.about-s,.cta-s,.contact-s{padding:60px 20px}.btn-outline{margin-left:0;margin-top:12px;display:block}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Nail <span>Decor</span> Sheffield</div>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+<div class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Near University of Sheffield</span>
+    <h1>Nail Decor Sheffield &mdash;<br><em>Precision Art</em><br>Steps from the University</h1>
+    <p>Sheffield's nail studio where every set is a work of art. Walk-ins welcome, appointments loved.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#contact" class="btn-lav">Book Your Nail Set in Sheffield</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+</div>
+<section class="services-s" id="services">
+  <div>
+    <div class="section-center">
+      <span class="eyebrow">Services</span>
+      <h2>Every Set Is a <em>Work of Art</em></h2>
+    </div>
+    <div class="svcs">
+      <div class="svc"><span class="icon">&#128133;</span><h3>Gel &amp; Acrylic Nails</h3><p>Flawless sets tailored to your style and length preference.</p></div>
+      <div class="svc"><span class="icon">&#127912;</span><h3>Nail Art &amp; Custom Designs</h3><p>Intricate hand-painted art for every aesthetic.</p></div>
+      <div class="svc"><span class="icon">&#10024;</span><h3>Manicures &amp; Pedicures</h3><p>Classic, spa, and luxury options for hands and feet.</p></div>
+      <div class="svc"><span class="icon">&#128142;</span><h3>Extensions &amp; Overlays</h3><p>Add length, strength, and structure to your nails.</p></div>
+      <div class="svc"><span class="icon">&#127775;</span><h3>Gel Polish &amp; Shellac</h3><p>High-shine, chip-resistant polish that lasts for weeks.</p></div>
+    </div>
+  </div>
+</section>
+<section class="about-s" id="about">
+  <div class="about-inner">
+    <div class="about-img">&#128167;</div>
+    <div class="about-text">
+      <span class="eyebrow">About Nail Decor</span>
+      <h2>Sheffield's<br>Nail Artisans</h2>
+      <p>Nail Decor Sheffield is a beloved nail studio located near the University of Sheffield, serving students, professionals, and Sheffield residents who appreciate quality nail artistry. The team is known for intricate designs, fast service, and results that hold up long after you leave the chair.</p>
+      <p>Whether you're after a clean nude set or bold nail art, Nail Decor delivers.</p>
+      <a href="#contact" class="btn-lav">Book Your Nail Set in Sheffield</a>
+    </div>
+  </div>
+</section>
+<div class="cta-s">
+  <h2 style="color:#fff">Ready for Your Next Set?</h2>
+  <p>Walk in or book ahead &mdash; the team is ready for you.</p>
+  <a href="#contact" class="btn-lav" style="background:#fff;color:var(--purple)">Book Your Nail Set in Sheffield</a>
+</div>
+<section class="contact-s" id="contact">
+  <div class="contact-inner">
+    <div class="c-left">
+      <h3>Book Your Appointment</h3>
+      <p><strong>Location:</strong><br>Near University of Sheffield, UK</p>
+      <p><strong>Hours:</strong><br>Mon&ndash;Sat: 9:30am &ndash; 6:30pm<br>Sun: 11am &ndash; 5pm</p>
+      <p><strong>Walk-ins Welcome</strong></p>
+      <div class="preview-note">
+        <p>Free preview by <strong>Alma Digital Designs</strong> &mdash; showing what Nail Decor Sheffield's website could look like.</p>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="_subject" value="Nail Decor Sheffield - Booking">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email">
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="service" placeholder="Service (e.g. Gel Set, Nail Art)">
+      <textarea name="message" placeholder="Preferred date/time and any details"></textarea>
+      <button type="submit" class="btn-lav" style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;padding:16px">Book Your Nail Set in Sheffield</button>
+    </form>
+  </div>
+</section>
+<footer><p>&copy; 2026 Nail Decor <span>Sheffield</span> &middot; Designed by Alma Digital Designs</p></footer>
+</body>
+</html>
