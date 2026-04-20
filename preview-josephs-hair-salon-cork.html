@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Josephs Hair Salon | Cork Ireland | Men's &amp; Women's Cuts, Color &amp; Styling</title>
+<meta name="description" content="Josephs Hair Salon in Cork, Ireland — expert haircuts, color, highlights, and styling for men and women. Book your appointment with Joseph Byrne online today.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spectral:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#0D3B3B;--cyan:#00CED1;--light-teal:#E0F7F7;--cream:#F8FAFA;--text:#1a1a1a}
+body{font-family:'Space Grotesk',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+nav{background:var(--teal);padding:20px 60px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-family:'Spectral',serif;font-size:22px;color:#fff;font-style:italic}
+.logo span{font-style:normal;color:var(--cyan)}
+.nav-cta{background:var(--cyan);color:var(--teal);padding:10px 24px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:#00a8ab}
+.hero{min-height:100vh;background:var(--teal);display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hero-left{padding:80px 60px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:24px}
+h1{font-family:'Spectral',serif;font-size:clamp(36px,5vw,68px);color:#fff;line-height:1.12;margin-bottom:28px;font-style:italic}
+h1 span{font-style:normal;color:var(--cyan)}
+.hero-left p{font-size:18px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:44px;max-width:460px}
+.btn-cyan{background:var(--cyan);color:var(--teal);padding:16px 40px;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif}
+.btn-cyan:hover{background:#00a8ab;transform:translateY(-2px)}
+.hero-right{background:linear-gradient(160deg,#0a2d2d,var(--teal));height:100%;display:flex;align-items:center;justify-content:center;font-size:120px;position:relative;overflow:hidden}
+.hero-right::after{content:'Joseph';font-family:'Spectral',serif;font-style:italic;font-size:110px;position:absolute;bottom:-10px;right:-20px;color:rgba(0,206,209,.06);white-space:nowrap}
+.about-s{background:#fff;padding:100px 60px}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1080px;margin:0 auto}
+.about-img{background:linear-gradient(135deg,var(--teal),#1a5555);height:480px;display:flex;align-items:center;justify-content:center;font-size:90px}
+.about-text h2{font-family:'Spectral',serif;font-size:clamp(26px,3vw,44px);color:var(--teal);font-style:italic;margin:16px 0 20px;line-height:1.2}
+.about-text p{font-size:16px;color:#666;line-height:1.9;margin-bottom:18px}
+.services-s{background:var(--light-teal);padding:100px 60px}
+.services-s h2{font-family:'Spectral',serif;font-size:clamp(26px,4vw,46px);color:var(--teal);font-style:italic;text-align:center;margin-bottom:56px}
+.svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1080px;margin:0 auto}
+.svc{background:#fff;padding:36px 24px;text-align:center;transition:all .4s;border-bottom:3px solid transparent}
+.svc:hover{border-bottom-color:var(--cyan);transform:translateY(-4px)}
+.svc-icon{font-size:34px;margin-bottom:16px;display:block}
+.svc h3{font-family:'Spectral',serif;font-size:18px;color:var(--teal);margin-bottom:10px;font-style:italic}
+.svc p{font-size:14px;color:#888;line-height:1.7}
+.cta-s{background:var(--teal);padding:80px 60px;text-align:center}
+.cta-s h2{font-family:'Spectral',serif;font-size:clamp(26px,4vw,48px);color:#fff;font-style:italic;margin-bottom:16px}
+.cta-s p{color:rgba(255,255,255,.7);font-size:18px;margin-bottom:40px}
+.contact-s{background:var(--cream);padding:100px 60px}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto;align-items:start}
+.c-left h3{font-family:'Spectral',serif;font-size:28px;color:var(--teal);font-style:italic;margin-bottom:24px}
+.c-left p{font-size:15px;color:#888;line-height:2.1;margin-bottom:14px}
+.c-left strong{color:var(--teal)}
+.preview-note{background:var(--light-teal);border-left:3px solid var(--cyan);padding:18px;margin-top:20px}
+.preview-note p{font-size:13px;color:#888}
+form{display:flex;flex-direction:column;gap:14px}
+input,textarea{background:#fff;border:1px solid #ddd;color:var(--text);padding:14px 18px;font-family:'Space Grotesk',sans-serif;font-size:15px;outline:none;transition:border .3s}
+input:focus,textarea:focus{border-color:var(--cyan)}
+textarea{height:140px;resize:vertical}
+footer{background:var(--teal);text-align:center;padding:28px;font-size:13px;color:rgba(255,255,255,.3)}
+footer span{color:var(--cyan)}
+@media(max-width:768px){nav{padding:16px 20px}.hero{grid-template-columns:1fr}.hero-right{height:200px;font-size:70px}.hero-left{padding:80px 20px}.about-inner,.contact-inner{grid-template-columns:1fr}.about-img{height:240px}.about-s,.services-s,.cta-s,.contact-s{padding:60px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Josephs Hair <span>Salon</span></div>
+  <a href="#contact" class="nav-cta">Book with Joseph</a>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <span class="eyebrow">Cork City Hair Salon</span>
+    <h1><em>Joseph's Chair</em> Has<br>a Spot With<br><span>Your Name On It</span></h1>
+    <p>Josephs Hair Salon is Cork's go-to for effortless style. Book online and let Joseph and the team handle the rest.</p>
+    <a href="#contact" class="btn-cyan">Book with Joseph in Cork</a>
+  </div>
+  <div class="hero-right">&#128167;</div>
+</div>
+<section class="about-s" id="about">
+  <div class="about-inner">
+    <div class="about-img">&#9986;</div>
+    <div class="about-text">
+      <span class="eyebrow">About Us</span>
+      <h2>Cork's Go-To for Effortless Style</h2>
+      <p>Josephs Hair Salon has been a Cork staple for years, with owner Joseph Byrne building a loyal following through quality cuts, approachable service, and consistent results. Located in Cork City, the salon welcomes both longtime regulars and first-timers, offering a full menu of services for men and women.</p>
+      <p>Joseph's reputation in Cork speaks for itself &mdash; and your next cut will too.</p>
+      <a href="#contact" class="btn-cyan">Book with Joseph in Cork</a>
+    </div>
+  </div>
+</section>
+<section class="services-s" id="services">
+  <div>
+    <span class="eyebrow" style="display:block;text-align:center;margin-bottom:12px">Services</span>
+    <h2>Services for Men &amp; Women</h2>
+    <div class="svcs">
+      <div class="svc"><span class="svc-icon">&#9986;</span><h3>Men's Cuts &amp; Styling</h3><p>Precision cuts and sharp styling for every look.</p></div>
+      <div class="svc"><span class="svc-icon">&#128167;</span><h3>Women's Cuts &amp; Blowouts</h3><p>Expert cuts and blowdry finishes for any hair type.</p></div>
+      <div class="svc"><span class="svc-icon">&#127912;</span><h3>Color, Highlights &amp; Balayage</h3><p>Natural to bold transformations done beautifully.</p></div>
+      <div class="svc"><span class="svc-icon">&#128168;</span><h3>Keratin Treatments</h3><p>Smooth, glossy, frizz-free results that last.</p></div>
+      <div class="svc"><span class="svc-icon">&#128141;</span><h3>Bridal &amp; Occasion Styling</h3><p>Look your best for the moments that matter most.</p></div>
+    </div>
+  </div>
+</section>
+<div class="cta-s">
+  <h2>Your Spot Is Ready</h2>
+  <p>Joseph and the team are waiting. Book online in seconds.</p>
+  <a href="#contact" class="btn-cyan">Book with Joseph in Cork</a>
+</div>
+<section class="contact-s" id="contact">
+  <div class="contact-inner">
+    <div class="c-left">
+      <h3>Book Your Appointment</h3>
+      <p><strong>Location:</strong><br>Cork City, Ireland</p>
+      <p><strong>Hours:</strong><br>Tue &ndash; Sat: 9am &ndash; 7pm<br>By Appointment Preferred</p>
+      <p><strong>Walk-ins Welcome</strong></p>
+      <div class="preview-note">
+        <p>Free preview by <strong>Alma Digital Designs</strong> &mdash; showing what Josephs Hair Salon's website could look like.</p>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="_subject" value="Josephs Hair Salon Cork - Booking">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address">
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="service" placeholder="Service (e.g. Cut, Color, Styling)">
+      <textarea name="message" placeholder="Preferred date/time and any notes for Joseph"></textarea>
+      <button type="submit" class="btn-cyan">Book with Joseph in Cork</button>
+    </form>
+  </div>
+</section>
+<footer><p>&copy; 2026 Josephs Hair Salon &middot; Cork, Ireland &middot; Designed by <span>Alma Digital Designs</span></p></footer>
+</body>
+</html>
