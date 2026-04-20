@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KC Nails Calgary | Nail Salon at Unfiltered YYC | Gel, Acrylics &amp; Nail Art</title>
+<meta name="description" content="KC Nails in Calgary, AB — gel nails, acrylics, nail art, manicures and pedicures at Unfiltered YYC. Book your appointment online today.">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--coral:#FF6B6B;--dark-coral:#E84040;--cream:#FFFBF8;--warm:#FFF3F0;--charcoal:#2a2a2a;--text:#333}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+nav{background:#fff;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--warm);position:sticky;top:0;z-index:100}
+.logo{font-weight:800;font-size:22px;color:var(--charcoal)}
+.logo span{color:var(--coral)}
+.nav-cta{background:var(--coral);color:#fff;padding:10px 24px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .3s}
+.nav-cta:hover{background:var(--dark-coral)}
+.hero{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;min-height:90vh;background:var(--cream)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:20px}
+h1{font-size:clamp(36px,5vw,68px);font-weight:800;color:var(--charcoal);line-height:1.05;margin-bottom:28px;letter-spacing:-1px}
+h1 span{color:var(--coral)}
+.hero-left p{font-size:18px;color:#777;line-height:1.8;margin-bottom:40px;max-width:440px;font-weight:300}
+.btn-coral{background:var(--coral);color:#fff;padding:16px 40px;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;border-radius:4px;border:none;cursor:pointer;font-family:'Nunito',sans-serif}
+.btn-coral:hover{background:var(--dark-coral);transform:translateY(-2px)}
+.hero-visual{background:linear-gradient(135deg,var(--coral),var(--dark-coral),#b02020);height:520px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:100px;position:relative;overflow:hidden}
+.hero-badge{position:absolute;bottom:24px;left:24px;background:#fff;color:var(--coral);padding:14px 20px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;line-height:1.4}
+.hero-badge strong{display:block;font-size:22px;color:var(--charcoal)}
+.about-s{background:var(--warm);padding:100px 60px;text-align:center}
+.about-inner{max-width:800px;margin:0 auto}
+.about-inner h2{font-weight:800;font-size:clamp(26px,4vw,50px);color:var(--charcoal);margin-bottom:24px;letter-spacing:-1px}
+.about-inner h2 span{color:var(--coral)}
+.about-inner p{font-size:17px;color:#777;line-height:1.9;margin-bottom:20px;font-weight:300}
+.services-s{background:#fff;padding:100px 60px}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title h2{font-weight:800;font-size:clamp(26px,4vw,50px);color:var(--charcoal);letter-spacing:-1px}
+.section-title h2 span{color:var(--coral)}
+.svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1080px;margin:0 auto}
+.svc{background:var(--warm);padding:36px 24px;text-align:center;border-radius:8px;transition:all .4s}
+.svc:hover{background:var(--coral);transform:translateY(-4px)}
+.svc:hover h3,.svc:hover p{color:#fff}
+.svc-icon{font-size:36px;margin-bottom:16px;display:block}
+.svc h3{font-weight:700;font-size:16px;color:var(--charcoal);margin-bottom:10px;transition:color .3s}
+.svc p{font-size:14px;color:#888;line-height:1.7;transition:color .3s}
+.location-s{background:var(--charcoal);padding:80px 60px;text-align:center}
+.location-s h2{font-weight:800;font-size:clamp(24px,4vw,46px);color:#fff;letter-spacing:-1px;margin-bottom:16px}
+.location-s h2 span{color:var(--coral)}
+.location-s p{color:#aaa;font-size:18px;margin-bottom:40px;line-height:1.7}
+.contact-s{background:var(--cream);padding:100px 60px}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:980px;margin:0 auto;align-items:start}
+.c-left h3{font-weight:800;font-size:26px;color:var(--charcoal);margin-bottom:24px}
+.c-left p{font-size:15px;color:#888;line-height:2.1;margin-bottom:14px}
+.c-left strong{color:var(--charcoal)}
+.preview-note{background:var(--warm);border-left:3px solid var(--coral);padding:18px;margin-top:20px;border-radius:0 4px 4px 0}
+.preview-note p{font-size:13px;color:#999}
+form{display:flex;flex-direction:column;gap:14px}
+input,textarea{background:#fff;border:1px solid #eee;color:var(--text);padding:14px 18px;font-family:'Nunito',sans-serif;font-size:15px;outline:none;transition:border .3s;border-radius:4px}
+input:focus,textarea:focus{border-color:var(--coral)}
+textarea{height:140px;resize:vertical}
+footer{background:var(--charcoal);text-align:center;padding:28px;font-size:13px;color:#555}
+footer span{color:var(--coral)}
+@media(max-width:768px){nav{padding:16px 20px}.hero{grid-template-columns:1fr;gap:40px;min-height:auto;padding:80px 20px}.hero-visual{height:260px;font-size:70px}.contact-inner{grid-template-columns:1fr}.about-s,.services-s,.location-s,.contact-s{padding:60px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">KC <span>Nails</span> Calgary</div>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <span class="eyebrow">at Unfiltered YYC, Calgary</span>
+    <h1>Calgary's Favourite<br>Nail Studio &mdash;<br><span>Now Booking</span><br>Online</h1>
+    <p>KC Nails at Unfiltered YYC brings clean, creative nails to Calgary's most vibrant space. Book your next set right here.</p>
+    <a href="#contact" class="btn-coral">Book Your Calgary Nail Appointment</a>
+  </div>
+  <div class="hero-visual">
+    &#128133;
+    <div class="hero-badge">At<strong>Unfiltered YYC</strong>Calgary</div>
+  </div>
+</div>
+<section class="about-s" id="about">
+  <div class="about-inner">
+    <span class="eyebrow">About KC Nails</span>
+    <h2>Creative Nails at<br><span>Calgary's Best Spot</span></h2>
+    <p>KC Nails operates out of Unfiltered YYC, Calgary's go-to creative coworking and wellness community in the heart of the city. Known for clean technique, creative designs, and a welcoming vibe, KC Nails has earned the loyalty of Calgary clients who won't settle for anything less than a perfect set.</p>
+    <p>Whether you're looking for a fresh classic or a bold statement, KC Nails delivers.</p>
+    <a href="#contact" class="btn-coral">Book Your Calgary Nail Appointment</a>
+  </div>
+</section>
+<section class="services-s" id="services">
+  <div class="section-title">
+    <span class="eyebrow">Services</span>
+    <h2>Nail Services <span>You'll Love</span></h2>
+  </div>
+  <div class="svcs">
+    <div class="svc"><span class="svc-icon">&#128133;</span><h3>Gel &amp; Acrylic Nails</h3><p>Clean, precise sets tailored to your style and length.</p></div>
+    <div class="svc"><span class="svc-icon">&#127912;</span><h3>Nail Art &amp; Custom Designs</h3><p>Creative, detailed hand-painted art for any aesthetic.</p></div>
+    <div class="svc"><span class="svc-icon">&#10024;</span><h3>Manicures &amp; Pedicures</h3><p>Classic and spa treatments for hands and feet.</p></div>
+    <div class="svc"><span class="svc-icon">&#127775;</span><h3>Gel Polish &amp; Shellac</h3><p>High-shine, chip-resistant colour with lasting results.</p></div>
+    <div class="svc"><span class="svc-icon">&#128142;</span><h3>Nail Extensions &amp; Overlays</h3><p>Added length, strength, and structure done right.</p></div>
+  </div>
+</section>
+<div class="location-s">
+  <h2>Find Us at <span>Unfiltered YYC</span></h2>
+  <p>KC Nails is located inside Unfiltered YYC, Calgary's creative wellness hub. Come visit us in the heart of the city.</p>
+  <a href="#contact" class="btn-coral">Book Your Calgary Nail Appointment</a>
+</div>
+<section class="contact-s" id="contact">
+  <div class="contact-inner">
+    <div class="c-left">
+      <h3>Book Your Appointment</h3>
+      <p><strong>Location:</strong><br>Unfiltered YYC, Calgary, AB</p>
+      <p><strong>Hours:</strong><br>Mon&ndash;Sat: 10am &ndash; 7pm<br>Sun: 11am &ndash; 5pm</p>
+      <p><strong>Walk-ins Welcome</strong></p>
+      <div class="preview-note">
+        <p>Free preview by <strong>Alma Digital Designs</strong> &mdash; showing what KC Nails Calgary's website could look like.</p>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="_subject" value="KC Nails Calgary - Booking">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address">
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="service" placeholder="Service (e.g. Gel Set, Nail Art)">
+      <textarea name="message" placeholder="Preferred date/time and any details"></textarea>
+      <button type="submit" class="btn-coral">Book Your Calgary Nail Appointment</button>
+    </form>
+  </div>
+</section>
+<footer><p>&copy; 2026 KC Nails Calgary &middot; at Unfiltered YYC &middot; Designed by <span>Alma Digital Designs</span></p></footer>
+</body>
+</html>
