@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Posh Salon | Memphis TN Hair Salon | Cuts, Color &amp; Natural Hair</title>
+<meta name="description" content="Posh Salon in Memphis, TN — Tiffany and team deliver expert cuts, color, balayage, and natural hair services. Book your appointment online now.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0a1628;--blush:#E8B4B8;--pink:#C9848A;--cream:#FAF8F5;--light:#f0ece6;--text:#3a3a3a}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+nav{background:var(--navy);padding:22px 60px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Cormorant Garamond',serif;font-size:28px;color:#fff;letter-spacing:3px;text-transform:uppercase}
+.logo-tag{font-size:11px;letter-spacing:4px;color:var(--blush);text-transform:uppercase;display:block;margin-top:-4px}
+.nav-cta{border:1px solid var(--blush);color:var(--blush);padding:10px 26px;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:var(--blush);color:var(--navy)}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
+.hero-left{background:var(--navy);padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--blush);margin-bottom:32px;display:block}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,62px);color:#fff;line-height:1.15;font-weight:600;margin-bottom:28px}
+h1 em{color:var(--blush);font-style:italic}
+.hero-left p{font-size:17px;color:rgba(255,255,255,.6);line-height:1.9;margin-bottom:44px;max-width:440px}
+.btn-blush{background:var(--blush);color:var(--navy);padding:16px 40px;font-size:13px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;font-weight:500;border:none;cursor:pointer;font-family:'Jost',sans-serif}
+.btn-blush:hover{background:var(--pink);transform:translateY(-2px)}
+.hero-right{background:linear-gradient(160deg,var(--blush) 0%,var(--pink) 50%,#8B5A5E 100%);display:flex;align-items:center;justify-content:center;font-size:120px;position:relative;overflow:hidden}
+.hero-right::before{content:'POSH';position:absolute;font-family:'Cormorant Garamond',serif;font-size:200px;color:rgba(255,255,255,.07);letter-spacing:10px}
+.services-s{background:var(--light);padding:100px 60px}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);color:var(--navy);font-weight:600}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1080px;margin:0 auto}
+.svc{background:#fff;padding:36px 24px;text-align:center;border-top:2px solid transparent;transition:all .4s}
+.svc:hover{border-top-color:var(--blush);transform:translateY(-4px)}
+.svc .icon{font-size:34px;margin-bottom:18px}
+.svc h3{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--navy);margin-bottom:10px;font-weight:600}
+.svc p{font-size:14px;color:#888;line-height:1.7}
+.about-s{background:#fff;padding:100px 60px}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1080px;margin:0 auto}
+.about-img{background:linear-gradient(135deg,var(--navy),#1a2d4e);height:480px;display:flex;align-items:center;justify-content:center;font-size:80px}
+.about-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,42px);color:var(--navy);font-weight:600;margin:16px 0 20px;line-height:1.2}
+.about-text p{font-size:16px;color:#666;line-height:1.9;margin-bottom:20px}
+.cta-band{background:var(--navy);padding:80px 60px;text-align:center}
+.cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,50px);color:#fff;font-weight:600;margin-bottom:16px}
+.cta-band p{color:rgba(255,255,255,.65);font-size:18px;margin-bottom:40px}
+.contact-s{background:var(--cream);padding:100px 60px}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:980px;margin:0 auto;align-items:start}
+.c-left h3{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--navy);margin-bottom:28px;font-weight:600}
+.c-left p{color:#888;font-size:15px;line-height:2.1;margin-bottom:16px}
+.c-left strong{color:var(--navy)}
+.preview-note{background:var(--light);border-left:3px solid var(--blush);padding:18px;margin-top:20px}
+.preview-note p{font-size:13px;color:#999}
+form{display:flex;flex-direction:column;gap:16px}
+input,textarea{background:#fff;border:1px solid #ddd;color:var(--text);padding:14px 18px;font-family:'Jost',sans-serif;font-size:15px;outline:none;transition:border .3s}
+input:focus,textarea:focus{border-color:var(--blush)}
+textarea{height:140px;resize:vertical}
+footer{background:var(--navy);text-align:center;padding:28px;font-size:13px;color:rgba(255,255,255,.3)}
+footer span{color:var(--blush)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-right{height:280px;font-size:70px}.svcs{grid-template-columns:1fr 1fr}.about-inner,.contact-inner{grid-template-columns:1fr}.about-img{height:240px}nav{padding:16px 20px}}
+@media(max-width:600px){.svcs{grid-template-columns:1fr}.hero-left,.services-s,.about-s,.cta-band,.contact-s{padding:60px 24px}}
+</style>
+</head>
+<body>
+<nav>
+  <div>
+    <div class="logo">Posh</div>
+    <span class="logo-tag">Hair Salon &middot; Memphis</span>
+  </div>
+  <a href="#contact" class="nav-cta">Book Session</a>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <span class="eyebrow">Memphis Boutique Salon</span>
+    <h1>Posh Is Memphis's<br>Best-Kept Secret &mdash;<br><em>Until Now</em></h1>
+    <p>Tiffany and the Posh Salon team deliver the looks Memphis clients love. Book your style session right here &mdash; no DMs needed.</p>
+    <a href="#contact" class="btn-blush">Book Your Session at Posh Salon</a>
+  </div>
+  <div class="hero-right">&#128247;</div>
+</div>
+<section class="services-s" id="services">
+  <div class="section-title">
+    <span class="eyebrow">Services</span>
+    <h2>Elevated Services for Every Client</h2>
+  </div>
+  <div class="svcs">
+    <div class="svc"><div class="icon">&#9986;</div><h3>Cuts &amp; Trims</h3><p>Precision cuts shaped to your face, lifestyle, and personality.</p></div>
+    <div class="svc"><div class="icon">&#127912;</div><h3>Color &amp; Balayage</h3><p>From natural tones to bold transformations &mdash; your vision, perfected.</p></div>
+    <div class="svc"><div class="icon">&#128168;</div><h3>Blowouts &amp; Silk Press</h3><p>Sleek, smooth, and styled for any occasion.</p></div>
+    <div class="svc"><div class="icon">&#127807;</div><h3>Natural &amp; Protective Styles</h3><p>Expert care for natural hair textures &mdash; braids, twists, and more.</p></div>
+    <div class="svc"><div class="icon">&#10024;</div><h3>Braids &amp; Extensions</h3><p>Beautiful, long-lasting protective and statement styles.</p></div>
+    <div class="svc"><div class="icon">&#128141;</div><h3>Bridal &amp; Special Event</h3><p>Look your absolute best for the moments that matter most.</p></div>
+  </div>
+</section>
+<section class="about-s" id="about">
+  <div class="about-inner">
+    <div class="about-img">&#128167;</div>
+    <div class="about-text">
+      <span class="eyebrow">About Posh Salon</span>
+      <h2>Where Every Client Leaves Feeling Elevated</h2>
+      <p>Posh Salon is a Memphis boutique salon where every client leaves feeling elevated. Owner Tiffany has built a reputation for precision cuts, flawless color, and a warm, polished atmosphere that keeps clients coming back.</p>
+      <p>Whether you're refreshing your look or going all-in on a transformation, Posh Salon delivers.</p>
+      <a href="#contact" class="btn-blush">Book Your Session</a>
+    </div>
+  </div>
+</section>
+<div class="cta-band">
+  <h2>Your Next Style Session Is Waiting</h2>
+  <p>Tiffany has an open chair with your name on it. Book in seconds.</p>
+  <a href="#contact" class="btn-blush">Book Your Session at Posh Salon</a>
+</div>
+<section class="contact-s" id="contact">
+  <div class="contact-inner">
+    <div class="c-left">
+      <h3>Book Your Session</h3>
+      <p><strong>Location:</strong><br>Memphis, TN</p>
+      <p><strong>Hours:</strong><br>Tue &ndash; Sat: 9am &ndash; 7pm<br>By Appointment Preferred</p>
+      <div class="preview-note">
+        <p>Free preview by <strong>Alma Digital Designs</strong> &mdash; showing what Posh Salon's website could look like.</p>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="_subject" value="Posh Salon - Booking Request">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address">
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="service" placeholder="Service (e.g. Color, Cut, Braids)">
+      <textarea name="message" placeholder="Preferred date/time and any details for Tiffany"></textarea>
+      <button type="submit" class="btn-blush">Book Your Session at Posh Salon</button>
+    </form>
+  </div>
+</section>
+<footer><p>&copy; 2026 Posh Salon &middot; Memphis, TN &middot; Designed by <span>Alma Digital Designs</span></p></footer>
+</body>
+</html>
