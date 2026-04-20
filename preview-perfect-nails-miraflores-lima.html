@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perfect Nails Miraflores | Sal&oacute;n de U&ntilde;as Lima | Gel, Acr&iacute;lico y Nail Art</title>
+<meta name="description" content="Perfect Nails Miraflores en Lima, Per&uacute; &mdash; u&ntilde;as en gel, acr&iacute;lico, nail art, manicura y pedicura de alta calidad. Reserve su cita en l&iacute;nea hoy.">
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--rose:#B5756D;--light-rose:#E8C4BF;--cream:#FDFAF8;--warm:#F5EBE8;--dark:#2a1a18;--text:#3a2a28}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+nav{background:var(--dark);padding:22px 60px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Tenor Sans',serif;font-size:20px;color:#fff;letter-spacing:3px;text-transform:uppercase}
+.logo-sub{font-size:10px;letter-spacing:4px;color:var(--light-rose);text-transform:uppercase;display:block;margin-top:-2px}
+.nav-cta{background:var(--rose);color:#fff;padding:10px 26px;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:#8a5050}
+.hero{min-height:100vh;background:#fff;display:grid;grid-template-columns:1fr 1fr}
+.hero-left{background:var(--dark);padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--light-rose);display:block;margin-bottom:28px}
+h1{font-family:'Tenor Sans',serif;font-size:clamp(30px,4vw,56px);color:#fff;line-height:1.2;letter-spacing:1px;margin-bottom:28px}
+h1 span{color:var(--light-rose)}
+.hero-left p{font-size:17px;color:rgba(255,255,255,.6);line-height:1.9;margin-bottom:44px;max-width:440px;font-weight:300}
+.btn-rose{background:var(--rose);color:#fff;padding:16px 40px;font-size:13px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-weight:500}
+.btn-rose:hover{background:#8a5050;transform:translateY(-2px)}
+.hero-right{background:linear-gradient(160deg,var(--rose),#8a5050,#4a2020);display:flex;align-items:center;justify-content:center;font-size:120px;position:relative;overflow:hidden}
+.hero-right::before{content:'PERFECT';position:absolute;font-family:'Tenor Sans',serif;font-size:100px;color:rgba(255,255,255,.05);letter-spacing:10px;white-space:nowrap;transform:rotate(-10deg)}
+.services-s{background:var(--warm);padding:100px 60px}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title .eyebrow{color:var(--rose)}
+.section-title h2{font-family:'Tenor Sans',serif;font-size:clamp(26px,4vw,48px);color:var(--dark);letter-spacing:2px;margin-bottom:12px}
+.svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1080px;margin:0 auto}
+.svc{background:#fff;padding:36px 24px;text-align:center;transition:all .4s;border-bottom:2px solid transparent}
+.svc:hover{border-bottom-color:var(--rose);transform:translateY(-4px)}
+.svc-icon{font-size:34px;margin-bottom:16px;display:block}
+.svc h3{font-family:'Tenor Sans',serif;font-size:18px;color:var(--dark);margin-bottom:10px;letter-spacing:1px}
+.svc p{font-size:14px;color:#999;line-height:1.7;font-weight:300}
+.about-s{background:#fff;padding:100px 60px}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1080px;margin:0 auto}
+.about-img{background:linear-gradient(135deg,var(--dark),#4a2020);height:480px;display:flex;align-items:center;justify-content:center;font-size:90px;position:relative}
+.about-img::after{content:'Miraflores';position:absolute;bottom:20px;right:20px;font-family:'Tenor Sans',serif;font-size:24px;letter-spacing:3px;color:var(--light-rose);text-transform:uppercase}
+.about-text h2{font-family:'Tenor Sans',serif;font-size:clamp(24px,3vw,40px);color:var(--dark);letter-spacing:1px;margin:16px 0 20px;line-height:1.25}
+.about-text p{font-size:16px;color:#777;line-height:1.9;margin-bottom:18px;font-weight:300}
+.cta-s{background:var(--rose);padding:80px 60px;text-align:center}
+.cta-s h2{font-family:'Tenor Sans',serif;font-size:clamp(24px,4vw,46px);color:#fff;letter-spacing:2px;margin-bottom:16px}
+.cta-s p{color:rgba(255,255,255,.85);font-size:18px;margin-bottom:40px;font-weight:300}
+.contact-s{background:var(--cream);padding:100px 60px}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto;align-items:start}
+.c-left h3{font-family:'Tenor Sans',serif;font-size:26px;color:var(--dark);margin-bottom:24px;letter-spacing:2px}
+.c-left p{font-size:15px;color:#999;line-height:2.1;margin-bottom:14px;font-weight:300}
+.c-left strong{color:var(--dark);font-weight:500}
+.preview-note{background:var(--warm);border-left:3px solid var(--light-rose);padding:18px;margin-top:20px}
+.preview-note p{font-size:13px;color:#aaa}
+form{display:flex;flex-direction:column;gap:14px}
+input,textarea{background:#fff;border:1px solid #e0d0cc;color:var(--text);padding:14px 18px;font-family:'Jost',sans-serif;font-size:15px;outline:none;transition:border .3s}
+input:focus,textarea:focus{border-color:var(--rose)}
+textarea{height:140px;resize:vertical}
+footer{background:var(--dark);text-align:center;padding:28px;font-size:13px;color:rgba(255,255,255,.25)}
+footer span{color:var(--light-rose)}
+@media(max-width:768px){nav{padding:16px 20px}.hero{grid-template-columns:1fr}.hero-right{height:240px;font-size:70px}.hero-left{padding:60px 20px}.about-inner,.contact-inner{grid-template-columns:1fr}.about-img{height:240px}.services-s,.about-s,.cta-s,.contact-s{padding:60px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <div>
+    <div class="logo">Perfect Nails</div>
+    <span class="logo-sub">Miraflores &middot; Lima, Per&uacute;</span>
+  </div>
+  <a href="#contact" class="nav-cta">Reservar Ahora</a>
+</nav>
+<div class="hero">
+  <div class="hero-left">
+    <span class="eyebrow">Sal&oacute;n de U&ntilde;as &middot; Miraflores</span>
+    <h1>Las U&ntilde;as Perfectas<br>para Miraflores &mdash;<br><span>Reserve Ahora<br>en L&iacute;nea</span></h1>
+    <p>Perfect Nails Miraflores combina t&eacute;cnica impecable con dise&ntilde;os que duran. Su pr&oacute;xima cita est&aacute; a un clic de distancia.</p>
+    <a href="#contact" class="btn-rose">Reserve su Cita en Perfect Nails Miraflores</a>
+  </div>
+  <div class="hero-right">&#128133;</div>
+</div>
+<section class="services-s" id="services">
+  <div class="section-title">
+    <span class="eyebrow" style="display:block;margin-bottom:12px">Servicios</span>
+    <h2>Servicios de Alta Calidad</h2>
+  </div>
+  <div class="svcs">
+    <div class="svc"><span class="svc-icon">&#128133;</span><h3>U&ntilde;as en Gel y Acr&iacute;lico</h3><p>Sets duraderos y perfectamente acabados para cada clienta.</p></div>
+    <div class="svc"><span class="svc-icon">&#127912;</span><h3>Nail Art y Dise&ntilde;os</h3><p>Arte personalizado que refleja tu estilo &uacute;nico.</p></div>
+    <div class="svc"><span class="svc-icon">&#10024;</span><h3>Manicura y Pedicura</h3><p>Tratamientos cl&aacute;sicos y de lujo para manos y pies.</p></div>
+    <div class="svc"><span class="svc-icon">&#127775;</span><h3>U&ntilde;as Semipermanentes</h3><p>Color de larga duraci&oacute;n con acabado brillante.</p></div>
+    <div class="svc"><span class="svc-icon">&#128142;</span><h3>Extensiones y Rellenos</h3><p>A&ntilde;ade longitud y estructura a tus u&ntilde;as naturales.</p></div>
+  </div>
+</section>
+<section class="about-s" id="about">
+  <div class="about-inner">
+    <div class="about-img">&#128133;</div>
+    <div class="about-text">
+      <span class="eyebrow">Sobre Nosotros</span>
+      <h2>El Sal&oacute;n Preferido de Miraflores</h2>
+      <p>Perfect Nails Miraflores es el sal&oacute;n de u&ntilde;as preferido del distrito m&aacute;s exclusivo de Lima, reconocido por su t&eacute;cnica precisa y atenci&oacute;n personalizada a cada clienta.</p>
+      <p>El equipo trabaja con productos de alta calidad para garantizar resultados duraderos y dise&ntilde;os que reflejan el estilo y personalidad de cada cliente. Ubicados en el coraz&oacute;n de Miraflores, ofrecen la experiencia que sus clientas esperan.</p>
+      <a href="#contact" class="btn-rose">Reserve su Cita en Perfect Nails Miraflores</a>
+    </div>
+  </div>
+</section>
+<div class="cta-s">
+  <h2>Su Pr&oacute;xima Cita La Espera</h2>
+  <p>Reserve en l&iacute;nea ahora &mdash; sin llamadas, sin esperas.</p>
+  <a href="#contact" style="background:#fff;color:var(--rose);padding:16px 44px;font-family:'Jost',sans-serif;font-weight:600;font-size:13px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block">Reserve su Cita en Perfect Nails Miraflores</a>
+</div>
+<section class="contact-s" id="contact">
+  <div class="contact-inner">
+    <div class="c-left">
+      <h3>Haga su Reserva</h3>
+      <p><strong>Ubicaci&oacute;n:</strong><br>Miraflores, Lima, Per&uacute;</p>
+      <p><strong>Horario:</strong><br>Lun&ndash;S&aacute;b: 9:00 &ndash; 20:00<br>Dom: 10:00 &ndash; 18:00</p>
+      <p><strong>Sin cita previa bienvenida</strong></p>
+      <div class="preview-note">
+        <p>Vista previa gratuita creada por <strong style="color:#bbb">Alma Digital Designs</strong> &mdash; mostrando c&oacute;mo podr&iacute;a verse el sitio web de Perfect Nails Miraflores.</p>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="_subject" value="Perfect Nails Miraflores - Reserva">
+      <input type="text" name="name" placeholder="Su nombre" required>
+      <input type="email" name="email" placeholder="Correo electr&oacute;nico">
+      <input type="tel" name="phone" placeholder="Tel&eacute;fono / WhatsApp">
+      <input type="text" name="service" placeholder="Servicio (ej. Gel, Nail Art)">
+      <textarea name="message" placeholder="Fecha y hora preferida &mdash; cualquier detalle adicional"></textarea>
+      <button type="submit" class="btn-rose">Reserve su Cita en Perfect Nails Miraflores</button>
+    </form>
+  </div>
+</section>
+<footer><p>&copy; 2026 Perfect Nails Miraflores &middot; Lima, Per&uacute; &middot; Dise&ntilde;ado por <span>Alma Digital Designs</span></p></footer>
+</body>
+</html>
