@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New York Nails Sheffield | Nail Salon | Gel, Acrylics &amp; Nail Art</title>
+<meta name="description" content="New York Nails Sheffield — expert gel, acrylics, nail art, and manicures by Trinh and her team. Book your nail appointment in Sheffield online today.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#000;--white:#fff;--pink:#FF0090;--lightpink:#FFE8F5;--gray:#f5f5f5;--text:#111}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--text);line-height:1.6}
+nav{background:#fff;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100}
+.logo{font-weight:800;font-size:19px;letter-spacing:-0.5px;text-transform:uppercase}
+.logo span{color:var(--pink)}
+.nav-cta{background:var(--pink);color:#fff;padding:10px 24px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:#cc0073}
+.hero{padding:80px 60px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;min-height:90vh}
+.tag{font-size:11px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--pink);display:block;margin-bottom:20px}
+h1{font-weight:800;font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-2px;color:var(--black);margin-bottom:32px}
+h1 span{color:var(--pink)}
+.hero-left p{font-size:17px;color:#555;line-height:1.8;margin-bottom:40px;font-weight:300;max-width:440px}
+.btn-black{background:var(--black);color:#fff;padding:16px 40px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s}
+.btn-black:hover{background:var(--pink)}
+.btn-pink{background:var(--pink);color:#fff;padding:16px 40px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;border:none;cursor:pointer;font-family:'Montserrat',sans-serif}
+.btn-pink:hover{background:#cc0073}
+.hero-visual{background:var(--black);height:540px;display:flex;align-items:center;justify-content:center;font-size:100px;position:relative;overflow:hidden}
+.hero-visual::after{content:'NYC';position:absolute;font-weight:800;font-size:160px;color:rgba(255,255,255,.04);letter-spacing:4px}
+.hero-badge{position:absolute;bottom:24px;right:24px;background:var(--pink);color:#fff;padding:16px 20px;font-size:11px;font-weight:700;letter-spacing:2px;text-align:center;text-transform:uppercase}
+.hero-badge strong{display:block;font-size:22px;letter-spacing:-1px}
+.hero-right{position:relative}
+.services-s{background:var(--gray);padding:100px 60px}
+.section-center{text-align:center;margin-bottom:60px}
+h2{font-weight:800;font-size:clamp(28px,4vw,52px);letter-spacing:-1.5px;color:var(--black);margin-bottom:12px}
+.svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#ddd;margin-top:60px}
+.svc{background:#fff;padding:44px 28px;text-align:center;transition:all .3s}
+.svc:hover{background:var(--black)}
+.svc:hover h3,.svc:hover p{color:#fff}
+.svc-icon{font-size:38px;margin-bottom:18px;display:block}
+.svc h3{font-weight:700;font-size:15px;letter-spacing:-0.5px;color:var(--black);margin-bottom:10px;transition:color .3s}
+.svc p{font-size:13px;color:#888;line-height:1.7;transition:color .3s}
+.about-s{background:#fff;padding:100px 60px}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;max-width:1100px;margin:0 auto}
+.about-visual{height:500px;background:linear-gradient(135deg,var(--pink),#cc0073,#800046);display:flex;align-items:center;justify-content:center;font-size:100px}
+.about-text p{font-size:16px;color:#555;line-height:1.9;margin-top:20px;font-weight:300}
+.cta-pink{background:var(--pink);padding:100px 60px;text-align:center}
+.cta-pink p{color:rgba(255,255,255,.85);font-size:18px;margin:16px 0 40px;font-weight:300}
+.contact-s{background:#fff;padding:100px 60px}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1080px;margin:0 auto;align-items:start}
+.c-left h3{font-weight:800;font-size:30px;letter-spacing:-1px;color:var(--black);margin-bottom:28px}
+.c-left p{font-size:15px;color:#666;line-height:2.1;margin-bottom:16px;font-weight:300}
+.c-left strong{font-weight:600;color:var(--black)}
+.preview-note{background:var(--lightpink);padding:20px;margin-top:20px;border-left:3px solid var(--pink)}
+.preview-note p{font-size:13px;color:#888}
+form{display:flex;flex-direction:column;gap:16px}
+input,textarea{border:1px solid #eee;background:#fff;color:var(--text);padding:14px 20px;font-family:'Montserrat',sans-serif;font-size:14px;outline:none;transition:border .3s}
+input:focus,textarea:focus{border-color:var(--pink)}
+textarea{height:140px;resize:vertical}
+footer{background:var(--black);text-align:center;padding:28px;font-size:12px;color:#333;letter-spacing:2px;text-transform:uppercase}
+footer span{color:var(--pink)}
+@media(max-width:768px){nav{padding:16px 20px}.hero,.about-inner,.contact-inner{grid-template-columns:1fr;gap:40px;min-height:auto}.hero{padding:80px 20px}.hero-visual{height:280px}.about-visual{height:260px}.services-s,.about-s,.cta-pink,.contact-s{padding:60px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">New York Nails <span>Sheffield</span></div>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+<div class="hero" style="padding-top:80px">
+  <div class="hero-left">
+    <span class="tag">Sheffield's Premier Nail Salon</span>
+    <h1>Sheffield's<br>Most Trusted<br>Nail Salon &mdash;<br><span>Now Bookable</span><br>Online</h1>
+    <p>New York Nails brings NYC-quality nails to the heart of Sheffield. Trinh and the team are ready for your next appointment.</p>
+    <a href="#contact" class="btn-black">Book Your Nails in Sheffield</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">&#128133;</div>
+    <div class="hero-badge">5&#9733;<strong>Google</strong>Reviews</div>
+  </div>
+</div>
+<section class="services-s" id="services">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="section-center">
+      <span class="tag">Services</span>
+      <h2>Expert Nail Services</h2>
+    </div>
+    <div class="svcs">
+      <div class="svc"><span class="svc-icon">&#128133;</span><h3>Gel &amp; Acrylic Nails</h3><p>Long-lasting sets crafted to perfection.</p></div>
+      <div class="svc"><span class="svc-icon">&#127912;</span><h3>Nail Art &amp; Designs</h3><p>NYC-inspired custom nail art for every look.</p></div>
+      <div class="svc"><span class="svc-icon">&#10024;</span><h3>Manicures &amp; Pedicures</h3><p>Classic and luxury treatments for hands and feet.</p></div>
+      <div class="svc"><span class="svc-icon">&#128142;</span><h3>Nail Extensions</h3><p>Add length and strength to your natural nails.</p></div>
+      <div class="svc"><span class="svc-icon">&#127775;</span><h3>Shellac &amp; Gel Polish</h3><p>Chip-resistant colour that lasts for weeks.</p></div>
+    </div>
+  </div>
+</section>
+<section class="about-s" id="about">
+  <div class="about-inner">
+    <div class="about-visual">&#128133;</div>
+    <div class="about-text">
+      <span class="tag">About Us</span>
+      <h2>New York Quality.<br>Sheffield Heart.</h2>
+      <p>New York Nails Sheffield brings bold nail artistry to the heart of the city, led by the skilled and detail-driven Trinh. Known locally for their precise technique and stunning designs, the salon has earned a loyal following of Sheffield clients who won't go anywhere else.</p>
+      <p>From clean classics to intricate nail art, every visit is a statement.</p>
+      <br>
+      <a href="#contact" class="btn-pink">Book Your Nails in Sheffield</a>
+    </div>
+  </div>
+</section>
+<div class="cta-pink">
+  <h2 style="color:#fff">Your Next Set Is Waiting</h2>
+  <p>Trinh and the team are ready. Book your appointment in Sheffield today.</p>
+  <a href="#contact" class="btn-black">Book Your Nails in Sheffield</a>
+</div>
+<section class="contact-s" id="contact">
+  <div class="contact-inner">
+    <div class="c-left">
+      <h3>Book Your Appointment</h3>
+      <p><strong>Location:</strong><br>Sheffield, UK</p>
+      <p><strong>Hours:</strong><br>Mon&ndash;Sat: 9:30am &ndash; 7pm<br>Sun: 10am &ndash; 5pm</p>
+      <p><strong>Walk-ins Welcome</strong></p>
+      <div class="preview-note">
+        <p>Free preview by <strong>Alma Digital Designs</strong> &mdash; showing what New York Nails Sheffield's website could look like.</p>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xojppajv" method="POST">
+      <input type="hidden" name="_subject" value="New York Nails Sheffield - Booking">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email">
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="service" placeholder="Service (e.g. Gel Set, Nail Art)">
+      <textarea name="message" placeholder="Preferred date/time and any details"></textarea>
+      <button type="submit" class="btn-pink">Book Your Nails in Sheffield</button>
+    </form>
+  </div>
+</section>
+<footer><p>&copy; 2026 New York Nails <span>Sheffield</span> &middot; Designed by Alma Digital Designs</p></footer>
+</body>
+</html>
