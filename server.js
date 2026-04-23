@@ -1658,6 +1658,53 @@ app.post('/api/track-event', async (req, res) => {
   }
 });
 
+// ── TIKTOK OAUTH CALLBACK ─────────────────────────────────────────────────────
+// Redirect URI registered in TikTok Developer App for Login Kit & Content Posting API
+// TikTok redirects here with ?code=AUTHORIZATION_CODE&state=alma123 after user authorizes
+
+app.get('/auth/tiktok/callback', async (req, res) => {
+  const code = req.query.code;
+  const state = req.query.state;
+
+  if (!code) {
+    console.error('[tiktok-callback] No authorization code received');
+    return res.status(400).send('Authorization failed: no code received');
+  }
+
+  try {
+    const tokenRes = await fetch('https://open.tiktokapis.com/v2/oauth/token/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_key: process.env.TIKTOK_CLIENT_KEY || '',
+        client_secret: process.env.TIKTOK_CLIENT_SECRET || '',
+        code: code,
+        grant_type: 'authorization_code',
+        redirect_uri: process.env.TIKTOK_REDIRECT_URI || 'https://almadigitalservices.com/auth/tiktok/callback'
+      }).toString()
+    });
+
+    const tokens = await tokenRes.json();
+
+    if (tokens.error) {
+      console.error('[tiktok-callback] Token exchange error:', tokens.error, tokens.error_description);
+      return res.status(400).send(`Token exchange failed: ${tokens.error_description || tokens.error}`);
+    }
+
+    const accessToken = tokens.data?.access_token || tokens.access_token;
+    const openId = tokens.data?.open_id || tokens.open_id;
+
+    console.log(`[tiktok-callback] TikTok OAuth success. open_id: ${openId}`);
+    console.log(`[tiktok-callback] TIKTOK_ACCESS_TOKEN_ALM=${accessToken}`);
+    console.log(`[tiktok-callback] TIKTOK_OPEN_ID_ALM=${openId}`);
+
+    res.send(`<html><body><h2>TikTok connected successfully!</h2><p>Open ID: ${openId}</p><p>Access token received and logged. You can close this window.</p></body></html>`);
+  } catch (err) {
+    console.error('[tiktok-callback] Error during token exchange:', err.message);
+    res.status(500).send('Internal error during token exchange');
+  }
+});
+
 // ── HEALTH CHECK ─────────────────────────────────────────────────────────────
 
 
