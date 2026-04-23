@@ -1641,6 +1641,23 @@ app.post('/whatsapp-lead', express.urlencoded({ extended: false }), async (req, 
   }
 });
 
+
+// ── API: TRACK EVENT (called by Riley agent to fire TikTok server-side events) ──
+
+app.post('/api/track-event', async (req, res) => {
+  try {
+    const { eventName, email, value, currency } = req.body;
+    if (!eventName) {
+      return res.status(400).json({ success: false, error: 'eventName is required' });
+    }
+    const result = await sendTiktokEvent(eventName, { email, value, currency });
+    res.json({ success: true, result });
+  } catch (err) {
+    console.error('[track-event] error:', err.message);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 // ── HEALTH CHECK ─────────────────────────────────────────────────────────────
 
 
