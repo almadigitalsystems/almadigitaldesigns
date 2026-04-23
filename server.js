@@ -12,6 +12,43 @@ const nodemailer = require('nodemailer');
 
 const Stripe = require('stripe');
 
+// ── TIKTOK EVENTS API ─────────────────────────────────────────────────────────
+// Server-side conversion tracking — fires even when users have ad blockers.
+// Credentials read from environment variables (set in Railway).
+async function sendTiktokEvent(eventName, { email = null, value = null, currency = 'USD' } = {}) {
+  const pixelId = process.env.TIKTOK_PIXEL_ID;
+  const token = process.env.TIKTOK_EVENTS_API_TOKEN;
+  if (!pixelId || !token) {
+    console.warn('TikTok Events API: missing TIKTOK_PIXEL_ID or TIKTOK_EVENTS_API_TOKEN env vars');
+    return null;
+  }
+  const crypto = require('crypto');
+  const hashedEmail = email ? crypto.createHash('sha256').update(email.trim().toLowerCase()).digest('hex') : undefined;
+  const payload = {
+    pixel_code: pixelId,
+    event: eventName,
+    timestamp: String(Math.floor(Date.now() / 1000)),
+    context: { user: hashedEmail ? { email: hashedEmail } : {} },
+    properties: {}
+  };
+  if (value != null) { payload.properties.value = value; payload.properties.currency = currency; }
+  try {
+    const res = await fetch('https://business-api.tiktok.com/open_api/v1.3/event/track/', {
+      method: 'POST',
+      headers: { 'Access-Token': token, 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    console.log(`TikTok event '${eventName}' sent:`, data?.code === 0 ? 'OK' : JSON.stringify(data));
+    return data;
+  } catch (err) {
+    console.error('TikTok Events API error:', err.message);
+    return null;
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
+
 
 
 const app = express();
@@ -969,6 +1006,14 @@ app.post('/api/stripe-webhook', async (req, res) => {
       : 'Amount unknown';
 
 
+
+
+    // Fire TikTok server-side Purchase event for successful payments
+    if (eventType === 'checkout.session.completed' || eventType === 'payment_intent.succeeded') {
+      const orderValue = amountCents != null ? amountCents / 100 : null;
+      sendTiktokEvent('Purchase', { email, value: orderValue, currency: currency?.toUpperCase() || 'USD' })
+        .catch(err => console.error('TikTok Purchase event failed:', err));
+    }
 
     const paperclipUrl = process.env.PAPERCLIP_API_URL || 'http://127.0.0.1:3100';
 
