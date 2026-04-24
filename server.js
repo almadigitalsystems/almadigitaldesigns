@@ -12,43 +12,6 @@ const nodemailer = require('nodemailer');
 
 const Stripe = require('stripe');
 
-// ── TIKTOK EVENTS API ─────────────────────────────────────────────────────────
-// Server-side conversion tracking — fires even when users have ad blockers.
-// Credentials read from environment variables (set in Railway).
-async function sendTiktokEvent(eventName, { email = null, value = null, currency = 'USD' } = {}) {
-  const pixelId = process.env.TIKTOK_PIXEL_ID;
-  const token = process.env.TIKTOK_EVENTS_API_TOKEN;
-  if (!pixelId || !token) {
-    console.warn('TikTok Events API: missing TIKTOK_PIXEL_ID or TIKTOK_EVENTS_API_TOKEN env vars');
-    return null;
-  }
-  const crypto = require('crypto');
-  const hashedEmail = email ? crypto.createHash('sha256').update(email.trim().toLowerCase()).digest('hex') : undefined;
-  const payload = {
-    pixel_code: pixelId,
-    event: eventName,
-    timestamp: String(Math.floor(Date.now() / 1000)),
-    context: { user: hashedEmail ? { email: hashedEmail } : {} },
-    properties: {}
-  };
-  if (value != null) { payload.properties.value = value; payload.properties.currency = currency; }
-  try {
-    const res = await fetch('https://business-api.tiktok.com/open_api/v1.3/event/track/', {
-      method: 'POST',
-      headers: { 'Access-Token': token, 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const data = await res.json();
-    console.log(`TikTok event '${eventName}' sent:`, data?.code === 0 ? 'OK' : JSON.stringify(data));
-    return data;
-  } catch (err) {
-    console.error('TikTok Events API error:', err.message);
-    return null;
-  }
-}
-// ─────────────────────────────────────────────────────────────────────────────
-
-
 
 
 const app = express();
@@ -1007,14 +970,6 @@ app.post('/api/stripe-webhook', async (req, res) => {
 
 
 
-
-    // Fire TikTok server-side Purchase event for successful payments
-    if (eventType === 'checkout.session.completed' || eventType === 'payment_intent.succeeded') {
-      const orderValue = amountCents != null ? amountCents / 100 : null;
-      sendTiktokEvent('Purchase', { email, value: orderValue, currency: currency?.toUpperCase() || 'USD' })
-        .catch(err => console.error('TikTok Purchase event failed:', err));
-    }
-
     const paperclipUrl = process.env.PAPERCLIP_API_URL || 'http://127.0.0.1:3100';
 
     const companyId = process.env.PAPERCLIP_COMPANY_ID || 'aa9191d4-249a-4574-88f2-1284571ad537';
@@ -1641,67 +1596,163 @@ app.post('/whatsapp-lead', express.urlencoded({ extended: false }), async (req, 
   }
 });
 
+// ── CANVA OAUTH ───────────────────────────────────────────────────────────────
 
-// ── API: TRACK EVENT (called by Riley agent to fire TikTok server-side events) ──
-
-app.post('/api/track-event', async (req, res) => {
-  try {
-    const { eventName, email, value, currency } = req.body;
-    if (!eventName) {
-      return res.status(400).json({ success: false, error: 'eventName is required' });
-    }
-    const result = await sendTiktokEvent(eventName, { email, value, currency });
-    res.json({ success: true, result });
-  } catch (err) {
-    console.error('[track-event] error:', err.message);
-    res.status(500).json({ success: false, error: err.message });
+// In-memory store for PKCE + state (TTL: 10 minutes)
+const canvaOAuthStore = new Map();
+setInterval(() => {
+  const now = Date.now();
+  for (const [k, v] of canvaOAuthStore) {
+    if (v.expiresAt < now) canvaOAuthStore.delete(k);
   }
+}, 60000);
+
+// Temporary token store for one-time retrieval (TTL: 30 minutes)
+const canvaTempTokenStore = new Map();
+setInterval(() => {
+  const now = Date.now();
+  for (const [k, v] of canvaTempTokenStore) {
+    if (v.expiresAt < now) canvaTempTokenStore.delete(k);
+  }
+}, 60000);
+
+// Fix 2 helper: base64-encode client_id:client_secret for Basic Auth
+function canvaBasicAuth() {
+  const cid = process.env.CANVA_CLIENT_ID;
+  const cs = process.env.CANVA_CLIENT_SECRET;
+  return Buffer.from(`${cid}:${cs}`).toString('base64');
+}
+
+// GET /auth/canva/start — generate state + PKCE server-side, redirect to Canva
+app.get('/auth/canva/start', (req, res) => {
+  const codeVerifier = crypto.randomBytes(64).toString('base64url');
+  const codeChallenge = crypto.createHash('sha256').update(codeVerifier).digest('base64url');
+  const state = crypto.randomBytes(32).toString('base64url'); // Fix 3: fresh random state per request
+
+  canvaOAuthStore.set(state, {
+    codeVerifier,
+    expiresAt: Date.now() + 10 * 60 * 1000 // 10 min TTL
+  });
+
+  const params = new URLSearchParams({
+    code_challenge: codeChallenge,
+    code_challenge_method: 's256',
+    scope: 'asset:write brandtemplate:content:write folder:permission:write comment:write design:content:read app:write app:read design:content:write folder:read folder:write comment:read design:permission:read brandtemplate:content:read design:permission:write design:meta:read asset:read profile:read folder:permission:read brandtemplate:meta:read',
+    response_type: 'code',
+    client_id: process.env.CANVA_CLIENT_ID,
+    redirect_uri: process.env.CANVA_REDIRECT_URI || 'https://almadigitalservices.com/auth/canva/callback',
+    state
+  });
+
+  res.redirect(`https://www.canva.com/api/oauth/authorize?${params}`);
 });
 
-// ── TIKTOK OAUTH CALLBACK ─────────────────────────────────────────────────────
-// Redirect URI registered in TikTok Developer App for Login Kit & Content Posting API
-// TikTok redirects here with ?code=AUTHORIZATION_CODE&state=alma123 after user authorizes
+// GET /auth/canva/callback — Fix 1 (server-side) + Fix 2 (Basic Auth) + Fix 3 (state verify)
+app.get('/auth/canva/callback', async (req, res) => {
+  const { code, state, error } = req.query;
 
-app.get('/auth/tiktok/callback', async (req, res) => {
-  const code = req.query.code;
-  const state = req.query.state;
-
-  if (!code) {
-    console.error('[tiktok-callback] No authorization code received');
-    return res.status(400).send('Authorization failed: no code received');
+  if (error) {
+    console.error('[canva-oauth] Canva returned error:', error);
+    return res.status(400).send(`<h2>Canva auth error: ${error}</h2><p>Please restart the flow at /auth/canva/start</p>`);
   }
 
+  if (!code || !state) {
+    return res.status(400).send('<h2>Missing code or state.</h2>');
+  }
+
+  const stored = canvaOAuthStore.get(state);
+  if (!stored || stored.expiresAt < Date.now()) {
+    return res.status(400).send('<h2>Invalid or expired state.</h2><p>Please restart the OAuth flow at /auth/canva/start</p>');
+  }
+  const { codeVerifier } = stored;
+  canvaOAuthStore.delete(state); // state is single-use
+
   try {
-    const tokenRes = await fetch('https://open.tiktokapis.com/v2/oauth/token/', {
+    // Fix 1: server-side token exchange (Canva blocks CORS from browser)
+    // Fix 2: Basic Auth header instead of body credentials
+    const tokenRes = await fetch('https://api.canva.com/rest/v1/oauth/token', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {
+        'Authorization': `Basic ${canvaBasicAuth()}`,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
       body: new URLSearchParams({
-        client_key: process.env.TIKTOK_CLIENT_KEY || '',
-        client_secret: process.env.TIKTOK_CLIENT_SECRET || '',
-        code: code,
         grant_type: 'authorization_code',
-        redirect_uri: process.env.TIKTOK_REDIRECT_URI || 'https://almadigitalservices.com/auth/tiktok/callback'
+        code,
+        code_verifier: codeVerifier,
+        redirect_uri: process.env.CANVA_REDIRECT_URI || 'https://almadigitalservices.com/auth/canva/callback'
       }).toString()
     });
 
     const tokens = await tokenRes.json();
 
-    if (tokens.error) {
-      console.error('[tiktok-callback] Token exchange error:', tokens.error, tokens.error_description);
-      return res.status(400).send(`Token exchange failed: ${tokens.error_description || tokens.error}`);
+    if (!tokenRes.ok || tokens.error) {
+      console.error('[canva-oauth] token exchange failed:', JSON.stringify(tokens));
+      return res.status(500).send(`<h2>Token exchange failed</h2><pre>${JSON.stringify(tokens, null, 2)}</pre>`);
     }
 
-    const accessToken = tokens.data?.access_token || tokens.access_token;
-    const openId = tokens.data?.open_id || tokens.open_id;
+    // Store tokens for one-time retrieval by Emily agent
+    const retrievalKey = crypto.randomBytes(32).toString('base64url');
+    canvaTempTokenStore.set(retrievalKey, {
+      access_token: tokens.access_token,
+      refresh_token: tokens.refresh_token,
+      expiresAt: Date.now() + 30 * 60 * 1000 // 30 min TTL
+    });
 
-    console.log(`[tiktok-callback] TikTok OAuth success. open_id: ${openId}`);
-    console.log(`[tiktok-callback] TIKTOK_ACCESS_TOKEN_ALM=${accessToken}`);
-    console.log(`[tiktok-callback] TIKTOK_OPEN_ID_ALM=${openId}`);
+    // Log prominently for Railway log visibility
+    console.log('[canva-oauth] SUCCESS — tokens exchanged');
+    console.log('[canva-oauth] RETRIEVAL_KEY:', retrievalKey);
+    console.log('[canva-oauth] ACCESS_TOKEN:', tokens.access_token);
+    console.log('[canva-oauth] REFRESH_TOKEN:', tokens.refresh_token);
 
-    res.send(`<html><body><h2>TikTok connected successfully!</h2><p>Open ID: ${openId}</p><p>Access token received and logged. You can close this window.</p></body></html>`);
+    res.send(`
+      <html><body style="font-family:sans-serif;text-align:center;padding:60px">
+        <h2 style="color:green">Canva connected successfully!</h2>
+        <p>Authorization complete. You can close this window.</p>
+        <p style="color:#aaa;font-size:12px">Tokens have been captured by the server.</p>
+      </body></html>
+    `);
   } catch (err) {
-    console.error('[tiktok-callback] Error during token exchange:', err.message);
-    res.status(500).send('Internal error during token exchange');
+    console.error('[canva-oauth] exception:', err.message);
+    res.status(500).send('<h2>Internal error during token exchange.</h2>');
+  }
+});
+
+// POST /auth/canva/refresh — rotate Canva tokens (each refresh token is single-use)
+app.post('/auth/canva/refresh', async (req, res) => {
+  const refreshToken = process.env.CANVA_REFRESH_TOKEN;
+  if (!refreshToken) {
+    return res.status(400).json({ error: 'CANVA_REFRESH_TOKEN not configured' });
+  }
+
+  try {
+    const tokenRes = await fetch('https://api.canva.com/rest/v1/oauth/token', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${canvaBasicAuth()}`,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams({
+        grant_type: 'refresh_token',
+        refresh_token: refreshToken
+      }).toString()
+    });
+
+    const tokens = await tokenRes.json();
+
+    if (!tokenRes.ok || tokens.error) {
+      console.error('[canva-refresh] failed:', JSON.stringify(tokens));
+      return res.status(500).json({ error: 'Refresh failed', detail: tokens });
+    }
+
+    // IMPORTANT: each refresh token is single-use — log both new tokens
+    console.log('[canva-refresh] NEW ACCESS_TOKEN:', tokens.access_token);
+    console.log('[canva-refresh] NEW REFRESH_TOKEN:', tokens.refresh_token);
+
+    res.json({ success: true, access_token: tokens.access_token });
+  } catch (err) {
+    console.error('[canva-refresh] exception:', err.message);
+    res.status(500).json({ error: 'Internal error' });
   }
 });
 
