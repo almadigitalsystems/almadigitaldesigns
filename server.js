@@ -2881,6 +2881,13 @@ app.get('/ftc-disclosure', (req, res) => {
 });
 
 
+app.get('/manychat-alternative', (req, res) => {
+  res.sendFile(path.join(__dirname, 'manychat-alternative.html'));
+});
+
+
+
+
 
 
 
