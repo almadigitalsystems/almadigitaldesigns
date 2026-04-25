@@ -79,6 +79,15 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ==================== COMPARISON LANDING PAGES ==================== -->
+  <!-- AlmaReach AI competitor comparison pages — high SEO priority -->
+  <url>
+    <loc>https://almadigitalservices.com/manychat-alternative</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- ==================== PROSPECT PREVIEW PAGES ==================== -->
   <!-- NOTE: Prospect preview pages are set to noindex,nofollow.
        DO NOT add individual preview page URLs to this sitemap.
