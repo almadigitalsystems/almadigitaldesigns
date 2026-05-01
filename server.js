@@ -2881,6 +2881,10 @@ app.get('/ftc-disclosure', (req, res) => {
 });
 
 
+app.get('/blog/ai-native-agency-future-web-design-small-business', (req, res) => {
+  res.sendFile(path.join(__dirname, 'blog/ai-native-agency-future-web-design-small-business.html'));
+});
+
 app.get('/manychat-alternative', (req, res) => {
   res.sendFile(path.join(__dirname, 'manychat-alternative.html'));
 });
