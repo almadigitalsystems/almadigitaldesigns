@@ -88,7 +88,16 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- ==================== PROSPECT PREVIEW PAGES ==================== -->
+
+  <!-- Blog: Agentic Agency -->
+  <url>
+    <loc>https://almadigitalservices.com/blog/the-agentic-agency-how-ai-teams-replacing-traditional-web-agencies</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <!-- ==================== PROSPECT PREVIEW PAGES ==================== -->
   <!-- NOTE: Prospect preview pages are set to noindex,nofollow.
        DO NOT add individual preview page URLs to this sitemap.
        If a preview-index page is created for internal use, add it here. -->
