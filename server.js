@@ -2889,6 +2889,10 @@ app.get('/manychat-alternative', (req, res) => {
   res.sendFile(path.join(__dirname, 'manychat-alternative.html'));
 });
 
+app.get('/whatsapp-demo', (req, res) => {
+  res.sendFile(path.join(__dirname, 'whatsapp-demo.html'));
+});
+
 
 
 
@@ -3616,6 +3620,7 @@ app.listen(PORT, () => {
 
 
 });
+
 
 
 
