@@ -82,6 +82,7 @@ nav{
 }
 .hero__eyebrow::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%}
 .hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:1.5rem}
+.hero h1 .grad-text{font-style:italic}
 .hero__sub{font-size:1.2rem;color:var(--muted);max-width:680px;margin-bottom:2.5rem;line-height:1.6}
 .hero__ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.25rem}
 .btn-primary{
@@ -229,6 +230,44 @@ nav{
 }
 .faq-item.open .faq-a{max-height:300px;padding:0 1.6rem 1.4rem}
 
+/* contact */
+.contact{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 100%);position:relative;overflow:hidden}
+.contact::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 25% 30%,rgba(0,180,216,0.14) 0%,transparent 55%);
+  z-index:0;
+}
+.contact__inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.contact__head{text-align:center;margin-bottom:2.5rem}
+.contact__head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1rem}
+.contact__head p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:0 auto;line-height:1.65}
+.contact__form{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:22px;padding:2.25rem;
+  display:flex;flex-direction:column;gap:1.1rem;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.contact__form label{display:flex;flex-direction:column;gap:0.45rem;font-size:0.9rem;color:var(--muted);font-weight:500}
+.contact__form label span{font-size:0.82rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted)}
+.contact__form input,
+.contact__form textarea{
+  background:rgba(10,26,46,0.6);border:1px solid var(--border);
+  border-radius:12px;padding:0.85rem 1rem;
+  color:var(--text);font-family:'Inter',sans-serif;font-size:0.98rem;font-weight:500;
+  transition:border-color 0.4s var(--ease),background 0.4s var(--ease);
+  resize:vertical;
+}
+.contact__form input:focus,
+.contact__form textarea:focus{outline:none;border-color:var(--cyan);background:rgba(10,26,46,0.85)}
+.contact__form textarea{min-height:120px;line-height:1.6}
+.contact__submit{
+  align-self:flex-start;border:none;cursor:pointer;
+  font-family:'Inter',sans-serif;
+}
+.contact__fineprint{font-size:0.88rem;color:var(--muted);margin-top:0.25rem;line-height:1.6}
+.contact__fineprint a{color:var(--cyan);text-decoration:none}
+.contact__fineprint a:hover{text-decoration:underline}
+
 /* footer */
 footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--border)}
 .foot__tagline{
@@ -250,6 +289,9 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
   .hero{padding:5rem 0 4rem}
   .hero__ctas{flex-direction:column;align-items:stretch}
   .btn-primary,.btn-secondary{justify-content:center;text-align:center}
+  .form-row{grid-template-columns:1fr}
+  .contact__form{padding:1.75rem}
+  .contact__submit{align-self:stretch;justify-content:center}
 }
 </style>
 </head>
@@ -280,7 +322,7 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
 </section>
 
 <!-- 2. CATEGORY POSITIONING -->
-<section class="category">
+<section class="category" id="work">
   <div class="container">
     <h2>There are three ways to get a website in 2026. We are the only one <span class="grad-text">built for businesses that need it to actually work.</span></h2>
     <div class="category__grid">
@@ -304,7 +346,7 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
       </div>
 
       <div class="cat-col featured">
-        <h3>Alma Digital Services<span class="price">from $500</span></h3>
+        <h3><span class="grad-text">Alma Digital Services</span><span class="price">from $500</span></h3>
         <ul>
           <li>A senior team builds it for you, end-to-end</li>
           <li>AI accelerates production. Humans own the outcome.</li>
@@ -434,6 +476,40 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- 6. CONTACT -->
+<section class="contact" id="contact">
+  <div class="container contact__inner">
+    <div class="contact__head">
+      <h2>Book your <span class="grad-text">free strategy call.</span></h2>
+      <p>Tell us about your business. A senior member of our team replies within one business day with a working preview and a no-obligation quote.</p>
+    </div>
+    <form class="contact__form" action="https://formspree.io/f/xojppajv" method="POST">
+      <div class="form-row">
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required />
+        </label>
+      </div>
+      <label>
+        <span>Business name</span>
+        <input type="text" name="business" />
+      </label>
+      <label>
+        <span>What are you looking to build?</span>
+        <textarea name="message" rows="4" placeholder="A short description of your business and what you need from a website." required></textarea>
+      </label>
+      <input type="hidden" name="_subject" value="New strategy-call request from almadigitalservices.com" />
+      <input type="hidden" name="_next" value="https://almadigitalservices.com/?sent=1" />
+      <button type="submit" class="btn-primary contact__submit">Send my request →</button>
+      <p class="contact__fineprint">No obligation. We reply by email within one business day.</p>
+    </form>
   </div>
 </section>
 
