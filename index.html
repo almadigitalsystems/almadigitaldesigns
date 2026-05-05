@@ -228,7 +228,97 @@ nav{
   transition:max-height 0.5s var(--ease),padding 0.5s var(--ease);
   padding:0 1.6rem;color:var(--muted);font-size:1rem;line-height:1.7;
 }
-.faq-item.open .faq-a{max-height:300px;padding:0 1.6rem 1.4rem}
+.faq-item.open .faq-a{max-height:600px;padding:0 1.6rem 1.4rem}
+
+/* catalog (More from Alma) */
+.catalog{padding:6rem 0 5rem;background:linear-gradient(180deg,#0d2138 0%,var(--bg) 100%);position:relative;overflow:hidden}
+.catalog::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 10%,rgba(123,97,255,0.10) 0%,transparent 55%),
+             radial-gradient(circle at 10% 90%,rgba(0,180,216,0.10) 0%,transparent 55%);
+  z-index:0;pointer-events:none;
+}
+.catalog__inner{position:relative;z-index:1}
+.catalog__head{text-align:center;margin-bottom:3.5rem;max-width:780px;margin-left:auto;margin-right:auto}
+.catalog__head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1rem}
+.catalog__head h2 .grad-text{display:inline}
+.catalog__head p{color:var(--muted);font-size:1.05rem;line-height:1.65}
+.cat-block{padding:3rem 0;border-top:1px solid var(--border)}
+.cat-block:first-of-type{border-top:0;padding-top:0.5rem}
+.cat-block__head{margin-bottom:1.75rem;max-width:760px}
+.cat-block__eyebrow{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(0,180,216,0.08);border:1px solid rgba(0,180,216,0.25);
+  border-radius:100px;padding:0.35rem 0.95rem;
+  font-size:0.7rem;font-weight:700;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.cat-block__head h3{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;margin-bottom:0.75rem;letter-spacing:-0.02em;line-height:1.2}
+.cat-block__head h3 .grad-text{display:inline}
+.cat-block__head p{color:var(--muted);font-size:1.02rem;line-height:1.65}
+.cat-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.cat-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.cat-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.cat-grid-1{display:grid;grid-template-columns:minmax(0,560px);justify-content:center;gap:1.25rem}
+.cat-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:18px;padding:1.85rem 1.6rem;
+  display:flex;flex-direction:column;gap:0.85rem;position:relative;
+  transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+}
+.cat-card:hover{transform:translateY(-4px);border-color:rgba(0,180,216,0.25)}
+.cat-card.featured{
+  border-color:rgba(0,180,216,0.4);
+  background:linear-gradient(180deg,rgba(0,180,216,0.07) 0%,rgba(123,97,255,0.03) 100%);
+}
+.cat-card__badge{
+  position:absolute;top:-10px;left:1.4rem;
+  background:var(--grad);color:#fff;
+  font-size:0.66rem;font-weight:700;letter-spacing:0.08em;
+  padding:0.32rem 0.75rem;border-radius:100px;text-transform:uppercase;
+}
+.cat-card__name{font-family:'Inter',sans-serif;font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.cat-card.featured .cat-card__name{color:var(--cyan)}
+.cat-card__title{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;line-height:1.25;letter-spacing:-0.01em}
+.cat-card__price{font-family:'Playfair Display',serif;font-size:1.85rem;font-weight:700;line-height:1;margin-top:0.1rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:0.35rem}
+.cat-card__price .small{font-size:0.78rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:500;letter-spacing:0}
+.cat-card__price .add{font-size:1.05rem;color:var(--text);font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-0.01em}
+.cat-card__price .add .add-amt{color:var(--cyan)}
+.cat-card__tag{color:var(--cyan);font-style:italic;font-size:0.92rem;line-height:1.45}
+.cat-card__save{
+  display:inline-flex;align-items:center;align-self:flex-start;
+  background:rgba(0,180,216,0.1);border:1px solid rgba(0,180,216,0.25);
+  color:var(--cyan);font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.32rem 0.7rem;border-radius:100px;
+}
+.cat-card ul{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin:0.25rem 0;flex:1}
+.cat-card li{padding-left:1.4rem;position:relative;font-size:0.92rem;line-height:1.5}
+.cat-card li::before{content:'✓';position:absolute;left:0;top:0;color:var(--cyan);font-weight:700}
+.cat-card__use{font-size:0.84rem;color:var(--muted);line-height:1.5;font-style:italic;margin-top:auto}
+.cat-card__cta{
+  margin-top:0.4rem;display:inline-flex;justify-content:center;
+  padding:0.8rem 1.2rem;border-radius:100px;
+  font-weight:600;font-size:0.9rem;text-decoration:none;
+  border:1px solid var(--border);color:var(--text);background:transparent;
+  transition:border-color 0.4s var(--ease),background 0.4s var(--ease),transform 0.4s var(--ease),box-shadow 0.4s var(--ease);
+}
+.cat-card__cta:hover{border-color:var(--cyan);background:rgba(0,180,216,0.06)}
+.cat-card.featured .cat-card__cta{background:var(--grad);border-color:transparent;color:#fff}
+.cat-card.featured .cat-card__cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,180,216,0.3);background:var(--grad)}
+.cat-block__close{margin-top:2.25rem;text-align:center;color:var(--muted);font-size:1rem;line-height:1.6}
+.cat-block__close a{color:var(--cyan);text-decoration:none;font-weight:600}
+.cat-block__close a:hover{text-decoration:underline}
+
+@media (max-width:1080px){
+  .cat-grid-4{grid-template-columns:repeat(2,1fr)}
+  .cat-grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:680px){
+  .cat-grid-2,.cat-grid-3,.cat-grid-4{grid-template-columns:1fr;gap:1rem}
+  .cat-grid-1{grid-template-columns:1fr}
+  .cat-block{padding:2.5rem 0}
+  .catalog{padding:4.5rem 0 3.5rem}
+}
 
 /* contact */
 .contact{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 100%);position:relative;overflow:hidden}
@@ -431,7 +521,422 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
   </div>
 </section>
 
-<!-- 4. WHY ALMA -->
+<!-- 4. MORE FROM ALMA — CATALOG -->
+<section class="catalog" id="catalog">
+  <div class="container catalog__inner">
+
+    <div class="catalog__head">
+      <h2>More from Alma — <span class="grad-text">services for every stage.</span></h2>
+      <p>Whether you need a full concierge build or one specific tool to round out your stack, we have a service for it.</p>
+    </div>
+
+    <!-- WhatsApp AI -->
+    <div class="cat-block" id="whatsapp-ai">
+      <div class="cat-block__head">
+        <div class="cat-block__eyebrow">AlmaReach AI · WhatsApp</div>
+        <h3>Your <span class="grad-text">WhatsApp on autopilot.</span></h3>
+        <p>A custom-trained WhatsApp agent that answers customer questions, books appointments, and qualifies leads — 24 hours a day, in your brand voice. We build it, train it on your business, and hand you the keys.</p>
+      </div>
+      <div class="cat-grid-2">
+
+        <div class="cat-card">
+          <div class="cat-card__name">Starter</div>
+          <div class="cat-card__price">$99<span class="small">setup</span><span class="add">+ <span class="add-amt">$69</span>/mo</span></div>
+          <p class="cat-card__tag">Built for businesses just turning on WhatsApp.</p>
+          <ul>
+            <li>500 conversations / month</li>
+            <li>US WhatsApp Business number included</li>
+            <li>Custom AI trained on your services, hours, and FAQs</li>
+            <li>24/7 bilingual EN / ES</li>
+            <li>Lead capture and handoff to your inbox</li>
+            <li>Conversation transcripts and analytics dashboard</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Book a free WhatsApp AI demo →</a>
+        </div>
+
+        <div class="cat-card featured">
+          <div class="cat-card__badge">For high volume</div>
+          <div class="cat-card__name">Growth</div>
+          <div class="cat-card__price">$149<span class="small">setup</span><span class="add">+ <span class="add-amt">$99</span>/mo</span></div>
+          <p class="cat-card__tag">Built for businesses that talk to customers all day.</p>
+          <ul>
+            <li>Unlimited conversations</li>
+            <li>Everything in Starter</li>
+            <li>Priority response tuning</li>
+            <li>Advanced lead routing and CRM-ready exports</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Book a free WhatsApp AI demo →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AlmaSocial -->
+    <div class="cat-block" id="almasocial">
+      <div class="cat-block__head">
+        <div class="cat-block__eyebrow">AlmaSocial · Social Media Management</div>
+        <h3>Your <span class="grad-text">social media, handled.</span></h3>
+        <p>Done-for-you social content, posted on schedule, written in your brand voice. Four tiers — pick the volume and reach you need. No setup fee. No contract. Cancel anytime.</p>
+      </div>
+      <div class="cat-grid-4">
+
+        <div class="cat-card">
+          <div class="cat-card__name">Starter</div>
+          <div class="cat-card__title">AlmaSocial Starter</div>
+          <div class="cat-card__price">$99<span class="small">/mo</span></div>
+          <p class="cat-card__tag">For businesses just turning the lights on.</p>
+          <ul>
+            <li>Daily posts, 7 days a week</li>
+            <li>1 platform of your choice</li>
+            <li>Morning and evening engagement</li>
+            <li>DM monitoring</li>
+            <li>Weekly performance report</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Start AlmaSocial Starter →</a>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-card__name">Growth</div>
+          <div class="cat-card__title">AlmaSocial Growth</div>
+          <div class="cat-card__price">$199<span class="small">/mo</span></div>
+          <p class="cat-card__tag">For businesses building consistent presence.</p>
+          <ul>
+            <li>Daily posts on 2 platforms</li>
+            <li>300+ outreach actions / month</li>
+            <li>Engagement sweeps</li>
+            <li>DM monitoring</li>
+            <li>Weekly report</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Start AlmaSocial Growth →</a>
+        </div>
+
+        <div class="cat-card featured">
+          <div class="cat-card__badge">Most popular</div>
+          <div class="cat-card__name">Pro</div>
+          <div class="cat-card__title">AlmaSocial Pro</div>
+          <div class="cat-card__price">$299<span class="small">/mo</span></div>
+          <p class="cat-card__tag">For businesses ready to scale audience and lead-gen.</p>
+          <ul>
+            <li>Daily posts on all 4 platforms</li>
+            <li>1,200+ outreach actions / month</li>
+            <li>TikTok video production included</li>
+            <li>Engagement and DM monitoring</li>
+            <li>Weekly report</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Start AlmaSocial Pro →</a>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-card__name">Elite</div>
+          <div class="cat-card__title">AlmaSocial Elite</div>
+          <div class="cat-card__price">$499<span class="small">/mo</span></div>
+          <p class="cat-card__tag">For brands that need senior creative direction.</p>
+          <ul>
+            <li>Everything in Pro</li>
+            <li>Premium Runway AI video production</li>
+            <li>Monthly strategy review</li>
+            <li>Priority support</li>
+            <li>Direct line to your social team</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Talk to a senior social lead →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Branding & Identity -->
+    <div class="cat-block" id="branding">
+      <div class="cat-block__head">
+        <div class="cat-block__eyebrow">Branding & Identity</div>
+        <h3>A brand that <span class="grad-text">looks like a business.</span></h3>
+        <p>A logo, a color system, a brand that actually looks like a business — not a Canva file. Three tiers depending on how far you want to take it. Same-day turnaround on Tier 1.</p>
+      </div>
+      <div class="cat-grid-3">
+
+        <div class="cat-card">
+          <div class="cat-card__name">Tier 1</div>
+          <div class="cat-card__title">Logo Only</div>
+          <div class="cat-card__price">$25<span class="small">one-time</span></div>
+          <p class="cat-card__tag">A real logo. Same day.</p>
+          <ul>
+            <li>2 logo concepts</li>
+            <li>3 rounds of revisions</li>
+            <li>Light and dark versions</li>
+            <li>Final files: PNG, SVG, PDF</li>
+            <li>Same-day delivery</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Get a logo →</a>
+        </div>
+
+        <div class="cat-card">
+          <div class="cat-card__name">Tier 2</div>
+          <div class="cat-card__title">Brand Starter</div>
+          <div class="cat-card__price">$50<span class="small">one-time</span></div>
+          <p class="cat-card__tag">The essentials for a small-business launch.</p>
+          <ul>
+            <li>3 logo concepts</li>
+            <li>5 rounds of revisions</li>
+            <li>Color palette + typography system</li>
+            <li>Social media kit</li>
+            <li>Email signature</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Get a Brand Starter pack →</a>
+        </div>
+
+        <div class="cat-card featured">
+          <div class="cat-card__badge">Most popular</div>
+          <div class="cat-card__name">Tier 3</div>
+          <div class="cat-card__title">Full Brand Identity</div>
+          <div class="cat-card__price">$100<span class="small">one-time</span></div>
+          <p class="cat-card__tag">Everything you need to look like a serious brand.</p>
+          <ul>
+            <li>5 logo concepts, unlimited revisions</li>
+            <li>Brand guidelines PDF</li>
+            <li>Business cards + letterhead</li>
+            <li>5 social-media templates</li>
+            <li>Brand voice + tagline</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Get a Full Brand Identity →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Google Presence Kit -->
+    <div class="cat-block" id="google-kit">
+      <div class="cat-block__head">
+        <div class="cat-block__eyebrow">Google Presence Kit</div>
+        <h3>Show up <span class="grad-text">when customers search.</span></h3>
+        <p>Most small businesses are invisible on Google. We fix that. One flat fee. Your business shows up when local customers go looking.</p>
+      </div>
+      <div class="cat-grid-1">
+
+        <div class="cat-card featured">
+          <div class="cat-card__name">Google Presence Kit</div>
+          <div class="cat-card__title">Local visibility, configured.</div>
+          <div class="cat-card__price">$49<span class="small">one-time</span></div>
+          <p class="cat-card__tag">Same-week setup. No subscriptions.</p>
+          <ul>
+            <li>Google Business Profile setup or full optimization</li>
+            <li>Service area + category configuration</li>
+            <li>Local SEO foundation</li>
+            <li>Google Maps presence</li>
+            <li>Review-request strategy and templates</li>
+          </ul>
+          <a href="#contact" class="cat-card__cta">Get the Google Kit →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bundles -->
+    <div class="cat-block" id="bundles">
+      <div class="cat-block__head">
+        <div class="cat-block__eyebrow">Bundles</div>
+        <h3>The services that <span class="grad-text">work better together.</span></h3>
+        <p>We grouped the services our clients ask for in the same breath. Pick a bundle and save versus buying à la carte.</p>
+      </div>
+      <div class="cat-grid-3">
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $11</span>
+          <div class="cat-card__name">Starter</div>
+          <div class="cat-card__title">The Launch Bundle</div>
+          <div class="cat-card__price">$89<span class="small">one-time</span></div>
+          <p class="cat-card__tag">A logo and a website. Live this week.</p>
+          <ul>
+            <li>Logo Only</li>
+            <li>Starter Website</li>
+            <li>Free domain</li>
+          </ul>
+          <p class="cat-card__use">For: brand-new businesses that need to look real, fast.</p>
+          <a href="#contact" class="cat-card__cta">Get The Launch Bundle →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $15</span>
+          <div class="cat-card__name">Starter</div>
+          <div class="cat-card__title">The Brand and Build</div>
+          <div class="cat-card__price">$135<span class="small">one-time</span></div>
+          <p class="cat-card__tag">A real brand with a real growth website.</p>
+          <ul>
+            <li>Brand Starter</li>
+            <li>Growth Website</li>
+            <li>SEO + blog + analytics</li>
+            <li>Free domain</li>
+          </ul>
+          <p class="cat-card__use">For: founders who want a brand that scales with the site.</p>
+          <a href="#contact" class="cat-card__cta">Get The Brand and Build →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $25</span>
+          <div class="cat-card__name">Starter</div>
+          <div class="cat-card__title">The Brand and Build Pro</div>
+          <div class="cat-card__price">$175<span class="small">one-time</span><span class="add">+ <span class="add-amt">$23</span>/mo</span></div>
+          <p class="cat-card__tag">Brand and Build, fully managed.</p>
+          <ul>
+            <li>Everything in The Brand and Build</li>
+            <li>Hosting + SSL + backups</li>
+            <li>Security monitoring</li>
+            <li>Priority support</li>
+          </ul>
+          <p class="cat-card__use">For: businesses that want it built and maintained.</p>
+          <a href="#contact" class="cat-card__cta">Get The Brand and Build Pro →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $33</span>
+          <div class="cat-card__name">Presence</div>
+          <div class="cat-card__title">The Full Presence</div>
+          <div class="cat-card__price">$195<span class="small">one-time</span></div>
+          <p class="cat-card__tag">Brand, website, and Google — done.</p>
+          <ul>
+            <li>Full Brand Identity</li>
+            <li>Growth Website</li>
+            <li>Google Presence Kit</li>
+            <li>Free domain</li>
+          </ul>
+          <p class="cat-card__use">For: local businesses that need the full footprint.</p>
+          <a href="#contact" class="cat-card__cta">Get The Full Presence →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $44</span>
+          <div class="cat-card__name">Presence</div>
+          <div class="cat-card__title">The Digital Foundation</div>
+          <div class="cat-card__price">$244<span class="small">one-time</span></div>
+          <p class="cat-card__tag">Full Presence with hosting baked in.</p>
+          <ul>
+            <li>Full Brand Identity</li>
+            <li>Growth Website</li>
+            <li>Google Presence Kit</li>
+            <li>Hosting included</li>
+            <li>Free domain</li>
+          </ul>
+          <p class="cat-card__use">For: businesses that want one invoice, one team.</p>
+          <a href="#contact" class="cat-card__cta">Get The Digital Foundation →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $20</span>
+          <div class="cat-card__name">Website + Social</div>
+          <div class="cat-card__title">The Social Starter</div>
+          <div class="cat-card__price">$129<span class="small">one-time</span><span class="add">+ <span class="add-amt">$99</span>/mo</span></div>
+          <p class="cat-card__tag">A site that gets posts every day.</p>
+          <ul>
+            <li>Starter Website</li>
+            <li>AlmaSocial Starter (1 platform)</li>
+          </ul>
+          <p class="cat-card__use">For: solo operators starting their first social presence.</p>
+          <a href="#contact" class="cat-card__cta">Get The Social Starter →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $30</span>
+          <div class="cat-card__name">Website + Social</div>
+          <div class="cat-card__title">The Social Growth</div>
+          <div class="cat-card__price">$179<span class="small">one-time</span><span class="add">+ <span class="add-amt">$199</span>/mo</span></div>
+          <p class="cat-card__tag">Two platforms, daily content, growth-ready site.</p>
+          <ul>
+            <li>Growth Website</li>
+            <li>AlmaSocial Growth (2 platforms)</li>
+          </ul>
+          <p class="cat-card__use">For: businesses that need both a site and a feed that posts.</p>
+          <a href="#contact" class="cat-card__cta">Get The Social Growth →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $40</span>
+          <div class="cat-card__name">Website + Social</div>
+          <div class="cat-card__title">The Full Social</div>
+          <div class="cat-card__price">$229<span class="small">one-time</span><span class="add">+ <span class="add-amt">$299</span>/mo</span></div>
+          <p class="cat-card__tag">Site, Google, and a 4-platform social engine.</p>
+          <ul>
+            <li>Growth Website</li>
+            <li>Google Presence Kit</li>
+            <li>AlmaSocial Pro (all 4 platforms)</li>
+          </ul>
+          <p class="cat-card__use">For: brands ready to be everywhere their customers are.</p>
+          <a href="#contact" class="cat-card__cta">Get The Full Social →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $50</span>
+          <div class="cat-card__name">All-in-One</div>
+          <div class="cat-card__title">Ultimate Business Launch</div>
+          <div class="cat-card__price">$299<span class="small">one-time</span><span class="add">+ <span class="add-amt">$92</span>/mo</span></div>
+          <p class="cat-card__tag">A complete business stack with WhatsApp AI.</p>
+          <ul>
+            <li>Full Brand Identity</li>
+            <li>Growth Website</li>
+            <li>Google Presence Kit</li>
+            <li>Hosting</li>
+            <li>WhatsApp AI Starter</li>
+          </ul>
+          <p class="cat-card__use">For: founders launching a complete operation, not a webpage.</p>
+          <a href="#contact" class="cat-card__cta">Get Ultimate Business Launch →</a>
+        </div>
+
+        <div class="cat-card">
+          <span class="cat-card__save">Save $65</span>
+          <div class="cat-card__name">All-in-One</div>
+          <div class="cat-card__title">Ultimate Social Launch</div>
+          <div class="cat-card__price">$349<span class="small">one-time</span><span class="add">+ <span class="add-amt">$299</span>/mo</span></div>
+          <p class="cat-card__tag">A complete brand and a 4-platform AlmaSocial Pro engine.</p>
+          <ul>
+            <li>Full Brand Identity</li>
+            <li>Growth Website</li>
+            <li>Google Presence Kit</li>
+            <li>Hosting</li>
+            <li>AlmaSocial Pro (all 4 platforms)</li>
+          </ul>
+          <p class="cat-card__use">For: businesses where social is the growth engine.</p>
+          <a href="#contact" class="cat-card__cta">Get Ultimate Social Launch →</a>
+        </div>
+
+        <div class="cat-card featured">
+          <div class="cat-card__badge">Best of business</div>
+          <span class="cat-card__save">Save $70</span>
+          <div class="cat-card__name">All-in-One</div>
+          <div class="cat-card__title">Pinnacle Package</div>
+          <div class="cat-card__price">$328<span class="small">one-time</span><span class="add">+ <span class="add-amt">$151</span>/mo</span></div>
+          <p class="cat-card__tag">Ultimate Business Launch with WhatsApp AI Growth.</p>
+          <ul>
+            <li>Everything in Ultimate Business Launch</li>
+            <li>WhatsApp AI Growth (unlimited conversations)</li>
+          </ul>
+          <p class="cat-card__use">For: businesses that talk to a lot of customers, every day.</p>
+          <a href="#contact" class="cat-card__cta">Get the Pinnacle Package →</a>
+        </div>
+
+        <div class="cat-card featured">
+          <div class="cat-card__badge">Everything</div>
+          <span class="cat-card__save">Save $100</span>
+          <div class="cat-card__name">All-in-One</div>
+          <div class="cat-card__title">The Empire Package</div>
+          <div class="cat-card__price">$399<span class="small">one-time</span><span class="add">+ <span class="add-amt">$450</span>/mo</span></div>
+          <p class="cat-card__tag">Premium site, full brand, every channel.</p>
+          <ul>
+            <li>Full Brand Identity</li>
+            <li>Premium Website</li>
+            <li>Google Presence Kit</li>
+            <li>Hosting</li>
+            <li>AlmaSocial Pro (all 4 platforms)</li>
+            <li>WhatsApp AI Starter</li>
+          </ul>
+          <p class="cat-card__use">For: brands building a full digital empire from day one.</p>
+          <a href="#contact" class="cat-card__cta">Get The Empire Package →</a>
+        </div>
+
+      </div>
+      <p class="cat-block__close">Not sure which bundle fits? <a href="#contact">Book a free strategy call →</a> we will map your stage and stack to the right one in 15 minutes.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 5. WHY ALMA -->
 <section class="why">
   <div class="container why__inner">
     <h2>The AI built the draft. <span class="grad-text">A senior team built the website.</span></h2>
@@ -441,7 +946,7 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
   </div>
 </section>
 
-<!-- 5. FAQ -->
+<!-- 6. FAQ -->
 <section class="faq" id="faq">
   <div class="container">
     <div class="faq__head">
@@ -475,11 +980,26 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
         <div class="faq-a"><p>Not for the website itself — that's a one-time build. Optional hosting and ongoing care plans start at $49/mo. Cancel anytime.</p></div>
       </div>
 
+      <div class="faq-item">
+        <button class="faq-q">Do I have to buy a website to use AlmaReach AI, AlmaSocial, or any of the bundles?</button>
+        <div class="faq-a"><p>No. Every Alma service is sold standalone. Buy what your business needs right now — add the rest when you are ready.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Can I mix and match — for example, the Essential website plus AlmaSocial Pro?</button>
+        <div class="faq-a"><p>Yes. Bundles exist for the most common combinations, but you can build any stack you want. Talk to us and we will quote it directly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How do bundles save money?</button>
+        <div class="faq-a"><p>Bundles include the full scope of multiple services at a discount versus buying each separately. Exact savings vary by bundle — see each bundle card for the breakdown.</p></div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- 6. CONTACT -->
+<!-- 7. CONTACT -->
 <section class="contact" id="contact">
   <div class="container contact__inner">
     <div class="contact__head">
@@ -535,3 +1055,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 
 </body>
 </html>
+
+
+
