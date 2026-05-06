@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Web Design for Electricians | Custom Electrician Websites - Alma Digital Services</title>
+<meta name="description" content="Custom electrician website from $50, built same day. See it before you pay a single dollar. Free domain included. Cheaper than Wix. Built by AI."/>
+<meta property="og:title" content="Web Design for Electricians | Custom Electrician Websites - Alma Digital Services"/>
+<meta property="og:description" content="See your new electrician website before you spend a single dollar. Free domain included. No contracts. Cancel anytime."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://almadigitalservices.com/web-design-for-electricians"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://almadigitalservices.com/web-design-for-electricians"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Web Design for Electricians","provider":{"@type":"LocalBusiness","name":"Alma Digital Services","url":"https://almadigitalservices.com","email":"desk@almawebcreative.com"},"description":"Professional electrician website design starting at $50. Built same day. See it before you pay.","offers":{"@type":"Offer","price":"50","priceCurrency":"USD"}}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--bg-card:#0f0f1a;--cyan:#00d4ff;--purple:#7b2fff;
+  --text:#fff;--text-muted:#8892a4;--border:rgba(0,212,255,0.15);
+  --glow-cyan:0 0 30px rgba(0,212,255,0.4);--glow-purple:0 0 30px rgba(123,47,255,0.4);
+  --elec-amber:#fbbf24;--elec-blue:#0ea5e9;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(0,212,255,0.3)}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.grad-text{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 0;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav__logo{font-size:1.3rem;font-weight:800;text-decoration:none}
+.nav__links{display:flex;list-style:none;gap:2rem}
+.nav__links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+.nav__links a:hover{color:var(--cyan)}
+.nav__cta{font-size:0.9rem;padding:0.6rem 1.5rem}
+@media(max-width:768px){.nav__links{display:none}.nav__cta{font-size:0.8rem;padding:0.5rem 1rem}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.3s;border:none;font-family:'Inter',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,255,0.5)}
+.btn-ghost{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan)}
+.btn-ghost:hover{background:rgba(0,212,255,0.1);transform:translateY(-2px)}
+.btn-white{background:#fff;color:#000}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,255,255,0.2)}
+
+/* SECTION COMMON */
+.section-label{font-size:0.8rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.2;margin-bottom:1rem}
+.section-sub{font-size:1.1rem;color:var(--text-muted);max-width:640px}
+section{padding:6rem 0}
+@media(max-width:768px){section{padding:4rem 0}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(14,165,233,0.08) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(123,47,255,0.1) 0%,transparent 50%)}
+.hero__circuit-bg{position:absolute;right:0;top:0;bottom:0;width:50%;opacity:0.06;pointer-events:none}
+.hero__circuit-bg svg{width:100%;height:100%}
+.hero__bolt{position:absolute;top:15%;right:10%;font-size:6rem;color:var(--elec-amber);opacity:0.08;animation:bolt-pulse 4s ease-in-out infinite;pointer-events:none}
+.hero__inner{position:relative;z-index:2;max-width:700px}
+.hero__badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:50px;padding:0.4rem 1rem;font-size:0.8rem;font-weight:600;color:var(--cyan);margin-bottom:1.5rem}
+.hero__badge span{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse-dot 2s infinite}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem}
+.hero__sub{font-size:1.2rem;color:var(--text-muted);margin-bottom:2.5rem;max-width:580px}
+.hero__ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.hero__stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.hero__stat{text-align:left}
+.hero__stat-num{display:block;font-size:2rem;font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero__stat-label{font-size:0.8rem;color:var(--text-muted);font-weight:500;text-transform:uppercase;letter-spacing:0.05em}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+@keyframes bolt-pulse{0%,100%{opacity:0.08;transform:scale(1)}50%{opacity:0.16;transform:scale(1.05)}}
+
+/* TRUST BADGES STRIP */
+.trust-strip{background:var(--bg-card);padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.trust-strip__inner{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:0.65rem;font-size:0.9rem;color:var(--text);font-weight:600}
+.trust-badge svg{width:22px;height:22px;color:var(--cyan);flex-shrink:0}
+.trust-badge__text strong{display:block;font-size:0.95rem;color:var(--text)}
+.trust-badge__text span{display:block;font-size:0.75rem;color:var(--text-muted);font-weight:500;letter-spacing:0.04em;text-transform:uppercase}
+
+/* SOCIAL PROOF TICKER */
+.proof-bar{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 0;overflow:hidden}
+.proof-bar__track{display:flex;gap:3rem;animation:ticker-scroll 25s linear infinite;width:max-content}
+.proof-bar__item{display:flex;align-items:center;gap:0.75rem;white-space:nowrap;font-size:0.9rem;color:var(--text-muted)}
+.proof-bar__item .stars{color:#f59e0b;font-size:0.8rem}
+.proof-bar__item strong{color:var(--text)}
+@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--bg-card)}
+.testimonials__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+.tcard{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color 0.3s,box-shadow 0.3s}
+.tcard:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan)}
+.tcard__stars{color:#f59e0b;font-size:1rem;margin-bottom:1rem}
+.tcard__quote{font-size:1rem;color:var(--text);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+.tcard__author{font-size:0.85rem;font-weight:700;color:var(--cyan)}
+.tcard__company{font-size:0.8rem;color:var(--text-muted)}
+
+/* SERVICES GRID */
+.services__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+.svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+.svc-card:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan);transform:translateY(-4px)}
+.svc-card__icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,rgba(0,212,255,0.12),rgba(123,47,255,0.12));border:1px solid rgba(0,212,255,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;color:var(--cyan)}
+.svc-card__icon svg{width:28px;height:28px}
+.svc-card__title{font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;color:var(--text)}
+.svc-card__desc{font-size:0.9rem;color:var(--text-muted);line-height:1.6}
+
+/* PAIN POINTS */
+.pain-points__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+.pain-card{background:var(--bg-card);border:1px solid rgba(255,80,80,0.15);border-radius:16px;padding:1.75rem;transition:border-color 0.3s}
+.pain-card:hover{border-color:rgba(255,80,80,0.4)}
+.pain-card__icon{font-size:2rem;margin-bottom:1rem}
+.pain-card__title{font-size:1rem;font-weight:700;margin-bottom:0.5rem}
+.pain-card__desc{font-size:0.9rem;color:var(--text-muted);line-height:1.6}
+
+/* BEFORE/AFTER */
+.ba-section{background:var(--bg-card)}
+.ba-table-wrap{margin-top:3rem;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.ba-table{width:100%;border-collapse:collapse}
+.ba-table th{padding:1.25rem 1.5rem;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid var(--border)}
+.ba-table th:first-child{text-align:left;color:var(--text-muted)}
+.ba-table th.before-col{background:rgba(255,80,80,0.05);color:#ff6b6b}
+.ba-table th.after-col{background:rgba(0,212,255,0.05);color:var(--cyan)}
+.ba-table td{padding:1.1rem 1.5rem;font-size:0.9rem;border-bottom:1px solid var(--border)}
+.ba-table tr:last-child td{border-bottom:none}
+.ba-table td:first-child{color:var(--text-muted);font-weight:500}
+.ba-table td.before-cell{background:rgba(255,80,80,0.02);color:#ff9e9e}
+.ba-table td.after-cell{background:rgba(0,212,255,0.02);color:#7ee8ff}
+@media(max-width:600px){.ba-table{font-size:0.8rem}.ba-table td,.ba-table th{padding:0.75rem 0.75rem}}
+
+/* HOW IT WORKS */
+.hiw__steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem;position:relative}
+.hiw__step{text-align:center;position:relative}
+.hiw__step-num{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900;color:#000;margin:0 auto 1.25rem}
+.hiw__step-title{font-size:1rem;font-weight:700;margin-bottom:0.5rem}
+.hiw__step-desc{font-size:0.875rem;color:var(--text-muted);line-height:1.6}
+.hiw__connector{display:none}
+@media(min-width:768px){.hiw__connector{display:block;position:absolute;top:30px;left:calc(50% + 40px);right:calc(-50% + 40px);height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));opacity:0.3}}
+.hiw__step:last-child .hiw__connector{display:none}
+
+/* INCLUDED */
+.included-section{background:var(--bg-card)}
+.included__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:3rem}
+.included__item{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--bg);border:1px solid var(--border);border-radius:12px;transition:border-color 0.3s}
+.included__item:hover{border-color:var(--cyan)}
+.included__check{flex-shrink:0;width:28px;height:28px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:#000;font-weight:900}
+.included__text{font-size:0.9rem;color:var(--text);font-weight:500}
+
+/* PRICING */
+.pricing__toggle{display:flex;align-items:center;justify-content:center;gap:1rem;margin:2rem 0 3rem}
+.pricing__toggle span{font-size:0.9rem;font-weight:600;color:var(--text-muted)}
+.toggle-switch{position:relative;width:52px;height:28px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;cursor:pointer;transition:background 0.3s}
+.toggle-switch.active{background:linear-gradient(135deg,var(--cyan),var(--purple))}
+.toggle-switch::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform 0.3s}
+.toggle-switch.active::after{transform:translateX(24px)}
+.pricing__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.plan{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;text-align:left;position:relative;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+.plan:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan);transform:translateY(-4px)}
+.plan.featured{border-color:var(--cyan);box-shadow:var(--glow-cyan)}
+.plan__badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;font-size:0.75rem;font-weight:800;padding:0.35rem 1rem;border-radius:50px;white-space:nowrap}
+.plan__name{font-size:1rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
+.plan__price{font-size:3.5rem;font-weight:900;line-height:1;margin-bottom:0.25rem}
+.plan__period{font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem}
+.plan__revisions{font-size:0.8rem;color:var(--cyan);margin-bottom:2rem}
+.plan__features{list-style:none;margin-bottom:2rem}
+.plan__features li{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.9rem;margin-bottom:0.75rem;color:var(--text-muted)}
+.plan__features li::before{content:'✓';color:var(--cyan);font-weight:900;flex-shrink:0;margin-top:0.05rem}
+.plan__btn{width:100%;justify-content:center}
+.pricing__note{text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--text-muted)}
+.pricing__note a{color:var(--cyan)}
+.pricing__compare{text-align:center;margin-top:1rem;font-size:0.9rem;color:var(--text-muted)}
+.pricing__compare strong{color:var(--text)}
+
+/* FAQ */
+.faq-section{background:var(--bg-card)}
+.faq-list{margin-top:3rem;max-width:800px;margin-left:auto;margin-right:auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{width:100%;background:none;border:none;color:var(--text);font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;text-align:left;padding:1.5rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;line-height:1.4}
+.faq-q:hover{color:var(--cyan)}
+.faq-icon{width:28px;height:28px;flex-shrink:0;background:rgba(0,212,255,0.08);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:1.1rem;transition:transform 0.3s,background 0.3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(0,212,255,0.15)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease}
+.faq-item.open .faq-a{max-height:400px}
+.faq-a p{padding-bottom:1.5rem;color:var(--text-muted);font-size:0.95rem;line-height:1.7}
+
+/* FINAL CTA */
+.final-cta{text-align:center;background:linear-gradient(135deg,rgba(14,165,233,0.06) 0%,rgba(123,47,255,0.06) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.final-cta h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;margin-bottom:1rem}
+.final-cta p{color:var(--text-muted);font-size:1.1rem;margin-bottom:2.5rem}
+.final-cta__ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.final-cta__note{font-size:0.85rem;color:var(--text-muted)}
+
+/* CONTACT FORM */
+.contact-section .container{max-width:640px}
+.cta-form{display:grid;gap:1rem;margin-top:2rem}
+.cta-form input,.cta-form textarea,.cta-form select{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1.25rem;color:var(--text);font-family:'Inter',sans-serif;font-size:0.95rem;width:100%;transition:border-color 0.2s}
+.cta-form input:focus,.cta-form textarea:focus,.cta-form select:focus{outline:none;border-color:var(--cyan)}
+.cta-form input::placeholder,.cta-form textarea::placeholder{color:var(--text-muted)}
+.cta-form textarea{min-height:120px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.form-submit{background:linear-gradient(135deg,var(--cyan),var(--purple));border:none;color:#000;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;padding:1rem 2rem;border-radius:50px;cursor:pointer;width:100%;transition:all 0.3s}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,212,255,0.4)}
+.form-success{display:none;text-align:center;padding:2rem;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:16px;color:var(--cyan);font-weight:600}
+
+/* FOOTER */
+.footer{background:var(--bg-card);border-top:1px solid var(--border);padding:3rem 0}
+.footer__inner{display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
+.footer__logo{font-size:1.4rem;font-weight:800}
+.footer__tagline{font-size:0.9rem;color:var(--text-muted);max-width:600px;line-height:1.6}
+.footer__links{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+.footer__links a{color:var(--text-muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+.footer__links a:hover{color:var(--cyan)}
+.footer__copy{font-size:0.8rem;color:var(--text-muted)}
+</style>
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D7L0HMBC77UDI5AAH5C0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+<script>ttq.track('ViewContent', {content_name: 'Web Design for Electricians', content_category: 'Website Services'});</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo grad-text">Alma Digital</a>
+    <ul class="nav__links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Get Preview</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary nav__cta">Get Free Preview →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__circuit-bg" aria-hidden="true">
+    <svg viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#00d4ff" stroke-width="1.5">
+        <path d="M50 50 L50 200 L150 200 L150 350 L300 350 L300 500 L100 500 L100 700"/>
+        <path d="M250 80 L350 80 L350 250 L200 250 L200 420 L380 420 L380 600 L250 600 L250 780"/>
+        <path d="M120 30 L120 130 L220 130 L220 280"/>
+        <circle cx="50" cy="200" r="4" fill="#00d4ff"/>
+        <circle cx="150" cy="350" r="4" fill="#00d4ff"/>
+        <circle cx="300" cy="500" r="4" fill="#00d4ff"/>
+        <circle cx="350" cy="250" r="4" fill="#00d4ff"/>
+        <circle cx="200" cy="420" r="4" fill="#00d4ff"/>
+        <circle cx="120" cy="130" r="4" fill="#00d4ff"/>
+        <circle cx="220" cy="280" r="4" fill="#00d4ff"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero__bolt" aria-hidden="true">⚡</div>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__badge">
+        <span></span>
+        Built for Licensed Electricians &amp; Electrical Contractors
+      </div>
+      <h1>Professional Web Design for Electricians — <span class="grad-text">Built Same Day, From $50</span></h1>
+      <p class="hero__sub">See your new electrician website before you spend a single dollar. Free domain included. No contracts. Cancel anytime.</p>
+      <div class="hero__ctas">
+        <a href="#contact" class="btn btn-primary">See My Free Website Preview →</a>
+        <a href="#how-it-works" class="btn btn-ghost">How It Works</a>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-num">$50</span>
+          <span class="hero__stat-label">Starting Price</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">Same Day</span>
+          <span class="hero__stat-label">Delivery</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">$0</span>
+          <span class="hero__stat-label">Upfront Risk</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">95+</span>
+          <span class="hero__stat-label">PageSpeed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGES STRIP -->
+<div class="trust-strip" aria-label="Trust badges">
+  <div class="container">
+    <div class="trust-strip__inner">
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <div class="trust-badge__text"><strong>Licensed</strong><span>Trade Verified</span></div>
+      </div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="trust-badge__text"><strong>Insured</strong><span>Coverage Highlighted</span></div>
+      </div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L18 22l-6-3-6 3 2.5-8.5"/></svg>
+        <div class="trust-badge__text"><strong>Bonded</strong><span>Customer Protected</span></div>
+      </div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h6"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+        <div class="trust-badge__text"><strong>BBB</strong><span>Reputation Showcased</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROOF TICKER -->
+<div class="proof-bar" aria-label="Testimonials ticker">
+  <div class="proof-bar__track" id="ticker">
+    <div class="proof-bar__item"><span class="stars">★★★★★</span> <strong>Marcus L., Master Electrician</strong> — "Phone started ringing two days after the site went live."</div>
+    <div class="proof-bar__item"><span class="stars">★★★★★</span> <strong>Dave P., Lightning Electrical Co.</strong> — "Built same day. Looks better than my $2,000 quote from a local agency."</div>
+    <div class="proof-bar__item"><span class="stars">★★★★★</span> <strong>Ramona G., Residential Electrician</strong> — "First in my zip code with click-to-call. Booked solid."</div>
+    <div class="proof-bar__item">⚡ <strong>Free domain</strong> on every plan</div>
+    <div class="proof-bar__item">🔌 <strong>Same-day delivery</strong> — guaranteed</div>
+    <div class="proof-bar__item">👁 <strong>See it before you pay</strong> — zero risk</div>
+    <!-- duplicate for seamless scroll -->
+    <div class="proof-bar__item"><span class="stars">★★★★★</span> <strong>Marcus L., Master Electrician</strong> — "Phone started ringing two days after the site went live."</div>
+    <div class="proof-bar__item"><span class="stars">★★★★★</span> <strong>Dave P., Lightning Electrical Co.</strong> — "Built same day. Looks better than my $2,000 quote from a local agency."</div>
+    <div class="proof-bar__item"><span class="stars">★★★★★</span> <strong>Ramona G., Residential Electrician</strong> — "First in my zip code with click-to-call. Booked solid."</div>
+    <div class="proof-bar__item">⚡ <strong>Free domain</strong> on every plan</div>
+    <div class="proof-bar__item">🔌 <strong>Same-day delivery</strong> — guaranteed</div>
+    <div class="proof-bar__item">👁 <strong>See it before you pay</strong> — zero risk</div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-label">Real Electrical Businesses</div>
+    <h2 class="section-title">Electricians Who Got More Calls</h2>
+    <p class="section-sub">Built same day, priced fair — here's what licensed electricians say after going live.</p>
+    <div class="testimonials__grid">
+      <div class="tcard">
+        <div class="tcard__stars">★★★★★</div>
+        <p class="tcard__quote">"Phone started ringing two days after the site went live. I couldn't believe how fast they built it and how professional it looks. Best $50 I've spent on marketing — period."</p>
+        <div class="tcard__author">Marcus L.</div>
+        <div class="tcard__company">Master Electrician</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard__stars">★★★★★</div>
+        <p class="tcard__quote">"Built same day. Looks better than my $2,000 quote from a local agency. License number and insurance right on the homepage where homeowners actually look."</p>
+        <div class="tcard__author">Dave P.</div>
+        <div class="tcard__company">Lightning Electrical Co.</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard__stars">★★★★★</div>
+        <p class="tcard__quote">"First electrician in my zip code to show up with click-to-call. Booked solid for three weeks straight after launch. The site does the selling for me now."</p>
+        <div class="tcard__author">Ramona G.</div>
+        <div class="tcard__company">Residential Electrician</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">Service Pages Built In</div>
+    <h2 class="section-title">Every Electrical Service You Offer — <span class="grad-text">On Its Own Page</span></h2>
+    <p class="section-sub">Each service gets a dedicated page optimized for the exact searches homeowners and contractors actually type into Google.</p>
+    <div class="services__grid">
+      <div class="svc-card">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="19" x2="15" y2="19"/></svg>
+        </div>
+        <div class="svc-card__title">Panel Upgrades</div>
+        <div class="svc-card__desc">200-amp service upgrades, sub-panels, fuse-to-breaker conversions — featured front and center to capture high-ticket searches.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6c2 0 2 3 4 3s2-3 4-3 2 3 4 3 2-3 4-3"/><path d="M3 14c2 0 2 3 4 3s2-3 4-3 2 3 4 3 2-3 4-3"/></svg>
+        </div>
+        <div class="svc-card__title">Residential Wiring</div>
+        <div class="svc-card__desc">Whole-home rewires, knob-and-tube replacement, new construction wiring — clearly explained for homeowners.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/><path d="M19 9h2v6h-2"/><path d="M9 8l-2 4h3l-2 4"/></svg>
+        </div>
+        <div class="svc-card__title">EV Chargers</div>
+        <div class="svc-card__desc">Tesla Wall Connectors, ChargePoint, J1772 universal — Level 2 install pages built for the fastest-growing search category in the trade.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="7" y1="10" x2="7" y2="14"/><line x1="11" y1="10" x2="11" y2="14"/><line x1="15" y1="10" x2="15" y2="14"/><circle cx="19" cy="12" r="0.8" fill="currentColor"/></svg>
+        </div>
+        <div class="svc-card__title">Generator Install</div>
+        <div class="svc-card__desc">Whole-home Generac, Kohler, Cummins — automatic transfer switches and propane/natural-gas pages tuned for storm-season demand.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.74V17h8v-2.26A7 7 0 0012 2z"/></svg>
+        </div>
+        <div class="svc-card__title">Lighting</div>
+        <div class="svc-card__desc">Recessed, LED retrofits, landscape, smart-home dimmers — pages that win design-conscious homeowners and remodelers.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6"/><path d="M11 8v6"/></svg>
+        </div>
+        <div class="svc-card__title">Inspections</div>
+        <div class="svc-card__desc">Pre-purchase, code-violation, insurance — inspection landing pages that capture realtor and adjuster referrals.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-points" id="pain-points" style="background:var(--bg-card)">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">Your Current Website Is <span class="grad-text">Sending Jobs to Your Competitors</span></h2>
+    <p class="section-sub">Most electricians lose work every week without realizing it. Here's why.</p>
+    <div class="pain-points__grid" style="margin-top:3rem">
+      <div class="pain-card">
+        <div class="pain-card__icon">🧓</div>
+        <div class="pain-card__title">Outdated Design</div>
+        <div class="pain-card__desc">Homeowners see your site, assume you're out of business, and call the next electrician on Google. The site is doing the opposite of selling for you.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">🛡️</div>
+        <div class="pain-card__title">No License or Insurance Badges</div>
+        <div class="pain-card__desc">Customers can't tell you apart from an unlicensed handyman. Your credentials are buried — they should be the first thing visitors see.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">🔍</div>
+        <div class="pain-card__title">Invisible on Local Search</div>
+        <div class="pain-card__desc">No SEO means "emergency electrician near me" never finds you. That's real money walking into your competitor's truck.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">📱</div>
+        <div class="pain-card__title">Slow on Mobile</div>
+        <div class="pain-card__desc">Over 80% of electrical-service searches happen on phones. A clunky site equals lost calls — homeowners bail in under 3 seconds.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">📞</div>
+        <div class="pain-card__title">No Click-to-Call</div>
+        <div class="pain-card__desc">Every extra step costs you a job. Your competitor's site books the call in one tap — yours forces them to copy and dial.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">💸</div>
+        <div class="pain-card__title">Paying Too Much</div>
+        <div class="pain-card__desc">$200/month agencies or Wix subscriptions for a site that doesn't convert. You deserve a professional site that books jobs — without agency markup.</div>
+      </div>
+    </div>
+    <p style="margin-top:2.5rem;color:var(--text-muted);font-size:1rem;text-align:center">You're great at wiring. <strong style="color:var(--text)">Your website should be great at booking jobs.</strong></p>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-section" id="before-after">
+  <div class="container">
+    <div class="section-label">The Transformation</div>
+    <h2 class="section-title">From Outdated to Outstanding — <span class="grad-text">Same Day</span></h2>
+    <p class="section-sub">See exactly what changes when you switch from your old site to an Alma Digital electrician website.</p>
+    <div class="ba-table-wrap">
+      <table class="ba-table">
+        <thead>
+          <tr>
+            <th>What We're Comparing</th>
+            <th class="before-col">❌ Before Alma Digital</th>
+            <th class="after-col">✅ After Alma Digital</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Design &amp; Speed</td>
+            <td class="before-cell">Clunky, slow, mobile-unfriendly</td>
+            <td class="after-cell">Fast, clean, mobile-first design</td>
+          </tr>
+          <tr>
+            <td>Google Visibility</td>
+            <td class="before-cell">No SEO — invisible on Google</td>
+            <td class="after-cell">Built with local SEO from day one</td>
+          </tr>
+          <tr>
+            <td>Trust Signals</td>
+            <td class="before-cell">No license, insurance, or bonded badges</td>
+            <td class="after-cell">License #, insured, click-to-call front and center</td>
+          </tr>
+          <tr>
+            <td>Visual Quality</td>
+            <td class="before-cell">Generic stock photos, dated layout</td>
+            <td class="after-cell">Layout matched to your services and service area</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td class="before-cell">$200+ per month to maintain</td>
+            <td class="after-cell">From $50 total — hosting from $17/mo</td>
+          </tr>
+          <tr>
+            <td>Time to Live</td>
+            <td class="before-cell">Weeks or months of back-and-forth</td>
+            <td class="after-cell">Delivered same day</td>
+          </tr>
+          <tr>
+            <td>Payment Risk</td>
+            <td class="before-cell">Pay upfront, hope it's good</td>
+            <td class="after-cell">You see the finished site before you pay</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:2rem;text-align:center;color:var(--text-muted);font-size:0.95rem">You see the finished site before you pay. If you don't love it, walk away — <strong style="color:var(--text)">no charge.</strong></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">How We Build Your Electrician Website</h2>
+    <p class="section-sub">Five simple steps from "I'm interested" to "my phone is ringing."</p>
+    <div class="hiw__steps">
+      <div class="hiw__step">
+        <div class="hiw__step-num">1</div>
+        <div class="hiw__connector"></div>
+        <div class="hiw__step-title">Tell Us About Your Business</div>
+        <div class="hiw__step-desc">Fill out a 2-minute form. Your services, license number, service area. That's all we need.</div>
+      </div>
+      <div class="hiw__step">
+        <div class="hiw__step-num">2</div>
+        <div class="hiw__connector"></div>
+        <div class="hiw__step-title">We Build Same Day</div>
+        <div class="hiw__step-desc">Our team builds your custom electrician site — designed for electrical, optimized for local search, mobile-first.</div>
+      </div>
+      <div class="hiw__step">
+        <div class="hiw__step-num">3</div>
+        <div class="hiw__connector"></div>
+        <div class="hiw__step-title">You Review for Free</div>
+        <div class="hiw__step-desc">Private preview link. No payment required. Look it over, request changes, or walk away — zero obligation.</div>
+      </div>
+      <div class="hiw__step">
+        <div class="hiw__step-num">4</div>
+        <div class="hiw__connector"></div>
+        <div class="hiw__step-title">You Love It, You Pay</div>
+        <div class="hiw__step-desc">Happy with the site? Choose your plan — from $50 one-time or split into a low monthly option.</div>
+      </div>
+      <div class="hiw__step">
+        <div class="hiw__step-num">5</div>
+        <div class="hiw__step-title">We Launch It Live</div>
+        <div class="hiw__step-desc">Site goes live on your domain. Your phone starts ringing. We're here for support if you ever need changes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="included-section" id="included">
+  <div class="container">
+    <div class="section-label">What's Included</div>
+    <h2 class="section-title">Everything Your Electrical Business Website Needs</h2>
+    <p class="section-sub">Every plan includes the essentials that turn website visitors into booked electrical jobs.</p>
+    <div class="included__grid">
+      <div class="included__item">
+        <div class="included__check">✓</div>
+        <div class="included__text">Custom homepage built around your services and service area</div>
+      </div>
+      <div class="included__item">
+        <div class="included__check">✓</div>
+        <div class="included__text">Service pages — wiring, panels, EV chargers, generators, lighting, inspections</div>
+      </div>
+      <div class="included__item">
+        <div class="included__check">✓</div>
+        <div class="included__text">About page — license #, insurance, years in business, trust-builders that close the sale</div>
+      </div>
+      <div class="included__item">
+        <div class="included__check">✓</div>
+        <div class="included__text">Contact page with click-to-call, service-area map, and quick quote form</div>
+      </div>
+      <div class="included__item">
+        <div class="included__check">✓</div>
+        <div class="included__text">SEO foundation — local "electrician [your city]" keywords baked in</div>
+      </div>
+      <div class="included__item">
+        <div class="included__check">✓</div>
+        <div class="included__text">Mobile-first design — looks sharp on every phone</div>
+      </div>
+      <div class="included__item">
+        <div class="included__check">✓</div>
+        <div class="included__text">Trust badges section — licensed, bonded, insured, BBB, manufacturer certifications</div>
+      </div>
+      <div class="included__item">
+        <div class="included__check">✓</div>
+        <div class="included__text">Free domain if you don't already have one</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Simple Pricing</div>
+    <h2 class="section-title" style="text-align:center">Transparent Pricing — <span class="grad-text">No Hidden Fees</span></h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 1rem">All plans include free domain, same-day delivery, and a preview before you pay.</p>
+    <div class="pricing__toggle" id="pricingToggle">
+      <span id="toggleLabelFull" style="color:var(--text)">One-Time</span>
+      <div class="toggle-switch" id="toggleSwitch" role="button" aria-label="Toggle pricing view" tabindex="0"></div>
+      <span id="toggleLabelMonthly">Split Monthly</span>
+    </div>
+    <div class="pricing__grid">
+      <div class="plan">
+        <div class="plan__name">Starter</div>
+        <div class="plan__price grad-text"><span class="plan-price" data-full="$50" data-monthly="$50">$50</span></div>
+        <div class="plan__period plan-period" data-full="one-time payment" data-monthly="deposit + $17/mo hosting">one-time payment</div>
+        <div class="plan__revisions plan-revisions" data-full="5 revision rounds · $5/round after" data-monthly="5 launch rounds · 1 free/mo · $5/round after">5 revision rounds · $5/round after</div>
+        <ul class="plan__features">
+          <li>5-page website</li>
+          <li>Free domain included</li>
+          <li>Click-to-call button</li>
+          <li>Local SEO foundation</li>
+          <li>Mobile-first design</li>
+          <li>See before you pay</li>
+          <li>Same-day delivery</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost plan__btn">Get Free Preview →</a>
+      </div>
+      <div class="plan featured">
+        <div class="plan__badge">Most Popular</div>
+        <div class="plan__name">Growth</div>
+        <div class="plan__price grad-text"><span class="plan-price" data-full="$100" data-monthly="$100">$100</span></div>
+        <div class="plan__period plan-period" data-full="one-time payment" data-monthly="deposit + $23/mo hosting">one-time payment</div>
+        <div class="plan__revisions plan-revisions" data-full="20 revision rounds · $5/round after" data-monthly="20 launch rounds · 3 free/mo · $5/round after">20 revision rounds · $5/round after</div>
+        <ul class="plan__features">
+          <li>Everything in Starter</li>
+          <li>10-page website</li>
+          <li>EV charger landing page</li>
+          <li>Google Maps embed</li>
+          <li>Blog starter (3 posts)</li>
+          <li>20 revisions</li>
+          <li>Priority build queue</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary plan__btn">Get Free Preview →</a>
+      </div>
+      <div class="plan">
+        <div class="plan__name">Premium</div>
+        <div class="plan__price grad-text"><span class="plan-price" data-full="$150" data-monthly="$150">$150</span></div>
+        <div class="plan__period plan-period" data-full="one-time payment" data-monthly="deposit + $33/mo hosting">one-time payment</div>
+        <div class="plan__revisions plan-revisions" data-full="Unlimited revisions" data-monthly="Unlimited launch rounds · 5 free/mo · $5/round after">Unlimited revisions</div>
+        <ul class="plan__features">
+          <li>Everything in Growth</li>
+          <li>20+ page website</li>
+          <li>Unlimited revisions</li>
+          <li>Online quote request form</li>
+          <li>Service area pages</li>
+          <li>12 months growth support</li>
+          <li>First-priority build</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost plan__btn">Get Free Preview →</a>
+      </div>
+    </div>
+    <div class="pricing__note">Cancel before 6 months: $25 domain transfer fee &nbsp;·&nbsp; Cancel after 6 months: <a href="#faq">free transfer</a> &nbsp;·&nbsp; Free domain on all plans</div>
+    <div class="pricing__compare" style="margin-top:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;max-width:540px;margin-left:auto;margin-right:auto">
+      Wix: $17–35/mo, you build it yourself. &nbsp;|&nbsp; <strong style="color:var(--cyan)">Us: from $50 total — we build it for you, same day.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-label" style="text-align:center">FAQ</div>
+    <h2 class="section-title" style="text-align:center">Common Questions from Electrical Business Owners</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Do I pay before seeing the site?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>No. We build first, you review, and you only pay if you're happy. Zero risk. We send you a private preview link and you have full time to look it over before committing to anything.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does it take?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Same day. Most electricians see their finished website within hours of submitting their info. We prioritize licensed trades because we know every day without a working site is costing you jobs.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will it show up on Google?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Every site gets local SEO basics built in from day one — optimized for electrical searches in your area, including emergency-service keywords like "emergency electrician near me." Premium plans include service-area pages for even stronger local visibility.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will customers know I'm licensed and insured?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Yes. We highlight your license number, insurance, and bonding right on the homepage where homeowners look for it. Trust signals are the difference between getting the call and watching it go to an unlicensed handyman.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">I already have a domain. Can I use it?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Absolutely. We connect your site to your existing domain at no extra charge. If you don't have one, we include a free domain on every plan.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I cancel the hosting anytime?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Yes, month-to-month. If you cancel before 6 months there's a $25 file transfer fee. After 6 months the transfer is completely free. You own your website — we're just hosting it for you.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is this AI-built or human-built?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Both. AI builds fast — that's how we deliver same day at $50. But our team reviews every single site before it reaches you. You get the speed of AI and the quality check of a human designer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you add EV charger or generator pages later?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Yes. Hosting plans include monthly content updates. New service pages — EV charger installs, whole-home generators, panel upgrades — are easy to add as your business expands.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">I've been burned by an agency before. What makes this different?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>You see everything before you pay. No upfront deposits. No bait-and-switch. No "it'll be ready next month." We build first. You review. You only pay if you love it. That's the whole model — your risk is zero.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="final-cta">
+  <div class="container">
+    <div class="section-label">Ready?</div>
+    <h2>Ready to Book More Electrical Jobs?</h2>
+    <p>Your competitors are showing up first on Google. Don't hand them another panel upgrade.<br/>We build your custom electrician website same day — you see it before spending a dollar.</p>
+    <div class="final-cta__ctas">
+      <a href="#contact" class="btn btn-primary">Get My Free Website Preview →</a>
+    </div>
+    <div class="final-cta__note">Free domain included &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; From $50</div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Get Your Free Preview</div>
+    <h2 class="section-title" style="text-align:center">See Your New Electrician Website — <span class="grad-text">Before You Pay</span></h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 0">Tell us about your electrical business and we'll build a custom preview the same day. No payment required.</p>
+    <form action="https://formspree.io/f/xojppajv" method="POST" class="cta-form" id="ctaForm">
+      <input type="hidden" name="source" value="web-design-for-electricians"/>
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name" required/>
+        <input type="tel" name="phone" placeholder="Phone Number"/>
+      </div>
+      <input type="email" name="email" placeholder="Email Address" required/>
+      <input type="text" name="business" placeholder="Business Name (e.g. Lightning Electrical Co.)" required/>
+      <input type="text" name="city" placeholder="City &amp; State (e.g. Austin, TX)" required/>
+      <input type="text" name="license" placeholder="License # (optional — we'll display it on the site)"/>
+      <input type="url" name="website" placeholder="Current Website (optional — leave blank if none)"/>
+      <textarea name="services" placeholder="What electrical services do you offer? (e.g. panel upgrades, EV chargers, residential wiring, generators...)"></textarea>
+      <button type="submit" class="form-submit">Build My Free Preview Now →</button>
+    </form>
+    <div class="form-success" id="formSuccess">
+      <div style="font-size:2rem;margin-bottom:1rem">⚡</div>
+      <strong>You're in the queue!</strong> We'll have your custom electrician website preview ready the same day. Check your email for updates.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <a href="/" class="footer__logo nav__logo grad-text">Alma Digital</a>
+      <p class="footer__tagline">Professional custom website from $50. Free domain if you need one. See it before you pay a single dollar. Cheaper than Wix. Built by AI. Delivered same day.</p>
+      <div class="footer__links">
+        <a href="/">Home</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/web-design-for-plumbers">Plumbers</a>
+        <a href="/web-design-for-electricians">Electricians</a>
+        <a href="/cookie-policy">Cookie Policy</a>
+      </div>
+      <p class="footer__copy">© 2026 Alma Digital Services. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ Accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Pricing Toggle
+const toggleSwitch = document.getElementById('toggleSwitch');
+const labelFull = document.getElementById('toggleLabelFull');
+const labelMonthly = document.getElementById('toggleLabelMonthly');
+let isMonthly = false;
+
+function updatePricing() {
+  const key = isMonthly ? 'monthly' : 'full';
+  document.querySelectorAll('.plan-price').forEach(el => {
+    el.textContent = el.dataset[key];
+  });
+  document.querySelectorAll('.plan-period').forEach(el => {
+    el.textContent = el.dataset[key];
+  });
+  document.querySelectorAll('.plan-revisions').forEach(el => {
+    el.textContent = el.dataset[key];
+  });
+  labelFull.style.color = isMonthly ? 'var(--text-muted)' : 'var(--text)';
+  labelMonthly.style.color = isMonthly ? 'var(--text)' : 'var(--text-muted)';
+}
+
+toggleSwitch.addEventListener('click', () => {
+  isMonthly = !isMonthly;
+  toggleSwitch.classList.toggle('active', isMonthly);
+  updatePricing();
+});
+toggleSwitch.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    toggleSwitch.click();
+  }
+});
+
+// Form submit handler
+const form = document.getElementById('ctaForm');
+const success = document.getElementById('formSuccess');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    } else {
+      btn.textContent = 'Build My Free Preview Now →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email us at desk@almawebcreative.com');
+    }
+  } catch {
+    btn.textContent = 'Build My Free Preview Now →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email us at desk@almawebcreative.com');
+  }
+});
+
+// Sticky nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 50) {
+    nav.style.background = 'rgba(10,10,15,0.98)';
+  } else {
+    nav.style.background = 'rgba(10,10,15,0.9)';
+  }
+}, { passive: true });
+</script>
+</body>
+</html>
