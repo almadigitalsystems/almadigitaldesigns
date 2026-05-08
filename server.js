@@ -1496,6 +1496,18 @@ app.get('/ftc-disclosure', (req, res) => {
 
 
 
+// ── PAGES: COMPARISON / COMPETITIVE ──────────────────────────────────────────
+
+
+
+app.get('/why-not-10web', (req, res) => {
+
+  res.sendFile(path.join(__dirname, 'why-not-10web.html'));
+
+});
+
+
+
 // ── API: LEAD CAPTURE (exit-intent popup) ────────────────────────────────────
 
 
@@ -1845,4 +1857,5 @@ app.listen(PORT, () => {
   console.log(`Alma Digital Services running on port ${PORT}`);
 
 });
+
 
