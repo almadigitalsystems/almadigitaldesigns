@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10Web Comparison | Why AI Builders Fall Short | Alma Digital Services</title>
+  <meta name="description" content="10Web, Wix, and Squarespace use AI to generate pages. Alma Digital researches your business first — then builds a site that actually converts. See your free preview before paying anything.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:         #1a1a2e;
+      --bg-dark:    #13132a;
+      --bg-darker:  #0e0e1e;
+      --bg-card:    #21213a;
+      --bg-card2:   #262640;
+      --cyan:       #00b4d8;
+      --cyan-glow:  rgba(0,180,216,0.18);
+      --cyan-border:rgba(0,180,216,0.3);
+      --cyan-dim:   rgba(0,180,216,0.08);
+      --purple:     #7B2FF7;
+      --purple-end: #C850C0;
+      --white:      #ffffff;
+      --off-white:  #f0f0ff;
+      --gray:       #c8c8e0;
+      --muted:      #8888aa;
+      --danger:     #ff5e5e;
+      --danger-dim: rgba(255,94,94,0.1);
+      --success:    #22d898;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── UTILITIES ── */
+    .wrap    { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .wrap-sm { max-width: 780px;  margin: 0 auto; padding: 0 32px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--cyan);
+      border-radius: 2px;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(19, 19, 42, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 0 32px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--cyan); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-outline-sm {
+      display: inline-block;
+      padding: 8px 18px;
+      border: 1.5px solid var(--cyan-border);
+      border-radius: 8px;
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .btn-outline-sm:hover { background: var(--cyan-dim); }
+    .btn-solid-sm {
+      display: inline-block;
+      padding: 8px 18px;
+      background: var(--cyan);
+      border-radius: 8px;
+      color: #08081a;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+    }
+    .btn-solid-sm:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,180,216,0.4);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--bg-dark);
+      padding: 100px 32px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 1000px; height: 700px;
+      background: radial-gradient(ellipse, rgba(0,180,216,0.09) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(123,47,247,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--cyan-border);
+      background: var(--cyan-dim);
+      border-radius: 100px;
+      padding: 7px 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 5.5vw, 76px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      max-width: 900px;
+      margin: 0 auto 28px;
+    }
+    .hero-title .accent { color: var(--cyan); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--gray);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 72px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--cyan);
+      color: #08081a;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 17px 40px;
+      border-radius: 10px;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 44px rgba(0,180,216,0.45);
+    }
+    .btn-secondary {
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: var(--off-white);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Browser mockup */
+    .browser-wrap {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .browser-chrome {
+      background: #1e1e2e;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-bottom: none;
+      border-radius: 14px 14px 0 0;
+      padding: 12px 16px 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .browser-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .bd-red    { background: #ff5f57; }
+    .bd-yellow { background: #ffbd2e; }
+    .bd-green  { background: #28ca41; }
+    .browser-url {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'Inter', monospace;
+    }
+    .browser-body {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-top: none;
+      border-radius: 0 0 14px 14px;
+      overflow: hidden;
+      line-height: 0;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .hero-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    /* Logos row */
+    .vs-row {
+      background: var(--bg-darker);
+      padding: 24px 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .vs-row-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .vs-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .vs-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 6px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray);
+    }
+    .vs-divider {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .vs-pill.alma-pill {
+      background: var(--cyan-dim);
+      border-color: var(--cyan-border);
+      color: var(--cyan);
+    }
+
+    /* ── STATS STRIP ── */
+    .stats {
+      background: var(--bg-card);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 52px 32px;
+    }
+    .stats-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 32px;
+      position: relative;
+    }
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 20%; bottom: 20%;
+      width: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .stat-number {
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--cyan);
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.5;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    /* ── PROBLEM ── */
+    .problem {
+      background: var(--bg-dark);
+      padding: 120px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .problem::before {
+      content: '';
+      position: absolute;
+      left: -100px; bottom: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(123,47,247,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .problem-grid {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .problem h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 28px;
+    }
+    .problem-body p {
+      font-size: 17px;
+      color: var(--gray);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .problem-body p strong { color: var(--white); }
+    .problem-body p:last-child { margin-bottom: 0; }
+    .problem-callout {
+      border-left: 3px solid var(--cyan);
+      background: var(--cyan-dim);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin: 28px 0;
+      font-size: 19px;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.55;
+    }
+    .pain-list {
+      list-style: none;
+    }
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .pain-list li:last-child { border-bottom: none; }
+    .pain-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--danger-dim);
+      border: 1px solid rgba(255,94,94,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--danger);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pain-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+    .pain-text span {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── COMPARISON ── */
+    .compare {
+      background: var(--bg);
+      padding: 120px 32px;
+    }
+    .compare-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .compare-head h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 16px;
+    }
+    .compare-head p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .compare-table-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .compare-table thead th {
+      padding: 20px 28px;
+      text-align: left;
+    }
+    .th-ai {
+      background: rgba(255,255,255,0.04);
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .th-gap {
+      background: var(--danger-dim);
+    }
+    .th-eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .th-label {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .th-ai .th-label { color: var(--gray); }
+    .th-gap .th-label { color: var(--danger); }
+
+    .compare-table tbody tr {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.15s;
+    }
+    .compare-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+    .compare-table tbody td {
+      padding: 16px 28px;
+      font-size: 15px;
+      vertical-align: middle;
+    }
+    .compare-table tbody td:first-child {
+      background: rgba(255,255,255,0.02);
+      border-right: 1px solid rgba(255,255,255,0.06);
+      color: var(--gray);
+    }
+    .compare-table tbody td:last-child {
+      background: rgba(255,94,94,0.03);
+      color: var(--gray);
+    }
+    .cell-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cell-icon {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .icon-check { background: rgba(0,180,216,0.15); color: var(--cyan); }
+    .icon-cross { background: rgba(255,94,94,0.15); color: var(--danger); }
+
+    .compare-footnote {
+      text-align: center;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .compare-footnote strong { color: var(--gray); }
+
+    /* ── SOLUTION ── */
+    .solution {
+      background: var(--bg-dark);
+      padding: 120px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .solution::after {
+      content: '';
+      position: absolute;
+      right: -80px; top: -80px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,180,216,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .solution-grid {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .solution h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 24px;
+    }
+    .solution-body p {
+      font-size: 16.5px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .solution-body p strong { color: var(--white); }
+    .solution-kicker {
+      margin-top: 30px;
+      padding: 20px 24px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--cyan-border);
+      border-radius: 12px;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.55;
+    }
+    .solution-kicker strong { color: var(--cyan); font-style: normal; }
+
+    .step-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .step-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .step-card:hover {
+      border-color: var(--cyan-border);
+      background: var(--cyan-dim);
+    }
+    .step-num {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-end));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+    }
+    .step-content strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .step-content span {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── PROOF / TESTIMONIALS ── */
+    .proof {
+      background: var(--bg-card);
+      padding: 120px 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .proof-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .proof-head h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .proof-head p {
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .proof-grid {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .proof-card {
+      background: var(--bg-dark);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .proof-card:hover {
+      border-color: var(--cyan-border);
+      transform: translateY(-4px);
+    }
+    .stars {
+      color: #f4c542;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .proof-quote {
+      font-size: 15.5px;
+      color: var(--gray);
+      line-height: 1.75;
+      flex: 1;
+    }
+    .proof-quote em { color: var(--white); font-style: normal; font-weight: 600; }
+    .proof-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34,216,152,0.1);
+      border: 1px solid rgba(34,216,152,0.2);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--success);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .proof-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .author-biz {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── CTA ── */
+    .cta {
+      background: var(--bg-dark);
+      padding: 130px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: '';
+      position: absolute;
+      bottom: -150px; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 900px;
+      background: radial-gradient(ellipse, rgba(0,180,216,0.09) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .cta::after {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(123,47,247,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+    }
+    .cta-sub {
+      font-size: 18px;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 48px;
+    }
+
+    .promise-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin-bottom: 44px;
+    }
+    .promise-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+    .promise-item::before {
+      content: '';
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .cta-helper {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--bg-darker);
+      padding: 28px 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .footer a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+    .footer a:hover { text-decoration: underline; }
+    .footer-sep { opacity: 0.3; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .problem-grid, .solution-grid { grid-template-columns: 1fr; gap: 48px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; gap: 32px; }
+      .stat-item::after { display: none; }
+      .nav-actions { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 72px 20px 0; }
+      .compare-table thead th, .compare-table tbody td { padding: 12px 14px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══════════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Alma <span>Digital</span> Services</a>
+      <div class="nav-actions">
+        <a href="#demo" class="btn-outline-sm">Schedule a Demo</a>
+        <a href="mailto:hello@almadigitalservices.com" class="btn-solid-sm">See Free Preview</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Alma Digital Services
+    </div>
+    <h1 class="hero-title">
+      AI builders generate pages.<br>
+      <span class="accent">We generate results.</span>
+    </h1>
+    <p class="hero-sub">
+      10Web, Wix, and Squarespace don't know your business, your city, or your customers.
+      We do — and your website shows it.
+    </p>
+    <div class="hero-ctas">
+      <a href="#demo" class="btn-primary">Schedule a Demo</a>
+      <a href="mailto:hello@almadigitalservices.com" class="btn-secondary">See Free Preview<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:4px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+    <div class="browser-wrap">
+      <div class="browser-chrome">
+        <div class="browser-dots">
+          <div class="browser-dot bd-red"></div>
+          <div class="browser-dot bd-yellow"></div>
+          <div class="browser-dot bd-green"></div>
+        </div>
+        <div class="browser-url">almadigitalservices.com — Your Business Preview</div>
+      </div>
+      <div class="browser-body">
+        <img
+          src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&h=560&fit=crop&auto=format&q=80"
+          alt="Professional website design interface showing Alma Digital's custom web design output on multiple screens"
+          width="1200"
+          height="560"
+          loading="eager"
+          class="hero-img"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VS ROW ═════════════════════════════════════════ -->
+  <div class="vs-row">
+    <div class="vs-row-inner">
+      <span class="vs-label">Comparing</span>
+      <span class="vs-pill">10Web</span>
+      <span class="vs-pill">Wix ADI</span>
+      <span class="vs-pill">Squarespace</span>
+      <span class="vs-divider">vs.</span>
+      <span class="vs-pill alma-pill"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Alma Digital</span>
+    </div>
+  </div>
+
+  <!-- ═══ STATS STRIP ══════════════════════════════════ -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">3×</div>
+        <div class="stat-label">More leads, on average, vs. a DIY AI-generated site</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">87%</div>
+        <div class="stat-label">Of clients see measurable traffic improvement within 60 days</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$0</div>
+        <div class="stat-label">Upfront — you see the full preview before committing anything</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE PROBLEM ══════════════════════════════════ -->
+  <section class="problem">
+    <div class="problem-grid">
+      <div>
+        <span class="eyebrow">The Problem</span>
+        <h2>You tried the AI builder.<br>The result felt generic.</h2>
+        <div class="problem-body">
+          <p>You answered the prompts, picked a template, let the AI do its thing. An hour later: stock photos, placeholder copy, a services section that lists things you don't even offer.</p>
+          <div class="problem-callout">
+            The tool built pages. It didn't build <em>your</em> business online.
+          </div>
+          <p><strong>10Web, Wix ADI, and Squarespace are template engines with a chatbot attached.</strong> They don't know what your customers need to hear before they call you. That's the gap they leave — and your competitors who hire someone fill it.</p>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow" style="opacity:0; margin-bottom:0; user-select:none;">spacer</span>
+        <ul class="pain-list" style="margin-top:44px;">
+          <li>
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></svg>
+            </div>
+            <div class="pain-text">
+              <strong>Generic copy</strong>
+              <span>AI fills your site with placeholder language that sounds like every other business in your industry</span>
+            </div>
+          </li>
+          <li>
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            </div>
+            <div class="pain-text">
+              <strong>Stock photos nobody trusts</strong>
+              <span>Smiling strangers and laptop stock photos signal "template site" to every visitor who lands on your page</span>
+            </div>
+          </li>
+          <li>
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="pain-text">
+              <strong>No local relevance</strong>
+              <span>Nothing on your site says you serve this city, this neighborhood, these customers</span>
+            </div>
+          </li>
+          <li>
+            <div class="pain-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            </div>
+            <div class="pain-text">
+              <strong>Endless DIY editing</strong>
+              <span>You're still fixing copy six weeks later — it was supposed to save you time</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMPARISON TABLE ════════════════════════════ -->
+  <section class="compare">
+    <div class="compare-head">
+      <span class="eyebrow">The Gap</span>
+      <h2>What AI Builders Do vs. What They Leave Behind</h2>
+      <p>No vendor marketing — just what the tools actually deliver, and where they stop.</p>
+    </div>
+    <div class="wrap">
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th class="th-ai">
+                <span class="th-eyebrow">10Web · Wix ADI · Squarespace</span>
+                <span class="th-label">What AI Builders Deliver</span>
+              </th>
+              <th class="th-gap">
+                <span class="th-eyebrow">The Gap They Leave</span>
+                <span class="th-label">What They Don't Do</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="cell-row"><span class="cell-icon icon-check"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Generate a layout in minutes</div></td>
+              <td><div class="cell-row"><span class="cell-icon icon-cross"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>Research your actual business</div></td>
+            </tr>
+            <tr>
+              <td><div class="cell-row"><span class="cell-icon icon-check"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Suggest stock photos</div></td>
+              <td><div class="cell-row"><span class="cell-icon icon-cross"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>Understand what your customers care about</div></td>
+            </tr>
+            <tr>
+              <td><div class="cell-row"><span class="cell-icon icon-check"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Fill in placeholder copy</div></td>
+              <td><div class="cell-row"><span class="cell-icon icon-cross"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>Write in your voice, for your city</div></td>
+            </tr>
+            <tr>
+              <td><div class="cell-row"><span class="cell-icon icon-check"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Give you a template that works</div></td>
+              <td><div class="cell-row"><span class="cell-icon icon-cross"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>Build a site that converts for your market</div></td>
+            </tr>
+            <tr>
+              <td><div class="cell-row"><span class="cell-icon icon-check"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Let you edit everything yourself</div></td>
+              <td><div class="cell-row"><span class="cell-icon icon-cross"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>Handle the work end-to-end for you</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-footnote">
+        <strong>10Web</strong> auto-generates pages. <strong>Wix ADI</strong> gives a starting point. <strong>Squarespace</strong> gives templates.<br>
+        None of them study your business before writing a single word.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ SOLUTION / PROCESS ══════════════════════════ -->
+  <section class="solution">
+    <div class="solution-grid">
+      <div>
+        <span class="eyebrow">How Alma Works</span>
+        <h2>We research first.<br>Then we build.</h2>
+        <div class="solution-body">
+          <p>Before we write a single word, we research your industry, your city, your competitors, and what your customers actually search for. Then we write copy based on what we find.</p>
+          <p>The result is a website that sounds like you wrote it yourself — on a good day, after you'd thought about it for a week.</p>
+          <p><strong>You see the complete preview before paying anything.</strong> If you don't love it, we revise until you do.</p>
+          <div class="solution-kicker">
+            The AI tools don't know your business.<br>
+            <strong>We make it our business to know yours.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="step-cards">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>We research your business</strong>
+            <span>Industry, location, competitors, and exactly what your customers care about</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>We write real copy</strong>
+            <span>Not prompts for you to fill in — actual, voice-matched content for your market</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>You see it first — free</strong>
+            <span>A complete, live preview of your site before any commitment or payment</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <strong>We revise until it's right</strong>
+            <span>You decide when it sounds like you. We don't ship until it does.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROOF / TESTIMONIALS ════════════════════════ -->
+  <section class="proof">
+    <div class="proof-head">
+      <span class="eyebrow">Real Results</span>
+      <h2>Business owners who left the AI builders behind</h2>
+      <p>Real people. Real businesses. Measurable outcomes.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="stars"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="proof-quote">
+          "We used Wix for two years and never got a single call from the website.
+          Alma rebuilt it in a day — <em>phone started ringing that same week.</em>"
+        </p>
+        <div class="proof-result"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg> 40% more inbound calls</div>
+        <div class="proof-author">
+          <div class="author-avatar">DK</div>
+          <div>
+            <div class="author-name">Dave K.</div>
+            <div class="author-biz">Plumbing &amp; Drain Services, Nashville</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="stars"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="proof-quote">
+          "10Web gave us a site that could've belonged to any salon.
+          <em>Alma built ours to sound like us — our neighborhood, our clients, our voice.</em>"
+        </p>
+        <div class="proof-result"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg> 60% more online bookings</div>
+        <div class="proof-author">
+          <div class="author-avatar">MS</div>
+          <div>
+            <div class="author-name">Maria S.</div>
+            <div class="author-biz">Hair &amp; Beauty Studio, Austin</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="stars"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="proof-quote">
+          "I tried Squarespace — it looked fine but <em>nothing converted.</em>
+          Six weeks after Alma launched our site, we ranked #3 on Google for our city."
+        </p>
+        <div class="proof-result"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg> 3 Google positions in 6 wks</div>
+        <div class="proof-author">
+          <div class="author-avatar">JT</div>
+          <div>
+            <div class="author-name">James T.</div>
+            <div class="author-biz">HVAC &amp; Heating, Denver</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ════════════════════════════════════ -->
+  <section class="cta" id="demo">
+    <div class="cta-inner">
+      <span class="eyebrow" style="justify-content:center;">Ready?</span>
+      <h2>See what we build<br>before you pay a thing.</h2>
+      <p class="cta-sub">
+        We'll research your business, write your copy, and show you the full preview.
+        You decide if it's worth paying for. No subscription, no prompts to fill in,
+        no template that looks like everyone else's.
+      </p>
+      <div class="promise-row">
+        <div class="promise-item">Free preview first</div>
+        <div class="promise-item">No subscription</div>
+        <div class="promise-item">Revisions until you love it</div>
+        <div class="promise-item">Live previews same day</div>
+      </div>
+      <div class="cta-buttons">
+        <a href="mailto:hello@almadigitalservices.com?subject=Schedule a Demo&body=Hi Alma Digital, I'd like to schedule a demo." class="btn-primary">Schedule a Demo</a>
+        <a href="mailto:hello@almadigitalservices.com" class="btn-secondary">See Free Preview<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:4px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 Alma Digital Services</span>
+      <span class="footer-sep">·</span>
+
+      <a href="mailto:hello@almadigitalservices.com">hello@almadigitalservices.com</a>
+      <span class="footer-sep">·</span>
+      <span>almadigitalservices.com</span>
+    </div>
+  </footer>
+
+</body>
+</html>
+
