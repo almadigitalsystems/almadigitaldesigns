@@ -420,6 +420,63 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
   .contact__form{padding:1.75rem}
   .contact__submit{align-self:stretch;justify-content:center}
 }
+
+/* hero visual */
+.hero__visual{
+  position:relative;z-index:1;
+  margin-top:3rem;max-width:960px;
+}
+.hero__visual img{
+  width:100%;height:auto;border-radius:16px;
+  box-shadow:0 24px 60px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* portfolio showcase */
+.showcase{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 50%,var(--bg) 100%);position:relative;overflow:hidden}
+.showcase::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 40%,rgba(0,180,216,0.12) 0%,transparent 50%),
+             radial-gradient(circle at 80% 70%,rgba(123,97,255,0.10) 0%,transparent 50%);
+  z-index:0;pointer-events:none;
+}
+.showcase__inner{position:relative;z-index:1}
+.showcase__head{text-align:center;margin-bottom:3rem;max-width:780px;margin-left:auto;margin-right:auto}
+.showcase__head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1rem}
+.showcase__head p{color:var(--muted);font-size:1.05rem;line-height:1.65}
+.showcase__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2rem}
+.showcase__item{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:18px;overflow:hidden;
+  transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+}
+.showcase__item:hover{transform:translateY(-6px);border-color:rgba(0,180,216,0.3)}
+.showcase__item img{width:100%;height:auto;display:block}
+.showcase__item figcaption{padding:1.25rem 1.5rem}
+.showcase__item figcaption strong{display:block;font-size:1rem;margin-bottom:0.35rem;color:var(--text)}
+.showcase__item figcaption span{font-size:0.88rem;color:var(--muted)}
+.showcase__featured{
+  background:var(--bg-card);border:1px solid rgba(0,180,216,0.3);
+  border-radius:18px;overflow:hidden;
+  transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+}
+.showcase__featured:hover{transform:translateY(-4px);border-color:rgba(0,180,216,0.5)}
+.showcase__featured img{width:100%;height:auto;display:block}
+.showcase__featured figcaption{padding:1.25rem 1.5rem;text-align:center}
+.showcase__featured figcaption strong{display:block;font-size:1.05rem;margin-bottom:0.35rem;color:var(--text)}
+.showcase__featured figcaption span{font-size:0.9rem;color:var(--muted)}
+
+/* catalog block visuals */
+.cat-block__visual{margin-top:1.5rem;margin-bottom:1.5rem}
+.cat-block__visual img{
+  width:100%;max-width:720px;height:auto;border-radius:14px;
+  border:1px solid var(--border);
+  box-shadow:0 12px 36px rgba(0,0,0,0.3);
+}
+
+@media (max-width:880px){
+  .showcase__grid{grid-template-columns:1fr;gap:1.25rem}
+  .hero__visual{margin-top:2rem}
+}
 </style>
 </head>
 <body>
@@ -444,6 +501,9 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
         <a href="#contact" class="btn-primary">See your free preview — no payment until you love it →</a>
         <a href="#pricing" class="btn-secondary">View public pricing →</a>
       </div>
+    <div class="hero__visual">
+      <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset1-hero-macbook.png" alt="Alma Digital Services website preview on MacBook — custom website design starting at $50" width="1920" height="1080" loading="eager" />
+    </div>
     </div>
   </div>
 </section>
@@ -470,6 +530,39 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
     </div>
     <p class="diff-strip__trust">Every preview is a real, hosted page. Click through it. Show your team. Pay only when you decide it’s right. No contracts. Cancel hosting anytime.</p>
     <p class="diff-strip__alt">Other agencies sell vibes. We ship working previews — fast, public-priced, AI-built. Same day you ask, your site is on a real URL.</p>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO SHOWCASE -->
+<section class="showcase">
+  <div class="container showcase__inner">
+    <div class="showcase__head">
+      <h2>Real work. <span class="grad-text">Real businesses.</span></h2>
+      <p>Every site is custom-built by our senior team — strategy, design, copy, and launch. Here is a sample of what we deliver.</p>
+    </div>
+    <div class="showcase__grid">
+      <figure class="showcase__item">
+        <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset2-portfolio-restaurant.png" alt="Custom restaurant website design by Alma Digital Services — modern layout with online menu and reservations" width="1024" height="1024" loading="lazy" />
+        <figcaption><strong>Restaurant</strong><span>Custom website with online menu, reservations, and brand identity</span></figcaption>
+      </figure>
+      <figure class="showcase__item">
+        <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset3-portfolio-dental.png" alt="Custom dental practice website design by Alma Digital Services — professional healthcare web presence" width="1024" height="1024" loading="lazy" />
+        <figcaption><strong>Dental Practice</strong><span>Professional healthcare site with appointment booking and patient portal</span></figcaption>
+      </figure>
+      <figure class="showcase__item">
+        <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset4-portfolio-law.png" alt="Custom law firm website design by Alma Digital Services — authoritative legal practice web presence" width="1024" height="1024" loading="lazy" />
+        <figcaption><strong>Law Firm</strong><span>Authoritative legal site with case inquiry forms and practice area pages</span></figcaption>
+      </figure>
+      <figure class="showcase__item">
+        <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset5-portfolio-spa.png" alt="Custom beauty salon and spa website design by Alma Digital Services — elegant wellness web presence" width="1024" height="1024" loading="lazy" />
+        <figcaption><strong>Beauty Salon &amp; Spa</strong><span>Elegant wellness site with online booking and service showcase</span></figcaption>
+      </figure>
+    </div>
+    <figure class="showcase__featured">
+      <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset8-before-after.png" alt="Before and after website transformation — restaurant site redesigned by Alma Digital Services" width="1600" height="900" loading="lazy" />
+      <figcaption><strong>Before &amp; After</strong><span>A real restaurant website transformation — from outdated template to custom-built, conversion-ready design</span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -602,6 +695,9 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
         <h3>Your <span class="grad-text">WhatsApp on autopilot.</span></h3>
         <p>A custom-trained WhatsApp agent that answers customer questions, books appointments, and qualifies leads — 24 hours a day, in your brand voice. We build it, train it on your business, and hand you the keys.</p>
       </div>
+    <div class="cat-block__visual">
+      <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset6-whatsapp-mockup.png" alt="AlmaReach AI WhatsApp agent — automated customer conversations, appointment booking, and lead qualification" width="1200" height="900" loading="lazy" />
+    </div>
       <div class="cat-grid-2">
 
         <div class="cat-card">
@@ -643,6 +739,9 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
         <h3>Your <span class="grad-text">social media, handled.</span></h3>
         <p>Done-for-you social content on Instagram + X, posted on schedule, written in your brand voice. Three tiers — pick the platform reach you need. No setup fee. No contract. Cancel anytime.</p>
       </div>
+    <div class="cat-block__visual">
+      <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset7-instagram-grid.png" alt="AlmaSocial managed Instagram content — professional social media grid with consistent brand presence" width="1288" height="530" loading="lazy" />
+    </div>
       <div class="cat-grid-3">
 
         <div class="cat-card">
