@@ -121,6 +121,15 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ==================== WEBSITE SCORE TOOL ==================== -->
+  <!-- Free AI-powered website grader — lead magnet tool, high SEO priority -->
+  <url>
+    <loc>https://almadigitalservices.com/score</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
     <!-- ==================== PROSPECT PREVIEW PAGES ==================== -->
   <!-- NOTE: Prospect preview pages are set to noindex,nofollow.
        DO NOT add individual preview page URLs to this sitemap.
