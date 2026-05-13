@@ -6,6 +6,8 @@ const crypto = require('crypto');
 
 const express = require('express');
 
+const fs = require('fs');
+
 const path = require('path');
 
 const nodemailer = require('nodemailer');
@@ -1820,6 +1822,308 @@ app.post('/auth/canva/refresh', async (req, res) => {
     console.error('[canva-refresh] exception:', err.message);
     res.status(500).json({ error: 'Internal error' });
   }
+});
+
+// ── WEBSITE SCORE TOOL ──────────────────────────────────────────────────────
+// AI-powered website grader — scores prospect sites A-F across design, UX,
+// content, and conversion. Captures leads for Riley's warm outreach pipeline.
+
+const SCORE_DAILY_LIMIT = 3;
+const SCORE_MONTHLY_CAP = 10000;
+const SCORE_DATA_DIR = path.join(__dirname, 'data');
+const SCORE_LEADS_FILE = path.join(SCORE_DATA_DIR, 'score-leads.jsonl');
+
+try { fs.mkdirSync(SCORE_DATA_DIR, { recursive: true }); } catch {}
+
+const _scoreRateBuckets = new Map();
+let _scoreMonthlyCount = 0;
+let _scoreMonthlyResetMonth = new Date().toISOString().slice(0, 7);
+
+try {
+  const counterFile = path.join(SCORE_DATA_DIR, 'monthly-counter.json');
+  if (fs.existsSync(counterFile)) {
+    const d = JSON.parse(fs.readFileSync(counterFile, 'utf8'));
+    if (d.month === _scoreMonthlyResetMonth) _scoreMonthlyCount = d.count || 0;
+  }
+} catch {}
+
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of _scoreRateBuckets) {
+    if (now > entry.resetAt) _scoreRateBuckets.delete(ip);
+  }
+}, 3600000);
+
+function _scoreRateLimit(req, res, next) {
+  const currentMonth = new Date().toISOString().slice(0, 7);
+  if (currentMonth !== _scoreMonthlyResetMonth) {
+    _scoreMonthlyCount = 0;
+    _scoreMonthlyResetMonth = currentMonth;
+  }
+  if (_scoreMonthlyCount >= SCORE_MONTHLY_CAP) {
+    return res.status(429).json({ error: 'Monthly scan limit reached. Please try again next month.' });
+  }
+  if (_scoreMonthlyCount === 5000 || _scoreMonthlyCount === 8000) {
+    console.warn(`[score-tool] ALERT: Monthly scan count hit ${_scoreMonthlyCount}`);
+  }
+  const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress || 'unknown';
+  const now = Date.now();
+  const midnight = new Date();
+  midnight.setHours(24, 0, 0, 0);
+  const resetAt = midnight.getTime();
+  const entry = _scoreRateBuckets.get(ip);
+  if (!entry || now > entry.resetAt) {
+    _scoreRateBuckets.set(ip, { count: 1, resetAt });
+    return next();
+  }
+  if (entry.count >= SCORE_DAILY_LIMIT) {
+    return res.status(429).json({ error: `Daily limit reached (${SCORE_DAILY_LIMIT} scans per day). Try again tomorrow.` });
+  }
+  entry.count++;
+  next();
+}
+
+function _cleanHtml(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<noscript[\s\S]*?<\/noscript>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+    .slice(0, 30000);
+}
+
+async function _fetchUrlHtml(url) {
+  try {
+    const resp = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AlmaDigitalScore/1.0)' },
+      signal: AbortSignal.timeout(12000),
+      redirect: 'follow',
+    });
+    const html = await resp.text();
+    return { html, finalUrl: resp.url, error: null };
+  } catch (e) {
+    return { html: '', finalUrl: url, error: e.message };
+  }
+}
+
+async function _fetchPageSpeed(url) {
+  const params = new URLSearchParams({ url, strategy: 'mobile' });
+  const apiKey = process.env.GOOGLE_API_KEY;
+  if (apiKey) params.set('key', apiKey);
+  try {
+    const resp = await fetch(
+      `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?${params}`,
+      { signal: AbortSignal.timeout(20000) }
+    );
+    const data = await resp.json();
+    const score = data.lighthouseResult?.categories?.performance?.score;
+    const audits = data.lighthouseResult?.audits || {};
+    return {
+      mobileScore: score != null ? Math.round(score * 100) : null,
+      lcp: audits['largest-contentful-paint']?.numericValue || null,
+      fcp: audits['first-contentful-paint']?.numericValue || null,
+      error: null,
+    };
+  } catch (e) {
+    return { mobileScore: null, lcp: null, fcp: null, error: e.message };
+  }
+}
+
+function _htmlChecks(html, url) {
+  return {
+    hasSsl: url.toLowerCase().startsWith('https://'),
+    hasMetaDesc: /<meta[^>]+name=["']description["'][^>]+content=["'][^"']{10,}["']/i.test(html) ||
+                 /<meta[^>]+content=["'][^"']{10,}["'][^>]+name=["']description["']/i.test(html),
+    hasH1: /<h1[\s>]/i.test(html),
+    hasViewport: /<meta[^>]+name=["']viewport["']/i.test(html),
+    hasCta: /book\s*(now|appointment|online)|schedule\s*(now|appointment|today|a\s+call)|get\s*(a\s+)?quote|contact\s*us|call\s*(us|now|today)|request\s*(a\s+)?(service|appointment|quote)/i.test(html),
+    hasPhone: /\(?\d{3}\)?[\s\-\.]\d{3}[\s\-\.]\d{4}|tel:\+?\d{10,}|href=["']tel:/i.test(html),
+    title: (html.match(/<title>([^<]{3,})<\/title>/i) || [])[1]?.trim() || null,
+  };
+}
+
+async function _aiAnalyze(url, html, checks, ps) {
+  const clean = _cleanHtml(html);
+  const prompt = `Analyze this website and grade it A through F in 4 categories. Be honest and specific.
+
+URL: ${url}
+Title: ${checks.title || 'None'}
+SSL: ${checks.hasSsl ? 'Yes' : 'No'}
+Mobile Speed Score: ${ps.mobileScore != null ? ps.mobileScore + '/100' : 'Unknown'}
+Has Meta Description: ${checks.hasMetaDesc ? 'Yes' : 'No'}
+Has Clear CTA: ${checks.hasCta ? 'Yes' : 'No'}
+Has Phone Number: ${checks.hasPhone ? 'Yes' : 'No'}
+Has H1 Heading: ${checks.hasH1 ? 'Yes' : 'No'}
+
+HTML (truncated):
+${clean}
+
+Grade each category with a 1-2 sentence explanation a business owner would understand:
+
+1. DESIGN — Visual appeal, colors, typography, spacing, professional appearance
+2. UX — Navigation ease, mobile-friendliness, page speed, accessibility
+3. CONTENT — Writing quality, clarity, value proposition, SEO basics
+4. CONVERSION — CTAs, trust signals (reviews/testimonials), contact info, lead capture
+
+Also give 3 specific actionable recommendations to improve the site.
+
+Respond ONLY with valid JSON (no markdown, no backticks, no explanation):
+{"overallGrade":"B","categories":{"design":{"grade":"B","summary":"..."},"ux":{"grade":"A","summary":"..."},"content":{"grade":"C","summary":"..."},"conversion":{"grade":"B","summary":"..."}},"recommendations":["...","...","..."]}`;
+
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 800,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!resp.ok) {
+      console.error('[score-tool] AI error:', resp.status, await resp.text());
+      return null;
+    }
+    const data = await resp.json();
+    const text = data.content?.[0]?.text || '';
+    const match = text.match(/\{[\s\S]*\}/);
+    return match ? JSON.parse(match[0]) : null;
+  } catch (e) {
+    console.error('[score-tool] AI error:', e.message);
+    return null;
+  }
+}
+
+function _deterministicGrade(checks, ps) {
+  const g = s => s >= 85 ? 'A' : s >= 70 ? 'B' : s >= 55 ? 'C' : s >= 40 ? 'D' : 'F';
+  let ds = 60 + (checks.hasViewport ? 15 : 0) + (checks.title ? 10 : 0) + (checks.hasSsl ? 5 : 0);
+  let us = ps.mobileScore ? Math.round(ps.mobileScore * 0.7 + 30) : 50;
+  if (checks.hasViewport) us += 10;
+  let cs = 50 + (checks.hasMetaDesc ? 20 : 0) + (checks.hasH1 ? 15 : 0) + (checks.title?.length > 10 ? 10 : 0);
+  let vs = 40 + (checks.hasCta ? 25 : 0) + (checks.hasPhone ? 15 : 0) + (checks.hasSsl ? 10 : 0);
+  const avg = Math.round((ds + us + cs + vs) / 4);
+  return {
+    overallGrade: g(avg),
+    categories: {
+      design: { grade: g(ds), summary: checks.hasViewport ? 'Site appears mobile-responsive with proper viewport settings.' : 'Missing mobile viewport — site may not display correctly on phones.' },
+      ux: { grade: g(us), summary: ps.mobileScore ? `Mobile speed score of ${ps.mobileScore}/100. ${ps.mobileScore < 50 ? 'Needs significant speed improvement.' : 'Acceptable load time.'}` : 'Unable to measure page speed.' },
+      content: { grade: g(cs), summary: checks.hasMetaDesc ? 'Meta description present — good for search visibility.' : 'Missing meta description — Google cannot properly describe your site in search results.' },
+      conversion: { grade: g(vs), summary: checks.hasCta ? 'Call-to-action elements detected on the page.' : 'No clear call-to-action found — visitors have no obvious next step.' },
+    },
+    recommendations: [
+      !checks.hasSsl ? 'Enable HTTPS/SSL — your site shows as "Not Secure" to visitors.' : null,
+      !checks.hasCta ? 'Add a clear call-to-action button above the fold.' : null,
+      !checks.hasMetaDesc ? 'Add a meta description to improve your Google search listing.' : null,
+      !checks.hasPhone ? 'Add your phone number visibly on the homepage.' : null,
+      ps.mobileScore && ps.mobileScore < 70 ? `Improve mobile page speed (currently ${ps.mobileScore}/100).` : null,
+      !checks.hasH1 ? 'Add a clear H1 heading describing what your business does.' : null,
+    ].filter(Boolean).slice(0, 3),
+  };
+}
+
+function _storeLead(lead) {
+  try { fs.appendFileSync(SCORE_LEADS_FILE, JSON.stringify(lead) + '\n'); } catch (e) { console.error('[score-tool] Lead write error:', e.message); }
+  try {
+    fs.writeFileSync(path.join(SCORE_DATA_DIR, 'monthly-counter.json'),
+      JSON.stringify({ month: _scoreMonthlyResetMonth, count: _scoreMonthlyCount }));
+  } catch {}
+}
+
+async function _notifyScoreLead(lead) {
+  try {
+    const transporter = createMailTransporter();
+    await transporter.sendMail({
+      from: `"Alma Score Tool" <${process.env.GMAIL_USER_1 || 'desk@almawebcreative.com'}>`,
+      to: 'desk@almawebcreative.com',
+      subject: `Website Score Lead — ${lead.companyName} (${lead.overallGrade})`,
+      html: `
+        <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
+          <h2 style="color:#1a1a2e;border-bottom:2px solid #00d4ff;padding-bottom:10px">New Website Score Lead</h2>
+          <table style="width:100%;border-collapse:collapse">
+            <tr><td style="padding:8px;font-weight:bold;width:160px">Company</td><td style="padding:8px">${lead.companyName}</td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px">${lead.email}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold">Website</td><td style="padding:8px">${lead.url}</td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px;font-weight:bold">Overall Grade</td><td style="padding:8px;font-size:1.2rem;font-weight:bold">${lead.overallGrade}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold">Design</td><td style="padding:8px">${lead.categories?.design?.grade || '-'}</td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px;font-weight:bold">UX</td><td style="padding:8px">${lead.categories?.ux?.grade || '-'}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold">Content</td><td style="padding:8px">${lead.categories?.content?.grade || '-'}</td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px;font-weight:bold">Conversion</td><td style="padding:8px">${lead.categories?.conversion?.grade || '-'}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold">Time</td><td style="padding:8px">${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })} EST</td></tr>
+          </table>
+          <p style="color:#666;font-size:12px;margin-top:20px">This lead came from the Website Score tool at almadigitalservices.com/score. Follow up with personalized improvement recommendations.</p>
+        </div>
+      `,
+    });
+  } catch (e) {
+    console.error('[score-tool] Email notify error:', e.message);
+  }
+}
+
+app.post('/api/score', _scoreRateLimit, async (req, res) => {
+  const t0 = Date.now();
+  try {
+    const { url: rawUrl, email, companyName } = req.body;
+    if (!rawUrl || !email || !companyName) {
+      return res.status(400).json({ success: false, error: 'URL, email, and company name are required.' });
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return res.status(400).json({ success: false, error: 'Please enter a valid email address.' });
+    }
+    let url = rawUrl.trim();
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+    try { new URL(url); } catch {
+      return res.status(400).json({ success: false, error: 'Please enter a valid website URL.' });
+    }
+
+    _scoreMonthlyCount++;
+
+    const [htmlResult, psResult] = await Promise.all([_fetchUrlHtml(url), _fetchPageSpeed(url)]);
+    if (htmlResult.error && !htmlResult.html) {
+      return res.status(400).json({ success: false, error: `Could not reach ${url}. Please check the URL and try again.` });
+    }
+
+    const checks = _htmlChecks(htmlResult.html, htmlResult.finalUrl || url);
+    let analysis = await _aiAnalyze(url, htmlResult.html, checks, psResult);
+    if (!analysis) analysis = _deterministicGrade(checks, psResult);
+
+    const result = {
+      success: true,
+      url: htmlResult.finalUrl || url,
+      overallGrade: analysis.overallGrade,
+      categories: analysis.categories,
+      recommendations: analysis.recommendations || [],
+      metrics: { ssl: checks.hasSsl, mobileSpeed: psResult.mobileScore, lcp: psResult.lcp, hasMetaDesc: checks.hasMetaDesc, hasCta: checks.hasCta },
+      scanTime: Date.now() - t0,
+    };
+
+    const lead = {
+      email, companyName, url: result.url,
+      overallGrade: analysis.overallGrade,
+      categories: analysis.categories,
+      metrics: result.metrics,
+      ip: (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress,
+      timestamp: new Date().toISOString(),
+    };
+    _storeLead(lead);
+    _notifyScoreLead(lead).catch(() => {});
+
+    console.log(`[score-tool] ${url} => ${analysis.overallGrade} (${Date.now() - t0}ms)`);
+    res.json(result);
+  } catch (err) {
+    console.error('[score-tool] Error:', err);
+    res.status(500).json({ success: false, error: 'An error occurred while scanning. Please try again.' });
+  }
+});
+
+app.get('/score', (req, res) => {
+  res.sendFile(path.join(__dirname, 'score.html'));
 });
 
 // ── HEALTH CHECK ─────────────────────────────────────────────────────────────
