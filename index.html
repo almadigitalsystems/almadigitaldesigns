@@ -948,6 +948,13 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
 
 }
 
+/* AlmaSocial 3-image grid */
+.almasocial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.almasocial-item{display:flex;flex-direction:column;gap:0.5rem}
+.almasocial-grid img{max-width:100%!important;width:100%!important;height:220px!important;object-fit:cover;border-radius:12px!important;border:1px solid var(--border);box-shadow:0 8px 28px rgba(0,0,0,0.35)!important}
+.almasocial-caption{font-size:0.82rem;color:var(--muted);text-align:center;margin:0;padding-top:0.25rem}
+@media(max-width:720px){.almasocial-grid{grid-template-columns:1fr}}
+
 
 
 @media (max-width:880px){
@@ -1552,7 +1559,24 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
 
     <div class="cat-block__visual">
 
-      <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset7-instagram-grid.png" alt="AlmaSocial managed Instagram content — professional social media grid with consistent brand presence" width="1288" height="530" loading="lazy" />
+      <div class="almasocial-grid">
+
+        <div class="almasocial-item">
+          <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm12956/alm12956-instagram-mockup.png" alt="Premium Instagram post on phone — professional social media content created and posted for you" width="1024" height="768" loading="lazy" />
+          <p class="almasocial-caption">Instagram posts that stop the scroll</p>
+        </div>
+
+        <div class="almasocial-item">
+          <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm12956/alm12956-x-twitter-mockup.png" alt="X (Twitter) post with strong engagement — done-for-you social media management" width="1024" height="768" loading="lazy" />
+          <p class="almasocial-caption">X posts that drive real engagement</p>
+        </div>
+
+        <div class="almasocial-item">
+          <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm12956/alm12956-content-calendar.png" alt="Content calendar showing posts scheduled across Instagram and X — nothing falls through the cracks" width="1024" height="768" loading="lazy" />
+          <p class="almasocial-caption">Everything scheduled, nothing missed</p>
+        </div>
+
+      </div>
 
     </div>
 
