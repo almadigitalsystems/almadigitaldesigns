@@ -1403,7 +1403,68 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
 
     <div class="cat-block__visual">
 
-      <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset6-whatsapp-mockup.png" alt="AlmaReach AI WhatsApp agent — automated customer conversations, appointment booking, and lead qualification" width="1200" height="900" loading="lazy" />
+      <style>
+        .whatsapp-seq {
+          display: flex;
+          gap: 1.25rem;
+          align-items: flex-start;
+          justify-content: center;
+          padding: 1.5rem 0;
+          flex-wrap: wrap;
+        }
+        .whatsapp-seq__step {
+          flex: 1;
+          min-width: 200px;
+          max-width: 280px;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+          background: #1a1a2e;
+        }
+        .whatsapp-seq__step--mid {
+          transform: translateY(-20px);
+        }
+        .whatsapp-seq__step img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        .whatsapp-seq__label {
+          background: rgba(0,180,216,0.18);
+          color: #00b4d8;
+          font-size: 0.7rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          padding: 0.65rem 1rem;
+          text-align: center;
+          border-top: 1px solid rgba(0,180,216,0.25);
+        }
+        @media (max-width: 600px) {
+          .whatsapp-seq { gap: 0.75rem; }
+          .whatsapp-seq__step { max-width: 180px; border-radius: 14px; }
+          .whatsapp-seq__step--mid { transform: translateY(-12px); }
+        }
+      </style>
+
+      <div class="whatsapp-seq">
+
+        <div class="whatsapp-seq__step">
+          <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm12955/whatsapp-img1-customer-message.webp" alt="Customer asking a question on WhatsApp — Do you have availability this Saturday?" width="1024" height="1820" loading="eager" />
+          <div class="whatsapp-seq__label">01 &mdash; Customer asks</div>
+        </div>
+
+        <div class="whatsapp-seq__step whatsapp-seq__step--mid">
+          <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm12955/whatsapp-img2-ai-reply.webp" alt="AI agent replies instantly on WhatsApp with a smart, friendly answer in the business voice" width="1024" height="1820" loading="eager" />
+          <div class="whatsapp-seq__label">02 &mdash; AI replies instantly</div>
+        </div>
+
+        <div class="whatsapp-seq__step">
+          <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm12955/whatsapp-img3-owner-peace.webp" alt="Business owner checks their phone and sees conversations handled automatically — hands free" width="1024" height="1280" loading="lazy" />
+          <div class="whatsapp-seq__label">03 &mdash; You stay hands-free</div>
+        </div>
+
+      </div>
 
     </div>
 
