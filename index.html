@@ -1,1211 +1,2434 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8" />
+
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+
 <title>The Website That Does the Selling for You | Alma Digital Services</title>
+
 <meta name="description" content="We identify your website's revenue gaps, redesign it with AI, and show you the impact — before you spend a dollar. Live preview in 24–48 hours. Starting at $50." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
 <style>
+
 :root{
+
   --bg:#0A1A2E;
+
   --bg-2:#1A1A1A;
+
   --bg-card:rgba(255,255,255,0.04);
+
   --border:rgba(255,255,255,0.08);
+
   --cyan:#00B4D8;
+
   --purple:#7B61FF;
+
   --grad:linear-gradient(135deg,#00B4D8 0%,#7B61FF 100%);
+
   --text:#F5F7FA;
+
   --muted:#9AA8B5;
+
   --ease:cubic-bezier(0.16,1,0.3,1);
+
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth}
+
 body{
+
   background:var(--bg);
+
   color:var(--text);
+
   font-family:'Inter',system-ui,sans-serif;
+
   font-weight:500;
+
   letter-spacing:-0.01em;
+
   line-height:1.55;
+
   -webkit-font-smoothing:antialiased;
+
   overflow-x:hidden;
+
 }
+
 h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-0.02em;line-height:1.1}
+
 .mono{font-family:'JetBrains Mono',monospace;font-weight:500}
+
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
+
+
 /* nav */
+
 nav{
+
   position:sticky;top:0;z-index:50;
+
   backdrop-filter:blur(16px);
+
   background:rgba(10,26,46,0.78);
+
   border-bottom:1px solid var(--border);
+
 }
+
 .nav__inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+
 .brand{font-family:'Playfair Display',serif;font-weight:700;font-size:1.4rem;color:var(--text);text-decoration:none}
+
 .brand span{color:var(--cyan)}
+
 .nav__cta{
+
   background:var(--grad);color:#fff;padding:0.7rem 1.4rem;border-radius:100px;
+
   font-weight:600;font-size:0.9rem;text-decoration:none;
+
   transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease);
+
 }
+
 .nav__cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,180,216,0.35)}
 
+
+
 /* hero */
+
 .hero{position:relative;padding:7rem 0 6rem;overflow:hidden}
+
 .hero::before{
+
   content:'';position:absolute;inset:0;
+
   background:
+
     radial-gradient(circle at 15% 20%,rgba(0,180,216,0.18) 0%,transparent 45%),
+
     radial-gradient(circle at 85% 60%,rgba(123,97,255,0.18) 0%,transparent 50%);
+
   z-index:0;
+
 }
+
 .hero__grid{
+
   position:absolute;inset:0;
+
   background-image:
+
     linear-gradient(rgba(0,180,216,0.04) 1px,transparent 1px),
+
     linear-gradient(90deg,rgba(0,180,216,0.04) 1px,transparent 1px);
+
   background-size:60px 60px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+
   z-index:0;
+
 }
+
 .hero__inner{position:relative;z-index:1;max-width:880px}
+
 .hero__eyebrow{
+
   display:inline-flex;align-items:center;gap:0.5rem;
+
   background:rgba(0,180,216,0.1);border:1px solid rgba(0,180,216,0.3);
+
   border-radius:100px;padding:0.45rem 1.1rem;
+
   font-size:0.78rem;font-weight:600;color:var(--cyan);
+
   margin-bottom:1.75rem;letter-spacing:0.02em;
+
 }
+
 .hero__eyebrow::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%}
+
 .hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:1.5rem}
+
 .hero h1 .grad-text{font-style:italic}
+
 .hero__sub{font-size:1.2rem;color:var(--muted);max-width:680px;margin-bottom:2.5rem;line-height:1.6}
+
 .hero__ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.25rem}
+
 .btn-primary{
+
   background:var(--grad);color:#fff;padding:1rem 1.8rem;
+
   border-radius:100px;font-weight:600;font-size:0.98rem;text-decoration:none;
+
   display:inline-flex;align-items:center;gap:0.5rem;
+
   transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease);
+
 }
+
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,180,216,0.4)}
+
 .btn-secondary{
+
   background:transparent;color:var(--text);padding:1rem 1.8rem;
+
   border:1px solid var(--border);border-radius:100px;font-weight:600;font-size:0.98rem;text-decoration:none;
+
   transition:border-color 0.4s var(--ease),background 0.4s var(--ease);
+
 }
+
 .btn-secondary:hover{border-color:var(--cyan);background:rgba(0,180,216,0.06)}
+
 .hero__trust{font-size:0.95rem;color:var(--muted);max-width:620px}
 
+
+
 .hero__tagline{
+
   font-family:'Playfair Display',serif;
+
   font-size:clamp(1.4rem,3vw,2rem);
+
   font-weight:700;
+
   letter-spacing:-0.02em;
+
   line-height:1.2;
+
   margin-bottom:1.25rem;
+
   background:var(--grad);
+
   -webkit-background-clip:text;
+
   background-clip:text;
+
   color:transparent;
+
 }
+
+
 
 /* category section */
+
 .category{padding:6rem 0;background:var(--bg);position:relative}
+
 .category h2{font-size:clamp(2rem,3.6vw,2.8rem);max-width:920px;margin-bottom:3rem}
+
 .category h2 .grad-text{display:inline}
+
 .category__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+
 .cat-col{
+
   background:var(--bg-card);border:1px solid var(--border);
+
   border-radius:18px;padding:2rem 1.75rem;
+
   transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+
   display:flex;flex-direction:column;gap:1rem;
+
 }
+
 .cat-col:hover{transform:translateY(-4px);border-color:rgba(0,180,216,0.25)}
+
 .cat-col.featured{
+
   border-color:rgba(0,180,216,0.4);
+
   background:linear-gradient(180deg,rgba(0,180,216,0.06) 0%,rgba(123,97,255,0.04) 100%);
+
   position:relative;
+
 }
+
 .cat-col.featured::after{
+
   content:'';position:absolute;inset:0;border-radius:18px;
+
   background:var(--grad);opacity:0;transition:opacity 0.5s var(--ease);
+
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+
   -webkit-mask-composite:xor;mask-composite:exclude;
+
   padding:1px;pointer-events:none;
+
 }
+
 .cat-col.featured:hover::after{opacity:1}
+
 .cat-col h3{font-family:'Inter',sans-serif;font-weight:700;font-size:1.1rem;line-height:1.35;letter-spacing:-0.01em}
+
 .cat-col h3 .price{display:block;font-size:0.82rem;font-weight:500;color:var(--muted);margin-top:0.4rem;letter-spacing:0;font-family:'JetBrains Mono',monospace}
+
 .cat-col ul{list-style:none;display:flex;flex-direction:column;gap:0.75rem;flex:1}
+
 .cat-col li{padding-left:1.4rem;position:relative;font-size:0.95rem;color:var(--text);line-height:1.55}
+
 .cat-col li::before{
+
   content:'';position:absolute;left:0;top:0.55rem;width:8px;height:8px;
+
   background:rgba(255,255,255,0.18);border-radius:50%;
+
 }
+
 .cat-col.featured li::before{background:var(--cyan)}
+
 .category__close{margin-top:2.5rem;font-size:1.05rem;color:var(--muted);max-width:780px}
+
 .category__close strong{color:var(--text);font-weight:600}
 
+
+
 /* pricing */
+
 .pricing{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 100%)}
+
 .pricing__head{text-align:center;margin-bottom:3.5rem}
+
 .pricing__head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1rem}
+
 .pricing__head p{color:var(--muted);max-width:720px;margin:0 auto;font-size:1.05rem}
+
 .pricing__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+
 .tier{
+
   background:var(--bg-card);border:1px solid var(--border);
+
   border-radius:22px;padding:2.25rem 2rem;
+
   display:flex;flex-direction:column;gap:1.25rem;
+
   position:relative;
+
   transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+
 }
+
 .tier:hover{transform:translateY(-6px);border-color:rgba(0,180,216,0.25)}
+
 .tier.featured{
+
   border-color:rgba(0,180,216,0.4);
+
   background:linear-gradient(180deg,rgba(0,180,216,0.07) 0%,rgba(123,97,255,0.03) 100%);
+
 }
+
 .tier__badge{
+
   position:absolute;top:-12px;left:2rem;
+
   background:var(--grad);color:#fff;
+
   font-size:0.72rem;font-weight:700;letter-spacing:0.08em;
+
   padding:0.4rem 0.9rem;border-radius:100px;text-transform:uppercase;
+
 }
+
 .tier__name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;letter-spacing:0.02em;text-transform:uppercase}
+
 .tier__price{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;line-height:1}
+
 .tier__price .small{font-size:0.85rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:500;letter-spacing:0;margin-left:0.4rem}
+
 .tier__tag{color:var(--cyan);font-style:italic;font-size:0.95rem}
+
 .tier ul{list-style:none;display:flex;flex-direction:column;gap:0.7rem;margin:0.5rem 0 0.5rem}
+
 .tier li{padding-left:1.6rem;position:relative;font-size:0.95rem;line-height:1.55}
+
 .tier li::before{
+
   content:'✓';position:absolute;left:0;top:0;color:var(--cyan);font-weight:700;
+
 }
+
 .tier__hosting{font-size:0.88rem;color:var(--cyan);text-align:center;margin-top:0.5rem;font-weight:500}
+
 .tier__seal{
+
   margin-top:0.5rem;padding:0.85rem 1rem;
+
   background:rgba(0,180,216,0.08);border:1px solid rgba(0,180,216,0.2);
+
   border-radius:12px;font-size:0.92rem;color:var(--text);text-align:center;font-weight:600;
+
 }
+
 .tier__cta{
+
   margin-top:auto;display:inline-flex;justify-content:center;
+
   background:var(--grad);color:#fff;padding:0.95rem 1.5rem;
+
   border-radius:100px;font-weight:600;font-size:0.95rem;text-decoration:none;
+
   transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease);
+
 }
+
 .tier__cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,180,216,0.35)}
+
 .tier__cta.outline{background:transparent;border:1px solid var(--border)}
+
 .tier__cta.outline:hover{border-color:var(--cyan);background:rgba(0,180,216,0.06);box-shadow:none}
+.tier__cta-group{margin-top:auto;display:flex;flex-direction:column;gap:0.65rem}
+.tier__cta-group .tier__cta{margin-top:0;font-size:0.88rem;padding:0.8rem 1.2rem}
+
 .pricing__footnote{
+
   margin-top:3rem;padding:1.75rem;
+
   background:var(--bg-card);border:1px solid var(--border);border-radius:18px;
+
   text-align:center;color:var(--muted);font-size:0.95rem;
+
 }
+
 .pricing__footnote strong{color:var(--text);display:block;margin-bottom:0.5rem;font-size:1.02rem}
 
+
+
 /* why alma */
+
 .why{padding:6rem 0;background:var(--bg);position:relative;overflow:hidden}
+
 .why::before{
+
   content:'';position:absolute;inset:0;
+
   background:radial-gradient(circle at 70% 30%,rgba(123,97,255,0.12) 0%,transparent 60%);
+
   z-index:0;
+
 }
+
 .why__inner{max-width:880px;margin:0 auto;position:relative;z-index:1}
+
 .why h2{font-size:clamp(2rem,3.8vw,3rem);margin-bottom:2rem}
+
 .why p{color:var(--muted);font-size:1.1rem;margin-bottom:1.4rem;line-height:1.75}
+
 .why p strong{color:var(--text);font-weight:600}
 
+
+
 /* faq */
+
 .faq{padding:6rem 0;background:linear-gradient(180deg,#0d2138 0%,var(--bg) 100%)}
+
 .faq__head{text-align:center;margin-bottom:3rem}
+
 .faq__head h2{font-size:clamp(2rem,3.6vw,2.6rem);margin-bottom:0.75rem}
+
 .faq__head p{color:var(--muted)}
+
 .faq__list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:0.75rem}
+
 .faq-item{
+
   background:var(--bg-card);border:1px solid var(--border);
+
   border-radius:14px;overflow:hidden;
+
   transition:border-color 0.4s var(--ease);
+
 }
+
 .faq-item:hover{border-color:rgba(0,180,216,0.3)}
+
 .faq-q{
+
   width:100%;background:none;border:none;color:var(--text);
+
   padding:1.4rem 1.6rem;font-size:1.05rem;font-weight:600;
+
   display:flex;justify-content:space-between;align-items:center;gap:1rem;
+
   cursor:pointer;text-align:left;font-family:'Inter',sans-serif;letter-spacing:-0.01em;
+
 }
+
 .faq-q::after{content:'+';color:var(--cyan);font-size:1.4rem;font-weight:400;transition:transform 0.4s var(--ease)}
+
 .faq-item.open .faq-q::after{transform:rotate(45deg)}
+
 .faq-a{
+
   max-height:0;overflow:hidden;
+
   transition:max-height 0.5s var(--ease),padding 0.5s var(--ease);
+
   padding:0 1.6rem;color:var(--muted);font-size:1rem;line-height:1.7;
+
 }
+
 .faq-item.open .faq-a{max-height:600px;padding:0 1.6rem 1.4rem}
 
+
+
 /* catalog (More from Alma) */
+
 .catalog{padding:6rem 0 5rem;background:linear-gradient(180deg,#0d2138 0%,var(--bg) 100%);position:relative;overflow:hidden}
+
 .catalog::before{
+
   content:'';position:absolute;inset:0;
+
   background:radial-gradient(circle at 80% 10%,rgba(123,97,255,0.10) 0%,transparent 55%),
+
              radial-gradient(circle at 10% 90%,rgba(0,180,216,0.10) 0%,transparent 55%);
+
   z-index:0;pointer-events:none;
+
 }
+
 .catalog__inner{position:relative;z-index:1}
+
 .catalog__head{text-align:center;margin-bottom:3.5rem;max-width:780px;margin-left:auto;margin-right:auto}
+
 .catalog__head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1rem}
+
 .catalog__head h2 .grad-text{display:inline}
+
 .catalog__head p{color:var(--muted);font-size:1.05rem;line-height:1.65}
+
 .cat-block{padding:3rem 0;border-top:1px solid var(--border)}
+
 .cat-block:first-of-type{border-top:0;padding-top:0.5rem}
+
 .cat-block__head{margin-bottom:1.75rem;max-width:760px}
+
 .cat-block__eyebrow{
+
   display:inline-flex;align-items:center;gap:0.5rem;
+
   background:rgba(0,180,216,0.08);border:1px solid rgba(0,180,216,0.25);
+
   border-radius:100px;padding:0.35rem 0.95rem;
+
   font-size:0.7rem;font-weight:700;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;
+
   margin-bottom:1rem;
+
 }
+
 .cat-block__head h3{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;margin-bottom:0.75rem;letter-spacing:-0.02em;line-height:1.2}
+
 .cat-block__head h3 .grad-text{display:inline}
+
 .cat-block__head p{color:var(--muted);font-size:1.02rem;line-height:1.65}
+
 .cat-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+
 .cat-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+
 .cat-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+
 .cat-grid-1{display:grid;grid-template-columns:minmax(0,560px);justify-content:center;gap:1.25rem}
+
 .cat-card{
+
   background:var(--bg-card);border:1px solid var(--border);
+
   border-radius:18px;padding:1.85rem 1.6rem;
+
   display:flex;flex-direction:column;gap:0.85rem;position:relative;
+
   transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+
 }
+
 .cat-card:hover{transform:translateY(-4px);border-color:rgba(0,180,216,0.25)}
+
 .cat-card.featured{
+
   border-color:rgba(0,180,216,0.4);
+
   background:linear-gradient(180deg,rgba(0,180,216,0.07) 0%,rgba(123,97,255,0.03) 100%);
+
 }
+
 .cat-card__badge{
+
   position:absolute;top:-10px;left:1.4rem;
+
   background:var(--grad);color:#fff;
+
   font-size:0.66rem;font-weight:700;letter-spacing:0.08em;
+
   padding:0.32rem 0.75rem;border-radius:100px;text-transform:uppercase;
+
 }
+
 .cat-card__name{font-family:'Inter',sans-serif;font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+
 .cat-card.featured .cat-card__name{color:var(--cyan)}
+
 .cat-card__title{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;line-height:1.25;letter-spacing:-0.01em}
+
 .cat-card__price{font-family:'Playfair Display',serif;font-size:1.85rem;font-weight:700;line-height:1;margin-top:0.1rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:0.35rem}
+
 .cat-card__price .small{font-size:0.78rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:500;letter-spacing:0}
+
 .cat-card__price .add{font-size:1.05rem;color:var(--text);font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-0.01em}
+
 .cat-card__price .add .add-amt{color:var(--cyan)}
+
 .cat-card__tag{color:var(--cyan);font-style:italic;font-size:0.92rem;line-height:1.45}
+
 .cat-card__save{
+
   display:inline-flex;align-items:center;align-self:flex-start;
+
   background:rgba(0,180,216,0.1);border:1px solid rgba(0,180,216,0.25);
+
   color:var(--cyan);font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+
   padding:0.32rem 0.7rem;border-radius:100px;
+
 }
+
 .cat-card ul{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin:0.25rem 0;flex:1}
+
 .cat-card li{padding-left:1.4rem;position:relative;font-size:0.92rem;line-height:1.5}
+
 .cat-card li::before{content:'✓';position:absolute;left:0;top:0;color:var(--cyan);font-weight:700}
+
 .cat-card__use{font-size:0.84rem;color:var(--muted);line-height:1.5;font-style:italic;margin-top:auto}
+
 .cat-card__cta{
+
   margin-top:0.4rem;display:inline-flex;justify-content:center;
+
   padding:0.8rem 1.2rem;border-radius:100px;
+
   font-weight:600;font-size:0.9rem;text-decoration:none;
+
   border:1px solid var(--border);color:var(--text);background:transparent;
+
   transition:border-color 0.4s var(--ease),background 0.4s var(--ease),transform 0.4s var(--ease),box-shadow 0.4s var(--ease);
+
 }
+
 .cat-card__cta:hover{border-color:var(--cyan);background:rgba(0,180,216,0.06)}
+
 .cat-card.featured .cat-card__cta{background:var(--grad);border-color:transparent;color:#fff}
+
 .cat-card.featured .cat-card__cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,180,216,0.3);background:var(--grad)}
+
 .cat-block__close{margin-top:2.25rem;text-align:center;color:var(--muted);font-size:1rem;line-height:1.6}
+
 .cat-block__close a{color:var(--cyan);text-decoration:none;font-weight:600}
+
 .cat-block__close a:hover{text-decoration:underline}
 
+
+
 @media (max-width:1080px){
+
   .cat-grid-4{grid-template-columns:repeat(2,1fr)}
+
   .cat-grid-3{grid-template-columns:repeat(2,1fr)}
+
 }
+
 @media (max-width:680px){
+
   .cat-grid-2,.cat-grid-3,.cat-grid-4{grid-template-columns:1fr;gap:1rem}
+
   .cat-grid-1{grid-template-columns:1fr}
+
   .cat-block{padding:2.5rem 0}
+
   .catalog{padding:4.5rem 0 3.5rem}
+
 }
+
+
 
 /* contact */
+
 .contact{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 100%);position:relative;overflow:hidden}
+
 .contact::before{
+
   content:'';position:absolute;inset:0;
+
   background:radial-gradient(circle at 25% 30%,rgba(0,180,216,0.14) 0%,transparent 55%);
+
   z-index:0;
+
 }
+
 .contact__inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+
 .contact__head{text-align:center;margin-bottom:2.5rem}
+
 .contact__head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1rem}
+
 .contact__head p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:0 auto;line-height:1.65}
+
 .contact__form{
+
   background:var(--bg-card);border:1px solid var(--border);
+
   border-radius:22px;padding:2.25rem;
+
   display:flex;flex-direction:column;gap:1.1rem;
+
 }
+
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+
 .contact__form label{display:flex;flex-direction:column;gap:0.45rem;font-size:0.9rem;color:var(--muted);font-weight:500}
+
 .contact__form label span{font-size:0.82rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted)}
+
 .contact__form input,
+
 .contact__form textarea{
+
   background:rgba(10,26,46,0.6);border:1px solid var(--border);
+
   border-radius:12px;padding:0.85rem 1rem;
+
   color:var(--text);font-family:'Inter',sans-serif;font-size:0.98rem;font-weight:500;
+
   transition:border-color 0.4s var(--ease),background 0.4s var(--ease);
+
   resize:vertical;
+
 }
+
 .contact__form input:focus,
+
 .contact__form textarea:focus{outline:none;border-color:var(--cyan);background:rgba(10,26,46,0.85)}
+
 .contact__form textarea{min-height:120px;line-height:1.6}
+
 .contact__submit{
+
   align-self:flex-start;border:none;cursor:pointer;
+
   font-family:'Inter',sans-serif;
+
 }
+
 .contact__fineprint{font-size:0.88rem;color:var(--muted);margin-top:0.25rem;line-height:1.6}
+
 .contact__fineprint a{color:var(--cyan);text-decoration:none}
+
 .contact__fineprint a:hover{text-decoration:underline}
 
+
+
 /* footer */
+
 footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--border)}
+
 .foot__tagline{
+
   font-family:'Playfair Display',serif;font-style:italic;font-weight:600;
+
   font-size:clamp(1.3rem,2.2vw,1.7rem);
+
   text-align:center;max-width:820px;margin:0 auto 2rem;line-height:1.4;
+
   color:var(--text);
+
 }
+
 .foot__meta{
+
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+
   font-size:0.85rem;color:var(--muted);
+
   border-top:1px solid var(--border);padding-top:2rem;margin-top:2rem;
+
 }
+
 .foot__meta a{color:var(--muted);text-decoration:none;margin:0 0.6rem}
+
 .foot__meta a:hover{color:var(--cyan)}
 
+
+
 /* differentiator strip */
+
 .diff-strip{padding:4rem 0 2rem}
+
 .diff-strip__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+
 .diff-card{
+
   background:var(--bg-card);border:1px solid var(--border);
+
   border-radius:18px;padding:2rem 1.75rem;
+
   transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+
 }
+
 .diff-card:hover{transform:translateY(-4px);border-color:rgba(0,180,216,0.25)}
+
 .diff-card__label{
+
   font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:700;
+
   letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.6rem;
+
 }
+
 .diff-card__tagline{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;line-height:1.25}
+
 .diff-card p{color:var(--muted);font-size:0.95rem;line-height:1.65}
+
 .diff-strip__trust{
+
   margin-top:2.25rem;padding:1.5rem 2rem;text-align:center;
+
   color:var(--muted);font-size:0.95rem;line-height:1.65;
+
   background:var(--bg-card);border:1px solid var(--border);border-radius:14px;
+
 }
+
 .diff-strip__alt{margin-top:1.25rem;text-align:center;font-size:1rem;color:var(--muted);font-style:italic}
 
+
+
 @media (max-width:880px){
+
   .category__grid,.pricing__grid{grid-template-columns:1fr;gap:1.25rem}
+
   .hero{padding:5rem 0 4rem}
+
   .hero__ctas{flex-direction:column;align-items:stretch}
+
   .btn-primary,.btn-secondary{justify-content:center;text-align:center}
+
   .diff-strip__grid{grid-template-columns:1fr;gap:1rem}
+
   .form-row{grid-template-columns:1fr}
+
   .contact__form{padding:1.75rem}
+
   .contact__submit{align-self:stretch;justify-content:center}
+
 }
+
+
 
 /* hero visual */
+
 .hero__visual{
+
   position:relative;z-index:1;
+
   margin-top:3rem;max-width:960px;
+
 }
+
 .hero__visual img{
+
   width:100%;height:auto;border-radius:16px;
+
   box-shadow:0 24px 60px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.06);
+
 }
+
+
 
 /* portfolio showcase */
+
 .showcase{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 50%,var(--bg) 100%);position:relative;overflow:hidden}
+
 .showcase::before{
+
   content:'';position:absolute;inset:0;
+
   background:radial-gradient(circle at 30% 40%,rgba(0,180,216,0.12) 0%,transparent 50%),
+
              radial-gradient(circle at 80% 70%,rgba(123,97,255,0.10) 0%,transparent 50%);
+
   z-index:0;pointer-events:none;
+
 }
+
 .showcase__inner{position:relative;z-index:1}
+
 .showcase__head{text-align:center;margin-bottom:3rem;max-width:780px;margin-left:auto;margin-right:auto}
+
 .showcase__head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1rem}
+
 .showcase__head p{color:var(--muted);font-size:1.05rem;line-height:1.65}
+
 .showcase__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2rem}
+
 .showcase__item{
+
   background:var(--bg-card);border:1px solid var(--border);
+
   border-radius:18px;overflow:hidden;
+
   transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+
 }
+
 .showcase__item:hover{transform:translateY(-6px);border-color:rgba(0,180,216,0.3)}
+
 .showcase__item img{width:100%;height:auto;display:block}
+
 .showcase__item figcaption{padding:1.25rem 1.5rem}
+
 .showcase__item figcaption strong{display:block;font-size:1rem;margin-bottom:0.35rem;color:var(--text)}
+
 .showcase__item figcaption span{font-size:0.88rem;color:var(--muted)}
+
 .showcase__featured{
+
   background:var(--bg-card);border:1px solid rgba(0,180,216,0.3);
+
   border-radius:18px;overflow:hidden;
+
   transition:transform 0.5s var(--ease),border-color 0.5s var(--ease);
+
 }
+
 .showcase__featured:hover{transform:translateY(-4px);border-color:rgba(0,180,216,0.5)}
+
 .showcase__featured img{width:100%;height:auto;display:block}
+
 .showcase__featured figcaption{padding:1.25rem 1.5rem;text-align:center}
+
 .showcase__featured figcaption strong{display:block;font-size:1.05rem;margin-bottom:0.35rem;color:var(--text)}
+
 .showcase__featured figcaption span{font-size:0.9rem;color:var(--muted)}
 
+
+
 /* catalog block visuals */
+
 .cat-block__visual{margin-top:1.5rem;margin-bottom:1.5rem}
+
 .cat-block__visual img{
+
   width:100%;max-width:720px;height:auto;border-radius:14px;
+
   border:1px solid var(--border);
+
   box-shadow:0 12px 36px rgba(0,0,0,0.3);
+
 }
+
+
 
 @media (max-width:880px){
+
   .showcase__grid{grid-template-columns:1fr;gap:1.25rem}
+
   .hero__visual{margin-top:2rem}
+
 }
+
 </style>
+
 </head>
+
 <body>
 
+
+
 <nav>
+
   <div class="container nav__inner">
+
     <a href="#" class="brand">Alma <span>Digital</span> Services</a>
+
     <a href="#contact" class="nav__cta">Get in touch</a>
+
   </div>
+
 </nav>
 
+
+
 <!-- 1. HERO -->
+
 <section class="hero">
+
   <div class="hero__grid"></div>
+
   <div class="container">
+
     <div class="hero__inner">
+
       <div class="hero__eyebrow">Public pricing. AI-native pipeline. Live previews in 24-48 hours.</div>
+
       <h1>The website that does the selling for you.</h1>
+
       <p class="hero__sub">We identify the gaps in your current site, redesign it with AI, and show you the revenue impact — before you spend a dollar.</p>
+
       <div class="hero__ctas">
+
         <a href="#contact" class="btn-primary">See your free preview →</a>
+
         <a href="#pricing" class="btn-secondary">View pricing →</a>
+
       </div>
+
     <div class="hero__visual">
+
       <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset1-hero-macbook.png" alt="Alma Digital Services website preview on MacBook — custom website design starting at $50" width="1920" height="1080" loading="eager" />
+
     </div>
+
     </div>
+
   </div>
+
 </section>
 
+
+
 <!-- DIFFERENTIATOR STRIP -->
+
 <section class="diff-strip">
+
   <div class="container">
+
     <div class="diff-strip__grid">
+
       <div class="diff-card">
+
         <div class="diff-card__label">Speed</div>
+
         <div class="diff-card__tagline">Live preview in 24–48 hours.</div>
+
         <p>Most agencies quote 4–6 weeks. We ship a working preview of your site in 24–48 hours. You click through it on your phone before any money changes hands.</p>
+
       </div>
+
       <div class="diff-card">
+
         <div class="diff-card__label">Tier transparency</div>
+
         <div class="diff-card__tagline">Public pricing. No “request a quote.”</div>
+
         <p>Starter $50 · Growth $100 · Premium $150. One-time. Optional hosting from $15/mo. Every tier has a public Stripe link. No discovery call required. No hidden enterprise tier.</p>
+
       </div>
+
       <div class="diff-card">
+
         <div class="diff-card__label">AI-native</div>
+
         <div class="diff-card__tagline">AI in the pipeline, not just the pitch deck.</div>
+
         <p>We use AI through every step — research, layout, copy, QA. It’s how we ship in 24–48 hours instead of weeks. Not a marketing buzzword. Open the source on any preview and you’ll see it.</p>
+
       </div>
+
     </div>
+
     <p class="diff-strip__trust">Every preview is a real, hosted page. Click through it. Show your team. Pay only when you decide it’s right. No contracts. Cancel hosting anytime.</p>
+
     <p class="diff-strip__alt">Other agencies sell vibes. We ship working previews — fast, public-priced, AI-built. Within 24-48 hours, your site is on a real URL.</p>
+
   </div>
+
 </section>
+
+
+
 
 
 <!-- PORTFOLIO SHOWCASE -->
+
 <section class="showcase">
+
   <div class="container showcase__inner">
+
     <div class="showcase__head">
+
       <h2>Real work. <span class="grad-text">Real businesses.</span></h2>
+
       <p>Every site is custom-built by our senior team — strategy, design, copy, and launch. Here is a sample of what we deliver.</p>
+
     </div>
+
     <div class="showcase__grid">
+
       <figure class="showcase__item">
+
         <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset2-portfolio-restaurant.png" alt="Custom restaurant website design by Alma Digital Services — modern layout with online menu and reservations" width="1024" height="1024" loading="lazy" />
+
         <figcaption><strong>Restaurant</strong><span>Custom website with online menu, reservations, and brand identity</span></figcaption>
+
       </figure>
+
       <figure class="showcase__item">
+
         <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset3-portfolio-dental.png" alt="Custom dental practice website design by Alma Digital Services — professional healthcare web presence" width="1024" height="1024" loading="lazy" />
+
         <figcaption><strong>Dental Practice</strong><span>Professional healthcare site with appointment booking and patient portal</span></figcaption>
+
       </figure>
+
       <figure class="showcase__item">
+
         <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset4-portfolio-law.png" alt="Custom law firm website design by Alma Digital Services — authoritative legal practice web presence" width="1024" height="1024" loading="lazy" />
+
         <figcaption><strong>Law Firm</strong><span>Authoritative legal site with case inquiry forms and practice area pages</span></figcaption>
+
       </figure>
+
       <figure class="showcase__item">
+
         <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset5-portfolio-spa.png" alt="Custom beauty salon and spa website design by Alma Digital Services — elegant wellness web presence" width="1024" height="1024" loading="lazy" />
+
         <figcaption><strong>Beauty Salon &amp; Spa</strong><span>Elegant wellness site with online booking and service showcase</span></figcaption>
+
       </figure>
+
     </div>
+
     <figure class="showcase__featured">
+
       <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset8-before-after.png" alt="Before and after website transformation — restaurant site redesigned by Alma Digital Services" width="1600" height="900" loading="lazy" />
+
       <figcaption><strong>Before &amp; After</strong><span>A real restaurant website transformation — from outdated template to custom-built, conversion-ready design</span></figcaption>
+
     </figure>
+
   </div>
+
 </section>
+
+
 
 <!-- 2. CATEGORY POSITIONING -->
+
 <section class="category" id="work">
+
   <div class="container">
+
     <h2>There are three ways to get a website in 2026. We are the only one <span class="grad-text">built for businesses that need it to actually work.</span></h2>
+
     <div class="category__grid">
 
-      <div class="cat-col">
-        <h3>Disposable AI builders<span class="price">$29–$49 / mo</span></h3>
-        <ul>
-          <li>Lovable, LazySands, and the rest</li>
-          <li>You write the prompts, debug what breaks, and QA the output</li>
-          <li>Built for: hobby projects and weekend builds</li>
-        </ul>
-      </div>
+
 
       <div class="cat-col">
-        <h3>Traditional agencies<span class="price">$8,000–$30,000</span></h3>
+
+        <h3>Disposable AI builders<span class="price">$29–$49 / mo</span></h3>
+
         <ul>
-          <li>6-week kickoff. 4-month delivery.</li>
-          <li>Beautiful — eventually</li>
-          <li>Built for: enterprises with procurement teams</li>
+
+          <li>Lovable, LazySands, and the rest</li>
+
+          <li>You write the prompts, debug what breaks, and QA the output</li>
+
+          <li>Built for: hobby projects and weekend builds</li>
+
         </ul>
+
       </div>
+
+
+
+      <div class="cat-col">
+
+        <h3>Traditional agencies<span class="price">$8,000–$30,000</span></h3>
+
+        <ul>
+
+          <li>6-week kickoff. 4-month delivery.</li>
+
+          <li>Beautiful — eventually</li>
+
+          <li>Built for: enterprises with procurement teams</li>
+
+        </ul>
+
+      </div>
+
+
 
       <div class="cat-col featured">
+
         <h3><span class="grad-text">Alma Digital Services</span><span class="price">from $500</span></h3>
+
         <ul>
+
           <li>A senior team builds it for you, end-to-end</li>
+
           <li>AI accelerates production. Humans own the outcome.</li>
+
           <li>Delivered in days. Built for businesses that need their website to work.</li>
+
         </ul>
+
       </div>
 
+
+
     </div>
+
     <p class="category__close"><strong>Built for businesses that need their website to work — not their owner to learn one.</strong></p>
+
   </div>
+
 </section>
 
+
+
 <!-- 3. PRICING -->
+
 <section class="pricing" id="pricing">
+
   <div class="container">
+
     <div class="pricing__head">
+
       <h2>Concierge website packages.<br/><span class="grad-text">One flat fee. Built by humans.</span></h2>
+
       <p>Every package includes strategy, design, copywriting, build, launch, and a senior team that answers when you write to them. No subscriptions to a tool you have to learn. No hourly billing. No surprises.</p>
+
     </div>
+
+
 
     <div class="pricing__grid">
 
+
+
       <div class="tier">
+
         <div class="tier__name">Starter</div>
+
         <div class="tier__price">$50<span class="small">one-time</span></div>
+
         <p class="tier__tag">For service businesses ready to look the part.</p>
+
         <ul>
+
           <li>5-page custom site</li>
+
           <li>Brand strategy session</li>
+
           <li>Senior designer assigned to your project</li>
+
           <li>Professional copy written for you</li>
+
           <li>Mobile-perfect, SEO-ready</li>
+
           <li>Launched in 5 business days</li>
+
           <li>30 days of post-launch revisions</li>
+
         </ul>
+
         <p class="tier__hosting">+ Website Hosting: $15/month — SSL certificate, daily backups, 99.9% uptime, technical support</p>
+
         <div class="tier__seal">See it before you pay a dollar.</div>
-        <a href="https://buy.stripe.com/9B66oG1C67OK3cb9e36Zy1c" class="tier__cta outline">Get started →</a>
+
+        <div class="tier__cta-group">
+          <a href="https://buy.stripe.com/9B66oG1C67OK3cb9e36Zy1c" class="tier__cta outline">Website Only &mdash; $50 &rarr;</a>
+          <a href="https://buy.stripe.com/7sY4gyfsW6KGfYX4XN6Zy1m" class="tier__cta">Website + Hosting &mdash; $50 + $15/mo &rarr;</a>
+        </div>
+
       </div>
+
+
 
       <div class="tier featured">
+
         <div class="tier__badge">Most popular</div>
+
         <div class="tier__name">Growth</div>
+
         <div class="tier__price">$100<span class="small">one-time</span></div>
+
         <p class="tier__tag">For businesses scaling past their current site.</p>
+
         <ul>
+
           <li>Everything in Essential, plus:</li>
+
           <li>10-page fully custom site</li>
+
           <li>Conversion-optimized layout (informed by your actual customer data)</li>
+
           <li>Custom photography direction or AI-art curation</li>
+
           <li>Lead capture, booking, or e-commerce integration</li>
+
           <li>Analytics + tracking setup</li>
+
           <li>60 days of post-launch revisions</li>
+
           <li>Quarterly performance review for 12 months</li>
+
         </ul>
+
         <p class="tier__hosting">+ Website Hosting: $15/month — SSL certificate, daily backups, 99.9% uptime, technical support</p>
+
         <div class="tier__seal">See it before you pay a dollar.</div>
-        <a href="https://buy.stripe.com/14A28q2Ga9WS9Az75V6Zy1d" class="tier__cta">Get started →</a>
+
+        <div class="tier__cta-group">
+          <a href="https://buy.stripe.com/14A28q2Ga9WS9Az75V6Zy1d" class="tier__cta outline">Website Only &mdash; $100 &rarr;</a>
+          <a href="https://buy.stripe.com/dRm9AScgKed85kj4XN6Zy1n" class="tier__cta">Website + Hosting &mdash; $100 + $15/mo &rarr;</a>
+        </div>
+
       </div>
+
+
 
       <div class="tier">
+
         <div class="tier__name">Premium</div>
+
         <div class="tier__price">$150<span class="small">one-time</span></div>
+
         <p class="tier__tag">For businesses that want the full package.</p>
+
         <ul>
+
           <li>Up to 15 pages</li>
+
           <li>Dedicated creative director</li>
+
           <li>Brand identity refresh included</li>
+
           <li>Custom integrations (CRM, payments, booking, custom apps)</li>
+
           <li>Conversion testing built into launch</li>
+
           <li>6 months of post-launch evolution included</li>
+
           <li>Direct line to your team — no tickets, no queues</li>
+
         </ul>
+
         <p class="tier__hosting">+ Website Hosting: $15/month — SSL certificate, daily backups, 99.9% uptime, technical support</p>
+
         <div class="tier__seal">See it before you pay a dollar.</div>
-        <a href="https://buy.stripe.com/00wfZgfsW7OK4gf89Z6Zy1e" class="tier__cta outline">Get started →</a>
+
+        <div class="tier__cta-group">
+          <a href="https://buy.stripe.com/00wfZgfsW7OK4gf89Z6Zy1e" class="tier__cta outline">Website Only &mdash; $150 &rarr;</a>
+          <a href="https://buy.stripe.com/eVqcN480uc505kj9e36Zy1o" class="tier__cta">Website + Hosting &mdash; $150 + $15/mo &rarr;</a>
+        </div>
+
       </div>
 
+
+
     </div>
+
+
 
     <div class="pricing__footnote">
+
       <strong>What you will not see in our pricing:</strong>
+
       Monthly software subscriptions. AI credits to top up. Per-page upcharges. Hidden plugin fees. Hourly support billing. Any reason to nickel-and-dime you.
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- 4. MORE FROM ALMA — CATALOG -->
+
 <section class="catalog" id="catalog">
+
   <div class="container catalog__inner">
 
+
+
     <div class="catalog__head">
+
       <h2>More from Alma — <span class="grad-text">services for every stage.</span></h2>
+
       <p>Whether you need a full concierge build or one specific tool to round out your stack, we have a service for it.</p>
+
     </div>
+
+
 
     <!-- WhatsApp AI -->
+
     <div class="cat-block" id="whatsapp-ai">
+
       <div class="cat-block__head">
+
         <div class="cat-block__eyebrow">AlmaReach AI · WhatsApp</div>
+
         <h3>Your <span class="grad-text">WhatsApp on autopilot.</span></h3>
+
         <p>A custom-trained WhatsApp agent that answers customer questions, books appointments, and qualifies leads — 24 hours a day, in your brand voice. We build it, train it on your business, and hand you the keys.</p>
+
       </div>
+
     <div class="cat-block__visual">
+
       <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset6-whatsapp-mockup.png" alt="AlmaReach AI WhatsApp agent — automated customer conversations, appointment booking, and lead qualification" width="1200" height="900" loading="lazy" />
+
     </div>
+
       <div class="cat-grid-2">
 
+
+
         <div class="cat-card">
+
           <div class="cat-card__name">Starter</div>
+
           <div class="cat-card__price">$99<span class="small">setup</span><span class="add">+ <span class="add-amt">$69</span>/mo</span></div>
+
           <p class="cat-card__tag">Built for businesses just turning on WhatsApp.</p>
+
           <ul>
+
             <li>500 conversations / month</li>
+
             <li>US WhatsApp Business number included</li>
+
             <li>Custom AI trained on your services, hours, and FAQs</li>
+
             <li>Available in any language</li>
+
             <li>Lead capture and handoff to your inbox</li>
+
             <li>Conversation transcripts and analytics dashboard</li>
+
           </ul>
+
           <a href="https://buy.stripe.com/9B64gy6Wq7OKdQPbmb6Zy0Q" class="cat-card__cta">Get WhatsApp Starter →</a>
+
         </div>
+
+
 
         <div class="cat-card featured">
+
           <div class="cat-card__badge">For high volume</div>
+
           <div class="cat-card__name">Growth</div>
+
           <div class="cat-card__price">$149<span class="small">setup</span><span class="add">+ <span class="add-amt">$99</span>/mo</span></div>
+
           <p class="cat-card__tag">Built for businesses that talk to customers all day.</p>
+
           <ul>
+
             <li>Unlimited conversations</li>
+
             <li>Everything in Starter</li>
+
             <li>Priority response tuning</li>
+
             <li>Advanced lead routing and CRM-ready exports</li>
+
           </ul>
+
           <a href="https://buy.stripe.com/7sY9AS1C68SO7sreyn6Zy0R" class="cat-card__cta">Get WhatsApp Growth →</a>
+
         </div>
 
+
+
       </div>
+
     </div>
+
+
 
     <!-- AlmaSocial -->
+
     <div class="cat-block" id="almasocial">
+
       <div class="cat-block__head">
+
         <div class="cat-block__eyebrow">AlmaSocial · Social Media Management</div>
+
         <h3>Your <span class="grad-text">social media, handled.</span></h3>
+
         <p>Done-for-you social content on Instagram + X, posted on schedule, written in your brand voice. Three tiers — pick the platform reach you need. No setup fee. No contract. Cancel anytime.</p>
+
       </div>
+
     <div class="cat-block__visual">
+
       <img src="https://raw.githubusercontent.com/almadigitalsystems/previews/main/images/alm11029/asset7-instagram-grid.png" alt="AlmaSocial managed Instagram content — professional social media grid with consistent brand presence" width="1288" height="530" loading="lazy" />
+
     </div>
+
       <div class="cat-grid-3">
 
+
+
         <div class="cat-card">
+
           <div class="cat-card__name">One</div>
+
           <div class="cat-card__title">AlmaSocial One</div>
+
           <div class="cat-card__price">$99<span class="small">/mo</span></div>
+
           <p class="cat-card__tag">One platform, consistent daily presence.</p>
+
           <ul>
+
             <li>1 platform — Instagram <em>or</em> X (client chooses)</li>
+
             <li>Up to 2 posts per day</li>
+
             <li>Up to 2 engagements per day (DM + comment replies)</li>
+
             <li>Images, graphics &amp; text posts</li>
+
             <li>Client-supplied video - schedule and post as-is</li>
+
           </ul>
+
           <a href="https://buy.stripe.com/bJecN40y21qmdQP61R6Zy18" class="cat-card__cta">Start AlmaSocial One →</a>
+
         </div>
+
+
 
         <div class="cat-card featured">
+
           <div class="cat-card__badge">Most popular</div>
+
           <div class="cat-card__name">Pro</div>
+
           <div class="cat-card__title">AlmaSocial Pro</div>
+
           <div class="cat-card__price">$199<span class="small">/mo</span></div>
+
           <p class="cat-card__tag">Both platforms. Double the reach.</p>
+
           <ul>
+
             <li>Instagram <strong>and</strong> X</li>
+
             <li>Up to 2 posts per day per platform (4 total)</li>
+
             <li>Up to 2 engagements per day per platform (4 total)</li>
+
             <li>Images, graphics &amp; text posts</li>
+
             <li>Client-supplied video - schedule and post as-is</li>
+
           </ul>
+
           <a href="https://buy.stripe.com/9B67sK4Oied8aEDfCr6Zy19" class="cat-card__cta">Start AlmaSocial Pro →</a>
+
         </div>
+
+
 
         <div class="cat-card">
+
           <div class="cat-card__badge">Competitive Intel</div>
+
           <div class="cat-card__name">Pro Elite</div>
+
           <div class="cat-card__title">AlmaSocial Pro Elite</div>
+
           <div class="cat-card__price">$299<span class="small">/mo</span></div>
+
           <p class="cat-card__tag">Pro, plus the intel your competitors don't have.</p>
+
           <ul>
+
             <li>Instagram <strong>and</strong> X</li>
+
             <li>Up to 2 posts per day per platform (4 total)</li>
+
             <li>Up to 2 engagements per day per platform (4 total)</li>
+
             <li>Images, graphics &amp; text posts</li>
+
             <li>Client-supplied video - schedule and post as-is</li>
+
             <li>Weekly competitor monitoring sweep</li>
+
             <li>Weekly email report: competitor highlights, industry trends, actionable intel &amp; account performance</li>
+
           </ul>
+
           <a href="https://buy.stripe.com/bJe6oGfsW6KGfYXgGv6Zy1a" class="cat-card__cta">Start AlmaSocial Pro Elite →</a>
+
         </div>
 
+
+
       </div>
+
     </div>
+
+
 
     <!-- Branding & Identity -->
+
     <div class="cat-block" id="branding">
+
       <div class="cat-block__head">
+
         <div class="cat-block__eyebrow">Branding & Identity</div>
+
         <h3>A brand that <span class="grad-text">looks like a business.</span></h3>
+
         <p>A logo, a color system, a brand that actually looks like a business — not a Canva file. Three tiers depending on how far you want to take it. Live previews in 24-48 hours.</p>
+
       </div>
+
       <div class="cat-grid-3">
 
-        <div class="cat-card">
-          <div class="cat-card__name">Tier 1</div>
-          <div class="cat-card__title">Logo Only</div>
-          <div class="cat-card__price">$25<span class="small">one-time</span></div>
-          <p class="cat-card__tag">A real logo. Fast turnaround.</p>
-          <ul>
-            <li>2 logo concepts</li>
-            <li>3 rounds of revisions</li>
-            <li>Light and dark versions</li>
-            <li>Final files: PNG, SVG, PDF</li>
-            <li>Live previews in 24-48 hours</li>
-          </ul>
-          <a href="https://buy.stripe.com/8x2dR880u1qm3cbeyn6Zy0D" class="cat-card__cta">Get a logo →</a>
-        </div>
+
 
         <div class="cat-card">
-          <div class="cat-card__name">Tier 2</div>
-          <div class="cat-card__title">Brand Starter</div>
-          <div class="cat-card__price">$50<span class="small">one-time</span></div>
-          <p class="cat-card__tag">The essentials for a small-business launch.</p>
+
+          <div class="cat-card__name">Tier 1</div>
+
+          <div class="cat-card__title">Logo Only</div>
+
+          <div class="cat-card__price">$25<span class="small">one-time</span></div>
+
+          <p class="cat-card__tag">A real logo. Fast turnaround.</p>
+
           <ul>
-            <li>3 logo concepts</li>
-            <li>5 rounds of revisions</li>
-            <li>Color palette + typography system</li>
-            <li>Social media kit</li>
-            <li>Email signature</li>
+
+            <li>2 logo concepts</li>
+
+            <li>3 rounds of revisions</li>
+
+            <li>Light and dark versions</li>
+
+            <li>Final files: PNG, SVG, PDF</li>
+
+            <li>Live previews in 24-48 hours</li>
+
           </ul>
-          <a href="https://buy.stripe.com/eVq6oGcgK5GCdQP1LB6Zy0E" class="cat-card__cta">Get a Brand Starter pack →</a>
+
+          <a href="https://buy.stripe.com/8x2dR880u1qm3cbeyn6Zy0D" class="cat-card__cta">Get a logo →</a>
+
         </div>
+
+
+
+        <div class="cat-card">
+
+          <div class="cat-card__name">Tier 2</div>
+
+          <div class="cat-card__title">Brand Starter</div>
+
+          <div class="cat-card__price">$50<span class="small">one-time</span></div>
+
+          <p class="cat-card__tag">The essentials for a small-business launch.</p>
+
+          <ul>
+
+            <li>3 logo concepts</li>
+
+            <li>5 rounds of revisions</li>
+
+            <li>Color palette + typography system</li>
+
+            <li>Social media kit</li>
+
+            <li>Email signature</li>
+
+          </ul>
+
+          <a href="https://buy.stripe.com/eVq6oGcgK5GCdQP1LB6Zy0E" class="cat-card__cta">Get a Brand Starter pack →</a>
+
+        </div>
+
+
 
         <div class="cat-card featured">
+
           <div class="cat-card__badge">Most popular</div>
+
           <div class="cat-card__name">Tier 3</div>
+
           <div class="cat-card__title">Full Brand Identity</div>
+
           <div class="cat-card__price">$100<span class="small">one-time</span></div>
+
           <p class="cat-card__tag">Everything you need to look like a serious brand.</p>
+
           <ul>
+
             <li>5 logo concepts, 5 rounds of revisions</li>
+
             <li>Brand guidelines PDF</li>
+
             <li>Business cards + letterhead</li>
+
             <li>5 social-media templates</li>
+
             <li>Brand voice + tagline</li>
+
           </ul>
+
           <a href="https://buy.stripe.com/eVqdR86Wq6KG5kjgGv6Zy0F" class="cat-card__cta">Get a Full Brand Identity →</a>
+
         </div>
 
+
+
       </div>
+
     </div>
+
+
 
     <!-- Google Presence Kit -->
+
     <div class="cat-block" id="google-kit">
+
       <div class="cat-block__head">
+
         <div class="cat-block__eyebrow">Google Presence Kit</div>
+
         <h3>Show up <span class="grad-text">when customers search.</span></h3>
+
         <p>Most small businesses are invisible on Google. We fix that. One flat fee. Your business shows up when local customers go looking.</p>
+
       </div>
+
       <div class="cat-grid-1">
 
+
+
         <div class="cat-card featured">
+
           <div class="cat-card__name">Google Presence Kit</div>
+
           <div class="cat-card__title">Local visibility, configured.</div>
+
           <div class="cat-card__price">$49<span class="small">one-time</span></div>
+
           <p class="cat-card__tag">Same-week setup. No subscriptions.</p>
+
           <ul>
+
             <li>Google Business Profile setup or full optimization</li>
+
             <li>Service area + category configuration</li>
+
             <li>Local SEO foundation</li>
+
             <li>Google Maps presence</li>
+
             <li>Review-request strategy and templates</li>
+
           </ul>
+
           <a href="https://buy.stripe.com/cNi3cua8Cfhc14361R6Zy0U" class="cat-card__cta">Get the Google Kit →</a>
+
         </div>
 
+
+
       </div>
+
     </div>
+
+
 
     <!-- Bundles -->
+
     <div class="cat-block" id="bundles">
+
       <div class="cat-block__head">
+
         <div class="cat-block__eyebrow">Bundles</div>
+
         <h3>The services that <span class="grad-text">work better together.</span></h3>
+
         <p>We grouped the services our clients ask for in the same breath. Pick a bundle and save versus buying à la carte.</p>
+
       </div>
+
       <div class="cat-grid-3">
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $11</span>
+
           <div class="cat-card__name">Starter</div>
+
           <div class="cat-card__title">The Launch Bundle</div>
+
           <div class="cat-card__price">$89<span class="small">one-time</span></div>
+
           <p class="cat-card__tag">A logo and a website. Live this week.</p>
+
           <ul>
+
             <li>Logo Only</li>
+
             <li>Starter Website</li>
+
             <li>Free domain</li>
+
           </ul>
+
           <p class="cat-card__use">For: brand-new businesses that need to look real, fast.</p>
+
           <a href="https://buy.stripe.com/3cI9AS80u7OK28761R6Zy0L" class="cat-card__cta">Get The Launch Bundle →</a>
+
         </div>
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $15</span>
+
           <div class="cat-card__name">Starter</div>
+
           <div class="cat-card__title">The Brand and Build</div>
+
           <div class="cat-card__price">$135<span class="small">one-time</span></div>
+
           <p class="cat-card__tag">A real brand with a real growth website.</p>
+
           <ul>
+
             <li>Brand Starter</li>
+
             <li>Growth Website</li>
+
             <li>SEO + blog + analytics</li>
+
             <li>Free domain</li>
+
           </ul>
+
           <p class="cat-card__use">For: founders who want a brand that scales with the site.</p>
+
           <a href="https://buy.stripe.com/7sY7sK80ud94h31bmb6Zy0G" class="cat-card__cta">Get The Brand and Build →</a>
+
         </div>
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $25</span>
+
           <div class="cat-card__name">Starter</div>
+
           <div class="cat-card__title">The Brand and Build Pro</div>
+
           <div class="cat-card__price">$175<span class="small">one-time</span><span class="add">+ <span class="add-amt">$23</span>/mo</span></div>
+
           <p class="cat-card__tag">Brand and Build, fully managed.</p>
+
           <ul>
+
             <li>Everything in The Brand and Build</li>
+
             <li>Hosting + SSL + backups</li>
+
             <li>Security monitoring</li>
+
             <li>Priority support</li>
+
           </ul>
+
           <p class="cat-card__use">For: businesses that want it built and maintained.</p>
+
           <a href="https://buy.stripe.com/9B6fZg3Ke7OK6on4XN6Zy0H" class="cat-card__cta">Get The Brand and Build Pro →</a>
+
         </div>
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $33</span>
+
           <div class="cat-card__name">Presence</div>
+
           <div class="cat-card__title">The Full Presence</div>
+
           <div class="cat-card__price">$195<span class="small">one-time</span></div>
+
           <p class="cat-card__tag">Brand, website, and Google — done.</p>
+
           <ul>
+
             <li>Full Brand Identity</li>
+
             <li>Growth Website</li>
+
             <li>Google Presence Kit</li>
+
             <li>Free domain</li>
+
           </ul>
+
           <p class="cat-card__use">For: local businesses that need the full footprint.</p>
+
           <a href="https://buy.stripe.com/cNi00i80ufhc14389Z6Zy0I" class="cat-card__cta">Get The Full Presence →</a>
+
         </div>
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $44</span>
+
           <div class="cat-card__name">Presence</div>
+
           <div class="cat-card__title">The Digital Foundation</div>
+
           <div class="cat-card__price">$244<span class="small">one-time</span></div>
+
           <p class="cat-card__tag">Full Presence with hosting baked in.</p>
+
           <ul>
+
             <li>Full Brand Identity</li>
+
             <li>Growth Website</li>
+
             <li>Google Presence Kit</li>
+
             <li>Hosting included</li>
+
             <li>Free domain</li>
+
           </ul>
+
           <p class="cat-card__use">For: businesses that want one invoice, one team.</p>
+
           <a href="https://buy.stripe.com/7sYaEWgx06KGaED0Hx6Zy1b" class="cat-card__cta">Get The Digital Foundation →</a>
+
         </div>
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $20</span>
+
           <div class="cat-card__name">Website + Social</div>
+
           <div class="cat-card__title">The Social Starter</div>
+
           <div class="cat-card__price">$129<span class="small">one-time</span><span class="add">+ <span class="add-amt">$99</span>/mo</span></div>
+
           <p class="cat-card__tag">A site that gets posts every day.</p>
+
           <ul>
+
             <li>Starter Website</li>
+
             <li>AlmaSocial One (1 platform)</li>
+
           </ul>
+
           <p class="cat-card__use">For: solo operators starting their first social presence.</p>
+
           <a href="https://buy.stripe.com/fZu8wO80u6KGfYX0Hx6Zy1f" class="cat-card__cta">Get The Social Starter →</a>
+
         </div>
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $30</span>
+
           <div class="cat-card__name">Website + Social</div>
+
           <div class="cat-card__title">The Social Growth</div>
+
           <div class="cat-card__price">$179<span class="small">one-time</span><span class="add">+ <span class="add-amt">$199</span>/mo</span></div>
+
           <p class="cat-card__tag">Two platforms, daily content, growth-ready site.</p>
+
           <ul>
+
             <li>Growth Website</li>
+
             <li>AlmaSocial Pro (Instagram + X)</li>
+
           </ul>
+
           <p class="cat-card__use">For: businesses that need both a site and a feed that posts.</p>
+
           <a href="https://buy.stripe.com/eVq3cua8C0micML89Z6Zy1g" class="cat-card__cta">Get The Social Growth →</a>
+
         </div>
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $40</span>
+
           <div class="cat-card__name">Website + Social</div>
+
           <div class="cat-card__title">The Full Social</div>
+
           <div class="cat-card__price">$229<span class="small">one-time</span><span class="add">+ <span class="add-amt">$299</span>/mo</span></div>
+
           <p class="cat-card__tag">Site, Google, and a full social engine.</p>
+
           <ul>
+
             <li>Growth Website</li>
+
             <li>Google Presence Kit</li>
+
             <li>AlmaSocial Pro Elite (Instagram + X)</li>
+
           </ul>
+
           <p class="cat-card__use">For: brands ready to be everywhere their customers are.</p>
+
           <a href="https://buy.stripe.com/6oU28q1C6glgbIH0Hx6Zy1h" class="cat-card__cta">Get The Full Social →</a>
+
         </div>
 
+
+
         <div class="cat-card">
+
           <span class="cat-card__save">Save $50</span>
+
           <div class="cat-card__name">All-in-One</div>
+
           <div class="cat-card__title">Ultimate Business Launch</div>
+
           <div class="cat-card__price">$299<span class="small">one-time</span><span class="add">+ <span class="add-amt">$92</span>/mo</span></div>
+
           <p class="cat-card__tag">A complete business stack with WhatsApp AI.</p>
+
           <ul>
+
             <li>Full Brand Identity</li>
+
             <li>Growth Website</li>
+
             <li>Google Presence Kit</li>
+
             <li>Hosting</li>
+
             <li>WhatsApp AI Starter</li>
+
           </ul>
+
           <p class="cat-card__use">For: founders launching a complete operation, not a webpage.</p>
+
           <a href="https://buy.stripe.com/14A8wOdkOd94fYX89Z6Zy0S" class="cat-card__cta">Get Ultimate Business Launch →</a>
+
         </div>
+
+
 
         <div class="cat-card">
+
           <span class="cat-card__save">Save $65</span>
+
           <div class="cat-card__name">All-in-One</div>
+
           <div class="cat-card__title">Ultimate Social Launch</div>
+
           <div class="cat-card__price">$349<span class="small">one-time</span><span class="add">+ <span class="add-amt">$299</span>/mo</span></div>
+
           <p class="cat-card__tag">A complete brand and an AlmaSocial Pro Elite social engine.</p>
+
           <ul>
+
             <li>Full Brand Identity</li>
+
             <li>Growth Website</li>
+
             <li>Google Presence Kit</li>
+
             <li>Hosting</li>
+
             <li>AlmaSocial Pro Elite (Instagram + X)</li>
+
           </ul>
+
           <p class="cat-card__use">For: businesses where social is the growth engine.</p>
+
           <a href="https://buy.stripe.com/eVqfZgeoS9WS5kjfCr6Zy1i" class="cat-card__cta">Get Ultimate Social Launch →</a>
+
         </div>
 
+
+
         <div class="cat-card featured">
+
           <div class="cat-card__badge">Best of business</div>
+
           <span class="cat-card__save">Save $70</span>
+
           <div class="cat-card__name">All-in-One</div>
+
           <div class="cat-card__title">Pinnacle Package</div>
+
           <div class="cat-card__price">$328<span class="small">one-time</span><span class="add">+ <span class="add-amt">$151</span>/mo</span></div>
+
           <p class="cat-card__tag">Ultimate Business Launch with WhatsApp AI Growth.</p>
+
           <ul>
+
             <li>Everything in Ultimate Business Launch</li>
+
             <li>WhatsApp AI Growth (unlimited conversations)</li>
+
           </ul>
+
           <p class="cat-card__use">For: businesses that talk to a lot of customers, every day.</p>
+
           <a href="https://buy.stripe.com/cNi4gy1C61qmcML89Z6Zy0T" class="cat-card__cta">Get the Pinnacle Package →</a>
+
         </div>
 
+
+
         <div class="cat-card featured">
+
           <div class="cat-card__badge">Everything</div>
+
           <span class="cat-card__save">Save $100</span>
+
           <div class="cat-card__name">All-in-One</div>
+
           <div class="cat-card__title">The Empire Package</div>
+
           <div class="cat-card__price">$399<span class="small">one-time</span><span class="add">+ <span class="add-amt">$450</span>/mo</span></div>
+
           <p class="cat-card__tag">Premium site, full brand, every channel.</p>
+
           <ul>
+
             <li>Full Brand Identity</li>
+
             <li>Premium Website</li>
+
             <li>Google Presence Kit</li>
+
             <li>Hosting</li>
+
             <li>AlmaSocial Pro Elite (Instagram + X)</li>
+
             <li>WhatsApp AI Starter</li>
+
           </ul>
+
           <p class="cat-card__use">For: brands building a full digital empire from day one.</p>
+
           <a href="https://buy.stripe.com/00w7sKa8C6KGh310Hx6Zy1j" class="cat-card__cta">Get The Empire Package →</a>
+
         </div>
+
+
 
       </div>
+
       <p class="cat-block__close">Not sure which bundle fits? <a href="#contact">Send us a message →</a> we will help you find the right fit via email.</p>
+
     </div>
 
+
+
   </div>
+
 </section>
+
+
 
 <!-- 5. WHY ALMA -->
+
 <section class="why">
+
   <div class="container why__inner">
+
     <h2>The AI built the draft. <span class="grad-text">A senior team built the website.</span></h2>
+
     <p>AI is a tool. We use it the way a film studio uses cameras — to move faster, not to replace the people who make the work matter.</p>
+
     <p>Every Alma project is owned by a <strong>senior creative</strong> who has shipped hundreds of sites. They write the strategy. They direct the design. They review every page before it touches your domain. The AI handles the parts that should be automated. The humans handle the parts that matter.</p>
+
     <p><strong>That is what concierge means.</strong> That is the difference between a website you built and a website that was built for you.</p>
+
   </div>
+
 </section>
+
+
 
 <!-- 6. FAQ -->
+
 <section class="faq" id="faq">
+
   <div class="container">
+
     <div class="faq__head">
+
       <h2>Questions, answered.</h2>
+
       <p>The five we hear most often.</p>
+
     </div>
+
     <div class="faq__list">
 
+
+
       <div class="faq-item">
+
         <button class="faq-q">How are you different from Lovable, LazySands, or the other $39 AI builders?</button>
+
         <div class="faq-a"><p>We are not in the same category. Those are tools — you are the designer, strategist, and QA. We are a service — a senior team handles all of that for you. They cost less per month. We deliver more per project. Pick the one that matches what you need.</p></div>
+
       </div>
 
+
+
       <div class="faq-item">
+
         <button class="faq-q">Why does an AI-assisted site cost $500 and not $39?</button>
+
         <div class="faq-a"><p>Because $500 buys a senior team's time, not an AI subscription. Strategy, custom design, professional copy, build, launch, and a human who picks up when something needs fixing — that is what is in the price. The $39 tools sell you the software; you do the work. We sell you the website; we do the work.</p></div>
+
       </div>
 
+
+
       <div class="faq-item">
+
         <button class="faq-q">How fast can you deliver?</button>
+
         <div class="faq-a"><p>Essential and Growth packages launch in 5 business days from kickoff. Signature projects launch in two weeks. Agencies quote four to six months for the same scope. We don't.</p></div>
+
       </div>
 
+
+
       <div class="faq-item">
+
         <button class="faq-q">Do I see the website before paying in full?</button>
+
         <div class="faq-a"><p>Yes. You see a working preview before any final payment. If it isn't right, we revise until it is. If it still isn't right, you don't pay the balance.</p></div>
+
       </div>
 
+
+
       <div class="faq-item">
+
         <button class="faq-q">Is there a monthly fee?</button>
+
         <div class="faq-a"><p>Not for the website itself — that's a one-time build. Optional hosting and ongoing care plans start at $15/mo. Cancel anytime.</p></div>
+
       </div>
 
+
+
       <div class="faq-item">
+
         <button class="faq-q">Do I have to buy a website to use AlmaReach AI, AlmaSocial, or any of the bundles?</button>
+
         <div class="faq-a"><p>No. Every Alma service is sold standalone. Buy what your business needs right now — add the rest when you are ready.</p></div>
+
       </div>
 
+
+
       <div class="faq-item">
+
         <button class="faq-q">Can I mix and match — for example, the Essential website plus AlmaSocial Pro?</button>
+
         <div class="faq-a"><p>Yes. Bundles exist for the most common combinations, but you can build any stack you want. Talk to us and we will quote it directly.</p></div>
+
       </div>
 
+
+
       <div class="faq-item">
+
         <button class="faq-q">How do bundles save money?</button>
+
         <div class="faq-a"><p>Bundles include the full scope of multiple services at a discount versus buying each separately. Exact savings vary by bundle — see each bundle card for the breakdown.</p></div>
+
       </div>
+
+
 
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- 7. CONTACT -->
+
 <section class="contact" id="contact">
+
   <div class="container contact__inner">
+
     <div class="contact__head">
+
       <h2>Get <span class="grad-text">in touch.</span></h2>
+
       <p>Tell us about your business. A senior member of our team replies within one business day with a working preview and a no-obligation quote.</p>
+
     </div>
+
     <form class="contact__form" action="https://formspree.io/f/xojppajv" method="POST">
+
       <div class="form-row">
+
         <label>
+
           <span>Your name</span>
+
           <input type="text" name="name" required />
+
         </label>
+
         <label>
+
           <span>Email</span>
+
           <input type="email" name="email" required />
+
         </label>
+
       </div>
+
       <label>
+
         <span>Business name</span>
+
         <input type="text" name="business" />
+
       </label>
+
       <label>
+
         <span>What are you looking to build?</span>
+
         <textarea name="message" rows="4" placeholder="A short description of your business and what you need from a website." required></textarea>
+
       </label>
+
       <input type="hidden" name="_subject" value="New inquiry from almadigitalservices.com" />
+
       <input type="hidden" name="_next" value="https://almadigitalservices.com/?sent=1" />
+
       <button type="submit" class="btn-primary contact__submit">Send my request →</button>
+
       <p class="contact__fineprint">No obligation. We reply by email within one business day.</p>
+
     </form>
+
   </div>
+
 </section>
 
+
+
 <!-- footer -->
+
 <footer>
+
   <div class="container">
+
     <p class="foot__tagline">The website that does the selling for you. Starting at $50.</p>
+
     <div class="foot__meta">
+
       <div>© 2026 Alma Digital Services · almadigitalservices.com</div>
+
       <div>
+
         <a href="https://instagram.com/thealmadigital" rel="noopener">@thealmadigital</a>
+
         <a href="#contact">Get in touch</a>
+
       </div>
+
     </div>
+
   </div>
+
 </footer>
 
+
+
 <script>
+
 document.querySelectorAll('.faq-q').forEach(btn=>{
+
   btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open'));
+
 });
+
 </script>
 
+
+
 </body>
+
 </html>
+
+
+
+
+
 
 
 
