@@ -409,6 +409,32 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
 }
 .diff-strip__alt{margin-top:1.25rem;text-align:center;font-size:1rem;color:var(--muted);font-style:italic}
 
+
+/* alma-vs comparison */
+.alma-vs{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 50%,var(--bg) 100%);position:relative;overflow:hidden}
+.alma-vs::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 40%,rgba(123,97,255,0.12) 0%,transparent 55%);z-index:0}
+.alma-vs__inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+.alma-vs__head{text-align:center;margin-bottom:3rem}
+.alma-vs__head h2{font-size:clamp(2rem,3.8vw,3rem);margin-bottom:1rem}
+.alma-vs__head p{color:var(--muted);font-size:1.05rem}
+.alma-vs__table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:3rem}
+.alma-vs__table th,.alma-vs__table td{padding:1rem 1.4rem;text-align:left;border-bottom:1px solid var(--border);font-size:0.95rem}
+.alma-vs__table th{background:rgba(0,180,216,0.08);font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--cyan)}
+.alma-vs__table td:first-child{font-weight:600;color:var(--text)}
+.alma-vs__table td:nth-child(2){color:var(--muted)}
+.alma-vs__table td:nth-child(3){color:var(--cyan);font-weight:600}
+.alma-vs__table tr:last-child td{border-bottom:none}
+.alma-vs__banner{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:2.5rem;text-align:center}
+.alma-vs__banner p.lead{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:700;line-height:1.35;margin-bottom:1.5rem;color:var(--text)}
+.alma-vs__banner p.sub{color:var(--muted);font-size:1.05rem;line-height:1.65;max-width:640px;margin:0 auto}
+
+/* why-alma bullets */
+.why__bullets{list-style:none;margin-top:2.5rem;display:flex;flex-direction:column;gap:1.75rem}
+.why__bullets li{padding-left:1.5rem;position:relative}
+.why__bullets li::before{content:'';position:absolute;left:0;top:0.5rem;width:8px;height:8px;background:var(--grad);border-radius:50%}
+.why__bullets li strong{color:var(--text);font-weight:700;display:block;font-size:1.05rem;margin-bottom:0.35rem}
+.why__bullets li span{color:var(--muted);font-size:1rem;line-height:1.7}
+
 @media (max-width:880px){
   .category__grid,.pricing__grid{grid-template-columns:1fr;gap:1.25rem}
   .hero{padding:5rem 0 4rem}
@@ -992,6 +1018,52 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
     <p>AI is a tool. We use it the way a film studio uses cameras — to move faster, not to replace the people who make the work matter.</p>
     <p>Every Alma project is owned by a <strong>senior creative</strong> who has shipped hundreds of sites. They write the strategy. They direct the design. They review every page before it touches your domain. The AI handles the parts that should be automated. The humans handle the parts that matter.</p>
     <p><strong>That is what concierge means.</strong> That is the difference between a website you built and a website that was built for you.</p>
+
+    <ul class="why__bullets">
+      <li>
+        <strong>Done-for-you, not do-it-with-AI.</strong>
+        <span>We do the research, design, build, and copywriting. You review and approve. AI website builders give you better tools &mdash; but you’re still doing the work.</span>
+      </li>
+      <li>
+        <strong>Preview before payment.</strong>
+        <span>See your finished site before you pay a dollar. No AI tool offers this. We carry the risk until you’re happy.</span>
+      </li>
+      <li>
+        <strong>Accountability you can hold.</strong>
+        <span>Our reputation depends on your results. If it doesn’t perform, we fix it &mdash; no support ticket, no prompt engineering, no re-runs. AI tools have no skin in the game. We do.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5b. ALM VS 10WEB COMPARISON -->
+<section class="alma-vs" id="alma-vs-ai">
+  <div class="container alma-vs__inner">
+    <div class="alma-vs__head">
+      <h2>AI website builders do more. <span class="grad-text">You still do the work.</span></h2>
+    </div>
+
+    <table class="alma-vs__table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>10Web &amp; AI Tools</th>
+          <th>Alma Digital</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Who builds it</td><td>You + AI agents</td><td>We do</td></tr>
+        <tr><td>Who manages it</td><td>You (10 agents to oversee)</td><td>We do</td></tr>
+        <tr><td>Who’s accountable</td><td>You</td><td>We are</td></tr>
+        <tr><td>Payment timing</td><td>Pay first</td><td>See it first, then pay</td></tr>
+        <tr><td>Support when it breaks</td><td>Their docs</td><td>Our team</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alma-vs__banner">
+      <p class="lead">10Web’s new platform runs 10 AI agents.<br>You still manage all of them.</p>
+      <p class="sub">With Alma: we build it, you approve it, we stand behind it.<br>No dashboard. No prompts. No agent wrangling. Just results.</p>
+    </div>
   </div>
 </section>
 
@@ -1007,6 +1079,11 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
       <div class="faq-item">
         <button class="faq-q">How are you different from Lovable, LazySands, or the other $39 AI builders?</button>
         <div class="faq-a"><p>We are not in the same category. Those are tools — you are the designer, strategist, and QA. We are a service — a senior team handles all of that for you. They cost less per month. We deliver more per project. Pick the one that matches what you need.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How is Alma different from AI website builders like 10Web?</button>
+        <div class="faq-a"><p>10Web’s agentic platform is impressive — but you’re still managing 10 AI agents, feeding prompts, and owning every decision. That’s a smarter version of DIY, not a concierge.</p><p>Alma is different: we research your business, write your copy, build your site, and let you approve it before you pay a single dollar. We stand behind the result. If it doesn’t perform, we fix it — no ticket, no back-and-forth, no agent management on your end.</p><p>The difference isn’t the technology. It’s who does the work and who’s accountable for the outcome. With AI builders, that’s you. With Alma, that’s us.</p></div>
       </div>
 
       <div class="faq-item">
