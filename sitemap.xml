@@ -130,6 +130,15 @@
     <priority>0.95</priority>
   </url>
 
+
+  <!-- Blog: AI Website Tool vs AI-Powered Agency (Rewebly counter-content) -->
+  <url>
+    <loc>https://almadigitalservices.com/blog/ai-website-tool-vs-ai-powered-agency</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
     <!-- ==================== PROSPECT PREVIEW PAGES ==================== -->
   <!-- NOTE: Prospect preview pages are set to noindex,nofollow.
        DO NOT add individual preview page URLs to this sitemap.
