@@ -100,6 +100,37 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 /* FOOTER */
 .footer{padding:2rem 0;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.82rem}
 .footer a{color:var(--cyan);text-decoration:none}
+/* COMPARISON TABLE */
+.compare{padding:5rem 0 3rem}
+.compare__title{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;text-align:center;margin-bottom:0.75rem}
+.compare__sub{font-size:1.05rem;color:var(--text-muted);text-align:center;max-width:600px;margin:0 auto 2.5rem}
+.compare__table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:2rem}
+.compare__table th,.compare__table td{padding:1rem 1.4rem;text-align:left;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.95rem}
+.compare__table th{background:rgba(0,212,255,0.08);font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--cyan)}
+.compare__table td:first-child{font-weight:600;color:var(--text)}
+.compare__table td:nth-child(2){color:var(--text-muted)}
+.compare__table td:nth-child(3){color:var(--cyan);font-weight:600}
+.compare__table tr:last-child td{border-bottom:none}
+/* CALCULATOR */
+.calc{padding:2rem 0 4rem}
+.calc__box{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;max-width:640px;margin:0 auto}
+.calc__title{font-size:1.4rem;font-weight:900;margin-bottom:0.5rem;text-align:center}
+.calc__sub{font-size:0.95rem;color:var(--text-muted);text-align:center;margin-bottom:2rem}
+.calc__fields{display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem}
+.calc__field label{display:block;font-size:0.85rem;font-weight:600;color:var(--text-muted);margin-bottom:0.4rem}
+.calc__field input,.calc__field select{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;color:var(--text);font-family:inherit;font-size:1rem;font-weight:600}
+.calc__field input:focus,.calc__field select:focus{outline:none;border-color:var(--cyan)}
+.calc__field select option{background:var(--bg-card);color:var(--text)}
+.calc__result{background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.2);border-radius:12px;padding:1.5rem;text-align:center}
+.calc__result-line{font-size:1rem;color:var(--text-muted);line-height:1.8}
+.calc__result-line strong{color:var(--text);font-weight:800}
+.calc__result-line .highlight{color:var(--cyan);font-weight:800;font-size:1.15rem}
+.calc__alma{margin-top:1rem;font-size:1.1rem;font-weight:800}
+.calc__alma .grad-text{font-size:1.3rem}
+/* CALLOUT */
+.pricing-callout{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;max-width:640px;margin:2rem auto 0}
+.pricing-callout h3{font-size:1.2rem;font-weight:900;margin-bottom:0.75rem}
+.pricing-callout p{color:var(--text-muted);font-size:0.95rem;line-height:1.7;margin-bottom:1rem}
 </style>
 </head>
 <body>
@@ -250,6 +281,72 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
     </div>
   </section>
 
+  <!-- PRICING COMPARISON -->
+  <section class="compare">
+    <div class="container">
+      <h2 class="compare__title">Do the math <span class="grad-text">before you commit.</span></h2>
+      <p class="compare__sub">Some website platforms charge a monthly fee <em>plus</em> a cut of your revenue. At scale, that adds up fast.</p>
+
+      <table class="compare__table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Revenue-Share Model</th>
+            <th>Alma Digital</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Upfront cost</td><td>Monthly fee (varies)</td><td>$50 one-time</td></tr>
+          <tr><td>Ongoing cost</td><td>Monthly fee + % of revenue</td><td>Optional hosting from $17/mo</td></tr>
+          <tr><td>Revenue share</td><td>15–20% of monthly revenue</td><td>$0</td></tr>
+          <tr><td>For a $5K/mo business</td><td>~$1,000+/mo to the platform</td><td>$17/mo (optional)</td></tr>
+          <tr><td>Human design review</td><td>No</td><td>Yes — every project</td></tr>
+          <tr><td>See it before you pay</td><td>No</td><td>Yes</td></tr>
+          <tr><td>You own the website</td><td>Platform-dependent</td><td>Always</td></tr>
+          <tr><td>Free domain</td><td>Not standard</td><td>Included</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="calc">
+    <div class="container">
+      <div class="calc__box">
+        <h3 class="calc__title">What does a revenue-share platform actually cost you?</h3>
+        <p class="calc__sub">Run your own numbers.</p>
+        <div class="calc__fields">
+          <div class="calc__field">
+            <label for="calc-revenue">Your estimated monthly revenue ($)</label>
+            <input type="number" id="calc-revenue" value="5000" min="0" step="500" oninput="updateCalc()"/>
+          </div>
+          <div class="calc__field">
+            <label for="calc-cut">Platform revenue cut</label>
+            <select id="calc-cut" onchange="updateCalc()">
+              <option value="15">15%</option>
+              <option value="20" selected>20%</option>
+            </select>
+          </div>
+          <div class="calc__field">
+            <label for="calc-fee">Monthly platform fee ($)</label>
+            <input type="number" id="calc-fee" value="49" min="0" step="1" oninput="updateCalc()"/>
+          </div>
+        </div>
+        <div class="calc__result" id="calc-result">
+          <div class="calc__result-line">Monthly cost to your platform: <strong id="calc-monthly">$1,049</strong></div>
+          <div class="calc__result-line">Annual cost: <strong class="highlight" id="calc-annual">$12,588</strong></div>
+          <div class="calc__alma">Alma's flat one-time fee: <span class="grad-text">$50.</span></div>
+        </div>
+      </div>
+
+      <div class="pricing-callout">
+        <h3>One price. You own it. <span class="grad-text">No surprises.</span></h3>
+        <p>Alma charges a single flat fee — starting at $50 for a professional website. No monthly revenue share. No percentage of your sales. No subscription that grows as your business does. You see the finished website before you pay anything.</p>
+        <a href="/#contact" class="btn btn-primary">See pricing &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <section class="faq">
     <div class="container">
       <h2 class="faq__title">Common Questions</h2>
@@ -390,6 +487,16 @@ function checkout(plan) {
     btn.classList.remove('loading');
   });
 }
+function updateCalc(){
+  var rev=parseFloat(document.getElementById('calc-revenue').value)||0;
+  var cut=parseFloat(document.getElementById('calc-cut').value)||20;
+  var fee=parseFloat(document.getElementById('calc-fee').value)||0;
+  var monthly=fee+(rev*(cut/100));
+  var annual=monthly*12;
+  document.getElementById('calc-monthly').textContent='$'+monthly.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});
+  document.getElementById('calc-annual').textContent='$'+annual.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});
+}
+updateCalc();
 </script>
 
 </body>
