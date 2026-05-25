@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -446,6 +446,29 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
   .contact__form{padding:1.75rem}
   .contact__submit{align-self:stretch;justify-content:center}
 }
+
+/* how it works */
+.how-it-works{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 100%);position:relative}
+.how-it-works__head{text-align:center;margin-bottom:3.5rem}
+.how-it-works__head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1rem}
+.how-it-works__head p{color:var(--muted);max-width:620px;margin:0 auto;font-size:1.05rem}
+.how-it-works__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.how-step{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:2rem 1.75rem;position:relative;transition:transform 0.5s var(--ease),border-color 0.5s var(--ease)}
+.how-step:hover{transform:translateY(-4px);border-color:rgba(0,180,216,0.25)}
+.how-step__num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--grad);border-radius:50%;font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:1rem}
+.how-step h3{font-family:'Inter',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:0.75rem;line-height:1.35}
+.how-step p{color:var(--muted);font-size:0.95rem;line-height:1.65}
+
+/* homepage CTA */
+.home-cta{padding:5rem 0;background:linear-gradient(180deg,var(--bg) 0%,#0d2138 100%);text-align:center;position:relative;overflow:hidden}
+.home-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(0,180,216,0.12) 0%,transparent 55%);z-index:0}
+.home-cta__inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.home-cta h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:1.25rem}
+.home-cta p{color:var(--muted);font-size:1.1rem;line-height:1.7;margin-bottom:2rem}
+
+@media (max-width:880px){
+  .how-it-works__grid{grid-template-columns:1fr;gap:1.25rem}
+}
 </style>
 </head>
 <body>
@@ -462,15 +485,15 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
   <div class="hero__grid"></div>
   <div class="container">
     <div class="hero__inner">
-      <div class="hero__eyebrow">Public pricing. AI-native pipeline. Live previews in 24-48 hours.</div>
-      <p class="hero__tagline">Expert-Guided Design. AI-Powered Speed.</p>
-      <h1><span class="grad-text">The website that closes deals.</span></h1>
+      <div class="hero__eyebrow">AI-designed. Human-reviewed. Live in 24–48 hours.</div>
+      <h1><span class="grad-text">The Speed of AI. The Eye of a Designer.</span></h1>
+      <p class="hero__sub">Your website, live in 24–48 hours. AI-designed. Human-reviewed. Never cookie-cutter.</p>
       <p class="hero__services">Custom Websites · Branding · Social Media · WhatsApp AI</p>
-      <p class="hero__sub">We build a real, working preview of your site — research, design, copy, the whole thing — before you pay a cent. Built in 24–48 hours, starting at $50. No sales call. No enterprise quote. No four-week wait.</p>
       <div class="hero__ctas">
-        <a href="#contact" class="btn-primary">See your free preview — no payment until you love it →</a>
+        <a href="#contact" class="btn-primary">Get My Free Preview →</a>
         <a href="#pricing" class="btn-secondary">View public pricing →</a>
       </div>
+      <p class="hero__trust">No credit card, no commitment. See your free preview before you pay a dollar.</p>
     </div>
   </div>
 </section>
@@ -480,23 +503,79 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
   <div class="container">
     <div class="diff-strip__grid">
       <div class="diff-card">
-        <div class="diff-card__label">Speed</div>
-        <div class="diff-card__tagline">Live preview in 24–48 hours.</div>
-        <p>Most agencies quote 4–6 weeks. We ship a working preview of your site in 24–48 hours. You click through it on your phone before any money changes hands.</p>
+        <div class="diff-card__label">Speed Without Compromise</div>
+        <div class="diff-card__tagline">AI builds it fast. Humans make it right.</div>
+        <p>AI builds your website in hours, not weeks. Our designers review every layout before it reaches you. You get the best of both.</p>
       </div>
       <div class="diff-card">
-        <div class="diff-card__label">Tier transparency</div>
-        <div class="diff-card__tagline">Public pricing. No “request a quote.”</div>
-        <p>Starter $50 · Growth $100 · Premium $150. One-time. Optional hosting from $17/mo. Every tier has a public Stripe link. No discovery call required. No hidden enterprise tier.</p>
+        <div class="diff-card__label">See Before You Pay</div>
+        <div class="diff-card__tagline">Your preview, free. No strings.</div>
+        <p>No upfront commitment. We build your preview first. If you love it, you pay. If you don’t, you owe nothing.</p>
       </div>
       <div class="diff-card">
-        <div class="diff-card__label">AI-native</div>
-        <div class="diff-card__tagline">AI in the pipeline, not just the pitch deck.</div>
-        <p>We use AI through every step — research, layout, copy, QA. It’s how we ship in 24–48 hours instead of weeks. Not a marketing buzzword. Open the source on any preview and you’ll see it.</p>
+        <div class="diff-card__label">No Subscriptions. No Surprises.</div>
+        <div class="diff-card__tagline">One flat fee. That’s it.</div>
+        <p>One flat fee. No monthly software lock-in. No percentage of your revenue. What you see is what you pay.</p>
       </div>
     </div>
-    <p class="diff-strip__trust">Every preview is a real, hosted page. Click through it. Show your team. Pay only when you decide it’s right. No contracts. Cancel hosting anytime.</p>
-    <p class="diff-strip__alt">Other agencies sell vibes. We ship working previews — fast, public-priced, AI-built. Within 24-48 hours of your request, your site is on a real URL.</p>
+    <p class="diff-strip__trust">“Unlike fully automated builders, we put human eyes on every website before delivery. That’s why our clients actually love what they get.”</p>
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="how-it-works__head">
+      <h2>How it <span class="grad-text">works.</span></h2>
+      <p>Three steps. One quality gate no automated builder has.</p>
+    </div>
+    <div class="how-it-works__grid">
+      <div class="how-step">
+        <div class="how-step__num">1</div>
+        <h3>We Research Your Business</h3>
+        <p>Our AI scans your industry, competitors, and local market. Then it builds a custom design — not a template.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">2</div>
+        <h3>Our Team Reviews It</h3>
+        <p>A human designer inspects every page before you see it. This is the quality gate that automated-only tools skip.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">3</div>
+        <h3>You Approve, Then Pay</h3>
+        <p>Your preview lands in your inbox within 24–48 hours. You review. If it’s right, you pay. Same day you say yes, it’s live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. CATEGORY POSITIONING -->
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="how-it-works__head">
+      <h2>How it <span class="grad-text">works.</span></h2>
+      <p>Three steps. One quality gate no automated builder has.</p>
+    </div>
+    <div class="how-it-works__grid">
+      <div class="how-step">
+        <div class="how-step__num">1</div>
+        <h3>We Research Your Business</h3>
+        <p>Our AI scans your industry, competitors, and local market. Then it builds a custom design — not a template.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">2</div>
+        <h3>Our Team Reviews It</h3>
+        <p>A human designer inspects every page before you see it. This is the quality gate that automated-only tools skip.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step__num">3</div>
+        <h3>You Approve, Then Pay</h3>
+        <p>Your preview lands in your inbox within 24–48 hours. You review. If it’s right, you pay. Same day you say yes, it’s live.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1016,15 +1095,15 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
 <!-- 5. WHY ALMA -->
 <section class="why">
   <div class="container why__inner">
-    <h2>The AI built the draft. <span class="grad-text">A senior team built the website.</span></h2>
-    <p>AI is a tool. We use it the way a film studio uses cameras — to move faster, not to replace the people who make the work matter.</p>
-    <p>Every Alma project is owned by a <strong>senior creative</strong> who has shipped hundreds of sites. They write the strategy. They direct the design. They review every page before it touches your domain. The AI handles the parts that should be automated. The humans handle the parts that matter.</p>
-    <p><strong>That is what concierge means.</strong> That is the difference between a website you built and a website that was built for you.</p>
+    <h2>Built Different. <span class="grad-text">By Design.</span></h2>
+    <p>The AI-only website model sounds good on paper. Fast, automated, scalable. In practice? Dozens of Trustpilot reviews tell a different story — cookie-cutter designs, no one to call, and pricing that quietly compounds.</p>
+    <p>At Alma, AI is the engine — not the final word. Every website we generate goes through a <strong>human design review</strong> before you see it. We check layout, readability, brand feel, and conversion flow. If something’s off, we fix it before it reaches your inbox.</p>
+    <p><strong>That’s not an extra service. That’s the standard.</strong></p>
 
     <ul class="why__bullets">
       <li>
         <strong>Done-for-you, not do-it-with-AI.</strong>
-        <span>We do the research, design, build, and copywriting. You review and approve. AI website builders give you better tools &mdash; but you’re still doing the work.</span>
+        <span>We do the research, design, build, and copywriting. You review and approve. AI website builders give you better tools — but you’re still doing the work.</span>
       </li>
       <li>
         <strong>Preview before payment.</strong>
@@ -1032,12 +1111,13 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
       </li>
       <li>
         <strong>Accountability you can hold.</strong>
-        <span>Our reputation depends on your results. If it doesn’t perform, we fix it &mdash; no support ticket, no prompt engineering, no re-runs. AI tools have no skin in the game. We do.</span>
+        <span>Our reputation depends on your results. If it doesn’t perform, we fix it — no support ticket, no prompt engineering, no re-runs. AI tools have no skin in the game. We do.</span>
       </li>
     </ul>
   </div>
 </section>
 
+<!-- 5b. ALM VS 10WEB
 <!-- 5b. ALM VS 10WEB COMPARISON -->
 <section class="alma-vs" id="alma-vs-ai">
   <div class="container alma-vs__inner">
@@ -1123,6 +1203,17 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
         <div class="faq-a"><p>Bundles include the full scope of multiple services at a discount versus buying each separately. Exact savings vary by bundle — see each bundle card for the breakdown.</p></div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- CTA BLOCK -->
+<section class="home-cta">
+  <div class="container">
+    <div class="home-cta__inner">
+      <h2>See your free preview — <span class="grad-text">no credit card, no commitment.</span></h2>
+      <p>We’ll build a custom website for your business. Human-reviewed, AI-powered. Live previews in 24–48 hours. If you don’t love it, you pay nothing.</p>
+      <a href="#contact" class="btn-primary">Get My Free Preview →</a>
     </div>
   </div>
 </section>
