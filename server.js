@@ -1508,7 +1508,15 @@ app.get('/why-not-10web', (req, res) => {
 
 });
 
+// ── PAGES: BLOG ──────────────────────────────────────────────────────────────
 
+app.get('/blog/:slug', (req, res, next) => {
+  const filePath = path.join(__dirname, 'blog', req.params.slug + '.html');
+  if (fs.existsSync(filePath)) {
+    return res.sendFile(filePath);
+  }
+  next();
+});
 
 // ── API: LEAD CAPTURE (exit-intent popup) ────────────────────────────────────
 
