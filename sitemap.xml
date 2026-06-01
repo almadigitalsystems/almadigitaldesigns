@@ -144,5 +144,13 @@
        DO NOT add individual preview page URLs to this sitemap.
        If a preview-index page is created for internal use, add it here. -->
 
+
+  <!-- Blog: Why 70% of Auto Repair Customers Check Your Website Before Calling -->
+  <url>
+    <loc>https://almadigitalservices.com/blog/why-auto-repair-customers-check-your-website</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
 
