@@ -1508,6 +1508,24 @@ app.get('/why-not-10web', (req, res) => {
 
 });
 
+app.get('/polsia-alternative', (req, res) => {
+
+  res.sendFile(path.join(__dirname, 'polsia-alternative.html'));
+
+});
+
+app.get('/manychat-alternative', (req, res) => {
+
+  res.sendFile(path.join(__dirname, 'manychat-alternative.html'));
+
+});
+
+app.get('/10web-comparison', (req, res) => {
+
+  res.sendFile(path.join(__dirname, '10web-comparison.html'));
+
+});
+
 // ── PAGES: BLOG ──────────────────────────────────────────────────────────────
 
 app.get('/blog/:slug', (req, res, next) => {
@@ -2206,5 +2224,6 @@ app.listen(PORT, () => {
   console.log(`Alma Digital Services running on port ${PORT}`);
 
 });
+
 
 
