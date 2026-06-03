@@ -1305,6 +1305,14 @@ footer{padding:4rem 0 2.5rem;background:var(--bg);border-top:1px solid var(--bor
         <span>What are you looking to build?</span>
         <textarea name="message" rows="4" placeholder="A short description of your business and what you need from a website." required></textarea>
       </label>
+      <label>
+        <span>Phone number <em style="font-weight:400;opacity:.7;">(optional)</em></span>
+        <input type="tel" name="phone" placeholder="(555) 555-5555" />
+      </label>
+      <label class="sms-consent-label" style="display:flex;gap:10px;align-items:flex-start;margin-top:4px;">
+        <input type="checkbox" name="sms_consent" value="yes" style="margin-top:3px;flex-shrink:0;" />
+        <span style="font-size:0.8rem;color:#666;line-height:1.5;">By checking this box, I consent to receive SMS text messages from Alma Digital Services about my project, service updates, and customer care. Msg frequency varies (up to 10 msgs/month). Msg &amp; Data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. See our <a href="/terms-of-service.html" style="color:inherit;text-decoration:underline;">Terms of Service</a> and <a href="/privacy-policy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a>.</span>
+      </label>
       <input type="hidden" name="_subject" value="New inquiry from almadigitalservices.com" />
       <input type="hidden" name="_next" value="https://almadigitalservices.com/?sent=1" />
       <button type="submit" class="btn-primary contact__submit">Send my request →</button>
