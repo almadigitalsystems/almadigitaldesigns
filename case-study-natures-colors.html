@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Case Study: Nature's Colors &#x2014; Alma Digital Services</title>
+<meta name="description" content="How Alma Digital Services helped Nature's Colors establish a consistent social media presence with AlmaReach, putting a handmade cosmetics brand in front of the customers who'd love it."/>
+<meta property="og:title" content="Case Study: Nature's Colors &#x2014; Alma Digital Services"/>
+<meta property="og:description" content="Handmade cosmetics brand gets a professional, consistent social media presence with AlmaReach Starter from Alma Digital Services."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://almadigitalservices.com/case-study-natures-colors.html"/>
+<link rel="canonical" href="https://almadigitalservices.com/case-study-natures-colors.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1b2a;--bg-card:#16213e;--cyan:#00d4ff;--blue:#0066ff;
+  --text:#e8eaf0;--muted:#8892a4;--border:rgba(0,212,255,0.12);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;min-height:100vh}
+::selection{background:rgba(0,212,255,0.3)}
+a{color:var(--cyan);text-decoration:none;transition:opacity 0.2s}
+a:hover{opacity:0.85}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:rgba(13,27,42,0.95);backdrop-filter:blur(12px);z-index:100}
+.nav-logo{font-size:18px;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
+.nav-links{display:flex;gap:24px;align-items:center;list-style:none}
+.nav-links a{color:var(--muted);font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--cyan);opacity:1}
+.nav-cta{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff!important;-webkit-text-fill-color:#fff!important;padding:9px 20px;border-radius:100px;font-size:14px;font-weight:700}
+@media(max-width:768px){.nav-links{display:none}nav{padding:14px 16px}}
+
+/* HERO */
+.cs-hero{padding:80px 24px 60px;text-align:center;max-width:800px;margin:0 auto}
+.cs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);border-radius:100px;padding:5px 16px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
+.cs-hero h1{font-size:clamp(28px,5vw,44px);font-weight:900;line-height:1.15;margin-bottom:16px}
+.cs-hero h1 span{background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cs-hero .subtitle{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto}
+
+/* META BAR */
+.cs-meta{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:32px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:900px;margin:0 auto}
+.cs-meta-item{text-align:center}
+.cs-meta-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cs-meta-value{font-size:16px;font-weight:700;color:#fff}
+
+/* CONTENT */
+.cs-content{max-width:760px;margin:0 auto;padding:60px 24px}
+.cs-section{margin-bottom:56px}
+.cs-section h2{font-size:24px;font-weight:800;margin-bottom:16px;color:#fff}
+.cs-section h2::before{content:'';display:inline-block;width:4px;height:24px;background:linear-gradient(135deg,var(--cyan),var(--blue));border-radius:2px;margin-right:12px;vertical-align:middle}
+.cs-section p{font-size:16px;color:var(--muted);margin-bottom:16px;line-height:1.8}
+
+/* RESULTS */
+.cs-results{list-style:none;margin:24px 0}
+.cs-results li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--text)}
+.cs-results li:last-child{border-bottom:none}
+.cs-check{width:24px;height:24px;min-width:24px;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#22c55e}
+
+/* QUOTE */
+.cs-quote{background:var(--bg-card);border-left:4px solid var(--cyan);border-radius:0 16px 16px 0;padding:32px;margin:40px 0}
+.cs-quote blockquote{font-size:20px;font-weight:500;font-style:italic;color:#fff;line-height:1.6;margin-bottom:12px}
+.cs-quote cite{font-size:14px;color:var(--muted);font-style:normal;font-weight:600}
+.cs-stars{color:#FFB800;font-size:1.1rem;margin-bottom:12px}
+
+/* SERVICE TAG */
+.cs-service-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--cyan);margin-top:16px}
+
+/* CTA */
+.cs-cta{text-align:center;padding:80px 24px;max-width:700px;margin:0 auto}
+.cs-cta h2{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:16px}
+.cs-cta p{font-size:17px;color:var(--muted);margin-bottom:32px}
+.cs-cta-btn{display:inline-block;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;padding:16px 40px;border-radius:100px;font-size:16px;font-weight:700;transition:opacity 0.2s,transform 0.2s}
+.cs-cta-btn:hover{opacity:0.9;transform:translateY(-2px);color:#fff}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--cyan)}
+
+@media(max-width:600px){
+  .cs-hero{padding:48px 16px 40px}
+  .cs-content{padding:40px 16px}
+  .cs-meta{gap:24px}
+  .cs-quote{padding:24px 20px}
+}
+</style>
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D7L0HMBC77UDI5AAH5C0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Alma Digital</a>
+  <ul class="nav-links">
+    <li><a href="/portfolio.html">Portfolio</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+  </ul>
+  <a class="nav-cta" href="/#contact">Get Free Preview</a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-badge">Case Study</div>
+  <h1>Handmade Cosmetics Brand Gets a <span>Consistent Social Presence</span></h1>
+  <p class="subtitle">How Alma Digital Services helped Nature&#x2019;s Colors show up every day for the customers who care what they put on their skin.</p>
+</section>
+
+<div class="cs-meta">
+  <div class="cs-meta-item">
+    <div class="cs-meta-label">Client</div>
+    <div class="cs-meta-value">Nature&#x2019;s Colors</div>
+  </div>
+  <div class="cs-meta-item">
+    <div class="cs-meta-label">Industry</div>
+    <div class="cs-meta-value">Handmade Cosmetics</div>
+  </div>
+  <div class="cs-meta-item">
+    <div class="cs-meta-label">Service</div>
+    <div class="cs-meta-value">AlmaReach Starter</div>
+  </div>
+  <div class="cs-meta-item">
+    <div class="cs-meta-label">Started</div>
+    <div class="cs-meta-value">May 2026</div>
+  </div>
+</div>
+
+<div class="cs-content">
+
+  <div class="cs-section">
+    <h2>The Problem</h2>
+    <p>Roberto Pando started Nature&#x2019;s Colors around a simple belief: that handmade cosmetics should feel as personal as the person wearing them. The products were there. The craft was there. What wasn&#x2019;t there was a consistent social media presence to put the brand in front of the people who&#x2019;d love it.</p>
+    <p>Nature&#x2019;s Colors is a small operation &mdash; Roberto handles the work himself. Social media wasn&#x2019;t getting the attention it deserved, and that meant the brand&#x2019;s story wasn&#x2019;t getting told.</p>
+  </div>
+
+  <div class="cs-section">
+    <h2>The Solution</h2>
+    <p>In May 2026, Nature&#x2019;s Colors became Alma Digital Services&#x2019; first AlmaReach client. With AlmaReach Starter, we took over Instagram and X content management &mdash; AI-powered, consistent, and voiced to match the Nature&#x2019;s Colors brand, not a generic template.</p>
+    <div class="cs-service-tag">AlmaReach Starter &mdash; Instagram &amp; X Management</div>
+  </div>
+
+  <div class="cs-section">
+    <h2>The Result</h2>
+    <p>One month in: professional social presence live, consistent posting cadence established, and a brand that shows up every day for the customers who care what they put on their skin.</p>
+
+    <ul class="cs-results">
+      <li><span class="cs-check">&#10003;</span>Professional social presence established on Instagram and X</li>
+      <li><span class="cs-check">&#10003;</span>Consistent posting cadence &mdash; the brand&#x2019;s story gets told, every day</li>
+      <li><span class="cs-check">&#10003;</span>AI-powered content voiced to match the Nature&#x2019;s Colors brand identity</li>
+      <li><span class="cs-check">&#10003;</span>First AlmaReach Starter client &mdash; live since May 2026</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <h2>Client Review</h2>
+    <div class="cs-quote">
+      <div class="cs-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>&#x201C;Great service and great product!&#x201D;</blockquote>
+      <cite>&mdash; Roberto Pando, Nature&#x2019;s Colors &middot; <span style="color:var(--muted);font-weight:400">5-star Google Review, June 2026</span></cite>
+    </div>
+  </div>
+
+</div>
+
+<section class="cs-cta">
+  <h2>Ready to build a social presence that actually shows up?</h2>
+  <p>AlmaReach handles Instagram and X content management &mdash; AI-powered, consistent, voiced to match your brand. Starting at $99/mo.</p>
+  <a class="cs-cta-btn" href="/#contact">Talk to Us &rarr;</a>
+</section>
+
+<footer>
+  <p>&copy; 2026 Alma Digital Services &middot; <a href="/">Home</a> &middot; <a href="/portfolio.html">Portfolio</a> &middot; <a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></p>
+</footer>
+
+</body>
+</html>
