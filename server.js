@@ -1544,6 +1544,31 @@ app.get('/blog/:slug', (req, res, next) => {
   next();
 });
 
+// ── SPEED-TO-LEAD: SMS within 60s of any lead with a phone number ────────────
+// All sends go through the ALM SMS Hub compliance layer (opt-out, quiet hours,
+// frequency caps, business identification). Fire-and-forget — never blocks the
+// lead-capture response.
+function notifySmsHub(phone, vars, leadSource) {
+  if (!phone || !process.env.ALM_SMS_HUB_SECRET) return;
+  fetch(`${process.env.ALM_SMS_HUB_URL || 'https://quo-webhook.thealmadigital.workers.dev'}/send`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.ALM_SMS_HUB_SECRET}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      to: phone,
+      template: 'speed_to_lead',
+      vars: vars || {},
+      lead_source: leadSource,
+      caller: 'alm-site',
+    }),
+  })
+    .then(r => r.json())
+    .then(d => console.log(`[sms-hub] speed-to-lead ${leadSource}: ${d.ok ? 'sent ' + d.messageId : d.blocked || d.error}`))
+    .catch(err => console.error('[sms-hub] speed-to-lead error:', err.message));
+}
+
 // ── API: LEAD CAPTURE (exit-intent popup) ────────────────────────────────────
 
 
@@ -1552,7 +1577,9 @@ app.post('/api/lead-capture', async (req, res) => {
 
   try {
 
-    const { businessName, email, source } = req.body;
+    const { businessName, email, source, phone } = req.body;
+
+    notifySmsHub(phone, { business: businessName }, 'exit_intent_popup');
 
     const transporter = createMailTransporter();
 
@@ -1674,6 +1701,7 @@ app.post('/whatsapp-lead', express.urlencoded({ extended: false }), async (req, 
   res.status(200).json({ success: true });
   try {
     const { businessName, city, email, phone } = req.body;
+    notifySmsHub(phone, { business: businessName }, 'whatsapp_lead');
     const transporter = createMailTransporter();
     await transporter.sendMail({
       from: `"Alma Digital WhatsApp" <${process.env.GMAIL_USER_1 || 'desk@almawebcreative.com'}>`,
