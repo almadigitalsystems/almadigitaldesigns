@@ -1490,6 +1490,14 @@ app.get('/care-plan', (req, res) => {
 
 
 
+app.get('/case-studies/natures-colors', (req, res) => {
+
+  res.sendFile(path.join(__dirname, 'case-study-natures-colors.html'));
+
+});
+
+
+
 app.get('/ftc-disclosure', (req, res) => {
 
   res.sendFile(path.join(__dirname, 'ftc-disclosure.html'));
