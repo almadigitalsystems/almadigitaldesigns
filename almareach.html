@@ -13,24 +13,24 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0a0f;--bg-card:#0f0f1a;--cyan:#00d4ff;--purple:#7b2fff;--green:#25d366;
-  --text:#fff;--text-muted:#8892a4;--border:rgba(0,212,255,0.15);
-  --glow-cyan:0 0 30px rgba(0,212,255,0.4);
+  --bg:#0A1A2E;--bg-card:#0f0f1a;--cyan:#00B4D8;--purple:#7B61FF;--green:#25d366;
+  --text:#fff;--text-muted:#8892a4;--border:rgba(0,180,216,0.15);
+  --glow-cyan:0 0 30px rgba(0,180,216,0.4);
 }
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
-::selection{background:rgba(0,212,255,0.3)}
+::selection{background:rgba(0,180,216,0.3)}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
 .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
 .grad-text{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.25s;border:none;font-family:inherit}
 .btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;box-shadow:var(--glow-cyan)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,255,0.6)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,180,216,0.6)}
 .btn-ghost{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan)}
-.btn-ghost:hover{background:rgba(0,212,255,0.1);transform:translateY(-2px)}
+.btn-ghost:hover{background:rgba(0,180,216,0.1);transform:translateY(-2px)}
 .micro{font-size:0.82rem;color:var(--text-muted);margin-top:0.9rem}
 /* DRAFT BANNER */
-#draft-banner{background:#7b2fff;color:#fff;text-align:center;font-size:0.8rem;font-weight:700;padding:0.4rem 1rem;letter-spacing:0.04em}
+#draft-banner{background:#7B61FF;color:#fff;text-align:center;font-size:0.8rem;font-weight:700;padding:0.4rem 1rem;letter-spacing:0.04em}
 /* NAV */
 .nav{position:sticky;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav__inner{display:flex;align-items:center;justify-content:space-between}
@@ -74,7 +74,7 @@ blockquote{font-size:1.3rem;font-weight:800;margin:1.5rem auto;line-height:1.4}
 /* PRICING */
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;max-width:760px;margin:3rem auto 0}
 .price-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column}
-.price-card.featured{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow-cyan)}
+.price-card.featured{border-color:rgba(0,180,216,0.5);box-shadow:var(--glow-cyan)}
 .price-card h3{font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
 .price-card .price{font-size:3rem;font-weight:900;line-height:1}
 .price-card .price small{font-size:1rem;font-weight:600;color:var(--text-muted)}
@@ -89,7 +89,7 @@ blockquote{font-size:1.3rem;font-weight:800;margin:1.5rem auto;line-height:1.4}
 .faq-item h4{font-size:1rem;font-weight:800;margin-bottom:0.5rem}
 .faq-item p{font-size:0.92rem;color:var(--text-muted)}
 /* CTA */
-.cta-box{background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(123,47,255,0.08));border:1px solid rgba(0,212,255,0.25);border-radius:24px;padding:4rem 3rem;max-width:720px;margin:0 auto;text-align:center}
+.cta-box{background:linear-gradient(135deg,rgba(0,180,216,0.08),rgba(123,97,255,0.08));border:1px solid rgba(0,180,216,0.25);border-radius:24px;padding:4rem 3rem;max-width:720px;margin:0 auto;text-align:center}
 .cta-box h2{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;margin-bottom:1rem}
 .cta-box p{font-size:1rem;color:var(--text-muted);margin-bottom:2.5rem}
 /* FOOTER */
@@ -292,7 +292,7 @@ blockquote{font-size:1.3rem;font-weight:800;margin:1.5rem auto;line-height:1.4}
         </div>
         <div class="faq-item">
           <h4>What if I need help?</h4>
-          <p>Jump on our live chat at almadigitalservices.com &mdash; Alex from our team is available 24/7 and can help you instantly!</p>
+          <p>Real human support by email &mdash; first response within 1 business day. If your assistant ever goes down, we respond within 4 hours, any day of the week.</p>
         </div>
       </div>
     </div>
