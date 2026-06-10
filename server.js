@@ -2207,7 +2207,22 @@ app.get('/health', (req, res) => {
 
 app.get('*', (req, res) => {
 
-  res.sendFile(path.join(__dirname, 'index.html'));
+  const reqPath = req.path.replace(/\/+$/, '') || '/';
+
+  if (reqPath === '/' || reqPath === '/index' || reqPath === '/index.html') {
+    return res.sendFile(path.join(__dirname, 'index.html'));
+  }
+
+  // Clean-URL resolver: /privacy-policy -> privacy-policy.html, etc.
+  if (/^\/[a-z0-9][a-z0-9\-]*$/i.test(reqPath)) {
+    const candidate = path.join(__dirname, reqPath.slice(1) + '.html');
+    if (candidate.startsWith(__dirname) && fs.existsSync(candidate)) {
+      return res.sendFile(candidate);
+    }
+  }
+
+  // Real 404 — no more soft-404 homepage fallback
+  res.status(404).sendFile(path.join(__dirname, '404.html'));
 
 });
 
