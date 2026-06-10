@@ -1549,11 +1549,17 @@ app.get('/blog/:slug', (req, res, next) => {
 // frequency caps, business identification). Fire-and-forget — never blocks the
 // lead-capture response.
 function notifySmsHub(phone, vars, leadSource) {
-  if (!phone || !process.env.ALM_SMS_HUB_SECRET) return;
+  // Auth: explicit secret if set, else derived from STRIPE_SECRET_KEY (already
+  // on Railway) — avoids needing a new env var while RAILWAY_TOKEN is dead.
+  const hubSecret = process.env.ALM_SMS_HUB_SECRET ||
+    (process.env.STRIPE_SECRET_KEY
+      ? crypto.createHash('sha256').update(process.env.STRIPE_SECRET_KEY + ':alm-sms-hub').digest('hex')
+      : null);
+  if (!phone || !hubSecret) return;
   fetch(`${process.env.ALM_SMS_HUB_URL || 'https://quo-webhook.thealmadigital.workers.dev'}/send`, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.ALM_SMS_HUB_SECRET}`,
+      Authorization: `Bearer ${hubSecret}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
