@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<!-- DRAFT: noindex until Berenice CREATIVE GATE passes + Cody finalizes pricing (ALM-17722). Remove this meta + #draft-banner at publish. -->
+<meta name="robots" content="noindex,nofollow"/>
+<title>AlmaReach — A Bilingual AI Assistant on Your Business WhatsApp, Live in 48 Hours</title>
+<meta name="description" content="AlmaReach answers your customers on WhatsApp 24/7 — in English and Spanish — while you work. Instant replies, order capture, human handoff. Fully managed from $69/mo."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--bg-card:#0f0f1a;--cyan:#00d4ff;--purple:#7b2fff;--green:#25d366;
+  --text:#fff;--text-muted:#8892a4;--border:rgba(0,212,255,0.15);
+  --glow-cyan:0 0 30px rgba(0,212,255,0.4);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(0,212,255,0.3)}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.grad-text{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.25s;border:none;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;box-shadow:var(--glow-cyan)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,255,0.6)}
+.btn-ghost{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan)}
+.btn-ghost:hover{background:rgba(0,212,255,0.1);transform:translateY(-2px)}
+.micro{font-size:0.82rem;color:var(--text-muted);margin-top:0.9rem}
+/* DRAFT BANNER */
+#draft-banner{background:#7b2fff;color:#fff;text-align:center;font-size:0.8rem;font-weight:700;padding:0.4rem 1rem;letter-spacing:0.04em}
+/* NAV */
+.nav{position:sticky;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-size:1.3rem;font-weight:900;text-decoration:none}
+.nav__links{display:flex;gap:2rem;list-style:none}
+.nav__links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+.nav__links a:hover{color:var(--cyan)}
+.nav__cta{font-size:0.9rem;padding:0.6rem 1.5rem}
+@media(max-width:768px){.nav__links{display:none}}
+/* HERO */
+.hero{padding:6rem 0 5rem;text-align:center}
+.hero__badge{display:inline-block;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;font-size:0.8rem;font-weight:800;padding:0.4rem 1.25rem;border-radius:100px;margin-bottom:1.5rem;letter-spacing:0.05em}
+.hero__title{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:900;line-height:1.12;margin-bottom:1.25rem;max-width:860px;margin-left:auto;margin-right:auto}
+.hero__sub{font-size:1.15rem;color:var(--text-muted);max-width:640px;margin:0 auto 2.5rem}
+.hero__btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+/* SECTIONS */
+section{padding:4rem 0}
+.section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;line-height:1.2;margin-bottom:1.5rem;text-align:center}
+.section-lead{font-size:1.05rem;color:var(--text-muted);max-width:680px;margin:0 auto;text-align:center}
+.section-lead+.section-lead{margin-top:1rem}
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:3rem}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color 0.3s,box-shadow 0.3s}
+.feature-card:hover{border-color:var(--cyan);box-shadow:var(--glow-cyan)}
+.feature-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.feature-title{font-size:1.02rem;font-weight:800;margin-bottom:0.5rem}
+.feature-desc{font-size:0.9rem;color:var(--text-muted);line-height:1.6}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem;margin-top:3rem}
+.step{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative}
+.step__num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;font-weight:900;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.step__title{font-weight:800;margin-bottom:0.5rem}
+.step__desc{font-size:0.9rem;color:var(--text-muted)}
+.proof-line{text-align:center;margin-top:2.5rem;font-size:0.95rem;color:var(--cyan);font-weight:600}
+/* PROOF */
+.proof-box{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:3rem;max-width:780px;margin:3rem auto 0;text-align:center}
+.proof-box p{color:var(--text-muted);margin-bottom:1.5rem}
+blockquote{font-size:1.3rem;font-weight:800;margin:1.5rem auto;line-height:1.4}
+.quote-attr{color:var(--text-muted);font-size:0.9rem;font-weight:500}
+.stars{color:#ffc83d;font-size:1.2rem;letter-spacing:0.15em;margin-bottom:0.75rem}
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;max-width:760px;margin:3rem auto 0}
+.price-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column}
+.price-card.featured{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow-cyan)}
+.price-card h3{font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+.price-card .price{font-size:3rem;font-weight:900;line-height:1}
+.price-card .price small{font-size:1rem;font-weight:600;color:var(--text-muted)}
+.price-card .setup{font-size:0.85rem;color:var(--text-muted);margin:0.5rem 0 1.5rem}
+.price-card ul{list-style:none;text-align:left;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem;flex:1}
+.price-card li{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.9rem;color:var(--text-muted)}
+.chk{color:var(--cyan);font-weight:800}
+.reassure{text-align:center;color:var(--text-muted);font-size:0.9rem;margin-top:2rem}
+/* FAQ */
+.faq{max-width:760px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem 1.75rem}
+.faq-item h4{font-size:1rem;font-weight:800;margin-bottom:0.5rem}
+.faq-item p{font-size:0.92rem;color:var(--text-muted)}
+/* CTA */
+.cta-box{background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(123,47,255,0.08));border:1px solid rgba(0,212,255,0.25);border-radius:24px;padding:4rem 3rem;max-width:720px;margin:0 auto;text-align:center}
+.cta-box h2{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;margin-bottom:1rem}
+.cta-box p{font-size:1rem;color:var(--text-muted);margin-bottom:2.5rem}
+/* FOOTER */
+.footer{padding:2.5rem 0;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.82rem}
+.footer a{color:var(--cyan);text-decoration:none}
+.footer .crosssell{margin-bottom:1rem;font-size:0.9rem}
+</style>
+</head>
+<body>
+
+<!-- DRAFT BANNER — remove after CREATIVE GATE (Berenice) + pricing finalization (ALM-17722, Cody) -->
+<div id="draft-banner">DRAFT — pricing pending finalization. Not yet published.</div>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo grad-text">Alma Digital</a>
+    <ul class="nav__links">
+      <li><a href="#what-you-get">What You Get</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#pricing" class="btn btn-primary nav__cta">Get AlmaReach &rarr;</a>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__badge">ALMAREACH &mdash; WHATSAPP AI ASSISTANT</div>
+      <h1 class="hero__title">Your customers message you at 9 PM.<br/><span class="grad-text">AlmaReach answers at 9:00:01.</span></h1>
+      <p class="hero__sub">A bilingual AI assistant that lives on your business WhatsApp &mdash; answering questions, taking orders, and capturing leads 24/7, so you can do the work instead of answering the phone.</p>
+      <div class="hero__btns">
+        <a href="#pricing" class="btn btn-primary">Get AlmaReach &mdash; Live in 48 Hours</a>
+        <a href="/whatsapp-demo" class="btn btn-ghost">Try the live demo &rarr;</a>
+      </div>
+      <p class="micro">Direct signup. No sales calls, ever. Cancel anytime.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Every missed message is a customer<br/>who bought <span class="grad-text">somewhere else.</span></h2>
+      <p class="section-lead">You're on a ladder, behind the counter, or halfway through a job &mdash; and your phone buzzes. Again. &ldquo;Are you open?&rdquo; &ldquo;Do you have this in stock?&rdquo; &ldquo;How much for delivery?&rdquo; The same questions, every day, in two languages, at all hours.</p>
+      <p class="section-lead">You can't answer them all. So some go unanswered. And an unanswered WhatsApp message doesn't wait &mdash; it walks to the next business on the search results.</p>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section id="what-you-get">
+    <div class="container">
+      <h2 class="section-title">What AlmaReach <span class="grad-text">does for you</span></h2>
+      <div class="features">
+        <div class="feature-card">
+          <span class="feature-icon">&#9889;</span>
+          <div class="feature-title">Instant replies, 24/7.</div>
+          <div class="feature-desc">Your customers get an answer in one second &mdash; at lunch rush, after close, on Sunday.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#127757;</span>
+          <div class="feature-title">English AND Spanish, automatically.</div>
+          <div class="feature-desc">The AI detects the customer's language and responds natively. No settings, no menus.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#127891;</span>
+          <div class="feature-title">Trained on YOUR business.</div>
+          <div class="feature-desc">Hours, pricing, inventory, services, policies &mdash; it answers like someone who works there, because it learned from someone who does.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#128722;</span>
+          <div class="feature-title">Takes orders, not just messages.</div>
+          <div class="feature-desc">Guides customers through what they need, builds an order summary, and hands it to you ready to fulfill.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#129309;</span>
+          <div class="feature-title">Knows when to get a human.</div>
+          <div class="feature-desc">Anything sensitive or unusual gets escalated straight to you or your team &mdash; with the full conversation attached.</div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#128736;</span>
+          <div class="feature-title">Fully managed and hosted.</div>
+          <div class="feature-desc">We build it, run it, monitor it, and update it. You never touch a dashboard unless you want to.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">From signup to live assistant <span class="grad-text">in 48 hours</span></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <div class="step__title">Sign up.</div>
+          <div class="step__desc">Pick your plan and check out &mdash; takes two minutes. No calls, no meetings, no quotes.</div>
+        </div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <div class="step__title">Tell us about your business.</div>
+          <div class="step__desc">A short intake form: your hours, services, prices, FAQs, and the tone you want. Send what you have &mdash; we'll shape it.</div>
+        </div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <div class="step__title">We build and test.</div>
+          <div class="step__desc">Your assistant is trained, deployed on a dedicated US WhatsApp number, and tested in both languages before you ever see it.</div>
+        </div>
+        <div class="step">
+          <div class="step__num">4</div>
+          <div class="step__title">You go live.</div>
+          <div class="step__desc">Within 48 hours of intake, your customers are getting answers &mdash; and you're getting your day back.</div>
+        </div>
+      </div>
+      <p class="proof-line">Our first AlmaReach client went from &ldquo;yes&rdquo; to a live, tested bilingual assistant the same evening. We promise 48 hours so we can beat it.</p>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">It already works. <span class="grad-text">Ask a plant nursery in Miami.</span></h2>
+      <div class="proof-box">
+        <p>Nature's Colors Inc, a bilingual plant nursery in Miami, needed to answer customers in English and Spanish &mdash; while actually running the nursery. Their AlmaReach assistant now handles plant questions, availability checks, and wholesale order requests around the clock, in whichever language the customer speaks first.</p>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Great service and great product!&rdquo;</blockquote>
+        <div class="quote-attr">&mdash; Roberto Pando, Nature's Colors Inc (5-star Google review)</div>
+        <div style="margin-top:2rem">
+          <a href="/case-studies/natures-colors" class="btn btn-ghost">Read the full Nature's Colors case study &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING — ALL PRICES PLACEHOLDER, Cody finalizes per ALM-17722 -->
+  <section id="pricing">
+    <div class="container">
+      <h2 class="section-title">Simple pricing. <span class="grad-text">No contracts. Cancel anytime.</span></h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <div class="price" data-pricing-placeholder="ALM-17722">$69<small>/mo</small></div>
+          <div class="setup" data-pricing-placeholder="ALM-17722">+ $99 one-time setup</div>
+          <ul>
+            <li><span class="chk">&#10003;</span> 500 conversations/month</li>
+            <li><span class="chk">&#10003;</span> Dedicated US WhatsApp number</li>
+            <li><span class="chk">&#10003;</span> Custom AI trained on your business</li>
+            <li><span class="chk">&#10003;</span> 24/7 bilingual English/Spanish</li>
+            <li><span class="chk">&#10003;</span> Human handoff</li>
+            <li><span class="chk">&#10003;</span> Fully managed + hosted</li>
+          </ul>
+          <!-- STRIPE CHECKOUT URL — Cody finalizes per ALM-17722 -->
+          <a href="#" data-checkout="almareach-starter" class="btn btn-primary">Start with Starter</a>
+        </div>
+        <div class="price-card featured">
+          <h3 class="grad-text">Growth</h3>
+          <div class="price" data-pricing-placeholder="ALM-17722">$99<small>/mo</small></div>
+          <div class="setup" data-pricing-placeholder="ALM-17722">+ $149 one-time setup</div>
+          <ul>
+            <li><span class="chk">&#10003;</span> Unlimited conversations</li>
+            <li><span class="chk">&#10003;</span> Dedicated US WhatsApp number</li>
+            <li><span class="chk">&#10003;</span> Custom AI trained on your business</li>
+            <li><span class="chk">&#10003;</span> 24/7 bilingual English/Spanish</li>
+            <li><span class="chk">&#10003;</span> Human handoff</li>
+            <li><span class="chk">&#10003;</span> Fully managed + hosted</li>
+          </ul>
+          <!-- STRIPE CHECKOUT URL — Cody finalizes per ALM-17722 -->
+          <a href="#" data-checkout="almareach-growth" class="btn btn-primary">Go Growth</a>
+        </div>
+      </div>
+      <p class="reassure">Flat monthly price. No hidden fees. No long-term contract. Cancel anytime.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Questions, <span class="grad-text">answered</span></h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h4>Will it sound like a robot?</h4>
+          <p>No. It's trained on your business and your tone, and it's tested in real conversations before launch. Customers ask real questions and get real answers &mdash; in full sentences, in their language.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if the AI doesn't know the answer?</h4>
+          <p>It says so honestly and hands the conversation to you or your team immediately, with full context. It never guesses about your prices or policies.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do I need a new phone or app?</h4>
+          <p>No. Your assistant runs on a dedicated US WhatsApp number we provision and manage. Your existing phone and number stay exactly as they are.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What do you need from me?</h4>
+          <p>About 20 minutes: your hours, services, prices, common questions, and how you want it to sound. Send it as a list, a document, or photos of your price sheet &mdash; we'll do the rest.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do I update it later?</h4>
+          <p>Email us the change &mdash; new prices, new hours, new products &mdash; and we update your assistant. It's included.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if I need help?</h4>
+          <p>Jump on our live chat at almadigitalservices.com &mdash; Alex from our team is available 24/7 and can help you instantly!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-box">
+        <h2>Your next customer is <span class="grad-text">already typing.</span></h2>
+        <p>Sign up now, fill out one short form, and within 48 hours your business answers every message &mdash; instantly, in two languages, around the clock.</p>
+        <!-- STRIPE CHECKOUT URL — Cody finalizes per ALM-17722 -->
+        <a href="#pricing" class="btn btn-primary">Get AlmaReach Now</a>
+        <p class="micro">Direct checkout. Live in 48 hours. Cancel anytime.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="crosssell">Also from Alma: <a href="/almasocial">AlmaSocial &mdash; your Instagram &amp; X, professionally managed &rarr;</a></p>
+    <p>&copy; 2026 Alma Digital Services &middot; <a href="/terms.html">Terms</a> &middot; <a href="/privacy-policy">Privacy</a> &middot; <a href="mailto:desk@almawebcreative.com">desk@almawebcreative.com</a></p>
+  </div>
+</footer>
+
+<script src="/chat-widget.js" defer></script>
+</body>
+</html>
