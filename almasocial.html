@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<!-- DRAFT: noindex until Berenice CREATIVE GATE passes + tier reconciliation (ALM-17721) + pricing finalization (ALM-17722). Remove this meta + #draft-banner at publish. -->
+<meta name="robots" content="noindex,nofollow"/>
+<title>AlmaSocial — Your Instagram &amp; X, Professionally Managed from $99/mo</title>
+<meta name="description" content="Daily posts, real engagement, every post reviewed by a human before it publishes. Flat monthly price, no contracts. Your social media, handled — starting at $99/mo."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--bg-card:#0f0f1a;--cyan:#00d4ff;--purple:#7b2fff;
+  --text:#fff;--text-muted:#8892a4;--border:rgba(0,212,255,0.15);
+  --glow-cyan:0 0 30px rgba(0,212,255,0.4);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(0,212,255,0.3)}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.grad-text{background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.25s;border:none;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;box-shadow:var(--glow-cyan)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,255,0.6)}
+.btn-ghost{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan)}
+.btn-ghost:hover{background:rgba(0,212,255,0.1);transform:translateY(-2px)}
+.micro{font-size:0.82rem;color:var(--text-muted);margin-top:0.9rem}
+/* DRAFT BANNER */
+#draft-banner{background:#7b2fff;color:#fff;text-align:center;font-size:0.8rem;font-weight:700;padding:0.4rem 1rem;letter-spacing:0.04em}
+/* NAV */
+.nav{position:sticky;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-size:1.3rem;font-weight:900;text-decoration:none}
+.nav__links{display:flex;gap:2rem;list-style:none}
+.nav__links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+.nav__links a:hover{color:var(--cyan)}
+.nav__cta{font-size:0.9rem;padding:0.6rem 1.5rem}
+@media(max-width:768px){.nav__links{display:none}}
+/* HERO */
+.hero{padding:6rem 0 5rem;text-align:center}
+.hero__badge{display:inline-block;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;font-size:0.8rem;font-weight:800;padding:0.4rem 1.25rem;border-radius:100px;margin-bottom:1.5rem;letter-spacing:0.05em}
+.hero__title{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.12;margin-bottom:1.25rem;max-width:900px;margin-left:auto;margin-right:auto}
+.hero__sub{font-size:1.15rem;color:var(--text-muted);max-width:680px;margin:0 auto 2.5rem}
+.hero__btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+/* SECTIONS */
+section{padding:4rem 0}
+.section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;line-height:1.2;margin-bottom:1.5rem;text-align:center}
+.section-lead{font-size:1.05rem;color:var(--text-muted);max-width:700px;margin:0 auto;text-align:center}
+.section-lead+.section-lead{margin-top:1rem}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem;margin-top:3rem}
+.step{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem}
+.step__num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;font-weight:900;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.step__title{font-weight:800;margin-bottom:0.5rem}
+.step__desc{font-size:0.9rem;color:var(--text-muted)}
+.trust-line{text-align:center;margin-top:2.5rem;font-size:0.95rem;color:var(--cyan);font-weight:600;max-width:720px;margin-left:auto;margin-right:auto}
+/* TIERS */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;margin-top:3rem}
+.price-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;position:relative}
+.price-card.featured{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow-cyan)}
+.popular-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;font-size:0.72rem;font-weight:900;padding:0.3rem 1rem;border-radius:100px;letter-spacing:0.06em;white-space:nowrap}
+.price-card h3{font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem}
+.tier-tag{font-size:0.85rem;color:var(--text-muted);font-style:italic;margin-bottom:1rem}
+.price-card .price{font-size:3rem;font-weight:900;line-height:1;margin-bottom:1.5rem}
+.price-card .price small{font-size:1rem;font-weight:600;color:var(--text-muted)}
+.price-card ul{list-style:none;text-align:left;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem;flex:1}
+.price-card li{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.9rem;color:var(--text-muted)}
+.price-card li strong{color:var(--text)}
+.chk{color:var(--cyan);font-weight:800}
+.founding-banner{background:linear-gradient(135deg,rgba(0,212,255,0.12),rgba(123,47,255,0.12));border:1px solid rgba(0,212,255,0.35);border-radius:12px;padding:0.9rem 1rem;font-size:0.85rem;margin-bottom:1.5rem;color:var(--text)}
+/* PROVIDE */
+.provide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;max-width:900px;margin:3rem auto 0;text-align:left}
+.provide-item{display:flex;align-items:flex-start;gap:0.75rem;padding:1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:12px}
+.provide-check{width:22px;height:22px;min-width:22px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:13px;background-repeat:no-repeat;background-position:center;margin-top:2px}
+.provide-text{font-size:0.9rem;color:var(--text-muted);line-height:1.5}
+.provide-text strong{color:var(--text);display:block;margin-bottom:0.2rem}
+.provide-note{text-align:center;margin-top:2rem;color:var(--cyan);font-weight:600;font-size:0.95rem}
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:3rem}
+.why-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem}
+.why-card h4{font-weight:800;margin-bottom:0.5rem}
+.why-card p{font-size:0.9rem;color:var(--text-muted)}
+/* FAQ */
+.faq{max-width:760px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem 1.75rem}
+.faq-item h4{font-size:1rem;font-weight:800;margin-bottom:0.5rem}
+.faq-item p{font-size:0.92rem;color:var(--text-muted)}
+/* CTA */
+.cta-box{background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(123,47,255,0.08));border:1px solid rgba(0,212,255,0.25);border-radius:24px;padding:4rem 3rem;max-width:720px;margin:0 auto;text-align:center}
+.cta-box h2{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;margin-bottom:1rem}
+.cta-box p{font-size:1rem;color:var(--text-muted);margin-bottom:2.5rem}
+/* FOOTER */
+.footer{padding:2.5rem 0;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.82rem}
+.footer a{color:var(--cyan);text-decoration:none}
+.footer .crosssell{margin-bottom:1rem;font-size:0.9rem}
+</style>
+</head>
+<body>
+
+<!-- DRAFT BANNER — remove after CREATIVE GATE (Berenice) + tier reconciliation (ALM-17721) + pricing finalization (ALM-17722, Cody) -->
+<div id="draft-banner">DRAFT — pricing &amp; tier deliverables pending finalization. Not yet published.</div>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo grad-text">Alma Digital</a>
+    <ul class="nav__links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#tiers">Plans</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#tiers" class="btn btn-primary nav__cta">Start AlmaSocial &rarr;</a>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__badge">ALMASOCIAL &mdash; MANAGED SOCIAL MEDIA</div>
+      <h1 class="hero__title">Your business should be posting today.<br/><span class="grad-text">You shouldn't have to be the one doing it.</span></h1>
+      <p class="hero__sub">AlmaSocial runs your Instagram and X &mdash; content created, posted, and engaged with daily, and every single post reviewed by a human before it goes live. Flat monthly price. No contract.</p>
+      <div class="hero__btns">
+        <a href="#tiers" class="btn btn-primary">Start AlmaSocial</a>
+      </div>
+      <p class="micro">Direct signup. First posts within 72 hours of intake. Cancel anytime.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Everyone says &ldquo;just post consistently.&rdquo;<br/><span class="grad-text">Nobody says when you're supposed to do it.</span></h2>
+      <p class="section-lead">You know your business should be active on social media. Customers check your Instagram before they check your website. But between actual work, posting falls to whenever-you-remember &mdash; and &ldquo;whenever you remember&rdquo; looks abandoned to a customer deciding between you and the business that posted this morning.</p>
+      <p class="section-lead">Hiring an agency costs more than it returns. Doing it yourself costs the hours you don't have. There hasn't been a sane middle &mdash; that's what AlmaSocial is.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">Handled, <span class="grad-text">not automated.</span></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <div class="step__title">Sign up and tell us your brand.</div>
+          <div class="step__desc">A short intake: your colors, your voice, your goals, what you sell, what you never want said. Logo and photos if you have them.</div>
+        </div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <div class="step__title">We build your content engine.</div>
+          <div class="step__desc">A brand kit and content calendar made for your business &mdash; not a template with your logo dropped in.</div>
+        </div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <div class="step__title">Humans review everything.</div>
+          <div class="step__desc">Every post is checked by a real person before it publishes. Nothing goes out on autopilot.</div>
+        </div>
+        <div class="step">
+          <div class="step__num">4</div>
+          <div class="step__title">You watch it run.</div>
+          <div class="step__desc">Daily posts, daily engagement, and replies handled &mdash; while you run the business.</div>
+        </div>
+      </div>
+      <p class="trust-line">Support is always a real person, never a bot. And there is no AI-generated video, ever &mdash; your feed stays something you'd proudly show a customer.</p>
+    </div>
+  </section>
+
+  <!-- TIERS — ALL PRICES PLACEHOLDER (Cody, ALM-17722); deliverables reconcile vs Berenice service def (ALM-17721) -->
+  <section id="tiers">
+    <div class="container">
+      <h2 class="section-title">Pick your plan. <span class="grad-text">Cancel anytime.</span></h2>
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <h3>AlmaSocial One</h3>
+          <div class="tier-tag">One platform, done properly.</div>
+          <div class="price" data-pricing-placeholder="ALM-17722">$99<small>/mo</small></div>
+          <ul>
+            <li><span class="chk">&#10003;</span><span>Instagram <strong>or</strong> X &mdash; you choose</span></li>
+            <li><span class="chk">&#10003;</span><span>Up to 2 posts per day</span></li>
+            <li><span class="chk">&#10003;</span><span>Up to 2 engagements per day (DM replies + comment replies)</span></li>
+            <li><span class="chk">&#10003;</span><span>Images, graphics, and text posts (plus any videos you supply)</span></li>
+            <li><span class="chk">&#10003;</span><span>Every post human-reviewed before publishing</span></li>
+            <li><span class="chk">&#10003;</span><span>Basic analytics included</span></li>
+            <li><span class="chk">&#10003;</span><span>Flat price. No hidden fees. Cancel anytime.</span></li>
+          </ul>
+          <!-- STRIPE SUBSCRIPTION CHECKOUT URL — Cody finalizes per ALM-17722 -->
+          <a href="#" data-checkout="almasocial-one" class="btn btn-primary">Start with One</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="popular-tag">MOST POPULAR</div>
+          <h3 class="grad-text">AlmaSocial Pro</h3>
+          <div class="tier-tag">Both platforms, plus a person whose name you know.</div>
+          <div class="price" data-pricing-placeholder="ALM-17722">$199<small>/mo</small></div>
+          <!-- FOUNDING RATE PLACEHOLDER — ALM-17713 / ALM-17722 -->
+          <div class="founding-banner" data-pricing-placeholder="ALM-17713">&#9889; First 5 AlmaSocial clients get Pro at <strong>$149/mo, locked for 12 months</strong>. When the 5 founding spots are gone, they're gone.</div>
+          <ul>
+            <li><span class="chk">&#10003;</span><span>Instagram <strong>and</strong> X</span></li>
+            <li><span class="chk">&#10003;</span><span>Up to 2 posts per day per platform (4 total)</span></li>
+            <li><span class="chk">&#10003;</span><span>Up to 2 engagements per day per platform (4 total)</span></li>
+            <li><span class="chk">&#10003;</span><span><strong>Dedicated named account manager</strong> &mdash; a real person, reachable and accountable</span></li>
+            <li><span class="chk">&#10003;</span><span>Monthly performance check-in</span></li>
+            <li><span class="chk">&#10003;</span><span>Every post human-reviewed before publishing</span></li>
+            <li><span class="chk">&#10003;</span><span>Flat price. No hidden fees. Cancel anytime.</span></li>
+          </ul>
+          <!-- STRIPE SUBSCRIPTION CHECKOUT URL — Cody finalizes per ALM-17722 -->
+          <a href="#" data-checkout="almasocial-pro" class="btn btn-primary">Go Pro</a>
+        </div>
+
+        <div class="price-card">
+          <h3>AlmaSocial Pro Elite</h3>
+          <div class="tier-tag">Everything in Pro, plus eyes on your market.</div>
+          <div class="price" data-pricing-placeholder="ALM-17722">$299<small>/mo</small></div>
+          <ul>
+            <li><span class="chk">&#10003;</span><span>Everything in AlmaSocial Pro</span></li>
+            <li><span class="chk">&#10003;</span><span><strong>Weekly competitor analysis</strong> by a dedicated strategist &mdash; competitor accounts + industry trends</span></li>
+            <li><span class="chk">&#10003;</span><span><strong>Weekly email report:</strong> competitor highlights, trends, actionable intel, your account performance</span></li>
+            <li><span class="chk">&#10003;</span><span>Priority support channel &mdash; response within 4 business hours</span></li>
+            <li><span class="chk">&#10003;</span><span>Flat price. No hidden fees. Cancel anytime.</span></li>
+          </ul>
+          <!-- STRIPE SUBSCRIPTION CHECKOUT URL — Cody finalizes per ALM-17722 -->
+          <a href="#" data-checkout="almasocial-pro-elite" class="btn btn-primary">Go Elite</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU PROVIDE -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Your part takes about half an hour. <span class="grad-text">Once.</span></h2>
+      <div class="provide-grid">
+        <div class="provide-item">
+          <div class="provide-check"></div>
+          <div class="provide-text"><strong>Brand basics</strong>Logo, colors, any photos you like &mdash; phone photos are fine, we make them work</div>
+        </div>
+        <div class="provide-item">
+          <div class="provide-check"></div>
+          <div class="provide-text"><strong>Your voice</strong>How formal, how playful, what you'd never say</div>
+        </div>
+        <div class="provide-item">
+          <div class="provide-check"></div>
+          <div class="provide-text"><strong>Account access</strong>A simple, secure permissions process &mdash; we walk you through it at signup, no password-sharing</div>
+        </div>
+        <div class="provide-item">
+          <div class="provide-check"></div>
+          <div class="provide-text"><strong>Anything happening</strong>Sales, new products, events &mdash; email them in whenever, we build them into the calendar</div>
+        </div>
+      </div>
+      <p class="provide-note">After intake, your first posts go live within 72 hours.</p>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why-us">
+    <div class="container">
+      <h2 class="section-title">What you're <span class="grad-text">actually paying for</span></h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <h4>A human checks every post.</h4>
+          <p>The fastest way to embarrass a business online is automation nobody reviewed. We don't do that &mdash; a person approves every post before your customers see it.</p>
+        </div>
+        <div class="why-card">
+          <h4>Flat pricing.</h4>
+          <p data-pricing-placeholder="ALM-17722">$99, $199, or $299 a month. The price on this page is the price on your invoice.</p>
+        </div>
+        <div class="why-card">
+          <h4>No contract.</h4>
+          <p>Month to month. If we're not earning the fee, fire us in one click.</p>
+        </div>
+        <div class="why-card">
+          <h4>Real support.</h4>
+          <p>Live chat at almadigitalservices.com, answered by a person, 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Questions, <span class="grad-text">answered</span></h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h4>Do I have to give you my passwords?</h4>
+          <p>No. Both platforms support secure access permissions &mdash; we set it up with you at onboarding without you sharing a password.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Who writes the posts?</h4>
+          <p>Our content team builds everything from your brand kit and voice intake, and a human reviews every post before it publishes. You'll recognize your business in every post &mdash; that's the standard.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I approve posts before they go live?</h4>
+          <p>Yes. Tell us at intake and we'll run on a client-approval flow: you get the content calendar up front and nothing posts without your sign-off.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What about video?</h4>
+          <p>We post videos you supply. We never generate AI video &mdash; your brand deserves better than that, so we simply don't make it.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What results should I expect?</h4>
+          <p>A consistently active, professional presence &mdash; daily posts, answered DMs and comments, and (on Pro and Elite) reporting that shows you exactly what happened each month. We won't promise you fake follower numbers; nobody honest can.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if I want to cancel?</h4>
+          <p>Month to month, cancel anytime from your billing portal. No exit fees, no retention phone calls &mdash; we don't do phone calls at all.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if I need help?</h4>
+          <p>Jump on our live chat at almadigitalservices.com &mdash; Alex from our team is available 24/7 and can help you instantly!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-box">
+        <h2>The last day your social media is <span class="grad-text">your problem.</span></h2>
+        <p>Sign up, spend 30 minutes on intake, and within 72 hours your Instagram and X are active, professional, and handled &mdash; every post reviewed by a human, every month a flat price.</p>
+        <!-- STRIPE CHECKOUT URL — Cody finalizes per ALM-17722 -->
+        <a href="#tiers" class="btn btn-primary">Start AlmaSocial Now</a>
+        <p class="micro" data-pricing-placeholder="ALM-17713">Direct checkout. No contract. Founding Pro rate available for the first 5 clients.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="crosssell">Also from Alma: <a href="/almareach">AlmaReach &mdash; an AI assistant for your WhatsApp &rarr;</a></p>
+    <p>&copy; 2026 Alma Digital Services &middot; <a href="/terms.html">Terms</a> &middot; <a href="/privacy-policy">Privacy</a> &middot; <a href="mailto:desk@almawebcreative.com">desk@almawebcreative.com</a></p>
+  </div>
+</footer>
+
+<script src="/chat-widget.js" defer></script>
+</body>
+</html>
