@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daylight Shrubbery — Sheffield, England</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #2d6a4f;
+    --green-dark: #1b4332;
+    --green-light: #52b788;
+    --brown: #8b5e3c;
+    --brown-light: #a97c5b;
+    --cream: #faf5f0;
+    --cream-dark: #f0e8df;
+    --white: #ffffff;
+    --text: #2c1810;
+    --text-mid: #5c4033;
+    --text-light: #8b7355;
+    --border: #ddd0c0;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--cream); border-bottom: 1px solid var(--border);
+    padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { font-size: 1rem; font-weight: 600; color: var(--green); text-decoration: none; font-family: 'Playfair Display', serif; }
+  .nav-cta {
+    background: var(--green); color: var(--white);
+    padding: 0.6rem 1.4rem; font-family: 'Inter', sans-serif;
+    font-size: 0.85rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--green-dark); }
+
+  /* HERO */
+  .hero { background: var(--cream); padding: 7rem 2rem 6rem; }
+  .hero-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .hero-left { }
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--green); color: var(--green);
+    padding: 0.3rem 0.9rem; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.75rem;
+  }
+  .hero-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 900; line-height: 1.15; color: var(--green-dark);
+    margin-bottom: 1.5rem; letter-spacing: -0.01em;
+  }
+  .hero-left p { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem; }
+  .btn-green {
+    display: inline-block;
+    background: var(--green); color: var(--white);
+    padding: 0.95rem 2.2rem; font-family: 'Inter', sans-serif;
+    font-size: 0.95rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-green:hover { background: var(--green-dark); }
+  .btn-outline {
+    display: inline-block;
+    background: transparent; color: var(--green);
+    border: 2px solid var(--green);
+    padding: 0.9rem 2rem; font-family: 'Inter', sans-serif;
+    font-size: 0.95rem; font-weight: 700; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--green); color: var(--white); }
+
+  .hero-right { }
+  .hero-portrait {
+    background: linear-gradient(145deg, var(--green) 0%, var(--green-dark) 100%);
+    aspect-ratio: 4/5; position: relative; overflow: hidden;
+  }
+  .hero-portrait-inner {
+    position: absolute; inset: 0;
+    display: flex; align-items: flex-end; justify-content: flex-start;
+    padding: 2rem;
+  }
+  .hero-portrait-leaf {
+    position: absolute; top: -20px; right: -20px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .hero-portrait-leaf2 {
+    position: absolute; bottom: 40px; right: 30px;
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .hero-tag {
+    background: var(--brown); color: var(--white);
+    padding: 0.75rem 1.25rem; font-size: 0.9rem; font-weight: 700;
+    line-height: 1.4; position: relative; z-index: 1;
+  }
+  .hero-tag-sub { font-size: 0.75rem; font-weight: 400; opacity: 0.85; }
+
+  /* SECTION COMMON */
+  section { padding: 6rem 2rem; }
+  .section-inner { max-width: 920px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--brown); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700; line-height: 1.15;
+    margin-bottom: 2.5rem; color: var(--green-dark);
+  }
+
+  /* PERSONAL STORY */
+  .story-bg { background: var(--cream-dark); }
+  .story-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+  .story-text p { font-size: 1.05rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 1.5rem; }
+  .story-pullquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-style: italic; color: var(--green);
+    border-left: 4px solid var(--brown); padding-left: 1.5rem;
+    line-height: 1.6; margin: 2rem 0;
+  }
+  .story-aside {
+    background: var(--green-dark); color: var(--white);
+    padding: 2.5rem 2rem;
+  }
+  .story-aside h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 700; }
+  .story-aside-item { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; align-items: flex-start; }
+  .leaf-icon { color: var(--green-light); font-size: 0.9rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .story-aside-item p { font-size: 0.9rem; color: rgba(255,255,255,0.82); line-height: 1.55; }
+
+  /* SERVICES */
+  .services-bg { background: var(--white); }
+  .services-list { list-style: none; }
+  .service-item {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 1.4rem 0; border-bottom: 1px solid var(--border);
+  }
+  .service-item:first-child { border-top: 1px solid var(--border); }
+  .service-leaf {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--green); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .service-name { font-size: 1.05rem; font-weight: 700; color: var(--text); }
+  .service-desc { font-size: 0.875rem; color: var(--text-light); margin-top: 0.15rem; }
+
+  /* BEFORE / AFTER */
+  .gallery-bg { background: var(--cream-dark); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1rem; }
+  .gallery-item { }
+  .gallery-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .gallery-placeholder {
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery-placeholder.before { background: linear-gradient(135deg, #c8b89a 0%, #a8956a 100%); }
+  .gallery-placeholder.after { background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 100%); }
+  .gallery-label-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.45); color: var(--white);
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 0.35rem 0.5rem; text-align: center;
+  }
+  .gallery-caption {
+    padding: 0.75rem 0 0;
+    font-size: 0.82rem; font-weight: 600; color: var(--text-mid); text-align: center;
+  }
+
+  /* PAIN */
+  .pain-bg { background: var(--green-dark); }
+  .pain-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700; line-height: 1.35; color: var(--white);
+    max-width: 680px; margin-bottom: 1.5rem;
+  }
+  .pain-quote em { color: var(--green-light); font-style: normal; }
+  .pain-sub { font-size: 1rem; color: rgba(255,255,255,0.72); max-width: 560px; line-height: 1.75; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .testimonial {
+    background: var(--white); padding: 2rem;
+    border-bottom: 4px solid var(--green);
+  }
+  .t-stars { color: var(--brown); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
+  .t-quote { font-size: 0.95rem; line-height: 1.75; color: var(--text-mid); font-style: italic; margin-bottom: 1.25rem; }
+  .t-name { font-size: 0.78rem; font-weight: 700; color: var(--green-dark); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  /* CONTACT */
+  .contact-bg { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--green-dark); }
+  .contact-item { margin-bottom: 0.85rem; font-size: 0.95rem; color: var(--text-mid); }
+  .contact-item strong { color: var(--text); }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  form input, form textarea {
+    width: 100%; padding: 0.85rem 1rem;
+    border: 1px solid var(--border); background: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text);
+    outline: none; transition: border-color 0.2s;
+  }
+  form input:focus, form textarea:focus { border-color: var(--green); }
+  form textarea { resize: vertical; min-height: 130px; }
+  form button {
+    background: var(--green); color: var(--white);
+    border: none; padding: 0.9rem 2rem;
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; align-self: flex-start;
+  }
+  form button:hover { background: var(--green-dark); }
+
+  /* FOOTER */
+  footer { background: var(--green-dark); color: rgba(255,255,255,0.55); padding: 2rem; text-align: center; font-size: 0.82rem; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-right { display: none; }
+    .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Daylight Shrubbery &mdash; Sheffield</a>
+  <a href="#contact" class="nav-cta">Claim Your Free Redesign</a>
+</nav>
+
+<section class="hero" style="padding:7rem 2rem 6rem;">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">Sheffield, England &mdash; Garden Services</div>
+      <h1>Neil's Garden Transformations &mdash; Sheffield</h1>
+      <p>Daylight Shrubbery has been transforming Sheffield gardens for years. But without a website, Neil's incredible work stays hidden from the homeowners who need him most.</p>
+      <a href="#contact" class="btn-green">Claim Your Free Redesign</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-portrait">
+        <div class="hero-portrait-leaf"></div>
+        <div class="hero-portrait-leaf2"></div>
+        <div class="hero-portrait-inner">
+          <div class="hero-tag">
+            <div>Neil &mdash; Daylight Shrubbery</div>
+            <div class="hero-tag-sub">Sheffield's Garden Specialist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story-bg" id="about">
+  <div class="section-inner">
+    <p class="section-tag">Neil's Story</p>
+    <h2 class="section-title">A Passion for Every Garden</h2>
+    <div class="story-grid">
+      <div class="story-text">
+        <p>Neil is passionate about every garden he tends &mdash; from overgrown tangles to manicured masterpieces. His clients rave about his attention to detail and competitive prices.</p>
+        <p>Whether it's a small back garden that needs a tidy or a large estate requiring full landscaping work, Neil brings the same care and craftsmanship to every project he takes on.</p>
+        <div class="story-pullquote">"From overgrown tangles to manicured masterpieces &mdash; Neil transforms Sheffield gardens one at a time."</div>
+        <p>The only problem? Without a website, new customers in Sheffield can't find Daylight Shrubbery no matter how good the work is. Word of mouth only goes so far.</p>
+        <a href="#contact" class="btn-outline" style="margin-top:1rem;">Change That Today &mdash; It's Free</a>
+      </div>
+      <div class="story-aside">
+        <h4>Why Clients Love Neil</h4>
+        <div class="story-aside-item">
+          <span class="leaf-icon">&#9670;</span>
+          <p>Meticulous attention to detail on every job</p>
+        </div>
+        <div class="story-aside-item">
+          <span class="leaf-icon">&#9670;</span>
+          <p>Competitive, transparent pricing</p>
+        </div>
+        <div class="story-aside-item">
+          <span class="leaf-icon">&#9670;</span>
+          <p>Reliable &mdash; shows up when he says he will</p>
+        </div>
+        <div class="story-aside-item">
+          <span class="leaf-icon">&#9670;</span>
+          <p>Knowledgeable about Sheffield soil and local planting</p>
+        </div>
+        <div class="story-aside-item">
+          <span class="leaf-icon">&#9670;</span>
+          <p>Friendly, honest, and easy to work with</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <p class="section-tag">What We Do</p>
+    <h2 class="section-title">Our Services</h2>
+    <ul class="services-list">
+      <li class="service-item">
+        <div class="service-leaf">&#127807;</div>
+        <div>
+          <div class="service-name">Shrub Trimming &amp; Shaping</div>
+          <div class="service-desc">Precise trimming and shaping to keep your shrubs healthy and looking their best.</div>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="service-leaf">&#9898;</div>
+        <div>
+          <div class="service-name">Garden Clearances</div>
+          <div class="service-desc">Full clearances of overgrown or neglected gardens, taken away cleanly and efficiently.</div>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="service-leaf">&#127807;</div>
+        <div>
+          <div class="service-name">Lawn Care &amp; Edging</div>
+          <div class="service-desc">Mowing, edging, and lawn treatments to give you a neat, healthy lawn all season long.</div>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="service-leaf">&#127795;</div>
+        <div>
+          <div class="service-name">Tree Work</div>
+          <div class="service-desc">Crown reduction, deadwood removal, and general tree tidying carried out safely.</div>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="service-leaf">&#127807;</div>
+        <div>
+          <div class="service-name">Hedge Maintenance</div>
+          <div class="service-desc">Regular hedge trimming and shaping to keep your boundaries smart and defined.</div>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="service-leaf">&#9898;</div>
+        <div>
+          <div class="service-name">One-Off Tidy-Ups</div>
+          <div class="service-desc">No contract needed &mdash; ideal for seasonal refreshes, before selling, or after a long winter.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="gallery-bg" id="gallery">
+  <div class="section-inner">
+    <p class="section-tag">Portfolio</p>
+    <h2 class="section-title">See Neil's Work</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="gallery-before-after">
+          <div class="gallery-placeholder before"><div class="gallery-label-overlay">Before</div></div>
+          <div class="gallery-placeholder after"><div class="gallery-label-overlay">After</div></div>
+        </div>
+        <div class="gallery-caption">Overgrown shrubs &mdash; Fulwood, Sheffield</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-before-after">
+          <div class="gallery-placeholder before"><div class="gallery-label-overlay">Before</div></div>
+          <div class="gallery-placeholder after"><div class="gallery-label-overlay">After</div></div>
+        </div>
+        <div class="gallery-caption">Garden clearance &mdash; Ecclesall, Sheffield</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-before-after">
+          <div class="gallery-placeholder before"><div class="gallery-label-overlay">Before</div></div>
+          <div class="gallery-placeholder after"><div class="gallery-label-overlay">After</div></div>
+        </div>
+        <div class="gallery-caption">Hedge trim &amp; lawn edge &mdash; Nether Edge</div>
+      </div>
+    </div>
+    <p style="margin-top:2rem;font-size:0.9rem;color:var(--text-light);text-align:center;font-style:italic;">A proper gallery with real before/after photos will be featured on your live website.</p>
+  </div>
+</section>
+
+<section class="pain-bg">
+  <div class="section-inner">
+    <p class="pain-quote">Sheffield homeowners Google <em>"gardener near me"</em> and hire the first name they see &mdash; Daylight Shrubbery doesn't show up yet.</p>
+    <p class="pain-sub">Neil's work speaks for itself &mdash; but it has to be seen first. Without a website, there's no way for new customers to discover him, trust him, or get in touch. That's what a professional site solves.</p>
+    <a href="#contact" class="btn-green" style="margin-top:2.5rem;display:inline-block;">Get Found Online &mdash; It's Free</a>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="section-inner">
+    <p class="section-tag">Testimonials</p>
+    <h2 class="section-title">What Sheffield Says</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-quote">"Neil completely transformed our back garden. What was an overgrown mess is now a space we're proud to use. Brilliant job at a great price."</p>
+        <span class="t-name">&mdash; Sarah B., Crookes, Sheffield</span>
+      </div>
+      <div class="testimonial">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-quote">"He's trimmed our hedges and sorted the lawn for two years now. Always reliable, always tidy, and always leaves the place looking immaculate."</p>
+        <span class="t-name">&mdash; Dave H., Walkley, Sheffield</span>
+      </div>
+      <div class="testimonial">
+        <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="t-quote">"Found Neil through a neighbour. He cleared our garden ahead of a house sale and it made a real difference to the photos. Highly recommend."</p>
+        <span class="t-name">&mdash; Fiona M., Broomhill, Sheffield</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-bg" id="contact">
+  <div class="section-inner">
+    <p class="section-tag">Get in Touch</p>
+    <h2 class="section-title">Contact Daylight Shrubbery</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Daylight Shrubbery</h3>
+        <p class="contact-item"><strong>Location:</strong> Sheffield, England, United Kingdom</p>
+        <p class="contact-item"><strong>Proprietor:</strong> Neil</p>
+        <p class="contact-item"><strong>Service Area:</strong> Sheffield &amp; Surrounding Areas</p>
+        <p style="margin-top:2rem;font-size:0.9rem;color:var(--text-light);line-height:1.8;">Whether your garden needs a one-off clearance or regular maintenance throughout the year, Neil is happy to help. Fill in the form and he'll be in touch.</p>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <textarea name="message" placeholder="Tell us about your garden..."></textarea>
+          <button type="submit">Claim Your Free Redesign</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Daylight Shrubbery &mdash; Sheffield, England, United Kingdom. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
