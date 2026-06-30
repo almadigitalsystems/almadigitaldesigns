@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barton's Handyman Service — Brisbane, Queensland</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --charcoal: #1c1c1e;
+    --charcoal-light: #2a2a2c;
+    --amber: #ff6b35;
+    --amber-dark: #e55a25;
+    --white: #ffffff;
+    --gray-light: #f4f4f6;
+    --gray-mid: #9ca3af;
+    --gray-border: #e5e7eb;
+    --text: #111111;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--charcoal);
+    padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { font-size: 1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: -0.01em; }
+  .nav-cta {
+    background: var(--amber); color: var(--white);
+    padding: 0.6rem 1.4rem; font-family: 'Inter', sans-serif;
+    font-size: 0.85rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--amber-dark); }
+
+  /* HERO */
+  .hero {
+    background: var(--charcoal); color: var(--white);
+    padding: 7rem 2rem 6rem; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 40%; background: linear-gradient(135deg, transparent 0%, rgba(255,107,53,0.08) 100%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-block;
+    background: var(--amber); color: var(--white);
+    padding: 0.3rem 0.9rem; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 900; line-height: 1.05;
+    letter-spacing: -0.03em; color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 span { color: var(--amber); }
+  .hero p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255,255,255,0.8);
+    max-width: 580px; line-height: 1.7; margin-bottom: 2.5rem;
+  }
+  .btn-amber {
+    display: inline-block;
+    background: var(--amber); color: var(--white);
+    padding: 1rem 2.5rem; font-family: 'Inter', sans-serif;
+    font-size: 1rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-amber:hover { background: var(--amber-dark); }
+  .btn-white {
+    display: inline-block;
+    background: var(--white); color: var(--charcoal);
+    padding: 1rem 2.5rem; font-family: 'Inter', sans-serif;
+    font-size: 1rem; font-weight: 700; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-white:hover { opacity: 0.9; }
+
+  /* SECTION COMMON */
+  section { padding: 6rem 2rem; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--amber); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900; letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 3rem;
+  }
+
+  /* SERVICES */
+  .services-bg { background: var(--gray-light); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .service-card {
+    background: var(--white); padding: 2rem;
+    border-top: 3px solid transparent;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .service-card:hover {
+    border-top-color: var(--amber);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+  .service-icon-box {
+    width: 48px; height: 48px; background: var(--charcoal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1.25rem;
+  }
+  .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--charcoal); }
+  .service-card p { font-size: 0.875rem; color: #555; line-height: 1.6; }
+
+  /* WHY MATT - alternating dark */
+  .why-dark { background: var(--charcoal); }
+  .why-dark .section-tag { color: var(--amber); }
+  .why-dark .section-title { color: var(--white); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .why-text p { font-size: 1rem; color: rgba(255,255,255,0.78); line-height: 1.8; margin-bottom: 1.25rem; }
+  .why-list { list-style: none; }
+  .why-list li {
+    display: flex; gap: 1rem; padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    align-items: flex-start;
+  }
+  .why-list li:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+  .why-num { font-size: 0.8rem; font-weight: 900; color: var(--amber); min-width: 28px; padding-top: 0.15rem; }
+  .why-list-title { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+  .why-list-desc { font-size: 0.875rem; color: rgba(255,255,255,0.65); }
+
+  /* GALLERY */
+  .gallery-bg { background: var(--white); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .gallery-item { }
+  .gallery-placeholder {
+    aspect-ratio: 4/3;
+    position: relative; overflow: hidden;
+  }
+  .g1 { background: linear-gradient(145deg, #c8c4bc 0%, #a09891 100%); }
+  .g2 { background: linear-gradient(145deg, #b8bcc2 0%, #909499 100%); }
+  .g3 { background: linear-gradient(145deg, #ccc8c0 0%, #aaa59e 100%); }
+  .g4 { background: linear-gradient(145deg, #b4bcc8 0%, #8f97a3 100%); }
+  .g5 { background: linear-gradient(145deg, #c4c8bc 0%, #9ea49a 100%); }
+  .g6 { background: linear-gradient(145deg, #c0bccc 0%, #9895a9 100%); }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: rgba(28,28,30,0.45);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay-icon { font-size: 2rem; color: var(--white); }
+  .gallery-caption {
+    padding: 0.75rem 0 0;
+    font-size: 0.82rem; font-weight: 600; color: #555;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .gallery-tag {
+    font-size: 0.7rem; background: var(--amber); color: var(--white);
+    padding: 0.15rem 0.5rem; font-weight: 700;
+  }
+
+  /* PAIN */
+  .pain-dark { background: var(--charcoal-light); }
+  .pain-dark .section-tag { color: var(--amber); }
+  .pain-quote {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 700; line-height: 1.35; color: var(--white);
+    max-width: 700px; letter-spacing: -0.02em;
+  }
+  .pain-quote span { color: var(--amber); }
+  .pain-sub { font-size: 1rem; color: var(--gray-mid); margin-top: 1.5rem; max-width: 560px; line-height: 1.75; }
+
+  /* TESTIMONIALS */
+  .testimonials-bg { background: var(--gray-light); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .testimonial { background: var(--white); padding: 2rem; }
+  .stars-row { display: flex; gap: 2px; margin-bottom: 1rem; }
+  .star { width: 16px; height: 16px; background: var(--amber); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+  .t-quote { font-size: 0.95rem; line-height: 1.7; color: #444; font-style: italic; margin-bottom: 1.25rem; }
+  .t-name { font-size: 0.78rem; font-weight: 700; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* CTA BAND */
+  .cta-band { background: var(--amber); text-align: center; padding: 5rem 2rem; }
+  .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: var(--white); margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .cta-band p { color: rgba(255,255,255,0.9); font-size: 1.05rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  /* CONTACT */
+  .contact-bg { background: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--charcoal); letter-spacing: -0.02em; }
+  .contact-item { margin-bottom: 0.85rem; font-size: 0.95rem; color: #555; }
+  .contact-item strong { color: var(--text); }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  form input, form textarea {
+    width: 100%; padding: 0.85rem 1rem;
+    border: 1px solid var(--gray-border); background: var(--gray-light);
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text);
+    outline: none; transition: border-color 0.2s;
+  }
+  form input:focus, form textarea:focus { border-color: var(--amber); background: var(--white); }
+  form textarea { resize: vertical; min-height: 130px; }
+  form button {
+    background: var(--charcoal); color: var(--white);
+    border: none; padding: 0.9rem 2rem;
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; align-self: flex-start;
+  }
+  form button:hover { background: var(--amber); }
+
+  /* FOOTER */
+  footer { background: var(--charcoal); color: rgba(255,255,255,0.45); padding: 2rem; text-align: center; font-size: 0.82rem; }
+  footer span { color: var(--amber); }
+
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Barton's Handyman Service</a>
+  <a href="#contact" class="nav-cta">Claim Your Free Redesign</a>
+</nav>
+
+<section class="hero" style="padding:7rem 2rem 6rem;">
+  <div class="hero-inner">
+    <div class="hero-tag">Brisbane QLD &mdash; Handyman Services</div>
+    <h1>BARTON'S<br>HANDYMAN SERVICE<br><span>&mdash; BRISBANE QLD</span></h1>
+    <p>Matt Barton gets the job done right, every time. Now let's make sure Brisbane homeowners can actually find him.</p>
+    <a href="#contact" class="btn-amber">Claim Your Free Redesign</a>
+  </div>
+</section>
+
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <p class="section-tag">What Matt Does</p>
+    <h2 class="section-title">Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-box">&#128296;</div>
+        <h3>General Repairs</h3>
+        <p>From leaky taps to broken fittings &mdash; Matt handles all the jobs that pile up around the home.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box">&#128679;</div>
+        <h3>Furniture Assembly</h3>
+        <p>Flat-pack furniture assembled quickly and correctly, no instruction manual headaches.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box">&#128682;</div>
+        <h3>Door &amp; Window Fixes</h3>
+        <p>Stiff doors, broken hinges, draughty windows &mdash; all sorted properly and efficiently.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box">&#127912;</div>
+        <h3>Painting Touch-Ups</h3>
+        <p>Patch up scuffs, refresh skirting boards, or touch up walls to make rooms look sharp again.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box">&#128716;</div>
+        <h3>Bathroom Repairs</h3>
+        <p>Sealant replacement, fixture fixes, and minor plumbing repairs handled with care.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-box">&#9881;</div>
+        <h3>Odd Jobs &amp; More</h3>
+        <p>If it needs doing around the house, Matt can handle it. No job too small for Brisbane's most reliable handyman.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-dark" id="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <p class="section-tag">Why Choose Matt</p>
+        <h2 class="section-title" style="margin-bottom:1.5rem;">Why Matt?</h2>
+        <p class="why-text" style="font-size:1rem;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:1.5rem;">Matt Barton has built a reputation across Brisbane for being the handyman who actually shows up, does the job right, and leaves the place tidy. No cowboys, no surprises.</p>
+        <a href="#contact" class="btn-amber">Claim Your Free Redesign</a>
+      </div>
+      <div>
+        <ul class="why-list">
+          <li>
+            <div class="why-num">01</div>
+            <div>
+              <div class="why-list-title">Years of Experience</div>
+              <div class="why-list-desc">Matt has honed his craft across hundreds of Brisbane homes and properties.</div>
+            </div>
+          </li>
+          <li>
+            <div class="why-num">02</div>
+            <div>
+              <div class="why-list-title">Reliable &amp; Punctual</div>
+              <div class="why-list-desc">Shows up when he says he will. Finishes what he starts. No excuses.</div>
+            </div>
+          </li>
+          <li>
+            <div class="why-num">03</div>
+            <div>
+              <div class="why-list-title">Brisbane Local</div>
+              <div class="why-list-desc">Born and raised locally. Knows the area, knows the homes, and genuinely cares about the community.</div>
+            </div>
+          </li>
+          <li>
+            <div class="why-num">04</div>
+            <div>
+              <div class="why-list-title">Licensed &amp; Insured</div>
+              <div class="why-list-desc">Fully covered for your peace of mind on every job, big or small.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-bg" id="gallery">
+  <div class="section-inner">
+    <p class="section-tag">Portfolio</p>
+    <h2 class="section-title">Matt's Completed Jobs</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="gallery-placeholder g1">
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">&#128247;</span></div>
+        </div>
+        <div class="gallery-caption">
+          <span>Deck repair</span>
+          <span class="gallery-tag">Paddington</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder g2">
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">&#128247;</span></div>
+        </div>
+        <div class="gallery-caption">
+          <span>Kitchen fix</span>
+          <span class="gallery-tag">New Farm</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder g3">
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">&#128247;</span></div>
+        </div>
+        <div class="gallery-caption">
+          <span>Bathroom reseal</span>
+          <span class="gallery-tag">Fortitude Valley</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder g4">
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">&#128247;</span></div>
+        </div>
+        <div class="gallery-caption">
+          <span>Fence repair</span>
+          <span class="gallery-tag">West End</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder g5">
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">&#128247;</span></div>
+        </div>
+        <div class="gallery-caption">
+          <span>Door installation</span>
+          <span class="gallery-tag">Toowong</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder g6">
+          <div class="gallery-overlay"><span class="gallery-overlay-icon">&#128247;</span></div>
+        </div>
+        <div class="gallery-caption">
+          <span>Painting touch-up</span>
+          <span class="gallery-tag">Kelvin Grove</span>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:2rem;font-size:0.875rem;color:#777;text-align:center;font-style:italic;">Real photos from Matt's completed jobs will be featured on your live website.</p>
+  </div>
+</section>
+
+<section class="pain-dark">
+  <div class="section-inner">
+    <p class="section-tag">The Real Problem</p>
+    <h2 class="section-title" style="color:var(--white);margin-bottom:2rem;">Invisible Where It Counts</h2>
+    <p class="pain-quote">Brisbane homeowners hire handymen who <span>show up on Google with photos of their work</span> &mdash; Matt doesn't appear yet.</p>
+    <p class="pain-sub">Every job Matt completes is proof of quality &mdash; but without a website to showcase it, new customers have no way to find him, see his work, or trust him enough to make contact. That changes with a proper online presence.</p>
+    <a href="#contact" class="btn-amber" style="margin-top:2.5rem;display:inline-block;">Get Online &mdash; It's Free</a>
+  </div>
+</section>
+
+<section class="testimonials-bg" id="testimonials">
+  <div class="section-inner">
+    <p class="section-tag">Happy Clients</p>
+    <h2 class="section-title">Brisbane Homeowners Rate Matt</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="t-quote">"Matt fixed our deck in Paddington in a single day. Excellent work, very fair price, and he left the area spotless. Will definitely use again."</p>
+        <span class="t-name">&mdash; Tom and Rhonda L., Paddington</span>
+      </div>
+      <div class="testimonial">
+        <div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="t-quote">"So refreshing to find a handyman who actually turns up on time. Matt sorted out our bathroom and a handful of other odd jobs. Brilliant."</p>
+        <span class="t-name">&mdash; Jessica W., New Farm</span>
+      </div>
+      <div class="testimonial">
+        <div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="t-quote">"We had a long list of things that needed doing around the house before selling. Matt knocked them all out in two days. Highly recommend."</p>
+        <span class="t-name">&mdash; Craig M., West End</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Let's Get Matt Found Online</h2>
+  <p>A professional website showcasing Matt's work could bring in Brisbane clients every single day.</p>
+  <a href="#contact" class="btn-white">Claim Your Free Redesign</a>
+</div>
+
+<section class="contact-bg" id="contact">
+  <div class="section-inner">
+    <p class="section-tag">Get In Touch</p>
+    <h2 class="section-title">Contact Barton's Handyman Service</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Barton's Handyman Service</h3>
+        <p class="contact-item"><strong>Location:</strong> Brisbane, QLD, Australia</p>
+        <p class="contact-item"><strong>Proprietor:</strong> Matt Barton</p>
+        <p class="contact-item"><strong>Service Area:</strong> Greater Brisbane &amp; Surrounds</p>
+        <p style="margin-top:2rem;font-size:0.9rem;color:#555;line-height:1.8;">Whether it's a single repair or a list of jobs, Matt is happy to help. Fill in the form and he'll be in touch with a no-obligation quote.</p>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <textarea name="message" placeholder="Tell us what needs fixing..."></textarea>
+          <button type="submit">Claim Your Free Redesign</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 <span>Barton's Handyman Service</span> &mdash; Brisbane, Queensland, Australia. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
