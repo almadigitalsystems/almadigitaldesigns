@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Fades Barbershop — Tuscaloosa, Alabama | Big John the Barber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --burgundy: #8b2635;
+      --burgundy-dark: #621a26;
+      --cream: #faf5f0;
+      --charcoal: #2d2d2d;
+      --text: #3a3a3a;
+      --gold: #c8923a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--charcoal);
+      border-bottom: 2px solid var(--burgundy);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    nav .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--cream);
+    }
+    nav ul { list-style: none; display: flex; gap: 1.75rem; }
+    nav ul a { color: rgba(250,245,240,0.75); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+    .nav-cta { background: var(--burgundy); color: var(--cream) !important; padding: 0.45rem 1rem; border-radius: 4px; font-weight: 700 !important; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, var(--charcoal) 0%, #1e1e1e 50%, var(--burgundy-dark) 100%);
+      min-height: 92vh; display: flex; align-items: center;
+      padding: 5rem 2rem; position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 800px; }
+    .hero-tag {
+      display: inline-block; color: var(--gold); border: 1px solid rgba(200,146,58,0.4);
+      background: rgba(200,146,58,0.1); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 2px; margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1;
+      color: var(--cream); margin-bottom: 0.75rem;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero .address-line {
+      color: rgba(250,245,240,0.55); font-size: 1rem; letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      color: rgba(250,245,240,0.75); font-size: 1.1rem; line-height: 1.75;
+      max-width: 580px; margin-bottom: 2.25rem;
+    }
+    .btn-burgundy {
+      display: inline-block; background: var(--burgundy); color: var(--cream);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 0.9rem 2.2rem; border-radius: 4px; text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-burgundy:hover { background: var(--burgundy-dark); transform: translateY(-2px); }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--burgundy); margin-bottom: 0.7rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+      color: var(--charcoal); margin-bottom: 1rem;
+    }
+    .section-desc { color: #777; font-size: 1.05rem; line-height: 1.7; max-width: 600px; }
+
+    /* ABOUT */
+    .about { background: var(--cream); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: center; }
+    .about-avatar {
+      background: linear-gradient(160deg, var(--burgundy-dark), var(--charcoal));
+      border-radius: 12px; aspect-ratio: 4/5;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+      position: relative; overflow: hidden;
+    }
+    .about-avatar .initials {
+      font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 900;
+      color: rgba(250,245,240,0.12);
+    }
+    .about-avatar .barber-tag {
+      position: absolute; bottom: 1.5rem;
+      background: var(--burgundy); color: var(--cream);
+      padding: 0.5rem 1.25rem; border-radius: 4px;
+      font-weight: 700; font-size: 0.9rem; letter-spacing: 1px;
+    }
+    .about-avatar .scissors {
+      font-size: 4rem; opacity: 0.3;
+    }
+    .about-content p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+    .about-content .quote {
+      background: rgba(139,38,53,0.06); border-left: 4px solid var(--burgundy);
+      padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;
+      color: var(--charcoal); font-style: italic; line-height: 1.7;
+    }
+
+    /* SERVICES */
+    .services { background: var(--charcoal); }
+    .services .section-title { color: var(--cream); }
+    .services .section-label { color: var(--gold); }
+    .services .section-desc { color: rgba(250,245,240,0.65); }
+    .services-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0; }
+    .service-row {
+      display: flex; align-items: center; gap: 1.5rem;
+      padding: 1.25rem 0; border-bottom: 1px solid rgba(250,245,240,0.08);
+      transition: padding-left 0.2s;
+    }
+    .service-row:hover { padding-left: 0.5rem; }
+    .service-row:last-child { border-bottom: none; }
+    .svc-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      background: rgba(139,38,53,0.25); border: 1px solid rgba(139,38,53,0.4);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .svc-text h3 { color: var(--cream); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .svc-text p { color: rgba(250,245,240,0.55); font-size: 0.9rem; line-height: 1.5; }
+
+    /* PORTFOLIO */
+    .portfolio { background: var(--cream); }
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin-top: 3rem;
+    }
+    .portfolio-item {
+      background: linear-gradient(160deg, var(--charcoal), var(--burgundy-dark));
+      border-radius: 8px; aspect-ratio: 3/4;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 1rem; position: relative; overflow: hidden;
+    }
+    .portfolio-item::before {
+      content: attr(data-style); position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-size: 3rem; opacity: 0.15;
+    }
+    .portfolio-tag {
+      background: rgba(200,146,58,0.9); color: white;
+      font-size: 0.8rem; font-weight: 700; padding: 0.4rem 0.75rem; border-radius: 3px;
+      letter-spacing: 0.5px; text-transform: uppercase; position: relative; z-index: 1;
+    }
+    .portfolio-label { color: rgba(250,245,240,0.7); font-size: 0.8rem; margin-top: 0.35rem; text-align: center; }
+
+    /* PAIN POINTS */
+    .pain { background: var(--burgundy); color: var(--cream); }
+    .pain .section-title { color: var(--cream); }
+    .pain .section-label { color: rgba(250,245,240,0.6); }
+    .pain .section-desc { color: rgba(250,245,240,0.75); }
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .pain-card {
+      background: rgba(0,0,0,0.2); border: 1px solid rgba(250,245,240,0.15);
+      border-radius: 8px; padding: 1.75rem;
+    }
+    .pain-card h4 { color: var(--cream); font-weight: 700; margin-bottom: 0.5rem; font-size: 1rem; }
+    .pain-card p { color: rgba(250,245,240,0.7); font-size: 0.9rem; line-height: 1.6; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--cream); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .testi-card {
+      background: white; border-radius: 10px; padding: 2rem;
+      box-shadow: 0 2px 16px rgba(45,45,45,0.08); border-top: 3px solid var(--burgundy);
+    }
+    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 1rem; }
+    .testi-card p { color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testi-author { font-weight: 700; color: var(--charcoal); font-size: 0.9rem; }
+    .testi-location { color: #aaa; font-size: 0.8rem; }
+
+    /* CONTACT */
+    .contact { background: var(--charcoal); }
+    .contact .section-title { color: var(--cream); }
+    .contact .section-label { color: var(--gold); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info p { color: rgba(250,245,240,0.7); line-height: 1.8; margin-bottom: 1rem; }
+    .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: rgba(250,245,240,0.7); }
+    .contact-detail span:first-child { color: var(--gold); font-size: 1.2rem; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; background: rgba(250,245,240,0.07);
+      border: 1px solid rgba(200,146,58,0.25);
+      color: var(--cream); padding: 0.85rem 1rem;
+      border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem;
+      margin-bottom: 1rem; outline: none; transition: border-color 0.2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(250,245,240,0.35); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .btn-form {
+      background: var(--burgundy); color: var(--cream);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 1rem 2rem; border: none; border-radius: 4px; cursor: pointer; width: 100%;
+      transition: background 0.2s; font-family: 'Inter', sans-serif;
+    }
+    .btn-form:hover { background: var(--burgundy-dark); }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--burgundy), var(--burgundy-dark));
+      text-align: center; padding: 4rem 2rem;
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700;
+      color: var(--cream); margin-bottom: 0.75rem;
+    }
+    .cta-banner p { color: rgba(250,245,240,0.75); font-size: 1.1rem; margin-bottom: 2rem; }
+    .btn-cream {
+      display: inline-block; background: var(--cream); color: var(--burgundy);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .btn-cream:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a1a; padding: 2rem;
+      text-align: center; color: #555; font-size: 0.85rem;
+    }
+    footer span { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .about-avatar { aspect-ratio: 3/2; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="brand">Luxury Fades Barbershop</div>
+    <ul>
+      <li><a href="#about">Big John</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Free Redesign</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Tuscaloosa, Alabama</div>
+      <h1>Big John's <em>Luxury Fades</em> —<br />Tuscaloosa's Go-To Barber</h1>
+      <div class="address-line">📍 375 Bear Creek Rd • Tuscaloosa, AL</div>
+      <p>Precision fades, clean line-ups, and a welcoming atmosphere for UA students, families, and professionals. Big John the Barber is Tuscaloosa's best-kept secret — let's change that.</p>
+      <a href="#contact" class="btn-burgundy">Claim Your Free Redesign</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-avatar">
+          <div class="scissors">✂️</div>
+          <div class="initials">BJ</div>
+          <div class="barber-tag">Big John the Barber</div>
+        </div>
+        <div class="about-content">
+          <div class="section-label">Meet the Barber</div>
+          <h2 class="section-title">Big John — Tuscaloosa's Trusted Craftsman</h2>
+          <p>John — known as Big John the Barber — has been crafting precision fades in Tuscaloosa for years. University of Alabama students, families, and professionals all trust Big John for the cleanest cuts in the city.</p>
+          <p>At 375 Bear Creek Rd, Luxury Fades isn't just a barbershop — it's where Tuscaloosa comes to look its best. Whether you're heading to a game at Bryant-Denny Stadium or into the office on Monday morning, Big John makes sure you're walking out with confidence.</p>
+          <div class="quote">"Every cut tells a story. I want every person who sits in my chair to leave looking and feeling like the best version of themselves." — John, Big John the Barber</div>
+          <a href="#contact" class="btn-burgundy">Get Your Free Website Preview</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label">What We Do Best</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc">From luxury fades to family packages — Big John has a service for everyone in Tuscaloosa.</p>
+      <div class="services-list">
+        <div class="service-row">
+          <div class="svc-icon">💈</div>
+          <div class="svc-text">
+            <h3>Luxury Fades</h3>
+            <p>Big John's signature — precision fades from skin to length, crafted with expert hands and an eye for detail.</p>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="svc-icon">📐</div>
+          <div class="svc-text">
+            <h3>Precision Line-Ups</h3>
+            <p>Sharp, defined edges that frame your face perfectly — the finishing touch every great cut deserves.</p>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="svc-icon">🧔</div>
+          <div class="svc-text">
+            <h3>Beard Sculpting</h3>
+            <p>Full beard shaping, trimming, and design — whether you want clean and subtle or bold and shaped.</p>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="svc-icon">🎓</div>
+          <div class="svc-text">
+            <h3>Student Specials</h3>
+            <p>Affordable pricing for University of Alabama students — show your student ID and save.</p>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="svc-icon">👨‍👩‍👦</div>
+          <div class="svc-text">
+            <h3>Family Packages</h3>
+            <p>Bring the whole family. Dad, sons, even the little ones — everyone gets Big John's full attention.</p>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="svc-icon">💬</div>
+          <div class="svc-text">
+            <h3>Style Consultations</h3>
+            <p>Not sure what cut fits your face shape? Big John will talk you through the options and make it happen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-label">The Work</div>
+      <h2 class="section-title">Cut Portfolio — Before &amp; After</h2>
+      <p class="section-desc">Big John's work speaks for itself. Here's a taste of what comes out of the chair at 375 Bear Creek Rd.</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-style="✂️">
+          <div class="portfolio-tag">Before / After</div>
+          <div class="portfolio-label">Luxury Fade</div>
+        </div>
+        <div class="portfolio-item" data-style="💈">
+          <div class="portfolio-tag">Before / After</div>
+          <div class="portfolio-label">Skin Taper</div>
+        </div>
+        <div class="portfolio-item" data-style="📐">
+          <div class="portfolio-tag">Before / After</div>
+          <div class="portfolio-label">Precision Line-Up</div>
+        </div>
+        <div class="portfolio-item" data-style="🧔">
+          <div class="portfolio-tag">Before / After</div>
+          <div class="portfolio-label">Beard Sculpt</div>
+        </div>
+        <div class="portfolio-item" data-style="🎓">
+          <div class="portfolio-tag">Before / After</div>
+          <div class="portfolio-label">Student Cut</div>
+        </div>
+        <div class="portfolio-item" data-style="👦">
+          <div class="portfolio-tag">Before / After</div>
+          <div class="portfolio-label">Kids Cut</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain">
+    <div class="container">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Tuscaloosa Is Searching — But Can't Find You</h2>
+      <p class="section-desc">University of Alabama students and families are searching for barbers online every day — without a website, Luxury Fades doesn't show up.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <h4>🔍 Missing UA Students</h4>
+          <p>Thousands of students arrive in Tuscaloosa every semester searching for a go-to barber. Without a website, they're finding someone else.</p>
+        </div>
+        <div class="pain-card">
+          <h4>📸 No Online Portfolio</h4>
+          <p>Big John's cuts are stunning — but there's nowhere online to show them. A portfolio would convert first-time visitors into loyal regulars.</p>
+        </div>
+        <div class="pain-card">
+          <h4>👨‍👩‍👦 Families Can't Book Online</h4>
+          <p>Busy Tuscaloosa families want to plan ahead. Without a website or booking system, you're missing family clients who need convenience.</p>
+        </div>
+        <div class="pain-card">
+          <h4>🗺️ Invisible on Google Maps</h4>
+          <p>A website dramatically increases your chances of showing up on Google Maps — where 90% of local searches happen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">What Clients Say</div>
+      <h2 class="section-title">Tuscaloosa Speaks Up</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Big John is the only barber I trust with my fade. As a UA student, I've tried other shops but none of them come close to the level of detail and care he puts into every cut."</p>
+          <div class="testi-author">DeShawn H.</div>
+          <div class="testi-location">University of Alabama Student, Tuscaloosa, AL</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Brought my two sons in and Big John had them looking fresh in no time. Patient, skilled, and professional. This is the only barbershop we'll be using in Tuscaloosa."</p>
+          <div class="testi-author">Marcus &amp; Family</div>
+          <div class="testi-location">Tuscaloosa, AL</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"I work downtown and I need to look sharp every single day. Big John at Luxury Fades is the only person I trust to keep my beard and hair on point. Top-tier barber in Tuscaloosa."</p>
+          <div class="testi-author">Terrence M.</div>
+          <div class="testi-location">Tuscaloosa, AL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Claim Your Free Redesign</h2>
+          <p>Big John's talent is undeniable — now it's time for Tuscaloosa (and Google) to see it. Fill out the form and we'll build a free website preview for Luxury Fades.</p>
+          <div class="contact-detail"><span>📍</span><span>375 Bear Creek Rd, Tuscaloosa, AL 35405</span></div>
+          <div class="contact-detail"><span>💈</span><span>Luxury Fades Barbershop</span></div>
+          <div class="contact-detail"><span>👤</span><span>Big John the Barber</span></div>
+          <div class="contact-detail"><span>🎓</span><span>Student Specials Available</span></div>
+        </div>
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xojppajv" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="tel" name="phone" placeholder="Phone Number" />
+            <input type="hidden" name="business" value="Luxury Fades Barbershop — Tuscaloosa, AL — Big John the Barber" />
+            <textarea name="message" placeholder="Tell us about Luxury Fades and what you'd like on your new website..."></textarea>
+            <button type="submit" class="btn-form">Claim Your Free Redesign</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Big John Deserves to Be Found Online</h2>
+    <p>UA students and Tuscaloosa families are searching — let's make sure they find Luxury Fades first.</p>
+    <a href="#contact" class="btn-cream">Claim Your Free Redesign</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 <span>Luxury Fades Barbershop</span> — 375 Bear Creek Rd, Tuscaloosa, AL 35405. Website preview by Alma Digital Designs.</p>
+  </footer>
+
+</body>
+</html>
