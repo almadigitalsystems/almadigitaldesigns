@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roots Barbershop LLC — Memphis, Tennessee | Jermaine's Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --card-dark: #181818;
+      --green: #39d353;
+      --green-dim: #2ab344;
+      --white: #ffffff;
+      --gray: #888;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--black); color: var(--white); }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,10,0.97); border-bottom: 1px solid #1e1e1e;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+    }
+    .brand {
+      font-size: 1.1rem; font-weight: 900; color: var(--white); letter-spacing: 2px; text-transform: uppercase;
+    }
+    .brand span { color: var(--green); }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { color: #aaa; text-decoration: none; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.5px; transition: color 0.2s; }
+    nav ul a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--green); color: var(--black) !important;
+      padding: 0.45rem 1.1rem; border-radius: 4px; font-weight: 900 !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      background: var(--black);
+      padding: 5rem 2rem; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; right: 0; width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(57,211,83,0.04) 50%, transparent 100%);
+    }
+    .hero::after {
+      content: 'ROOTS';
+      position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+      font-size: 18vw; font-weight: 900; color: rgba(57,211,83,0.03);
+      letter-spacing: -4px; line-height: 1; pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 800px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--green); font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag::before { content: ''; display: block; width: 24px; height: 2px; background: var(--green); }
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 6rem); font-weight: 900; line-height: 0.95;
+      letter-spacing: -2px; text-transform: uppercase;
+      color: var(--white); margin-bottom: 1.5rem;
+    }
+    .hero h1 .green { color: var(--green); }
+    .hero h1 .line2 { display: block; font-size: 0.55em; letter-spacing: 4px; color: #555; margin-top: 0.25em; }
+    .hero p {
+      color: #888; font-size: 1.05rem; line-height: 1.75; max-width: 520px; margin-bottom: 2.5rem;
+    }
+    .hero-cta-group { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .btn-green {
+      display: inline-block; background: var(--green); color: var(--black);
+      font-weight: 900; font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase;
+      padding: 0.9rem 2rem; border-radius: 4px; text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-green:hover { background: var(--green-dim); transform: translateY(-2px); }
+    .hero-address {
+      color: #555; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-address::before { content: '📍'; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--green); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900;
+      letter-spacing: -0.5px; text-transform: uppercase;
+      color: var(--white); margin-bottom: 1rem;
+    }
+    .section-title.dark-text { color: var(--black); }
+    .section-desc { color: #666; font-size: 1rem; line-height: 1.7; max-width: 600px; }
+    .section-desc.light { color: #aaa; }
+
+    /* SERVICES */
+    .services { background: var(--dark); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem; margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--card-dark); border: 1px solid #222;
+      border-radius: 8px; padding: 2rem 1.5rem;
+      cursor: default; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover {
+      border-color: var(--green);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(57,211,83,0.12);
+    }
+    .service-card:hover .scard-icon { background: rgba(57,211,83,0.15); }
+    .scard-icon {
+      width: 48px; height: 48px; border-radius: 8px;
+      background: rgba(57,211,83,0.08); border: 1px solid rgba(57,211,83,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1.25rem;
+      transition: background 0.25s;
+    }
+    .service-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--white); margin-bottom: 0.4rem; letter-spacing: 0.3px; }
+    .service-card p { color: #666; font-size: 0.88rem; line-height: 1.6; }
+
+    /* WHY ROOTS — DARK */
+    .why-roots { background: var(--black); }
+    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .why-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+    .why-item { display: flex; gap: 1rem; }
+    .why-num {
+      font-size: 2rem; font-weight: 900; color: rgba(57,211,83,0.25);
+      line-height: 1; flex-shrink: 0; width: 36px;
+    }
+    .why-item h4 { color: var(--white); font-weight: 800; margin-bottom: 0.3rem; }
+    .why-item p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+    .why-visual {
+      background: var(--card-dark); border: 1px solid #222; border-radius: 12px;
+      padding: 3rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: center;
+    }
+    .why-stat { text-align: center; }
+    .why-stat .num { font-size: 3.5rem; font-weight: 900; color: var(--green); line-height: 1; }
+    .why-stat .label { color: #555; font-size: 0.85rem; margin-top: 0.25rem; }
+    .why-divider { width: 100%; height: 1px; background: #222; }
+
+    /* OUR CRAFT — LIGHT */
+    .our-craft { background: #f4f4f4; }
+    .our-craft .section-title { color: #0a0a0a; }
+    .our-craft .section-label { color: var(--green-dim); }
+    .craft-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .craft-item {
+      background: white; border-radius: 8px; padding: 1.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07); text-align: center;
+      border-bottom: 3px solid var(--green);
+    }
+    .craft-item .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .craft-item h4 { color: #111; font-weight: 800; font-size: 1rem; margin-bottom: 0.4rem; }
+    .craft-item p { color: #777; font-size: 0.88rem; line-height: 1.5; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--dark); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+    .testi-card {
+      background: var(--card-dark); border: 1px solid #222;
+      border-radius: 10px; padding: 2rem;
+    }
+    .stars { color: var(--green); font-size: 1rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+    .testi-card p { color: #aaa; font-size: 0.92rem; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testi-author { font-weight: 800; color: var(--white); font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .testi-location { color: #444; font-size: 0.78rem; margin-top: 0.2rem; }
+
+    /* CONTACT */
+    .contact { background: var(--black); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+    .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: #666; }
+    .contact-detail span:first-child { color: var(--green); font-size: 1.1rem; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; background: #111;
+      border: 1px solid #222;
+      color: var(--white); padding: 0.85rem 1rem;
+      border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem;
+      margin-bottom: 1rem; outline: none; transition: border-color 0.2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: #444; }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--green); }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .btn-form {
+      background: var(--green); color: var(--black);
+      font-weight: 900; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase;
+      padding: 1rem 2rem; border: none; border-radius: 4px; cursor: pointer; width: 100%;
+      transition: background 0.2s; font-family: 'Inter', sans-serif;
+    }
+    .btn-form:hover { background: var(--green-dim); }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--green); text-align: center; padding: 4rem 2rem;
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; text-transform: uppercase;
+      letter-spacing: -0.5px;
+      color: var(--black); margin-bottom: 0.75rem;
+    }
+    .cta-banner p { color: rgba(10,10,10,0.7); font-size: 1.1rem; margin-bottom: 2rem; }
+    .btn-black {
+      display: inline-block; background: var(--black); color: var(--white);
+      font-weight: 900; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase;
+      padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .btn-black:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: #050505; padding: 2rem;
+      text-align: center; color: #333; font-size: 0.85rem;
+    }
+    footer span { color: var(--green); }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .why-inner, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="brand"><span>Roots</span> Barbershop</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-roots">Why Roots</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Free Redesign</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Memphis, Tennessee</div>
+      <h1>
+        <span class="green">Roots</span><br />
+        Barbershop LLC
+        <span class="line2">Memphis · 3053 Thomas St</span>
+      </h1>
+      <p>Jermaine's shop at 3053 Thomas St has been cutting Memphis for years. It's time Memphis could find you online — and it's time Roots showed up where the customers are searching.</p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-green">Claim Your Free Redesign</a>
+        <span class="hero-address">3053 Thomas St, Memphis TN 38127</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc light">From fresh fades to special occasion cuts — Roots delivers Memphis barbering at its finest.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="scard-icon">💈</div>
+          <h3>Fresh Fades</h3>
+          <p>Clean, precision fades built on skill — Jermaine's signature service that Memphis keeps coming back for.</p>
+        </div>
+        <div class="service-card">
+          <div class="scard-icon">✂️</div>
+          <h3>Skin Taper</h3>
+          <p>Seamless skin-to-length tapers for a polished, high-definition finish that holds its shape.</p>
+        </div>
+        <div class="service-card">
+          <div class="scard-icon">🧔</div>
+          <h3>Beard Design</h3>
+          <p>Shaping, detailing, and clean-up — beard work that completes the look.</p>
+        </div>
+        <div class="service-card">
+          <div class="scard-icon">📐</div>
+          <h3>Line-Ups</h3>
+          <p>Sharp edges, crisp lines. The detail work that separates a good cut from a great one.</p>
+        </div>
+        <div class="service-card">
+          <div class="scard-icon">👦</div>
+          <h3>Kids Cuts</h3>
+          <p>Patient and careful with younger clients — every kid leaves looking sharp and feeling good.</p>
+        </div>
+        <div class="service-card">
+          <div class="scard-icon">🏆</div>
+          <h3>Special Occasion Cuts</h3>
+          <p>Weddings, graduations, proms — Jermaine makes sure you look exactly right when it counts most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ROOTS — DARK -->
+  <section class="why-roots" id="why-roots">
+    <div class="container">
+      <div class="why-inner">
+        <div>
+          <div class="section-label">Why Roots?</div>
+          <h2 class="section-title">Memphis Needs Roots Online</h2>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-num">01</div>
+              <div>
+                <h4>Missing Google Search Traffic</h4>
+                <p>Memphis residents search "barber near me" hundreds of times daily. Without a website, Roots Barbershop is invisible to every one of them.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-num">02</div>
+              <div>
+                <h4>Word-of-Mouth Has a Ceiling</h4>
+                <p>Jermaine's regulars love the shop — but word-of-mouth alone can only grow so far. A website breaks through that ceiling.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-num">03</div>
+              <div>
+                <h4>Competitors Are Winning Online</h4>
+                <p>Other Memphis shops with basic websites are capturing clients who would choose Roots — if they could find it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual">
+          <div class="why-stat">
+            <div class="num">97%</div>
+            <div class="label">of consumers search online before visiting a local business</div>
+          </div>
+          <div class="why-divider"></div>
+          <div class="why-stat">
+            <div class="num">3×</div>
+            <div class="label">more calls received by barbershops with a website vs. those without</div>
+          </div>
+          <div class="why-divider"></div>
+          <div class="why-stat">
+            <div class="num">0</div>
+            <div class="label">Roots Barbershop websites right now — let's fix that</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR CRAFT — LIGHT -->
+  <section class="our-craft">
+    <div class="container">
+      <div class="section-label">Our Craft</div>
+      <h2 class="section-title" style="color:#0a0a0a;">Built on Memphis Barbering</h2>
+      <p class="section-desc" style="color:#777;">Every cut at Roots is done with intention, skill, and Memphis pride.</p>
+      <div class="craft-grid">
+        <div class="craft-item">
+          <div class="icon">✂️</div>
+          <h4>Precision Every Time</h4>
+          <p>No rushed cuts. Every client gets Jermaine's full attention and skill.</p>
+        </div>
+        <div class="craft-item">
+          <div class="icon">💬</div>
+          <h4>Real Memphis Community</h4>
+          <p>Roots is more than a barbershop — it's a Memphis gathering spot.</p>
+        </div>
+        <div class="craft-item">
+          <div class="icon">🏆</div>
+          <h4>Years of Expertise</h4>
+          <p>Jermaine has been perfecting his craft in Memphis for years — and it shows.</p>
+        </div>
+        <div class="craft-item">
+          <div class="icon">💈</div>
+          <h4>Clean &amp; Professional</h4>
+          <p>The shop is always clean, always welcoming, always ready to deliver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">Reviews</div>
+      <h2 class="section-title">Memphis Speaks</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Jermaine is the best barber in Memphis, period. My fade is always on point and he's always consistent. I tell everyone I know — Roots is the only place to go."</p>
+          <div class="testi-author">Darius P.</div>
+          <div class="testi-location">Memphis, TN</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"I've been going to Roots since it opened. The atmosphere is great, the cuts are always clean, and Jermaine genuinely cares about his clients. A real Memphis gem."</p>
+          <div class="testi-author">Calvin B.</div>
+          <div class="testi-location">Memphis, TN</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Got a special occasion cut before my daughter's wedding and I have never looked better in my life. Jermaine took his time and the detail work was unbelievable. Roots Barbershop is elite."</p>
+          <div class="testi-author">Raymond S.</div>
+          <div class="testi-location">Memphis, TN</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Claim Your Free Redesign</h2>
+          <p>Roots Barbershop belongs at the top of Memphis search results. Fill out the form and we'll build a free website preview — no commitment required.</p>
+          <div class="contact-detail"><span>📍</span><span>3053 Thomas St, Memphis TN 38127</span></div>
+          <div class="contact-detail"><span>💈</span><span>Roots Barbershop LLC</span></div>
+          <div class="contact-detail"><span>👤</span><span>Jermaine — Owner &amp; Barber</span></div>
+          <div class="contact-detail"><span>🌐</span><span>No website yet — we're fixing that</span></div>
+        </div>
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xojppajv" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="tel" name="phone" placeholder="Phone Number" />
+            <input type="hidden" name="business" value="Roots Barbershop LLC — Memphis, TN — Jermaine" />
+            <textarea name="message" placeholder="Tell us about Roots and what you'd like on your new website..."></textarea>
+            <button type="submit" class="btn-form">Claim Your Free Redesign</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Memphis Is Searching for Roots Barbershop</h2>
+    <p>Let's make sure they find you — free website preview, no strings attached.</p>
+    <a href="#contact" class="btn-black">Claim Your Free Redesign</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 <span>Roots Barbershop LLC</span> — 3053 Thomas St, Memphis TN 38127. Website preview by Alma Digital Designs.</p>
+  </footer>
+
+</body>
+</html>
