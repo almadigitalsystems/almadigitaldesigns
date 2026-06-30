@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Pro Painting Plus — Windsor, Ontario</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #000000;
+    --white: #ffffff;
+    --orange: #e85d04;
+    --gray-light: #f5f5f5;
+    --gray-mid: #888888;
+    --gray-border: #e0e0e0;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-border);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { font-size: 1rem; font-weight: 700; letter-spacing: -0.02em; color: var(--black); text-decoration: none; }
+  .nav-cta {
+    background: var(--orange); color: var(--white);
+    border: none; padding: 0.6rem 1.4rem;
+    font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700;
+    cursor: pointer; text-decoration: none; letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .hero-section {
+    padding: 8rem 2rem 7rem;
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; }
+  .hero-eyebrow {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 1.5rem;
+  }
+  .hero-headline {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900; line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: var(--black); margin-bottom: 2rem;
+  }
+  .hero-headline span { color: var(--orange); }
+  .hero-sub {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 400; color: #444; max-width: 560px;
+    line-height: 1.65; margin-bottom: 2.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--orange); color: var(--white);
+    padding: 1rem 2.5rem; font-family: 'Inter', sans-serif;
+    font-size: 1rem; font-weight: 700; letter-spacing: 0.03em;
+    text-decoration: none; transition: opacity 0.2s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  /* SECTION COMMON */
+  section { padding: 6rem 2rem; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900; letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 3rem;
+  }
+
+  /* SERVICES */
+  .services-bg { background: var(--gray-light); }
+  .services-list {
+    list-style: none;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+  }
+  .services-list li {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--gray-border);
+    font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .services-list li::before {
+    content: ''; display: block;
+    width: 8px; height: 8px; background: var(--orange); flex-shrink: 0;
+  }
+
+  /* ABOUT */
+  .about-text {
+    font-size: 1.15rem; line-height: 1.8; color: #333;
+    max-width: 680px;
+  }
+  .stat-row { display: flex; gap: 4rem; margin-top: 3rem; flex-wrap: wrap; }
+  .stat-num { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; color: var(--black); line-height: 1; }
+  .stat-num span { color: var(--orange); }
+  .stat-desc { font-size: 0.85rem; font-weight: 500; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem; }
+
+  /* PAIN POINT */
+  .pain-bg { background: var(--black); color: var(--white); }
+  .pain-quote {
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight: 700; line-height: 1.3; letter-spacing: -0.02em;
+    max-width: 700px;
+  }
+  .pain-quote span { color: var(--orange); }
+  .pain-sub { font-size: 1rem; color: #aaa; margin-top: 1.5rem; max-width: 560px; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem; margin-top: 1rem;
+  }
+  .testimonial { border-top: 3px solid var(--orange); padding-top: 1.5rem; }
+  .testimonial-quote {
+    font-size: 1rem; line-height: 1.7; color: #333; margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .testimonial-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); }
+
+  /* CONTACT */
+  .contact-bg { background: var(--gray-light); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 1.5rem; }
+  .contact-detail { margin-bottom: 0.75rem; font-size: 1rem; color: #333; }
+  .contact-detail strong { color: var(--black); }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  form input, form textarea {
+    width: 100%; padding: 0.85rem 1rem;
+    border: 1px solid var(--gray-border); background: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--black);
+    outline: none; transition: border-color 0.2s;
+  }
+  form input:focus, form textarea:focus { border-color: var(--orange); }
+  form textarea { resize: vertical; min-height: 130px; }
+  form button {
+    background: var(--orange); color: var(--white);
+    border: none; padding: 0.9rem 2rem;
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: opacity 0.2s; align-self: flex-start;
+  }
+  form button:hover { opacity: 0.85; }
+
+  /* FOOTER */
+  footer {
+    background: var(--black); color: #666;
+    padding: 2rem; text-align: center;
+    font-size: 0.8rem; letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .hero-section { padding: 5rem 1.5rem 4rem; }
+    section { padding: 4rem 1.5rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .stat-row { gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">JC Pro Painting Plus</a>
+  <a href="#contact" class="nav-cta">Claim Your Free Redesign</a>
+</nav>
+
+<div class="hero-section">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Windsor, Ontario &mdash; Est. 1994</p>
+    <h1 class="hero-headline">30 YEARS.<br><span>ZERO</span><br>WEBSITE.</h1>
+    <p class="hero-sub">Windsor's most experienced painter &mdash; invisible online. Let's change that.</p>
+    <a href="#contact" class="btn-primary">Claim Your Free Redesign</a>
+  </div>
+</div>
+
+<section class="services-bg">
+  <div class="section-inner">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Services</h2>
+    <ul class="services-list">
+      <li>Interior Painting</li>
+      <li>Exterior Painting</li>
+      <li>Commercial Projects</li>
+      <li>Residential Renovations</li>
+      <li>Deck Staining</li>
+      <li>Color Consultation</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <p class="section-label">About</p>
+    <h2 class="section-title">30 Years of Craft</h2>
+    <p class="about-text">JC has been painting Windsor and surrounding areas for over 30 years. Contractors and property managers who find JC's work love it &mdash; but most never find it because there's no website to find.</p>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-num">30<span>+</span></div>
+        <div class="stat-desc">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500<span>+</span></div>
+        <div class="stat-desc">Projects Completed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-desc">Website (Until Now)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pain-bg">
+  <div class="section-inner">
+    <p class="pain-quote">Every day property managers Google Windsor painters &mdash; and <span>JC Pro Painting Plus doesn't appear.</span></p>
+    <p class="pain-sub">30 years of expertise, dozens of completed commercial and residential projects &mdash; and none of it shows up in a Google search. That's revenue walking out the door daily.</p>
+    <a href="#contact" class="btn-primary" style="margin-top:2.5rem;display:inline-block;">Fix This Now &mdash; It's Free</a>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <p class="section-label">Testimonials</p>
+    <h2 class="section-title">What Clients Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="testimonial-quote">"JC repainted our entire office complex and the finish was immaculate. Found him through a referral &mdash; wish there'd been a website to find him sooner."</p>
+        <span class="testimonial-name">&mdash; David R., Windsor Property Manager</span>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-quote">"He transformed our home exterior in three days. Attention to detail, clean work, and a fair price. Highly recommend."</p>
+        <span class="testimonial-name">&mdash; Linda M., Homeowner, LaSalle</span>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-quote">"Our deck looks brand new. JC was professional, on time, and the staining work is holding up beautifully two years later."</p>
+        <span class="testimonial-name">&mdash; Kevin T., Windsor Resident</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-bg" id="contact">
+  <div class="section-inner">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's Talk</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>JC Pro Painting Plus</h3>
+        <p class="contact-detail"><strong>Location:</strong> Windsor, ON, Canada</p>
+        <p class="contact-detail"><strong>Phone:</strong> <a href="tel:2267241104" style="color:var(--orange);text-decoration:none;font-weight:700;">226-724-1104</a></p>
+        <p class="contact-detail"><strong>Service Area:</strong> Windsor &amp; Surrounding Areas</p>
+        <p style="margin-top:2rem;font-size:0.9rem;color:#555;line-height:1.7;">Whether you need an interior refresh, a full exterior repaint, or a commercial project &mdash; JC brings 30 years of experience to every job.</p>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <textarea name="message" placeholder="Tell us about your project..."></textarea>
+          <button type="submit">Claim Your Free Redesign</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 JC Pro Painting Plus &mdash; Windsor, Ontario, Canada. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
