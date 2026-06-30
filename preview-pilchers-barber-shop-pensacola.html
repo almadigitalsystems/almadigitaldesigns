@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilcher's Barber Shop — Pensacola, Florida | Est. 1977</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1e3a5f;
+      --navy-dark: #122540;
+      --cream: #f5f0e8;
+      --gold: #c8923a;
+      --white: #ffffff;
+      --text: #2a2a2a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 68px;
+    }
+    nav .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--cream);
+      letter-spacing: 0.5px;
+    }
+    nav .brand span { color: var(--gold); font-size: 0.85rem; font-weight: 400; display: block; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { color: rgba(245,240,232,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--white) !important;
+      padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 700 !important;
+    }
+
+    /* HERO — SPLIT SCREEN */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .hero-left {
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: flex-end;
+      padding: 5rem 4rem 5rem 3rem;
+    }
+    .hero-left-inner { max-width: 480px; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(200,146,58,0.2); border: 1px solid var(--gold);
+      color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 1.5rem;
+    }
+    .hero-left h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;
+      color: var(--cream); margin-bottom: 1.25rem;
+    }
+    .hero-left h1 span { color: var(--gold); }
+    .hero-left p {
+      color: rgba(245,240,232,0.75); font-size: 1.05rem; line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .btn-gold {
+      display: inline-block; background: var(--gold); color: var(--white);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 0.9rem 2rem; border-radius: 4px; text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-gold:hover { background: #a9762e; transform: translateY(-2px); }
+
+    .hero-right {
+      background: linear-gradient(160deg, #1e3a5f 0%, #2a5298 40%, #1e3a5f 70%, #122540 100%);
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      gap: 1.5rem; padding: 4rem 3rem; position: relative; overflow: hidden;
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -45deg, transparent, transparent 40px,
+        rgba(200,146,58,0.04) 40px, rgba(200,146,58,0.04) 41px
+      );
+    }
+    .heritage-circle {
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(200,146,58,0.1); border: 3px solid var(--gold);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .heritage-circle .year {
+      font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900;
+      color: var(--gold);
+    }
+    .heritage-circle .since { color: rgba(245,240,232,0.6); font-size: 0.85rem; letter-spacing: 1px; }
+    .pillar-list { position: relative; z-index: 1; }
+    .pillar-list li {
+      list-style: none; color: rgba(245,240,232,0.8); padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(200,146,58,0.2);
+      font-size: 0.95rem; display: flex; align-items: center; gap: 0.75rem;
+    }
+    .pillar-list li::before { content: '✦'; color: var(--gold); font-size: 0.7rem; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+      color: var(--navy); margin-bottom: 1rem;
+    }
+    .section-desc { color: #666; font-size: 1.05rem; line-height: 1.7; max-width: 600px; }
+
+    /* SERVICES */
+    .services { background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .service-card {
+      background: var(--cream); border: 1px solid rgba(30,58,95,0.12);
+      border-radius: 8px; padding: 2rem 1.5rem;
+      border-top: 3px solid var(--gold);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(30,58,95,0.1); }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .service-card p { color: #777; font-size: 0.9rem; line-height: 1.6; }
+
+    /* HERITAGE */
+    .heritage { background: var(--navy); color: var(--cream); }
+    .heritage .section-title { color: var(--cream); }
+    .heritage-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 2rem; }
+    .heritage-content p { color: rgba(245,240,232,0.8); line-height: 1.8; margin-bottom: 1rem; }
+    .heritage-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .stat-box {
+      background: rgba(200,146,58,0.1); border: 1px solid rgba(200,146,58,0.3);
+      border-radius: 8px; padding: 1.5rem; text-align: center;
+    }
+    .stat-box .num {
+      font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--gold);
+    }
+    .stat-box .label { color: rgba(245,240,232,0.6); font-size: 0.85rem; margin-top: 0.25rem; }
+
+    /* PAIN POINTS */
+    .pain { background: var(--cream); }
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .pain-card {
+      background: var(--white); border-radius: 8px; padding: 2rem;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(30,58,95,0.07);
+    }
+    .pain-card h4 { color: var(--navy); font-weight: 700; margin-bottom: 0.5rem; }
+    .pain-card p { color: #777; font-size: 0.9rem; line-height: 1.6; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--white); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .testi-card {
+      background: var(--cream); border-radius: 10px; padding: 2rem;
+      box-shadow: 0 2px 16px rgba(30,58,95,0.08);
+    }
+    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 1rem; }
+    .testi-card p { color: #555; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testi-author { font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+    .testi-location { color: #999; font-size: 0.8rem; }
+
+    /* CONTACT */
+    .contact { background: var(--navy); }
+    .contact .section-title { color: var(--cream); }
+    .contact .section-label { color: var(--gold); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info p { color: rgba(245,240,232,0.75); line-height: 1.8; margin-bottom: 1rem; }
+    .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: rgba(245,240,232,0.75); }
+    .contact-detail span:first-child { color: var(--gold); font-size: 1.2rem; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; background: rgba(245,240,232,0.07);
+      border: 1px solid rgba(200,146,58,0.3);
+      color: var(--cream); padding: 0.85rem 1rem;
+      border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem;
+      margin-bottom: 1rem; outline: none; transition: border-color 0.2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(245,240,232,0.4); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .btn-form {
+      background: var(--gold); color: var(--white);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 1rem 2rem; border: none; border-radius: 4px; cursor: pointer; width: 100%;
+      transition: background 0.2s; font-family: 'Inter', sans-serif;
+    }
+    .btn-form:hover { background: #a9762e; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--gold), #a9762e);
+      text-align: center; padding: 4rem 2rem;
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700;
+      color: var(--white); margin-bottom: 0.75rem;
+    }
+    .cta-banner p { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 2rem; }
+    .btn-navy {
+      display: inline-block; background: var(--navy); color: var(--cream);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .btn-navy:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy-dark); padding: 2rem;
+      text-align: center; color: rgba(245,240,232,0.4); font-size: 0.85rem;
+    }
+    footer span { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { min-height: 340px; }
+    }
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .heritage-inner,
+      .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-left { padding: 4rem 2rem; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="brand">
+      Pilcher's Barber Shop
+      <span>Est. 1977 — Pensacola, FL</span>
+    </div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#heritage">Our Legacy</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Free Redesign</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO — SPLIT SCREEN -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-left-inner">
+        <div class="hero-tag">Pensacola, Florida · Est. 1977</div>
+        <h1><span>49 Years</span> of Pensacola's Best Cuts</h1>
+        <p>A Pensacola tradition since 1977 — now it's time to let the world find us online. Three generations of loyal customers, and a fourth is searching for us on Google.</p>
+        <a href="#contact" class="btn-gold">Claim Your Free Redesign</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="heritage-circle">
+        <div class="year">1977</div>
+        <div class="since">Since</div>
+      </div>
+      <ul class="pillar-list">
+        <li>49 Years of Trusted Service</li>
+        <li>Three Generations of Clients</li>
+        <li>Classic Pensacola Barbering</li>
+        <li>Straight Razor Expertise</li>
+        <li>Family Atmosphere</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc">49 years of refined craft — from classic haircuts to old-school straight razor shaves.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Classic Haircuts</h3>
+          <p>The timeless cut, done right. Pilcher's has been perfecting the classic men's cut since 1977.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🪒</div>
+          <h3>Straight Razor Shaves</h3>
+          <p>An authentic, luxury straight razor experience — the kind you won't find just anywhere.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🧔</div>
+          <h3>Beard Grooming</h3>
+          <p>Full beard trim, shaping, and conditioning for a polished, well-kept look.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👴</div>
+          <h3>Senior Cuts</h3>
+          <p>Respectful, attentive service for our longtime clients and senior members of the community.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👦</div>
+          <h3>Kids Cuts</h3>
+          <p>Patient and friendly for the little ones — we've been cutting Pensacola kids' hair for decades.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💈</div>
+          <h3>Old-School Fades</h3>
+          <p>Precision fades rooted in classic barbering tradition — smooth, sharp, and clean every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERITAGE -->
+  <section class="heritage" id="heritage">
+    <div class="container">
+      <div class="section-label">Our Legacy</div>
+      <h2 class="section-title">Since 1977, Pensacola's Trusted Barber</h2>
+      <div class="heritage-inner">
+        <div class="heritage-content">
+          <p>Since 1977, Pilcher's has been cutting hair in Pensacola. Three generations of loyal customers — and now a fourth is searching for us on Google. What started as a neighborhood shop has grown into a Pensacola institution built entirely on trust, craft, and community.</p>
+          <p>Pilcher's is more than a barbershop — it's a gathering place. Fathers have brought their sons, who've grown up to bring their own sons. The chairs at Pilcher's have seen decades of Pensacola history pass through their doors.</p>
+          <p>The only thing missing? A website that tells that story to the next generation searching online.</p>
+          <a href="#contact" class="btn-gold" style="margin-top:1rem;">Get Your Free Website Preview</a>
+        </div>
+        <div class="heritage-stats">
+          <div class="stat-box">
+            <div class="num">49</div>
+            <div class="label">Years in Pensacola</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">3+</div>
+            <div class="label">Generations Served</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">1977</div>
+            <div class="label">Established</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">0</div>
+            <div class="label">Websites — Until Now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain">
+    <div class="container">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">A 49-Year Legacy — Hidden from Google</h2>
+      <p class="section-desc">Younger Pensacola residents are searching for barbers online every day. Without a website, Pilcher's rich history is invisible to them.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <h4>🔍 Invisible to Young Customers</h4>
+          <p>The next generation of loyal clients is searching "barber near me" in Pensacola — and Pilcher's doesn't appear. That's a generation of customers you're missing.</p>
+        </div>
+        <div class="pain-card">
+          <h4>📱 No Way to Showcase Your Legacy</h4>
+          <p>49 years of craftsmanship, awards, and loyal service — but there's no place online to show it. Your story deserves to be told.</p>
+        </div>
+        <div class="pain-card">
+          <h4>📅 No Online Booking</h4>
+          <p>Customers who want to plan ahead can't book with you. Every competitor with a booking link captures clients you should have.</p>
+        </div>
+        <div class="pain-card">
+          <h4>🏆 Competitors Outranking a Legend</h4>
+          <p>Newer shops with websites are outranking Pilcher's on Google — despite having a fraction of your history and reputation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">What Clients Say</div>
+      <h2 class="section-title">Loyal Voices from Pensacola</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"My grandfather brought my dad here. My dad brought me. Now I bring my own son. Pilcher's is part of our family and there is no other barber I'd trust."</p>
+          <div class="testi-author">Robert K.</div>
+          <div class="testi-location">Pensacola, FL — 3rd generation client</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Been coming to Pilcher's for over 20 years. Nobody gives a straight razor shave like this in all of Pensacola. Old-school quality that you just can't find anywhere else."</p>
+          <div class="testi-author">Harold M.</div>
+          <div class="testi-location">Pensacola, FL</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"I moved to Pensacola two years ago and a neighbor recommended Pilcher's. The skill and the welcome you feel here is something special. Real barbering, real community."</p>
+          <div class="testi-author">Anthony J.</div>
+          <div class="testi-location">Pensacola, FL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Claim Your Free Redesign</h2>
+          <p>Pilcher's has 49 years of legacy — it's time the internet knew about it. Fill out the form and we'll build you a free website preview, no strings attached.</p>
+          <div class="contact-detail"><span>📍</span><span>Pensacola, Florida, USA</span></div>
+          <div class="contact-detail"><span>💈</span><span>Pilcher's Barber Shop</span></div>
+          <div class="contact-detail"><span>⭐</span><span>Est. 1977 — 49 Years in Business</span></div>
+          <div class="contact-detail"><span>🌐</span><span>No website yet — let's change that</span></div>
+        </div>
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xojppajv" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="tel" name="phone" placeholder="Phone Number" />
+            <input type="hidden" name="business" value="Pilcher's Barber Shop — Pensacola, FL" />
+            <textarea name="message" placeholder="Tell us about Pilcher's and what you'd like on your new website..."></textarea>
+            <button type="submit" class="btn-form">Claim Your Free Redesign</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>49 Years of Pensacola's Best Cuts — Now Online</h2>
+    <p>Let the next generation of Pensacola find Pilcher's where they're searching — on Google.</p>
+    <a href="#contact" class="btn-navy">Claim Your Free Redesign</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 <span>Pilcher's Barber Shop</span> — Pensacola, Florida. Est. 1977. Website preview by Alma Digital Designs.</p>
+  </footer>
+
+</body>
+</html>
