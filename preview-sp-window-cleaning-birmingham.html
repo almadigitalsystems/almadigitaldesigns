@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SP Window Cleaning — Birmingham, England</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #00b4d8;
+    --sky-dark: #0096c7;
+    --navy: #023e8a;
+    --navy-dark: #012a5e;
+    --white: #ffffff;
+    --gray-light: #f0f4f8;
+    --gray-mid: #6b7280;
+    --gray-border: #d1dae3;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: #1a1a2e; line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white); border-bottom: 1px solid var(--gray-border);
+    padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { font-size: 1rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+  .nav-cta {
+    background: var(--sky); color: var(--white);
+    padding: 0.6rem 1.4rem; font-family: 'Inter', sans-serif;
+    font-size: 0.85rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--sky-dark); }
+
+  /* SPLIT HERO */
+  .hero {
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+  .hero-left {
+    background: var(--white);
+    display: flex; align-items: center;
+    padding: 5rem 4rem 5rem 3rem;
+  }
+  .hero-left-inner { max-width: 480px; }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gray-light); color: var(--navy);
+    padding: 0.35rem 0.9rem; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2rem;
+  }
+  .hero-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900; line-height: 1.1; color: var(--navy);
+    margin-bottom: 1.5rem; letter-spacing: -0.02em;
+  }
+  .hero-left p {
+    font-size: 1.05rem; color: #4a5568; line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+  .btn-navy {
+    display: inline-block;
+    background: var(--navy); color: var(--white);
+    padding: 0.95rem 2.2rem; font-family: 'Inter', sans-serif;
+    font-size: 0.95rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-navy:hover { background: var(--navy-dark); }
+  .btn-sky {
+    display: inline-block;
+    background: var(--sky); color: var(--white);
+    padding: 0.95rem 2.2rem; font-family: 'Inter', sans-serif;
+    font-size: 0.95rem; font-weight: 700; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-sky:hover { background: var(--sky-dark); }
+
+  .hero-right {
+    background: linear-gradient(135deg, var(--sky) 0%, var(--navy) 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .window-visual {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; padding: 3rem; width: 100%; max-width: 400px;
+  }
+  .window-pane {
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 2px;
+    position: relative; overflow: hidden;
+  }
+  .window-pane::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 60%);
+  }
+  .window-pane.clean {
+    background: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,0.45);
+  }
+  .hero-right-label {
+    position: absolute; bottom: 2rem; left: 0; right: 0;
+    text-align: center; color: rgba(255,255,255,0.7);
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* SECTION COMMON */
+  section { padding: 6rem 2rem; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--sky); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;
+    margin-bottom: 3rem; color: var(--navy);
+  }
+
+  /* SERVICES */
+  .services-bg { background: var(--gray-light); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--white); padding: 2rem;
+    border-bottom: 3px solid var(--sky);
+    transition: box-shadow 0.2s;
+  }
+  .service-card:hover { box-shadow: 0 8px 30px rgba(0,180,216,0.15); }
+  .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .service-card p { font-size: 0.875rem; color: var(--gray-mid); line-height: 1.6; }
+  .service-num { font-size: 2rem; font-weight: 900; color: var(--sky); opacity: 0.3; margin-bottom: 0.75rem; line-height: 1; }
+
+  /* AREA */
+  .area-bg { background: var(--navy); }
+  .area-bg .section-title { color: var(--white); }
+  .area-bg .section-tag { color: rgba(255,255,255,0.6); }
+  .area-text { font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.75; max-width: 600px; }
+  .area-grid { display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
+  .area-pill {
+    background: rgba(255,255,255,0.1); color: var(--white);
+    padding: 0.5rem 1.25rem; font-size: 0.85rem; font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* PAIN */
+  .pain-quote {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 700; line-height: 1.35; color: var(--navy);
+    border-left: 5px solid var(--sky); padding-left: 1.5rem;
+    max-width: 680px;
+  }
+  .pain-sub { font-size: 1rem; color: #555; margin-top: 1.5rem; max-width: 560px; line-height: 1.7; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .testimonial {
+    border: 1px solid var(--gray-border); padding: 2rem;
+    position: relative;
+  }
+  .testimonial::before {
+    content: '\201C';
+    position: absolute; top: 1rem; right: 1.5rem;
+    font-size: 4rem; color: var(--sky); opacity: 0.2;
+    font-family: 'Playfair Display', serif; line-height: 1;
+  }
+  .t-quote { font-size: 0.95rem; line-height: 1.7; color: #444; font-style: italic; margin-bottom: 1.25rem; }
+  .t-name { font-size: 0.8rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* CONTACT */
+  .contact-bg { background: var(--gray-light); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--navy); }
+  .contact-item { margin-bottom: 0.85rem; font-size: 0.95rem; color: #444; }
+  .contact-item strong { color: var(--navy); }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  form input, form textarea {
+    width: 100%; padding: 0.85rem 1rem;
+    border: 1px solid var(--gray-border); background: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 0.95rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  form input:focus, form textarea:focus { border-color: var(--sky); }
+  form textarea { resize: vertical; min-height: 130px; }
+  form button {
+    background: var(--navy); color: var(--white);
+    border: none; padding: 0.9rem 2rem;
+    font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; align-self: flex-start;
+  }
+  form button:hover { background: var(--navy-dark); }
+
+  /* FOOTER */
+  footer { background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 2rem; text-align: center; font-size: 0.82rem; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 320px; }
+    .hero-left { padding: 4rem 2rem; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">SP Window Cleaning &mdash; Birmingham</a>
+  <a href="#contact" class="nav-cta">Claim Your Free Redesign</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-left-inner">
+      <div class="hero-badge">Birmingham, England &mdash; Professional Window Cleaning</div>
+      <h1>Birmingham's Trusted Window Cleaner</h1>
+      <p>Sam Palmer has been keeping Birmingham's windows sparkling clean &mdash; but without a website, new customers can't find him. Let's put SP Window Cleaning on the map.</p>
+      <a href="#contact" class="btn-navy">Claim Your Free Redesign</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="window-visual">
+      <div class="window-pane clean"></div>
+      <div class="window-pane"></div>
+      <div class="window-pane"></div>
+      <div class="window-pane clean"></div>
+    </div>
+    <div class="hero-right-label">Crystal Clear Results</div>
+  </div>
+</div>
+
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <p class="section-tag">What We Offer</p>
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Residential Window Cleaning</h3>
+        <p>Spotless windows for homes across Birmingham. Regular rounds available.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Commercial Window Cleaning</h3>
+        <p>Professional cleaning for shops, offices, and commercial premises throughout the city.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Conservatory Cleaning</h3>
+        <p>Full conservatory cleans including frames, roof panels, and all glass surfaces.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Gutter Clearing</h3>
+        <p>Blocked gutters cleared and flushed out to prevent damp and water damage.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <h3>Fascia &amp; Soffit Cleaning</h3>
+        <p>Restore the appearance of your fascias and soffits with a thorough professional clean.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <h3>One-Off Spring Clean</h3>
+        <p>Perfect for landlords, end-of-tenancy, or simply giving your home a fresh start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area-bg" id="area">
+  <div class="section-inner">
+    <p class="section-tag">Service Area</p>
+    <h2 class="section-title">Serving All of Birmingham</h2>
+    <p class="area-text">Sam covers all of Birmingham and the surrounding areas. Whether you're in the city centre, suburbs, or neighbouring towns &mdash; SP Window Cleaning can come to you.</p>
+    <div class="area-grid">
+      <div class="area-pill">Birmingham City Centre</div>
+      <div class="area-pill">Edgbaston</div>
+      <div class="area-pill">Moseley</div>
+      <div class="area-pill">Harborne</div>
+      <div class="area-pill">Sutton Coldfield</div>
+      <div class="area-pill">Solihull</div>
+      <div class="area-pill">Kings Heath</div>
+      <div class="area-pill">&amp; Surrounding Areas</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <p class="section-tag">The Problem</p>
+    <h2 class="section-title">Invisible Where It Matters</h2>
+    <p class="pain-quote">Homeowners searching "window cleaner Birmingham" hire whoever shows up on Google &mdash; Sam's not there yet.</p>
+    <p class="pain-sub">Without a website, there are no testimonials to build trust, no pricing to reassure new customers, and no way to contact Sam unless someone hands over his number personally. Every Google search is a missed opportunity.</p>
+    <a href="#contact" class="btn-sky" style="margin-top:2rem;display:inline-block;">Let's Fix That &mdash; It's Free</a>
+  </div>
+</section>
+
+<section style="background:var(--gray-light);" id="testimonials">
+  <div class="section-inner">
+    <p class="section-tag">Word of Mouth</p>
+    <h2 class="section-title">What Birmingham Residents Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="t-quote">"Sam's been doing our windows for two years now. Always on time, always polite, and the results are brilliant every single time."</p>
+        <span class="t-name">&mdash; Margaret T., Edgbaston</span>
+      </div>
+      <div class="testimonial">
+        <p class="t-quote">"Found Sam through a neighbour and I'm so glad I did. Our conservatory has never looked so clean. Fantastic service."</p>
+        <span class="t-name">&mdash; James H., Harborne</span>
+      </div>
+      <div class="testimonial">
+        <p class="t-quote">"Reliable, thorough, and very reasonably priced. Sam cleared our gutters too &mdash; made such a difference over winter."</p>
+        <span class="t-name">&mdash; Diane W., Kings Heath</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-bg" id="contact">
+  <div class="section-inner">
+    <p class="section-tag">Get in Touch</p>
+    <h2 class="section-title">Contact SP Window Cleaning</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>SP Window Cleaning</h3>
+        <p class="contact-item"><strong>Location:</strong> Birmingham, England, United Kingdom</p>
+        <p class="contact-item"><strong>Proprietor:</strong> Sam Palmer</p>
+        <p class="contact-item"><strong>Service Area:</strong> Birmingham &amp; Surrounding Areas</p>
+        <p style="margin-top:2rem;font-size:0.9rem;color:#555;line-height:1.75;">Fill in the form and Sam will get back to you promptly with a no-obligation quote. Whether it's a one-off or a regular round, all enquiries are welcome.</p>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xojppajv" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <textarea name="message" placeholder="Tell us about your cleaning requirements..."></textarea>
+          <button type="submit">Claim Your Free Redesign</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 SP Window Cleaning &mdash; Birmingham, England, United Kingdom. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
