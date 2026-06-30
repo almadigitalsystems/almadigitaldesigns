@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Barber Studio Inc. — Hattiesburg, Mississippi | Best Barber Shop 2025 &amp; 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #1b4332;
+      --green-light: #2d6a4f;
+      --green-bg: #0d2b1f;
+      --gold: #e9c46a;
+      --gold-dim: #c9a44a;
+      --white: #ffffff;
+      --cream: #fefcf7;
+      --text: #2d2d2d;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--green);
+      border-bottom: 3px solid var(--gold);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 68px;
+    }
+    .nav-brand { display: flex; flex-direction: column; }
+    .nav-brand .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; color: var(--cream); letter-spacing: 0.5px;
+    }
+    .nav-brand .est { color: rgba(233,196,106,0.7); font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { color: rgba(254,252,247,0.75); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--green) !important;
+      padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 900 !important;
+    }
+
+    /* HERO / BANNER */
+    .hero {
+      background: linear-gradient(160deg, var(--green-bg) 0%, var(--green) 50%, var(--green-light) 100%);
+      padding: 7rem 2rem 5rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 80px,
+        rgba(233,196,106,0.03) 80px, rgba(233,196,106,0.03) 81px
+      );
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .award-pre {
+      display: inline-flex; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; justify-content: center;
+    }
+    .mini-badge {
+      background: rgba(233,196,106,0.15); border: 1px solid rgba(233,196,106,0.4);
+      color: var(--gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.35rem 0.85rem; border-radius: 3px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; line-height: 1.15;
+      color: var(--cream); margin-bottom: 1.25rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: rgba(254,252,247,0.75); font-size: 1.1rem; line-height: 1.75;
+      max-width: 640px; margin: 0 auto 2.5rem;
+    }
+    .btn-gold {
+      display: inline-block; background: var(--gold); color: var(--green);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-dim); transform: translateY(-2px); }
+
+    /* AWARDS SECTION */
+    .awards { background: var(--cream); padding: 4rem 2rem; }
+    .awards-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .awards-subtitle { color: #888; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 2.5rem; }
+    .awards-grid { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+    .award-badge {
+      background: var(--green); color: var(--cream);
+      border-radius: 12px; padding: 2rem 2.5rem; text-align: center;
+      min-width: 220px; position: relative; overflow: hidden;
+    }
+    .award-badge::before {
+      content: '🏆'; position: absolute; top: -10px; right: -10px;
+      font-size: 5rem; opacity: 0.08;
+    }
+    .award-badge .award-year { color: var(--gold); font-size: 2.5rem; font-weight: 900; line-height: 1; }
+    .award-badge .award-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin: 0.5rem 0; }
+    .award-badge .award-location { color: rgba(254,252,247,0.6); font-size: 0.82rem; }
+    .award-badge .award-star { color: var(--gold); font-size: 1.3rem; margin-top: 0.75rem; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--green); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .section-desc { color: #777; font-size: 1.05rem; line-height: 1.7; max-width: 620px; }
+
+    /* SERVICES */
+    .services { background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .service-card {
+      border: 1px solid rgba(27,67,50,0.12); border-radius: 8px; padding: 2rem 1.5rem;
+      background: var(--cream); border-top: 3px solid var(--gold);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(27,67,50,0.1); }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--green); margin-bottom: 0.5rem; }
+    .service-card p { color: #777; font-size: 0.9rem; line-height: 1.6; }
+
+    /* ABOUT */
+    .about { background: var(--green); color: var(--cream); }
+    .about .section-title { color: var(--cream); }
+    .about .section-label { color: rgba(233,196,106,0.8); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-visual {
+      background: rgba(0,0,0,0.2); border: 1px solid rgba(233,196,106,0.2);
+      border-radius: 12px; padding: 3rem; display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .about-visual .vs-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid rgba(233,196,106,0.1); }
+    .about-visual .vs-item:last-child { border-bottom: none; }
+    .about-visual .vs-label { color: rgba(254,252,247,0.55); font-size: 0.9rem; }
+    .about-visual .vs-val { color: var(--gold); font-weight: 700; font-size: 0.95rem; text-align: right; }
+    .about-content p { color: rgba(254,252,247,0.8); line-height: 1.8; margin-bottom: 1rem; }
+    .about-content .highlight {
+      background: rgba(233,196,106,0.1); border: 1px solid rgba(233,196,106,0.25);
+      border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 1rem;
+      color: var(--gold); font-weight: 700; font-size: 0.95rem; line-height: 1.6;
+    }
+
+    /* PAIN POINTS */
+    .pain { background: var(--cream); }
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .pain-card {
+      background: white; border-radius: 8px; padding: 2rem;
+      box-shadow: 0 2px 12px rgba(27,67,50,0.07); border-left: 4px solid var(--gold);
+    }
+    .pain-card h4 { color: var(--green); font-weight: 700; margin-bottom: 0.5rem; }
+    .pain-card p { color: #777; font-size: 0.9rem; line-height: 1.6; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--white); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .testi-card {
+      background: var(--cream); border-radius: 10px; padding: 2rem;
+      box-shadow: 0 2px 16px rgba(27,67,50,0.07); border-top: 3px solid var(--green);
+    }
+    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 1rem; }
+    .testi-card p { color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testi-author { font-weight: 700; color: var(--green); font-size: 0.9rem; }
+    .testi-location { color: #aaa; font-size: 0.8rem; }
+
+    /* CONTACT */
+    .contact { background: var(--green); }
+    .contact .section-title { color: var(--cream); }
+    .contact .section-label { color: rgba(233,196,106,0.8); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info p { color: rgba(254,252,247,0.75); line-height: 1.8; margin-bottom: 1rem; }
+    .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: rgba(254,252,247,0.75); }
+    .contact-detail span:first-child { color: var(--gold); font-size: 1.2rem; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; background: rgba(254,252,247,0.07);
+      border: 1px solid rgba(233,196,106,0.25);
+      color: var(--cream); padding: 0.85rem 1rem;
+      border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem;
+      margin-bottom: 1rem; outline: none; transition: border-color 0.2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(254,252,247,0.35); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .btn-form {
+      background: var(--gold); color: var(--green);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 1rem 2rem; border: none; border-radius: 4px; cursor: pointer; width: 100%;
+      transition: background 0.2s; font-family: 'Inter', sans-serif;
+    }
+    .btn-form:hover { background: var(--gold-dim); }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      text-align: center; padding: 4rem 2rem;
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700;
+      color: var(--green); margin-bottom: 0.75rem;
+    }
+    .cta-banner p { color: rgba(27,67,50,0.75); font-size: 1.1rem; margin-bottom: 2rem; }
+    .btn-green-dark {
+      display: inline-block; background: var(--green); color: var(--cream);
+      font-weight: 900; font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .btn-green-dark:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--green-bg); padding: 2rem;
+      text-align: center; color: rgba(254,252,247,0.3); font-size: 0.85rem;
+    }
+    footer span { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .awards-grid { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">
+      <span class="name">The Barber Studio Inc.</span>
+      <span class="est">Est. Hattiesburg, MS</span>
+    </div>
+    <ul>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Free Redesign</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO / BANNER -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="award-pre">
+        <span class="mini-badge">🏆 Best Barber Shop Hattiesburg 2025</span>
+        <span class="mini-badge">🏆 Best Barber Shop Hattiesburg 2026</span>
+      </div>
+      <h1>Hattiesburg's <span>Award-Winning</span> Barbershop</h1>
+      <p>Best Barber Shop 2025 &amp; 2026 — but our website shows visitors a blank page. Our expertise is unmatched. Our web presence shouldn't be. Let's fix that.</p>
+      <a href="#contact" class="btn-gold">Claim Your Free Redesign</a>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards" id="awards">
+    <div class="awards-inner">
+      <div class="awards-subtitle">Official Recognition</div>
+      <div class="awards-grid">
+        <div class="award-badge">
+          <div class="award-year">2025</div>
+          <div class="award-title">Best Barber Shop</div>
+          <div class="award-location">Hattiesburg, Mississippi</div>
+          <div class="award-star">★★★★★</div>
+        </div>
+        <div class="award-badge">
+          <div class="award-year">2026</div>
+          <div class="award-title">Best Barber Shop</div>
+          <div class="award-location">Hattiesburg, Mississippi</div>
+          <div class="award-star">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc">Award-winning cuts, fades, and grooming — every service delivered with the same precision that earned us two consecutive Best in Hattiesburg titles.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Premium Haircuts</h3>
+          <p>Precision haircuts tailored to your face shape, style, and lifestyle — this is what earns awards.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💈</div>
+          <h3>Fade Specialists</h3>
+          <p>From low fades to skin tapers, our barbers deliver the cleanest fades in all of Hattiesburg.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🧔</div>
+          <h3>Beard Grooming</h3>
+          <p>Full beard trims, shaping, line-ups, and conditioning for a polished, put-together finish.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔥</div>
+          <h3>Hot Towel Service</h3>
+          <p>The full luxury barbershop experience — hot towel preparation for a smooth, comfortable shave.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👦</div>
+          <h3>Kids Cuts</h3>
+          <p>Patient, fun, and precise — we make sure every child leaves with a cut they love.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎉</div>
+          <h3>Special Events</h3>
+          <p>Weddings, graduations, proms — look your absolute best when it matters most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-content">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">Hattiesburg's Best — Two Years Running</h2>
+          <p>The Barber Studio has earned Hattiesburg's top barbershop award two years running. Their expertise is unmatched — but their website is completely blank, costing them clients every day.</p>
+          <p>Located at 102 N 38th Ave in Hattiesburg, MS, The Barber Studio serves the Hattiesburg community with the highest level of barbering skill and professionalism. Every client is treated like a VIP — from the moment they walk in the door to the moment they leave.</p>
+          <p>Two consecutive awards from the Hattiesburg community speak louder than any advertisement. Now it's time to let that reputation reach every corner of the internet.</p>
+          <div class="highlight">🏆 Best Barber Shop — Hattiesburg 2025 &amp; 2026. Two years. Zero web presence. Let's build one.</div>
+        </div>
+        <div class="about-visual">
+          <div class="vs-item">
+            <span class="vs-label">Location</span>
+            <span class="vs-val">102 N 38th Ave, Hattiesburg MS</span>
+          </div>
+          <div class="vs-item">
+            <span class="vs-label">Awards</span>
+            <span class="vs-val">Best Barber Shop 2025 &amp; 2026</span>
+          </div>
+          <div class="vs-item">
+            <span class="vs-label">Specialty</span>
+            <span class="vs-val">Premium Cuts, Fades, Grooming</span>
+          </div>
+          <div class="vs-item">
+            <span class="vs-label">Community</span>
+            <span class="vs-val">Hattiesburg, Mississippi</span>
+          </div>
+          <div class="vs-item">
+            <span class="vs-label">Current Website</span>
+            <span class="vs-val" style="color:#ff6b6b;">Blank Page (GoodBarber)</span>
+          </div>
+          <div class="vs-item">
+            <span class="vs-label">New Website</span>
+            <span class="vs-val">Coming Soon — For Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain">
+    <div class="container">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Award-Winning Shop — Zero Web Presence</h2>
+      <p class="section-desc">The Barber Studio is the best in Hattiesburg — but right now, a blank page is driving away the new clients who search online.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <h4>🚫 GoodBarber Shows a Blank Page</h4>
+          <p>When potential clients click through to the website, they see nothing. That blank page is costing The Barber Studio real clients every single day.</p>
+        </div>
+        <div class="pain-card">
+          <h4>🔍 Award-Winners Should Lead on Google</h4>
+          <p>Hattiesburg's best barbershop should be the first result when someone searches for a barber. Right now, competitors with basic websites rank above an award-winner.</p>
+        </div>
+        <div class="pain-card">
+          <h4>📱 Online Customers Are Lost</h4>
+          <p>Mobile users searching for a Hattiesburg barber expect to find a working website. A blank page sends them straight to the next result.</p>
+        </div>
+        <div class="pain-card">
+          <h4>🏆 Awards Without Reach = Missed Revenue</h4>
+          <p>Two consecutive Best in Hattiesburg awards should be the foundation of an unstoppable online presence. Right now, that story isn't being told anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">Community Reviews</div>
+      <h2 class="section-title">Hattiesburg Knows the Difference</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"The Barber Studio is the only place I trust with my hair in Hattiesburg. These barbers are on another level — it's no surprise they won Best Barber Shop two years in a row. Absolute quality."</p>
+          <div class="testi-author">Terrence A.</div>
+          <div class="testi-location">Hattiesburg, MS</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"I've been coming here for two years and I can't imagine going anywhere else. The attention to detail is unreal — every cut is perfect. This is what award-winning service looks like."</p>
+          <div class="testi-author">James R.</div>
+          <div class="testi-location">Hattiesburg, MS</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Got a cut before my wedding here and I have never looked better in my life. The whole team is professional, skilled, and they genuinely care. Best barber shop in Mississippi, period."</p>
+          <div class="testi-author">Marcus W.</div>
+          <div class="testi-location">Hattiesburg, MS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Claim Your Free Redesign</h2>
+          <p>The Barber Studio deserves a website as award-winning as their cuts. Fill out the form and we'll build a free website preview — no commitment, no cost.</p>
+          <div class="contact-detail"><span>📍</span><span>102 N 38th Ave, Hattiesburg MS 39401</span></div>
+          <div class="contact-detail"><span>✂️</span><span>The Barber Studio Inc.</span></div>
+          <div class="contact-detail"><span>🏆</span><span>Best Barber Shop Hattiesburg 2025 &amp; 2026</span></div>
+          <div class="contact-detail"><span>🌐</span><span>Current site is blank — let's replace it</span></div>
+        </div>
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xojppajv" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="tel" name="phone" placeholder="Phone Number" />
+            <input type="hidden" name="business" value="The Barber Studio Inc. — Hattiesburg, MS — Best Barber Shop 2025 &amp; 2026" />
+            <textarea name="message" placeholder="Tell us about The Barber Studio and what you'd like on your new website..."></textarea>
+            <button type="submit" class="btn-form">Claim Your Free Redesign</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Hattiesburg's Best Deserves the Best Website</h2>
+    <p>Two awards, zero web presence — let's fix that with a free professional website preview.</p>
+    <a href="#contact" class="btn-green-dark">Claim Your Free Redesign</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 <span>The Barber Studio Inc.</span> — 102 N 38th Ave, Hattiesburg MS 39401. Best Barber Shop 2025 &amp; 2026. Website preview by Alma Digital Designs.</p>
+  </footer>
+
+</body>
+</html>
